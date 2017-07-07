@@ -40,8 +40,7 @@ twitter: mytwitter
 # pinterest: mypinterest
 # linkedin: mylinkedin
 youtube: myyoutube
-# weibo: myweibo
-# spotify: myspotify
+# weibo: myweibo# spotify: myspotify
 github: mygithub
 # lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
@@ -75,7 +74,7 @@ width: normal
 # paginate_path: "blog/:num/"
 
 # if you don't need projects, comment the *projects* configs below
-*projects*: true
+projects: false
 
 # if you don't need "about" or "blog", comment them out below
 about: true
