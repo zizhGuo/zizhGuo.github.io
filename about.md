@@ -14,6 +14,8 @@ layout: page
 	<li>09/2012 - 06/2016: Chengdu University of Information Technology(CUIT)        Chengdu,  SC</li>
 	<li>                  B.E.in Electronic and Information Engineering              China          </li>
 	<li>                  GPA: 3.14/4.00          </li>
+</ul>
+
 <h2>Skills</h2>
 
 <ul class="skill-list">
@@ -30,6 +32,17 @@ layout: page
 	<li>Markdown(for blog posting)</li>		
 	
 </ul>
+<h2>Skills</h2>
+
+<p>02/2017 - present:	VR Martial Arts </p>
+<p>System Programmer using .NET audio API captured PCM encoded data from audio source, and using Beat Detection Algorithm to processing data, then implement it into VR Martial Arts scripts. The algorithm can be used for hitting target spawning system that targets spawn following the tempos of BGM or environmental visual effects. </p>
+<p>09/2015 - 06/2016:	The Motion Design of Six-Degree Freedom Robot Arm </p>
+<p>Graduate Design project using C language to program an embedded system to operate single chip processer STC89C51. Designing and welding the integrated circuit board. Algorithm developed to triggering robot arm to move by receiving the human voice from microphone head. </p>
+<p>11/2015 - 12/2015:	Catnap </p>
+<p>Game Designer for gameplay designing and level designing using Unity3D to implement assets to create whole scene for the first time. A 2D side-scrolling platformer made in 3D format but demonstrated in 2D vision with Orthographic Camera. </p>
+	
+</ul>
+
 
 <h2>Projects</h2>
 
