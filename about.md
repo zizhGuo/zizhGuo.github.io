@@ -38,9 +38,9 @@ layout: page
 <p>System Programmer using .NET audio API captured PCM encoded data from audio source, and using Beat Detection Algorithm to processing data, then implement it into VR Martial Arts scripts. The algorithm can be used for hitting target spawning system that targets spawn following the tempos of BGM or environmental visual effects. </p>
 
 <p><br /></p>
-<p>09/2015 - 06/2016:	The Motion Design of Six-Degree Freedom Robot Arm </p>
+<p>09/2015 - 06/2016: </p><li><a href="https://youtu.be/P91Bkuq6pZ8/">The Motion Design of Six-Degree Freedom Robot Arm </a></li>
 <p>Graduate Design project using C language to program an embedded system to operate single chip processer STC89C51. Designing and welding the integrated circuit board. Algorithm developed to triggering robot arm to move by receiving the human voice from microphone head. </p>
-<li><a href="https://youtu.be/P91Bkuq6pZ8/">6-degree Robot Arm </a></li>
+
 <p><br /></p>
 <p>11/2015 - 12/2015:	Catnap </p>
 <p>Game Designer for gameplay designing and level designing using Unity3D to implement assets to create whole scene for the first time. A 2D side-scrolling platformer made in 3D format but demonstrated in 2D vision with Orthographic Camera. </p>
