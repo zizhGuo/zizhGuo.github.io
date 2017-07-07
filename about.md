@@ -6,6 +6,14 @@ layout: page
 
 <p>Currently I am a masters' student majoring in Game Design & Develeopment at Rochester Institute of Technology. Dedicated to becoming a professional game developer. </p>
 
+<h2>Education</h2>
+<ul class="education-list">
+	<li>08/2016 - present: Rochester Institute of Technology(RIT)                    Rochester, NY</li>
+	<li>                  M.S.in Game Design and Development(Expected in May 2018))  U.S          </li>
+	<li>                  GPA: 3.65/4.00          </li>
+	<li>09/2012 - 06/2016: Chengdu University of Information Technology(CUIT)        Chengdu,  SC</li>
+	<li>                  B.E.in Electronic and Information Engineering              China          </li>
+	<li>                  GPA: 3.14/4.00          </li>
 <h2>Skills</h2>
 
 <ul class="skill-list">
