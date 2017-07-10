@@ -16,4 +16,4 @@ description: Markdown summary with different options
 
 <figure>
   <a href="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_b.jpg"><img src="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg" alt="image">
-
+</figure>
