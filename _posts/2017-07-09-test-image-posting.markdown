@@ -27,7 +27,8 @@ description: Markdown summary with different options
 
 <div class="side-by-side">
     <div class="toleft">
-        <img class="image" src="{{ site.url }}/assets/images/markdown.jpg" alt="Alt Text">
+        <a href="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_b.jpg"><img src="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg" alt="image">
+</a>
         <figcaption class="caption">Photo by John Doe</figcaption>
     </div>
 
