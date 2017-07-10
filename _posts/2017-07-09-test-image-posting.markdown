@@ -18,6 +18,8 @@ description: Markdown summary with different options
   <a href="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_b.jpg"><img src="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg" alt="image"></a
   <figcaption><a href="http://www.flickr.com/photos/80901381@N04/7758832526/" title="Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr">Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr</a>.</figcaption>
 </figure>
+
 <figure>
 <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/456200637245952284/"></a>
+<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 </figure>
