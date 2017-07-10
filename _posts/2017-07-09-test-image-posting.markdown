@@ -20,7 +20,7 @@ description: Markdown summary with different options
 </figure>
 
 
-![Smithsonian Image]({{ site.url }}/{{ site.picture }}) {: .pull-right}
+![Smithsonian Image]({{ site.url }}/assets/images/markdown.jpg) {: .pull-right}
 
 
 <div class="side-by-side">
