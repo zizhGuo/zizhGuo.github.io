@@ -25,7 +25,7 @@ description: Markdown summary with different options
 
 <div class="side-by-side">
     <div class="toleft">
-        <img class="image" src="{{ site.url }}/http://40.media.tumblr.com/8ce2d72ee72cb84abfd7f490d6cdbeed/tumblr_njrnf6cqRN1qla6e4o1_1280.jpg" alt="Alt Text">
+        <img class="image" src="{{ site.url }}/Assets/Images/markdown.jpg" alt="Alt Text">
         <figcaption class="caption">Photo by John Doe</figcaption>
     </div>
 
