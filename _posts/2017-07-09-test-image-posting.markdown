@@ -20,6 +20,8 @@ description: Markdown summary with different options
 </figure>
 
 <figure>
+
+[^_^]:
 <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/456200637245952284/"></a>
 <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 </figure>
