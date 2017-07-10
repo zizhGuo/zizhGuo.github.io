@@ -2,7 +2,7 @@
 title: About
 layout: page
 ---
-![Profile Image]( site.picture )
+![Profile Image]( {{site.picture}} )
 
 <p>Currently I am a masters' student majoring in Game Design & Develeopment at Rochester Institute of Technology. Dedicated to becoming a professional game developer. </p>
 
