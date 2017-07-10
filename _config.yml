@@ -7,7 +7,7 @@ description: A blog about me
 # if it's an external image, update below for true
 # better with square images
 external-image: true
-picture: https://s-media-cache-ak0.pinimg.com/originals/78/d9/da/78d9daee2f7de40c23c7790837d59d5a.jpg
+picture: assets/images/profile.jpg
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
