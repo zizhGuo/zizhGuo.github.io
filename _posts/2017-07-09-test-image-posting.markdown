@@ -20,7 +20,9 @@ description: Markdown summary with different options
 </figure>
 
 
-![Smithsonian Image]({{ site.url }}/assets/images/markdown.jpg) {: .pull-right}
+![Smithsonian Image]({{ site.url }}/assets/images/markdown.jpg) 
+{: .pull-right}
+
 *This is emphasized*. Donec faucibus. Nunc iaculis suscipit dui. 53 = 125. Water is H<sub>2</sub>O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. The New York Times <cite>(That’s a citation)</cite>. <u>Underline</u>. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
 
 <div class="side-by-side">
