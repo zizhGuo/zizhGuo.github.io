@@ -27,7 +27,7 @@ description: Markdown summary with different options
 
 <div class="side-by-side">
     <div class="toleft">
-        <a href="http://40.media.tumblr.com/8ce2d72ee72cb84abfd7f490d6cdbeed/tumblr_njrnf6cqRN1qla6e4o1_1280.jpg"><img src="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg" alt="image">
+        <a href="http://40.media.tumblr.com/8ce2d72ee72cb84abfd7f490d6cdbeed/tumblr_njrnf6cqRN1qla6e4o1_1280.jpg"><img src="http://40.media.tumblr.com/8ce2d72ee72cb84abfd7f490d6cdbeed/tumblr_njrnf6cqRN1qla6e4o1_1280.jpg" alt="image">
 </a>
         <figcaption class="caption">Photo by John Doe</figcaption>
     </div>
