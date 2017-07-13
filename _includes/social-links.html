@@ -94,4 +94,17 @@
             <svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>
         </a>
     {% endif %}
+
+    {% if site.QQ %}
+        <a class="link" data-title="{{site.url}}/{{ site.QQ }}" href="{{site.url}}/{{site.QQ}}">
+            <svg class="icon icon-QQ"><use xlink:href="#icon-QQ"></use></svg>
+        </a>
+    {% endif %}
+
+    {% if site.wechat %}
+        <a class="link" data-title="{{site.url}}/{{ site.wechat }}" href="{{site.url}}/{{site.wechat}}">
+            <svg class="icon icon-wechat"><use xlink:href="#icon-wechat"></use></svg>
+        </a>
+    {% endif %}
+
 </div>
