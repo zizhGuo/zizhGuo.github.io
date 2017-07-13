@@ -1,0 +1,29 @@
+---
+title: "中文标题及内容检测"
+layout: post
+date: 2017-07-09 23:27
+image: /assets/images/markdown.jpg
+headerImage: true
+tag:
+- markdown
+- components
+- extra
+category: blog
+author: zizhguo
+description: Markdown summary with different options
+# jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
+---
+
+这段文字意在测试在sublime text下生成的新文件能否顺利push入github repo。顺便测试一下能否成功输出中文。
+
+<div class="side-by-side">
+    <div class="toleft">
+        <a href="http://40.media.tumblr.com/8ce2d72ee72cb84abfd7f490d6cdbeed/tumblr_njrnf6cqRN1qla6e4o1_1280.jpg"><img src="http://40.media.tumblr.com/8ce2d72ee72cb84abfd7f490d6cdbeed/tumblr_njrnf6cqRN1qla6e4o1_1280.jpg" alt="image">
+</a>
+        <figcaption class="caption">Photo from Pinterest</figcaption>
+    </div>
+
+    <div class="toright">
+        <p>故人西辞黄鹤楼，烟花三月下扬州。孤帆远影碧空净，唯见长江天际流。</p>
+    </div>
+</div>
