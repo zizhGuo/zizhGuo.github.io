@@ -14,19 +14,21 @@ author: zizhguo
 >闲时发现github page功能完备，甚是有趣，即可远观当作个人博客之用，又可近处记录生活点滴之需，故花费些许时学习些皮毛前端之术，本文为学习心得及笔记，如若不对，还请众看官指点一二，非常感激。
 
 
-[2017年7月09日](2017-07-13-Github-Page-学习心得及总结.md#2017年7月09日)
-
-[2017年7月12日](2017-07-13-Github-Page-学习心得及总结.md#2017年7月12日)
-
-[2017年7月13日](2017-07-13-Github-Page-学习心得及总结.md#2017年7月13日)
+    <b><a href="2017-07-13-Github-Page-学习心得及总结.md#2017年7月09日">2017年7月09日</a></b>
+    |
+    <b><a href="2017-07-13-Github-Page-学习心得及总结.md#2017年7月12日">2017年7月12日</a></b>
+    |
+    <b><a href="2017-07-13-Github-Page-学习心得及总结.md#2017年7月13日">2017年7月13日</a></b>
 
 <p align="center">
-## 2017年7月09日
+<h1>2017年7月09日</h1>> 
 </p>
 
 ## Tutorials on Youtube
 [视频链接](https://www.youtube.com/watch?v=iWowJBRMtpc&list=PL0CB3OvPhDA_STygmp3sDenx3UpdOMk7P&index=5)
 <iframe width="560" height="310" src="https://www.youtube.com/watch?v=iWowJBRMtpc&list=PL0CB3OvPhDA_STygmp3sDenx3UpdOMk7P&index=5" frameborder="0" allowfullscreen></iframe>>
+
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/m9l3_6yNjrs?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
 ## Themes
 
@@ -35,7 +37,7 @@ Themes是已经通过jekyll搭建好的模板，包含了所需要的各种配�
 ## 模板
 [Github模板列表](https://github.com/jekyll/jekyll/wiki/Themes)
 我选用的模板:
-[Indigo](http://koppl.in/indigo/) | [Demo](https://github.com/sergiokopplin/indigo)
+[Indigo](https://github.com/sergiokopplin/indigo)|[Demo](http://koppl.in/indigo/) 
 
 So simple模板是一个文档完善的模板，里面的内容可以借鉴
 [So simple](https://mmistakes.github.io/so-simple-theme/articles/sample-post-images/)
@@ -72,7 +74,7 @@ Markdown Editor on Visual Studio: [https://marketplace.visualstudio.com/items?it
 {% endhighlight %}
 
 <p align="center">
-## 2017年7月12日
+<h2>2017年7月12日</h2>> 
 </p>
 
 学会了一些html和markdown的基本语法，可以顺利行文书写博客，包括插入图片，图片排版，插入emoji表情（需要根据图片resolution来选择），根目录下各文件夹配置文件功能部分摸清，layouts里面是页面的排版，排版文件为html，可以include别的文件，类似oop编程原理。posts里为博文，不需描述。includes里为每种页面中不同模块，比如作者模块，header模块，footer模块，也是html编写，现在还需了解sass文件价的功能，以及如何开始从头配置网站，而不是先利用模板再改。
@@ -89,7 +91,7 @@ xxx.github.com/assets/profile.jpg
 {% endhighlight %}
 
 <p align="center">
-## 2017年7月13日
+<h1>2017年7月13日</h1>> 
 </p>
 
 一篇相当详细的中文博文阐述SVG矢量图片的介绍和使用：
