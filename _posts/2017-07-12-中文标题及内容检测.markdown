@@ -2,7 +2,7 @@
 title: "中文标题及内容检测"
 layout: post
 date: 2017-07-12 23:42
-image: /assets/icons/inspiration.png
+image: /assets/header/forest.jpg
 headerImage: true
 tag:
 - blogtest
