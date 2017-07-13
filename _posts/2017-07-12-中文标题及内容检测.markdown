@@ -2,12 +2,10 @@
 title: "中文标题及内容检测"
 layout: post
 date: 2017-07-09 23:27
-image: /assets/images/markdown.jpg
+image: /assets/icons/inspiration.png
 headerImage: true
 tag:
-- markdown
-- components
-- extra
+- blogtest
 category: blog
 author: zizhguo
 description: Markdown summary with different options
@@ -27,3 +25,13 @@ description: Markdown summary with different options
         <p>故人西辞黄鹤楼，烟花三月下扬州。孤帆远影碧空净，唯见长江天际流。</p>
     </div>
 </div>
+
+今天我的心情还是可以，啦啦啦![Smithsonian Image]({{ site.url }}/assets/emojis/meme16.png) 
+今天我的心情还是可以，啦啦啦![Smithsonian Image]({{ site.url }}/assets/emojis/meme20.png) 
+今天我的心情还是可以，啦啦啦![Smithsonian Image]({{ site.url }}/assets/emojis/meme24.png) 
+今天我的心情还是可以，啦啦啦![Smithsonian Image]({{ site.url }}/assets/emojis/meme32.png) 
+今天我的心情还是可以，啦啦啦![Smithsonian Image]({{ site.url }}/assets/emojis/meme48.png) 
+今天我的心情还是可以，啦啦啦![Smithsonian Image]({{ site.url }}/assets/emojis/meme64.png) 
+今天我的心情还是可以，啦啦啦![Smithsonian Image]({{ site.url }}/assets/emojis/meme128.png) 
+今天我的心情还是可以，啦啦啦![Smithsonian Image]({{ site.url }}/assets/emojis/meme256.png) 
+今天我的心情还是可以，啦啦啦![Smithsonian Image]({{ site.url }}/assets/emojis/meme512.png) 

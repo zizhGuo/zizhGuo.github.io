@@ -2,12 +2,10 @@
 title: "Test image posting"
 layout: post
 date: 2017-07-09 23:27
-image: /assets/images/markdown.jpg
-headerImage: false
+image: /assets/icons/inspiration.png
+headerImage: ture
 tag:
-- markdown
-- components
-- extra
+- blogtest
 category: blog
 author: zizhguo
 description: Markdown summary with different options
