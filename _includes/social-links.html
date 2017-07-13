@@ -59,6 +59,12 @@
         </a>
     {% endif %}
 
+    {% if site.steam %}
+        <a class="link" data-title="steamcommunity.com/profiles/{{ site.steam }}" href="steamcommunity.com/profiles/{{ site.steam }}" target="_blank">
+            <svg class="icon icon-steam"><use xlink:href="#icon-steam"></use></svg>
+        </a>
+    {% endif %}
+
     {% if site.QQ %}
         <a class="link" data-title="{{site.url}}/{{ site.QQ }}" href="{{site.url}}/{{site.QQ}}">
             <svg class="icon icon-QQ"><use xlink:href="#icon-QQ"></use></svg>
