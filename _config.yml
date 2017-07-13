@@ -1,8 +1,8 @@
 # main text of home
 name: Zizhun Guo
-bio: Design & Tech Mixturer
+bio: To make each day count
 # twitter summary info
-description: A blog about me
+description: My personal blog
 
 # if it's an external image, update below for true
 # better with square images
@@ -51,18 +51,12 @@ github: zizhguo
 email: zg2808@g.rit.edu
 
 authors:
-    johndoe:
-        name: John Doe
-        bio: A Man who travels the world eating noodles
+    zizhguo:
+        name: Zizhun Guo
+        bio: Forwarding with a interesting soul
         external-image: false
         picture: assets/images/profile.jpg
-        twitter: johndoe
-    jamesfoster:
-        name: James Foster
-        bio: A Man who develops software with coffee
-        external-image: false
-        picture: assets/images/james.jpg
-        twitter: jamesfoster
+        wechat: william-awesome
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
@@ -92,7 +86,7 @@ related: true
 post-advance-links: [blog]
 
 # show author block at the end of a post ?
-show-author: false
+show-author: true
 
 # do you want some animations?
 animation: true
