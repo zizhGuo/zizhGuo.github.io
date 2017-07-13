@@ -46,9 +46,8 @@ layout: page
 <p>Game Designer for gameplay designing and level designing using Unity3D to implement assets to create whole scene for the first time. A 2D side-scrolling platformer made in 3D format but demonstrated in 2D vision with Orthographic Camera. </p>
 	
 
-<h2>Projects</h2>
-<ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://youtu.be/6eqLVrvtyuQ/">Catnap </a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
-</ul>
+##Projects
+<a href="https://github.com/">Lorem Lorem</a>
+<a href="https://youtu.be/6eqLVrvtyuQ/">Catnap </a>
+<a href="https://github.com/">Dolor Lorem</a>
+
