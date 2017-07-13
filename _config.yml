@@ -13,7 +13,7 @@ picture: assets/images/profile.jpg
 # and specify source (external or local).
 resume: true
 resume-external: true
-resume-url: {{site.url}}/assets/Guo, Zizhun-Resume.pdf 
+resume-url: https://zizhguo.github.io/assets/Guo, Zizhun-Resume.pdf 
 
 url: https://zizhguo.github.io
 # your url: http://USERNAME.github.io
