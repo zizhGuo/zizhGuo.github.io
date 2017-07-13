@@ -15,32 +15,41 @@ author: zizhguo
 
 
 [2017年7月09日](2017-07-13-Github-Page-学习心得及总结.md#2017年7月09日)
+
 [2017年7月12日](2017-07-13-Github-Page-学习心得及总结.md#2017年7月12日)
+
 [2017年7月13日](2017-07-13-Github-Page-学习心得及总结.md#2017年7月13日)
 
 <p align="center">
-# 2017年7月09日
+## 2017年7月09日
 </p>
 
 ## Tutorials on Youtube
 [视频链接](https://www.youtube.com/watch?v=iWowJBRMtpc&list=PL0CB3OvPhDA_STygmp3sDenx3UpdOMk7P&index=5)
 <iframe width="560" height="310" src="https://www.youtube.com/watch?v=iWowJBRMtpc&list=PL0CB3OvPhDA_STygmp3sDenx3UpdOMk7P&index=5" frameborder="0" allowfullscreen></iframe>>
+
 ## Themes
+
 Themes是已经通过jekyll搭建好的模板，包含了所需要的各种配置文件，只需要修改config.yml还有post里面的文章即可更换内容，但是规划形式被限制，需要自己修改或者重新配置。
 
 ## 模板
 [Github模板列表](https://github.com/jekyll/jekyll/wiki/Themes)
 我选用的模板:
 [Indigo](http://koppl.in/indigo/) | [Demo](https://github.com/sergiokopplin/indigo)
+
 So simple模板是一个文档完善的模板，里面的内容可以借鉴
 [So simple](https://mmistakes.github.io/so-simple-theme/articles/sample-post-images/)
+
 tale 模板是我一个比较喜欢的极简风格模板，但是没有头像，所以暂时不用：
 [Tale](https://chesterhow.github.io/tale/)
 
 ## Post&Markdown
 post新博文用的语言是markdown，通过code editor工具来实现创建新文件，也可以在github网站上创建新文件，但是网页编程会出现跳行问题（不知道是不是edge浏览器的问题），网络推荐用sublime。同时谷歌搜索markdown editor会出现一些在线online 编辑器，可以实现左右对照。
+
 Sublime官网：[https://www.sublimetext.com/](https://www.sublimetext.com/)
+
 Markdown官网：[https://daringfireball.net/](https://daringfireball.net/)
+
 Markdown Editor on Visual Studio: [https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MarkdownEditor](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MarkdownEditor)
 
 ## Jekylly
@@ -49,7 +58,7 @@ Markdown Editor on Visual Studio: [https://marketplace.visualstudio.com/items?it
 ### 一些技巧
 - Index为主页，放在根目录，以其他页面命名的页面放在根目录,则会对应生成相应的URL
 
--一些技术博客：[http://blog.csdn.net/marksinoberg/article/details/51375953](http://blog.csdn.net/marksinoberg/article/details/51375953)
+- 一些技术博客：[http://blog.csdn.net/marksinoberg/article/details/51375953](http://blog.csdn.net/marksinoberg/article/details/51375953)
 [http://www.cnblogs.com/crazyant007/p/4220066.html](http://www.cnblogs.com/crazyant007/p/4220066.html)
 [http://krisyu.github.io/](http://krisyu.github.io/)(此博客后面有作者搜集的其他技术博客列表)
 
@@ -63,7 +72,7 @@ Markdown Editor on Visual Studio: [https://marketplace.visualstudio.com/items?it
 {% endhighlight %}
 
 <p align="center">
-# 2017年7月12日
+## 2017年7月12日
 </p>
 
 学会了一些html和markdown的基本语法，可以顺利行文书写博客，包括插入图片，图片排版，插入emoji表情（需要根据图片resolution来选择），根目录下各文件夹配置文件功能部分摸清，layouts里面是页面的排版，排版文件为html，可以include别的文件，类似oop编程原理。posts里为博文，不需描述。includes里为每种页面中不同模块，比如作者模块，header模块，footer模块，也是html编写，现在还需了解sass文件价的功能，以及如何开始从头配置网站，而不是先利用模板再改。
@@ -80,12 +89,14 @@ xxx.github.com/assets/profile.jpg
 {% endhighlight %}
 
 <p align="center">
-# 2017年7月13日
+## 2017年7月13日
 </p>
 
 一篇相当详细的中文博文阐述SVG矢量图片的介绍和使用：
 [http://www.w3cplus.com/svg/how-to-create-an-icon-system-using-svg-symbols.html](http://www.w3cplus.com/svg/how-to-create-an-icon-system-using-svg-symbols.html)
+
 获得SVG的方法，在图片上点击右键选择inspect element
+
 SVG资源：
 [https://icomoon.io/app/#/select](https://icomoon.io/app/#/select)
 [https://simpleicons.org/](https://icomoon.io/app/#/select)
