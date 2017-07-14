@@ -6,6 +6,7 @@ layout: page
 
 <p>Currently I am a masters' student majoring in Game Design & Develeopment at Rochester Institute of Technology. Dedicated to becoming a professional game developer. </p>
 
+<!--
 <h2>Education</h2>
 <ul class="education-list">
 	<li>08/2016 - present: Rochester Institute of Technology(RIT)                    Rochester, NY</li>
@@ -32,10 +33,16 @@ layout: page
 	<li>Markdown(for blog posting)</li>		
 	
 </ul>
+-->
+---
 <h2>Projects</h2>
 
-<p>02/2017 - present:	VR Martial Arts </p>
-<p>System Programmer using .NET audio API captured PCM encoded data from audio source, and using Beat Detection Algorithm to processing data, then implement it into VR Martial Arts scripts. The algorithm can be used for hitting target spawning system that targets spawn following the tempos of BGM or environmental visual effects. </p>
+<p>02/2017 - 05/2017:	VR Martial Arts </p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v8Jw8rfWWIM" frameborder="0" allowfullscreen></iframe>
+
+<p>Using .NET audio API called NAudio to capture PCM encoded data from audio source, and using Beat Detection Algorithm(comparing instant sound energy with average sound energy) to processing data, then implement it into VR Martial Arts scripts. The algorithm can be used for hitting target spawning system that targets spawn following the tempos of BGM.Semester's project from Independent Study Course at RIT first year master GDD major. This game mode is modified by Original VR Martial arts which is exhibited at IMAGIN RIT 2017 Festival.
+</p>
 
 <p><br /></p>
 <p>09/2015 - 06/2016:   <a href="https://youtu.be/P91Bkuq6pZ8/">The Motion Design of Six-Degree Freedom Robot Arm </a></p>

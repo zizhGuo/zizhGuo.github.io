@@ -70,7 +70,7 @@ Markdown Editor on Visual Studio: [https://marketplace.visualstudio.com/items?it
 ---
 
 <p align="center">
-<h2>2017年7月12日</h2> 
+<h1>2017年7月12日</h1> 
 </p>
 
 学会了一些html和markdown的基本语法，可以顺利行文书写博客，包括插入图片，图片排版，插入emoji表情（需要根据图片resolution来选择），根目录下各文件夹配置文件功能部分摸清，layouts里面是页面的排版，排版文件为html，可以include别的文件，类似oop编程原理。posts里为博文，不需描述。includes里为每种页面中不同模块，比如作者模块，header模块，footer模块，也是html编写，现在还需了解sass文件价的功能，以及如何开始从头配置网站，而不是先利用模板再改。
