@@ -37,7 +37,7 @@ layout: page
 ---
 <h2>Projects</h2>
 
-<p>02/2017 - 05/2017:	VR Martial Arts </p>
+<h3>02/2017 - 05/2017:	VR Martial Arts </h3>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/v8Jw8rfWWIM" frameborder="0" allowfullscreen></iframe>
 
@@ -45,10 +45,10 @@ layout: page
 </p>
 
 <p><br /></p>
-<p>09/2015 - 06/2016:   <a href="https://youtu.be/P91Bkuq6pZ8/">The Motion Design of Six-Degree Freedom Robot Arm </a></p>
+<h3>09/2015 - 06/2016:   <a href="https://youtu.be/P91Bkuq6pZ8/">The Motion Design of Six-Degree Freedom Robot Arm </a></h3>
 <p>Graduate Design project using C language to program an embedded system to operate single chip processer STC89C51. Designing and welding the integrated circuit board. Algorithm developed to triggering robot arm to move by receiving the human voice from microphone head. </p>
 
 <p><br /></p>
-<p>11/2015 - 12/2015:	<a href="https://youtu.be/6eqLVrvtyuQ/">Catnap </a> </p>
+<h3>11/2015 - 12/2015:	<a href="https://youtu.be/6eqLVrvtyuQ/">Catnap </a> </h3>
 <p>Game Designer for gameplay designing and level designing using Unity3D to implement assets to create whole scene for the first time. A 2D side-scrolling platformer made in 3D format but demonstrated in 2D vision with Orthographic Camera. </p>
 	
