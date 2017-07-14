@@ -45,6 +45,3 @@ layout: page
 <p>11/2015 - 12/2015:	<a href="https://youtu.be/6eqLVrvtyuQ/">Catnap </a> </p>
 <p>Game Designer for gameplay designing and level designing using Unity3D to implement assets to create whole scene for the first time. A 2D side-scrolling platformer made in 3D format but demonstrated in 2D vision with Orthographic Camera. </p>
 	
-
-## Projects
-
