@@ -35,6 +35,7 @@ layout: page
 </ul>
 -->
 ---
+<<<<<<< HEAD
 
 <p>
 I remembered Atlanta, becasue I can remember Brie.
@@ -63,6 +64,8 @@ No man is an island.
 
 
 </p>
+=======
+>>>>>>> d876fabcc8628cf7188db11217c8ea7ca3461adc
 <!--
 <h2>Projects</h2>
 
@@ -80,4 +83,8 @@ No man is an island.
 <p><br /></p>
 <h3>11/2015 - 12/2015:	<a href="https://youtu.be/6eqLVrvtyuQ/">Catnap </a> </h3>
 <p>Game Designer for gameplay designing and level designing using Unity3D to implement assets to create whole scene for the first time. A 2D side-scrolling platformer made in 3D format but demonstrated in 2D vision with Orthographic Camera. </p>
+<<<<<<< HEAD
 -->
+=======
+-->
+>>>>>>> d876fabcc8628cf7188db11217c8ea7ca3461adc
