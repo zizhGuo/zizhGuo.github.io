@@ -35,6 +35,35 @@ layout: page
 </ul>
 -->
 ---
+
+<p>
+I remembered Atlanta, becasue I can remember Brie.
+I remembered Nashvile, becasue I can remember Meiyi.
+I remembered New Orleans, becasue I can remember Mariesha and Henna.
+I remembered San Francisco, because I can remember Kim.
+I remembered Here Rochester, becasue I can remember my friends, professors and lovely people at RIT.
+I can remember becasue of the people I met.
+
+Every piece of my memories makes of me.
+The people I've met make me remember at some time, 
+I was there being with them.
+What I want to make is not a cold, 
+disposable, recreational product. 
+Instead, 
+the SOUL.
+
+Game is not just about game.
+Game is people.
+I remembered Bioshock: Infinite because of Booker and Elizabeth.
+I remembered Dishornored becasue of Korvo and Emily.
+I remembered Witcher3 becasue of Geralt and Yennefer.
+
+
+No man is an island.
+
+
+</p>
+<!--
 <h2>Projects</h2>
 
 <h3>02/2017 - 05/2017:	VR Martial Arts </h3>
@@ -51,4 +80,4 @@ layout: page
 <p><br /></p>
 <h3>11/2015 - 12/2015:	<a href="https://youtu.be/6eqLVrvtyuQ/">Catnap </a> </h3>
 <p>Game Designer for gameplay designing and level designing using Unity3D to implement assets to create whole scene for the first time. A 2D side-scrolling platformer made in 3D format but demonstrated in 2D vision with Orthographic Camera. </p>
-	
+-->
