@@ -35,7 +35,7 @@ layout: page
 </ul>
 -->
 ---
-
+<!-->
 <p>I remembered Atlanta, becasue I can remember Brie.</p>
 <p>I remembered Nashvile, becasue I can remember Meiyi.</p>
 <p>I remembered New Orleans, becasue I can remember Mariesha and Henna.</p>
@@ -61,7 +61,7 @@ layout: page
 <p><br /></p>
 
 <p>No man is an island.</p>
-
+<-->
 
 <!--
 <h2>Projects</h2>
