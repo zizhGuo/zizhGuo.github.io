@@ -35,34 +35,6 @@ layout: page
 </ul>
 -->
 ---
-<!-->
-<p>I remembered Atlanta, becasue I can remember Brie.</p>
-<p>I remembered Nashvile, becasue I can remember Meiyi.</p>
-<p>I remembered New Orleans, becasue I can remember Mariesha and Henna.</p>
-<p>I remembered San Francisco, because I can remember Kim.</p>
-<p>I remembered Here Rochester, becasue I can remember my friends, professors and lovely people at RIT.</p>
-<p>I can remember becasue of the people I met.</p>
-<p><br /></p>
-
-<p>Every piece of my memories makes of me.</p>
-<p>The people I've met make me remember at some time, </p>
-<p>I was there being with them.</p>
-<p>What I want to make is not a cold, </p>
-<p>disposable, recreational product. </p>
-<p>Instead, </p>
-<p>the SOUL.</p>
-<p><br /></p>
-
-<p>Game is not just about game.</p>
-<p>Game is people.</p>
-<p>I remembered Bioshock: Infinite because of Booker and Elizabeth.</p>
-<p>I remembered Dishornored becasue of Korvo and Emily.</p>
-<p>I remembered Witcher3 becasue of Geralt and Yennefer.</p>
-<p><br /></p>
-
-<p>No man is an island.</p>
-<-->
-
 <!--
 <h2>Projects</h2>
 
@@ -82,4 +54,3 @@ layout: page
 <p>Game Designer for gameplay designing and level designing using Unity3D to implement assets to create whole scene for the first time. A 2D side-scrolling platformer made in 3D format but demonstrated in 2D vision with Orthographic Camera. </p>
 <<<<<<< HEAD
 -->
-
