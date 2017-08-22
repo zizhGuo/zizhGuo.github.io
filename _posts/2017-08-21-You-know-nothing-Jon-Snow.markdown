@@ -25,4 +25,4 @@ It takes 3 episodes to finally convinced Jon to give himself up for his pride re
 
 Squad Goals!
 
-<a data-pin-do="embedPin" href="https://www.pinterest.com/pin/456200637246573662/"></a>
+<a data-pin-do="embedPin" data-pin-width="large" href="https://www.pinterest.com/pin/456200637246573662/"></a>
