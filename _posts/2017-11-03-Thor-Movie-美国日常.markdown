@@ -1,7 +1,7 @@
 ---
-title: "Github Page学习心得及总结"
+title: "日常随笔"
 layout: post
-date: 2017-07-13 11:58PM
+date: 2017-11-03 11:58PM
 image: /assets/header/forest.jpg
 headerImage: true
 tag:
