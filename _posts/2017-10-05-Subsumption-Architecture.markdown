@@ -40,20 +40,10 @@ Layer 3: Health system added. If the health portion of wolf is under 30, health 
 ---
 ### Wander
  
+![Illustration Image]({{site.url}}/assets/images/subsumption/wander.png)
 
-<div class="side-by-side">
-    
-    <div class="toleft">
-	
-	![Illustration Image]({{site.url}}/assets/images/subsumption/wander.png)
-        
-    <figcaption class="caption"> by Zizhun</figcaption>
-    </div>
+By using Vector.Reflect() function from Unity.Engine Library can character avoid obstacle with raycast the obstacle that is in the front direction of character.</p>
 
-<div class="toright">
-        <p>By using Vector.Reflect() function from Unity.Engine Library can character avoid obstacle with raycast the obstacle that is in the front direction of character.</p>
-    </div>
-</div>
 
 ### Avoidance
 
