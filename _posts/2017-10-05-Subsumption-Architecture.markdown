@@ -6,7 +6,7 @@ image: /assets/header/forest.jpg
 headerImage: true
 projects: true
 tag:
-- blogtest
+- projects
 category: project
 author: zizhguo
 ---
@@ -28,7 +28,7 @@ For those Chicken(Food) and Wolves(Character), sensory system is built under Obj
 ## Subsumption Architecture
 
 <figure>
-  <a href="{{site.url}}/assets/images/subsumption/sub-arc.JPG"><img src="{{site.url}}/assets/images/subsumption/sub-arc.JPG" alt="image">
+  <a href="zizhguo.github.com/assets/images/subsumption/sub-arc.PNG"><img src="{{site.url}}/assets/images/subsumption/sub-arc.PNG" alt="image">
 </a>
 </figure>
 
@@ -40,34 +40,32 @@ Layer 3: Health system added. If the health portion of wolf is under 30, health 
 ## Steering Control
 
 ---
-
-### Wandering
-
-<div class="side-by-side">
-    <div class="toleft">
-        <a href="{{site.url}}/assets/images/subsumption/reflect.JPG"><img src="{{site.url}}/assets/images/subsumption/reflect.JPG" alt="image">
-</a>
-        <figcaption class="caption">Photo by John Doe</figcaption>
-    </div>
-<div class="toright">
-        <p>Create a circle parallel to ground surface in front of character. 
-Randomize the position of pointer object, and Vector that starts from character to pointer object would be created and and truncation and direction of Vector would be using for create the acceleration and moving direction.</p>
-    </div>
-</div>
-
-
-### Avoidance
+### Wander
  
 
 <div class="side-by-side">
     <div class="toleft">
-        <a href="{{site.url}}/assets/images/subsumption/wander.JPG"><img src="{{site.url}}/assets/images/subsumption/wander.JPG" alt="image">
+        <a href="{{site.url}}/assets/images/subsumption/wander.PNG"><img src="{{site.url}}/assets/images/subsumption/wander.PNG" alt="image">
 </a>
-        <figcaption class="caption">Photo by John Doe</figcaption>
+        <figcaption class="caption"> by Zizhun</figcaption>
     </div>
 
 <div class="toright">
         <p>By using Vector.Reflect() function from Unity.Engine Library can character avoid obstacle with raycast the obstacle that is in the front direction of character.</p>
+    </div>
+</div>
+
+### Avoidance
+
+<div class="side-by-side">
+    <div class="toleft">
+        <a href="{{site.url}}/assets/images/subsumption/reflect.PNG"><img src="{{site.url}}/assets/images/subsumption/reflect.PNG" alt="image">
+</a>
+        <figcaption class="caption">from Unity Manual</figcaption>
+    </div>
+<div class="toright">
+        <p>Create a circle parallel to ground surface in front of character. 
+Randomize the position of pointer object, and Vector that starts from character to pointer object would be created and and truncation and direction of Vector would be using for create the acceleration and moving direction.</p>
     </div>
 </div>
 
