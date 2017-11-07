@@ -47,17 +47,20 @@ By using Vector.Reflect() function from Unity.Engine Library can character avoid
 
 ### Avoidance
 
+![Illustration Image]({{site.url}}/assets/images/subsumption/reflect.png)
+
 <div class="side-by-side">
     <div class="toleft">
-        <a href="{{site.url}}/assets/images/subsumption/reflect.PNG"><img src="{{site.url}}/assets/images/subsumption/reflect.PNG" alt="image">
-</a>
-        <figcaption class="caption">from Unity Manual</figcaption>
+        <img class="image" src="{{site.url}}/assets/images/subsumption/reflect.png" alt="Alt Text">
+        <figcaption class="caption">by Unity Manual</figcaption>
     </div>
 <div class="toright">
-        <p>Create a circle parallel to ground surface in front of character. 
+       <p>Create a circle parallel to ground surface in front of character. 
 Randomize the position of pointer object, and Vector that starts from character to pointer object would be created and and truncation and direction of Vector would be using for create the acceleration and moving direction.</p>
     </div>
 </div>
+
+
 
 ### Seek
 
