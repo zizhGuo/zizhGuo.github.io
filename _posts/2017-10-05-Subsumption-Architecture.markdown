@@ -27,10 +27,8 @@ For those Chicken(Food) and Wolves(Character), sensory system is built under Obj
 
 ## Subsumption Architecture
 
-<figure>
-  <a href="zizhguo.github.com/assets/images/subsumption/sub-arc.PNG"><img src="{{site.url}}/assets/images/subsumption/sub-arc.PNG" alt="image">
-</a>
-</figure>
+![Illustration Image]( {{site.url}}/assets/images/subsumption/sub-arc.PNG)
+
 
 Layer 0: Basic sonar sensory system that implement obstacle avoidance(behavoir) function  to wolf. 
 Layer 1: Wander  behavior added. Wander behavior can subsume avoidance behavior.
@@ -45,8 +43,7 @@ Layer 3: Health system added. If the health portion of wolf is under 30, health 
 
 <div class="side-by-side">
     <div class="toleft">
-        <a href="{{site.url}}/assets/images/subsumption/wander.PNG"><img src="{{site.url}}/assets/images/subsumption/wander.PNG" alt="image">
-</a>
+	![Illustration Image]( {{site.url}}/assets/images/subsumption/wander.PNG)
         <figcaption class="caption"> by Zizhun</figcaption>
     </div>
 
