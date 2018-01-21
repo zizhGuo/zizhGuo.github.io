@@ -1,5 +1,5 @@
 ---
-title: "You know nothing, Jon Snow"
+/title: "You know nothing, Jon Snow"
 layout: post
 date: 2017-08-21 23:06
 image: /assets/header/forest.jpg

@@ -1,5 +1,5 @@
 ---
-title: "Blog Post Testing 博文发表测试"
+/title: "Blog Post Testing 博文发表测试"
 layout: post
 date: 2017-07-09 23:27
 image: /assets/header/shipinbottle.jpg
