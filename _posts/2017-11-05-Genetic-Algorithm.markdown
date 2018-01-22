@@ -11,6 +11,8 @@ category: project
 author: zizhguo
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KDnNOm02So8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 # 1.	Your creature implementation details
 ## 1.1	Creature and obstacles
 In this giant cubic space, there would be couples of asteroids floating and spinning (See figure1.2). There would be 10 spaceships (See also figure1.2) from current population as assigned creatures who would be spawned at center bottom of cubic scene at beginning of each simulation. Each spaceship has a single chromosome which contains 10 genes whereas each gene represents a specific location as form of Vector3 implemented in Unity. (See figure1.1)

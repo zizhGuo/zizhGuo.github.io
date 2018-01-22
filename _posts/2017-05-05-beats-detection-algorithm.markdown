@@ -2,7 +2,7 @@
 title: "BeatBlade - Beats Detection Algorithm"
 layout: post
 date: 2017-5-05 16:36
-image: /assets/header/sub-arc_title_image.PNG
+image: /assets/header/forest.jpg
 headerImage: true
 projects: true
 tag:
