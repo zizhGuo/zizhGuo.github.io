@@ -25,3 +25,6 @@ author: zizhguo
 ##Pay specificly attention to this:
 
 Changes made in one scene would no be mapped in another scene. Just try to refresh it by click other stuff and toggle back.
+
+
+![Illustration Image]( {{site.url}}/assets/images/DoubleUnity/DuplicateUnityScene.png)
