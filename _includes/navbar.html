@@ -1,0 +1,20 @@
+<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    {% if page.title == "Home" %}
+    <a href="#" class="navbar-brand">ZIZHUN GUO</a>
+    {% else %}
+    <a href="{{"/index.html" | prepend: site.url}}" class="navbar-brand">ZIZHUN GUO</a>
+    {% endif %}
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end" >
+            <li class="nav-item">
+                <a href="{{"/about.html" | prepend: site.url}}" class="nav-link">ABOUT</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
