@@ -1,30 +1,31 @@
 <div class="row px-0 justify-content-end" id="post-div">
+
 	{% if page.title == "Home" %}			
-	<div class="col-sm-3 col-md-2 pt-5 bg-white hometitle">
-		<a href="#" class="btn p-0 active">POSTS</a>
+	<div class="col-sm-3 col-md-2 pt-5 bg-white hometitle" id="left-navtag">
+		<a href="#" class="btn p-0 active">ARTICLES</a>
 	</div>
 	{% else %}
-	<div class="col-sm-3 col-md-2 pt-5 bg-white hometitle">
-		<a href="./index.html" class="btn p-0">POSTS</a>
+	<div class="col-sm-3 col-md-2 pt-5 bg-white hometitle" id="left-navtag">
+		<a href="./index.html" class="btn p-0">ARTICLES</a>
 	</div>
 	{% endif %}
 
 	{% if page.title == "Thoughts" %}			
-	<div class="col-sm-3 col-md-2 pt-sm-5 bg-white hometitle">
-		<a href="#" class="btn p-0 active ">THOUGHTS</a>
+	<div class="col-sm-3 col-md-2 pt-sm-5 bg-white hometitle" id="left-navtag">
+		<a href="#" class="btn p-0 active ">PROJECTS</a>
 	</div>
 	{% else %}
-	<div class="col-sm-3 col-md-2 pt-sm-5 bg-white hometitle">
-		<a href="./thoughts.html" class="btn p-0 ">THOUGHTS</a>
+	<div class="col-sm-3 col-md-2 pt-sm-5 bg-white hometitle" id="left-navtag">
+		<a href="./thoughts.html" class="btn p-0 ">PROJECTS</a>
 	</div>
 	{% endif %}
 
 	{% if page.title == "Moments" %}			
-	<div class="col-sm-3 col-md-2 pt-sm-5 bg-white hometitle">
+	<div class="col-sm-3 col-md-2 pt-sm-5 bg-white hometitle" id="left-navtag">
 		<a href="#" class="btn p-0 active ">MOMENTS</a>
 	</div>
 	{% else %}
-	<div class="col-sm-3 col-md-2 pt-sm-5 bg-white hometitle ">
+	<div class="col-sm-3 col-md-2 pt-sm-5 bg-white hometitle" id="left-navtag">
 		<a href="./moments.html" class="btn p-0">MOMENTS</a>
 	</div>
 	{% endif %}

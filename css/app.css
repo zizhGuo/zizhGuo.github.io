@@ -1,4 +1,4 @@
-		body {
+body {
 			/*Color need to be changed!*/
 			/*background: #212529;*/
 			background: white;
@@ -13,8 +13,8 @@
 		}
 
 		#mainNavbar .nav-link {
-			color: white;
-			font-size: 1rem;
+			color: black;
+			font-size: 1.2rem;
 		}
 
 		#mainNavbar .nav-link:hover {
@@ -28,7 +28,7 @@
 		}
 
 		.navbar.scrolled {
-   			background: rgba(33,37,41, 1);
+   			/*background: rgba(33,37,41, 1);*/
     		transition: background 500ms;
 		}
 		.navbar-toggler {
@@ -65,11 +65,13 @@
 			margin-top: 2rem;
 			margin-bottom: 2rem;
 			/*margin-bottom: 2rem;*/
-			border: 2px solid red;*/
+			/*border: 2px solid red;*/*/
 		}
 		.container-fluid {
-			margin-left: 10rem;
+			/*margin-left: 10rem;*/
+			padding-left: 0rem;
 			height: 100%;
+			/*border: 2px solid red;*/
 		}
 
 		 .nav-tabs  {
@@ -80,8 +82,13 @@
     		margin-top: 20px;
     		color:orange;
 		}
-		a {
+
+		#post-div div a {
 			color: black;
+			font-size: 1.4rem;
+		}
+		#post-div div a:hover {
+			color: red;
 		}
 
 		.nav-bar a {
@@ -99,6 +106,29 @@
 		}
 		#page-nav {
 			background: black;
+		}
+		#left-navtag {
+			padding-left: 2rem;
+		}
+		.hometitle a,.hometitle a:link{
+		    color:#000;
+		    text-decoration:none;
+		    position:relative;
+		    padding:10px 15px;
+		}
+		.hometitle a:after{
+		    content: "";
+		    width: 0;
+		    height: 1px;
+		    background: red;
+		    position: absolute;
+		    bottom: 0;
+		    left: 50%;
+		    transition: all .2s;
+		}
+		.hometitle a:hover:after,.hometitle a.active:after{
+		    left: 0%;
+		    width: 100%;
 		}
 		@media (max-width: 1200px) {
 			.blurb h2 {

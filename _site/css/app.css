@@ -1,4 +1,4 @@
-		body {
+body {
 			/*Color need to be changed!*/
 			/*background: #212529;*/
 			background: white;
@@ -34,7 +34,6 @@
 		.navbar-toggler {
 			/*Color need to be changed!*/
 			background: #EA1C2C;
-			/*background: blue;*/
 		}
 
 		.container {
@@ -83,27 +82,17 @@
     		margin-top: 20px;
     		color:orange;
 		}
-		a {
+
+		#post-div div a {
 			color: black;
+			font-size: 1.4rem;
 		}
-		
-		#post-div a:hover {
-			/*background: blue;*/
+		#post-div div a:hover {
 			color: red;
 		}
 
-		#post-div a:active {
-			/*background: blue;*/
-			color: red
-		}
-		
-		#post-div a {
-			/*background: blue;*/
-			color: black
-		}
-
 		.nav-bar a {
-			color: white;
+			color: black;
 		}
 
 		.post-container {
@@ -118,54 +107,31 @@
 		#page-nav {
 			background: black;
 		}
-
-
-/*	.hometitle {
-	    color:#000;
-    	text-decoration:none;
-    	position:relative;
-    	padding:10px 15px;
-	}
-	.hometitle:after {
-	    content: "";
-    	width: 0;
-   	 	height: 3px;
-    	background: red;
-    	position: absolute;
-    	bottom: 0;
-    	left: 50%;
-    	transition: all .2s;
-	}
-
-
-	#post-div div:hover ::after{
-	    left: 0%;
-    	width: 100%;
-	}*/
-
-	.hometitle a{
-		font-size: 1.3rem;
-	    text-decoration:none;
-	    position:relative;
-	    padding:10px 15px;
-	}
-	.hometitle a:after{
-	    content: "";
-	    width: 0;
-	    height: 1px;
-	    background: red;
-	    position: absolute;
-	    bottom: 0;
-	    left: 50%;
-	    transition: all .2s;
-	}
-	.hometitle a:hover:after, .hometitle a.active:after{
-	    left: 0%;
-	    width: 100%;
-	}
-
-	@media (max-width: 1200px) {
-		.blurb h2 {
-			font-size: 2rem;
+		#left-navtag {
+			padding-left: 2rem;
 		}
-	}
+		.hometitle a,.hometitle a:link{
+		    color:#000;
+		    text-decoration:none;
+		    position:relative;
+		    padding:10px 15px;
+		}
+		.hometitle a:after{
+		    content: "";
+		    width: 0;
+		    height: 1px;
+		    background: red;
+		    position: absolute;
+		    bottom: 0;
+		    left: 50%;
+		    transition: all .2s;
+		}
+		.hometitle a:hover:after,.hometitle a.active:after{
+		    left: 0%;
+		    width: 100%;
+		}
+		@media (max-width: 1200px) {
+			.blurb h2 {
+				font-size: 2rem;
+			}
+		}
