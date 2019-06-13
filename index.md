@@ -5,4 +5,5 @@
 layout: page
 title: Home
 img-bg: chengdu.jpg
+category: Articles
 ---

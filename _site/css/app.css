@@ -130,6 +130,25 @@ body {
 		    left: 0%;
 		    width: 100%;
 		}
+
+		/*auto set scroll bar*/
+		html {
+		  overflow-y: scroll;
+		}
+
+		:root {
+		  overflow-y: auto;
+		  overflow-x: hidden;
+		}
+
+		:root body {
+		  position: absolute;
+		}
+
+		body {
+		  width: 100vw;
+		  overflow: hidden;
+		}
 		@media (max-width: 1200px) {
 			.blurb h2 {
 				font-size: 2rem;
