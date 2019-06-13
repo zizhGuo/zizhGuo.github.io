@@ -1,4 +1,4 @@
-body {
+		body {
 			/*Color need to be changed!*/
 			/*background: #212529;*/
 			background: white;
@@ -130,8 +130,6 @@ body {
 		    left: 0%;
 		    width: 100%;
 		}
-
-		/*auto set scroll bar*/
 		html {
 		  overflow-y: scroll;
 		}

@@ -1,4 +1,4 @@
-body {
+		body {
 			/*Color need to be changed!*/
 			/*background: #212529;*/
 			background: white;
@@ -129,6 +129,23 @@ body {
 		.hometitle a:hover:after,.hometitle a.active:after{
 		    left: 0%;
 		    width: 100%;
+		}
+		html {
+		  overflow-y: scroll;
+		}
+
+		:root {
+		  overflow-y: auto;
+		  overflow-x: hidden;
+		}
+
+		:root body {
+		  position: absolute;
+		}
+
+		body {
+		  width: 100vw;
+		  overflow: hidden;
 		}
 		@media (max-width: 1200px) {
 			.blurb h2 {
