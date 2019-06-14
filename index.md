@@ -4,6 +4,6 @@
 
 layout: page
 title: Home
-img-bg: chengdu.jpg
+img-bg: caotang1.jpg
 category: Articles
 ---

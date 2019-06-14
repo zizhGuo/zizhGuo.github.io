@@ -13,6 +13,7 @@
 		}
 
 		#mainNavbar .nav-link {
+			font-family: 'Inconsolata', monospace;
 			color: black;
 			font-size: 1.2rem;
 		}
@@ -23,8 +24,13 @@
 		}
 
 		#mainNavbar .navbar-brand {
-			color: #EA1C2C;
-			font-size: 1.5rem;
+			/*color: #EA1C2C;*/
+			padding-left: 0.2rem;
+			padding-right: 0.2rem;
+			font-family: 'Inconsolata', monospace;
+			color: white;
+			background: black;
+			font-size: 1.3rem;
 		}
 
 		.navbar.scrolled {
@@ -111,6 +117,7 @@
 			padding-left: 2rem;
 		}
 		.hometitle a,.hometitle a:link{
+			font-family: 'Inconsolata', monospace;
 		    color:#000;
 		    text-decoration:none;
 		    position:relative;
@@ -146,6 +153,11 @@
 		body {
 		  width: 100vw;
 		  overflow: hidden;
+		}
+
+		div p {
+			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+			/*font-family: 'Inconsolata', monospace;*/
 		}
 		@media (max-width: 1200px) {
 			.blurb h2 {

@@ -1,6 +1,6 @@
 ---
 layout: page
 title: Moments
-img-bg: chengdu3.jpg
+img-bg: chengdu1.jpg
 category: Moments
 ---
