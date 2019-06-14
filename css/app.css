@@ -92,6 +92,7 @@
 		#post-div div a {
 			color: black;
 			font-size: 1.4rem;
+			height: 100%;
 		}
 		#post-div div a:hover {
 			color: red;
@@ -153,6 +154,7 @@
 		body {
 		  width: 100vw;
 		  overflow: hidden;
+		  /*height: 100%;*/
 		}
 
 		div p {
