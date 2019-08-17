@@ -108,7 +108,6 @@
 			width: 100%;
 		}
 		#page-container {
-			/*color: blue;*/
 			width: 70%;
 		}
 		#page-nav {
@@ -160,6 +159,9 @@
 		div p {
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
 			/*font-family: 'Inconsolata', monospace;*/
+		}
+		.jumbontron {
+			color: red;
 		}
 		@media (max-width: 1200px) {
 			.blurb h2 {
