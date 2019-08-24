@@ -4,6 +4,7 @@
 			background: white;
 			/*background: white;*/
 			font-family: "Nunito", sans-serif;
+			/*font-family: 'Inconsolata', monospace;*/
 		}
 
 		#mainNavbar {
@@ -158,11 +159,65 @@
 
 		div p {
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+			padding-left: 4rem;
+			/*padding-right: 10rem;*/
 			/*font-family: 'Inconsolata', monospace;*/
 		}
-		.jumbontron {
-			color: red;
+		div ol li {
+			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+			margin-left: 2rem;
 		}
+		div li {
+			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+			margin-left: 2rem;
+		}
+		div blockquote{
+			margin-left: 5rem;
+			margin-right: 5rem;
+		}
+		div blockquote p{
+			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+			font-style: normal;
+		/*	margin-left: 5rem;*/
+			/*font-family: "Nunito", sans-serif;*/
+		}
+		div h1{
+			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+		}
+		div h3{
+			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+		}
+		div h5{
+			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+			margin-left: 1rem;
+		}
+		div h6{
+			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+			margin-left: 3rem;
+			margin-top: 2rem;
+		}
+		div ul li{
+			/*margin-left: 3rem;*/
+		}
+		div h2, h3, h4, h5, h6{
+			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+		}
+		.display-3{
+			font-size: 3rem;
+		}
+		#page-container .jumbontron {
+			color: red;
+			padding: 0rem 0rem;
+		}
+
+		p { 
+			line-height: 35px;
+			margin-bottom: 4rem;
+		} 
+
+/*		div p img{
+			margin-left: 5em;
+		}*/
 		@media (max-width: 1200px) {
 			.blurb h2 {
 				font-size: 2rem;

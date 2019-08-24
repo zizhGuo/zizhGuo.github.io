@@ -1,4 +1,198 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-16T23:11:51-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">背影</title><link href="http://localhost:4000/jekyll/update/articles/2019/06/04/welcome-to-jekyll.html" rel="alternate" type="text/html" title="背影" /><published>2019-06-04T19:34:06-04:00</published><updated>2019-06-04T19:34:06-04:00</updated><id>http://localhost:4000/jekyll/update/articles/2019/06/04/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/articles/2019/06/04/welcome-to-jekyll.html">&lt;p&gt;我与父亲不相见已二年余了，我最不能忘记的是他的背影。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-23T23:04:28-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Project Ariticle Writing</title><link href="http://localhost:4000/jekyll/update/articles/2019/08/21/Project-Article-Writing.html" rel="alternate" type="text/html" title="Project Ariticle Writing" /><published>2019-08-21T18:21:06-04:00</published><updated>2019-08-21T18:21:06-04:00</updated><id>http://localhost:4000/jekyll/update/articles/2019/08/21/Project-Article-Writing</id><content type="html" xml:base="http://localhost:4000/jekyll/update/articles/2019/08/21/Project-Article-Writing.html">&lt;blockquote&gt;
+  &lt;p&gt;笔者因为最近准备找工作实习，需要对自己在两到三年内的各种工程项目进行展示，展示途径除了简历上有限篇幅的描述，笔者还自己通过jekyll搭建了一个静态Github Page的个人网站，设计了自己的模板layout，只是苦于文章的架构一直未曾动笔。在参考了很多个人网站和别人的简历后，笔者抛开了一切烦恼杂碎，自问自答逐条分析写得此文来帮助自己撰写技术博文，分享在这里，希望能帮助到大家。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;
+问：你为什么做个人网站？&lt;/p&gt;
+
+&lt;p&gt;答：用来展示我做得项目。&lt;/p&gt;
+
+&lt;p&gt;问：你为什么要展示项目？&lt;/p&gt;
+
+&lt;p&gt;答：因为这样别人就可以更加了解我。&lt;/p&gt;
+
+&lt;p&gt;问：为什么需要别人了解你？&lt;/p&gt;
+
+&lt;p&gt;答：因为别人越了解我，我越有机会得到面试机会？&lt;/p&gt;
+
+&lt;p&gt;问：“别人”是什么人？&lt;/p&gt;
+
+&lt;p&gt;答：主要是HR和技术部门的人吧。&lt;/p&gt;
+
+&lt;p&gt;问：打算项目文章怎么写？&lt;/p&gt;
+
+&lt;p&gt;答：目前的想法是把大部分找准项目核心信息，然后阐述清楚。&lt;/p&gt;
+
+&lt;p&gt;问：什么样的信息算核心信息？&lt;/p&gt;
+
+&lt;p&gt;答：能够精简放入简历的部分。&lt;/p&gt;
+
+&lt;p&gt;问：那一份简历的内容就够了，为什么还要写文章？&lt;/p&gt;
+
+&lt;p&gt;答：简历提供的信息有限，文章可以提供更多有效的信息，&lt;/p&gt;
+
+&lt;p&gt;问：那既然是更多的信息，还算是核心本质的信息吗？&lt;/p&gt;
+
+&lt;p&gt;答：你说的对，核心本质应该可以用几句话就可以概括表述，所以文章提供的不仅是核心本质信息，还应该在此基础上进行扩展。
+问：有想法需要扩展什么吗？&lt;/p&gt;
+
+&lt;p&gt;答：就按照简历中项目描述进行拓展好了。&lt;/p&gt;
+
+&lt;p&gt;问：你觉得这种方式对于文章本身结构好吗？&lt;/p&gt;
+
+&lt;p&gt;答：我觉得现在不是谈结构的时候，结构应该服务于我的文章的定位。&lt;/p&gt;
+
+&lt;p&gt;问：定位？能不能更加具体一点。&lt;/p&gt;
+
+&lt;p&gt;答：能。比如，之前已经谈到，这些项目文章是写给HR和技术部门的人看的，那么目标群体就不是大众，所以内容必须非常专业。&lt;/p&gt;
+
+&lt;p&gt;问：HR可能并不太了解具体的实现原理，写得太专业会不会造成不好理解？&lt;/p&gt;
+
+&lt;p&gt;答：不会。HR关注的是项目的关键词是否合乎招聘的岗位的要求和应聘者对于项目本身的参与度和了解程度。&lt;/p&gt;
+
+&lt;p&gt;问：所以说他们可能看不懂或者错误的估计项目的难易程度？&lt;/p&gt;
+
+&lt;p&gt;答：并不是。其实只需要关键词描述给对就能给不同项目定性，但既然都是toy project或者学校项目，其专业程度跟工业界的要求还是很有差距的。&lt;/p&gt;
+
+&lt;p&gt;问：所以说并不能一概而论对吗？
+答：对。在鱼和熊掌不可兼得的情况下（文章写得专业或由浅入深两种选择中），专业性应该是头等大事，因为我并不寄希望于普通人能够去读我的项目文章，即便是更简单得技术博客文章，一般人也不太可能去读。项目文章的目的就是展示项目本身，通过提供更多的专业性描述进一步展示博客博主的技术水平，增加阅读者对博主的了解。&lt;/p&gt;
+
+&lt;p&gt;问：既然目的非常明确了，我们可以谈项目文章的架构了吗？&lt;/p&gt;
+
+&lt;p&gt;答：可以了，我们已经排除了其他的目标受众群体，比如非专业人士和非招聘人士等。那么文章的结构只需要涵盖最核心的内容以及其扩展就行了。&lt;/p&gt;
+
+&lt;p&gt;问：所以架构是什么呢？&lt;/p&gt;
+
+&lt;p&gt;答：首先第一点是对项目的定性，这个项目是什么样的项目，为什么要做这样的项目，做了这个项目解决了什么问题。解决的问题是从服务于目的分点来谈。&lt;/p&gt;
+
+&lt;p&gt;问：然后呢？&lt;/p&gt;
+
+&lt;p&gt;答：第二点就谈实现工具，HR和技术人员关心的技术部分需要在文章中尽早给出，以便他们没有时间的时候可以提前预览。&lt;/p&gt;
+
+&lt;p&gt;问：技术实现部分需要分点吗？&lt;/p&gt;
+
+&lt;p&gt;答：需要。可以从部署平台，工具使用，语言使用，IDE使用来分别阐述原因。&lt;/p&gt;
+
+&lt;p&gt;问：实现流程需要写进此部分吗？&lt;/p&gt;
+
+&lt;p&gt;答：当然，不能仅仅通过列举来试图“蒙混过关”，需要将其有效的串联在一起。&lt;/p&gt;
+
+&lt;p&gt;问：如何串联？&lt;/p&gt;
+
+&lt;p&gt;答：需要单独一个子部分内容独立于其他以上技术实现部分来描述一个开发流水线。&lt;/p&gt;
+
+&lt;p&gt;问：是否需要提及自己的思考，比如对于整个流程的评判以便有助于后续的开发？&lt;/p&gt;
+
+&lt;p&gt;答：这是一个很好的出发点，一切的学习不能尽停留在项目本身，项目的好与坏目前看来并不重要，更重要的是从每次项目中学习到的方法。&lt;/p&gt;
+
+&lt;p&gt;问：这部分的学习反馈依然在这个技术实现部分吗？&lt;/p&gt;
+
+&lt;p&gt;答：是的。&lt;/p&gt;
+
+&lt;p&gt;问：那接下来呢？&lt;/p&gt;
+
+&lt;p&gt;答：需要说明个人在项目中扮演的角色，具体的职能。&lt;/p&gt;
+
+&lt;p&gt;问：那如果需要说明做了什么工作，那不是会和技术部分的内容相重叠？&lt;/p&gt;
+
+&lt;p&gt;答：不会。如果把个人具体工作和技术实现混在一起反而会让读者抓不住重点，想象一下，你无时无刻都在提及“本人”通过什么技术手段解决了什么问题，这反而可能引起读者的反感。如果单独用一个“Contribution”部分来详细阐述，不仅可以阐述得更清楚，而且读者在之前已经具有项目技术部分的印象，因而对工作职能的体会更深。&lt;/p&gt;
+
+&lt;p&gt;问：听起来不错，所以整个架构是什么呢？&lt;/p&gt;
+
+&lt;p&gt;答：1. 项目做的东西是什么，为什么要做这样的东西，解决了什么问题。2. 软件架构（设计模式），部署平台，实现语言，实现框架，实现流程（开发流水线），反馈总结和提升；3. 个人贡献。
+问：还需要添加什么东西吗？&lt;/p&gt;
+
+&lt;p&gt;答：记住，你不仅是在向别人介绍一个项目，更重要的是介绍自己。你可以适时得增加自己想表达的个性。不过，工程师又是艺术家，听起来很酷，也许需要更有吸引力的措辞，但是记住，这是锦上添花的东西，对于找工作的我们，我们追求的是专业性，这是公司信任我们的必不可少的东西。还有什么问题吗？&lt;/p&gt;
+
+&lt;p&gt;问：好像没有了。&lt;/p&gt;
+
+&lt;p&gt;答：好，让我们撸起袖子好好干吧！&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">笔者因为最近准备找工作实习，需要对自己在两到三年内的各种工程项目进行展示，展示途径除了简历上有限篇幅的描述，笔者还自己通过jekyll搭建了一个静态Github Page的个人网站，设计了自己的模板layout，只是苦于文章的架构一直未曾动笔。在参考了很多个人网站和别人的简历后，笔者抛开了一切烦恼杂碎，自问自答逐条分析写得此文来帮助自己撰写技术博文，分享在这里，希望能帮助到大家。</summary></entry><entry><title type="html">Markdown Syntax Test</title><link href="http://localhost:4000/jekyll/update/articles/2019/08/18/markdown-test.html" rel="alternate" type="text/html" title="Markdown Syntax Test" /><published>2019-08-18T15:34:06-04:00</published><updated>2019-08-18T15:34:06-04:00</updated><id>http://localhost:4000/jekyll/update/articles/2019/08/18/markdown-test</id><content type="html" xml:base="http://localhost:4000/jekyll/update/articles/2019/08/18/markdown-test.html">&lt;h1 id=&quot;first-level-header&quot;&gt;First Level Header&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a block quote.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;美国一位作家&quot;&gt;美国一位作家&lt;/h2&gt;
+  &lt;p&gt;美国一个五年就觉得五年前的自己是个混蛋。&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;Some of these words are emphisized.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A list item.&lt;/p&gt;
+
+    &lt;p&gt;With multiple paragraphs&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Another item in the list.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;A list item.&lt;/p&gt;
+        &lt;p&gt;With multiple paragraphs.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Another item in the list.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Ni hao.&lt;/li&gt;
+  &lt;li&gt;Bu Yong Xie.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is &lt;a href=&quot;https://google.com&quot; title=&quot;Click it for further search&quot;&gt;google&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- Blank line space is important to denote. --&gt;
+&lt;p&gt;我喜欢上&lt;a href=&quot;https://zhihu.com/&quot; title=&quot;知乎&quot;&gt;知乎&lt;/a&gt;更于&lt;a href=&quot;https://baidu.com/&quot; title=&quot;Baidu&quot;&gt;baidu&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pbs.twimg.com/profile_images/1053055123193122816/IUwo6l_Q_400x400.jpg&quot; alt=&quot;杜甫草堂&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/img-bg/caotang1.jpg&quot; alt=&quot;杜甫草堂&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I strongly recommend against using any &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
+
+&lt;p&gt;I wish SmartyPants used named entities like &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;mdash;&lt;/code&gt;
+instead of decimal-encoded entites like &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;#8212;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sphere&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spheres&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;640&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;480&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Vec3f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Vec3f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pixel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invWidth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fov&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aspectratio&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;M_PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fov&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;180.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Trace rays
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pixel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aspectratio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;invHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Vec3f&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;raydir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;raydir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normalize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pixel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Vec3f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;raydir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spheres&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Save result to a PPM image (keep these flags if you compile under Windows)
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ofstream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;./untitled.ppm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ios&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ios&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;binary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;P6&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+    &lt;p&gt;For example.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">First Level Header</summary></entry><entry><title type="html">背影</title><link href="http://localhost:4000/jekyll/update/articles/2019/06/04/welcome-to-jekyll.html" rel="alternate" type="text/html" title="背影" /><published>2019-06-04T19:34:06-04:00</published><updated>2019-06-04T19:34:06-04:00</updated><id>http://localhost:4000/jekyll/update/articles/2019/06/04/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/articles/2019/06/04/welcome-to-jekyll.html">&lt;p&gt;我与父亲不相见已二年余了，我最不能忘记的是他的背影。&lt;/p&gt;
 
 &lt;p&gt;那年冬天，祖母死了，父亲的差使1也交卸了，正是祸不单行的日子。我从北京到徐州，打算跟着父亲奔丧2回家。到徐州见着父亲，看见满院狼藉3的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说：“事已如此，不必难过，好在天无绝人之路！”&lt;/p&gt;
 
@@ -24,4 +218,267 @@
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>朱自清</name></author><category term="Articles" /><summary type="html">我与父亲不相见已二年余了，我最不能忘记的是他的背影。</summary></entry></feed>
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>朱自清</name></author><category term="Articles" /><summary type="html">我与父亲不相见已二年余了，我最不能忘记的是他的背影。</summary></entry><entry><title type="html">Capstone Projects: VR Multiplayer Real-time Interaction Game Application</title><link href="http://localhost:4000/jekyll/update/projects/2018/08/14/Cat-Kart.html" rel="alternate" type="text/html" title="Capstone Projects: VR Multiplayer Real-time Interaction Game Application" /><published>2018-08-14T15:34:06-04:00</published><updated>2018-08-14T15:34:06-04:00</updated><id>http://localhost:4000/jekyll/update/projects/2018/08/14/Cat-Kart</id><content type="html" xml:base="http://localhost:4000/jekyll/update/projects/2018/08/14/Cat-Kart.html">&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/title.png&quot; alt=&quot;drawing&quot; style=&quot;width: 30%;&quot; /&gt;
+&lt;/div&gt;
+
+&lt;!-- MarkdownTOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#project-repo-link&quot;&gt;Project Repo Link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-the-nature-of-this-project&quot;&gt;&lt;strong&gt;1. The nature of this project&lt;/strong&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-what-is-the-game-about&quot;&gt;&lt;strong&gt;1.1 What is the game about?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-what-are-the-reasons-for-this-project-getting-born&quot;&gt;&lt;strong&gt;1.2 What are the reasons for this project getting born?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-what-are-the-those-problems-that-has-been-solved-by-this-project&quot;&gt;&lt;strong&gt;1.3 What are the those problems that has been solved by this project?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#14-how-are-the-project-under-developed&quot;&gt;&lt;strong&gt;1.4 How are the project under developed?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-implementation-detail&quot;&gt;&lt;strong&gt;2. Implementation detail&lt;/strong&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-why-unity-3d&quot;&gt;&lt;strong&gt;2.1. Why Unity 3D?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-why-visual-studio&quot;&gt;&lt;strong&gt;2.2. Why Visual Studio?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#23-why-c-sharpc&quot;&gt;&lt;strong&gt;2.3. Why C-sharp(C#)?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#24-why-sourcetree&quot;&gt;&lt;strong&gt;2.4. Why SourceTree?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#25-what-are-the-major-tech-problems-that-i-met-through-development&quot;&gt;&lt;strong&gt;2.5. What are the major tech problems that I met through development?&lt;/strong&gt;&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#set-up-the-deve-tools-for-efficiency&quot;&gt;&lt;strong&gt;Set up the deve-tools for efficiency&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#make-it-online-to-implement-basic-functionality&quot;&gt;&lt;strong&gt;Make it online to implement basic functionality&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#clearify-what-game-design-features-that-would-utilize-the-unet-api-or-would-need-to-go-on-internet&quot;&gt;&lt;strong&gt;Clearify what game design features that would utilize the UNet API (or would need to go on internet)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#optimization&quot;&gt;&lt;strong&gt;Optimization&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-personal-contribution&quot;&gt;&lt;strong&gt;3. Personal Contribution&lt;/strong&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#31-what-are-the-jobs-i-was-in-charge-for&quot;&gt;&lt;strong&gt;3.1. What are the jobs I was in charge for?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#32-be-more-specific&quot;&gt;&lt;strong&gt;3.2. Be more specific?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#list-them-all&quot;&gt;&lt;strong&gt;[List them all]&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-extra-info&quot;&gt;4. Extra Info&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /MarkdownTOC --&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;This article would mainly talk about the &lt;strong&gt;nature&lt;/strong&gt; of my capstone project with essential &lt;strong&gt;ideas&lt;/strong&gt; and &lt;strong&gt;thoughts&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/poster.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;Catcart: The Begining Poster&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;project-repo-link&quot;&gt;&lt;a href=&quot;https://github.com/zizhGuo/Catcart-Invasion&quot;&gt;Project Repo Link&lt;/a&gt;&lt;/h4&gt;
+
+&lt;!-- # Cat Kart
+&gt;  The project is meant for utilizing all knowledges acquired throughout two-year studying at RIT School Interactive Games and Media to build up a final game project that is fun to play, so that students are able to develop game application in the very professional ways. Mission accomplished! 
+&gt;
+&gt; --- before read
+
+
+&gt; This is a year-long capstone project for a two-year master's program of Game Design and Development at RIT. The project is meant for utilizing all knowledges acquired throughout two-year studying to create a indi-game. The whole process involves varied skills that are necessary for later engineering work, i.e. technologies, tools, cooperation, etc.  --&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-the-nature-of-this-project&quot;&gt;&lt;strong&gt;1. The nature of this project&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;11-what-is-the-game-about&quot;&gt;&lt;strong&gt;1.1 What is the game about?&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;This project is the multiplayer part of the game application CatCart: The Beginning, a VR driving and combat experience. The original singleplayer mode is focused on maximizing the experience of Virtual Reality, whereas the multiplayer part are heavily lying on the cross-platform interation between VR player and Non-VR player.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-01.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;Singleplayer mode&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Original Catcart Singleplayer Mode:
+The Catcart: Begining allows the player to have a laser pointer as one of its controllers and drives the CatCart with it, by pointing the laser on the ground in front of the CatCart. The CatCart has a basket with nine cats in it, which are the player’s nine lives. The enemy drones try to steal the cats from the player. With their second controller, the player is able to do ranged attack and shoot alien drones with the help of a raygun as their other controller, and melee attack when converted into a cat-paw. The player is also equipped with a HUD, that displays the player’s stats and indicates danger.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-02.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;Game Object: Cart&lt;/figcaption&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-03.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;Game Object: The Shooter&lt;/figcaption&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;The difference is that in Multiplayer game mode, it has two players experiencing in the same time. Like the singleplayer mode, the VR player is able to drive and shoot, while the non-VR player are set to have a top-down view for being able to interact with varied props in the scene. Both players are targeting each other by using their own abilities. The goal for the VR player is to drive the catcart to the finish line, while the non-VR player plays the role to manage to prevent it.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-04.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;VR player in game view&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-05.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;Non-VR player in game view&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;“This project” represents the multiplayer game mode of Catcart: Begining in the rest of this article.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;12-what-are-the-reasons-for-this-project-getting-born&quot;&gt;&lt;strong&gt;1.2 What are the reasons for this project getting born?&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;The project is meant for utilizing all knowledges acquired throughout two-year studying at RIT School Interactive Games and Media to build up a final game project. So first of all, it is a meant for degree certification. There are three professors that made of the committee gourp to track the teams’ development processes and assees the qualification whether the project are legitly good. One of committee member was also the instructor of Capstone Design and Capstone Porject courses, so that she can surpervise the development by offering suggestion and feedbacks. Students are also in charge for quality assurance by organizing play-test and postmortem review. Three approvals are necessary in order to pass the defense at end of masters’ program’s year.&lt;/p&gt;
+
+&lt;p&gt;[+ personal reason]&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;13-what-are-the-those-problems-that-has-been-solved-by-this-project&quot;&gt;&lt;strong&gt;1.3 What are the those problems that has been solved by this project?&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;p&gt;This project created a new gameplay(definition: the way it is played) that allows VR player and non-VR player interacts with each others in the same time at different scenes. The scenes for non-VR player are highly abstructed with only interactive game objects being kept and basic background architectures, it is optimized by lower down the frame rate for non-VR player. That being said, by sharing the same space coordinates through Unity server, all players have no problem of not being able to exchange information.&lt;/p&gt;
+
+&lt;p&gt;See Part 2 for more details.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;14-how-are-the-project-under-developed&quot;&gt;&lt;strong&gt;1.4 How are the project under developed?&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;p&gt;We employes the agile methodology for development processes.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-implementation-detail&quot;&gt;&lt;strong&gt;2. Implementation detail&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;https://github.com/zizhGuo/Catcart-Invasion&lt;/p&gt;
+
+&lt;p&gt;Tools &amp;amp; Language: Unity 3D, Visual Studio, C#.&lt;/p&gt;
+
+&lt;p&gt;Version Control: SourceTree&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;21-why-unity-3d&quot;&gt;&lt;strong&gt;2.1. Why Unity 3D?&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;Since the singleplayer game mode is developed using Unity 3D, so there has no reason to switch to another game engine. Plus Unity3D’s Networking has a “high-level” scripting API, so it is convenient to use such feature to develop multiplayer part. 
+作为一个免费游戏引擎，Unity满足了游戏引擎的基本需要，对于不需要极度优化的中小型独立游戏是一个不错的选择。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;22-why-visual-studio&quot;&gt;&lt;strong&gt;2.2. Why Visual Studio?&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;The unity 3D embeds a default IDE script editor called Mono, in order to keep the same development pipeline as the rest of the team, it remains on visual studio for developing jobs. Unity引擎允许VS使用其debug功能来暂停游戏和继续游戏，从而找出错误点。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;23-why-c-sharpc&quot;&gt;&lt;strong&gt;2.3. Why C-sharp(C#)?&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;Unity 3D uses C# to program.&lt;/p&gt;
+
+&lt;p&gt;For more info about Unity, check this &lt;a href=&quot;https://unity3d.com/learning-c-sharp-in-unity-for-beginners&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[+ personal reason]&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;24-why-sourcetree&quot;&gt;&lt;strong&gt;2.4. Why SourceTree?&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;Sourcetree is a free Git desktop client, it is basically the &lt;strong&gt;git&lt;/strong&gt; + UI.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;25-what-are-the-major-tech-problems-that-i-met-through-development&quot;&gt;&lt;strong&gt;2.5. What are the major tech problems that I met through development?&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;h6 id=&quot;set-up-the-deve-tools-for-efficiency&quot;&gt;&lt;strong&gt;Set up the deve-tools for efficiency&lt;/strong&gt;&lt;/h6&gt;
+
+&lt;p&gt;The developing pipeline was the first major problem I solved that made a difference. Since it it was rare to find the games that have the similar forms like what we was developing (one project with two different scenes running and interacting in the same time), the regular development pipeline (you have to build out the application first in order to test two ends in the same time) would be time-costing which made the whole development at low efficiency. So it was necessary to make the testing process as much convinient as possible. The solution was to open the Unity project twice. In order to make it possile to test the VR and non-VR games &lt;strong&gt;simultaneously&lt;/strong&gt; on the same system, there firstly needs to have the Unity Networking setting supports the VR, and then running the VR scene and starting the non-VR scene.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;make-it-online-to-implement-basic-functionality&quot;&gt;&lt;strong&gt;Make it online to implement basic functionality&lt;/strong&gt;&lt;/h6&gt;
+
+&lt;p&gt;By implementing default &lt;strong&gt;Unity Networking High-level API (UNet)&lt;/strong&gt;, it was possible to make the game online. These are some features that the UNet provides:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Network Manager (Local)&lt;/li&gt;
+  &lt;li&gt;Unity Multiplayer Service&lt;/li&gt;
+  &lt;li&gt;MatchMaker (Online)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-07.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;UNet: NetworkManager&lt;/figcaption&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-08.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;The matchmaker&lt;/figcaption&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/lVFInbOzVGU&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;clearify-what-game-design-features-that-would-utilize-the-unet-api-or-would-need-to-go-on-internet&quot;&gt;&lt;strong&gt;Clearify what game design features that would utilize the UNet API (or would need to go on internet)&lt;/strong&gt;&lt;/h6&gt;
+
+&lt;p&gt;There were many interactable game objects (the props in the scene that needs to be conmunicated for both players through internet) that needs to be implmeneted. Implementing each of them would involve a lot “nasty” jobs, so it was necessary to find the common parts among them all and do testing jobs ahead.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Workflow:
+List out props -&amp;gt; find common features (online) -&amp;gt; make prototypes &amp;amp; code
+-&amp;gt; testing in the demo scene -&amp;gt; apply to different props
+-&amp;gt; modify for different props' unique features for game design
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-09.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;The matchmaker&lt;/figcaption&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+     &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/BMfUxBqbj3M?start=26&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;optimization&quot;&gt;&lt;strong&gt;Optimization&lt;/strong&gt;&lt;/h6&gt;
+
+&lt;p&gt;Since both VR scene and non-VR scene contains a great amount of game objects, where some of them are for backgrounds while others are for interaction, optimization should take into account. For non-VR scene, the camera view was locked into the air above floor, there could hide the details of buildings by only placing the rough modules. For VR scene, by applying LOD component, the scene only rendered the game objects that close to the player with most amount of details.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-personal-contribution&quot;&gt;&lt;strong&gt;3. Personal Contribution&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h5 id=&quot;31-what-are-the-jobs-i-was-in-charge-for&quot;&gt;&lt;strong&gt;3.1. What are the jobs I was in charge for?&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;p&gt;I was in charge for basically everything about the &lt;strong&gt;technical jobs&lt;/strong&gt; for multiplayer game mode, the most of works of &lt;strong&gt;designs&lt;/strong&gt; and &lt;strong&gt;game testing&lt;/strong&gt;. I was also the core designers participating for Catcart: Begining singleplayer mode.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;32-be-more-specific&quot;&gt;&lt;strong&gt;3.2. Be more specific?&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;p&gt;For technical jobs, I basicically implemented all features that was required for the multiplayer mode that was everything about UNet API. Since the game was modified based on the singleplayer mode, there also had some migration works that was needed to be done before set off, including reading historic codes and connects to the current project. My works also included all major problems’ solution that was talked about in the second chapter. I also did level designs, for the multiplayer mode was heavily based on the interaction, the game needed to be balanced in case the one of two players gets tedious.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/WFsDqBNwTpo&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-06.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;Level Design&lt;/figcaption&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;list-them-all&quot;&gt;&lt;strong&gt;[List them all]&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-extra-info&quot;&gt;4. Extra Info&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;blog article&lt;/a&gt;&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry></feed>
