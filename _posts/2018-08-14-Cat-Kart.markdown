@@ -31,7 +31,10 @@ categories: jekyll update
 - [**3. Personal Contribution**](#3-personal-contribution)
     - [**3.1. What are the jobs I was in charge for?**](#31-what-are-the-jobs-i-was-in-charge-for)
     - [**3.2. Be more specific?**](#32-be-more-specific)
-- [**\[List them all\]**](#list-them-all)
+        - [**Implemented the functions of real-time interaction between VR end and PC end through internet**](#implemented-the-functions-of-real-time-interaction-between-vr-end-and-pc-end-through-internet)
+        - [**Coordinated with three other artists and two sound producers**](#coordinated-with-three-other-artists-and-two-sound-producers)
+        - [**Performed as the lead designer for multiplayer game mode**](#performed-as-the-lead-designer-for-multiplayer-game-mode)
+        - [**Film Editor? Marketing?**](#film-editor-marketing)
 - [4. Extra Info](#4-extra-info)
 
 <!-- /MarkdownTOC -->
@@ -243,6 +246,25 @@ I was in charge for basically everything about the **technical jobs** for multip
 
 For technical jobs, I basicically implemented all features that was required for the multiplayer mode that was everything about UNet API. Since the game was modified based on the singleplayer mode, there also had some migration works that was needed to be done before set off, including reading historic codes and connects to the current project. My works also included all major problems' solution that was talked about in the second chapter. I also did level designs, for the multiplayer mode was heavily based on the interaction, the game needed to be balanced in case the one of two players gets tedious. 
 
+<br>
+
+###### **Implemented the functions of real-time interaction between VR end and PC end through internet**
+
+The UNet API provides very limited functions for internet-based information exchange, it has **transform** data that can be transmitted by default with the game object attaching the UNet transform component. In order to achieve much advanced functions, it is necessary to write own scripts to make it happen, which need the developer to test UNet documentation to test the interfaces needed. It was time consuming but fun progress. It was the only way to achieve the goal without implementing their own lower-leveled implementation with Sockets. For our project, these jobs are enough to make it work, considering the limited amount of time estimation.
+
+###### **Coordinated with three other artists and two sound producers**
+
+Since sound elements and arts elements are two of essential parts for game application project, we contacted and had worked with other five persons as we firstly had our game prototype delivered. It was a good and inspiring experience working with others besides the core developing members. I was in charging for helping coordinating with other sources by attending activities from other collges to look for artists and sound designers. The college of Interactive Game and Media provided many chances for us to engage with other people. 
+
+We applied **Agile Methodology** on our development, of which we picked up from our Game Development Processes course. It went well for each iteration, and through weekly meeting, we were able to fix bugs and set new progressive goals. 
+
+###### **Performed as the lead designer for multiplayer game mode**
+
+Multiplayer level design was different with the singleplayer one, for it involves real-time interactions with high frequent gameplay operation. It was necessary to balance the gameplay between two players. In previous part that has mentioned the multiplayer game mode, there had not many cases that can be referenced and learned because its new design. So the way I took for building such levels was to firstly having the concept about the whole game progress, and listed all possible interesting interaction that could happen during the game time; Making the whole level divided into different modules so that they could be tested separately and at lasted to combine the modules together with most satisfied orders. 
+
+To assess how the level performs, it was necessary to quantify the game progress and also to observe how engaging the players are. So I build up couple of times of game testing session and asked my friends to test. I got some results, i.e. the average level finishing time is around 8 mins and only half of VR players can beat the game. 
+
+<br>
 <div style="text-align: center;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WFsDqBNwTpo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
@@ -254,7 +276,12 @@ For technical jobs, I basicically implemented all features that was required for
 </div>
 <br>
 
-## **[List them all]**
+###### **Film Editor? Marketing?**
+
+Yes, we did have jobs for making marketing video to attract our future venture capitalists...uh...haha.just for kidding, we were making videos to attract artists and sound designers. We were also able to make it to the **BostonFIG Fest 2018** Indi-game competetion and make it possible to showcase our game there. 
+
+
+
 
 <br> 
 
