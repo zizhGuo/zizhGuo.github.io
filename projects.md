@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Thoughts
+title: Projects
 img-bg: taiguli1.jpg
 category: Projects
 ---

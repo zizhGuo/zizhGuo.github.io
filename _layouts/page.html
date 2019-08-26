@@ -13,7 +13,8 @@ layout: default
 				{% if page.category == post.category %}
 					<div class="card">
 					<div class="card-body">
-						<h5 class="card-title"><a href="{{ post.url }}" class="btn btn-light p-0">{{post.title}}</a></h5>
+						<h4 class="card-title"><a href="{{ post.url }}" class="btn btn-light p-0">{{post.title}}</a></h5>
+						<h5>{{post.date | date: "%-m/%-d/%y"}}</h4>
 					</div>
 				</div>
 				{% endif %}

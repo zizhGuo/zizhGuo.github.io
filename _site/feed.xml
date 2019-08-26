@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-25T09:59:38-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Project Ariticle Writing</title><link href="http://localhost:4000/jekyll/update/articles/2019/08/21/Project-Article-Writing.html" rel="alternate" type="text/html" title="Project Ariticle Writing" /><published>2019-08-21T18:21:06-04:00</published><updated>2019-08-21T18:21:06-04:00</updated><id>http://localhost:4000/jekyll/update/articles/2019/08/21/Project-Article-Writing</id><content type="html" xml:base="http://localhost:4000/jekyll/update/articles/2019/08/21/Project-Article-Writing.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2019-08-26T09:20:17-04:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Project Ariticle Writing</title><link href="http://localhost:4001/jekyll/update/articles/2019/08/21/Ariticle-Resume-Writing.html" rel="alternate" type="text/html" title="Project Ariticle Writing" /><published>2019-08-21T18:21:06-04:00</published><updated>2019-08-21T18:21:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/08/21/Ariticle-Resume-Writing</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/08/21/Ariticle-Resume-Writing.html">&lt;blockquote&gt;
   &lt;p&gt;笔者因为最近准备找工作实习，需要对自己在两到三年内的各种工程项目进行展示，展示途径除了简历上有限篇幅的描述，笔者还自己通过jekyll搭建了一个静态Github Page的个人网站，设计了自己的模板layout，只是苦于文章的架构一直未曾动笔。在参考了很多个人网站和别人的简历后，笔者抛开了一切烦恼杂碎，自问自答逐条分析写得此文来帮助自己撰写技术博文，分享在这里，希望能帮助到大家。&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -106,7 +106,7 @@
 
 &lt;p&gt;问：好像没有了。&lt;/p&gt;
 
-&lt;p&gt;答：好，让我们撸起袖子好好干吧！&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">笔者因为最近准备找工作实习，需要对自己在两到三年内的各种工程项目进行展示，展示途径除了简历上有限篇幅的描述，笔者还自己通过jekyll搭建了一个静态Github Page的个人网站，设计了自己的模板layout，只是苦于文章的架构一直未曾动笔。在参考了很多个人网站和别人的简历后，笔者抛开了一切烦恼杂碎，自问自答逐条分析写得此文来帮助自己撰写技术博文，分享在这里，希望能帮助到大家。</summary></entry><entry><title type="html">Markdown Syntax Test</title><link href="http://localhost:4000/jekyll/update/articles/2019/08/18/markdown-test.html" rel="alternate" type="text/html" title="Markdown Syntax Test" /><published>2019-08-18T15:34:06-04:00</published><updated>2019-08-18T15:34:06-04:00</updated><id>http://localhost:4000/jekyll/update/articles/2019/08/18/markdown-test</id><content type="html" xml:base="http://localhost:4000/jekyll/update/articles/2019/08/18/markdown-test.html">&lt;h1 id=&quot;first-level-header&quot;&gt;First Level Header&lt;/h1&gt;
+&lt;p&gt;答：好，让我们撸起袖子好好干吧！&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">笔者因为最近准备找工作实习，需要对自己在两到三年内的各种工程项目进行展示，展示途径除了简历上有限篇幅的描述，笔者还自己通过jekyll搭建了一个静态Github Page的个人网站，设计了自己的模板layout，只是苦于文章的架构一直未曾动笔。在参考了很多个人网站和别人的简历后，笔者抛开了一切烦恼杂碎，自问自答逐条分析写得此文来帮助自己撰写技术博文，分享在这里，希望能帮助到大家。</summary></entry><entry><title type="html">Markdown Syntax Test</title><link href="http://localhost:4001/jekyll/update/articles/2019/08/18/markdown-test.html" rel="alternate" type="text/html" title="Markdown Syntax Test" /><published>2019-08-18T15:34:06-04:00</published><updated>2019-08-18T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/08/18/markdown-test</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/08/18/markdown-test.html">&lt;h1 id=&quot;first-level-header&quot;&gt;First Level Header&lt;/h1&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;This is a block quote.&lt;/p&gt;
@@ -153,7 +153,7 @@
 
 &lt;p&gt;&lt;img src=&quot;https://pbs.twimg.com/profile_images/1053055123193122816/IUwo6l_Q_400x400.jpg&quot; alt=&quot;杜甫草堂&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/img-bg/caotang1.jpg&quot; alt=&quot;杜甫草堂&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4001/assets/img-bg/caotang1.jpg&quot; alt=&quot;杜甫草堂&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I strongly recommend against using any &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
 
@@ -192,10 +192,15 @@ instead of decimal-encoded entites like &lt;code class=&quot;highlighter-rouge&q
 
 &lt;blockquote&gt;
     &lt;p&gt;For example.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">First Level Header</summary></entry><entry><title type="html">Personal Website</title><link href="http://localhost:4000/jekyll/update/projects/2019/06/16/Project-Personal-Website.html" rel="alternate" type="text/html" title="Personal Website" /><published>2019-06-16T00:00:00-04:00</published><updated>2019-06-16T00:00:00-04:00</updated><id>http://localhost:4000/jekyll/update/projects/2019/06/16/Project-Personal-Website</id><content type="html" xml:base="http://localhost:4000/jekyll/update/projects/2019/06/16/Project-Personal-Website.html">&lt;p&gt;用处：
+&lt;/blockquote&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">First Level Header</summary></entry><entry><title type="html">Learning Notes: Linear Algebra Brushups</title><link href="http://localhost:4001/jekyll/update/articles/2019/07/25/Article-Linear-Algebra.html" rel="alternate" type="text/html" title="Learning Notes: Linear Algebra Brushups" /><published>2019-07-25T15:34:06-04:00</published><updated>2019-07-25T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/07/25/Article-Linear-Algebra</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/07/25/Article-Linear-Algebra.html">&lt;p&gt;[to be edited]&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">[to be edited]</summary></entry><entry><title type="html">Learning Notes: About C++</title><link href="http://localhost:4001/jekyll/update/articles/2019/06/23/Article-CPP.html" rel="alternate" type="text/html" title="Learning Notes: About C++" /><published>2019-06-23T15:34:06-04:00</published><updated>2019-06-23T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/06/23/Article-CPP</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/06/23/Article-CPP.html">&lt;p&gt;[to be edited]&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">[to be edited]</summary></entry><entry><title type="html">Personal Website</title><link href="http://localhost:4001/jekyll/update/projects/2019/06/16/Project-Personal-Website.html" rel="alternate" type="text/html" title="Personal Website" /><published>2019-06-16T00:00:00-04:00</published><updated>2019-06-16T00:00:00-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2019/06/16/Project-Personal-Website</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2019/06/16/Project-Personal-Website.html">&lt;p&gt;用处：
 展示个人的信息，所以首先展示的信息是最重要的，个人网站的设计应该放大信息的传递的有效性，设计师可以展示个性，工程师可以展示信息，所以高校有的教师喜欢用plain html来发布课程信息。这完全取决于个人的诉求，好的设计可以有效地增强信息传递效率，同时避免用户因为不好的设计而浪费时间，但也不完全是这样，有时候出去业务考虑也会需要增强用户浏览网页的粘性。所以网页的功能和目的是最重要的。&lt;/p&gt;
 
-&lt;p&gt;我个人的网站的用途主要还是用来展示个人项目，所以信息的传递非常重要，从我开始规划制作网页，最简单直接的方法就是纯html，这满足了我的基本需求，但是对于信息的传递会有不好的影响，因为我需要考虑到查看我网页的受众，多数同学家人还有招聘方面的人员，所以网站需要基本的吸引力和亲和力能够让人们首先停留，其次有效的的信息传递就足够了。&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">用处： 展示个人的信息，所以首先展示的信息是最重要的，个人网站的设计应该放大信息的传递的有效性，设计师可以展示个性，工程师可以展示信息，所以高校有的教师喜欢用plain html来发布课程信息。这完全取决于个人的诉求，好的设计可以有效地增强信息传递效率，同时避免用户因为不好的设计而浪费时间，但也不完全是这样，有时候出去业务考虑也会需要增强用户浏览网页的粘性。所以网页的功能和目的是最重要的。</summary></entry><entry><title type="html">Learning Notes: HTML+CSS+Bootstrap</title><link href="http://localhost:4000/jekyll/update/articles/2019/06/15/Article-Html-CSS-Bootstrap.html" rel="alternate" type="text/html" title="Learning Notes: HTML+CSS+Bootstrap" /><published>2019-06-15T18:21:06-04:00</published><updated>2019-06-15T18:21:06-04:00</updated><id>http://localhost:4000/jekyll/update/articles/2019/06/15/Article-Html-CSS-Bootstrap</id><content type="html" xml:base="http://localhost:4000/jekyll/update/articles/2019/06/15/Article-Html-CSS-Bootstrap.html">&lt;h3 id=&quot;1-general&quot;&gt;&lt;strong&gt;1. General&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;我个人的网站的用途主要还是用来展示个人项目，所以信息的传递非常重要，从我开始规划制作网页，最简单直接的方法就是纯html，这满足了我的基本需求，但是对于信息的传递会有不好的影响，因为我需要考虑到查看我网页的受众，多数同学家人还有招聘方面的人员，所以网站需要基本的吸引力和亲和力能够让人们首先停留，其次有效的的信息传递就足够了。&lt;/p&gt;
+
+&lt;p&gt;根据markdown file in the root working directory, 启动服务器会根据当前markdown文件提供的信息生成网页，提供的信息由title,category提供，配置文件会根据提供信息生成设计好的网页。
+所以开发者需要&lt;strong&gt;定义好&lt;/strong&gt;每一个网页的属性。&lt;/p&gt;
+
+&lt;p&gt;本质就是一个静态网页生成器，开始在服务器部署时会根据提供的配置信息直接一次性生成所有网页，每一次更新博客，都是相当于在GitHub 服务器上重新部署了一次。&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">用处： 展示个人的信息，所以首先展示的信息是最重要的，个人网站的设计应该放大信息的传递的有效性，设计师可以展示个性，工程师可以展示信息，所以高校有的教师喜欢用plain html来发布课程信息。这完全取决于个人的诉求，好的设计可以有效地增强信息传递效率，同时避免用户因为不好的设计而浪费时间，但也不完全是这样，有时候出去业务考虑也会需要增强用户浏览网页的粘性。所以网页的功能和目的是最重要的。</summary></entry><entry><title type="html">Learning Notes: HTML+CSS+Bootstrap</title><link href="http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Html-CSS-Bootstrap.html" rel="alternate" type="text/html" title="Learning Notes: HTML+CSS+Bootstrap" /><published>2019-06-15T18:21:06-04:00</published><updated>2019-06-15T18:21:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Html-CSS-Bootstrap</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Html-CSS-Bootstrap.html">&lt;h3 id=&quot;1-general&quot;&gt;&lt;strong&gt;1. General&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h5 id=&quot;resources-links&quot;&gt;&lt;strong&gt;Resources links&lt;/strong&gt;&lt;/h5&gt;
@@ -234,7 +239,7 @@ instead of decimal-encoded entites like &lt;code class=&quot;highlighter-rouge&q
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-articles-webdev1/img-01.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/img-articles-webdev1/img-01.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -364,7 +369,7 @@ ul:nth-of-type(3){
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-articles-webdev1/img-02.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/img-articles-webdev1/img-02.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -376,7 +381,7 @@ ul:nth-of-type(3){
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-articles-webdev1/img-03.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/img-articles-webdev1/img-03.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -455,7 +460,7 @@ c.  Grid size: 增加最小，移除-xs&lt;/li&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-articles-webdev1/img-05.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/img-articles-webdev1/img-05.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;
 全部都是继承不同的class来叠加相应的功能。
@@ -488,7 +493,7 @@ Class: p-sm-5代表padding在浏览器pixels值变小时变成3rem，最小1代�
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-articles-webdev1/img-04.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/img-articles-webdev1/img-04.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -504,7 +509,7 @@ Class: p-sm-5代表padding在浏览器pixels值变小时变成3rem，最小1代�
 
 &lt;h5 id=&quot;media-queries&quot;&gt;&lt;a href=&quot;https://www.w3schools.com/cssref/css3_pr_mediaquery.asp&quot;&gt;Media Queries&lt;/a&gt;&lt;/h5&gt;
 
-&lt;h5 id=&quot;下划线效果&quot;&gt;&lt;a href=&quot;https://www.w3schools.com/cssref/css3_pr_mediaquery.asp&quot;&gt;下划线效果&lt;/a&gt;&lt;/h5&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">1. General</summary></entry><entry><title type="html">背影</title><link href="http://localhost:4000/jekyll/update/articles/2019/06/04/welcome-to-jekyll.html" rel="alternate" type="text/html" title="背影" /><published>2019-06-04T19:34:06-04:00</published><updated>2019-06-04T19:34:06-04:00</updated><id>http://localhost:4000/jekyll/update/articles/2019/06/04/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/articles/2019/06/04/welcome-to-jekyll.html">&lt;p&gt;我与父亲不相见已二年余了，我最不能忘记的是他的背影。&lt;/p&gt;
+&lt;h5 id=&quot;下划线效果&quot;&gt;&lt;a href=&quot;https://www.w3schools.com/cssref/css3_pr_mediaquery.asp&quot;&gt;下划线效果&lt;/a&gt;&lt;/h5&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">1. General</summary></entry><entry><title type="html">Learning Notes: About Jekyll</title><link href="http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Jekll.html" rel="alternate" type="text/html" title="Learning Notes: About Jekyll" /><published>2019-06-15T15:34:06-04:00</published><updated>2019-06-15T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Jekll</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Jekll.html">&lt;p&gt;[to be edited]&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">[to be edited]</summary></entry><entry><title type="html">背影</title><link href="http://localhost:4001/jekyll/update/articles/2019/06/04/welcome-to-jekyll.html" rel="alternate" type="text/html" title="背影" /><published>2019-06-04T19:34:06-04:00</published><updated>2019-06-04T19:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/06/04/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/06/04/welcome-to-jekyll.html">&lt;p&gt;我与父亲不相见已二年余了，我最不能忘记的是他的背影。&lt;/p&gt;
 
 &lt;p&gt;那年冬天，祖母死了，父亲的差使1也交卸了，正是祸不单行的日子。我从北京到徐州，打算跟着父亲奔丧2回家。到徐州见着父亲，看见满院狼藉3的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说：“事已如此，不必难过，好在天无绝人之路！”&lt;/p&gt;
 
@@ -530,294 +535,4 @@ Class: p-sm-5代表padding在浏览器pixels值变小时变成3rem，最小1代�
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>朱自清</name></author><category term="Articles" /><summary type="html">我与父亲不相见已二年余了，我最不能忘记的是他的背影。</summary></entry><entry><title type="html">Capstone Projects: VR Multiplayer Real-time Interaction Game Application</title><link href="http://localhost:4000/jekyll/update/projects/2018/08/14/Cat-Kart.html" rel="alternate" type="text/html" title="Capstone Projects: VR Multiplayer Real-time Interaction Game Application" /><published>2018-08-14T15:34:06-04:00</published><updated>2018-08-14T15:34:06-04:00</updated><id>http://localhost:4000/jekyll/update/projects/2018/08/14/Cat-Kart</id><content type="html" xml:base="http://localhost:4000/jekyll/update/projects/2018/08/14/Cat-Kart.html">&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/title.png&quot; alt=&quot;drawing&quot; style=&quot;width: 30%;&quot; /&gt;
-&lt;/div&gt;
-
-&lt;!-- MarkdownTOC --&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#project-repo-link&quot;&gt;Project Repo Link&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-the-nature-of-this-project&quot;&gt;&lt;strong&gt;1. The nature of this project&lt;/strong&gt;&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#11-what-is-the-game-about&quot;&gt;&lt;strong&gt;1.1 What is the game about?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#12-what-are-the-reasons-for-this-project-getting-born&quot;&gt;&lt;strong&gt;1.2 What are the reasons for this project getting born?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#13-what-are-the-those-problems-that-has-been-solved-by-this-project&quot;&gt;&lt;strong&gt;1.3 What are the those problems that has been solved by this project?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#14-how-are-the-project-under-developed&quot;&gt;&lt;strong&gt;1.4 How are the project under developed?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-implementation-detail&quot;&gt;&lt;strong&gt;2. Implementation detail&lt;/strong&gt;&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#21-why-unity-3d&quot;&gt;&lt;strong&gt;2.1. Why Unity 3D?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#22-why-visual-studio&quot;&gt;&lt;strong&gt;2.2. Why Visual Studio?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#23-why-c-sharpc&quot;&gt;&lt;strong&gt;2.3. Why C-sharp(C#)?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#24-why-sourcetree&quot;&gt;&lt;strong&gt;2.4. Why SourceTree?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#25-what-are-the-major-tech-problems-that-i-met-through-development&quot;&gt;&lt;strong&gt;2.5. What are the major tech problems that I met through development?&lt;/strong&gt;&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#set-up-the-deve-tools-for-efficiency&quot;&gt;&lt;strong&gt;Set up the deve-tools for efficiency&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#make-it-online-to-implement-basic-functionality&quot;&gt;&lt;strong&gt;Make it online to implement basic functionality&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#clearify-what-game-design-features-that-would-utilize-the-unet-api-or-would-need-to-go-on-internet&quot;&gt;&lt;strong&gt;Clearify what game design features that would utilize the UNet API (or would need to go on internet)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#optimization&quot;&gt;&lt;strong&gt;Optimization&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3-personal-contribution&quot;&gt;&lt;strong&gt;3. Personal Contribution&lt;/strong&gt;&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#31-what-are-the-jobs-i-was-in-charge-for&quot;&gt;&lt;strong&gt;3.1. What are the jobs I was in charge for?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#32-be-more-specific&quot;&gt;&lt;strong&gt;3.2. Be more specific?&lt;/strong&gt;&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#implemented-the-functions-of-real-time-interaction-between-vr-end-and-pc-end-through-internet&quot;&gt;&lt;strong&gt;Implemented the functions of real-time interaction between VR end and PC end through internet&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#coordinated-with-three-other-artists-and-two-sound-producers&quot;&gt;&lt;strong&gt;Coordinated with three other artists and two sound producers&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#performed-as-the-lead-designer-for-multiplayer-game-mode&quot;&gt;&lt;strong&gt;Performed as the lead designer for multiplayer game mode&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#film-editor-marketing&quot;&gt;&lt;strong&gt;Film Editor? Marketing?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#4-extra-info&quot;&gt;4. Extra Info&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- /MarkdownTOC --&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;This article would mainly talk about the &lt;strong&gt;nature&lt;/strong&gt; of my capstone project with essential &lt;strong&gt;ideas&lt;/strong&gt; and &lt;strong&gt;thoughts&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/poster.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-   &lt;figcaption&gt;Catcart: The Begining Poster&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;project-repo-link&quot;&gt;&lt;a href=&quot;https://github.com/zizhGuo/Catcart-Invasion&quot;&gt;Project Repo Link&lt;/a&gt;&lt;/h4&gt;
-
-&lt;!-- # Cat Kart
-&gt;  The project is meant for utilizing all knowledges acquired throughout two-year studying at RIT School Interactive Games and Media to build up a final game project that is fun to play, so that students are able to develop game application in the very professional ways. Mission accomplished! 
-&gt;
-&gt; --- before read
-
-
-&gt; This is a year-long capstone project for a two-year master's program of Game Design and Development at RIT. The project is meant for utilizing all knowledges acquired throughout two-year studying to create a indi-game. The whole process involves varied skills that are necessary for later engineering work, i.e. technologies, tools, cooperation, etc.  --&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-the-nature-of-this-project&quot;&gt;&lt;strong&gt;1. The nature of this project&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;11-what-is-the-game-about&quot;&gt;&lt;strong&gt;1.1 What is the game about?&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;This project is the multiplayer part of the game application CatCart: The Beginning, a VR driving and combat experience. The original singleplayer mode is focused on maximizing the experience of Virtual Reality, whereas the multiplayer part are heavily lying on the cross-platform interation between VR player and Non-VR player.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-01.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-   &lt;figcaption&gt;Singleplayer mode&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Original Catcart Singleplayer Mode:
-The Catcart: Begining allows the player to have a laser pointer as one of its controllers and drives the CatCart with it, by pointing the laser on the ground in front of the CatCart. The CatCart has a basket with nine cats in it, which are the player’s nine lives. The enemy drones try to steal the cats from the player. With their second controller, the player is able to do ranged attack and shoot alien drones with the help of a raygun as their other controller, and melee attack when converted into a cat-paw. The player is also equipped with a HUD, that displays the player’s stats and indicates danger.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-02.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-   &lt;figcaption&gt;Game Object: Cart&lt;/figcaption&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-03.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-   &lt;figcaption&gt;Game Object: The Shooter&lt;/figcaption&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;The difference is that in Multiplayer game mode, it has two players experiencing in the same time. Like the singleplayer mode, the VR player is able to drive and shoot, while the non-VR player are set to have a top-down view for being able to interact with varied props in the scene. Both players are targeting each other by using their own abilities. The goal for the VR player is to drive the catcart to the finish line, while the non-VR player plays the role to manage to prevent it.&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-04.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-   &lt;figcaption&gt;VR player in game view&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-05.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-   &lt;figcaption&gt;Non-VR player in game view&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;“This project” represents the multiplayer game mode of Catcart: Begining in the rest of this article.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;12-what-are-the-reasons-for-this-project-getting-born&quot;&gt;&lt;strong&gt;1.2 What are the reasons for this project getting born?&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;The project is meant for utilizing all knowledges acquired throughout two-year studying at RIT School Interactive Games and Media to build up a final game project. So first of all, it is a meant for degree certification. There are three professors that made of the committee gourp to track the teams’ development processes and assees the qualification whether the project are legitly good. One of committee member was also the instructor of Capstone Design and Capstone Porject courses, so that she can surpervise the development by offering suggestion and feedbacks. Students are also in charge for quality assurance by organizing play-test and postmortem review. Three approvals are necessary in order to pass the defense at end of masters’ program’s year.&lt;/p&gt;
-
-&lt;p&gt;[+ personal reason]&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;13-what-are-the-those-problems-that-has-been-solved-by-this-project&quot;&gt;&lt;strong&gt;1.3 What are the those problems that has been solved by this project?&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;This project created a new gameplay(definition: the way it is played) that allows VR player and non-VR player interacts with each others in the same time at different scenes. The scenes for non-VR player are highly abstructed with only interactive game objects being kept and basic background architectures, it is optimized by lower down the frame rate for non-VR player. That being said, by sharing the same space coordinates through Unity server, all players have no problem of not being able to exchange information.&lt;/p&gt;
-
-&lt;p&gt;See Part 2 for more details.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;14-how-are-the-project-under-developed&quot;&gt;&lt;strong&gt;1.4 How are the project under developed?&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;We employes the agile methodology for development processes.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-implementation-detail&quot;&gt;&lt;strong&gt;2. Implementation detail&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;https://github.com/zizhGuo/Catcart-Invasion&lt;/p&gt;
-
-&lt;p&gt;Tools &amp;amp; Language: Unity 3D, Visual Studio, C#.&lt;/p&gt;
-
-&lt;p&gt;Version Control: SourceTree&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;21-why-unity-3d&quot;&gt;&lt;strong&gt;2.1. Why Unity 3D?&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;Since the singleplayer game mode is developed using Unity 3D, so there has no reason to switch to another game engine. Plus Unity3D’s Networking has a “high-level” scripting API, so it is convenient to use such feature to develop multiplayer part. 
-作为一个免费游戏引擎，Unity满足了游戏引擎的基本需要，对于不需要极度优化的中小型独立游戏是一个不错的选择。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;22-why-visual-studio&quot;&gt;&lt;strong&gt;2.2. Why Visual Studio?&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;The unity 3D embeds a default IDE script editor called Mono, in order to keep the same development pipeline as the rest of the team, it remains on visual studio for developing jobs. Unity引擎允许VS使用其debug功能来暂停游戏和继续游戏，从而找出错误点。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;23-why-c-sharpc&quot;&gt;&lt;strong&gt;2.3. Why C-sharp(C#)?&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;Unity 3D uses C# to program.&lt;/p&gt;
-
-&lt;p&gt;For more info about Unity, check this &lt;a href=&quot;https://unity3d.com/learning-c-sharp-in-unity-for-beginners&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;[+ personal reason]&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;24-why-sourcetree&quot;&gt;&lt;strong&gt;2.4. Why SourceTree?&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;Sourcetree is a free Git desktop client, it is basically the &lt;strong&gt;git&lt;/strong&gt; + UI.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;25-what-are-the-major-tech-problems-that-i-met-through-development&quot;&gt;&lt;strong&gt;2.5. What are the major tech problems that I met through development?&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;h6 id=&quot;set-up-the-deve-tools-for-efficiency&quot;&gt;&lt;strong&gt;Set up the deve-tools for efficiency&lt;/strong&gt;&lt;/h6&gt;
-
-&lt;p&gt;The developing pipeline was the first major problem I solved that made a difference. Since it it was rare to find the games that have the similar forms like what we was developing (one project with two different scenes running and interacting in the same time), the regular development pipeline (you have to build out the application first in order to test two ends in the same time) would be time-costing which made the whole development at low efficiency. So it was necessary to make the testing process as much convinient as possible. The solution was to open the Unity project twice. In order to make it possile to test the VR and non-VR games &lt;strong&gt;simultaneously&lt;/strong&gt; on the same system, there firstly needs to have the Unity Networking setting supports the VR, and then running the VR scene and starting the non-VR scene.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h6 id=&quot;make-it-online-to-implement-basic-functionality&quot;&gt;&lt;strong&gt;Make it online to implement basic functionality&lt;/strong&gt;&lt;/h6&gt;
-
-&lt;p&gt;By implementing default &lt;strong&gt;Unity Networking High-level API (UNet)&lt;/strong&gt;, it was possible to make the game online. These are some features that the UNet provides:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Network Manager (Local)&lt;/li&gt;
-  &lt;li&gt;Unity Multiplayer Service&lt;/li&gt;
-  &lt;li&gt;MatchMaker (Online)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-07.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-   &lt;figcaption&gt;UNet: NetworkManager&lt;/figcaption&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-08.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-   &lt;figcaption&gt;The matchmaker&lt;/figcaption&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/lVFInbOzVGU&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h6 id=&quot;clearify-what-game-design-features-that-would-utilize-the-unet-api-or-would-need-to-go-on-internet&quot;&gt;&lt;strong&gt;Clearify what game design features that would utilize the UNet API (or would need to go on internet)&lt;/strong&gt;&lt;/h6&gt;
-
-&lt;p&gt;There were many interactable game objects (the props in the scene that needs to be conmunicated for both players through internet) that needs to be implmeneted. Implementing each of them would involve a lot “nasty” jobs, so it was necessary to find the common parts among them all and do testing jobs ahead.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Workflow:
-List out props -&amp;gt; find common features (online) -&amp;gt; make prototypes &amp;amp; code
--&amp;gt; testing in the demo scene -&amp;gt; apply to different props
--&amp;gt; modify for different props' unique features for game design
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-09.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-   &lt;figcaption&gt;The matchmaker&lt;/figcaption&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-     &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/BMfUxBqbj3M?start=26&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h6 id=&quot;optimization&quot;&gt;&lt;strong&gt;Optimization&lt;/strong&gt;&lt;/h6&gt;
-
-&lt;p&gt;Since both VR scene and non-VR scene contains a great amount of game objects, where some of them are for backgrounds while others are for interaction, optimization should take into account. For non-VR scene, the camera view was locked into the air above floor, there could hide the details of buildings by only placing the rough modules. For VR scene, by applying LOD component, the scene only rendered the game objects that close to the player with most amount of details.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3-personal-contribution&quot;&gt;&lt;strong&gt;3. Personal Contribution&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h5 id=&quot;31-what-are-the-jobs-i-was-in-charge-for&quot;&gt;&lt;strong&gt;3.1. What are the jobs I was in charge for?&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;I was in charge for basically everything about the &lt;strong&gt;technical jobs&lt;/strong&gt; for multiplayer game mode, the most of works of &lt;strong&gt;designs&lt;/strong&gt; and &lt;strong&gt;game testing&lt;/strong&gt;. I was also the core designers participating for Catcart: Begining singleplayer mode.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;32-be-more-specific&quot;&gt;&lt;strong&gt;3.2. Be more specific?&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;For technical jobs, I basicically implemented all features that was required for the multiplayer mode that was everything about UNet API. Since the game was modified based on the singleplayer mode, there also had some migration works that was needed to be done before set off, including reading historic codes and connects to the current project. My works also included all major problems’ solution that was talked about in the second chapter. I also did level designs, for the multiplayer mode was heavily based on the interaction, the game needed to be balanced in case the one of two players gets tedious.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h6 id=&quot;implemented-the-functions-of-real-time-interaction-between-vr-end-and-pc-end-through-internet&quot;&gt;&lt;strong&gt;Implemented the functions of real-time interaction between VR end and PC end through internet&lt;/strong&gt;&lt;/h6&gt;
-
-&lt;p&gt;The UNet API provides very limited functions for internet-based information exchange, it has &lt;strong&gt;transform&lt;/strong&gt; data that can be transmitted by default with the game object attaching the UNet transform component. In order to achieve much advanced functions, it is necessary to write own scripts to make it happen, which need the developer to test UNet documentation to test the interfaces needed. It was time consuming but fun progress. It was the only way to achieve the goal without implementing their own lower-leveled implementation with Sockets. For our project, these jobs are enough to make it work, considering the limited amount of time estimation.&lt;/p&gt;
-
-&lt;h6 id=&quot;coordinated-with-three-other-artists-and-two-sound-producers&quot;&gt;&lt;strong&gt;Coordinated with three other artists and two sound producers&lt;/strong&gt;&lt;/h6&gt;
-
-&lt;p&gt;Since sound elements and arts elements are two of essential parts for game application project, we contacted and had worked with other five persons as we firstly had our game prototype delivered. It was a good and inspiring experience working with others besides the core developing members. I was in charging for helping coordinating with other sources by attending activities from other collges to look for artists and sound designers. The college of Interactive Game and Media provided many chances for us to engage with other people.&lt;/p&gt;
-
-&lt;p&gt;We applied &lt;strong&gt;Agile Methodology&lt;/strong&gt; on our development, of which we picked up from our Game Development Processes course. It went well for each iteration, and through weekly meeting, we were able to fix bugs and set new progressive goals.&lt;/p&gt;
-
-&lt;h6 id=&quot;performed-as-the-lead-designer-for-multiplayer-game-mode&quot;&gt;&lt;strong&gt;Performed as the lead designer for multiplayer game mode&lt;/strong&gt;&lt;/h6&gt;
-
-&lt;p&gt;Multiplayer level design was different with the singleplayer one, for it involves real-time interactions with high frequent gameplay operation. It was necessary to balance the gameplay between two players. In previous part that has mentioned the multiplayer game mode, there had not many cases that can be referenced and learned because its new design. So the way I took for building such levels was to firstly having the concept about the whole game progress, and listed all possible interesting interaction that could happen during the game time; Making the whole level divided into different modules so that they could be tested separately and at lasted to combine the modules together with most satisfied orders.&lt;/p&gt;
-
-&lt;p&gt;To assess how the level performs, it was necessary to quantify the game progress and also to observe how engaging the players are. So I build up couple of times of game testing session and asked my friends to test. I got some results, i.e. the average level finishing time is around 8 mins and only half of VR players can beat the game.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/WFsDqBNwTpo&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4000/assets/img-catcart/img-06.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-   &lt;figcaption&gt;Level Design&lt;/figcaption&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h6 id=&quot;film-editor-marketing&quot;&gt;&lt;strong&gt;Film Editor? Marketing?&lt;/strong&gt;&lt;/h6&gt;
-
-&lt;p&gt;Yes, we did have jobs for making marketing video to attract our future venture capitalists…uh…haha.just for kidding, we were making videos to attract artists and sound designers. We were also able to make it to the &lt;strong&gt;BostonFIG Fest 2018&lt;/strong&gt; Indi-game competetion and make it possible to showcase our game there.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;4-extra-info&quot;&gt;4. Extra Info&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;blog article&lt;/a&gt;&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>朱自清</name></author><category term="Articles" /><summary type="html">我与父亲不相见已二年余了，我最不能忘记的是他的背影。</summary></entry><entry><title type="html">Compiler Construction: Source-to-source Compiler in Clojure</title><link href="http://localhost:4001/jekyll/update/projects/2019/05/14/Project-Compiler-Construction.html" rel="alternate" type="text/html" title="Compiler Construction: Source-to-source Compiler in Clojure" /><published>2019-05-14T15:34:06-04:00</published><updated>2019-05-14T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2019/05/14/Project-Compiler-Construction</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2019/05/14/Project-Compiler-Construction.html">&lt;p&gt;[Article editing]&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">[Article editing]</summary></entry><entry><title type="html">Sudoku Application based on WPF and C#</title><link href="http://localhost:4001/jekyll/update/projects/2019/04/29/Project-Sudoku.html" rel="alternate" type="text/html" title="Sudoku Application based on WPF and C#" /><published>2019-04-29T15:34:06-04:00</published><updated>2019-04-29T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2019/04/29/Project-Sudoku</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2019/04/29/Project-Sudoku.html">&lt;p&gt;[Article editing]&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">[Article editing]</summary></entry></feed>

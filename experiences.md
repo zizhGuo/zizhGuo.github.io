@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Moments
+title: Experiences
 img-bg: chengdu1.jpg
 category: Experiences
 ---
