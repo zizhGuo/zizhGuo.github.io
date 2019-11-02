@@ -9,6 +9,7 @@ layout: default
 		<div class="col-md-7 bg-white mb-0 pt-3 pt-5" >
 		
 			{% for post in site.posts %}	
+			{% if post.visible == 1  %}
 	
 				{% if page.category == post.category %}
 					<div class="card">
@@ -18,7 +19,7 @@ layout: default
 					</div>
 				</div>
 				{% endif %}
-				
+			{% endif %}
 			{% endfor %}
 
 			<!-- <h1>{{post.title}}</h1> -->

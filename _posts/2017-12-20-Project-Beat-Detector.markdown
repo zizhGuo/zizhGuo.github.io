@@ -5,6 +5,7 @@ date:   2017-12-20 19:34:06
 author: Zizhun Guo
 category: Projects
 categories: jekyll update
+visible: 0
 ---
 
 [to be edited]

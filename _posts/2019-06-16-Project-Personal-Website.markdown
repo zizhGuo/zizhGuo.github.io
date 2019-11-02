@@ -4,6 +4,7 @@ title:  "Personal Website"
 author: Zizhun Guo
 category: Projects
 categories: jekyll update
+visible: 0
 ---
 
 用处：

@@ -5,6 +5,7 @@ date:   2018-08-14 19:34:06
 author: Zizhun Guo
 category: Projects
 categories: jekyll update
+visible: 1
 ---
 <div style="text-align: center;">
    <img src="{{site.url}}/assets/img-catcart/title.png" alt="drawing" style="width: 30%;"/>
@@ -14,27 +15,27 @@ categories: jekyll update
 
 - [Project Repo Link](#project-repo-link)
 - [**1. The nature of this project**](#1-the-nature-of-this-project)
-    - [**1.1 What is the game about?**](#11-what-is-the-game-about)
-    - [**1.2 What are the reasons for this project getting born?**](#12-what-are-the-reasons-for-this-project-getting-born)
-    - [**1.3 What are the those problems that has been solved by this project?**](#13-what-are-the-those-problems-that-has-been-solved-by-this-project)
-    - [**1.4 How are the project under developed?**](#14-how-are-the-project-under-developed)
+  - [**1.1 What is the game about?**](#11-what-is-the-game-about)
+  - [**1.2 What are the reasons for this project getting born?**](#12-what-are-the-reasons-for-this-project-getting-born)
+  - [**1.3 What are the those problems that has been solved by this project?**](#13-what-are-the-those-problems-that-has-been-solved-by-this-project)
+  - [**1.4 How are the project under developed?**](#14-how-are-the-project-under-developed)
 - [**2. Implementation detail**](#2-implementation-detail)
-    - [**2.1. Why Unity 3D?**](#21-why-unity-3d)
-    - [**2.2. Why Visual Studio?**](#22-why-visual-studio)
-    - [**2.3. Why C-sharp\(C#\)?**](#23-why-c-sharpc)
-    - [**2.4. Why SourceTree?**](#24-why-sourcetree)
-    - [**2.5. What are the major tech problems that I met through development?**](#25-what-are-the-major-tech-problems-that-i-met-through-development)
-        - [**Set up the deve-tools for efficiency**](#set-up-the-deve-tools-for-efficiency)
-        - [**Make it online to implement basic functionality**](#make-it-online-to-implement-basic-functionality)
-        - [**Clearify what game design features that would utilize the UNet API \(or would need to go on internet\)**](#clearify-what-game-design-features-that-would-utilize-the-unet-api-or-would-need-to-go-on-internet)
-        - [**Optimization**](#optimization)
+  - [**2.1. Why Unity 3D?**](#21-why-unity-3d)
+  - [**2.2. Why Visual Studio?**](#22-why-visual-studio)
+  - [**2.3. Why C-sharp\(C#\)?**](#23-why-c-sharpc)
+  - [**2.4. Why SourceTree?**](#24-why-sourcetree)
+  - [**2.5. What are the major tech problems that I met through development?**](#25-what-are-the-major-tech-problems-that-i-met-through-development)
+    - [**Set up the deve-tools for efficiency**](#set-up-the-deve-tools-for-efficiency)
+    - [**Make it online to implement basic functionality**](#make-it-online-to-implement-basic-functionality)
+    - [**Clearify what game design features that would utilize the UNet API \(or would need to go on internet\)**](#clearify-what-game-design-features-that-would-utilize-the-unet-api-or-would-need-to-go-on-internet)
+    - [**Optimization**](#optimization)
 - [**3. Personal Contribution**](#3-personal-contribution)
-    - [**3.1. What are the jobs I was in charge for?**](#31-what-are-the-jobs-i-was-in-charge-for)
-    - [**3.2. Be more specific?**](#32-be-more-specific)
-        - [**Implemented the functions of real-time interaction between VR end and PC end through internet**](#implemented-the-functions-of-real-time-interaction-between-vr-end-and-pc-end-through-internet)
-        - [**Coordinated with three other artists and two sound producers**](#coordinated-with-three-other-artists-and-two-sound-producers)
-        - [**Performed as the lead designer for multiplayer game mode**](#performed-as-the-lead-designer-for-multiplayer-game-mode)
-        - [**Film Editor? Marketing?**](#film-editor-marketing)
+  - [**3.1. What are the jobs I was in charge for?**](#31-what-are-the-jobs-i-was-in-charge-for)
+  - [**3.2. Be more specific?**](#32-be-more-specific)
+    - [**Implemented the functions of real-time interaction between VR end and PC end through internet**](#implemented-the-functions-of-real-time-interaction-between-vr-end-and-pc-end-through-internet)
+    - [**Coordinated with three other artists and two sound producers**](#coordinated-with-three-other-artists-and-two-sound-producers)
+    - [**Performed as the lead designer for multiplayer game mode**](#performed-as-the-lead-designer-for-multiplayer-game-mode)
+    - [**Film Editor? Marketing?**](#film-editor-marketing)
 - [4. Extra Info](#4-extra-info)
 
 <!-- /MarkdownTOC -->

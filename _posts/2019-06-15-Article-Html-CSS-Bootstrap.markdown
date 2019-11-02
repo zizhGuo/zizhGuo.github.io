@@ -5,6 +5,7 @@ date:   2019-06-15 22:21:06
 author: Zizhun Guo
 category: Articles
 categories: jekyll update
+visible: 1
 ---
 
 ### **1. General**
