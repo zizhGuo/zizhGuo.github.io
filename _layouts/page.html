@@ -4,119 +4,30 @@ layout: default
 
 {% include background.html %}
 <section class="container-fluid border mx-1" id="post-container">
-	{% include navtags.html %}
 	<div class="row px-0 justify-content-end" id="post-div">
-		<div class="col-md-7 bg-white mb-0 pt-3 pt-5" >
+		{% include intro.html %}		
+		<div class="col-md-7 bg-light mb-0 pt-0 pt-0 p-0" >		
+			<div class=" bg-light card"> 	
+				<div class="card-body">
+					{% for post in site.posts %}	
+					{% if post.visible == 1  %}
+						<h4 class="card-title"><a href="{{ post.url }}" class="btn btn-light p-0">{{post.date | date: "%-m/%-d/%y"}} - {{post.title}}</a></h5>
+					{% endif %}
+					{% endfor %}
+						<!-- <h5>{{post.date | date: "%-m/%-d/%y"}}</h4> -->
+				</div>
+			</div>
+				<!-- {% if page.category == post.category %} -->
+				
+				<!-- {% endif %} -->
+		</div> 
 		
-			{% for post in site.posts %}	
-			{% if post.visible == 1  %}
-	
-				{% if page.category == post.category %}
-					<div class="card">
-					<div class="card-body">
-						<h4 class="card-title"><a href="{{ post.url }}" class="btn btn-light p-0">{{post.title}}</a></h5>
-						<h5>{{post.date | date: "%-m/%-d/%y"}}</h4>
-					</div>
-				</div>
-				{% endif %}
-			{% endif %}
-			{% endfor %}
-
-			<!-- <h1>{{post.title}}</h1> -->
-			
-
-<!-- 			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">
-					</h5>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-						Veniam, dolorum facere?
-					Commodi, ut. Et, itaque quam!</p>
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">
-					</h5>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-						Veniam, dolorum facere?
-					Commodi, ut. Et, itaque quam!</p>
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">
-					</h5>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-						Veniam, dolorum facere?
-					Commodi, ut. Et, itaque quam!</p>
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">
-					</h5>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-						Veniam, dolorum facere?
-					Commodi, ut. Et, itaque quam!</p>
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">
-					</h5>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-						Veniam, dolorum facere?
-					Commodi, ut. Et, itaque quam!</p>
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">
-					</h5>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-						Veniam, dolorum facere?
-					Commodi, ut. Et, itaque quam!</p>
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">
-					</h5>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-						Veniam, dolorum facere?
-					Commodi, ut. Et, itaque quam!</p>
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">
-					</h5>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-						Veniam, dolorum facere?
-					Commodi, ut. Et, itaque quam!</p>
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">
-					</h5>
-					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-						Veniam, dolorum facere?
-					Commodi, ut. Et, itaque quam!</p>
-				</div>
-			</div> -->
+		<div class="col-md-2 bg-light d-none d-xl-block p-0 mb-4 ">
+		<h7>More information:</h7>
+		<h4> <a href=https://www.cs.rit.edu/programs/BigData" >RIT Advanced Certificate in Big Data Analytics</a></h4>
 		</div>
 
-		<div class="col-md-1 d-none d-xl-block justify-content-end p-0 mb-4 ">
+		<div style = "margin: 0px 0px 0px 0px"class="col-md-0 d-none d-xl-block justify-content-end p-0 mb-4 ">
 		</div>
 
 	</div>

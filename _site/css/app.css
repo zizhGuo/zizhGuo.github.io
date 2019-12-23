@@ -108,6 +108,10 @@
 			padding-top: 0rem;
 			width: 100%;
 		}
+		.thumbnail {
+			width:18em;
+			transform: rotate(90deg)
+		}
 		#page-container {
 			width: 70%;
 		}
