@@ -110,7 +110,7 @@
 		}
 		.thumbnail {
 			width:18em;
-			/*transform: rotate(90deg)*/
+			transform: rotate(90deg)
 		}
 		#page-container {
 			width: 70%;
