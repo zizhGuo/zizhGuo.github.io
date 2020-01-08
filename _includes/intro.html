@@ -20,6 +20,17 @@
 		<h6 style = "margin:1.5rem">2019.12.23 - Finshed one course Foundation of Computer graphics with grade A. (using OpenGL and C++)</h6>
 		<h6 style = "margin:1.5rem">2019.11.20 - I decide to choose pursue a advanced certificated in big data Analytics. This requires me finish Big data intro (done), Big Data Analytics (2020 Spring), and two other courses.</h6>
 		<hr>
+
+			<div class=" bg-light card"> 	
+				<div class="card-body">
+					{% for post in site.posts %}	
+					{% if post.visible == 1  %}
+						<h4 class="card-title"><a href="{{ post.url }}" class="btn btn-light p-0">{{post.date | date: "%-m/%-d/%y"}} - {{post.title}}</a></h5>
+					{% endif %}
+					{% endfor %}
+						<!-- <h5>{{post.date | date: "%-m/%-d/%y"}}</h4> -->
+				</div>
+			</div>
 		</div >
 		<div class="col-md-2 bg-light d-none d-xl-block m-0 p-0 pt-5 mt-5" style = "margin: 0px 0px 0px 0px">
 			<img src="assets/touxiang2.jpg" alt="" class= "thumbnail">
@@ -47,5 +58,8 @@
 			<a href="https://rit.edu"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Rochester_Institute_of_Technology_seal.svg/1200px-Rochester_Institute_of_Technology_seal.svg.png" height="100" width="100"></a>
 			<a href="https://www.rit.edu/computing/department-computer-science"><img src="https://www.cs.rit.edu/usr/local/pub/CS_Logos/CS_Logo_CMYK_72dpi.jpg" height="100" width="200"></a>
 			<hr>
+			
+			<h7>More information:</h7>
+				<h4> <a href=https://www.cs.rit.edu/programs/BigData" >RIT Advanced Certificate in Big Data Analytics</a></h4>
 				
 		</div>
