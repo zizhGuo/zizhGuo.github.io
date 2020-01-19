@@ -1,0 +1,650 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"http://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+<!--             <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">ABOUT</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun-Guo_Resume_8_29_2019.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container my-5 py-5" style="background: #f6f6f6;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Computer Graphics Labs (algorithms & rendering techniques)</h1>
+		<p class="lead"><span>Zizhun Guo</span><span>2019-12-20 20:11:13 -0500</span></p>
+<!--     	<a href="" class="btn btn-primary">tag1</a>
+	<a href="" class="btn btn-success">tag2</a> -->
+</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><h3 id="lab6-textures"><strong>Lab6: Textures</strong></h3>
+
+<h4 id="description"><strong>Description</strong></h4>
+<ol>
+  <li>What is this lab about?</li>
+</ol>
+
+<p>This lab is a demonstration of texture mapping. We also applied shading model on the basis of textures attached on the objects. The way to implement this is to replace the color of material by the texture color calculated by the OpenGL pipeline.</p>
+
+<p>There are multiple ways to parse the image passed into the pipeline as the texture. The easiest way is to implement a library called <strong>SOIL</strong> which provides many useful methods to help do it. One key process for apply texture on the object is to <strong>manually reverse Y coordinates</strong> since the OpenGL UV coordinates sets the origins at the lower left corner instead what it is usually presented by top left corner.</p>
+
+<p>The process to parse and load image to shader is a bit complex, for it involves generate the texture in GLint, and active which texture unit for shader to choose, and sets the texture parameters. The order for doing the whole process is important, so it has to be careful.</p>
+
+<ol>
+  <li>Why do we do this?</li>
+</ol>
+
+<p>Texture mapping is a method for defining high frequency detail, surface texture, or color information on a computer-generated graphic or 3D model.  - Wikipedia “Texture mapping”</p>
+
+<p>[picture]</p>
+
+<h4 id="prerequisites"><strong>Prerequisites</strong></h4>
+<ol>
+  <li>Ubuntu machine.</li>
+  <li>GLFW ( http://www.glfw.org/) - a windowing/application framework used by the assignments.</li>
+  <li>GLEW ( http://glew.sourceforge.net/) - a support library that allows the use of all OpenGL. extensions supported by your graphics hardware (not needed for Apple platforms).</li>
+</ol>
+
+<h4 id="installation"><strong>Installation</strong></h4>
+<ol>
+  <li>Download the codes.</li>
+  <li>Use terminal &amp; “cd” to current directery.</li>
+  <li>Run “make” to link and compile</li>
+  <li>Run “./main”</li>
+</ol>
+
+<h4 id="functions"><strong>Functions</strong></h4>
+<p>Partial codes: (<a href="https://github.com/zizhGuo/CSCI610-Foundations-of-Computer-Graphics/blob/master/shading/phong.vert">see complete module in GitHub</a>)</p>
+
+<p>Two Approaches to load the images into the shader using SOIL API.</p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">///
+// This function initializes all texture-related data structures for
+// the program.  This is where texture buffers should be created, where
+// texture images should be loaded, etc.
+//
+// You will need to write this function, and maintain all of the values
+// needed to be sent to the various shaders.
+///
+</span><span class="kt">void</span> <span class="nf">initTextures</span><span class="p">(</span> <span class="kt">void</span> <span class="p">)</span>
+<span class="p">{</span>   
+    <span class="c1">//
+</span>    <span class="c1">// For "Quad", using SOIL_load_OGL_texture() to directly generate texutres.
+</span>    <span class="c1">//
+</span>    <span class="n">GLuint</span> <span class="n">tex_happy</span> <span class="o">=</span> <span class="n">SOIL_load_OGL_texture</span><span class="p">(</span>
+        <span class="s">"happy.png"</span><span class="p">,</span>
+        <span class="n">SOIL_LOAD_AUTO</span><span class="p">,</span>
+        <span class="n">SOIL_CREATE_NEW_ID</span><span class="p">,</span>
+        <span class="n">SOIL_FLAG_MIPMAPS</span> <span class="o">|</span> <span class="n">SOIL_FLAG_INVERT_Y</span> <span class="o">|</span> <span class="c1">// set mipmaps; set inversion on Y coordinates
+</span>            <span class="n">SOIL_FLAG_TEXTURE_REPEATS</span><span class="p">);</span> <span class="c1">// set wrapping mode to repeat
+</span>
+    <span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL_TEXTURE0</span><span class="p">);</span>  <span class="c1">// active the texutre unit 0
+</span>    <span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">tex_happy</span><span class="p">);</span>  <span class="c1">// bind the happy face texture to current unit
+</span>
+    <span class="c1">//
+</span>    <span class="c1">// For "Sphere" and "Cylinder", using more complicated way by loading the image, sets the data,
+</span>    <span class="c1">// sets the parameters independently, and loading the data to texture.
+</span>    <span class="c1">//
+</span>    <span class="kt">int</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">image</span><span class="p">;</span>
+    <span class="n">GLuint</span> <span class="n">tex_jupiter</span><span class="p">,</span> <span class="n">tex_wall</span><span class="p">,</span> <span class="n">tex_disc</span><span class="p">;</span>
+    <span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tex_jupiter</span><span class="p">);</span> <span class="c1">// generate texture for sphere
+</span>    <span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tex_wall</span><span class="p">);</span> <span class="c1">// generate texture for cylinder side
+</span>    <span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tex_disc</span><span class="p">);</span> <span class="c1">// generate texture for cylinder disc
+</span>
+    <span class="c1">// "Sphere"
+</span>    <span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL_TEXTURE2</span><span class="p">);</span> <span class="c1">// activate texture unit 2
+</span>    <span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">tex_jupiter</span><span class="p">);</span> <span class="c1">// bind the jupiter texture to current unit
+</span>    <span class="n">image</span> <span class="o">=</span> <span class="n">SOIL_load_image</span><span class="p">(</span><span class="s">"jupiter.jpg"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">width</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SOIL_LOAD_RGB</span> <span class="p">);</span> <span class="c1">// loading the image
+</span>    <span class="k">if</span><span class="p">(</span> <span class="n">image</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>     
+        <span class="n">printf</span><span class="p">(</span> <span class="s">"SOIL loading error: '%s'</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">SOIL_last_result</span><span class="p">()</span> <span class="p">);</span> 
+    <span class="p">}</span>
+    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_WRAP_S</span><span class="p">,</span> <span class="n">GL_REPEAT</span><span class="p">);</span> <span class="c1">// sets S-axis wrapping mode as repeat
+</span>    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_WRAP_T</span><span class="p">,</span> <span class="n">GL_REPEAT</span><span class="p">);</span> <span class="c1">// sets T-axis wrapping mode as repeat
+</span>    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MAG_FILTER</span><span class="p">,</span> <span class="n">GL_NEAREST</span><span class="p">);</span> <span class="c1">// sets filtering mode for magnification as nearest
+</span>    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MIN_FILTER</span><span class="p">,</span> <span class="n">GL_LINEAR</span><span class="p">);</span> <span class="c1">// sets filtering mode for minification as linear
+</span>    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_GENERATE_MIPMAP</span><span class="p">,</span> <span class="n">GL_TRUE</span><span class="p">);</span> <span class="c1">// enable mipmap generation
+</span>    <span class="n">glTexImage2D</span><span class="p">(</span> <span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">GL_UNSIGNED_BYTE</span><span class="p">,</span> <span class="n">image</span><span class="p">);</span> <span class="c1">// load the image to texture
+</span>    <span class="n">SOIL_free_image_data</span><span class="p">(</span><span class="n">image</span><span class="p">);</span> <span class="c1">// free space
+</span></code></pre></div></div>
+
+<h3 id="lab5-shading"><strong>Lab5: Shading</strong></h3>
+
+<h4 id="description-1"><strong>Description</strong></h4>
+<ol>
+  <li>What is this lab about?</li>
+</ol>
+
+<p>This lab is a demonstration of shading models (phong and flat) implemented on OpenGL using self-written shaders. The project uses two pair of shaders, for flat model, the shading color is calculated in vertex shader and passed to fragment shader for final assignment, whereas for phong model, the normals has to be processed by OpenGL pipeline, so the final colors are calculated in fragment shader.</p>
+
+<ol>
+  <li>Why do we do this?</li>
+</ol>
+
+<p>Shading is one most important step for sythesize a image, for it demonstrate how objects are shaded by the light. The light for illumination is categorized into three types: ambient, diffuse and specular. Each type of light works as parameters to define the light impacted on the object. Of course for objects for rendering, they have their own material property to match light coeffcients, which are used for the model formula. Everything is done in the shader, so in program, we need to send all those parameters by uniform variables defined in shader.</p>
+
+<p>Since the model uses normals for each traiangle and vertices’s coordinates as well, the buffers stores both information as the objects are initially created.</p>
+
+<p>[picture]</p>
+
+<h4 id="prerequisites-1"><strong>Prerequisites</strong></h4>
+<ol>
+  <li>Ubuntu machine.</li>
+  <li>GLFW ( http://www.glfw.org/) - a windowing/application framework used by the assignments.</li>
+  <li>GLEW ( http://glew.sourceforge.net/) - a support library that allows the use of all OpenGL. extensions supported by your graphics hardware (not needed for Apple platforms).</li>
+</ol>
+
+<h4 id="installation-1"><strong>Installation</strong></h4>
+<ol>
+  <li>Download the codes.</li>
+  <li>Use terminal &amp; “cd” to current directery.</li>
+  <li>Run “make” to link and compile</li>
+  <li>Run “./main”</li>
+</ol>
+
+<h4 id="functions-1"><strong>Functions</strong></h4>
+<p>Partial codes: (<a href="https://github.com/zizhGuo/CSCI610-Foundations-of-Computer-Graphics/blob/master/shading/phong.vert">see complete module in GitHub</a>)
+Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.</p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Add all illumination and shading code you need here
+</span>
+    <span class="n">vec4</span> <span class="n">normals</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">N</span><span class="p">);</span> 
+    <span class="n">vec4</span> <span class="n">L</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">Lpos</span> <span class="o">-</span> <span class="n">vpos</span><span class="p">);</span> <span class="c1">// calculate light vector
+</span>    <span class="n">vec4</span> <span class="n">R</span> <span class="o">=</span> <span class="n">reflect</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">normals</span><span class="p">);</span> <span class="c1">// calculate the reflective vector
+</span>    <span class="n">vec4</span> <span class="n">V</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">vpos</span><span class="p">);</span>
+
+    <span class="n">fragmentColor</span> <span class="o">=</span> <span class="n">IA</span> <span class="o">*</span> <span class="n">KA</span> <span class="o">*</span> <span class="n">OA</span> <span class="o">+</span> <span class="n">IS</span> <span class="o">*</span> <span class="n">KD</span> <span class="o">*</span> <span class="n">OD</span> <span class="o">*</span> <span class="n">max</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">L</span><span class="p">.</span><span class="n">xyz</span><span class="p">,</span> <span class="n">normals</span><span class="p">.</span><span class="n">xyz</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">OS</span> <span class="o">*</span><span class="n">IS</span> <span class="o">*</span> <span class="n">KS</span> <span class="o">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">xyz</span><span class="p">,</span> <span class="n">V</span><span class="p">.</span><span class="n">xyz</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="n">SE</span><span class="p">);</span> <span class="c1">// apply phong model equation to get final color
+</span>
+    <span class="c1">// by default, just use 80% gray for everything
+</span>    <span class="c1">//fragmentColor = vec4( 0.8, 0.8, 0.8, 1.0 );
+</span><span class="p">}</span>
+
+</code></pre></div></div>
+
+<h3 id="lab4-tessellation"><strong>Lab4: Tessellation</strong></h3>
+
+<h4 id="description-2"><strong>Description</strong></h4>
+<ol>
+  <li>What is this lab about?</li>
+</ol>
+
+<p>This lab is a demonstration how tessellation algo is performed.</p>
+
+<ol>
+  <li>Why do we do this?</li>
+</ol>
+
+<p>Tessellation is used for dividing the polygons into suitable structures for rendering by creating more traiangles with program generated vertices. Familiarly, some basic primitive shapes utilize this algorithm, such as cone, cylinder, sphere and cube, etc.</p>
+
+<p>[picture]</p>
+
+<h4 id="prerequisites-2"><strong>Prerequisites</strong></h4>
+<ol>
+  <li>Ubuntu machine.</li>
+  <li>GLFW ( http://www.glfw.org/) - a windowing/application framework used by the assignments.</li>
+  <li>GLEW ( http://glew.sourceforge.net/) - a support library that allows the use of all OpenGL. extensions supported by your graphics hardware (not needed for Apple platforms).</li>
+</ol>
+
+<h4 id="installation-2"><strong>Installation</strong></h4>
+<ol>
+  <li>Download the codes.</li>
+  <li>Use terminal &amp; “cd” to current directery.</li>
+  <li>Run “make” to link and compile</li>
+  <li>Run “./main”</li>
+</ol>
+
+<h4 id="functions-2"><strong>Functions</strong></h4>
+<p>Partial codes: (<a href="https://github.com/zizhGuo/CSCI610-Foundations-of-Computer-Graphics/blob/master/tessellation/Shapes.cpp">see complete module in GitHub</a>)</p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">///
+// makeCylinder - Create polygons for a cylinder with unit height, centered at
+// the origin, with separate number of radial subdivisions and height 
+// subdivisions.
+//
+// @param radius - Radius of the base of the cylinder
+// @param discFactor - number of subdivisions on the radial base
+// @param heightFactor - number of subdivisions along the height
+//
+// Can only use calls to C.addTriangle()
+///
+</span><span class="kt">void</span> <span class="nf">makeCylinder</span><span class="p">(</span> <span class="n">Canvas</span> <span class="o">&amp;</span><span class="n">C</span><span class="p">,</span> <span class="kt">float</span> <span class="n">radius</span><span class="p">,</span>
+                   <span class="kt">int</span> <span class="n">discFactor</span><span class="p">,</span> <span class="kt">int</span> <span class="n">heightFactor</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">discFactor</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="p">)</span>
+        <span class="n">discFactor</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="k">if</span><span class="p">(</span> <span class="n">heightFactor</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="p">)</span>
+        <span class="n">heightFactor</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">// YOUR IMPLEMENTATION HERE
+</span>    <span class="c1">// offset on given discFactor and stride for current location on the same tier
+</span>    <span class="kt">float</span> <span class="n">strideDisk</span> <span class="o">=</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">;</span> 
+    <span class="kt">float</span> <span class="n">offsetA</span> <span class="o">=</span> <span class="mf">2.0</span><span class="n">f</span> <span class="o">*</span> <span class="mf">3.14159</span><span class="n">f</span> <span class="o">/</span> <span class="n">discFactor</span><span class="p">;</span>
+
+    <span class="c1">// offset on given heightFactor and stride for current height
+</span>    <span class="kt">float</span> <span class="n">strideSide</span> <span class="o">=</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">offsetB</span> <span class="o">=</span> <span class="mf">1.0</span><span class="n">f</span> <span class="o">/</span> <span class="n">heightFactor</span><span class="p">;</span>
+
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">discFactor</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//Tessellation on disk top
+</span>        <span class="n">Vertex</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">makeDiskVertex</span><span class="p">(</span><span class="n">strideDisk</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="mf">0.5</span><span class="n">f</span><span class="p">);</span>
+        <span class="n">Vertex</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">makeDiskVertex</span><span class="p">(</span><span class="n">strideDisk</span> <span class="o">+</span> <span class="n">offsetA</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="mf">0.5</span><span class="n">f</span><span class="p">);</span>
+        <span class="n">C</span><span class="p">.</span><span class="n">addTriangle</span><span class="p">(</span><span class="n">Vertex</span><span class="p">{</span><span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.5</span><span class="n">f</span><span class="p">,</span> <span class="mf">1.0</span><span class="n">f</span><span class="p">},</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span>
+
+        <span class="c1">//Tessellation on disk bottom
+</span>        <span class="n">Vertex</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">makeDiskVertex</span><span class="p">(</span><span class="n">strideDisk</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="n">f</span><span class="p">);</span>
+        <span class="n">Vertex</span> <span class="n">v4</span> <span class="o">=</span> <span class="n">makeDiskVertex</span><span class="p">(</span><span class="n">strideDisk</span> <span class="o">+</span> <span class="n">offsetA</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="n">f</span><span class="p">);</span>
+        <span class="n">C</span><span class="p">.</span><span class="n">addTriangle</span><span class="p">(</span><span class="n">Vertex</span><span class="p">{</span><span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="n">f</span><span class="p">,</span> <span class="mf">1.0</span><span class="n">f</span><span class="p">},</span><span class="n">v4</span><span class="p">,</span> <span class="n">v3</span><span class="p">);</span>
+        <span class="n">strideDisk</span> <span class="o">+=</span> <span class="n">offsetA</span><span class="p">;</span>
+
+        <span class="c1">//Tessellation on Cylinder side
+</span>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">heightFactor</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Vertex</span> <span class="n">vv1</span> <span class="o">=</span> <span class="n">makeRecVertex</span><span class="p">(</span><span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="n">strideSide</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">,</span> <span class="n">v4</span><span class="p">);</span>
+            <span class="n">Vertex</span> <span class="n">vv2</span> <span class="o">=</span> <span class="n">makeRecVertex</span><span class="p">(</span><span class="mf">1.0</span><span class="n">f</span><span class="p">,</span> <span class="n">strideSide</span> <span class="o">+</span> <span class="n">offsetB</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">,</span> <span class="n">v4</span><span class="p">);</span>
+            <span class="n">Vertex</span> <span class="n">vv3</span> <span class="o">=</span> <span class="n">makeRecVertex</span><span class="p">(</span><span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="n">strideSide</span> <span class="o">+</span> <span class="n">offsetB</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">,</span> <span class="n">v4</span><span class="p">);</span>
+            <span class="n">Vertex</span> <span class="n">vv4</span> <span class="o">=</span> <span class="n">makeRecVertex</span><span class="p">(</span><span class="mf">1.0</span><span class="n">f</span><span class="p">,</span> <span class="n">strideSide</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">,</span> <span class="n">v4</span><span class="p">);</span>
+            <span class="n">C</span><span class="p">.</span><span class="n">addTriangle</span><span class="p">(</span><span class="n">vv1</span><span class="p">,</span> <span class="n">vv2</span><span class="p">,</span> <span class="n">vv3</span><span class="p">);</span>
+            <span class="n">C</span><span class="p">.</span><span class="n">addTriangle</span><span class="p">(</span><span class="n">vv2</span><span class="p">,</span> <span class="n">vv1</span><span class="p">,</span> <span class="n">vv4</span><span class="p">);</span>
+            <span class="n">strideSide</span> <span class="o">+=</span> <span class="n">offsetB</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">strideSide</span> <span class="o">=</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="lab3-sutherland-hodgman-polygon-clipper"><strong>Lab3: Sutherland-Hodgman Polygon Clipper</strong></h3>
+
+<h4 id="description-3"><strong>Description</strong></h4>
+<ol>
+  <li>What is this lab about?</li>
+</ol>
+
+<p>This lab is a demonstration of Sutherland-Hodgman Polygon Clipper.</p>
+
+<ol>
+  <li>Why do we do this?</li>
+</ol>
+
+<p>In pipeline, after do Model Transform, the objects should be transformed to viewport, so it is necessary to clip the objects. In 3D, it depends on which perspective you choose, either the frustum or orthographic perspective will apply this step in order to eliminate the parts that is no need to demonstrate.</p>
+
+<p>[picture]</p>
+
+<h4 id="prerequisites-3"><strong>Prerequisites</strong></h4>
+<ol>
+  <li>Ubuntu machine.</li>
+  <li>GLFW ( http://www.glfw.org/) - a windowing/application framework used by the assignments.</li>
+  <li>GLEW ( http://glew.sourceforge.net/) - a support library that allows the use of all OpenGL. extensions supported by your graphics hardware (not needed for Apple platforms).</li>
+</ol>
+
+<h4 id="installation-3"><strong>Installation</strong></h4>
+<ol>
+  <li>Download the codes.</li>
+  <li>Use terminal &amp; “cd” to current directery.</li>
+  <li>Run “make” to link and compile</li>
+  <li>Run “./main”</li>
+</ol>
+
+<h4 id="functions-3"><strong>Functions</strong></h4>
+<p>Partial codes: (<a href="https://github.com/zizhGuo/CSCI610-Foundations-of-Computer-Graphics/blob/master/clip/c%2B%2B/Clipper.cpp">see complete module in GitHub</a>)</p>
+
+<h3 id="lab2-sutherland-hodgman-polygon-clipper"><strong>Lab2: Sutherland-Hodgman Polygon Clipper</strong></h3>
+
+<h4 id="description-4"><strong>Description</strong></h4>
+<ol>
+  <li>What is this lab about?</li>
+</ol>
+
+<p>This lab is a demonstration of Sutherland-Hodgman Polygon Clipper.</p>
+
+<ol>
+  <li>Why do we do this?</li>
+</ol>
+
+<p>In pipeline, after do Model Transform, the objects should be transformed to viewport, so it is necessary to clip the objects. In 3D, it depends on which perspective you choose, either the frustum or orthographic perspective will apply this step in order to eliminate the parts that is no need to demonstrate.</p>
+
+<p>[picture]</p>
+
+<h4 id="prerequisites-4"><strong>Prerequisites</strong></h4>
+<ol>
+  <li>Ubuntu machine.</li>
+  <li>GLFW ( http://www.glfw.org/) - a windowing/application framework used by the assignments.</li>
+  <li>GLEW ( http://glew.sourceforge.net/) - a support library that allows the use of all OpenGL. extensions supported by your graphics hardware (not needed for Apple platforms).</li>
+</ol>
+
+<h4 id="installation-4"><strong>Installation</strong></h4>
+<ol>
+  <li>Download the codes.</li>
+  <li>Use terminal &amp; “cd” to current directery.</li>
+  <li>Run “make” to link and compile</li>
+  <li>Run “./main”</li>
+</ol>
+
+<h4 id="functions-4"><strong>Functions</strong></h4>
+<p>Partial codes: (<a href="https://github.com/zizhGuo/CSCI610-Foundations-of-Computer-Graphics/blob/master/clip/c%2B%2B/Clipper.cpp">see complete module in GitHub</a>)</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">///
+// clipPolygon
+//
+// Clip the polygon with vertex count in and vertices inV against the
+// rectangular clipping region specified by lower-left corner ll and
+// upper-right corner ur. The resulting vertices are placed in outV.
+//
+// The routine should return the with the vertex count of polygon
+// resulting from the clipping.
+//
+// @param in    the number of vertices in the polygon to be clipped
+// @param inV   the incoming vertex list
+// @param outV  the outgoing vertex list
+// @param ll    the lower-left corner of the clipping rectangle
+// @param ur    the upper-right corner of the clipping rectangle
+//
+// @return number of vertices in the polygon resulting after clipping
+///
+</span><span class="kt">int</span> <span class="nf">clipPolygon</span><span class="p">(</span> <span class="kt">int</span> <span class="n">in</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vertex</span> <span class="n">inV</span><span class="p">[],</span> <span class="n">Vertex</span> <span class="n">outV</span><span class="p">[],</span>
+         <span class="n">Vertex</span> <span class="n">ll</span><span class="p">,</span> <span class="n">Vertex</span> <span class="n">ur</span> <span class="p">)</span> <span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">summary</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+<span class="kt">int</span> <span class="n">clipPolygon</span><span class="p">(</span> <span class="kt">int</span> <span class="n">in</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vertex</span> <span class="n">inV</span><span class="p">[],</span> <span class="n">Vertex</span> <span class="n">outV</span><span class="p">[],</span>
+         <span class="n">Vertex</span> <span class="n">ll</span><span class="p">,</span> <span class="n">Vertex</span> <span class="n">ur</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// YOUR CODE GOES HERE
+</span>    <span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">out1</span> <span class="p">{</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">()};</span>
+    <span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">out2</span> <span class="p">{</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">()};</span>
+    <span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">out3</span> <span class="p">{</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">()};</span>
+    <span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">out4</span> <span class="p">{</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">()};</span>
+    <span class="kt">int</span> <span class="n">out1_length</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">out2_length</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">out3_length</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">out4_length</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>        
+    <span class="n">Vertex</span> <span class="n">lr</span> <span class="p">{</span><span class="n">ur</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ll</span><span class="p">.</span><span class="n">y</span><span class="p">};</span>
+    <span class="n">Vertex</span> <span class="n">ul</span> <span class="p">{</span><span class="n">ll</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ur</span><span class="p">.</span><span class="n">y</span><span class="p">};</span>
+
+    <span class="c1">// clipping with lower boundary
+</span>    <span class="n">SHPC</span><span class="p">(</span><span class="n">inV</span><span class="p">,</span> <span class="n">out1</span><span class="p">,</span> <span class="n">in</span><span class="p">,</span> <span class="n">out1_length</span><span class="p">,</span> <span class="n">ll</span><span class="p">,</span> <span class="n">lr</span><span class="p">);</span>
+    <span class="n">Vertex</span> <span class="n">out1_arr</span><span class="p">[</span><span class="n">out1_length</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">count</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="p">{</span><span class="n">out1</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">out1</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">out1_arr</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="n">i</span><span class="p">;</span>
+        <span class="o">++</span><span class="n">count</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// clipping with right boundary
+</span>    <span class="n">SHPC</span><span class="p">(</span><span class="n">out1_arr</span><span class="p">,</span> <span class="n">out2</span><span class="p">,</span> <span class="n">out1_length</span><span class="p">,</span> <span class="n">out2_length</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">ur</span><span class="p">);</span>
+    <span class="n">Vertex</span> <span class="n">out2_arr</span><span class="p">[</span><span class="n">out2_length</span><span class="p">];</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="p">{</span><span class="n">out2</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">out2</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">out2_arr</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="n">i</span><span class="p">;</span>
+        <span class="o">++</span><span class="n">count</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// clipping with upper boundary
+</span>    <span class="n">SHPC</span><span class="p">(</span><span class="n">out2_arr</span><span class="p">,</span> <span class="n">out3</span><span class="p">,</span> <span class="n">out2_length</span><span class="p">,</span> <span class="n">out3_length</span><span class="p">,</span> <span class="n">ur</span><span class="p">,</span> <span class="n">ul</span><span class="p">);</span>
+    <span class="n">Vertex</span> <span class="n">out3_arr</span><span class="p">[</span><span class="n">out3_length</span><span class="p">];</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="p">{</span><span class="n">out3</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">out3</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">out3_arr</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="n">i</span><span class="p">;</span>
+        <span class="o">++</span><span class="n">count</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">/// clipping with left boundary
+</span>    <span class="n">SHPC</span><span class="p">(</span><span class="n">out3_arr</span><span class="p">,</span> <span class="n">out4</span><span class="p">,</span> <span class="n">out3_length</span><span class="p">,</span> <span class="n">out4_length</span><span class="p">,</span> <span class="n">ul</span><span class="p">,</span> <span class="n">ll</span><span class="p">);</span>
+    <span class="n">Vertex</span> <span class="n">out4_arr</span><span class="p">[</span><span class="n">out4_length</span><span class="p">];</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="p">{</span><span class="n">out4</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">out4</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">out4_arr</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="n">i</span><span class="p">;</span>
+        <span class="o">++</span><span class="n">count</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// deep copy the vertices list to outV array
+</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">out4_length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">outV</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">out4_arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">out4_length</span><span class="p">;</span> <span class="c1">// return the number of vertices from clipped polygon
+</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="lab1-polygon-filling-algorithm"><strong>Lab1: Polygon Filling Algorithm</strong></h3>
+
+<h4 id="description-5"><strong>Description</strong></h4>
+<ol>
+  <li>What is this lab about?</li>
+</ol>
+
+<p>This lab is a demonstration of polygon filling algorithm. The frame buffers stores the color of each pixel. In order to physically make it see-able, the program will use the polygon filling algorithm to fill the pixels that inside of the polygon with the pixel color in buffers. This lab is a simulation to implement this process.</p>
+
+<p>[picture]</p>
+
+<h4 id="prerequisites-5"><strong>Prerequisites</strong></h4>
+<ol>
+  <li>Ubuntu machine.</li>
+  <li>GLFW ( http://www.glfw.org/) - a windowing/application framework used by the assignments.</li>
+  <li>GLEW ( http://glew.sourceforge.net/) - a support library that allows the use of all OpenGL. extensions supported by your graphics hardware (not needed for Apple platforms).</li>
+</ol>
+
+<h4 id="installation-5"><strong>Installation</strong></h4>
+<ol>
+  <li>Download the codes.</li>
+  <li>Use terminal &amp; “cd” to current directery.</li>
+  <li>Run “make” to link and compile</li>
+  <li>Run “./main”</li>
+</ol>
+
+<h4 id="functions-5"><strong>Functions</strong></h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">///
+// Draw a filled polygon.
+//
+// Implementation should use the scan-line polygon fill algorithm
+// discussed in class.
+//
+// The polygon has n distinct vertices.  The coordinates of the vertices
+// making up the polygon are supplied in the 'v' array parameter, such
+// that the ith vertex is in v[i].
+//
+// You are to add the implementation here using only calls to the
+// setPixel() function.
+//
+// @param n - number of vertices
+// @param v - array of vertices
+///
+</span><span class="kt">void</span> <span class="n">Rasterizer</span><span class="o">::</span><span class="n">drawPolygon</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vertex</span> <span class="n">v</span><span class="p">[]</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// YOUR IMPLEMENTATION HERE
+</span>    <span class="kt">int</span> <span class="n">WINDOWS_HEIGHT</span> <span class="p">{</span><span class="mi">600</span><span class="p">};</span>
+
+    <span class="kt">size_t</span> <span class="n">maxY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="c1">// Simple optimization: Get the highest y coordinate among all edges
+</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">maxY</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">maxY</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="p">}</span>
+
+  <span class="c1">// Initialize the ET and AT
+</span>    <span class="n">list</span><span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;</span> <span class="n">ET</span><span class="p">[</span><span class="n">WINDOWS_HEIGHT</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">maxY</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="n">ET</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">list</span><span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">;</span>
+    <span class="p">}</span> 
+  <span class="n">list</span> <span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;</span> <span class="n">AT</span> <span class="p">{</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;</span><span class="p">()};</span>
+
+    
+  <span class="c1">// Add edges to ET based on ymin
+</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x1</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">v</span><span class="p">[(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">].</span><span class="n">x</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">v</span><span class="p">[(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">].</span><span class="n">y</span><span class="p">;</span>
+
+      <span class="c1">// Igonore horizontal line
+</span>        <span class="k">if</span> <span class="p">(</span><span class="n">y1</span> <span class="o">==</span> <span class="n">y2</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+
+      <span class="c1">// Info of current edge &lt;(x1, y1), (x2, y2)&gt;
+</span>        <span class="kt">int</span> <span class="n">ymin</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">&gt;</span> <span class="n">y2</span> <span class="o">?</span> <span class="n">y2</span> <span class="o">:</span> <span class="n">y1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">ymax</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">&gt;</span> <span class="n">y2</span> <span class="o">?</span> <span class="n">y1</span> <span class="o">:</span> <span class="n">y2</span><span class="p">;</span>
+        <span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">&gt;</span> <span class="n">y2</span> <span class="o">?</span> <span class="n">x2</span> <span class="o">:</span> <span class="n">x1</span><span class="p">;</span>
+        <span class="kt">float</span> <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.0</span><span class="n">f</span> <span class="o">/</span> <span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">);</span>
+
+      <span class="c1">// Initialize current edge and ET
+</span>        <span class="n">Edge</span> <span class="n">edge</span> <span class="o">=</span> <span class="n">Edge</span><span class="p">(</span><span class="n">ymax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">dx</span><span class="p">);</span>
+        <span class="n">ET</span><span class="p">[</span><span class="n">ymin</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">edge</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">// Scan-line drawing from y = 0 to y = 600
+</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">WINDOWS_HEIGHT</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//drop tables
+</span>        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">AT</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">AT</span><span class="p">.</span><span class="n">end</span><span class="p">();)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">-&gt;</span> <span class="n">ymax</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">AT</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">j</span><span class="o">++</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="o">++</span><span class="n">j</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+    <span class="c1">// Update AT by copying edges from ET
+</span>        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">ET</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">ET</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">AT</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">j</span><span class="p">);</span>
+        <span class="p">}</span>
+
+    <span class="c1">//Sort edges in AT
+</span>
+      <span class="c1">// Sort based on x
+</span>        <span class="n">AT</span><span class="p">.</span><span class="n">sort</span><span class="p">([](</span><span class="k">const</span> <span class="n">Edge</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Edge</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">){</span><span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">;});</span>
+
+      <span class="c1">// For each pair, if x equals, sorting based on dx
+</span>      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">AT</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">AT</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">advance</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+      <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">nxt</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">nxt</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="p">)</span>
+        <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">-&gt;</span> <span class="n">dx</span> <span class="o">&gt;</span> <span class="n">nxt</span> <span class="o">-&gt;</span> <span class="n">dx</span><span class="p">)</span>
+          <span class="p">{</span>
+            <span class="n">iter_swap</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">nxt</span><span class="p">);</span>
+          <span class="p">}</span>          
+        <span class="p">}</span>
+      <span class="p">}</span>
+
+    <span class="c1">// Fill polygon by pairs in each scan-line
+</span>      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">AT</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">AT</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">advance</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+      <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">nxt</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="n">x_left</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">x1</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+        <span class="c1">// left intersected point, if x is on the edge, draw it. Or round it up.
+</span>        <span class="k">if</span> <span class="p">(</span><span class="n">x_left</span> <span class="o">-</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">x_left</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">x1</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">x_left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+          <span class="n">x1</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">x_left</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// right intersected point, round it down.
+</span>        <span class="kt">int</span> <span class="n">x2</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">nxt</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="p">);</span>
+
+        <span class="c1">// For each line segment by paired intersected points, set pixels.
+</span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="p">{</span><span class="n">x1</span><span class="p">};</span> <span class="n">k</span> <span class="o">!=</span> <span class="n">x2</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span>
+        <span class="p">{</span>
+          <span class="n">Vertex</span> <span class="n">v</span> <span class="p">{</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">};</span>
+          <span class="n">C</span><span class="p">.</span><span class="n">setPixel</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+
+    <span class="c1">// Update x in AT by adding dx.
+</span>      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">AT</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">AT</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">advance</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+      <span class="p">{</span>
+        <span class="n">j</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">+=</span> <span class="n">j</span> <span class="o">-&gt;</span> <span class="n">dx</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="contribution"><strong>Contribution</strong></h4>
+
+<h4 id="license"><strong>License</strong></h4>
+
+<h4 id="citation"><strong>Citation</strong></h4>
+<p>https://www.jianshu.com/p/d9be99077c2b</p>
+<h4 id="contact"><strong>Contact</strong></h4>
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>
