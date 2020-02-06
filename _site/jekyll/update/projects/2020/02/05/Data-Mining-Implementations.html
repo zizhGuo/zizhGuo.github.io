@@ -1,0 +1,204 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"http://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+<!--             <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">ABOUT</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun-Guo_Resume_8_29_2019.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container my-5 py-5" style="background: #f6f6f6;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Data Mining Implementations (with Codes and outcome Images)</h1>
+		<p class="lead"><span>Zizhun Guo</span><span>2020-02-05 13:11:50 -0500</span></p>
+<!--     	<a href="" class="btn btn-primary">tag1</a>
+	<a href="" class="btn btn-success">tag2</a> -->
+</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><p>This repository collects all homework and projects of 2020 Spring RIT Computer Science Master’s level course - CSCI-720-Big-Data Analytics.</p>
+
+<p>Projects and Course ongoing
+Keep updating!</p>
+
+<hr />
+<p><br /></p>
+<h5 id="homework-2-otsu-method-for-clustering-1d-data-into-two-groups-using-bining-method-to-quantize-data-and-finding-the-best-splitting-point"><strong>Homework 2: Otsu Method for clustering 1D data into two groups, using bining method to quantize data and finding the best splitting point.</strong></h5>
+<ul>
+  <li>This program graph the mixed variance from two groups based on different best splitting points.</li>
+  <li>For second cases, it used Regularization to help break ties if costs for each splitting point are close.</li>
+  <li>The program also compared the change of splitting point (bins) with different values of Alpha (a arg of Regularization).</li>
+</ul>
+
+<p><strong>The point of Otus Method is to find the best splitting point by selecting one with minimal cost. 
+Cost = Objective + Regularization</strong></p>
+
+<h5 id="binning-method-for-quantizing-data">Binning method for quantizing data:</h5>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_ages</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">df_snowfolks_data_raw</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<h5 id="otsu-method-python-code">Otsu Method python code:</h5>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">best_cost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>                      <span class="c"># best cost</span>
+    <span class="n">best_threshold</span> <span class="o">=</span> <span class="n">start</span>                  <span class="c"># best splitting point</span>
+
+    <span class="k">while</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">:</span>
+        <span class="n">wt_left</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>     <span class="c"># fraction left</span>
+        <span class="n">wt_right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">&gt;=</span> <span class="n">start</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>   <span class="c"># fration right</span>
+        <span class="n">wt_var_left</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">])</span>              <span class="c"># variance left</span>
+        <span class="n">wt_var_right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">&gt;=</span> <span class="n">start</span><span class="p">])</span>            <span class="c"># variance right</span>
+
+        <span class="n">mixed_variance</span> <span class="o">=</span> <span class="n">wt_left</span> <span class="o">*</span> <span class="n">wt_var_left</span> \
+                        <span class="o">+</span> <span class="n">wt_right</span> <span class="o">*</span> <span class="n">wt_var_right</span>             <span class="c"># mixed variance</span>
+        
+        <span class="k">if</span> <span class="n">is_regularization</span><span class="p">:</span>                                 
+            <span class="n">mix_cost</span> <span class="o">=</span> <span class="n">mixed_variance</span> \
+                    <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">])</span> \
+                            <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">&gt;=</span> <span class="n">start</span><span class="p">]))</span> \
+                        <span class="o">/</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">alpha</span>         <span class="c"># assign mixed cost to otsu' cost</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">mix_cost</span> <span class="o">=</span> <span class="n">mixed_variance</span>         <span class="c"># assign mixed variance to otsu' cost</span>
+               
+        <span class="k">if</span> <span class="p">(</span><span class="n">mix_cost</span> <span class="o">&lt;=</span> <span class="n">best_cost</span><span class="p">):</span>           <span class="c"># assign the minimal mixed cost as otsu' cost</span>
+            <span class="n">best_cost</span> <span class="o">=</span> <span class="n">mix_cost</span>
+            <span class="n">best_threshold</span> <span class="o">=</span> <span class="n">start</span>
+
+        <span class="n">start</span> <span class="o">+=</span> <span class="n">offset</span>                       <span class="c"># splitting point moves on</span>
+</code></pre></div></div>
+
+<div style="text-align: center;">
+   <img src="http://localhost:4001/assets/Img-DM/HW01-1.png" alt="drawing" style="width: 50%;" />
+   <figcaption>Figure 1: Distribution of mixed variance based on different ages</figcaption>
+</div>
+
+<div style="text-align: center;">
+   <img src="http://localhost:4001/assets/Img-DM/HW01-2.png" alt="drawing" style="width: 50%;" />
+   <figcaption>Figure 2: Distribution of best splitting points under each alpha</figcaption>
+</div>
+
+<p><br />
+<strong>As results showed, it is easy to see at this point, the cost is the lowest. But, in industrial project, with the size of data being extremely huge. The differences between objects could be tiny which may cause the splitting points swinging in a wide interval. So in order to break tie, the Regularization should be carefully made up for better performance.</strong>
+<br /></p>
+
+<hr />
+
+<p><br /></p>
+<h5 id="homework-1-metaprograme-csv-file-read"><strong>Homework 1: Metaprograme CSV file read</strong></h5>
+<p>This home is about writing a Mentor program that runs it to produce a Trained program which can read a CSV file in current directory
+and output its number of rows and columns. The empty rows and columns shall be ignored.
+The programs were written in Python, with IDE of VScode and Anaconda Jupyton Notebook for visual testing. The packages used are Pandas,
+Numpys.</p>
+
+<p><strong>“No repeatable work” - That is what I learned from this task. Told by my professor, this thought is extremely useful for industrial works. When there are big size data set to train, mentor program can be put in the clouds so that let server train the program, once it returns the trained model, it can be directly use for doing prediction with parameters well set.</strong></p>
+
+<h5 id="mentor-program-what-is-like">Mentor Program (what is like)</h5>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Writes in CSV file name to trained program</span>
+    <span class="k">if</span> <span class="s">"fileToRead"</span> <span class="ow">in</span> <span class="n">trainedinfo</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="nb">str</span> <span class="o">+=</span>  <span class="n">f</span><span class="s">"</span><span class="se">\n\t</span><span class="s">df = pd.read_csv(</span><span class="se">\"</span><span class="s">{trainedinfo['fileToRead']}</span><span class="se">\"</span><span class="s">)"</span> 
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t</span><span class="s">row_count = df.shape[0]+ 1 # must exist headers if a row is read as the headers"</span>
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t</span><span class="s">column_count = df.shape[1] # default count the size of columns"</span>       
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t</span><span class="s">for row_index in range(0, df.shape[0]):"</span>       
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t</span><span class="s">column_index = 0"</span>       
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t</span><span class="s">for j in range(0, df.shape[1]):"</span>       
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t\t</span><span class="s">if pd.isna(df.iloc[row_index, column_index]):"</span>      
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t\t\t</span><span class="s">column_index += 1"</span>       
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t</span><span class="s">if column_index == df.shape[1]: # if all elements are NaN"</span>       
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t\t</span><span class="s">row_count -= 1"</span>       
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t</span><span class="s">for column in df.columns:"</span>      
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t</span><span class="s">if(df[column].dropna().empty):"</span>       
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t\t</span><span class="s">column_count -= 1"</span>           
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t</span><span class="s">print(</span><span class="se">\"</span><span class="s">rows:       </span><span class="se">\"</span><span class="s"> + str(row_count))           # number of rows"</span>
+        <span class="nb">str</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t</span><span class="s">print(</span><span class="se">\"</span><span class="s">columns:    </span><span class="se">\"</span><span class="s"> + str(column_count))       # number of columns including headers"</span>
+</code></pre></div></div>
+
+<h5 id="trained-program-what-is-like">Trained Program (what is like):</h5>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"A_DATA_FILE.csv"</span><span class="p">)</span>        <span class="c"># read dataframe from the given CSV file</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"rows:       "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>           <span class="c"># number of rows</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"columns:    "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>       <span class="c"># number of columns including headers</span>
+
+    <span class="n">row_count</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span> <span class="mi">1</span>           
+    <span class="n">column_count</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">row_index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">df4</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">column_index</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">df4</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">df4</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">row_index</span><span class="p">,</span> <span class="n">column_index</span><span class="p">]):</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="n">df4</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="c"># if all elements are NaN</span>
+            <span class="n">row_count</span> <span class="o">-=</span> <span class="mi">1</span>        <span class="c"># </span>
+    
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df4</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">df4</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">empty</span><span class="p">):</span>
+            <span class="n">column_count</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">"rows:       "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>           <span class="c"># number of rows</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"columns:    "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>       <span class="c"># number of columns including headers</span>
+</code></pre></div></div>
+
+<hr />
+<p><br /></p>
+
+<p>All rights reserved. The shared programs provided in this repo are only meant for referencing and demonstration. Do not copy and share to other
+usage as homework for other courses, which would cause academic dishonesty. Please be advised.</p>
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>
