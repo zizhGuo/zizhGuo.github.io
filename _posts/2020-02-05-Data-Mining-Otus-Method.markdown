@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Data Mining Implementations (with Codes and outcome Images)"
+title:  "Data Mining: Otsu's Method (Object + Regularization)"
 date:   2020-02-05 18:11:50
 author: Zizhun Guo
 category: Projects

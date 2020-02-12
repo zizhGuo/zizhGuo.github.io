@@ -1,4 +1,248 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2020-02-05T19:40:19-05:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Data Mining Implementations (with Codes and outcome Images)</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/05/Data-Mining-Implementations.html" rel="alternate" type="text/html" title="Data Mining Implementations (with Codes and outcome Images)" /><published>2020-02-05T13:11:50-05:00</published><updated>2020-02-05T13:11:50-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/05/Data-Mining-Implementations</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/05/Data-Mining-Implementations.html">&lt;p&gt;This repository collects all homework and projects of 2020 Spring RIT Computer Science Master’s level course - CSCI-720-Big-Data Analytics.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2020-02-12T08:21:01-05:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Data Mining: ROC curve and 1D classficication</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC.html" rel="alternate" type="text/html" title="Data Mining: ROC curve and 1D classficication" /><published>2020-02-12T02:40:30-05:00</published><updated>2020-02-12T02:40:30-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC.html">&lt;h3 id=&quot;1-data-set-quantization&quot;&gt;1. Data set quantization&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW02_Guo_Zizhun_Mentor.py/main&lt;/span&gt;
+    
+    &lt;span class=&quot;c&quot;&gt;# using floor binning method to quatize dat set&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;data_ages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df_snowfolks_data_raw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin_size_ages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
+                    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bin_size_ages&lt;/span&gt;  \
+                    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df_snowfolks_data_raw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Class'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;data_heights&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df_snowfolks_data_raw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Height'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin_size_heights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
+                        &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bin_size_heights&lt;/span&gt; \
+                        &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df_snowfolks_data_raw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Class'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;2-main-parts-description&quot;&gt;2. Main parts description&lt;/h3&gt;
+
+&lt;h4 id=&quot;21-cost-functions-minimal-mixed-cost&quot;&gt;2.1 Cost functions (minimal mixed cost)&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW02_Guo_Zizhun_Mentor.py/binary_classifier_1d&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;FN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Class_A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Class_A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;                  &lt;span class=&quot;c&quot;&gt;# calculate the False Negatives&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;FP&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Class_B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Class_B&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;                  &lt;span class=&quot;c&quot;&gt;# calculate the False Positives&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;mixed_cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FP&lt;/span&gt;                                &lt;span class=&quot;c&quot;&gt;# calculate the mixed cost by adding up        &lt;/span&gt;
+        
+        &lt;span class=&quot;c&quot;&gt;# Minimize the mistakes&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mixed_cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lowest_cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;lowest_cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mixed_cost&lt;/span&gt;                              &lt;span class=&quot;c&quot;&gt;# update the minimal cost&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;best_thresholds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;                           &lt;span class=&quot;c&quot;&gt;# update the best threshold&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;22-selecting-attribute&quot;&gt;2.2 Selecting attribute&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;All attributes&lt;/strong&gt; would be tested for selecting the &lt;strong&gt;final&lt;/strong&gt; attribute as the standard attribute, which would be used in the trained program as the threshold.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW02_Guo_Zizhun_Mentor.py/write_file&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# select attribute by comparing the lowest cost to decide the classify rule&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt; \
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lowest_cost_ages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lowest_cost_heights&lt;/span&gt; \
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Height'&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;threshold&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;best_thresholds_ages&lt;/span&gt; \
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lowest_cost_ages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lowest_cost_heights&lt;/span&gt; \
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;best_thresholds_heights&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;3-comparison-with-otsus-method&quot;&gt;3. Comparison with Otsu’s method&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;CSV file&lt;/th&gt;
+      &lt;th&gt;Program&lt;/th&gt;
+      &lt;th&gt;Attibute&lt;/th&gt;
+      &lt;th&gt;Threshold Value&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Abominable_Data_For_1D_Classification__v93_HW3_720_final.csv&lt;/td&gt;
+      &lt;td&gt;clustering: Otsu’s Method&lt;/td&gt;
+      &lt;td&gt;Age&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;46.0&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;Ht&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;145.0&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;classification: Minimal number of misclassification&lt;/td&gt;
+      &lt;td&gt;Age&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;50.0&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;Height&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;140.0&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Table 1: Threshold result from running same data set on both homework program&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It make no sense to compare the results produced by both programs since they serve different purposes (one is clustering, the other is classification). The clustering is a technique to organize the data into classes where the data which shares similarity would be grouped together. The classification is worked on label data where the class for each data is defined in the first place but to trained a program to do more classification work.&lt;/p&gt;
+
+&lt;p&gt;However, when scope down to &lt;strong&gt;cost function&lt;/strong&gt;, Otus’s Method uses $cost = object(mixedVariance) + regularization$ as essential condition, whereas 1d Classifier, $cost =  numberFalse Alarm + numberFalse Positive$.&lt;/p&gt;
+
+&lt;p&gt;Statistically, the Otus’ purpose is to &lt;strong&gt;assess the minimal distance between each points as its standard to group points&lt;/strong&gt;, so the cost is calculated based on the &lt;strong&gt;spreading situation&lt;/strong&gt;. The purpose of Classification for using total number of False Alarm and False positive is to &lt;strong&gt;make the splitting point as much accurate as possible by minimize the misclassification&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Besides, the &lt;strong&gt;attribute&lt;/strong&gt; in values from two data set represent the same domain meaning, but in usage of data science, they are different by utilization. The classification would have labels attached on them, while clustering does not.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;4-plotting-costs-based-on-thresholds&quot;&gt;4. Plotting: Costs based on Thresholds&lt;/h3&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/Img-DM/HW02-costs_ages.png&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;Figure 1: Costs based on Age thresholds&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;*Best threshold has been marked by red verticle line.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/Img-DM/HW02-costs_heights.png&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+    &lt;figcaption&gt; Figure 2: Costs based on Heights thresholds&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;best-threshold-has-been-marked-by-red-verticle-line&quot;&gt;*Best threshold has been marked by red verticle line.&lt;/h2&gt;
+
+&lt;h3 id=&quot;5-plotting-roc-curve&quot;&gt;5. Plotting: ROC Curve&lt;/h3&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/Img-DM/HW02-roc_curve.png&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;Figure 3: ROC Curve&lt;/figcaption&gt;
+&lt;/div&gt;
+&lt;p&gt;*Axes square by &lt;code class=&quot;highlighter-rouge&quot;&gt;plt.gca().set_aspect('equal', adjustable='box')&lt;/code&gt;
+*Indication showed by red dots with best threshold annotated
+*There might be &lt;strong&gt;multiple best thresholds&lt;/strong&gt; for a single attribute, conclusion would be posted in &lt;strong&gt;Part 6&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;6-conclusion&quot;&gt;6. Conclusion&lt;/h3&gt;
+&lt;h4 id=&quot;61-what-did-i-discovered&quot;&gt;6.1 What did I discovered?&lt;/h4&gt;
+&lt;p&gt;The domain knowledge should be collected before setup the Cost Function. It determines which specific side to classify data set whereas if attribute is Height, Bhutan is on the left.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/Img-DM/HW02-hist_ages.png&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;Figure 4: Histogram of Age attribute&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;*if Attribute is &lt;strong&gt;Age&lt;/strong&gt;, Bhutan is on the &lt;strong&gt;right&lt;/strong&gt; of historgram.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/Img-DM/HW02-hist_heights.png&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;Figure 5: Histogram of Age attribute&lt;/figcaption&gt;
+&lt;/div&gt;
+&lt;p&gt;*if Attribute is &lt;strong&gt;Height&lt;/strong&gt;, Bhutan is on the &lt;strong&gt;left&lt;/strong&gt; of historgram.&lt;/p&gt;
+
+&lt;p&gt;The Splitting Point (&lt;strong&gt;Best thresholds&lt;/strong&gt;) tends to be &lt;strong&gt;centerlized&lt;/strong&gt; at points range where &lt;strong&gt;most samples&lt;/strong&gt; lying on (condense part).&lt;/p&gt;
+
+&lt;h4 id=&quot;62-which-attribute-did-i-use&quot;&gt;6.2 Which attribute did I use?&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Height&lt;/strong&gt;
+It has the best ROC curves, all points of the &lt;strong&gt;height&lt;/strong&gt; line is above ones on &lt;strong&gt;age&lt;/strong&gt; line, which indicating less number of misclassification
+since they were calculated by sum of FAR and FNR, best point is expected to have high y-coordinate and low x-coordinate.&lt;/p&gt;
+
+&lt;p&gt;For scenerios that has disparate distribution on both Age distribution and Height distribution. The program is smart enough to detect which attribute to select.&lt;/p&gt;
+
+&lt;p&gt;See Implementation at &lt;strong&gt;2.3 Selecting attribute&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;63-were-the-results-what-i-expected&quot;&gt;6.3 Were the results what I expected?&lt;/h4&gt;
+&lt;p&gt;|Labels|Prediction|Results|
+|—|—|—|
+|+|+|Correct|
+|-|-|Correct|
+|-|-|Correct|
+|-|-|Correct|
+|+|-|Wrong|
+|-|-|Correct|
+|-|-|Correct|
+|-|-|Correct|
+|+|+|Correct|
+|+|+|Correct|
+|+|-|Wrong|
+|+|-|Wrong|
+|-|-|Correct|
+|-|+|Wrong|
+|+|+|Correct|
+|+|+|Correct|&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Table 2: Classification Accuracy&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Summary: correct: &lt;strong&gt;12&lt;/strong&gt;; wrong: &lt;strong&gt;4&lt;/strong&gt;; total: &lt;strong&gt;16&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;$CorrectnessRate = numCorrect / TotalNum = 12/16 = 0.75$&lt;/p&gt;
+
+&lt;p&gt;The accuracy of current classifer model is &lt;strong&gt;75%&lt;/strong&gt;. Validated by validation CSV file. This is my expectation, since the homework documents said there would be no perfect classification in this case. So 75% is a number which somehow can indicate that.&lt;/p&gt;
+
+&lt;h4 id=&quot;64-what-was-surprising&quot;&gt;6.4 What was surprising?&lt;/h4&gt;
+&lt;p&gt;What maybe shocked is the accuracy is low. It will give a wrong prediction every 3 out of 4 given data record. However, since this is a simple classification model, it does not surprise much. On the other hand, &lt;strong&gt;if the accuracy for one model is too high more than expectation, this could be wrong, since higher accuracy towards one specific data set tends make it overfitting.&lt;/strong&gt; - by the concept of &lt;strong&gt;Accuracy Paradox&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;65-was-there-anything-particularly-challenging&quot;&gt;6.5 Was there anything particularly challenging?&lt;/h4&gt;
+&lt;p&gt;Selection of data structure to contain data that required for each plotting task.&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/Img-DM/HW02-test_mult_roc.png&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;Figure 6: Fake ROC curve with made up multiple point with lowest costs plotted&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As homework document described, &lt;em&gt;“Caution, there may be more than one of them”&lt;/em&gt;, so there must implemente a data strutrue that is able to contains all roc points with lowest cost, and can be plotted them in the same ROC curve figure.
+So here is how to implemented in homework:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# Data structure [[(x1, y1), threshold1],...,[(xn, yn), thresholdn]]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;roc_point_with_lowest_cost&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;roc_points_with_lowest_cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;roc_point_with_lowest_cost_duplicate&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;roc_point_with_lowest_cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;roc_point_with_lowest_cost_duplicate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; 
+                    &lt;span class=&quot;n&quot;&gt;roc_point_with_lowest_cost_duplicate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; 
+                    &lt;span class=&quot;s&quot;&gt;'ro'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;annotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;roc_point_with_lowest_cost_duplicate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; 
+                        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;roc_point_with_lowest_cost_duplicate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; 
+                        &lt;span class=&quot;n&quot;&gt;roc_point_with_lowest_cost_duplicate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So data structure contains these info looks like this:
+$ [[(x1, y1), threshold1],…,[(xn, yn), thresholdn]]$ A list of list that contains a coordinate tuple and a matching best threshold&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Break Ties&lt;/strong&gt;
+This is the other name for descibing this siatution. So in order to break ties, a &lt;strong&gt;regularization&lt;/strong&gt; could be added to help select the best threshold. Here in my cases, my regularization is set to be a check condition whereas if the attribute selected is &lt;strong&gt;Age&lt;/strong&gt;, it selects the lowest best threshold, while if it is &lt;strong&gt;Height&lt;/strong&gt; attribute, so to choose the highest best threshold.&lt;/p&gt;
+
+&lt;p&gt;This is designed towards classifying as much Bhutan animals as possible so while the best thresholds have the same number of misclassification, the &lt;strong&gt;one with highest True Positive Rate&lt;/strong&gt; would be selected even though the higher False Positives Rates followed. The purpose is taking &lt;strong&gt;the greatest probablity to classify correct Bhutan&lt;/strong&gt;, so the misclassfied Assam is what we have to take in the same time.&lt;/p&gt;
+
+&lt;p&gt;In codes implementation, the first best threshold would be select if distribution is Age-like, while the last best threshold would be chosen if distribution is built under attribute of Height.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW02_GUO_Zizhun_trained.py/main&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# based on domain knowledge to choose which side to classify as Assam or Bhutan&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Age'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# select first best threshold&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'- 1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'+ 1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Height'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# select the last best threshold&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'+ 1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'- 1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;66-did-anything-go-wrong&quot;&gt;6.6 Did anything go wrong?&lt;/h4&gt;
+
+&lt;p&gt;ROC curve without domain knowledge may casue single side classification.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/wrong_roc.png&quot; alt=&quot;wrong_roc&quot; /&gt;&lt;/p&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/Img-DM/HW02-wrong_roc.png&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
+   &lt;figcaption&gt;Figure 7: Early stage of plotting ROC curve with no check condition on which side to classify&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;At the begining of development, I did not know about the distribution of the dataset, so I assumed all Brutan animals spreaded as larger ages and greater heights, but only after I plot the rough ROC curve (to observe the shape) did I realize I had missed the information of distribution. Later then after plotting the histogram, it helped to imporved the classification function.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;This works is used for Course CSCI720. Do not spread it if it is unauthorized.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">1. Data set quantization</summary></entry><entry><title type="html">Data Mining: Otsu’s Method (Object + Regularization)</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/05/Data-Mining-Otus-Method.html" rel="alternate" type="text/html" title="Data Mining: Otsu's Method (Object + Regularization)" /><published>2020-02-05T13:11:50-05:00</published><updated>2020-02-05T13:11:50-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/05/Data-Mining-Otus-Method</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/05/Data-Mining-Otus-Method.html">&lt;p&gt;This repository collects all homework and projects of 2020 Spring RIT Computer Science Master’s level course - CSCI-720-Big-Data Analytics.&lt;/p&gt;
 
 &lt;p&gt;Projects and Course ongoing
 Keep updating!&lt;/p&gt;
@@ -1199,30 +1443,4 @@ Class: p-sm-5代表padding在浏览器pixels值变小时变成3rem，最小1代�
 
 &lt;h5 id=&quot;media-queries&quot;&gt;&lt;a href=&quot;https://www.w3schools.com/cssref/css3_pr_mediaquery.asp&quot;&gt;Media Queries&lt;/a&gt;&lt;/h5&gt;
 
-&lt;h5 id=&quot;下划线效果&quot;&gt;&lt;a href=&quot;https://www.w3schools.com/cssref/css3_pr_mediaquery.asp&quot;&gt;下划线效果&lt;/a&gt;&lt;/h5&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">1. General</summary></entry><entry><title type="html">Learning Notes: About Jekyll</title><link href="http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Jekll.html" rel="alternate" type="text/html" title="Learning Notes: About Jekyll" /><published>2019-06-15T15:34:06-04:00</published><updated>2019-06-15T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Jekll</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Jekll.html">&lt;p&gt;[to be edited]&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">[to be edited]</summary></entry><entry><title type="html">背影</title><link href="http://localhost:4001/jekyll/update/test/2019/06/04/welcome-to-jekyll.html" rel="alternate" type="text/html" title="背影" /><published>2019-06-04T19:34:06-04:00</published><updated>2019-06-04T19:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/test/2019/06/04/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4001/jekyll/update/test/2019/06/04/welcome-to-jekyll.html">&lt;p&gt;我与父亲不相见已二年余了，我最不能忘记的是他的背影。&lt;/p&gt;
-
-&lt;p&gt;那年冬天，祖母死了，父亲的差使1也交卸了，正是祸不单行的日子。我从北京到徐州，打算跟着父亲奔丧2回家。到徐州见着父亲，看见满院狼藉3的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说：“事已如此，不必难过，好在天无绝人之路！”&lt;/p&gt;
-
-&lt;p&gt;回家变卖典质4，父亲还了亏空；又借钱办了丧事。这些日子，家中光景5很是惨澹，一半为了丧事，一半为了父亲赋闲6。丧事完毕，父亲要到南京谋事，我也要回北京念书，我们便同行。&lt;/p&gt;
-
-&lt;p&gt;到南京时，有朋友约去游逛，勾留7了一日；第二日上午便须渡江到浦口，下午上车北去。父亲因为事忙，本已说定不送我，叫旅馆里一个熟识的茶房8陪我同去。他再三嘱咐茶房，甚是仔细。但他终于不放心，怕茶房不妥帖9；颇踌躇10了一会。其实我那年已二十岁，北京已来往过两三次，是没有什么要紧的了。他踌躇了一会，终于决定还是自己送我去。我再三劝他不必去；他只说：“不要紧，他们去不好！”&lt;/p&gt;
-
-&lt;p&gt;我们过了江，进了车站。我买票，他忙着照看行李。行李太多，得向脚夫11行些小费才可过去。他便又忙着和他们讲价钱。我那时真是聪明过分，总觉他说话不大漂亮，非自己插嘴不可，但他终于讲定了价钱；就送我上车。他给我拣定了靠车门的一张椅子；我将他给我做的紫毛大衣铺好座位。他嘱我路上小心，夜里要警醒些，不要受凉。又嘱托茶房好好照应我。我心里暗笑他的迂；他们只认得钱，托他们只是白托！而且我这样大年纪的人，难道还不能料理自己么？我现在想想，我那时真是太聪明了。&lt;/p&gt;
-
-&lt;p&gt;我说道：“爸爸，你走吧。”他望车外看了看，说：“我买几个橘子去。你就在此地，不要走动。”我看那边月台的栅栏外有几个卖东西的等着顾客。走到那边月台，须穿过铁道，须跳下去又爬上去。父亲是一个胖子，走过去自然要费事些。我本来要去的，他不肯，只好让他去。我看见他戴着黑布小帽，穿着黑布大马褂12，深青布棉袍，蹒跚13地走到铁道边，慢慢探身下去，尚不大难。可是他穿过铁道，要爬上那边月台，就不容易了。他用两手攀着上面，两脚再向上缩；他肥胖的身子向左微倾，显出努力的样子。这时我看见他的背影，我的泪很快地流下来了。我赶紧拭干了泪。怕他看见，也怕别人看见。我再向外看时，他已抱了朱红的橘子往回走了。过铁道时，他先将橘子散放在地上，自己慢慢爬下，再抱起橘子走。到这边时，我赶紧去搀他。他和我走到车上，将橘子一股脑儿放在我的皮大衣上。于是扑扑衣上的泥土，心里很轻松似的。过一会儿说：“我走了，到那边来信！”我望着他走出去。他走了几步，回过头看见我，说：“进去吧，里边没人。”等他的背影混入来来往往的人里，再找不着了，我便进来坐下，我的眼泪又来了。&lt;/p&gt;
-
-&lt;p&gt;近几年来，父亲和我都是东奔西走，家中光景是一日不如一日。他少年出外谋生，独力支持，做了许多大事。哪知老境却如此颓唐！他触目伤怀，自然情不能自已。情郁于中，自然要发之于外；家庭琐屑便往往触他之怒。他待我渐渐不同往日。但最近两年不见，他终于忘却我的不好，只是惦记着我，惦记着他的儿子。我北来后，他写了一信给我，信中说道：“我身体平安，惟膀子疼痛厉害，举箸14提笔，诸多不便，大约大去之期15不远矣。”我读到此处，在晶莹的泪光中，又看见那肥胖的、青布棉袍黑布马褂的背影。唉！我不知何时再能与他相见！&lt;/p&gt;
-
-&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>朱自清</name></author><category term="Test" /><summary type="html">我与父亲不相见已二年余了，我最不能忘记的是他的背影。</summary></entry></feed>
+&lt;h5 id=&quot;下划线效果&quot;&gt;&lt;a href=&quot;https://www.w3schools.com/cssref/css3_pr_mediaquery.asp&quot;&gt;下划线效果&lt;/a&gt;&lt;/h5&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">1. General</summary></entry><entry><title type="html">Learning Notes: About Jekyll</title><link href="http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Jekll.html" rel="alternate" type="text/html" title="Learning Notes: About Jekyll" /><published>2019-06-15T15:34:06-04:00</published><updated>2019-06-15T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Jekll</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Jekll.html">&lt;p&gt;[to be edited]&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">[to be edited]</summary></entry></feed>

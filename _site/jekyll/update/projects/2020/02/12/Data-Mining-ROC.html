@@ -1,0 +1,326 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"http://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+<!--             <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">ABOUT</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun-Guo_Resume_2_2020.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container my-5 py-5" style="background: #f6f6f6;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Data Mining: ROC curve and 1D classficication</h1>
+		<p class="lead"><span>Zizhun Guo</span><span>2020-02-12 02:40:30 -0500</span></p>
+<!--     	<a href="" class="btn btn-primary">tag1</a>
+	<a href="" class="btn btn-success">tag2</a> -->
+</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><h3 id="1-data-set-quantization">1. Data set quantization</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW02_Guo_Zizhun_Mentor.py/main</span>
+    
+    <span class="c"># using floor binning method to quatize dat set</span>
+    <span class="n">data_ages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">df_snowfolks_data_raw</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">/</span><span class="n">bin_size_ages</span><span class="p">)</span> \
+                    <span class="o">*</span> <span class="n">bin_size_ages</span>  \
+                    <span class="o">*</span> <span class="n">df_snowfolks_data_raw</span><span class="p">[</span><span class="s">'Class'</span><span class="p">]</span>
+    
+    <span class="n">data_heights</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">df_snowfolks_data_raw</span><span class="p">[</span><span class="s">'Height'</span><span class="p">]</span> <span class="o">/</span><span class="n">bin_size_heights</span><span class="p">)</span> \
+                        <span class="o">*</span> <span class="n">bin_size_heights</span> \
+                        <span class="o">*</span> <span class="n">df_snowfolks_data_raw</span><span class="p">[</span><span class="s">'Class'</span><span class="p">]</span>
+
+</code></pre></div></div>
+
+<hr />
+<h3 id="2-main-parts-description">2. Main parts description</h3>
+
+<h4 id="21-cost-functions-minimal-mixed-cost">2.1 Cost functions (minimal mixed cost)</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW02_Guo_Zizhun_Mentor.py/binary_classifier_1d</span>
+
+        <span class="n">FN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">Class_A</span><span class="p">[</span><span class="n">Class_A</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>                  <span class="c"># calculate the False Negatives</span>
+        <span class="n">FP</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">Class_B</span><span class="p">[</span><span class="n">Class_B</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">])</span>                  <span class="c"># calculate the False Positives</span>
+        <span class="n">mixed_cost</span> <span class="o">=</span> <span class="n">FN</span> <span class="o">+</span> <span class="n">FP</span>                                <span class="c"># calculate the mixed cost by adding up        </span>
+        
+        <span class="c"># Minimize the mistakes</span>
+        <span class="k">if</span> <span class="n">mixed_cost</span> <span class="o">&lt;</span> <span class="n">lowest_cost</span><span class="p">:</span>
+            <span class="n">lowest_cost</span> <span class="o">=</span> <span class="n">mixed_cost</span>                              <span class="c"># update the minimal cost</span>
+            <span class="n">best_thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>                           <span class="c"># update the best threshold</span>
+</code></pre></div></div>
+<h4 id="22-selecting-attribute">2.2 Selecting attribute</h4>
+<p><strong>All attributes</strong> would be tested for selecting the <strong>final</strong> attribute as the standard attribute, which would be used in the trained program as the threshold.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW02_Guo_Zizhun_Mentor.py/write_file</span>
+
+    <span class="c"># select attribute by comparing the lowest cost to decide the classify rule</span>
+    <span class="n">attribute</span> <span class="o">=</span> <span class="s">'Age'</span> \
+        <span class="k">if</span> <span class="n">lowest_cost_ages</span> <span class="o">&lt;</span> <span class="n">lowest_cost_heights</span> \
+        <span class="k">else</span> <span class="s">'Height'</span>
+    <span class="n">threshold</span> <span class="o">=</span> <span class="n">best_thresholds_ages</span> \
+        <span class="k">if</span> <span class="n">lowest_cost_ages</span> <span class="o">&lt;</span> <span class="n">lowest_cost_heights</span> \
+        <span class="k">else</span> <span class="n">best_thresholds_heights</span>
+</code></pre></div></div>
+<hr />
+
+<h3 id="3-comparison-with-otsus-method">3. Comparison with Otsu’s method</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>CSV file</th>
+      <th>Program</th>
+      <th>Attibute</th>
+      <th>Threshold Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Abominable_Data_For_1D_Classification__v93_HW3_720_final.csv</td>
+      <td>clustering: Otsu’s Method</td>
+      <td>Age</td>
+      <td><strong>46.0</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Ht</td>
+      <td><strong>145.0</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>classification: Minimal number of misclassification</td>
+      <td>Age</td>
+      <td><strong>50.0</strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Height</td>
+      <td><strong>140.0</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Table 1: Threshold result from running same data set on both homework program</strong></p>
+
+<p>It make no sense to compare the results produced by both programs since they serve different purposes (one is clustering, the other is classification). The clustering is a technique to organize the data into classes where the data which shares similarity would be grouped together. The classification is worked on label data where the class for each data is defined in the first place but to trained a program to do more classification work.</p>
+
+<p>However, when scope down to <strong>cost function</strong>, Otus’s Method uses $cost = object(mixedVariance) + regularization$ as essential condition, whereas 1d Classifier, $cost =  numberFalse Alarm + numberFalse Positive$.</p>
+
+<p>Statistically, the Otus’ purpose is to <strong>assess the minimal distance between each points as its standard to group points</strong>, so the cost is calculated based on the <strong>spreading situation</strong>. The purpose of Classification for using total number of False Alarm and False positive is to <strong>make the splitting point as much accurate as possible by minimize the misclassification</strong>.</p>
+
+<p>Besides, the <strong>attribute</strong> in values from two data set represent the same domain meaning, but in usage of data science, they are different by utilization. The classification would have labels attached on them, while clustering does not.</p>
+
+<hr />
+
+<h3 id="4-plotting-costs-based-on-thresholds">4. Plotting: Costs based on Thresholds</h3>
+
+<div style="text-align: center;">
+   <img src="http://localhost:4001/assets/Img-DM/HW02-costs_ages.png" alt="drawing" style="width: 70%;" />
+   <figcaption>Figure 1: Costs based on Age thresholds</figcaption>
+</div>
+
+<p>*Best threshold has been marked by red verticle line.</p>
+
+<div style="text-align: center;">
+   <img src="http://localhost:4001/assets/Img-DM/HW02-costs_heights.png" alt="drawing" style="width: 70%;" />
+    <figcaption> Figure 2: Costs based on Heights thresholds</figcaption>
+</div>
+
+<h2 id="best-threshold-has-been-marked-by-red-verticle-line">*Best threshold has been marked by red verticle line.</h2>
+
+<h3 id="5-plotting-roc-curve">5. Plotting: ROC Curve</h3>
+
+<div style="text-align: center;">
+   <img src="http://localhost:4001/assets/Img-DM/HW02-roc_curve.png" alt="drawing" style="width: 70%;" />
+   <figcaption>Figure 3: ROC Curve</figcaption>
+</div>
+<p>*Axes square by <code class="highlighter-rouge">plt.gca().set_aspect('equal', adjustable='box')</code>
+*Indication showed by red dots with best threshold annotated
+*There might be <strong>multiple best thresholds</strong> for a single attribute, conclusion would be posted in <strong>Part 6</strong>.</p>
+
+<hr />
+
+<h3 id="6-conclusion">6. Conclusion</h3>
+<h4 id="61-what-did-i-discovered">6.1 What did I discovered?</h4>
+<p>The domain knowledge should be collected before setup the Cost Function. It determines which specific side to classify data set whereas if attribute is Height, Bhutan is on the left.</p>
+
+<div style="text-align: center;">
+   <img src="http://localhost:4001/assets/Img-DM/HW02-hist_ages.png" alt="drawing" style="width: 70%;" />
+   <figcaption>Figure 4: Histogram of Age attribute</figcaption>
+</div>
+
+<p>*if Attribute is <strong>Age</strong>, Bhutan is on the <strong>right</strong> of historgram.</p>
+
+<div style="text-align: center;">
+   <img src="http://localhost:4001/assets/Img-DM/HW02-hist_heights.png" alt="drawing" style="width: 70%;" />
+   <figcaption>Figure 5: Histogram of Age attribute</figcaption>
+</div>
+<p>*if Attribute is <strong>Height</strong>, Bhutan is on the <strong>left</strong> of historgram.</p>
+
+<p>The Splitting Point (<strong>Best thresholds</strong>) tends to be <strong>centerlized</strong> at points range where <strong>most samples</strong> lying on (condense part).</p>
+
+<h4 id="62-which-attribute-did-i-use">6.2 Which attribute did I use?</h4>
+<p><strong>Height</strong>
+It has the best ROC curves, all points of the <strong>height</strong> line is above ones on <strong>age</strong> line, which indicating less number of misclassification
+since they were calculated by sum of FAR and FNR, best point is expected to have high y-coordinate and low x-coordinate.</p>
+
+<p>For scenerios that has disparate distribution on both Age distribution and Height distribution. The program is smart enough to detect which attribute to select.</p>
+
+<p>See Implementation at <strong>2.3 Selecting attribute</strong></p>
+
+<h4 id="63-were-the-results-what-i-expected">6.3 Were the results what I expected?</h4>
+<p>|Labels|Prediction|Results|
+|—|—|—|
+|+|+|Correct|
+|-|-|Correct|
+|-|-|Correct|
+|-|-|Correct|
+|+|-|Wrong|
+|-|-|Correct|
+|-|-|Correct|
+|-|-|Correct|
+|+|+|Correct|
+|+|+|Correct|
+|+|-|Wrong|
+|+|-|Wrong|
+|-|-|Correct|
+|-|+|Wrong|
+|+|+|Correct|
+|+|+|Correct|</p>
+
+<p><strong>Table 2: Classification Accuracy</strong></p>
+
+<p>Summary: correct: <strong>12</strong>; wrong: <strong>4</strong>; total: <strong>16</strong></p>
+
+<p>$CorrectnessRate = numCorrect / TotalNum = 12/16 = 0.75$</p>
+
+<p>The accuracy of current classifer model is <strong>75%</strong>. Validated by validation CSV file. This is my expectation, since the homework documents said there would be no perfect classification in this case. So 75% is a number which somehow can indicate that.</p>
+
+<h4 id="64-what-was-surprising">6.4 What was surprising?</h4>
+<p>What maybe shocked is the accuracy is low. It will give a wrong prediction every 3 out of 4 given data record. However, since this is a simple classification model, it does not surprise much. On the other hand, <strong>if the accuracy for one model is too high more than expectation, this could be wrong, since higher accuracy towards one specific data set tends make it overfitting.</strong> - by the concept of <strong>Accuracy Paradox</strong>.</p>
+
+<h4 id="65-was-there-anything-particularly-challenging">6.5 Was there anything particularly challenging?</h4>
+<p>Selection of data structure to contain data that required for each plotting task.</p>
+
+<div style="text-align: center;">
+   <img src="http://localhost:4001/assets/Img-DM/HW02-test_mult_roc.png" alt="drawing" style="width: 70%;" />
+   <figcaption>Figure 6: Fake ROC curve with made up multiple point with lowest costs plotted</figcaption>
+</div>
+
+<p>As homework document described, <em>“Caution, there may be more than one of them”</em>, so there must implemente a data strutrue that is able to contains all roc points with lowest cost, and can be plotted them in the same ROC curve figure.
+So here is how to implemented in homework:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># Data structure [[(x1, y1), threshold1],...,[(xn, yn), thresholdn]]</span>
+    <span class="k">for</span> <span class="n">roc_point_with_lowest_cost</span> <span class="ow">in</span> <span class="n">roc_points_with_lowest_cost</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">roc_point_with_lowest_cost_duplicate</span> <span class="ow">in</span> <span class="n">roc_point_with_lowest_cost</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">roc_point_with_lowest_cost_duplicate</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+                    <span class="n">roc_point_with_lowest_cost_duplicate</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+                    <span class="s">'ro'</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">roc_point_with_lowest_cost_duplicate</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> 
+                        <span class="p">(</span><span class="n">roc_point_with_lowest_cost_duplicate</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+                        <span class="n">roc_point_with_lowest_cost_duplicate</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></div></div>
+
+<p>So data structure contains these info looks like this:
+$ [[(x1, y1), threshold1],…,[(xn, yn), thresholdn]]$ A list of list that contains a coordinate tuple and a matching best threshold</p>
+
+<p><strong>Break Ties</strong>
+This is the other name for descibing this siatution. So in order to break ties, a <strong>regularization</strong> could be added to help select the best threshold. Here in my cases, my regularization is set to be a check condition whereas if the attribute selected is <strong>Age</strong>, it selects the lowest best threshold, while if it is <strong>Height</strong> attribute, so to choose the highest best threshold.</p>
+
+<p>This is designed towards classifying as much Bhutan animals as possible so while the best thresholds have the same number of misclassification, the <strong>one with highest True Positive Rate</strong> would be selected even though the higher False Positives Rates followed. The purpose is taking <strong>the greatest probablity to classify correct Bhutan</strong>, so the misclassfied Assam is what we have to take in the same time.</p>
+
+<p>In codes implementation, the first best threshold would be select if distribution is Age-like, while the last best threshold would be chosen if distribution is built under attribute of Height.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW02_GUO_Zizhun_trained.py/main</span>
+
+    <span class="c"># based on domain knowledge to choose which side to classify as Assam or Bhutan</span>
+    <span class="k">if</span> <span class="n">attribute</span> <span class="o">==</span> <span class="s">'Age'</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="c"># select first best threshold</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">'- 1'</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">'+ 1'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">attribute</span> <span class="o">==</span> <span class="s">'Height'</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">threshold</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span> <span class="c"># select the last best threshold</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">'+ 1'</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">'- 1'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="66-did-anything-go-wrong">6.6 Did anything go wrong?</h4>
+
+<p>ROC curve without domain knowledge may casue single side classification.</p>
+
+<p><img src="/assets/wrong_roc.png" alt="wrong_roc" /></p>
+<div style="text-align: center;">
+   <img src="http://localhost:4001/assets/Img-DM/HW02-wrong_roc.png" alt="drawing" style="width: 70%;" />
+   <figcaption>Figure 7: Early stage of plotting ROC curve with no check condition on which side to classify</figcaption>
+</div>
+
+<p>At the begining of development, I did not know about the distribution of the dataset, so I assumed all Brutan animals spreaded as larger ages and greater heights, but only after I plot the rough ROC curve (to observe the shape) did I realize I had missed the information of distribution. Later then after plotting the histogram, it helped to imporved the classification function.</p>
+
+<hr />
+<p>This works is used for Course CSCI720. Do not spread it if it is unauthorized.</p>
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>
