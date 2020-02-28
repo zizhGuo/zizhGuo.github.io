@@ -1,4 +1,400 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2020-02-26T23:29:58-05:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Data Mining: ROC curve and 1D classficication</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC.html" rel="alternate" type="text/html" title="Data Mining: ROC curve and 1D classficication" /><published>2020-02-12T02:40:30-05:00</published><updated>2020-02-12T02:40:30-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC.html">&lt;h3 id=&quot;1-data-set-quantization&quot;&gt;1. Data set quantization&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2020-02-28T07:57:44-05:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">One Rule Feature Selection</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/16/One-Rule-Feature-Selection.html" rel="alternate" type="text/html" title="One Rule Feature Selection" /><published>2020-02-16T18:41:12-05:00</published><updated>2020-02-16T18:41:12-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/16/One-Rule-Feature-Selection</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/16/One-Rule-Feature-Selection.html">&lt;h3 id=&quot;1-did-your-mentor-program-use-pandas-to-help-you-along&quot;&gt;1. Did your mentor program use pandas to help you along?&lt;/h3&gt;
+&lt;p&gt;Yes.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW_03_Guo_Zizhun_Mentor.py&lt;/span&gt;
+
+    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# data analysis and manipulation package&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;2-did-your-mentor-program-create-your-training-program&quot;&gt;2. Did your mentor program create your training program?&lt;/h3&gt;
+&lt;p&gt;Yes.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW_03_Guo_Zizhun_Mentor.py&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;write_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;best_attribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_positive_correlated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot; writes trained program based on selected best attribute
+    Paras:
+        @best_attribute: a string represents the name of best attribute
+        @is_positive_correlated: a boolean determines the classification rule
+    Return:
+        void  
+    &quot;&quot;&quot;&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# initialize a string to contains codes for dumping in the trained program&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;implementations&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# create a file with given name &quot;filepath&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'HW03_Guo_Zizhun_Trained.py'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;w&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+    &lt;span class=&quot;c&quot;&gt;# write string to the filepath &lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;            
+    &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-did-the-training-program-use-pandas&quot;&gt;3. Did the training program use pandas?&lt;/h3&gt;
+&lt;p&gt;Yes.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW_03_Guo_Zizhun_Trained.py&lt;/span&gt;
+
+    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-which-attribute-is-most-strongly-cross-correlated-with-the-target-variable&quot;&gt;4. Which attribute is most strongly cross-correlated with the target variable?&lt;/h3&gt;
+&lt;p&gt;|Attribute|Correlation with Target variable|
+|—|—|
+|Bread|-0.012|
+|Vitamins|-0.448|
+|Vegetable|0.016|
+|Milk|-0.035|
+|Banana|-0.070|
+|PeanutButter|0.582|
+|Chocolate|-0.030|
+|Citrus|-0.057|
+|Cookie|0.050|
+|IceCream|0.013|
+|Soda|-0.061|
+|Fruit|-0.005|&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PeanutButter&lt;/strong&gt; has the highest cross-correlation absolute value, which means it is the most strongly cross-correlated attribute with the target variable.&lt;/p&gt;
+
+&lt;h3 id=&quot;5-which-is-best-feature-out-of-the-above-items-for-your-one-rule&quot;&gt;5. Which is best feature out of the above items for your One Rule?&lt;/h3&gt;
+&lt;p&gt;PeanutButter.&lt;/p&gt;
+
+&lt;h3 id=&quot;6-what-structure-did-your-one-rule-classifier-have&quot;&gt;6. What structure did your One Rule classifier have?&lt;/h3&gt;
+&lt;p&gt;The if-statement condition sets the structure based on whether the &lt;strong&gt;value of cross-correlation&lt;/strong&gt; is &lt;strong&gt;positive&lt;/strong&gt; or &lt;strong&gt;negative&lt;/strong&gt;. 
+&lt;strong&gt;Sets structure for One Rule classifier in the trained program:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW_03_Guo_Zizhun_Mentor.py&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_positive_correlated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;   
+                       
+        &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;for val in data:&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;if val &amp;gt;  0:&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t\t\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;print('1')&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;else:&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t\t\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;print('0')&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;            
+        &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;for val in data:&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;if val ==  0:&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t\t\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;print('1')&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;else:&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\t\t\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;print('0')&quot;&lt;/span&gt; 
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;q1-what-was-the-if-else-rule-you-got&quot;&gt;Q1: What was the if-else rule you got?&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Struture below:&lt;/strong&gt; (based on the given training dataset)&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW_03_Guo_Zizhun_Trained.py&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;7-run-the-original-training-data-back-through-your-classifier&quot;&gt;7. Run the original training data back through your classifier.&lt;/h3&gt;
+&lt;h4 id=&quot;q1-what-was-the-accuracy-of-your-resulting-classifier-on-the-training-data&quot;&gt;Q1: What was the accuracy of your resulting classifier, on the training data?&lt;/h4&gt;
+&lt;p&gt;The Trained Program would print the result as the homework asked, but the accuracy can be captured by &lt;strong&gt;frequency table&lt;/strong&gt; created in Mentor Program:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# shell console&lt;/span&gt;
+        
+PeanutButter  Sickness
+0             0           399
+              1           108
+1             0           101
+              1           392
+dtype: int64
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;$numberOfCorrectness = numberOf(PeanutButter: 0, Sickness: 0)+numberOf(PeanutButter: 1, Sickness: 1) = 399+392 = 791$
+$numberOfTotal = 1000$
+$Accuracy = numberOfCorrectness / numberOfTotal = 791 / 1000 = 0.79$&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Accuracy&lt;/strong&gt; is &lt;strong&gt;0.79&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;*Reference: 
+Another way to define Accuracy: $ACC= (TP+TN)/(TP+TN+FP+FN)$&lt;/p&gt;
+
+&lt;h3 id=&quot;8-conclusion-2&quot;&gt;8. Conclusion: (2)&lt;/h3&gt;
+&lt;h4 id=&quot;q1-what-else-did-you-learn-along-the-way-here&quot;&gt;Q1: What else did you learn along the way here?&lt;/h4&gt;
+&lt;p&gt;I also leanred using scatter plot to present the correlation situation.
+The default image would be looks like this:
+&lt;img src=&quot;https://i.imgur.com/AZQWEid.png&quot; alt=&quot;scatter_nojitter&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Image 1: The 2D Sickness based on Peanutbutter&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Each dot actually overlaps so many points. In order to see how condense each points are, we need to add jitter to scatter it up a little bit. So just choose a randomly scattered seed generated by Numpy package.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW_03_Guo_Zizhun_Mentor/ditribution_plot_with_jitter.py&lt;/span&gt;
+        
+    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df_filtered&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;best_attribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; \
+                &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scatter_fraction_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
+                &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scatter_scale&lt;/span&gt; \
+            &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ranf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
+                &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scatter_fraction_rate&lt;/span&gt; \
+                &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scatter_scale&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;# plot the image alpha = 0.5 indicates the level of the overlap&lt;/span&gt;
+                                    &lt;span class=&quot;c&quot;&gt;# Area with darker color have more points overlapped &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;After adding the &lt;strong&gt;Jitter&lt;/strong&gt;:
+&lt;img src=&quot;https://i.imgur.com/5YKMVDx.png&quot; alt=&quot;scatter_jitter&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Image 2: The 2D Sickness based on Peanutbutter with Jitter&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Here &lt;strong&gt;Jitter&lt;/strong&gt; as the &lt;strong&gt;Noise&lt;/strong&gt; added enabling easy observation on how the points are settles. As can be seen, points from &lt;strong&gt;lower left&lt;/strong&gt; and &lt;strong&gt;upper right&lt;/strong&gt; are largely placed, which means the two x-variable and y-variable are &lt;strong&gt;strongly positive cross-correlated&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;This tendency implies&lt;/strong&gt;: The y-variable tends to have the same value of x_variable, since in our case, we only has two value options (0 and 1).&lt;/p&gt;
+
+&lt;h4 id=&quot;q2-what-can-you-conclude&quot;&gt;Q2: What can you conclude?&lt;/h4&gt;
+
+&lt;p&gt;The tendency for attribute values to be changed as the target variable is defined by the &lt;strong&gt;sign&lt;/strong&gt; of &lt;strong&gt;cross-correlation&lt;/strong&gt;. This conclusion can be used to determine the One Rule of a trained program that if the cross-correlation(CC) is less than 0, the prediction should be &lt;strong&gt;opposite&lt;/strong&gt; as the value of the attribute, whereas if CC is greater than 0, the prediction should be &lt;strong&gt;same&lt;/strong&gt; result of the attribute value.&lt;/p&gt;
+&lt;h3 id=&quot;9-bonus-1&quot;&gt;9. BONUS: (+1)&lt;/h3&gt;
+&lt;h4 id=&quot;q1-in-addition-to-the-best-feature-can-you-find-another-feature-that-might-help-classify-sickness&quot;&gt;Q1: In addition to the best feature, can you find another feature that might help classify sickness?&lt;/h4&gt;
+&lt;p&gt;Yes. &lt;strong&gt;Vitamin&lt;/strong&gt; can be this feature, since&lt;/p&gt;
+&lt;h4 id=&quot;q2-what-makes-you-say-this&quot;&gt;Q2: What makes you say this?&lt;/h4&gt;
+&lt;p&gt;Because it has the second-highest cross-correlation, which is &lt;strong&gt;-0.448&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/OVE71bg.png&quot; alt=&quot;scatter_jitter_second&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Image 3: The 2D Sickness based on Vitamin with Jitter&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;q3-how-did-you-test-this-hypothesis&quot;&gt;Q3: How did you test this hypothesis?&lt;/h4&gt;
+&lt;p&gt;I can print the frequency table to calculate the Accuracy.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Vitamins&lt;/th&gt;
+      &lt;th&gt;Sickness&lt;/th&gt;
+      &lt;th&gt;#&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;305&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;^&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;487&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;195&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;^&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;total: 1000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Accuracy = (487+195)/1000 = &lt;strong&gt;0.682&lt;/strong&gt;
+*Since the correlation is less than 0, it needs to sum up the # of {0, 1} and {1, 0} pairs.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;All rights reserved by Zizhun Guo&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">1. Did your mentor program use pandas to help you along? Yes.</summary></entry><entry><title type="html">Mashup Web Application consuming SOAP&amp;amp;REST Web Services</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/16/Mashup-Web-Application.html" rel="alternate" type="text/html" title="Mashup Web Application consuming SOAP&amp;REST Web Services" /><published>2020-02-16T18:40:12-05:00</published><updated>2020-02-16T18:40:12-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/16/Mashup-Web-Application</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/16/Mashup-Web-Application.html">&lt;h3 id=&quot;1-web-application-overall&quot;&gt;1. Web Application Overall&lt;/h3&gt;
+&lt;h4 id=&quot;11-the-web-application-introduction&quot;&gt;1.1 The Web Application introduction&lt;/h4&gt;
+&lt;p&gt;This mashup apps is a funny web application using four public web services (3 REST web services + 1 SOAP web service). It has one single buttle on the index page marked as “get me a word and a track”. Once the user pushes the buttons, the backend application would first invoke a web service to generate a random English word, which would be used as a search key to invoke another web service in charge of track (music) search. After then, the music search API would return the first searching result containing a track title and an artist name as two strings to invoke the third Lyrics API in order to get its lyrics. Finally, all results including random word, track’s title, artist’s name, and lyrics would be print to another dynamically generated web page. Once it jumped to the new page, there still has a button to generate a new random English word to trigger the same procedure again. The users will always do it by pressing the button “give me another word and a track” to request a new page containing the new information. Last, the SOAP API will generate a key composed of random English characters and numbers to provide an extra function for users to use.&lt;/p&gt;
+
+&lt;h4 id=&quot;12-the-goal-of-web-application&quot;&gt;1.2 The goal of Web Application:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Designed to minimize the UI complexity for lightweight product experience&lt;/li&gt;
+  &lt;li&gt;Provided only single button on index page without any input so that to trigger users’ repeatable anticipation&lt;/li&gt;
+  &lt;li&gt;To help learn new English word with a track that could help fortify the situational memorization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;13-installation&quot;&gt;1.3 Installation&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Netbeans IDE 11.2&lt;/li&gt;
+  &lt;li&gt;Maven 3.1 (plugin version)&lt;/li&gt;
+  &lt;li&gt;JAVA 1.8&lt;/li&gt;
+  &lt;li&gt;Glassfish 5.0x (local server)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Using Netbeans 11.2 import the project.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Check the “Services” tab on the left-hand side of IDE.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; Make sure it has a “Glashfish” service attached to the project&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/1SydJLS.png&quot; alt=&quot;glassfish_check&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt; Build the project to make sure dependencies are all installed.
+you can always open POM.xml for dependencies check.
+&lt;strong&gt;Step 5:&lt;/strong&gt; Run the project. It will take a while to launch the local server if it is first launched.
+&lt;strong&gt;Step 6:&lt;/strong&gt; Wait for the default browser pop out or type in http://localhost:8080/webprojecttest/ in the URL section to visit.&lt;/p&gt;
+
+&lt;h4 id=&quot;13-app-demonstration&quot;&gt;1.3 App Demonstration&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/0FM5iLp.png&quot; alt=&quot;front_page&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Image 1: Front Index Page&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/RCwQsqB.png&quot; alt=&quot;response_page_02&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Image 2: Response Page&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/VDVJHWK.png&quot; alt=&quot;response_page_04&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Image 3: Another Response Page with a longer lyrics&lt;/p&gt;
+
+&lt;h3 id=&quot;readme-file-for-installation&quot;&gt;Readme file for installation&lt;/h3&gt;
+
+&lt;h3 id=&quot;2-web-services&quot;&gt;2. Web Services&lt;/h3&gt;
+
+&lt;h4 id=&quot;21-ws-descriptions&quot;&gt;2.1 WS Descriptions&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Apiseeds Music:&lt;/strong&gt; (REST)
+&lt;a href=&quot;https://apiseeds.com/documentation/music&quot;&gt;&lt;strong&gt;[Link]&lt;/strong&gt;&lt;/a&gt;
+    This service provides a collection of random words scraped from websites. It is a RESTful service that allows the user to invoke through URL. The server would return a JSON format object that contains only a random English word. The word would be used for later Music Search were the place to get the title, artist name, and its lyrics.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Apiseeds Lyrics:&lt;/strong&gt; (REST)
+&lt;a href=&quot;https://apiseeds.com/documentation/lyrics&quot;&gt;&lt;strong&gt;[Link]&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+    Apisseds is an API provider that provides multiple RESTful web services. This music service allows users to search music tracks based on a &lt;strong&gt;search words&lt;/strong&gt;. The information returned includes the track’s title, artist, album withs its IDs for more professional usages. Therefore, based on &lt;strong&gt;ID&lt;/strong&gt; to invoke is not allowed. However, my assignment only used the free service that requests the &lt;strong&gt;title&lt;/strong&gt; and &lt;strong&gt;artist&lt;/strong&gt; stored in Strings data type by a given search word. These two data type instances will be passed later for the Lyrics request service.
+The API key for Apiseeds Lyrics and Apiseeds Music:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;API key: yVl2CQoJHboJc6QLKym44Tm1fxoDA8UfyARdX9XklkxlwgH0RSS1miDsMGc5CFoe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Random Word:&lt;/strong&gt; (REST)
+&lt;a href=&quot;https://random-word-api.herokuapp.com&quot;&gt;&lt;strong&gt;[Link]&lt;/strong&gt;&lt;/a&gt;
+    This API is provided by the same provider of Apisseds Music, the database it has allows users to discover millions of lyrics from all artist all around the world. By given the &lt;strong&gt;track title&lt;/strong&gt; and &lt;strong&gt;artist name&lt;/strong&gt;, the services will return a block of information in JSON format that includes the lyrics of the tracks and language it was composed. The &lt;strong&gt;lyrics&lt;/strong&gt; JSON will be parsed to published on the JSP webpages.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Random Fonts Web Service&lt;/strong&gt; (SOAP)
+&lt;a href=&quot;http://ws.webxml.com.cn/WebServices/RandomFontsWebService.asmx&quot;&gt;&lt;strong&gt;[Link]&lt;/strong&gt;&lt;/a&gt;
+&lt;a href=&quot;http://ws.webxml.com.cn/WebServices/RandomFontsWebService.asmx?WSDL&quot;&gt;&lt;strong&gt;[WSDL]&lt;/strong&gt;&lt;/a&gt;&lt;br /&gt;
+    This API provides functions to generate random characters in English and Numbers. It is a soap AIP that has a WSDL file for a quick set up. The return value type is String.&lt;/p&gt;
+
+&lt;h4 id=&quot;22-certificate-issue-might-happens&quot;&gt;2.2 Certificate Issue might happens:&lt;/h4&gt;
+&lt;p&gt;The Glassfish Server requires all HTTP request remote servers has the certificate to pass the validation based on the records stored in its own trust store, in which the directory is&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.&lt;span class=&quot;se&quot;&gt;\G&lt;/span&gt;lassFish_Server&lt;span class=&quot;se&quot;&gt;\g&lt;/span&gt;lassfish&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;omains&lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;omain1&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;onfig
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If the there is &lt;strong&gt;runtime error&lt;/strong&gt; reported:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This means it has SSL issues with invalid certificates from the servers you requested.
+The &lt;strong&gt;solution&lt;/strong&gt; is to &lt;strong&gt;cd&lt;/strong&gt; to the directory and open cmd console, and type this:&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;keytool &lt;span class=&quot;nt&quot;&gt;-importcert&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-keystore&lt;/span&gt; .&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;acerts.jks &lt;span class=&quot;nt&quot;&gt;-trustcacerts&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-alias&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;keyquery&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-file&lt;/span&gt; .&lt;span class=&quot;se&quot;&gt;\k&lt;/span&gt;eyquery.cer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;to import the certificate to Glassfish trust list.&lt;/p&gt;
+
+&lt;h4 id=&quot;23-how-to-add-certificate-file-to-glassfish-trust-store&quot;&gt;2.3 How to add certificate file to Glassfish trust store.&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;keytool -importcert -keystore .\cacerts.jks -trustcacerts -alias &quot;randomword&quot; -file .\randomword.cer
+
+keytool -importcert -keystore .\cacerts.jks -trustcacerts -alias &quot;lyrics&quot; -file .\lyrics.cer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-implementation&quot;&gt;3 Implementation&lt;/h3&gt;
+
+&lt;h4 id=&quot;31-files&quot;&gt;3.1 Files&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;com.mycompany.webprojecttest.Model&lt;/strong&gt;
+  This file overall implements the application’s business logic. It contains three instances of the other three API invocations class that implements the program workflow.&lt;/p&gt;
+
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Lyrics&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lyrics_instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RandomWord&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;randomWord_instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tracks&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tracks_instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+      &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MalformedURLException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IOException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;// get random word&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;randomWord_instance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RandomWord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+          &lt;span class=&quot;c1&quot;&gt;// get tracks info&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;tracks_instance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tracks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randomWord_instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getRandomWordString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+
+          &lt;span class=&quot;c1&quot;&gt;// get lyrics&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lyrics_instance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Lyrics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tracks_instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTrackTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tracks_instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getArtist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;            
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;All other methods are available for JSP page to instantiate and get return values to present.&lt;/p&gt;
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getLyrics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lyrics_instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLyricsString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Sorry, this track does not have lyrics&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lyrics_instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLyricsString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getRandomWord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;randomWord_instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getRandomWordString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();}&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getTrackTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tracks_instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTrackTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();}&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getAritistName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tracks_instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getArtist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();}&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getRandomKey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getRandomChar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;package com.mycompany.webprojecttest.RandomWord&lt;/strong&gt;
+This Class works for invoking Random Word API through HTTP request to get a random word.
+It has two one methods to return the word to &lt;strong&gt;Model&lt;/strong&gt; instance.
+  ```java {.line-numbers}
+      // The URL is for getting dynamic token key from the API.
+      final String url_key = “https://random-word-api.herokuapp.com/key?”;
+      final String url = “https://random-word-api.herokuapp.com/word?key=GNK11SCE&amp;amp;number=1”;&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  private String random_word_string = &quot;&quot;;  // random words
+  private String apikey = &quot;&quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ```java {.line-numbers}
+      public String getAPIkey(){return apikey;} 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;java {.line-numbers}
+      public String getRandomWordString(){return random_word_string;}
+ &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;package com.mycompany.webprojecttest.Tracks&lt;/strong&gt;
+This class works for getting the random word and invoke Lyrics API through HTTP request to get track information and return the string of Artist and Track Title to Lyrics instance.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;package com.mycompany.webprojecttest.Lyrics&lt;/strong&gt;
+This class works for getting the string of Artist and Track Title and invoke Lyrics API through HTTP requests to get lyrics.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;32-http-request&quot;&gt;3.2 HTTP request&lt;/h4&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;HttpURLConnection&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;connection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HttpURLConnection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;openConnection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Imiate the browsers by adding the &quot;User-Agent&quot; header&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addRequestProperty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;User-Agent&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setRequestMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;GET&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;responseCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getResponseCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responseCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HttpURLConnection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;HTTP_OK&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;BufferedReader&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bufferReader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BufferedReader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;InputStreamReader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()));&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;StringBuffer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stringBuffer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StringBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bufferReader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;readLine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;stringBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;stringBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stringBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;           
+            &lt;span class=&quot;n&quot;&gt;bufferReader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stringBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;33-json-parse&quot;&gt;3.3 JSON parse&lt;/h4&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;JSONParser&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JSONParser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;JSONObject&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JSONObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stringBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;JSONObject&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JSONObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;result&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;JSONObject&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;JSONObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;track&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;    
+            &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;song length : &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;lyrics_string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;hr /&gt;
+&lt;p&gt;Zizhun Guo@All rights reserved&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">1. Web Application Overall 1.1 The Web Application introduction This mashup apps is a funny web application using four public web services (3 REST web services + 1 SOAP web service). It has one single buttle on the index page marked as “get me a word and a track”. Once the user pushes the buttons, the backend application would first invoke a web service to generate a random English word, which would be used as a search key to invoke another web service in charge of track (music) search. After then, the music search API would return the first searching result containing a track title and an artist name as two strings to invoke the third Lyrics API in order to get its lyrics. Finally, all results including random word, track’s title, artist’s name, and lyrics would be print to another dynamically generated web page. Once it jumped to the new page, there still has a button to generate a new random English word to trigger the same procedure again. The users will always do it by pressing the button “give me another word and a track” to request a new page containing the new information. Last, the SOAP API will generate a key composed of random English characters and numbers to provide an extra function for users to use.</summary></entry><entry><title type="html">Data Mining: ROC curve and 1D classficication</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC.html" rel="alternate" type="text/html" title="Data Mining: ROC curve and 1D classficication" /><published>2020-02-12T02:40:30-05:00</published><updated>2020-02-12T02:40:30-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC.html">&lt;h3 id=&quot;1-data-set-quantization&quot;&gt;1. Data set quantization&lt;/h3&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW02_Guo_Zizhun_Mentor.py/main&lt;/span&gt;
     
@@ -1134,313 +1530,4 @@ instead of decimal-encoded entites like &lt;code class=&quot;highlighter-rouge&q
 &lt;p&gt;根据markdown file in the root working directory, 启动服务器会根据当前markdown文件提供的信息生成网页，提供的信息由title,category提供，配置文件会根据提供信息生成设计好的网页。
 所以开发者需要&lt;strong&gt;定义好&lt;/strong&gt;每一个网页的属性。&lt;/p&gt;
 
-&lt;p&gt;本质就是一个静态网页生成器，开始在服务器部署时会根据提供的配置信息直接一次性生成所有网页，每一次更新博客，都是相当于在GitHub 服务器上重新部署了一次。&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">用处： 展示个人的信息，所以首先展示的信息是最重要的，个人网站的设计应该放大信息的传递的有效性，设计师可以展示个性，工程师可以展示信息，所以高校有的教师喜欢用plain html来发布课程信息。这完全取决于个人的诉求，好的设计可以有效地增强信息传递效率，同时避免用户因为不好的设计而浪费时间，但也不完全是这样，有时候出去业务考虑也会需要增强用户浏览网页的粘性。所以网页的功能和目的是最重要的。</summary></entry><entry><title type="html">Learning Notes: HTML+CSS+Bootstrap</title><link href="http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Html-CSS-Bootstrap.html" rel="alternate" type="text/html" title="Learning Notes: HTML+CSS+Bootstrap" /><published>2019-06-15T18:21:06-04:00</published><updated>2019-06-15T18:21:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Html-CSS-Bootstrap</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Html-CSS-Bootstrap.html">&lt;h3 id=&quot;1-general&quot;&gt;&lt;strong&gt;1. General&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;resources-links&quot;&gt;&lt;strong&gt;Resources links&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cdc.tencent.com/2013/11/06/%E3%80%90%E5%93%81%E7%89%8C%E7%BB%B4%E7%94%9F%E7%B4%A0%E3%80%91%E6%B5%85%E8%B0%88%E5%BD%93%E4%B8%8B%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E8%B6%8B%E5%8A%BF/&quot;&gt;Web Design Trend 网页设计趋势&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cdc.tencent.com/2013/11/06/%E3%80%90%E5%93%81%E7%89%8C%E7%BB%B4%E7%94%9F%E7%B4%A0%E3%80%91%E6%B5%85%E8%B0%88%E5%BD%93%E4%B8%8B%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E8%B6%8B%E5%8A%BF/&quot;&gt;Web Design Principles 网页设计理念&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.coolsite360.com/resources/article/5a1926a3c8d27f033aa71f48/&quot;&gt;Ten Creative Personal Websites 十个创意十足的个人网站&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;PenCode.io&quot;&gt;PenCode-Real-time web design&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org&quot;&gt;MDN Leanring Web Design&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://loremipsum.io/&quot;&gt;Lorem Ipsum placeholder text&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-html&quot;&gt;&lt;strong&gt;2. HTML&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;html--hypertext-markup-language&quot;&gt;&lt;strong&gt;HTML – hypertext markup language&lt;/strong&gt;&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;Define the structure of a webpage&lt;/li&gt;
-  &lt;li&gt;Put an image here&lt;/li&gt;
-  &lt;li&gt;Put a form here&lt;/li&gt;
-  &lt;li&gt;The noun of a webpage&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h5 id=&quot;some-elements-and-tips&quot;&gt;&lt;strong&gt;Some elements and tips&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;General Rule:
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;tagName&amp;gt;&lt;/span&gt; Some Content &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tagName&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/img-articles-webdev1/img-01.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Two categories of elements in HTML:
-    &lt;ul&gt;
-      &lt;li&gt;block-level elements&lt;/li&gt;
-      &lt;li&gt;Inline elements&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Target attribute will be pointed to open a specific tab. If existed, open the link in the existed tab, or open a new one.
-To make the text to be bold, instead using &lt;b&gt;, using &lt;strong&gt; which give a little bit more information. I.e. using &lt;em&gt; rather &lt;i&gt;.&lt;/i&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/b&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A traditional way to make grid border 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;table&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;border=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
-
-A traditional way to change the resize the image
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;500&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Tips: A way to type same thing in the Sublime Text 
-        in multiple places is by holding control and click 
-        different places, there would be more cursor generated 
-        to type in simultaneously.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;两种方式实现绑定一个text input到标签：
-一种是nest，input在label里面；
-另一种是两个并列，通过for在label里，id在input里进行绑定。
-Input里的name是传输信息的名字，required是必填信息，pattern是限制位数等
-如果是radio的input，可以设置选定之用value
-Type不应，input的输入也不一样。
-Select name是这个值的mingzi，里面的值就是option，如果想override值，可以在option里用value
-Placeholder作为input的默认显示。Title在input里可以做警告信息用。
-每一行可以用div来分段，这里的spacing在之后用CSS方便进行存储调控。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-css&quot;&gt;&lt;strong&gt;2. CSS&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;css--cascading-style-sheets&quot;&gt;&lt;strong&gt;CSS – cascading style sheets&lt;/strong&gt;&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;Defines the style of HTML&lt;/li&gt;
-  &lt;li&gt;Make all text purple&lt;/li&gt;
-  &lt;li&gt;Give the first image a yellow border&lt;/li&gt;
-  &lt;li&gt;The adjective of a webpage&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h5 id=&quot;some-selectors-and-tips&quot;&gt;&lt;strong&gt;Some Selectors and tips&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;Put the &lt;link /&gt; at head part of html file to reference a css file.
-Selector {color:  rgb(); #FFFFFF, rgba();}
-RGBA最后一个位是透明度
-Background可以用图片，border一般要设置三个property（像素宽度，风格，颜色），所以一般直接用border来当作property。
-对于单独元素想要设置风格的：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;加入id attribute，设置比如special，然后再CSS中用#special来当作selector；&lt;/li&gt;
-  &lt;li&gt;加入class attribute，设置比如completed，然后在CSS中用.completed来当作selector。
-总结目前来看三种selectors：&lt;/li&gt;
-  &lt;li&gt;Element selector，比如li&lt;/li&gt;
-  &lt;li&gt;class selector，比如.hello&lt;/li&gt;
-  &lt;li&gt;id selector， 比如#name
-其他需要讲的是，star，descendant selector，adjacent selector，attribute selector，nth of type
-Star： 全部&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/*star*/
-* {
-    border: 1ps solid lightgrey;
-}
-
-/*Descendant Selector*/
-li a {
-    color: red;
-}
-
-/*Adjacent*/
-h4 + ul {
-    border: 4px solid red;
-}
-
-/*attribute*/
-a[href = &quot;https://google.com&quot;] {
-    background: blue;
-}
-
-/*Order from top*/
-ul:nth-of-type(3){
-    background: purple;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h5 id=&quot;specifity&quot;&gt;&lt;strong&gt;Specifity&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://specificity.keegan.st/&quot;&gt;Specifity Calculator 权重计算器&lt;/a&gt;
-&lt;a href=&quot;https://www.w3cplus.com/css/css-specificity-things-you-should-know.html&quot;&gt;一篇博客&lt;/a&gt;
-&lt;a href=&quot;https://zhuanlan.zhihu.com/p/50322177&quot;&gt;Articles from Zhihu 知乎贴&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;01&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;                         &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;02&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;                        &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;一个元素&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;03&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:first-line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;             &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;一个元素，一个伪元素&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;04&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;                    &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（两个元素）&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;05&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;ol&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;                  &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（三个元素）&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;06&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*[&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;up&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;            &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（一个属性选择器，一个元素）&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;07&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;ol&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;              &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（一个类，三个元素）&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;08&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.red.level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;              &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（两个类，一个元素）&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;09&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;&quot;&lt;/span&gt;                    &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;一个行内样式&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;                        &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（一个元素）&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;                    &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（两个元素）&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sith&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;                    &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（一个类）&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.sith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;                &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（一个类，两个元素）&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#sith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;                     &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（一个&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;选择器）&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#darkside&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sith&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;》&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;112&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;一个&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;Id&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;选择器，一个类，两个元素&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;fonts&quot;&gt;&lt;strong&gt;Fonts&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.cssfontstack.com/&quot;&gt;Fonts Stack&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;box-model&quot;&gt;&lt;strong&gt;Box Model&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/img-articles-webdev1/img-02.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;float&quot;&gt;&lt;strong&gt;Float&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/zfquan/p/7793945.html&quot;&gt;cnBlog &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;It is necessary to clearify the demands before develop the web pages. Naming the different part with specific class for better manage them.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/img-articles-webdev1/img-03.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3-bootstrap-general&quot;&gt;&lt;strong&gt;3. Bootstrap general&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;
-Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.&lt;/p&gt;
-
-&lt;p&gt;They way to use bootstrap in html is to reference the classes from Bootstrap Framework.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://rit.edu&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class =&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn btn-info btn-lg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;RIT button&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;container-容器&quot;&gt;&lt;strong&gt;Container 容器&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;Container 是一个好的容器可以让东西看起来不错。
-Form-group class的用处上给与div optimum spacing
-form-control class的用处是让输入栏变得好看.
-So, all these two groups are mainly serving for making the input good looking.&lt;/p&gt;
-
-&lt;p&gt;如果我们想要inline-form的效果，直接在form标签里加入class form-inline就好了。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;navbar&quot;&gt;&lt;strong&gt;Navbar&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;Brand封装成一个单独的div，装进nav-header里面，之后移动端的压缩按钮也装在header里面。
-Navbar按钮分别封装成一个div可以，也可以是带navclass的ul。（注：左边的按钮为一个封装， 右边的为另一个封装）。&lt;/p&gt;
-
-&lt;p&gt;可以伸缩的汉堡包navbar按钮&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;用div标签的class collapse navbar-collapse封装需要压缩的按钮（设置id）&lt;/li&gt;
-  &lt;li&gt;在nav-header里加入按钮button，设置class为navbar-toggle collapsed.设置target到对应的#id。（ref 官方default nav）。不需要再次封装，放进header就可以。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;grid-system&quot;&gt;&lt;strong&gt;Grid System&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;Probably the main reason why people use bootstrap.
-Mobile collapse looks good.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;add div class container&lt;/li&gt;
-  &lt;li&gt;add div class row&lt;/li&gt;
-  &lt;li&gt;add div class col-lg-4 col-md-3 col-sm-6 col-xs-12
-列-大小-占比12个格子的多少个&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/19608873/how-to-include-glyphicons-in-bootstrap-3&quot;&gt;How to include incons and fonts to Bootstrap 3&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;4-bootstrap-4&quot;&gt;&lt;strong&gt;4. Bootstrap 4&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Some of the important changes from Bootstrap 3 to Bootstrap 4:
-3到4的一些重要改变：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;flexbox的使用（float）.&lt;/li&gt;
-  &lt;li&gt;global change：
-a.  转换从px到rem来表示primary CSS unit。
-b.  Global font size increased from 14px to 16px.
-c.  Grid size: 增加最小，移除-xs&lt;/li&gt;
-  &lt;li&gt;Adding the padding shortcuts.&lt;/li&gt;
-  &lt;li&gt;Moved to flexbox. Upgraded the grid class name.&lt;/li&gt;
-  &lt;li&gt;Add cards class, dripped panels, thumbnails, and wells.&lt;/li&gt;
-  &lt;li&gt;No icon font like Glyphicons.&lt;/li&gt;
-  &lt;li&gt;Refactor all components make it less nested.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;其实很多东西不需要用style标签来重新设置，比如设置字体居中，字体大小，直接用继承相应的class就好了，比如&amp;lt;div class = “container text-center”&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/img-articles-webdev1/img-05.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;
-全部都是继承不同的class来叠加相应的功能。
-Class: btn代表这个实现按钮的功能。
-Class: btn-warning 代表实现警告样式。
-Class: p-sm-5代表padding在浏览器pixels值变小时变成3rem，最小1代表0.25rem。
-只有五个等级的大小（1， 2， 3， 4， 5），如果没有等级默认为最小的情况。
-设置大小：向右覆盖。&lt;/p&gt;
-
-&lt;h5 id=&quot;flexbox&quot;&gt;&lt;strong&gt;Flexbox&lt;/strong&gt;&lt;/h5&gt;
-
-&lt;p&gt;Two direction:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Main axis (left – right)&lt;/li&gt;
-  &lt;li&gt;Cross axis (top – bottom)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Some classe from Bootstrap 4 to layout the flexbox:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Justify Content&lt;/li&gt;
-  &lt;li&gt;Class Justify-content-end, center, between, around&lt;/li&gt;
-  &lt;li&gt;Align items&lt;/li&gt;
-  &lt;li&gt;Direction&lt;/li&gt;
-  &lt;li&gt;Flex-row&lt;/li&gt;
-  &lt;li&gt;Flex-column&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;现在是两种方法在同一行平铺元素，一种是之前讲的breakpoint部分，不过那个部是通过设置margin和padding的size来自做到，第二种是flexbox，而且flexbox更广泛的可以用于在box里布局。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/img-articles-webdev1/img-04.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;extra-bootstrap-4-notes&quot;&gt;&lt;strong&gt;Extra Bootstrap 4 notes&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;div-vs-section&quot;&gt;&lt;a href=&quot;https://www.quora.com/What-is-the-difference-between-div-and-section-tag&quot;&gt;&lt;strong&gt;div vs section&lt;/strong&gt;&lt;/a&gt;&lt;/h5&gt;
-
-&lt;h5 id=&quot;div-vs-span&quot;&gt;&lt;a href=&quot;https://htmldog.com/guides/html/intermediate/spandiv/&quot;&gt;&lt;strong&gt;Div vs Span&lt;/strong&gt;&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;差不多，都没有literal means，span是in-line，div是block。&lt;/p&gt;
-
-&lt;h5 id=&quot;media-queries&quot;&gt;&lt;a href=&quot;https://www.w3schools.com/cssref/css3_pr_mediaquery.asp&quot;&gt;Media Queries&lt;/a&gt;&lt;/h5&gt;
-
-&lt;h5 id=&quot;下划线效果&quot;&gt;&lt;a href=&quot;https://www.w3schools.com/cssref/css3_pr_mediaquery.asp&quot;&gt;下划线效果&lt;/a&gt;&lt;/h5&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">1. General</summary></entry><entry><title type="html">Learning Notes: About Jekyll</title><link href="http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Jekll.html" rel="alternate" type="text/html" title="Learning Notes: About Jekyll" /><published>2019-06-15T15:34:06-04:00</published><updated>2019-06-15T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Jekll</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/06/15/Article-Jekll.html">&lt;p&gt;[to be edited]&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">[to be edited]</summary></entry></feed>
+&lt;p&gt;本质就是一个静态网页生成器，开始在服务器部署时会根据提供的配置信息直接一次性生成所有网页，每一次更新博客，都是相当于在GitHub 服务器上重新部署了一次。&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">用处： 展示个人的信息，所以首先展示的信息是最重要的，个人网站的设计应该放大信息的传递的有效性，设计师可以展示个性，工程师可以展示信息，所以高校有的教师喜欢用plain html来发布课程信息。这完全取决于个人的诉求，好的设计可以有效地增强信息传递效率，同时避免用户因为不好的设计而浪费时间，但也不完全是这样，有时候出去业务考虑也会需要增强用户浏览网页的粘性。所以网页的功能和目的是最重要的。</summary></entry></feed>
