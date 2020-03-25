@@ -7,6 +7,48 @@ category: Projects
 categories: jekyll update
 visible: 1
 ---
+
+
+<!-- MarkdownTOC -->
+
+- [**Lab6: Textures**](#lab6-textures)
+    - [**Description**](#description)
+    - [**Prerequisites**](#prerequisites)
+    - [**Installation**](#installation)
+    - [**Functions**](#functions)
+- [**Lab5: Shading**](#lab5-shading)
+    - [**Description**](#description-1)
+    - [**Prerequisites**](#prerequisites-1)
+    - [**Installation**](#installation-1)
+    - [**Functions**](#functions-1)
+- [**Lab4: Tessellation**](#lab4-tessellation)
+    - [**Description**](#description-2)
+    - [**Prerequisites**](#prerequisites-2)
+    - [**Installation**](#installation-2)
+    - [**Functions**](#functions-2)
+- [**Lab3: Sutherland-Hodgman Polygon Clipper**](#lab3-sutherland-hodgman-polygon-clipper)
+    - [**Description**](#description-3)
+    - [**Prerequisites**](#prerequisites-3)
+    - [**Installation**](#installation-3)
+    - [**Functions**](#functions-3)
+- [**Lab2: Sutherland-Hodgman Polygon Clipper**](#lab2-sutherland-hodgman-polygon-clipper)
+    - [**Description**](#description-4)
+    - [**Prerequisites**](#prerequisites-4)
+    - [**Installation**](#installation-4)
+    - [**Functions**](#functions-4)
+- [**Lab1: Polygon Filling Algorithm**](#lab1-polygon-filling-algorithm)
+    - [**Description**](#description-5)
+    - [**Prerequisites**](#prerequisites-5)
+    - [**Installation**](#installation-5)
+    - [**Functions**](#functions-5)
+    - [**Contribution**](#contribution)
+    - [**License**](#license)
+    - [**Citation**](#citation)
+    - [**Contact**](#contact)
+
+<!-- /MarkdownTOC -->
+
+
 ### **Lab6: Textures**
 
 #### **Description**

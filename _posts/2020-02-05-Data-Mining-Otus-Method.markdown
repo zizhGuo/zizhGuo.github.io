@@ -8,6 +8,18 @@ categories: jekyll update
 visible: 1
 ---
 
+<!-- MarkdownTOC -->
+
+- [**Homework 2: Otsu Method for clustering 1D data into two groups, using bining method to quantize data and finding the best splitting point.**](#homework-2-otsu-method-for-clustering-1d-data-into-two-groups-using-bining-method-to-quantize-data-and-finding-the-best-splitting-point)
+- [Binning method for quantizing data:](#binning-method-for-quantizing-data)
+- [Otsu Method python code:](#otsu-method-python-code)
+- [**Homework 1: Metaprograme CSV file read**](#homework-1-metaprograme-csv-file-read)
+- [Mentor Program \(what is like\)](#mentor-program-what-is-like)
+- [Trained Program \(what is like\):](#trained-program-what-is-like)
+
+<!-- /MarkdownTOC -->
+
+
 This repository collects all homework and projects of 2020 Spring RIT Computer Science Master's level course - CSCI-720-Big-Data Analytics. 
 
 Projects and Course ongoing

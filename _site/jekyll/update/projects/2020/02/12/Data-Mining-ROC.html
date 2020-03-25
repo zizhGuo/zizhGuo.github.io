@@ -51,7 +51,36 @@
 </div>		
 
 <div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
-	<p><h3 id="1-data-set-quantization">1. Data set quantization</h3>
+	<p><!-- MarkdownTOC -->
+
+<ul>
+  <li><a href="#1-data-set-quantization">1. Data set quantization</a></li>
+  <li><a href="#2-main-parts-description">2. Main parts description</a>
+    <ul>
+      <li><a href="#21-cost-functions-minimal-mixed-cost">2.1 Cost functions (minimal mixed cost)</a></li>
+      <li><a href="#22-selecting-attribute">2.2 Selecting attribute</a></li>
+    </ul>
+  </li>
+  <li><a href="#">```</a></li>
+  <li><a href="#3-comparison-with-otsus-method">3. Comparison with Otsu’s method</a></li>
+  <li><a href="#4-plotting-costs-based-on-thresholds">4. Plotting: Costs based on Thresholds</a></li>
+  <li><a href="#best-threshold-has-been-marked-by-red-verticle-line">*Best threshold has been marked by red verticle line.</a></li>
+  <li><a href="#5-plotting-roc-curve">5. Plotting: ROC Curve</a></li>
+  <li><a href="#6-conclusion">6. Conclusion</a>
+    <ul>
+      <li><a href="#61-what-did-i-discovered">6.1 What did I discovered?</a></li>
+      <li><a href="#62-which-attribute-did-i-use">6.2 Which attribute did I use?</a></li>
+      <li><a href="#63-were-the-results-what-i-expected">6.3 Were the results what I expected?</a></li>
+      <li><a href="#64-what-was-surprising">6.4 What was surprising?</a></li>
+      <li><a href="#65-was-there-anything-particularly-challenging">6.5 Was there anything particularly challenging?</a></li>
+      <li><a href="#66-did-anything-go-wrong">6.6 Did anything go wrong?</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /MarkdownTOC -->
+
+<h3 id="1-data-set-quantization">1. Data set quantization</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW02_Guo_Zizhun_Mentor.py/main</span>
     

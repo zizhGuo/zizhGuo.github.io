@@ -8,6 +8,27 @@ categories: jekyll update
 visible: 1
 ---
 
+<!-- MarkdownTOC -->
+
+- [1. Did your mentor program use pandas to help you along?](#1-did-your-mentor-program-use-pandas-to-help-you-along)
+- [2. Did your mentor program create your training program?](#2-did-your-mentor-program-create-your-training-program)
+- [3. Did the training program use pandas?](#3-did-the-training-program-use-pandas)
+- [4. Which attribute is most strongly cross-correlated with the target variable?](#4-which-attribute-is-most-strongly-cross-correlated-with-the-target-variable)
+- [5. Which is best feature out of the above items for your One Rule?](#5-which-is-best-feature-out-of-the-above-items-for-your-one-rule)
+- [6. What structure did your One Rule classifier have?](#6-what-structure-did-your-one-rule-classifier-have)
+    - [Q1: What was the if-else rule you got?](#q1-what-was-the-if-else-rule-you-got)
+- [7. Run the original training data back through your classifier.](#7-run-the-original-training-data-back-through-your-classifier)
+    - [Q1: What was the accuracy of your resulting classifier, on the training data?](#q1-what-was-the-accuracy-of-your-resulting-classifier-on-the-training-data)
+- [8. Conclusion: \(2\)](#8-conclusion-2)
+    - [Q1: What else did you learn along the way here?](#q1-what-else-did-you-learn-along-the-way-here)
+    - [Q2: What can you conclude?](#q2-what-can-you-conclude)
+- [9. BONUS: \(+1\)](#9-bonus-1)
+    - [Q1: In addition to the best feature, can you find another feature that might help classify sickness?](#q1-in-addition-to-the-best-feature-can-you-find-another-feature-that-might-help-classify-sickness)
+    - [Q2: What makes you say this?](#q2-what-makes-you-say-this)
+    - [Q3: How did you test this hypothesis?](#q3-how-did-you-test-this-hypothesis)
+
+<!-- /MarkdownTOC -->
+
 
 ### 1. Did your mentor program use pandas to help you along?
 Yes.

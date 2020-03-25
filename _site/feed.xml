@@ -1,4 +1,563 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2020-03-02T11:13:33-05:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">One Rule Feature Selection</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/16/One-Rule-Feature-Selection.html" rel="alternate" type="text/html" title="One Rule Feature Selection" /><published>2020-02-16T18:41:12-05:00</published><updated>2020-02-16T18:41:12-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/16/One-Rule-Feature-Selection</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/16/One-Rule-Feature-Selection.html">&lt;h3 id=&quot;1-did-your-mentor-program-use-pandas-to-help-you-along&quot;&gt;1. Did your mentor program use pandas to help you along?&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2020-03-24T22:32:07-04:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Customized SOAP Web Service Development</title><link href="http://localhost:4001/jekyll/update/projects/2020/03/23/Web-Service-Development.html" rel="alternate" type="text/html" title="Customized SOAP Web Service Development" /><published>2020-03-23T19:40:12-04:00</published><updated>2020-03-23T19:40:12-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/03/23/Web-Service-Development</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/03/23/Web-Service-Development.html">&lt;p&gt;&lt;strong&gt;Stay Strong amid against Covid-19!!!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;center&gt;淡泊明志，宁静致远。&lt;/center&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- MarkdownTOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-tools-and-installation&quot;&gt;1. Tools and Installation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-project-details&quot;&gt;2. Project details&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-overall-structure&quot;&gt;2.1 Overall structure&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-db-model-design&quot;&gt;2.2 DB model Design&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#23-web-services-application&quot;&gt;2.3 Web Services Application&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#product-info-class&quot;&gt;Product Info Class&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#231-operation-getproductinfo&quot;&gt;2.3.1 Operation: getProductInfo&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#232-operation-placeorder&quot;&gt;2.3.2 Operation: placeOrder&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#24-client-application&quot;&gt;2.4 Client application&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#25-username-protocol---client-soap-message-handler-for-outbound-messsage-modification&quot;&gt;2.5 Username Protocol - Client SOAP message handler for outbound messsage modification&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#26-coordination-protocol---server-soap-message-handler-for-inbound-messsage-modification&quot;&gt;2.6 Coordination Protocol - Server SOAP message handler for inbound messsage modification&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-results&quot;&gt;3. Results&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-summary-and-post-mortem&quot;&gt;4. Summary and Post-mortem&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#41-problem-solving-plan-in-timeline&quot;&gt;4.1 Problem Solving Plan in Timeline&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#42-debugging&quot;&gt;4.2 Debugging&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /MarkdownTOC --&gt;
+
+&lt;h3 id=&quot;1-tools-and-installation&quot;&gt;1. Tools and Installation&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Tools:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Netbeans IDE 11.2&lt;/li&gt;
+  &lt;li&gt;Maven 3.1 (plugin version)&lt;/li&gt;
+  &lt;li&gt;JAVA 1.8&lt;/li&gt;
+  &lt;li&gt;Glassfish 5.0x (local server)&lt;/li&gt;
+  &lt;li&gt;Apache DerbyDB&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Installation:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Load the 2 projects (Server: PurchaseWSApplication; Client: PurchaseClient) using Netbeans IDE.&lt;/li&gt;
+  &lt;li&gt;Select PurchaseWSApplication(Server) project, and navigate to the Services tab on the left.&lt;/li&gt;
+  &lt;li&gt;Make sure you have GlassFish Server installed. Make sure you have Database ‘Purchase’ loaded in ‘Java DB’.
+*To load the DB:
+    &lt;ul&gt;
+      &lt;li&gt;Navigate to ‘Service’ tab, and left click the ‘Databases’ legend, in the following legends, right click ‘Java DB’ to open the ‘Properties’.&lt;/li&gt;
+      &lt;li&gt;Specify the ‘Java DB installation’ location.&lt;/li&gt;
+      &lt;li&gt;Specify the ‘Database Location’ at where you unzip the ‘Purchase’ folder (Database)
+&lt;img src=&quot;https://i.imgur.com/l5fYMr6.png&quot; alt=&quot;DBinstallation&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Connect the Purchase DB. Connect jdbc:derby://localhost1527/Purchases [root on ROOT]&lt;/li&gt;
+  &lt;li&gt;Deploy the project by right-clicking project on ‘RUN’.&lt;/li&gt;
+  &lt;li&gt;Switch to select PurchaseClient(Client) in the Projects tab.&lt;/li&gt;
+  &lt;li&gt;Run the program by right-clicking the project on ‘RUN’.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;2-project-details&quot;&gt;2. Project details&lt;/h3&gt;
+&lt;h4 id=&quot;21-overall-structure&quot;&gt;2.1 Overall structure&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/NqOKH3H.png&quot; alt=&quot;Overall&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Server side - web service application&lt;/li&gt;
+  &lt;li&gt;Backend Database&lt;/li&gt;
+  &lt;li&gt;Client side - java application&lt;/li&gt;
+  &lt;li&gt;Username protocol - client SOAP message handler&lt;/li&gt;
+  &lt;li&gt;Coordinator protocol - server SOAP message handler&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The SOAP message sent from the client-side (outbound) when the client application invokes the web service from the server, would be wrapped by Username Protocol. As the SOAP message gets received by the server-side application, the Coordinator Protocol would decide if the service would be continually processed.&lt;/p&gt;
+&lt;h4 id=&quot;22-db-model-design&quot;&gt;2.2 DB model Design&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;ER Model&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/qY4YT5Q.png&quot; alt=&quot;ERModel&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Initial Views from the DB&lt;/strong&gt;
+TABLE PRODUCTS:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/n9pa0JJ.png&quot; alt=&quot;PRODUCTSviewbefore&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;TABLE ORDERS:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/YRFIcD4.png&quot; alt=&quot;ORDERSviewbefore&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;TABLE ACCOUNTS:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/8pKXDxj.png&quot; alt=&quot;ACCOUNTSviewbefore&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;23-web-services-application&quot;&gt;2.3 Web Services Application&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Brief Introduction&lt;/strong&gt;
+This is the web service project that holds a web service named Purchase where it has two operations: &lt;strong&gt;getProductInfo&lt;/strong&gt; - Query the list of products by providing the keyword of a product name in String, &lt;strong&gt;placeOrder&lt;/strong&gt; - Place the order by providing the keywords of a product id, a number of ordering and a account id from the buyer.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WSDL&lt;/strong&gt;: http://localhost:8080/PurchaseWSApplication/PurchaseWS?WSDL
+(The link only works when the web services is currently deployed)&lt;/p&gt;
+&lt;h5 id=&quot;product-info-class&quot;&gt;Product Info Class&lt;/h5&gt;
+&lt;p&gt;This class works for storing the product information queried from the database.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;productInfo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setBrand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;brand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setYear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;year&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setPrice&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setStock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getBrand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getYear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getPrice&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getStock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;231-operation-getproductinfo&quot;&gt;2.3.1 Operation: getProductInfo&lt;/h5&gt;
+&lt;p&gt;The following Java code shows the implementation of this operation.
+The service would intialize a product instance first, then to query info from DerbyDB by using the provided keyword. The service will wind up returning the instance to the server application.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Get the product’s information by providing the product name&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-SQL&quot;&gt;SELECT * FROM ROOT.PRODUCTS WHERE PRODUCT_NAME = 'keyword'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;cm&quot;&gt;/**
+     * Web service operation
+     */&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@WebMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;operationName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;getProductInfo&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productInfo&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getProductInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@WebParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;query&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyword&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// instance initialization&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;productInfo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;       
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;   
+            &lt;span class=&quot;n&quot;&gt;Statement&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getConn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createStatement&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;WS_getProductInfo(): Connection succeeded !&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// execute Query&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;ResultSet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+              &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;executeQuery&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SELECT * FROM ROOT.PRODUCTS WHERE PRODUCT_NAME = \'&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyword&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;\'&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;WS_getProductInfo(): Doing Query&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// sets members from results&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PRODUCT_ID&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PRODUCT_NAME&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBrand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;BRAND_NAME&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setYear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MODEL_YEAR&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setPrice&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LIST_PRICE&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setStock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;STOCK&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;232-operation-placeorder&quot;&gt;2.3.2 Operation: placeOrder&lt;/h5&gt;
+&lt;p&gt;The following Java code shows the implementation of this operation.
+The operation conducts 6 queries:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Get the product’s price by providing the product ID&lt;/strong&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-SQL&quot;&gt;SELECT LIST_PRICE FROM ROOT.PRODUCTS WHERE PRODUCT_ID = product_ID
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Get the stock number of the products by provding the product ID&lt;/strong&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-SQL&quot;&gt;SELECT STOCK FROM ROOT.PRODUCTS WHERE PRODUCT_ID = product_ID
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Get the account’s credit by providing the customer ID&lt;/strong&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-SQL&quot;&gt;SELECT ACCOUNT_CREDIT FROM ROOT.ACCOUNTS WHERE CUSTOMER_ID = custmer_ID
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Update the stock value by having it deducted the request number&lt;/strong&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-SQL&quot;&gt;UPDATE ROOT.PRODUCTS SET STOCK = (number_in_stock- number_product) 
+WHERE PRODUCT_ID = product_ID
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Update the credit value by having it deducted the total cost of the order&lt;/strong&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-SQL&quot;&gt;UPDATE ROOT.ACCOUNTS SET ACCOUNT_CREDIT = (user_credit - price * number_product) 
+WHERE CUSTOMER_ID = custmer_ID
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Insert a new record indicating a new transaction&lt;/strong&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-SQL&quot;&gt;INSERT INTO ROOT.ORDERS VALUES (10, custmer_ID, product_ID, number_product)
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;cm&quot;&gt;/**
+     * Web service operation
+     */&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@WebMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;operationName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;placeOrder&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getPlaceOrder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@WebParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;productID&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; 
+                                &lt;span class=&quot;nd&quot;&gt;@WebParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;numberOfProduct&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number_product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; 
+                                &lt;span class=&quot;nd&quot;&gt;@WebParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;customerID&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;custmer_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;productInfo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;productInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user_credit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number_in_stock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;   
+            &lt;span class=&quot;n&quot;&gt;Statement&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getConn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createStatement&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;ResultSet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;executeQuery&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SELECT LIST_PRICE FROM ROOT.PRODUCTS WHERE PRODUCT_ID = &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LIST_PRICE&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            
+            &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;executeQuery&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SELECT STOCK FROM ROOT.PRODUCTS WHERE PRODUCT_ID = &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;number_in_stock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;STOCK&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            
+            &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;executeQuery&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SELECT ACCOUNT_CREDIT FROM ROOT.ACCOUNTS WHERE CUSTOMER_ID = &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;custmer_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;user_credit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ACCOUNT_CREDIT&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+                      
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){}&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number_product&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user_credit&lt;/span&gt; 
+          &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number_in_stock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number_product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Order placement fails; Insufficient credits!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;WS_getPlaceOrder(): Start to place order! &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Statement&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getConn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createStatement&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                
+                &lt;span class=&quot;c1&quot;&gt;// update the stock number&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;executeUpdate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UPDATE ROOT.PRODUCTS SET STOCK = &quot;&lt;/span&gt; 
+                  &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number_in_stock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number_product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
+                  &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; WHERE PRODUCT_ID = &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;WS_getPlaceOrder(): Update stock finished!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                
+                &lt;span class=&quot;c1&quot;&gt;// deduct the cost                 &lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;executeUpdate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UPDATE ROOT.ACCOUNTS SET ACCOUNT_CREDIT = &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_credit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number_product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
+                  &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;WHERE CUSTOMER_ID = &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;custmer_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;WS_getPlaceOrder(): Updated credit finished! &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                
+                &lt;span class=&quot;c1&quot;&gt;// insert record in order &lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;executeUpdate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;INSERT INTO ROOT.ORDERS VALUES (&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;,&quot;&lt;/span&gt; 
+                  &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;custmer_ID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;,&quot;&lt;/span&gt; 
+                  &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;product_ID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;,&quot;&lt;/span&gt; 
+                  &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number_product&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;)&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;WS_getPlaceOrder(): Inserted new record to the order table!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+               
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;WS: Successful placed the order!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;24-client-application&quot;&gt;2.4 Client application&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Brief Introduction&lt;/strong&gt;
+This is the user application that performs two rounds of web service invocation. In the first round, the app would attend to place an order directly. In the second round, the app attends to query the product info first and then use the info to place an order.&lt;/p&gt;
+
+&lt;p&gt;The following Java codes show the two-round performances. The user whose ID is 10086 tries to purchase 10 Macbook Pro 15 laptops in one single order. (The laptop’s product ID is 101)&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]){&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Round 1&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;placeOrder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10086&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Round 2&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyword&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Macbook Pro 15&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;productInfo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getProduct&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keyword&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;placeOrder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;productInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10086&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The client application sets up the Purchase Web Service by searching through WSDL file. The method is from last project Web Service project.&lt;/p&gt;
+
+&lt;h4 id=&quot;25-username-protocol---client-soap-message-handler-for-outbound-messsage-modification&quot;&gt;2.5 Username Protocol - Client SOAP message handler for outbound messsage modification&lt;/h4&gt;
+
+&lt;p&gt;The following codes show the implementation of adding the header element to a SOAP message through customization in the message handler.&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SOAPMessageContext&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;messageContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outboundProperty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;messageContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MessageContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MESSAGE_OUTBOUND_PROPERTY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outboundProperty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//if the message is outgoing one, i.e., the request to a web service, we add account information into the header&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;SOAPMessage&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;messageContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;SOAPEnvelope&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;envelope&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;messageContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSOAPPart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getEnvelope&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;SOAPHeader&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;envelope&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;envelope&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// adding the username element as the child element to the header&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// when sent out the message to server&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;SOAPElement&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usernameToken&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChildElement&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UsernameToken&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wsse&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;SOAPElement&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usernameToken&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChildElement&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Username&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wsse&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addTextNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;splashurpants&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//if the message is an incoming one, i.e., the response from the service, then we print out the whole message&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;SOAPMessage&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;messageContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outboundProperty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;26-coordination-protocol---server-soap-message-handler-for-inbound-messsage-modification&quot;&gt;2.6 Coordination Protocol - Server SOAP message handler for inbound messsage modification&lt;/h4&gt;
+&lt;p&gt;The following codes show the implementation of extracting the header element in the type of usernameType and invoking operation name from the SOAP message. The codes also enforce the operation invoking orders to a specific user.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How it works?&lt;/strong&gt;
+The web services application maintains a HashSet that stores the usernames that have once queried the product info (the first round), of which the purpose is hence to enforce the coordination protocol. If a user who has never invoke the getProductInfo service, its username will not be added into the HashSet so that the server will not permit the user to process the placeOrder service by returning the false boolean value in message handling method in message handler and therefore a failed String message will indicate the failure of invocation. However, if a user has ever invoked the service to get product info, the server program will allow its SOAP message to forth process.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SOAPMessageContext&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;messageContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// get the HashSet&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;HashSet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCoordinatorSet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Server side&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outProperty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SOAPMessageContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MESSAGE_OUTBOUND_PROPERTY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outgoing&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;messageContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outProperty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;SOAPMessage&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;messageContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outgoing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;  
+
+              &lt;span class=&quot;c1&quot;&gt;// Get username @username&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;SOAPHeader&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSOAPHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Iterator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;examineAllHeaderElements&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hasNext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()){&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;SOAPHeaderElement&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SOAPHeaderElement&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;NodeList&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wsse:Username&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLength&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTextContent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Server: Ongoing username: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                
+                &lt;span class=&quot;c1&quot;&gt;// get the operation name @opNameString&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;SOAPEnvelope&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;envelope&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;messageContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSOAPPart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getEnvelope&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;   
+                &lt;span class=&quot;n&quot;&gt;SOAPBody&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;envelope&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBody&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Server: No body in message!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Iterator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getChildElements&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opNameString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;it2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hasNext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()){&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;SOAPBodyElement&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SOAPBodyElement&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;opNameString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLocalName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Server: Ongoing operation name: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opNameString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+                &lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// Core Business Logic&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// old user&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;contains&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)){&lt;/span&gt;
+                    &lt;span class=&quot;c1&quot;&gt;// registered user that had called product info query&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opNameString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;getProductInfo&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)){&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Server: Succeeded to query the productInfo&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+                    &lt;span class=&quot;c1&quot;&gt;// place the order after getting the product info &lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opNameString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;placeOrder&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Server: Succeeded to place the order&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// new user&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;c1&quot;&gt;// not yet invoke the getProductInfo&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Server: Not yet registered&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opNameString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;getProductInfo&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)){&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Server: Registration done&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Server: Succeeded to query the productInfo&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
+                    &lt;span class=&quot;c1&quot;&gt;// new user attends to directly place the order&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opNameString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;placeOrder&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Server: Failed. Attend to place order without the registeration.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SOAPException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SOAP IO Error!!!!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;RuntimeException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-results&quot;&gt;3. Results&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Server side Output&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/lJMlKcL.png&quot; alt=&quot;ServerResult&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Client side Output&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/fphuvvd.png&quot; alt=&quot;ClientResult&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Views from DB&lt;/strong&gt;
+TABLE PRODUCTS:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/dPEuSgC.png&quot; alt=&quot;PRODUCTSviewafter&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;TABLE ORDERS:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/wQkKUEn.png&quot; alt=&quot;ORDERSviewafter&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;TABLE ACCOUNTS:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/U54BtZY.png&quot; alt=&quot;ACCOUNTSviewafter&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-summary-and-post-mortem&quot;&gt;4. Summary and Post-mortem&lt;/h3&gt;
+&lt;h4 id=&quot;41-problem-solving-plan-in-timeline&quot;&gt;4.1 Problem Solving Plan in Timeline&lt;/h4&gt;
+&lt;p&gt;Split the goal into individual tasks in timeline:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Database prepration:
+    &lt;ul&gt;
+      &lt;li&gt;Created the ER model and implemented into tables&lt;/li&gt;
+      &lt;li&gt;Assigned the initial records for query testing&lt;/li&gt;
+      &lt;li&gt;(Tricky thing) Use MySQL benchmark for fast table and SQL statements test and migrate to DerbyDB&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Linked the DB to web service program
+    &lt;ul&gt;
+      &lt;li&gt;Performed queries towards the task requirement in Main method&lt;/li&gt;
+      &lt;li&gt;Performed queries in operations&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Created the client programe that consumes the web service
+    &lt;ul&gt;
+      &lt;li&gt;Performed queries by invoking the operations in web service&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Message Handler preparation
+    &lt;ul&gt;
+      &lt;li&gt;Printed out the SOAP message from client for java SOAP class testing&lt;/li&gt;
+      &lt;li&gt;Added the username to the header element in outbound SOAP message from Client side&lt;/li&gt;
+      &lt;li&gt;Extracted the username and operation name from the inbound SOAP message from Server side&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;42-debugging&quot;&gt;4.2 Debugging&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;annotation @override: it should be placed above the message handle method’s signature so that to make it works.&lt;/li&gt;
+  &lt;li&gt;After configure the protocol to the web service, the generated XML file should be placed in the same directory of the .class file in target folder instead of the place where it was first generated in src folder.&lt;/li&gt;
+  &lt;li&gt;When do query, the the Value in Where clause condition should be wrapped by a pair of ‘ sign.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;useful resources and references&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Oracle message handling:&lt;/p&gt;
+
+&lt;p&gt;https://docs.oracle.com/cd/E13222_01/wls/docs103/webserv_adv/handlers.html&lt;/p&gt;
+
+&lt;p&gt;Noctrl.edu Message handling&lt;/p&gt;
+
+&lt;p&gt;http://gcmuganda.faculty.noctrl.edu/classes/Spring12/615/SOAPHeaderExample.txt&lt;/p&gt;
+
+&lt;p&gt;Message handling example:&lt;/p&gt;
+
+&lt;p&gt;https://www.itread01.com/p/847210.html
+https://www.codota.com/code/java/classes/javax.xml.soap.SOAPHeaderElement
+https://www.codota.com/code/java/methods/javax.xml.soap.SOAPElement/addChildElement
+https://www.codota.com/code/java/methods/javax.xml.soap.SOAPHeader/addChildElement
+https://www.programcreek.com/java-api-examples/?class=javax.xml.soap.SOAPEnvelope&amp;amp;method=getHeader&lt;/p&gt;
+
+&lt;p&gt;UsernameType XML schema:&lt;/p&gt;
+
+&lt;p&gt;https://www.w3.org/2003/05/soap-envelope/&lt;/p&gt;
+
+&lt;p&gt;Link JavaDB:&lt;/p&gt;
+
+&lt;p&gt;https://www.youtube.com/watch?v=NDT9ByL7jA0&lt;/p&gt;
+
+&lt;p&gt;Processing SQL Statements with JDBC:&lt;/p&gt;
+
+&lt;p&gt;https://docs.oracle.com/javase/tutorial/jdbc/basics/processingsqlstatements.html&lt;/p&gt;
+
+&lt;p&gt;JavaDB SQL Official handbook:&lt;/p&gt;
+
+&lt;p&gt;https://db.apache.org/derby/docs/10.8/ref/&lt;/p&gt;
+
+&lt;p&gt;Microservices Consistence Maintance:&lt;/p&gt;
+
+&lt;p&gt;https://www.itzhai.com/trade-transaction-of-data-consistency.html&lt;/p&gt;
+
+&lt;p&gt;https://www.cnblogs.com/study-everyday/p/7605619.html&lt;/p&gt;
+
+&lt;p&gt;Derby development:&lt;/p&gt;
+
+&lt;p&gt;https://www.ibm.com/developerworks/cn/opensource/os-ad-trifecta7/index.html&lt;/p&gt;
+
+&lt;p&gt;Glassfish not seeing my handler-chain.xml:&lt;/p&gt;
+
+&lt;p&gt;https://stackoverflow.com/questions/14539296/glassfish-not-seeing-my-handler-chain-xml&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Zizhun Guo@All rights reserved&lt;/strong&gt;&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Stay Strong amid against Covid-19!!!</summary></entry><entry><title type="html">One Rule Feature Selection</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/16/One-Rule-Feature-Selection.html" rel="alternate" type="text/html" title="One Rule Feature Selection" /><published>2020-02-16T18:41:12-05:00</published><updated>2020-02-16T18:41:12-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/16/One-Rule-Feature-Selection</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/16/One-Rule-Feature-Selection.html">&lt;!-- MarkdownTOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-did-your-mentor-program-use-pandas-to-help-you-along&quot;&gt;1. Did your mentor program use pandas to help you along?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-did-your-mentor-program-create-your-training-program&quot;&gt;2. Did your mentor program create your training program?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-did-the-training-program-use-pandas&quot;&gt;3. Did the training program use pandas?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-which-attribute-is-most-strongly-cross-correlated-with-the-target-variable&quot;&gt;4. Which attribute is most strongly cross-correlated with the target variable?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-which-is-best-feature-out-of-the-above-items-for-your-one-rule&quot;&gt;5. Which is best feature out of the above items for your One Rule?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-what-structure-did-your-one-rule-classifier-have&quot;&gt;6. What structure did your One Rule classifier have?&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#q1-what-was-the-if-else-rule-you-got&quot;&gt;Q1: What was the if-else rule you got?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-run-the-original-training-data-back-through-your-classifier&quot;&gt;7. Run the original training data back through your classifier.&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#q1-what-was-the-accuracy-of-your-resulting-classifier-on-the-training-data&quot;&gt;Q1: What was the accuracy of your resulting classifier, on the training data?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8-conclusion-2&quot;&gt;8. Conclusion: (2)&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#q1-what-else-did-you-learn-along-the-way-here&quot;&gt;Q1: What else did you learn along the way here?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#q2-what-can-you-conclude&quot;&gt;Q2: What can you conclude?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#9-bonus-1&quot;&gt;9. BONUS: (+1)&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#q1-in-addition-to-the-best-feature-can-you-find-another-feature-that-might-help-classify-sickness&quot;&gt;Q1: In addition to the best feature, can you find another feature that might help classify sickness?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#q2-what-makes-you-say-this&quot;&gt;Q2: What makes you say this?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#q3-how-did-you-test-this-hypothesis&quot;&gt;Q3: How did you test this hypothesis?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /MarkdownTOC --&gt;
+
+&lt;h3 id=&quot;1-did-your-mentor-program-use-pandas-to-help-you-along&quot;&gt;1. Did your mentor program use pandas to help you along?&lt;/h3&gt;
 &lt;p&gt;Yes.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW_03_Guo_Zizhun_Mentor.py&lt;/span&gt;
@@ -205,7 +764,38 @@ The default image would be looks like this:
 *Since the correlation is less than 0, it needs to sum up the # of {0, 1} and {1, 0} pairs.&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;All rights reserved by Zizhun Guo&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">1. Did your mentor program use pandas to help you along? Yes.</summary></entry><entry><title type="html">Mashup Web Application consuming SOAP&amp;amp;REST Web Services</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/16/Mashup-Web-Application.html" rel="alternate" type="text/html" title="Mashup Web Application consuming SOAP&amp;REST Web Services" /><published>2020-02-16T18:40:12-05:00</published><updated>2020-02-16T18:40:12-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/16/Mashup-Web-Application</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/16/Mashup-Web-Application.html">&lt;h3 id=&quot;1-web-application-overall&quot;&gt;1. Web Application Overall&lt;/h3&gt;
+&lt;p&gt;All rights reserved by Zizhun Guo&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Mashup Web Application consuming SOAP&amp;amp;REST Web Services</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/16/Mashup-Web-Application.html" rel="alternate" type="text/html" title="Mashup Web Application consuming SOAP&amp;REST Web Services" /><published>2020-02-16T18:40:12-05:00</published><updated>2020-02-16T18:40:12-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/16/Mashup-Web-Application</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/16/Mashup-Web-Application.html">&lt;!-- MarkdownTOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-web-application-overall&quot;&gt;1. Web Application Overall&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-the-web-application-introduction&quot;&gt;1.1 The Web Application introduction&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-the-goal-of-web-application&quot;&gt;1.2 The goal of Web Application:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-installation&quot;&gt;1.3 Installation&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-app-demonstration&quot;&gt;1.3 App Demonstration&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#readme-file-for-installation&quot;&gt;Readme file for installation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-web-services&quot;&gt;2. Web Services&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-ws-descriptions&quot;&gt;2.1 WS Descriptions&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-certificate-issue-might-happens&quot;&gt;2.2 Certificate Issue might happens:&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#23-how-to-add-certificate-file-to-glassfish-trust-store&quot;&gt;2.3 How to add certificate file to Glassfish trust store.&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-implementation&quot;&gt;3 Implementation&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#31-files&quot;&gt;3.1 Files&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#32-http-request&quot;&gt;3.2 HTTP request&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#33-json-parse&quot;&gt;3.3 JSON parse&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;```&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /MarkdownTOC --&gt;
+
+&lt;h3 id=&quot;1-web-application-overall&quot;&gt;1. Web Application Overall&lt;/h3&gt;
 &lt;h4 id=&quot;11-the-web-application-introduction&quot;&gt;1.1 The Web Application introduction&lt;/h4&gt;
 &lt;p&gt;This mashup apps is a funny web application using four public web services (3 REST web services + 1 SOAP web service). It has one single buttle on the index page marked as “get me a word and a track”. Once the user pushes the buttons, the backend application would first invoke a web service to generate a random English word, which would be used as a search key to invoke another web service in charge of track (music) search. After then, the music search API would return the first searching result containing a track title and an artist name as two strings to invoke the third Lyrics API in order to get its lyrics. Finally, all results including random word, track’s title, artist’s name, and lyrics would be print to another dynamically generated web page. Once it jumped to the new page, there still has a button to generate a new random English word to trigger the same procedure again. The users will always do it by pressing the button “give me another word and a track” to request a new page containing the new information. Last, the SOAP API will generate a key composed of random English characters and numbers to provide an extra function for users to use.&lt;/p&gt;
 
@@ -394,7 +984,36 @@ This class works for getting the string of Artist and Track Title and invoke Lyr
         &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;hr /&gt;
-&lt;p&gt;Zizhun Guo@All rights reserved&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">1. Web Application Overall 1.1 The Web Application introduction This mashup apps is a funny web application using four public web services (3 REST web services + 1 SOAP web service). It has one single buttle on the index page marked as “get me a word and a track”. Once the user pushes the buttons, the backend application would first invoke a web service to generate a random English word, which would be used as a search key to invoke another web service in charge of track (music) search. After then, the music search API would return the first searching result containing a track title and an artist name as two strings to invoke the third Lyrics API in order to get its lyrics. Finally, all results including random word, track’s title, artist’s name, and lyrics would be print to another dynamically generated web page. Once it jumped to the new page, there still has a button to generate a new random English word to trigger the same procedure again. The users will always do it by pressing the button “give me another word and a track” to request a new page containing the new information. Last, the SOAP API will generate a key composed of random English characters and numbers to provide an extra function for users to use.</summary></entry><entry><title type="html">Data Mining: ROC curve and 1D classficication</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC.html" rel="alternate" type="text/html" title="Data Mining: ROC curve and 1D classficication" /><published>2020-02-12T02:40:30-05:00</published><updated>2020-02-12T02:40:30-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC.html">&lt;h3 id=&quot;1-data-set-quantization&quot;&gt;1. Data set quantization&lt;/h3&gt;
+&lt;p&gt;Zizhun Guo@All rights reserved&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Data Mining: ROC curve and 1D classficication</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC.html" rel="alternate" type="text/html" title="Data Mining: ROC curve and 1D classficication" /><published>2020-02-12T02:40:30-05:00</published><updated>2020-02-12T02:40:30-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/12/Data-Mining-ROC.html">&lt;!-- MarkdownTOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-data-set-quantization&quot;&gt;1. Data set quantization&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-main-parts-description&quot;&gt;2. Main parts description&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-cost-functions-minimal-mixed-cost&quot;&gt;2.1 Cost functions (minimal mixed cost)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-selecting-attribute&quot;&gt;2.2 Selecting attribute&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;```&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-comparison-with-otsus-method&quot;&gt;3. Comparison with Otsu’s method&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-plotting-costs-based-on-thresholds&quot;&gt;4. Plotting: Costs based on Thresholds&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#best-threshold-has-been-marked-by-red-verticle-line&quot;&gt;*Best threshold has been marked by red verticle line.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-plotting-roc-curve&quot;&gt;5. Plotting: ROC Curve&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-conclusion&quot;&gt;6. Conclusion&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#61-what-did-i-discovered&quot;&gt;6.1 What did I discovered?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#62-which-attribute-did-i-use&quot;&gt;6.2 Which attribute did I use?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#63-were-the-results-what-i-expected&quot;&gt;6.3 Were the results what I expected?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#64-what-was-surprising&quot;&gt;6.4 What was surprising?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#65-was-there-anything-particularly-challenging&quot;&gt;6.5 Was there anything particularly challenging?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#66-did-anything-go-wrong&quot;&gt;6.6 Did anything go wrong?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /MarkdownTOC --&gt;
+
+&lt;h3 id=&quot;1-data-set-quantization&quot;&gt;1. Data set quantization&lt;/h3&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;c&quot;&gt;# location: HW02_Guo_Zizhun_Mentor.py/main&lt;/span&gt;
     
@@ -638,7 +1257,20 @@ This is the other name for descibing this siatution. So in order to break ties, 
 &lt;p&gt;At the begining of development, I did not know about the distribution of the dataset, so I assumed all Brutan animals spreaded as larger ages and greater heights, but only after I plot the rough ROC curve (to observe the shape) did I realize I had missed the information of distribution. Later then after plotting the histogram, it helped to imporved the classification function.&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;This works is used for Course CSCI720. Do not spread it if it is unauthorized.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">1. Data set quantization</summary></entry><entry><title type="html">Data Mining: Otsu’s Method (Object + Regularization)</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/05/Data-Mining-Otus-Method.html" rel="alternate" type="text/html" title="Data Mining: Otsu's Method (Object + Regularization)" /><published>2020-02-05T13:11:50-05:00</published><updated>2020-02-05T13:11:50-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/05/Data-Mining-Otus-Method</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/05/Data-Mining-Otus-Method.html">&lt;p&gt;This repository collects all homework and projects of 2020 Spring RIT Computer Science Master’s level course - CSCI-720-Big-Data Analytics.&lt;/p&gt;
+&lt;p&gt;This works is used for Course CSCI720. Do not spread it if it is unauthorized.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Data Mining: Otsu’s Method (Object + Regularization)</title><link href="http://localhost:4001/jekyll/update/projects/2020/02/05/Data-Mining-Otus-Method.html" rel="alternate" type="text/html" title="Data Mining: Otsu's Method (Object + Regularization)" /><published>2020-02-05T13:11:50-05:00</published><updated>2020-02-05T13:11:50-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/02/05/Data-Mining-Otus-Method</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/02/05/Data-Mining-Otus-Method.html">&lt;!-- MarkdownTOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#homework-2-otsu-method-for-clustering-1d-data-into-two-groups-using-bining-method-to-quantize-data-and-finding-the-best-splitting-point&quot;&gt;&lt;strong&gt;Homework 2: Otsu Method for clustering 1D data into two groups, using bining method to quantize data and finding the best splitting point.&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#binning-method-for-quantizing-data&quot;&gt;Binning method for quantizing data:&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#otsu-method-python-code&quot;&gt;Otsu Method python code:&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#homework-1-metaprograme-csv-file-read&quot;&gt;&lt;strong&gt;Homework 1: Metaprograme CSV file read&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#mentor-program-what-is-like&quot;&gt;Mentor Program (what is like)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#trained-program-what-is-like&quot;&gt;Trained Program (what is like):&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /MarkdownTOC --&gt;
+
+&lt;p&gt;This repository collects all homework and projects of 2020 Spring RIT Computer Science Master’s level course - CSCI-720-Big-Data Analytics.&lt;/p&gt;
 
 &lt;p&gt;Projects and Course ongoing
 Keep updating!&lt;/p&gt;
@@ -760,7 +1392,66 @@ Numpys.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;All rights reserved. The shared programs provided in this repo are only meant for referencing and demonstration. Do not copy and share to other
-usage as homework for other courses, which would cause academic dishonesty. Please be advised.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">This repository collects all homework and projects of 2020 Spring RIT Computer Science Master’s level course - CSCI-720-Big-Data Analytics.</summary></entry><entry><title type="html">Computer Graphics Labs (algorithms &amp;amp; rendering techniques)</title><link href="http://localhost:4001/jekyll/update/projects/2019/12/20/Computer-Graphics-Labs(algorithms-&-render-techniques).html" rel="alternate" type="text/html" title="Computer Graphics Labs (algorithms &amp; rendering techniques)" /><published>2019-12-20T20:11:13-05:00</published><updated>2019-12-20T20:11:13-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2019/12/20/Computer-Graphics-Labs(algorithms%20&amp;%20render%20techniques)</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2019/12/20/Computer-Graphics-Labs(algorithms-&amp;-render-techniques).html">&lt;h3 id=&quot;lab6-textures&quot;&gt;&lt;strong&gt;Lab6: Textures&lt;/strong&gt;&lt;/h3&gt;
+usage as homework for other courses, which would cause academic dishonesty. Please be advised.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Computer Graphics Labs (algorithms &amp;amp; rendering techniques)</title><link href="http://localhost:4001/jekyll/update/projects/2019/12/20/Computer-Graphics-Labs(algorithms-&-render-techniques).html" rel="alternate" type="text/html" title="Computer Graphics Labs (algorithms &amp; rendering techniques)" /><published>2019-12-20T20:11:13-05:00</published><updated>2019-12-20T20:11:13-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2019/12/20/Computer-Graphics-Labs(algorithms%20&amp;%20render%20techniques)</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2019/12/20/Computer-Graphics-Labs(algorithms-&amp;-render-techniques).html">&lt;!-- MarkdownTOC --&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#lab6-textures&quot;&gt;&lt;strong&gt;Lab6: Textures&lt;/strong&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#description&quot;&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#prerequisites&quot;&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#installation&quot;&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#functions&quot;&gt;&lt;strong&gt;Functions&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lab5-shading&quot;&gt;&lt;strong&gt;Lab5: Shading&lt;/strong&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#description-1&quot;&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#prerequisites-1&quot;&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#installation-1&quot;&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#functions-1&quot;&gt;&lt;strong&gt;Functions&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lab4-tessellation&quot;&gt;&lt;strong&gt;Lab4: Tessellation&lt;/strong&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#description-2&quot;&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#prerequisites-2&quot;&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#installation-2&quot;&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#functions-2&quot;&gt;&lt;strong&gt;Functions&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lab3-sutherland-hodgman-polygon-clipper&quot;&gt;&lt;strong&gt;Lab3: Sutherland-Hodgman Polygon Clipper&lt;/strong&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#description-3&quot;&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#prerequisites-3&quot;&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#installation-3&quot;&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#functions-3&quot;&gt;&lt;strong&gt;Functions&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lab2-sutherland-hodgman-polygon-clipper&quot;&gt;&lt;strong&gt;Lab2: Sutherland-Hodgman Polygon Clipper&lt;/strong&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#description-4&quot;&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#prerequisites-4&quot;&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#installation-4&quot;&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#functions-4&quot;&gt;&lt;strong&gt;Functions&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lab1-polygon-filling-algorithm&quot;&gt;&lt;strong&gt;Lab1: Polygon Filling Algorithm&lt;/strong&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#description-5&quot;&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#prerequisites-5&quot;&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#installation-5&quot;&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#functions-5&quot;&gt;&lt;strong&gt;Functions&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#contribution&quot;&gt;&lt;strong&gt;Contribution&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#license&quot;&gt;&lt;strong&gt;License&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#citation&quot;&gt;&lt;strong&gt;Citation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;&lt;strong&gt;Contact&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- /MarkdownTOC --&gt;
+
+&lt;h3 id=&quot;lab6-textures&quot;&gt;&lt;strong&gt;Lab6: Textures&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;h4 id=&quot;description&quot;&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/h4&gt;
 &lt;ol&gt;
@@ -1328,7 +2019,7 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
 
 &lt;h4 id=&quot;citation&quot;&gt;&lt;strong&gt;Citation&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;https://www.jianshu.com/p/d9be99077c2b&lt;/p&gt;
-&lt;h4 id=&quot;contact&quot;&gt;&lt;strong&gt;Contact&lt;/strong&gt;&lt;/h4&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Lab6: Textures</summary></entry><entry><title type="html">Project Ariticle Writing</title><link href="http://localhost:4001/jekyll/update/articles/2019/08/21/Ariticle-Resume-Writing.html" rel="alternate" type="text/html" title="Project Ariticle Writing" /><published>2019-08-21T18:21:06-04:00</published><updated>2019-08-21T18:21:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/08/21/Ariticle-Resume-Writing</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/08/21/Ariticle-Resume-Writing.html">&lt;blockquote&gt;
+&lt;h4 id=&quot;contact&quot;&gt;&lt;strong&gt;Contact&lt;/strong&gt;&lt;/h4&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Project Ariticle Writing</title><link href="http://localhost:4001/jekyll/update/articles/2019/08/21/Ariticle-Resume-Writing.html" rel="alternate" type="text/html" title="Project Ariticle Writing" /><published>2019-08-21T18:21:06-04:00</published><updated>2019-08-21T18:21:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/08/21/Ariticle-Resume-Writing</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/08/21/Ariticle-Resume-Writing.html">&lt;blockquote&gt;
   &lt;p&gt;笔者因为最近准备找工作实习，需要对自己在两到三年内的各种工程项目进行展示，展示途径除了简历上有限篇幅的描述，笔者还自己通过jekyll搭建了一个静态Github Page的个人网站，设计了自己的模板layout，只是苦于文章的架构一直未曾动笔。在参考了很多个人网站和别人的简历后，笔者抛开了一切烦恼杂碎，自问自答逐条分析写得此文来帮助自己撰写技术博文，分享在这里，希望能帮助到大家。&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1522,12 +2213,4 @@ instead of decimal-encoded entites like &lt;code class=&quot;highlighter-rouge&q
 
 &lt;blockquote&gt;
     &lt;p&gt;For example.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">First Level Header</summary></entry><entry><title type="html">Learning Notes: Linear Algebra Brushups</title><link href="http://localhost:4001/jekyll/update/articles/2019/07/25/Article-Linear-Algebra.html" rel="alternate" type="text/html" title="Learning Notes: Linear Algebra Brushups" /><published>2019-07-25T15:34:06-04:00</published><updated>2019-07-25T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/07/25/Article-Linear-Algebra</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/07/25/Article-Linear-Algebra.html">&lt;p&gt;[to be edited]&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">[to be edited]</summary></entry><entry><title type="html">Learning Notes: About C++</title><link href="http://localhost:4001/jekyll/update/articles/2019/06/23/Article-CPP.html" rel="alternate" type="text/html" title="Learning Notes: About C++" /><published>2019-06-23T15:34:06-04:00</published><updated>2019-06-23T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/06/23/Article-CPP</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/06/23/Article-CPP.html">&lt;p&gt;[to be edited]&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">[to be edited]</summary></entry><entry><title type="html">Personal Website</title><link href="http://localhost:4001/jekyll/update/projects/2019/06/16/Project-Personal-Website.html" rel="alternate" type="text/html" title="Personal Website" /><published>2019-06-16T00:00:00-04:00</published><updated>2019-06-16T00:00:00-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2019/06/16/Project-Personal-Website</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2019/06/16/Project-Personal-Website.html">&lt;p&gt;用处：
-展示个人的信息，所以首先展示的信息是最重要的，个人网站的设计应该放大信息的传递的有效性，设计师可以展示个性，工程师可以展示信息，所以高校有的教师喜欢用plain html来发布课程信息。这完全取决于个人的诉求，好的设计可以有效地增强信息传递效率，同时避免用户因为不好的设计而浪费时间，但也不完全是这样，有时候出去业务考虑也会需要增强用户浏览网页的粘性。所以网页的功能和目的是最重要的。&lt;/p&gt;
-
-&lt;p&gt;我个人的网站的用途主要还是用来展示个人项目，所以信息的传递非常重要，从我开始规划制作网页，最简单直接的方法就是纯html，这满足了我的基本需求，但是对于信息的传递会有不好的影响，因为我需要考虑到查看我网页的受众，多数同学家人还有招聘方面的人员，所以网站需要基本的吸引力和亲和力能够让人们首先停留，其次有效的的信息传递就足够了。&lt;/p&gt;
-
-&lt;p&gt;根据markdown file in the root working directory, 启动服务器会根据当前markdown文件提供的信息生成网页，提供的信息由title,category提供，配置文件会根据提供信息生成设计好的网页。
-所以开发者需要&lt;strong&gt;定义好&lt;/strong&gt;每一个网页的属性。&lt;/p&gt;
-
-&lt;p&gt;本质就是一个静态网页生成器，开始在服务器部署时会根据提供的配置信息直接一次性生成所有网页，每一次更新博客，都是相当于在GitHub 服务器上重新部署了一次。&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">用处： 展示个人的信息，所以首先展示的信息是最重要的，个人网站的设计应该放大信息的传递的有效性，设计师可以展示个性，工程师可以展示信息，所以高校有的教师喜欢用plain html来发布课程信息。这完全取决于个人的诉求，好的设计可以有效地增强信息传递效率，同时避免用户因为不好的设计而浪费时间，但也不完全是这样，有时候出去业务考虑也会需要增强用户浏览网页的粘性。所以网页的功能和目的是最重要的。</summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">First Level Header</summary></entry><entry><title type="html">Learning Notes: Linear Algebra Brushups</title><link href="http://localhost:4001/jekyll/update/articles/2019/07/25/Article-Linear-Algebra.html" rel="alternate" type="text/html" title="Learning Notes: Linear Algebra Brushups" /><published>2019-07-25T15:34:06-04:00</published><updated>2019-07-25T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/07/25/Article-Linear-Algebra</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/07/25/Article-Linear-Algebra.html">&lt;p&gt;[to be edited]&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">[to be edited]</summary></entry><entry><title type="html">Learning Notes: About C++</title><link href="http://localhost:4001/jekyll/update/articles/2019/06/23/Article-CPP.html" rel="alternate" type="text/html" title="Learning Notes: About C++" /><published>2019-06-23T15:34:06-04:00</published><updated>2019-06-23T15:34:06-04:00</updated><id>http://localhost:4001/jekyll/update/articles/2019/06/23/Article-CPP</id><content type="html" xml:base="http://localhost:4001/jekyll/update/articles/2019/06/23/Article-CPP.html">&lt;p&gt;[to be edited]&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Articles" /><summary type="html">[to be edited]</summary></entry></feed>

@@ -8,6 +8,28 @@ categories: jekyll update
 visible: 1
 ---
 
+<!-- MarkdownTOC -->
+
+- [1. Data set quantization](#1-data-set-quantization)
+- [2. Main parts description](#2-main-parts-description)
+    - [2.1 Cost functions \(minimal mixed cost\)](#21-cost-functions-minimal-mixed-cost)
+    - [2.2 Selecting attribute](#22-selecting-attribute)
+- [```](#)
+- [3. Comparison with Otsu's method](#3-comparison-with-otsus-method)
+- [4. Plotting: Costs based on Thresholds](#4-plotting-costs-based-on-thresholds)
+- [*Best threshold has been marked by red verticle line.](#best-threshold-has-been-marked-by-red-verticle-line)
+- [5. Plotting: ROC Curve](#5-plotting-roc-curve)
+- [6. Conclusion](#6-conclusion)
+    - [6.1 What did I discovered?](#61-what-did-i-discovered)
+    - [6.2 Which attribute did I use?](#62-which-attribute-did-i-use)
+    - [6.3 Were the results what I expected?](#63-were-the-results-what-i-expected)
+    - [6.4 What was surprising?](#64-what-was-surprising)
+    - [6.5 Was there anything particularly challenging?](#65-was-there-anything-particularly-challenging)
+    - [6.6 Did anything go wrong?](#66-did-anything-go-wrong)
+
+<!-- /MarkdownTOC -->
+
+
 
 ### 1. Data set quantization 
 
