@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Mashup Web Application consuming SOAP&REST Web Services"
+title:  "Mashup Web Application(AWS) consuming SOAP&REST Web Services"
 date:   2020-02-16 23:40:12
 author: Zizhun Guo
 category: Projects
@@ -27,6 +27,11 @@ visible: 1
 - [```](#)
 
 <!-- /MarkdownTOC -->
+
+Update:
+Due to the WS used in the app is expired, the mashup web app is not functioning well. The web app can be access on [http://3.16.214.41:8080/webprojecttest-1.0-SNAPSHOT/](http://3.16.214.41:8080/webprojecttest-1.0-SNAPSHOT/)
+
+
 
 
 ### 1. Web Application Overall
