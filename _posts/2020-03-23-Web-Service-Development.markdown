@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Customized SOAP Web Service Development"
+title:  "Java + Customized SOAP Web Service Development"
 date:   2020-03-23 23:40:12
 author: Zizhun Guo
 category: Projects

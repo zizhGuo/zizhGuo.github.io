@@ -1,0 +1,250 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"http://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+<!--             <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">ABOUT</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun-Guo_Resume_3_2020_v3.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container my-5 py-5" style="background: #f6f6f6;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Data Mining: Agglomeration Implementation</h1>
+		<p class="lead"><span>Zizhun Guo & Martin Qian</span><span>2020-04-01 17:40:12 -0400</span></p>
+<!--     	<a href="" class="btn btn-primary">tag1</a>
+	<a href="" class="btn btn-success">tag2</a> -->
+</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><p>Team Project Github link:
+<a href="https://github.com/Qianjx/CSCI720_HW7">https://github.com/Qianjx/CSCI720_HW7</a></p>
+
+<p>This project is an implementation of Clustering method Aggolomeration.</p>
+
+<p>Core Codes:</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Martin</span> <span class="n">Qian</span>
+<span class="k">def</span> <span class="nf">Agglomeration_Clustering</span><span class="p">(</span><span class="n">data_nodes</span><span class="p">):</span>
+    <span class="s">'''
+    Agglomeration algorithm
+    Starting with all elements as a single cluster
+    Ending with only one cluster
+    Returning a tree recording all middle clusters
+    '''</span>
+    <span class="n">min_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">node1</span> <span class="ow">in</span> <span class="n">data_nodes</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">node2</span> <span class="ow">in</span> <span class="n">data_nodes</span><span class="p">:</span>
+            <span class="n">dist</span> <span class="o">=</span> <span class="n">distance</span><span class="o">.</span><span class="n">euclidean</span><span class="p">(</span><span class="n">node1</span><span class="o">.</span><span class="n">center</span> <span class="p">,</span> <span class="n">node2</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
+            <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="n">min_dist</span> <span class="ow">and</span> <span class="n">dist</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">min_dist</span> <span class="o">=</span> <span class="n">dist</span>
+                <span class="n">node_pair</span> <span class="o">=</span> <span class="n">node1</span><span class="p">,</span> <span class="n">node2</span>
+    
+    <span class="k">return</span><span class="p">(</span><span class="n">Merge</span><span class="p">(</span><span class="n">data_nodes</span><span class="p">,</span> <span class="n">node_pair</span><span class="p">))</span>
+
+</code></pre></div></div>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Author</span><span class="p">:</span> <span class="n">Martin</span> <span class="n">Qian</span>
+<span class="k">class</span> <span class="nc">Agglomeration_Node</span><span class="p">:</span>
+    <span class="s">'''
+    Node definition for the agglomeration cluster
+    left: left child of this node
+    right: right child of this node
+    values: list of IDs that are same cluster
+    label: the class this node is
+    size: how many values are in the cluster
+    center: center point of the cluster
+    Right node's size should be smaller than left
+    '''</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">left</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">right</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">values</span><span class="o">+</span><span class="n">right</span><span class="o">.</span><span class="n">values</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">center</span><span class="o">*</span><span class="n">left</span><span class="o">.</span><span class="n">size</span> <span class="o">+</span> <span class="n">right</span><span class="o">.</span><span class="n">center</span><span class="o">*</span><span class="n">right</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>\
+                <span class="o">/</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="n">right</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">label</span><span class="p">,</span><span class="n">right</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">size</span> <span class="o">+</span> <span class="n">right</span><span class="o">.</span><span class="n">size</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">values</span><span class="p">[</span><span class="s">'ID'</span><span class="p">]]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="s">'ID'</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<h3 id="part-1-guo-zizhun-using-cross-correlation-for-feature-rejection-and-selection">Part 1 (Guo, Zizhun): Using Cross-Correlation for Feature Rejection and Selection</h3>
+<p>Codes:</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="c"># rule out ID column</span>
+<span class="n">column_names</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">column_names_size</span><span class="p">]</span>  
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="n">column_names_size</span><span class="p">]</span>
+
+<span class="c"># use panda package to get correlation matrix</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">df_new</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</code></pre></div></div>
+<p>The cc matrix:
+<img src="https://i.imgur.com/jcg1WMc.png" alt="ccmaxtrix" /></p>
+
+<!-- For Questions **e** **f** **g**
+Code:
+```py
+    min_dist = np.inf
+    min_dist_2nd = np.inf
+
+    idx_min = np.inf
+    idx_min_2nd = np.inf
+    
+    for attr1 in range(0, 20):
+        dist_total = 0
+        for attr2 in range(0, 20):
+            dist_total += distance.euclidean(corr.values[attr1] , corr.values[attr2])
+        dist = dist_total/20
+        if dist < min_dist and dist != 0:
+            idx_min_2nd = idx_min
+            min_dist_2nd = min_dist
+            idx_min = attr1
+            min_dist = dist
+    print(corr)
+    print(min_dist)
+    print("first leaset correlated with all others:" + str(column_names[idx_min]))
+    print(min_dist_2nd)
+    print("second leaset correlated with all others:" + str(column_names[idx_min_2nd]))
+``` -->
+
+<p><strong>Questions:</strong></p>
+
+<p>a. Which two attributes are most strongly cross-correlated with each other? ( ¼ )</p>
+<blockquote>
+  <p>Corn &amp; Tortya</p>
+</blockquote>
+
+<p>b. Which attribute is fish most strongly cross-correlated with? ( ¼ )</p>
+<blockquote>
+  <p>Eggs</p>
+</blockquote>
+
+<p>c. Which attribute is meat most strongly cross-correlated with? (¼)</p>
+<blockquote>
+  <p>Sauce</p>
+</blockquote>
+
+<p>d. Which attribute is beans most strongly cross-correlated with? (¼)</p>
+<blockquote>
+  <p>Meat</p>
+</blockquote>
+
+<p>e. Which one attribute is least correlated with all other attributes? (¼)</p>
+<blockquote>
+  <p>Milk</p>
+</blockquote>
+
+<p>f. Which second attribute is least correlated with all other attributes? (¼)</p>
+<blockquote>
+  <p>Fruit</p>
+</blockquote>
+
+<p>g. If you were to delete two attributes, which would you guess were irrelevant? (¼)</p>
+<blockquote>
+  <p>Milk &amp; Fruit</p>
+</blockquote>
+
+<p>h. If buying fish is strongly cross-correlated with buying cereal, and buying cereal is strongly crosscorrelated with buying baby products, is buying fish strongly cross-correlated with buying baby products? Can you explain this? (¼)</p>
+<blockquote>
+  <p>Yes. Buying fish is also strongly cross-correlated with buying baby products.
+Suppose: 
+$cov(buying fish) = x = cos\alpha$ 
+$cov(buying cereal) = y = cos\beta$
+$cov(buying baby products) = z = cos\gamma$
+Since the value of x, y and z are in range between -1 to 1 
+$\alpha, \beta, \gamma\in[0, \pi]$
+so $cos\alpha cos\beta - sin\alpha sin\beta &lt;= cos\gamma &lt;= cos\alpha cos\beta + sin\alpha sin\beta$
+so $cos(\alpha + \beta) &lt;= cos\gamma &lt;= cos(\alpha - \beta)$
+so $\vert \alpha - \beta \vert &lt;= \gamma &lt;= min(\alpha + \beta, 2\pi - \alpha -\beta)$
+This proves if the other sides from $\alpha$ and $\beta$ are at the same side of the common side which they both have (x and y are both either positive or negative), $\gamma$ has the minimal value of $\vert \alpha - \beta \vert$. $cos \gamma$ would be closer to 1.0 or -1.0 than $\alpha$ or $\beta$.
+If $\alpha$ and $\beta$ are on the wrong sides, $\gamma$ can still get smaller value, which makes the correlation coefficients keep strongly the same.</p>
+</blockquote>
+
+<hr />
+<h3 id="part-3-qian-martin-agglomeration">Part 3 (Qian Martin): Agglomeration</h3>
+
+<p>Final agglomeration clustering result:
+<img src="https://i.imgur.com/nVBgvFc.png" alt="HW7" /></p>
+
+<hr />
+
+<p><strong>Martin Qian:</strong></p>
+<blockquote>
+  <p>I learned a lot of clustering algorithms, not only agglomeration, I also learned something about k-means, DBScan and PCA. Apart from this, I learned the importance of effeciency and code optimization as this time training the model is really time consuming. The time complecity is O(n^3) and as a matter of fact can be reduced to O(n^2) if we can backup all these distance rather than compute them again.
+As for data exploration itself, I have to say the data is exactly divided into 6 clusters, very clearly and explicit. When all beanches of one node is in big size, this indicating this two nodes are all complete and pure clusters.</p>
+</blockquote>
+
+<p><strong>Zizhun Guo:</strong></p>
+<blockquote>
+  <p>What did I learn?
+CC can be used to determine what attributes can be discarded or not. For example, some attributes like milk and fruit attributes, they are the two attributes that are least correlated with all other attributes. The reason may come from that all customers conducted consumption would highly possible purchase these two products, which makes them less considerably matter to the clustering. So the two can be pruned before conducting the clustering algorithm in order to reduce the dimensions of the data set so that to increase the efficiencies.</p>
+</blockquote>
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>

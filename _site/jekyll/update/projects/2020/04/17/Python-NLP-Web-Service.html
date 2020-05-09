@@ -1,0 +1,570 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"http://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+<!--             <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">ABOUT</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun-Guo_Resume_3_2020_v3.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container my-5 py-5" style="background: #f6f6f6;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Python +  NLP Web Service Classification & Clustering</h1>
+		<p class="lead"><span>Zizhun Guo</span><span>2020-04-17 17:00:00 -0400</span></p>
+<!--     	<a href="" class="btn btn-primary">tag1</a>
+	<a href="" class="btn btn-success">tag2</a> -->
+</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><!-- MarkdownTOC -->
+
+<ul>
+  <li><a href="#some-terms-before-headin">Some terms before headin:</a></li>
+  <li><a href="#0-prologue"><strong>0. Prologue</strong></a></li>
+  <li><a href="#1-web-service">1. Web service</a></li>
+  <li><a href="#2-project-details">2. Project details</a></li>
+  <li><a href="#post-mortem">Post-Mortem</a></li>
+  <li><a href="#reference">Reference</a></li>
+</ul>
+
+<!-- /MarkdownTOC -->
+
+<h3 id="some-terms-before-headin">Some terms before headin:</h3>
+
+<blockquote>
+  <p><strong>Web Service Classification:</strong></p>
+
+  <p>Classification is a supervised learning process that requires the training dataset (in web service case is the functional description) and labels (web service category) to help web services users to predict the label of the given web services.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Web Service Clustering:</strong></p>
+
+  <p>Clustering is an unsupervised learning process works for discovering and understanding the web services, which usually works for data preprocessing step for the classification.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>NLP</strong> (from Wiki):</p>
+
+  <p>Natural language processing (NLP) is a subfield of linguistics, computer science, information engineering, and artificial intelligence concerned with the interactions between computers and human (natural) languages, in particular how to program computers to process and analyze large amounts of natural language data.</p>
+</blockquote>
+
+<h3 id="0-prologue"><strong>0. Prologue</strong></h3>
+
+<p><strong>This project implements web service classification and clustering using the given crawled data through ProgrammableWeb APIs. This projects performs:</strong></p>
+<ul>
+  <li>The comparision between different modeling approaches including <strong>tf-idf</strong>, <strong>topic-modeling</strong> and <strong>word embedding.</strong></li>
+  <li>The comparison between different classification methods including <strong>decision tree</strong>,
+<strong>naïve bayes</strong> classifier and <strong>nearest neighbor</strong> classifier.</li>
+  <li>Perform cross validation for each type of classification to evaluate the
+performance.</li>
+  <li>Using Silhouette index to evaluate the clustering.</li>
+  <li>The comparison between different clustering methods including <strong>kmeans</strong> and density-based spatial clustering (<strong>DBSCAN</strong>).
+<br /><br /></li>
+</ul>
+
+<p>Crawled data record example:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.programmableweb.com/api/the-global-proteome-machine$#$ The Global
+Proteome Machine$#$Proteome data for biomedical research$#$4.4$#$ The Global
+Proteome Machine$#$ The Global Proteome Machine$#$$#$The Global Proteome
+Machine is an attempt to create knowledge from proteomics data and reuse it to solve
+biomedical research problems. The Global Proteome Machine Database was built to
+use GPM data to help validate peptide MS/MS spectra and protein coverage patterns.
+The Global Proteome Machine Database API provides RESTful access to commonly
+required information based on data from the GPM Database. Responses are JSON
+formatted. $#$1$#$$#$$#$http://wiki.thegpm.org/wiki/GPMDB_REST$#$$#$2012-
+12-17T09:51:40Z$#$$#$$#$http://api.programmableweb.com/apis/the-globalproteomemachine/
+comments$#$database###science$#$Science$#$REST$#$http://gpm
+db.thegpm.org/$#$$#$$#$JSON$#$$#$$#$$#$$#$$#$$#$$#$$#$$#$$#$$#$No$#$$#
+$http://www.thegpm.org/$#$$#$$#$$#$$#$$#$$#$$#$2012-12-17T09:51:40Z
+</code></pre></div></div>
+
+<p>Web Service description (extracted as the <strong>feature</strong>):</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The Global Proteome
+Machine is an attempt to create knowledge from proteomics data and reuse it to solve
+biomedical research problems. The Global Proteome Machine Database was built to
+use GPM data to help validate peptide MS/MS spectra and protein coverage patterns.
+The Global Proteome Machine Database API provides RESTful access to commonly
+required information based on data from the GPM Database. Responses are JSON
+formatted. 
+</code></pre></div></div>
+<p>Web Service Category (extracted as the <strong>target variable</strong> or <strong>label</strong>):</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Science
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+<h3 id="1-web-service">1. Web service</h3>
+<p><strong>1.1. Tools and Libraries</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Python 3.8.1 32-bit
+
+**Visual Studio Code**
+
+Flask
+
+Numpy
+
+Pandas
+
+Sklearn
+
+Gensim
+
+Jieba
+
+Nltk
+
+Tqdm
+</code></pre></div></div>
+
+<p><strong>1.2. Installation</strong>
+    1. unzip
+    2. Open VSCode folder on the current directory
+    3. Run it (it automately in venv.)
+    4. As the server launched, open an browser
+    5. Goto: http://127.0.0.1:5000/clustering/
+            or
+            http://127.0.0.1:5000/classification/</p>
+
+<h3 id="2-project-details">2. Project details</h3>
+
+<p><strong>2.1. Web Service Implementation</strong></p>
+
+<p><strong>Main Class</strong></p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">url_for</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">render_template</span>
+
+<span class="c">#</span>
+<span class="c"># Classification</span>
+<span class="c">#</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">'/classification_results'</span><span class="p">,</span> <span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">classification_results</span><span class="p">():</span>
+    <span class="n">classifier</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">'model'</span><span class="p">]</span>
+    <span class="n">data_model</span><span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">'data'</span><span class="p">]</span>
+    <span class="nb">file</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">'file'</span><span class="p">]</span>
+    
+    <span class="n">pg</span> <span class="o">=</span> <span class="n">program</span><span class="o">.</span><span class="n">Main</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> <span class="n">data_model</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s">'Successful!'</span>
+    
+
+<span class="c"># Combine template and method</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">'/classification/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">classification</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">'classfication.html'</span><span class="p">)</span>
+
+    <span class="o">...</span>
+    <span class="o">...</span>
+    <span class="o">...</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+   <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Classification HTML Template</strong></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;form</span> <span class="na">action =</span><span class="err"> </span><span class="s">"http://localhost:5000/clustering_results"</span> <span class="na">method =</span><span class="err"> </span><span class="s">"post"</span><span class="nt">&gt;</span>
+         Clustering Methods:
+         <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"model"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"KMeans"</span><span class="nt">&gt;</span>K-means<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"DBSCAN"</span><span class="nt">&gt;</span>DBSCAN<span class="nt">&lt;/option&gt;</span>
+         <span class="nt">&lt;/select&gt;</span>
+         <span class="nt">&lt;br&gt;</span>
+         Data Model Approaches:       
+         <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"data"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"tf-idf"</span><span class="nt">&gt;</span>tf-idf<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"tm"</span><span class="nt">&gt;</span>topic-modeling<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"we"</span><span class="nt">&gt;</span>word-embedding<span class="nt">&lt;/option&gt;</span>
+         <span class="nt">&lt;/select&gt;</span>
+         <span class="nt">&lt;br&gt;</span>
+         File Selection
+         <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"file"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"api.txt"</span><span class="nt">&gt;</span>api.txt<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"test.txt"</span><span class="nt">&gt;</span>test.txt<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"mashup.txt"</span><span class="nt">&gt;</span>mashup.txt<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"members.txt"</span><span class="nt">&gt;</span>members.txt<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"widgetfinal.txt"</span><span class="nt">&gt;</span>widgetfinal.txt<span class="nt">&lt;/option&gt;</span>
+         <span class="nt">&lt;/select&gt;</span>
+
+
+         <span class="nt">&lt;p&gt;&lt;input</span> <span class="na">type =</span><span class="err"> </span><span class="s">"submit"</span> <span class="na">value =</span><span class="err"> </span><span class="s">"submit"</span> <span class="nt">/&gt;&lt;/p&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p><strong>2.2. Features Selection</strong></p>
+
+<p>While analyzing the dataset before conducting any process, the author discovered that there are many features from the dataset are in <strong>unique</strong> value, such as “id”(links), “author”, “commentsUrl” and so forth, which makes the built model in later steps being super overfitted (that’s not what we want). So it is necessary to keep only the useful feature and lower down the overfitting possibilities. There the author decides to use only one feature - <strong>description</strong> from the first api.txt file, since the decription feature does the best job for express the important latent information about the data record. Therefore, the dataset would be 1-D dataset.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">cat</span><span class="p">,</span> <span class="n">des</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span> <span class="k">as</span> <span class="n">txtData</span><span class="p">:</span>    
+            <span class="n">lines</span> <span class="o">=</span> <span class="n">txtData</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'$#$'</span><span class="p">)</span> 
+                <span class="c"># keep the description</span>
+                <span class="n">des</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">remove_punctuation</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">7</span><span class="p">]))</span>
+                <span class="c"># keep the tag</span>
+                <span class="n">cat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">18</span><span class="p">])</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">'cat'</span><span class="p">:</span> <span class="n">cat</span><span class="p">,</span> <span class="s">'dess'</span><span class="p">:</span> <span class="n">des</span><span class="p">})</span>
+        
+        <span class="c">#drop na</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">'any'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">==</span><span class="bp">True</span><span class="p">]</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'dess'</span><span class="p">])]</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>2.3. Data Balancing</strong></p>
+
+<p><img src="https://i.imgur.com/TqsrhzV.png" alt="05" />
+Obviously, the dataset are not well balanced, for the data records that belongs to <em>Tool</em> tag, there are more than 800 of them in the set. This would cause extremely long time for out later model to process and cause our prediction biased. Therefore, the author decides to trim the data out by only keeping <em>6</em> tags remained. 
+<img src="https://i.imgur.com/6QZIHHM.png" alt="06" /></p>
+
+<p><strong>2.3. Documents Process</strong></p>
+
+<p><strong>Words Lemmatization &amp; <em>Stopword</em> Elimination</strong></p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">preprocess_complete</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="s">"""
+        words lemmatization: verb passed tense to current tense
+        @text: a string
+        return: a string
+    """</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">gensim</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">simple_preprocess</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">token</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">gensim</span><span class="o">.</span><span class="n">parsing</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">STOPWORDS</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">token</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">lemmatize_stemming</span><span class="p">(</span><span class="n">token</span><span class="p">)</span> <span class="o">+</span> <span class="s">' '</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></div>
+<p><strong>Words Stemming</strong></p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">lemmatize_stemming</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>  
+    <span class="s">"""
+        Words stemming: cats -&gt; cat; meeting -&gt; meet
+    """</span>
+    <span class="n">stemmer</span> <span class="o">=</span> <span class="n">SnowballStemmer</span><span class="p">(</span><span class="s">'english'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">WordNetLemmatizer</span><span class="p">()</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="s">'v'</span><span class="p">))</span>
+</code></pre></div></div>
+<p>The above two steps ensure the <em>word</em> extracted from the original dataset are normalized transformed to standardized format which help increase the modeling accuracy.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>              cat                                               dess                                                des
+2       Messaging  blue is a service that stores text messages in...  [blue, servic, store, text, messag, convers, s...
+3          Social  Gah People helps people from the FreeNode IRC ...  [peopl, help, peopl, freenod, channel, discov,...
+4        Internet  This SOAPbased API allows the user to place a ...  [soapbas, allow, user, place, widget, websit, ...
+5        Internet  The tel domain uses the DNS to store contact i...  [domain, use, store, contact, inform, push, da...
+6          Social  100 Facts About Me is a Russian website dedica...  [fact, russian, websit, dedic, help, peopl, be...
+...           ...                                                ...                                                ...
+11189      Social  The Zutual API allows you programmatic access ...  [zutual, allow, programmat, access, zutual, pl...
+11190      Social  A RESTful API that takes two twitter usernames...  [rest, take, twitter, usernam, return, json, l...
+11193      Social  Zwiggo is a social platform designed for group...  [zwiggo, social, platform, design, group, user...
+11194   Messaging  Zync is a global messaging platform that provi...  [zync, global, messag, platform, provid, commu...
+11195  Enterprise  Zyncro is an enterprise social networking serv...  [zyncro, enterpris, social, network, servic, p...
+</code></pre></div></div>
+
+<p>Examples of the output for the docs before and after the process:
+The <em>dess</em> reprensets the original doc, whereas the <em>des</em> represents the processed doc.
+See the data record in “id == 2”:  “is”, “a” which the high frequently written words are eliminated.</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">services</span><span class="o">/</span><span class="n">service</span> <span class="o">-</span> <span class="o">&gt;</span> <span class="n">servic</span>
+<span class="n">Restful</span><span class="o">/</span><span class="n">RESTful</span><span class="o">/</span><span class="n">REST</span><span class="o">/</span><span class="n">rest</span><span class="o">/...</span> <span class="o">-</span> <span class="o">&gt;</span> <span class="n">rest</span>
+</code></pre></div></div>
+<p><strong>2.4 Cross-Validation</strong></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'des'</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s">'cat_id'</span><span class="p">],</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">stratify</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s">'cat_id'</span><span class="p">])</span>
+
+</code></pre></div></div>
+<p><strong>2.5. Data Modeling Approaches</strong>
+<strong>TF-IDF:</strong></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">count_vect</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+    <span class="n">tfidf_transformer</span> <span class="o">=</span> <span class="n">TfidfTransformer</span><span class="p">()</span>
+
+    <span class="c"># transform dataset into vectors</span>
+    <span class="n">X_train_counts</span> <span class="o">=</span> <span class="n">count_vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+    <span class="c"># transform vectors into weighted vectors </span>
+    <span class="n">X_train_tfidf</span> <span class="o">=</span> <span class="n">tfidf_transformer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_counts</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Results</span><span class="p">:</span>
+<span class="p">[[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="o">...</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="o">...</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="o">...</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+ <span class="o">...</span>
+ <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="o">...</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="o">...</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="o">...</span> <span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]]</span> 
+</code></pre></div></div>
+
+<p><strong>LDA：</strong></p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">count_vect</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+    <span class="n">X_train_counts</span> <span class="o">=</span> <span class="n">count_vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+    <span class="c"># use the trained doc vectors transform the test dataset into the vectors</span>
+    <span class="n">X_test_counts</span> <span class="o">=</span>  <span class="n">count_vect</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+    <span class="c"># initialize a LDA model</span>
+    <span class="c"># # of topics: 6</span>
+    <span class="n">lda_model</span> <span class="o">=</span> <span class="n">LatentDirichletAllocation</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">cat_id_df</span><span class="o">.</span><span class="n">values</span><span class="p">),</span>
+                                    <span class="n">learning_method</span><span class="o">=</span><span class="s">'online'</span><span class="p">,</span>
+                                    <span class="n">max_iter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                                    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    
+    <span class="c"># Use the LDA instance to model the dataset into the vectors of topics</span>
+    <span class="n">Xtopics</span> <span class="o">=</span> <span class="n">lda_model</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_counts</span><span class="p">)</span>
+
+    <span class="c"># transform the test doc into the vectors of topics</span>
+    <span class="n">Xtopics_test</span> <span class="o">=</span> <span class="n">lda_model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_counts</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Results</span><span class="p">:</span>
+<span class="p">[[</span><span class="mf">0.00416773</span> <span class="mf">0.00417269</span> <span class="mf">0.00422381</span> <span class="mf">0.00417282</span> <span class="mf">0.00416738</span> <span class="mf">0.97909557</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00420153</span> <span class="mf">0.12530752</span> <span class="mf">0.36135089</span> <span class="mf">0.00418112</span> <span class="mf">0.00418709</span> <span class="mf">0.50077185</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00308746</span> <span class="mf">0.00311789</span> <span class="mf">0.49922885</span> <span class="mf">0.00308779</span> <span class="mf">0.00309947</span> <span class="mf">0.48837853</span><span class="p">]</span>
+ <span class="o">...</span>
+ <span class="p">[</span><span class="mf">0.17848864</span> <span class="mf">0.00416919</span> <span class="mf">0.77270219</span> <span class="mf">0.03626544</span> <span class="mf">0.00417198</span> <span class="mf">0.00420257</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00245217</span> <span class="mf">0.00245509</span> <span class="mf">0.80951414</span> <span class="mf">0.00245443</span> <span class="mf">0.00245213</span> <span class="mf">0.18067205</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.0053782</span>  <span class="mf">0.27290006</span> <span class="mf">0.70556677</span> <span class="mf">0.00537981</span> <span class="mf">0.00537642</span> <span class="mf">0.00539873</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<p><strong>Word Embedding</strong></p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">train_tagged</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">TaggedDocument</span><span class="p">(</span><span class="n">words</span><span class="o">=</span><span class="n">r</span><span class="p">[</span><span class="s">'des'</span><span class="p">],</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="s">'cat'</span><span class="p">]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">test_tagged</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">TaggedDocument</span><span class="p">(</span><span class="n">words</span><span class="o">=</span><span class="n">r</span><span class="p">[</span><span class="s">'des'</span><span class="p">],</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="s">'cat'</span><span class="p">]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">cores</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
+    <span class="n">model_dbow</span> <span class="o">=</span> <span class="n">Doc2Vec</span><span class="p">(</span><span class="n">vector_size</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">window</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">min_count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">workers</span><span class="o">=</span><span class="n">cores</span><span class="p">)</span>
+    <span class="n">model_dbow</span><span class="o">.</span><span class="n">build_vocab</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">train_tagged</span><span class="o">.</span><span class="n">values</span><span class="p">)])</span>
+
+    <span class="c"># training the neural network model 30 times for the better vectorerization accuracy</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+        <span class="n">model_dbow</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">shuffle</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">train_tagged</span><span class="o">.</span><span class="n">values</span><span class="p">)]),</span> <span class="n">total_examples</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">train_tagged</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">model_dbow</span><span class="o">.</span><span class="n">alpha</span> <span class="o">-=</span> <span class="mf">0.002</span>
+        <span class="n">model_dbow</span><span class="o">.</span><span class="n">min_alpha</span> <span class="o">=</span> <span class="n">model_dbow</span><span class="o">.</span><span class="n">alpha</span>
+
+    <span class="n">y_train</span><span class="p">,</span> <span class="n">X_train</span> <span class="o">=</span> <span class="n">vec_for_learning</span><span class="p">(</span><span class="n">model_dbow</span><span class="p">,</span> <span class="n">train_tagged</span><span class="p">)</span>
+    <span class="n">y_test</span><span class="p">,</span> <span class="n">X_test</span> <span class="o">=</span> <span class="n">vec_for_learning</span><span class="p">(</span><span class="n">model_dbow</span><span class="p">,</span> <span class="n">test_tagged</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">vec_for_learning</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">tagged_docs</span><span class="p">):</span>
+    <span class="n">sents</span> <span class="o">=</span> <span class="n">tagged_docs</span><span class="o">.</span><span class="n">values</span>
+    <span class="c"># transform the tagged docs into the vectors paragraph vectors</span>
+    <span class="n">targets</span><span class="p">,</span> <span class="n">regressors</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">[(</span><span class="n">doc</span><span class="o">.</span><span class="n">tags</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">model</span><span class="o">.</span><span class="n">infer_vector</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">words</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">20</span><span class="p">))</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">sents</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">targets</span><span class="p">,</span> <span class="n">regressors</span>
+</code></pre></div></div>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Results for tagged document:</span>
+<span class="n">TaggedDocument</span><span class="p">([</span><span class="s">'metro'</span><span class="p">,</span> <span class="s">'publish'</span><span class="p">,</span> <span class="s">'cloud'</span><span class="p">,</span> <span class="s">'manag'</span><span class="p">,</span> <span class="s">'build'</span><span class="p">,</span> <span class="s">'help'</span><span class="p">,</span> <span class="s">'media'</span><span class="p">,</span> <span class="s">'compani'</span><span class="p">,</span> <span class="s">'succeed'</span><span class="p">,</span> <span class="s">'onlin'</span><span class="p">,</span> <span class="s">'grow'</span><span class="p">,</span> <span class="s">'readership'</span><span class="p">,</span> <span class="s">'increas'</span><span class="p">,</span> <span class="s">'revenu'</span><span class="p">,</span> <span class="s">'build'</span><span class="p">,</span> <span class="s">'brand'</span><span class="p">,</span> <span class="s">'metro'</span><span class="p">,</span> <span class="s">'publish'</span><span class="p">,</span> <span class="s">'expos'</span><span class="p">,</span> <span class="s">'rest'</span><span class="p">,</span> <span class="s">'authent'</span><span class="p">,</span> <span class="s">'base'</span><span class="p">,</span> <span class="s">'oauth'</span><span class="p">,</span> <span class="s">'specif'</span><span class="p">,</span> <span class="s">'respons'</span><span class="p">,</span> <span class="s">'json'</span><span class="p">,</span> <span class="s">'format'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Enterprise'</span><span class="p">])</span>
+<span class="n">TaggedDocument</span><span class="p">([</span><span class="s">'pastebincom'</span><span class="p">,</span> <span class="s">'websit'</span><span class="p">,</span> <span class="s">'user'</span><span class="p">,</span> <span class="s">'store'</span><span class="p">,</span> <span class="s">'text'</span><span class="p">,</span> <span class="s">'certain'</span><span class="p">,</span> <span class="s">'period'</span><span class="p">,</span> <span class="s">'time'</span><span class="p">,</span> <span class="s">'site'</span><span class="p">,</span> <span class="s">'programm'</span><span class="p">,</span> <span class="s">'store'</span><span class="p">,</span> <span class="s">'piec'</span><span class="p">,</span> <span class="s">'sourc'</span><span class="p">,</span> <span class="s">'code'</span><span class="p">,</span> <span class="s">'configur'</span><span class="p">,</span> <span class="s">'inform'</span><span class="p">,</span> <span class="s">'kind'</span><span class="p">,</span> <span class="s">'text'</span><span class="p">,</span> <span class="s">'store'</span><span class="p">,</span> <span class="s">'offer'</span><span class="p">,</span> <span class="s">'function'</span><span class="p">,</span> <span class="s">'site'</span><span class="p">,</span> <span class="s">'includ'</span><span class="p">,</span> <span class="s">'creat'</span><span class="p">,</span> <span class="s">'list'</span><span class="p">,</span> <span class="s">'delet'</span><span class="p">,</span> <span class="s">'past'</span><span class="p">,</span> <span class="s">'get'</span><span class="p">,</span> <span class="s">'user'</span><span class="p">,</span> <span class="s">'inform'</span><span class="p">,</span> <span class="s">'set'</span><span class="p">,</span> <span class="s">'use'</span><span class="p">,</span> <span class="s">'rest'</span><span class="p">,</span> <span class="s">'call'</span><span class="p">,</span> <span class="s">'respons'</span><span class="p">,</span> <span class="s">'format'</span><span class="p">,</span> <span class="s">'document'</span><span class="p">,</span> <span class="s">'requir'</span><span class="p">,</span> <span class="s">'registr'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Tools'</span><span class="p">])</span>
+<span class="n">TaggedDocument</span><span class="p">([</span><span class="s">'coderwal'</span><span class="p">,</span> <span class="s">'communiti'</span><span class="p">,</span> <span class="s">'base'</span><span class="p">,</span> <span class="s">'social'</span><span class="p">,</span> <span class="s">'network'</span><span class="p">,</span> <span class="s">'creat'</span><span class="p">,</span> <span class="s">'purpos'</span><span class="p">,</span> <span class="s">'allow'</span><span class="p">,</span> <span class="s">'user'</span><span class="p">,</span> <span class="s">'creat'</span><span class="p">,</span> <span class="s">'lightweight'</span><span class="p">,</span> <span class="s">'profil'</span><span class="p">,</span> <span class="s">'display'</span><span class="p">,</span> <span class="s">'achiev'</span><span class="p">,</span> <span class="s">'cod'</span><span class="p">,</span> <span class="s">'develop'</span><span class="p">,</span> <span class="s">'user'</span><span class="p">,</span> <span class="s">'gain'</span><span class="p">,</span> <span class="s">'public'</span><span class="p">,</span> <span class="s">'display'</span><span class="p">,</span> <span class="s">'badg'</span><span class="p">,</span> <span class="s">'trex'</span><span class="p">,</span> <span class="s">'achiev'</span><span class="p">,</span> <span class="s">'ampquothav'</span><span class="p">,</span> <span class="s">'origin'</span><span class="p">,</span> <span class="s">'repo'</span><span class="p">,</span> <span class="s">'domin'</span><span class="p">,</span> <span class="s">'languageampquot'</span><span class="p">,</span> <span class="s">'octopusi'</span><span class="p">,</span> <span class="s">'achiev'</span><span class="p">,</span> <span class="s">'ampquothav'</span><span class="p">,</span> <span class="s">'repo'</span><span class="p">,</span> <span class="s">'follow'</span><span class="p">,</span> <span class="s">'member'</span><span class="p">,</span> <span class="s">'github'</span><span class="p">,</span> <span class="s">'teamampquot'</span><span class="p">,</span> <span class="s">'user'</span><span class="p">,</span> <span class="s">'join'</span><span class="p">,</span> <span class="s">'creat'</span><span class="p">,</span> <span class="s">'compani'</span><span class="p">,</span> <span class="s">'team'</span><span class="p">,</span> <span class="s">'compet'</span><span class="p">,</span> <span class="s">'highest'</span><span class="p">,</span> <span class="s">'score'</span><span class="p">,</span> <span class="s">'coderwal'</span><span class="p">,</span> <span class="s">'profil'</span><span class="p">,</span> <span class="s">'simpli'</span><span class="p">,</span> <span class="s">'expos'</span><span class="p">,</span> <span class="s">'json'</span><span class="p">,</span> <span class="s">'represent'</span><span class="p">,</span> <span class="s">'profil'</span><span class="p">,</span> <span class="s">'retriev'</span><span class="p">,</span> <span class="s">'http'</span><span class="p">,</span> <span class="s">'valid'</span><span class="p">,</span> <span class="s">'usernam'</span><span class="p">,</span> <span class="s">'includ'</span><span class="p">,</span> <span class="s">'request'</span><span class="p">,</span> <span class="s">'respons'</span><span class="p">,</span> <span class="s">'consist'</span><span class="p">,</span> <span class="s">'profil'</span><span class="p">,</span> <span class="s">'inform'</span><span class="p">,</span> <span class="s">'list'</span><span class="p">,</span> <span class="s">'achiev'</span><span class="p">,</span> <span class="s">'return'</span><span class="p">,</span> <span class="s">'json'</span><span class="p">,</span> <span class="s">'jsonp'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Social'</span><span class="p">])</span>
+<span class="n">TaggedDocument</span><span class="p">([</span><span class="s">'circleci'</span><span class="p">,</span> <span class="s">'platform'</span><span class="p">,</span> <span class="s">'develop'</span><span class="p">,</span> <span class="s">'creat'</span><span class="p">,</span> <span class="s">'test'</span><span class="p">,</span> <span class="s">'integr'</span><span class="p">,</span> <span class="s">'deploy'</span><span class="p">,</span> <span class="s">'code'</span><span class="p">,</span> <span class="s">'project'</span><span class="p">,</span> <span class="s">'circleci'</span><span class="p">,</span> <span class="s">'offer'</span><span class="p">,</span> <span class="s">'featur'</span><span class="p">,</span> <span class="s">'like'</span><span class="p">,</span> <span class="s">'push'</span><span class="p">,</span> <span class="s">'code'</span><span class="p">,</span> <span class="s">'github'</span><span class="p">,</span> <span class="s">'deploy'</span><span class="p">,</span> <span class="s">'code'</span><span class="p">,</span> <span class="s">'server'</span><span class="p">,</span> <span class="s">'circleci'</span><span class="p">,</span> <span class="s">'allow'</span><span class="p">,</span> <span class="s">'develop'</span><span class="p">,</span> <span class="s">'access'</span><span class="p">,</span> <span class="s">'integr'</span><span class="p">,</span> <span class="s">'function'</span><span class="p">,</span> <span class="s">'circleci'</span><span class="p">,</span> <span class="s">'applic'</span><span class="p">,</span> <span class="s">'exampl'</span><span class="p">,</span> <span class="s">'method'</span><span class="p">,</span> <span class="s">'includ'</span><span class="p">,</span> <span class="s">'retriev'</span><span class="p">,</span> <span class="s">'user'</span><span class="p">,</span> <span class="s">'inform'</span><span class="p">,</span> <span class="s">'retriev'</span><span class="p">,</span> <span class="s">'project'</span><span class="p">,</span> <span class="s">'inform'</span><span class="p">,</span> <span class="s">'retriev'</span><span class="p">,</span> <span class="s">'build'</span><span class="p">,</span> <span class="s">'project'</span><span class="p">],</span> <span class="p">[</span><span class="s">'Tools'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><strong>2.6. Classification</strong>
+Due to the reason that for different data model, the vectors vairables name are different, so here it uses X_trained (description), y_trained (category as the class), X_test and y_test.
+<strong>Decision Tree</strong></p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">clf</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+        <span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trained</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Testing accuracy </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Testing F1 score: {}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s">'weighted'</span><span class="p">)))</span>
+</code></pre></div></div>
+<p><strong>Naive Bayes</strong></p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">clf</span> <span class="o">=</span> <span class="n">MultinomialNB</span><span class="p">()</span>
+    <span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trained</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_trained</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Testing accuracy </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Testing F1 score: {}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s">'weighted'</span><span class="p">)))</span>
+</code></pre></div></div>
+<p><strong>Nearest Neighbors</strong></p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
+    <span class="n">knn</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_trained</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_trained</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Testing accuracy </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Testing F1 score: {}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s">'weighted'</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<p><strong>Evalution</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TFIDF + Decision Tree:
+Testing accuracy 0.591
+Testing F1 score: 0.590
+
+TFIDF + Bayes:
+Testing accuracy 0.640
+Testing F1 score: 0.640
+
+TFIDF + Nearest Neighbors:
+Testing accuracy 0.446
+Testing F1 score: 0.416
+
+
+
+LDA + Decision Tree:
+Testing accuracy 0.274
+Testing F1 score: 0.274
+
+LDA + Bayes:
+Testing accuracy 0.345
+Testing F1 score: 0.215
+
+LDA + Nearest Neighbors:
+Testing accuracy 0.301
+Testing F1 score: 0.303
+
+
+
+Word Embedding + Decision Tree:
+Testing accuracy 0.477
+Testing F1 score: 0.479
+
+Word Embedding + Bayes:
+Testing accuracy 0.411
+Testing F1 score: 0.401
+
+Word Embedding + Nearest Neighbors:
+Testing accuracy 0.509
+Testing F1 score: 0.513
+</code></pre></div></div>
+<p><strong>Brief Summary</strong>
+TF-IDF model has the best performance in pre-training on data vectorization when it is used in Decision Tree classifier or Bayes classifier. LDA (topic-oriented) produces the lowest accuracy. For Nearest Neighbors classifier, the word embedding model outstands the other two modelings.</p>
+
+<p><strong>2.7. Clustering</strong>
+<strong>KMeans</strong></p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># sets K equals to 6</span>
+    <span class="n">clf</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">cat_id_df</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">labels_</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+    <span class="c"># using Silhouette distance to evaluate the clustering</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">silhouette_score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">labels</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><strong>DBSCAN</strong></p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">clf</span> <span class="o">=</span> <span class="n">skc</span><span class="o">.</span><span class="n">DBSCAN</span><span class="p">(</span><span class="n">eps</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">min_samples</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">labels_</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">silhouette_score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">labels</span><span class="p">))</span>
+</code></pre></div></div>
+<p><strong>Evalution</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TFIDF + KMeans:
+labels: [0 1 5 ... 1 3 1]
+silhouette_score: 0.0090155443672946
+
+TFIDF + DBSCAN:
+error:
+# label is 1
+
+LDA + KMeans:
+[0 2 2 ... 1 4 3]
+0.41445914800038464
+
+LDA + DBSCAN:
+[0 0 0 ... 0 0 0]
+0.46508006022380116
+
+
+Word Embedding + KMeans:
+[4 2 2 ... 4 1 2]
+0.20370875
+
+Word Embedding + DBSCAN:
+error:
+# label is 1
+
+</code></pre></div></div>
+<p><strong>Brief Summary</strong>
+The value of silhouette score from sklearn is in range between [-1, 1]. The coefficients near +1 indicates the sample is far away from the neighboring clusters. From the above output, TF-IDF has most distinctive clustering. However, there are program errors on both LDA and Word Embedding when using DBSCAN.</p>
+
+<h3 id="post-mortem">Post-Mortem</h3>
+<ul>
+  <li>For data preprocessing, there could be using other techniques to improve the feature selection. Like PCA…</li>
+  <li>Data unbalanced data can be fixed by drop the data records from the more part.</li>
+  <li>Parameters for initializing the models could be reconsidered.</li>
+</ul>
+
+<h3 id="reference">Reference</h3>
+<p>Docs:
+https://pandas.pydata.org/
+https://scikit-learn.org/
+https://github.com/fxsjy/jieba</p>
+
+<p>Theories:</p>
+
+<p>https://cosx.org/2010/10/lda-topic-model/
+https://www.jianshu.com/p/b16911338d39
+https://www.zhihu.com/question/29901661
+https://blog.csdn.net/weixin_41712499/article/details/82315207
+http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/
+https://zhuanlan.zhihu.com/p/22332099
+https://www.jianshu.com/p/2a76b7d3126b</p>
+
+<p>Implementation:
+https://www.jiqizhixin.com/articles/2018-03-05-3
+https://blog.csdn.net/weixin_42608414/article/details/87967257
+https://blog.csdn.net/weixin_42608414/article/details/87559437
+https://github.com/tongzm/ml-python/blob/master/Topic_Model_Lda.ipynb
+https://github.com/tongzm/ml-python/blob/master/Multi_Class_text_classification.ipynb
+https://blog.csdn.net/a602232180/article/details/78586524
+https://blog.csdn.net/zhuzuwei/article/details/80857446
+https://blog.csdn.net/FAICULTY/article/details/79430164
+https://zhuanlan.zhihu.com/p/20757320</p>
+
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "AWS Java SOAP Web Service Deployment"
+title:  "AWS + Java SOAP Web Service Deployment"
 date:   2020-04-10 20:12:12
 author: Zizhun Guo
 category: Projects
@@ -9,6 +9,21 @@ visible: 1
 ---
 
 Author: Zizhun Guo 4/10/2020
+
+Goal:
+Deploy a web service (API) on AWS instance.
+<!-- MarkdownTOC -->
+
+- [Tech Stack and Tools](#tech-stack-and-tools)
+- [Test Links](#test-links)
+- [Results](#results)
+- [Problem Solving Plan](#problem-solving-plan)
+- [Process](#process)
+- [Post-mortem：](#post-mortem%EF%BC%9A)
+- [Resources and References](#resources-and-references)
+
+<!-- /MarkdownTOC -->
+
 
 ##### Tech Stack and Tools
 1. Java 1.8
