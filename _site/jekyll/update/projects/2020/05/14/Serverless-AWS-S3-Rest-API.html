@@ -1,0 +1,289 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"http://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+<!--             <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">ABOUT</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun-Guo_Resume_3_2020_v3.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container my-5 py-5" style="background: #f6f6f6;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Serverless App development REST API- AWS Lambda + API Gateway + DynamoDB</h1>
+		<p class="lead"><span>Zizhun Guo</span><span>2020-05-14 06:20:32 -0400</span></p>
+<!--     	<a href="" class="btn btn-primary">tag1</a>
+	<a href="" class="btn btn-success">tag2</a> -->
+</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><p>Author：Zizhun Guo
+Contact: zg2808@rit.edu
+Phone: (585)284-0464
+Date: May 14th 2020
+<br />
+<strong>Technology stack：</strong>
+Serverless
+AWS S3/Lambda/API Gateway/DynamoDB
+Node.JS
+<strong>Tools:</strong>
+VSCode/terminal
+System:
+Windows/UBuntu</p>
+
+<ol>
+  <li>Terms
+<strong>serverless:</strong>
+朴素的理解：
+这个serverless类似是一个集成框架，类似提供蓝图功能帮助AWS CloudFormation快速搭建模块，这样可以快速搭建部署不同的服务，比如静态/动态网站，restAPI等等。<a href="https://github.com/serverless/examples">Serverless Github示例工程</a>。如果单独部署，比如lambda部署function测试，API Gateway部署GET/POST激活特定的lambda function，AWS S3单独传打包好的项目文件去部署，然后链接数据库等等。这个serverless有个ymal的配置文件可以帮助配置整个项目，部署前需要安装AWS CLI在电脑上用来激活IAM的身份验证。
+专业性理解：
+按需使用，让开发专注于业务，按内存时间计费，依赖特定云平台及服务(Lambda)。
+<img src="https://i.imgur.com/GqM0BXF.png" alt="serverless-spa-architecture" />
+<strong>Image 1: Serverless SPA架构</strong></li>
+</ol>
+
+<p><strong>Lambda</strong>
+<a href="https://www.zhihu.com/question/29490143">如何看待 AWS Lambda ？ - 知乎</a>
+FaaS(Function as a Service)，直接部署function到AWS上，不需要理会任何关于服务器方面的工作，都交给云平台了。</p>
+
+<p><strong>API Gateway</strong></p>
+<blockquote>
+  <p>Amazon API Gateway 是一种完全托管的服务，可以帮助开发者轻松创建、发布、维护、监控和保护任意规模的 API。所有API的请求入口。
+<strong>DaynamoDB</strong>
+Amazon DynamoDB is a fully managed proprietary NoSQL database service that supports key-value and document data structures and is offered by Amazon.com as part of the Amazon Web Services portfolio.</p>
+</blockquote>
+
+<p><strong>AWS S3</strong></p>
+<blockquote>
+  <p>Amazon S3 or Amazon Simple Storage Service is a service offered by Amazon Web Services that provides object storage through a web service interface. 
+存储桶bucket, 可以存储对象读取写入，类似云盘。</p>
+  <ol>
+    <li>SETUP IAM
+add user
+sets programming access
+sets attach current policy as AdminnistratorAccess
+gets Access key ID and secret access key
+bind it to environment so that serverless can use it to access Lambda &amp; API Gateway
+<img src="https://i.imgur.com/OmXzdWA.png" alt="01" />
+<strong>Image 2: setup Credential for serverless</strong></li>
+  </ol>
+</blockquote>
+
+<ol>
+  <li>Serverless Install
+两种方法：
+方法一：
+用git clone下来实例project，然后cd到目录下操作。
+方法二：
+安装命令
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>serverless install -u https://github.com/serverless/examples/tree/master/aws-node-rest-api-with-dynamodb -n aws-node-rest-api-with-dynamodb
+</code></pre></div>    </div>
+  </li>
+  <li>查看配置文件和JS代码</li>
+</ol>
+
+<p><strong>serverless.yml</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>provider:
+  name: aws
+  runtime: nodejs10.x
+  environment:
+    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>functions:
+  create:
+    handler: todos/create.create
+    events:
+      - http:
+          path: todos
+          method: post
+          cors: true
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>resources:
+  Resources:
+    TodosDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}
+</code></pre></div></div>
+
+<p><strong>get.js</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">AWS</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'aws-sdk'</span><span class="p">);</span> <span class="c1">// eslint-disable-line import/no-extraneous-dependencies</span>
+
+<span class="kd">const</span> <span class="nx">dynamoDb</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">DynamoDB</span><span class="p">.</span><span class="nx">DocumentClient</span><span class="p">();</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="kd">get</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">TableName</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DYNAMODB_TABLE</span><span class="p">,</span>
+    <span class="na">Key</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">id</span><span class="p">:</span> <span class="nx">event</span><span class="p">.</span><span class="nx">pathParameters</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+
+  <span class="c1">// fetch todo from the database</span>
+  <span class="nx">dynamoDb</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// handle potential errors</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">statusCode</span><span class="p">:</span> <span class="nx">error</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">||</span> <span class="mi">501</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'text/plain'</span> <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="s1">'Couldn</span><span class="se">\'</span><span class="s1">t fetch the todo item.'</span><span class="p">,</span>
+      <span class="p">});</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// create a response</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">statusCode</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+      <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">Item</span><span class="p">),</span>
+    <span class="p">};</span>
+    <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>query id, 如果有则返回200及内容，没有则返回501异常。</p>
+
+<ol>
+  <li>部署Deploy
+5.1 安装dependencies
+    <pre><code class="language-cmd">npm install
+</code></pre>
+    <p>5.2 部署</p>
+    <pre><code class="language-cmd">serverless deploy
+</code></pre>
+    <p><img src="https://i.imgur.com/VNz5bnq.png" alt="07" />
+<strong>Image 3: Deployed serverless</strong></p>
+  </li>
+  <li>结果及测试
+利用ubuntu测试指令：
+    <pre><code class="language-cmd">curl -X POST https://szye94dpr1.execute-api.us-east-1.amazonaws.com/dev/todos --data '{ "text": "Zizhguo serverless" }'
+</code></pre>
+  </li>
+</ol>
+
+<p><img src="https://i.imgur.com/CAJo8y7.png" alt="08" />
+<strong>Image 4: Test POST Create statement</strong>
+有返回结果，登录AWS DynamoDB验证结果：
+<img src="https://i.imgur.com/6V2dLYE.png" alt="09" />
+<strong>Image 5: Succesful return the created record</strong></p>
+
+<p>数据有添加，说明添加数据没有问题，其他的REST API分别是：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  (已测试)POST - https://szye94dpr1.execute-api.us-east-1.amazonaws.com/dev/todos
+  GET - https://szye94dpr1.execute-api.us-east-1.amazonaws.com/dev/todos
+  GET - https://szye94dpr1.execute-api.us-east-1.amazonaws.com/dev/todos/{id}
+  PUT - https://szye94dpr1.execute-api.us-east-1.amazonaws.com/dev/todos/{id}
+  DELETE - https://szye94dpr1.execute-api.us-east-1.amazonaws.com/dev/todos/{id}
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Summary
+More Serverless examples:
+Github Repo: <a href="https://github.com/serverless/examples">https://github.com/serverless/examples</a>
+<img src="https://i.imgur.com/oatAIep.png" alt="10" />
+<strong>Image 6: More examples</strong></p>
+  </li>
+  <li>
+    <p>Reference:</p>
+  </li>
+</ol>
+
+<p>https://www.serverless.com/framework/docs/providers/aws/guide/credentials/</p>
+
+<p>https://serverless.ink/#serverless-%E7%9A%84%E9%97%AE%E9%A2%98</p>
+
+<p>https://zhuanlan.zhihu.com/p/31090697</p>
+
+<p>https://serverless.ink/#%E4%BB%80%E4%B9%88%E6%98%AF-serverless-%E6%9E%B6%E6%9E%84</p>
+
+<p>https://www.serverless.com/framework/docs/providers/aws/guide/credentials/</p>
+
+<tr>Zizhun Guo@All rights reserved</tr>
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>
