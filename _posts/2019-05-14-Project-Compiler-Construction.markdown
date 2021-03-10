@@ -5,7 +5,7 @@ date:   2019-05-14 19:34:06
 author: Zizhun Guo
 category: Projects
 categories: jekyll update
-visible: 1
+visible: 0
 ---
 [Outline]
 
