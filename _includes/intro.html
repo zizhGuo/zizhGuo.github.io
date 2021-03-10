@@ -3,7 +3,8 @@
 		<!-- <H1>Zizhun GUO</H1> -->
 			<hr>
 			<h1 style = "margin:1.5rem"><b>POSTS</b></h6>
-			<div class=" bg-light card"> 	
+			<div class=" bg-light card"style="width: 100rem;"> 	
+			<!-- <div class=" bg-light card"> 	 -->
 				<div class="card-body">			
 					{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
 					{% for year in postsByYear %}
@@ -13,7 +14,7 @@
 							<time datetime="{{ post.date | date: "%m-%d-%Y" }}">
 								{{ post.date | date_to_string }}
 							</time>
-							<h4 class="card-title"><a href="{{ post.url }}" class="btn btn-light p-0">{{post.title}}</a></h5>
+							<h4 class="card-title text-left"><a href="{{ post.url }}" class="btn btn-light p-0">{{post.title}}</a></h5>
 							{% endif %}
 						{% endfor %}
 					{% endfor %}

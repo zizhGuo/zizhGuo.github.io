@@ -1,4 +1,131 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2021-03-10T01:05:58-05:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Object Detection YOLOv3 Mindmap</title><link href="http://localhost:4001/jekyll/update/projects/2021/02/25/YOLO-Mindmap.html" rel="alternate" type="text/html" title="Object Detection YOLOv3 Mindmap" /><published>2021-02-25T15:13:14-05:00</published><updated>2021-02-25T15:13:14-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/02/25/YOLO-Mindmap</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/02/25/YOLO-Mindmap.html">&lt;div style=&quot;text-align: center;&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2021-03-10T12:06:19-05:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">YOLOv3 Deployment on AWS EC2 for Traffic/Stop Signs</title><link href="http://localhost:4001/jekyll/update/projects/2021/03/01/YOLOv3-Deployment-AWSEC2.html" rel="alternate" type="text/html" title="YOLOv3 Deployment on AWS EC2 for Traffic/Stop Signs" /><published>2021-03-01T15:13:14-05:00</published><updated>2021-03-01T15:13:14-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/03/01/YOLOv3-Deployment-AWSEC2</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/03/01/YOLOv3-Deployment-AWSEC2.html">&lt;!-- ├── Project
+   ├── classification
+   │   ├── adversarial
+   │   ├── contrast020
+   │   ├── grayscale
+   │   ├── noise100
+   │   ├── noise200
+   │   └── original
+   └── App.py
+       ├── contrast020
+       ├── ensemble_adversarials
+       ├── grayscale
+       ├── noise100
+       ├── noise200
+       └── original --&gt;
+
+&lt;p&gt;&lt;strong&gt;Preparation&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;YOLOv3 python program&lt;/li&gt;
+  &lt;li&gt;Flask APP&lt;/li&gt;
+  &lt;li&gt;AWS EC2 instance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Steps&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Make sure YOLOv3 works fine: input an image and output the corresponding image plotting the predicted category score and bounding boxes.&lt;/li&gt;
+  &lt;li&gt;Create a Flask App, design a web page templete that matches the routes.&lt;/li&gt;
+  &lt;li&gt;Create an ubuntu EC2 Instance with default setting. Follow the rules by &lt;a href=&quot;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html#connection-prereqs-get-info-about-instance&quot;&gt;General prerequisites for connecting to your instance&lt;/a&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;Open Security Group and open inbound SSH connection on local IP address.&lt;/li&gt;
+      &lt;li&gt;Use PuTTy create SSH session for CLI mode remotely control the instance. Use winSCP create SFTP session for file uploading to the instance. Detail in &lt;a href=&quot;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html&quot;&gt;Connect to your Linux instance from Windows using PuTTY&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Configure the instance by upgrade/update/install environment for being able to running the YOLO application:
+    &lt;ul&gt;
+      &lt;li&gt;Python3.8&lt;/li&gt;
+      &lt;li&gt;TensorFlow 2.3.1&lt;/li&gt;
+      &lt;li&gt;Pillow&lt;/li&gt;
+      &lt;li&gt;opencv-python&lt;/li&gt;
+      &lt;li&gt;matplotlib&lt;/li&gt;
+      &lt;li&gt;Flask&lt;/li&gt;
+      &lt;li&gt;Gunicorn&lt;/li&gt;
+      &lt;li&gt;nginx&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Deploy it online (Details in (Deploy flask app with Nginx using Gunicorn)[https://medium.com/faun/deploy-flask-app-with-nginx-using-gunicorn-7fda4f50066a]):
+    &lt;ul&gt;
+      &lt;li&gt;Upload the project to the instance&lt;/li&gt;
+      &lt;li&gt;Create the WSGI Entry Point wsgi.py&lt;/li&gt;
+      &lt;li&gt;Serve the project by Gunicorn&lt;/li&gt;
+      &lt;li&gt;Configuring Nginx&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Details&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt apt-get install python3.8
+python3.8 -m pip install --upgrade pip
+python3.8 -m pip install tensorflow==2.3.1
+python3.8 -m pip install Pillow
+python3.8 -m pip install opencv-python
+python3.8 -m pip install matplotlib
+python3.8 -m pip install Flask
+python3.8 -m pip install Gunicorn
+python3.8 -m pip install tnginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Application URL&lt;/strong&gt;
+&lt;a href=&quot;http://3.16.135.19/home&quot;&gt;http://3.16.135.19/home&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Application screenshot&lt;/strong&gt;&lt;/p&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2021-03-01-YOLOv3-Deployment-AWSEC2/Yolo_deployment.png&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2021-03-01-YOLOv3-Deployment-AWSEC2/Yolo_deployment.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+   &lt;figcaption&gt;YOLO project web page&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Input example&lt;/strong&gt;&lt;/p&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2021-03-01-YOLOv3-Deployment-AWSEC2/test.jpg&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2021-03-01-YOLOv3-Deployment-AWSEC2/test.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+   &lt;figcaption&gt;Test Image&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Results&lt;/strong&gt;&lt;/p&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2021-03-01-YOLOv3-Deployment-AWSEC2/img_output.jpg&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2021-03-01-YOLOv3-Deployment-AWSEC2/img_output.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+   &lt;figcaption&gt;Predicted Image&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Results Screenshot&lt;/strong&gt;&lt;/p&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2021-03-01-YOLOv3-Deployment-AWSEC2/output_screenshot.png&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2021-03-01-YOLOv3-Deployment-AWSEC2/output_screenshot.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+   &lt;figcaption&gt;Results Screenshot&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2021-03-01-YOLOv3-Deployment-AWSEC2/1_zGC7qRcsw4G9I9u9KjMqaQ.png&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2021-03-01-YOLOv3-Deployment-AWSEC2/1_zGC7qRcsw4G9I9u9KjMqaQ.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+   &lt;figcaption&gt;Deployment Architecture&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Problems:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Unicorn Server crash frequently when uploading greater size image.&lt;/li&gt;
+  &lt;li&gt;The result of predicted image may stay unchanged though using different input image&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Potential Solutions:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Deploy a supervisor program to manage server automatically by restarting the server.&lt;/li&gt;
+  &lt;li&gt;The browser keep the cache for the previous results since the name of the output image is the same. Mechanism for storing the output image on server could be changed to solve it.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Resources:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=tW6jtOOGVJI&quot;&gt;Deploy flask app with Nginx using Gunicorn:&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/32254439&quot;&gt;python web 部署：nginx + gunicorn + supervisor + flask 部署笔记:&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/tW6jtOOGVJI&quot;&gt;Deployment video:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Object Detection YOLOv3 Mindmap</title><link href="http://localhost:4001/jekyll/update/projects/2021/02/25/YOLO-Mindmap-copy.html" rel="alternate" type="text/html" title="Object Detection YOLOv3 Mindmap" /><published>2021-02-25T15:13:14-05:00</published><updated>2021-02-25T15:13:14-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/02/25/YOLO-Mindmap%20copy</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/02/25/YOLO-Mindmap-copy.html">&lt;div style=&quot;text-align: center;&quot;&gt;
     &lt;a href=&quot;http://localhost:4001/assets/2021-02-25-YOLO-Mindmap/YOLO.jpg&quot;&gt;
    &lt;img src=&quot;http://localhost:4001/assets/2021-02-25-YOLO-Mindmap/YOLO.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
     &lt;/a&gt;
@@ -945,128 +1072,4 @@ n_samples: 6000
 n_samples: 6000
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;X_lemmatized: Since the content is from previous report hence Ignored.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Preprocessing Python Files stem_lemmatize.py: This files contains the python code for tokenizing the review texts.</summary></entry><entry><title type="html">(2/8)Dataset - Text Mining for Multiclass Classification based on Yelp User’s Reviews</title><link href="http://localhost:4001/jekyll/update/projects/2020/12/15/Text-Mining-Dataset.html" rel="alternate" type="text/html" title="(2/8)Dataset - Text Mining for Multiclass Classification based on Yelp User’s Reviews" /><published>2020-12-15T13:50:01-05:00</published><updated>2020-12-15T13:50:01-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/12/15/Text-Mining-Dataset</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/12/15/Text-Mining-Dataset.html">&lt;h3 id=&quot;dataset&quot;&gt;Dataset&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;The dataset that we used was downloaded from Yelp. The original dataset has been firstly used for Yelp Dataset Challenge and is kept updating throughout the years. It contains information about reviews, business, users, and business check-ins. The main two datasets we use is business and reviews. We specially focus on &lt;strong&gt;6000&lt;/strong&gt; businesses evenly divided in &lt;strong&gt;3 categories&lt;/strong&gt; with their whole reviews concatenating together that the documents being features. The vocabulary size is around 180,000 which makes our documents source complex and rich in information enough to represent each business. The type of business we select is the restaurant specifically are marked in Sushi Bars, American New, and Fast Food. We believe it is firstly rich in information of the reviews due the Yelp Dataset are mainly focus on Restaurant service collection, and these three categories are not exactly similar whether in the business model or food service it provides.&lt;/p&gt;
-
-&lt;p&gt;For each document, we only use 6000 characters (white space inclusive) for training due to the memory limitation while conduct deep learning training hence maintains the same dataset to use for the fair models’ comparison. We conduct 10-fold cross-validation, and we assume each review for each restaurant extracted from JSON dataset file is randomly ordered, but we have ranked the restaurant based on the number of reviews they have so that when conduct concatenation, it guarantees the most reviewed restaurants to be selected as the source restaurants.&lt;/p&gt;
-
-&lt;h3 id=&quot;python-files&quot;&gt;Python Files&lt;/h3&gt;
-&lt;p&gt;This directory contains the actual dataset used for the experiments.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;IS_new.csv&lt;/strong&gt; contains 4 columns(business_id, text, category, hours)  of 6000 balanced records (samples)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;IS.csv&lt;/strong&gt; contains 4 columns(business_id, text, category, hours)  of 6000 balanced records (samples). The difference is the reviews in text feature is stemmed, whereas in &lt;strong&gt;IS_new.csv&lt;/strong&gt; the reviews are lematized&lt;/li&gt;
-  &lt;li&gt;PS: the original dataset can be download from &lt;a href=&quot;https://www.yelp.com/dataset&quot;&gt;Yelp Dataset&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;1-dataset-statistics&quot;&gt;1. Dataset Statistics&lt;/h3&gt;
-&lt;p&gt;We use &lt;strong&gt;Yelp Dataset Business(Business)&lt;/strong&gt; and &lt;strong&gt;Yelp Dataset Reviews(Reviews)&lt;/strong&gt; to get training and testing samples. The main dataset to use is &lt;strong&gt;Reviews&lt;/strong&gt;. The &lt;strong&gt;Business&lt;/strong&gt; is helpful for tables joining to ensure the data balancing nature. Therefore, each sample attaches one review text. The samples from &lt;strong&gt;Reviews&lt;/strong&gt; nevertheless need to be sampled from unique &lt;strong&gt;Business&lt;/strong&gt; as the goal is to predict the category of the restaurants, so including more restaurants would be reasonable. &lt;a href=&quot;https://www.yelp.com/dataset/documentation/main&quot;&gt;Link: Yelp Dataset Schema&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;11-select-balanced-data&quot;&gt;1.1 Select balanced data&lt;/h5&gt;
-&lt;p&gt;Plotting histogram on both &lt;strong&gt;Business&lt;/strong&gt; and &lt;strong&gt;Reviews&lt;/strong&gt; help to identify the numbers of restaurants distribution.
-&lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining/images/dataset/Restaurants_Cat_Hist.png&quot; alt=&quot;&quot; /&gt;
-As the &lt;strong&gt;Business Histogram&lt;/strong&gt; image shows, if we include unique restaurants to filter the &lt;strong&gt;Reviews&lt;/strong&gt;, at most we can select &lt;strong&gt;2363&lt;/strong&gt; restaurants for each of three categories(‘Fast Food’, ‘American (New)’, ‘Sushi Bars’) since we want the samples to be balanced. The histogram also shows there exist restaurants that have both categories marked, but these samples’ number is too small to consider.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining/images/dataset/Restaurants_Cat_Reviews_Hist.png&quot; alt=&quot;&quot; /&gt;
-We can also observe from the &lt;strong&gt;Reviews&lt;/strong&gt; histogram image, the number of samples is much overwhelmed than the &lt;strong&gt;Business&lt;/strong&gt; (one restaurant can have multiple reviews), so if we do not limit our restaurant’s uniqueness condition, we could have samples as large as 268026. In our case, we include &lt;strong&gt;2000&lt;/strong&gt; unique restaurants from each category to pre-process, of which the scalability is easy to handle. (In total &lt;strong&gt;6000&lt;/strong&gt; samples)&lt;/p&gt;
-
-&lt;h3 id=&quot;2-sampling-steps&quot;&gt;2. Sampling steps&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;Select restaurants from only categories of ‘American (New)’, ‘Sushi Bars’ and ‘Fast Food’&lt;/li&gt;
-  &lt;li&gt;Based on their reviews number, rank the restaurants in descending order (Group by and aggregation, Join two tables)&lt;/li&gt;
-  &lt;li&gt;Select top 2000 restaurants for each category of restaurant as samples&lt;/li&gt;
-  &lt;li&gt;Apply preprocessing on the samples.
-Samples Update Conclusion (how it affects the experiment results):
-•	Ranking proves to be a good way to ensure the utilized restaurants containing more information than just do randomly selection. Comparing to the dataset used from previous experiments, the median number of reviews counts for each restaurant to concatenate is between 100 to 200, the maximum reviews counts is 6000, the minimal is 3. This suggests the length for each review are at least hundreds of times over the previous method. This would yield a huge change on the final results.
-•	With reviews scales enlarged, the sequence length increased. Unfortunately, because of the limitation on RAM size, for 10 GB available RAM can managed at least 12,800 tokens per sequence. However, the time spent on training would be linearly grew according to the tests, for a Nvidia GTX 1060 6GB video card with computing ability of 6.1, the training duration would be up to 15 hours for tuning Filter Region Size experiment. The benefits given a tiny improve less than 1 percent on validation accuracy. Therefore, for saving more time to conduct more tuning experiments, using 1000 tokens for padding the sequence length (where most reviews fully taken over the entire sequence without any zeros to pad the margin hence sequence matrix are dense) would expect to have decent output results.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;3-samples&quot;&gt;3. Samples&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;                                               hours                           text        category
-0  {'Tuesday': '11:0-22:0', 'Wednesday': '11:0-22...      I love Deagan's. I do. I...  American (New)
-1  {'Monday': '9:0-0:0', 'Tuesday': '9:0-0:0', 'W...      Oh happy day, finally ha...       Fast Food
-2  {'Monday': '10:30-21:0', 'Tuesday': '10:30-21:...      This is definitely my fa...       Fast Food
-3  {'Tuesday': '10:0-17:0', 'Wednesday': '10:0-17...      I have been here twice. ...  American (New)
-4  {'Monday': '11:0-21:0', 'Tuesday': '11:0-21:0'...      Everything that my husba...       Fast Food
-5  {'Monday': '11:0-20:0', 'Tuesday': '11:0-21:0'...      My husband and I go ther...  American (New)
-6  {'Monday': '17:0-23:0', 'Tuesday': '17:0-23:0'...      As the previous person p...  American (New)
-7  {'Monday': '0:0-0:0', 'Tuesday': '17:0-22:0', ...      This was our choice, by ...      Sushi Bars
-8  {'Monday': '7:0-22:0', 'Tuesday': '7:0-22:0', ...      The employees are so fri...       Fast Food
-9  {'Monday': '6:0-6:0', 'Tuesday': '6:0-6:0', 'W...      This actually used to be...      Sushi Bars
-
-RangeIndex: 6000 entries, 0 to 5999
-Data columns (total 3 columns):
- #   Column    Non-Null Count  Dtype
----  ------    --------------  -----
- 0   hours     6000 non-null   object
- 1   text      6000 non-null   object
- 2   category  6000 non-null   object
-dtypes: float64(1), object(3)
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;4-labels&quot;&gt;4. Labels&lt;/h3&gt;
-&lt;p&gt;As the original labels are categorical labels: &lt;strong&gt;Sushi Bars&lt;/strong&gt;, &lt;strong&gt;American New&lt;/strong&gt;, and &lt;strong&gt;Fast Food&lt;/strong&gt;. It has to transform the categorical labels into numerical labels for the models to learn. We have transformed two types of labels (multiclass vs multilabel) for our learning models to output.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Category before re-label&lt;/th&gt;
-      &lt;th&gt;‘Fast Food’&lt;/th&gt;
-      &lt;th&gt;‘American (New)’&lt;/th&gt;
-      &lt;th&gt;‘Sushi Bars’&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Category after re-label&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;-1&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;index&lt;/th&gt;
-      &lt;th&gt;category&lt;/th&gt;
-      &lt;th&gt;Multiclass&lt;/th&gt;
-      &lt;th&gt;Multilabel(One-hot Encoded)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;Sushi Bars&lt;/td&gt;
-      &lt;td&gt;-1&lt;/td&gt;
-      &lt;td&gt;1	0	0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Fast Food&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0	0	1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;Fast Food&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0	0	1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;American (New)&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0	1	0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;Fast Food&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0	0	1&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Dataset The dataset that we used was downloaded from Yelp. The original dataset has been firstly used for Yelp Dataset Challenge and is kept updating throughout the years. It contains information about reviews, business, users, and business check-ins. The main two datasets we use is business and reviews. We specially focus on 6000 businesses evenly divided in 3 categories with their whole reviews concatenating together that the documents being features. The vocabulary size is around 180,000 which makes our documents source complex and rich in information enough to represent each business. The type of business we select is the restaurant specifically are marked in Sushi Bars, American New, and Fast Food. We believe it is firstly rich in information of the reviews due the Yelp Dataset are mainly focus on Restaurant service collection, and these three categories are not exactly similar whether in the business model or food service it provides.</summary></entry></feed>
+&lt;p&gt;X_lemmatized: Since the content is from previous report hence Ignored.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Preprocessing Python Files stem_lemmatize.py: This files contains the python code for tokenizing the review texts.</summary></entry></feed>
