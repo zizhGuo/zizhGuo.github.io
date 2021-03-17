@@ -21,7 +21,7 @@ visible: 1
 - [Udacity(Official)- Intro to TensorFlow for Deep Learning](https://classroom.udacity.com/courses/ud187)
 
 <div style="text-align: center;">
-    <a href ="https://www.coursera.org/account/accomplishments/specialization/XZQ953AVUJUT">
+    <a href ="https://www.credential.net/2f7e7dc7-237d-4fbc-b8af-0d40c82155e8#gs.v5yedg">
    <img src="{{site.url}}/assets/2021-01-31-TensorFlow-Developer-Certificate/certificate.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption><a href ="https://www.credential.net/2f7e7dc7-237d-4fbc-b8af-0d40c82155e8#gs.v5yedg">Certificate Link: https://www.credential.net/2f7e7dc7-237d-4fbc-b8af-0d40c82155e8#gs.v5yedg</a></figcaption>
