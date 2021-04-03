@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Object Detection YOLOv3 Mindmap"
+title:  "Object Detection YOLO Mindmap"
 date:   2021-02-25 20:13:14
 author: Zizhun Guo
 category: Projects

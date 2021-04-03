@@ -1,0 +1,260 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"http://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">ABOUT</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun-Guo_Resume_3_2021_v6.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container my-5 py-5" style="background: #f6f6f6;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">YOLO Mechanism: Input, Output, Encoding, Anchor Box, IoU, Decode, Confidence, NMS, Ground Truth, Loss</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			31 Mar 2021
+		</time>
+		</p>
+</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><!-- ├── Project
+   ├── classification
+   │   ├── adversarial
+   │   ├── contrast020
+   │   ├── grayscale
+   │   ├── noise100
+   │   ├── noise200
+   │   └── original
+   └── App.py
+       ├── contrast020
+       ├── ensemble_adversarials
+       ├── grayscale
+       ├── noise100
+       ├── noise200
+       └── original -->
+
+<p><strong>Mechanism</strong></p>
+
+<p>Object Detection is a regression task that neural networks are required to output not only the predicting score and class for an object but also the bounding boxes. Figure 3 shows the basic mechanism of Yolo networks as the one-staged object detector.</p>
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/01-mechanism.png">
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/01-mechanism.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>YOLO Mechanism</figcaption>
+</div>
+
+<p><strong>Label y</strong></p>
+
+<p>As the figure[mechanism] shows, the output label is not the results output from the YOLO head layer, since the decode component would convert the bounding boxes’ encoding offsets into the real coordinates of the input image, Yolo Head works for filtering the real bound boxes and select ones that are expected to remain, therefore using the intermediate result – encodings as the labels ignores the additional operation and keeps the offsets as the normalized target values, which improved the efficiency to calculate the loss for the training process.</p>
+
+<p><strong>The shape of Input and Output</strong></p>
+
+<p>The input image is sized in (m, 416, 416, 3), whereas m represents the number of batches set by the practitioners, (416, 416) represents the pixel numbers for the weight and height of the input images, and the 3 represents the channels numbers as RGB channels.</p>
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/02-input-output.png">
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/02-input-output.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>Original Input Image vs Images in cells</figcaption>
+</div>
+<p>The output encoding is sized in (m, 26, 26, 21) or (m, 13, 13, 21), whereas m is the same as the input image, due to the object detector is FPN structured, therefore two scaled feature maps are extracted but the network, however, both (26, 26) and (13, 13) represents the same meaning, which is the cells numbers of the original images. Yolo algorithm requires the image to be divided into cells into variable scales so that to enable extracting objects in different distances since the objects at a far distance would be small-sized in the image which takes fewer numbers of pixels than the objects in closer distance.</p>
+
+<p><strong>Encodings</strong></p>
+
+<p>The encodings are fetched by the encoding process (see Encode in figure 3) while assigning the ground true samples during the training session or they are the intermediate results representing the extracted features process (see Feature Extractor in figure 3) which are output by the network backbone. The tensor size for the embeddings contains the same number of ranks of the input image but the actual features are thereby translated and embedded into the special object detection format.</p>
+
+<p>The last dimension number of the output encoding represents the list of bounding boxes along with the recognized classes. In our case, we have two classes: Traffic Signs and Stop Signs. As the specific flatten format of the encodings can be reorganized in a more meaningful way, from figure 5, the last element of the output encoding is 21, which also can be represented in (3, 7). The first element of 3 indicates that there are three anchor boxes, which are set to vary the scales of detecting results, whereas the number of 7 represents p_c, t_x, t_y, t_w, t_h, c_1, c_2.</p>
+<ul>
+  <li>p_c  : the confidence if it exists an object in current cell.</li>
+  <li>t_x  : the x coordinate of the offset to anchor box grid cell.</li>
+  <li>t_y  : the y coordinate of the offset to anchor box grid cell..</li>
+  <li>t_w  : the relative weight ratio for the anchor box.</li>
+  <li>t_h  : the relative height ratio for the anchor box.</li>
+  <li>c_1  : the probability for the object being as a Traffic Sign.</li>
+  <li>c_2  : the probability for the object being as a Stop Sign.</li>
+</ul>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/03-encodings.png">
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/03-encodings.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>Encoding in (13, 13, 3, 7)</figcaption>
+</div>
+
+<p><strong>Anchor Box</strong></p>
+
+<p>The concept of anchor box was originally introduced by Faster RCNN. The anchor box (also known as the bounding box prior in the paper, and the anchor box is used later) is the statistics (using k-means) from all the ground truth boxes in the training set and the most frequently appearing box shapes and sizes in the training set. These statistical prior (or human) experiences can be added to the model in advance so that when the model is learning, the model converges quickly.</p>
+
+<p>Another understanding about using anchor boxes is that the traditional object detection head used as the regressor can only detect one object. The performance for multiple object detection would be affected and interference due to the variant shape of the bounding boxes. To solve this issue, multiple regressors can be used which are all limited to specific detecting regions. To achieve such a mechanism, for each grid cell, there could set multiple anchor boxes in different shapes specifically in charge for detecting objects around the positions.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/04-anchor-boxes.png">
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/04-anchor-boxes.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>3 Anchor Boxes for single route of feature maps</figcaption>
+</div>
+
+<p>From 4.2 FPN and 5.3 Encodings parts, we have two routes of feature map output for each input image sample. Therefore, we have two features that are in tensors’ shape in (13, 13, 3, 7) and (26, 26, 3, 7). The third number 3 implies there are three anchor boxes that are used for specifying the regressors.</p>
+
+<p>For the route feature maps in the shape of (26, 26, 3, 7), we select (23,27), (37,58), (81,82) sized bounding boxes as the anchor boxes. For the route feature maps in the shape of (13, 13, 3, 7), we select (81,82), (135,169), (344,319) as the anchor boxes.</p>
+
+<p>As can be seen by the size values, for images divided into (26, 26) cells, each cell is smaller than the ones processed into (13, 13), hence the anchor boxes for (26, 26) cells are smaller in the number of pixels, whereas the (13, 13) cells have greater sized anchor boxes.</p>
+
+<p><strong>Intersection over Union for bounding boxes</strong></p>
+
+<p>The bounding box is represented in a format of 4 numbers. In the different processes of the YOLO neural networks, the tensors of the bounding boxes are variant processed. For example, the bounding box values as the intermediate results that are produced after the encoding process are represented in the format of (t_x, t_y, t_w, t_h). This tensor cannot be directly used to reference the exact bounding box’s coordinates so that to use it as the prediction results. Therefore, such intermediate should be decoded into the real coordinates that have the midpoints, weights, and heights in size of the same scales of the real image. The actual bounding box is set to be in the format of (b_x, b_y, b_w, b_h) whereas b_x represents the bounding box mid point x-coordinate, b_y  represents the bounding box mid point y-coordinate, b_w   represents the weight of the bounding box and b_h  represents the height of the bounding box.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/05-IoU.png">
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/05-IoU.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>Bounding Box example</figcaption>
+</div>
+
+<p>Intersection over Union (IoU) is an evaluation metric that can be used in the prediction task of bounding boxes in values of ranges. The metric applies to all shapes of objects. In YOLO neural networks, it serves the same purpose by calculating the ratio between the intersection area over the union area to measure the accuracy of bounding boxes regressor.</p>
+
+<p><strong>Decode</strong></p>
+
+<p>As the anchor boxes have different sizes of the boxes, YOLO only predicts the bounding boxes in the format of (t_x, t_y, t_w, t_h) that bonds to different anchor boxes where each value represent the offsets and relative values, due to the model instability when in early training iteration[]. However, this form of coordinates does not affect the final location prediction. The decoding process would translate the temporary coordinates into the bounding boxes coordinates relevant to the real image size.</p>
+
+<p>b_x= σ(t_x )+ c_x</p>
+
+<p>b_y= σ(t_y )+ c_y</p>
+
+<p>b_w=p_w  e^(t_w )</p>
+
+<p>b_h=p_h  e^(t_h )</p>
+
+<p>b_x and b_y represent the bounding box center coordinates,  b_w and b_h represent the bounding box weight and height. t_x and t_y represent the level of the center point shifts reletively to the c_x and c_y which represent that the cell is offset from the top left corner of the image. The b_w and b_h represent the weight and height of the bounding box prior (also known as the anchor box).</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/06-decode.png">
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/06-decode.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>Bounding Box Decode</figcaption>
+</div>
+
+<p>The Decode process transforms the feature maps in the shape of (t_x, t_y, t_w, t_h) into the shape of (b_x, b_y, b_w, b_h), which makes it possible to not only take the advantage of anchor box mechanism but also by constraining the values of bounding boxes so that to make the network more stable.</p>
+
+<p><strong>Confidence Scores</strong></p>
+
+<p>YOLO defines the Confidence Scores as the product of the confidence and the Intersection of Union (IOU) of prediction and ground truth bounding boxes’ paris.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/07-confidence.png">
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/07-confidence.png" alt="drawing" style="width: 50%;" />
+    </a>
+</div>
+
+<table>
+  <tbody>
+    <tr>
+      <td>The Pr(〖Class〗_i</td>
+      <td>Object) from the equation in our case is c_1  and c_2. Therefore, the final confidence score is determined how much the overlapping ratio between the prediction and ground true bounding boxes and the object-specific probability.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Non-Max Suppression</strong></p>
+
+<p>Non-maximum suppression (NMS) is an algorithm for removing non-maximum values. The simple understanding is to select all the partial substitutions by defining the part. In the process of object detection, a large number of candidate bounding boxes will be generated at the same object position. These candidate boxes may overlap with each other. In this situation, the NMS would first generates a detection box with the object detection confidence score, the detection boxes with the highest scores are replaced, and other detection boxes that have obvious overlap with the replaced detection boxes are suppressed.</p>
+
+<p>The progress of the Non-maximum suppression algorithm : (1) Sort bounding box list by confidence scores; (2) Select the bounding box with the highest confidence score and add it to the final output list, and delete it from the bounding box list; (3) Calculate the area of all bounding boxes; (4) Calculate the IoU of the bounding box with the highest confidence score and other additional boxes; (5) Delete bounding boxes with IoU greater than the threshold; (6) Repeat the above process until the bounding box list is empty.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/08-NMS.png">
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/08-NMS.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>NMSe</figcaption>
+</div>
+
+<p>The image on the left is the result of the candidate boxes of YOLO detection. Each bounding box has a confidence score. If NMS is not used, multiple candidate boxes will appear such as duplicate bounding boxes on the same object and bounding boxes on other objects which should not be seen as the target objects. The image on the right-hand side is the result of using non-maximum suppression, which fits the expectation to have two bounding boxes attached on two traffic signs.</p>
+
+<p><strong>Ground Truth Boxes Assignment</strong></p>
+
+<p>Before the training session, one necessary step is to define the positive and negative cases for target variables for each image sample. It is essential to assign the ground true bounding box in the appropriate anchor box. Since each object, has only one corresponding bounding box for labeling but exists multiple anchor box regressors. The strategy is to calculate the IoU between ground true bounding box with each anchor box and select the anchor box with the greatest IoU as the target.</p>
+
+<p><strong>Loss</strong></p>
+
+<p>The loss function of YOLO v4 is mainly divided into three parts: bounding box regression loss, confidence loss and classification loss.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/09-loss.png">
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/09-loss.png" alt="drawing" style="width: 50%;" />
+    </a>
+</div>
+
+<p>The S and B represent the grid cells number and the bounding box priors (anchor boxes) number. The value of I_ij^obj parameter decides whether count the loss of the bounding boxes. If I_ij^obj equals 1, it means that the predicting bounding box matches the current anchor box, whereas if it is 0, the loss does not take into account.</p>
+
+<p>The G_ij plays a similar role as the I_ij^obj, it defines whether the confidence scores of the prediction result should be considered. For C_i^j =1, the predicted bounding box has the greatest IoU with ground truth box, hence C_i^j =0 for the cells of other anchor box types. One particular case is, the current anchor box which does not assign to detect a specific object class produces the IoU that is greater than the IoU threshold (YOLO paper is 0.5), G_ij would be 0 to neglect the loss calculation for it.</p>
+
+<p>In the original YOLO paper[], the loss function employs sum-squared error for it is easy to calculate. In our project, we use the binary cross-entropy as the cost for each grid cell and bounding box prior.</p>
+
+<hr />
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>
