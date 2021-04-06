@@ -116,7 +116,7 @@ python3.8 -m pip install tnginx
 
 **Resources:**
 
-- [Deploy flask app with Nginx using Gunicorn:](https://www.youtube.com/watch?v=tW6jtOOGVJI)
+- [Deploy flask app with Nginx using Gunicorn:](https://faun.pub/deploy-flask-app-with-nginx-using-gunicorn-7fda4f50066a)
 - [python web 部署：nginx + gunicorn + supervisor + flask 部署笔记:](https://zhuanlan.zhihu.com/p/32254439)
 - [Deployment video:](https://youtu.be/tW6jtOOGVJI)
 
