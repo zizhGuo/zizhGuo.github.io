@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Capstone Projects: VR Multiplayer Real-time Interaction Game Application"
+title:  "Game Design & Development Capstone Projects: VR Multiplayer Real-time Interaction Game Application"
 date:   2018-08-14 19:34:06
 author: Zizhun Guo
 category: Projects

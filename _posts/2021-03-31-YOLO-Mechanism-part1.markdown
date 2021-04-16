@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "YOLO Mechanism: Input, Output, Encoding, Anchor Box, IoU, Decode, Confidence, NMS, Ground Truth, Loss"
+title:  "YOLO Mechanism Part I: Input, Output, Encoding, Anchor Box, IoU, Decode, Confidence, NMS, Ground Truth, Loss"
 date:   2021-03-31 10:13:14
 author: Zizhun Guo
 category: Projects

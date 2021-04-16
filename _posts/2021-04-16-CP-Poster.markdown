@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "Capstone Project Poster Draft"
+date:   2021-04-16 02:18:18
+author: Zizhun Guo
+category: Projects
+categories: jekyll update
+visible: 1
+---
+
+
+<div style="text-align: center;">
+    <a href ="{{site.url}}/assets/2021-04-16-CP-Poster/Poster_draft.png">
+   <img src="{{site.url}}/assets/2021-04-16-CP-Poster/Poster_draft.png" alt="drawing" style="width: 100%;"/>
+    </a>
+   <figcaption>Poster Draft</figcaption>
+</div>
+
+
+---
+Copyright @ 2021 Zizhun Guo. All Rights Reserved.
+

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "YOLOv3 Deployment on AWS EC2 for Traffic/Stop Signs (TensorFlow + Flask + nginx + gunicorn)"
+title:  "YOLOv4 Deployment on AWS EC2 for Traffic/Stop Signs (TensorFlow + Flask + nginx + gunicorn)"
 date:   2021-03-01 20:13:14
 author: Zizhun Guo
 category: Projects
