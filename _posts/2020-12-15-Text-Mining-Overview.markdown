@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "(1/8)Overview - Text Mining for Multiclass Classification based on Yelp User’s Reviews"
+title:  "NLP Text Mining (1/8) - Project Overview"
 date:   2020-12-15 18:50:00
 author: Zizhun Guo
 category: Projects

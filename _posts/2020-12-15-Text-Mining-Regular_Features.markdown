@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "(4/8)Regular Features - Text Mining for Multiclass Classification based on Yelp User’s Reviews"
+title:  "NLP Text Mining (4/8) - Features Engineering for Regular features"
 date:   2020-12-15 18:50:03
 author: Zizhun Guo
 category: Projects

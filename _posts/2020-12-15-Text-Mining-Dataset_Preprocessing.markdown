@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "(3/8)Preprocessing - Text Mining for Multiclass Classification based on Yelp User’s Reviews"
+title:  "NLP Text Mining (3/8) - Preprocessing (Stemming, Lemmatization)"
 date:   2020-12-15 18:50:02
 author: Zizhun Guo
 category: Projects

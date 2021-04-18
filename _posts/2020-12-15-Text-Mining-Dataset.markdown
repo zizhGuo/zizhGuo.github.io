@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "(2/8)Dataset - Text Mining for Multiclass Classification based on Yelp User’s Reviews"
+title:  "NLP Text Mining (2/8) - Yelp Dataset"
 date:   2020-12-15 18:50:01
 author: Zizhun Guo
 category: Projects

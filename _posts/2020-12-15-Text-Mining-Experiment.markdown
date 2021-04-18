@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "(6/8)Experiment - Text Mining for Multiclass Classification based on Yelp User’s Reviews"
+title:  "NLP Text Mining (6/8) - Experiment"
 date:   2020-12-15 18:50:05
 author: Zizhun Guo
 category: Projects

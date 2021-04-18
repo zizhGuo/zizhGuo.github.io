@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "(7/8)ML Models - Text Mining for Multiclass Classification based on Yelp User’s Reviews"
+title:  "NLP Text Mining (7/8) - ML Models part1 (Scikit-Learn)"
 date:   2020-12-15 18:50:06
 author: Zizhun Guo
 category: Projects

@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2021-04-16T12:34:05-04:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Capstone Project Poster Draft</title><link href="http://localhost:4001/jekyll/update/projects/2021/04/15/CP-Poster.html" rel="alternate" type="text/html" title="Capstone Project Poster Draft" /><published>2021-04-15T22:18:18-04:00</published><updated>2021-04-15T22:18:18-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/04/15/CP-Poster</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/04/15/CP-Poster.html">&lt;div style=&quot;text-align: center;&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2021-04-18T00:09:57-04:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">YOLO Project Poster Released!!!</title><link href="http://localhost:4001/jekyll/update/projects/2021/04/16/CP-Poster.html" rel="alternate" type="text/html" title="YOLO Project Poster Released!!!" /><published>2021-04-16T08:18:18-04:00</published><updated>2021-04-16T08:18:18-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/04/16/CP-Poster</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/04/16/CP-Poster.html">&lt;div style=&quot;text-align: center;&quot;&gt;
     &lt;a href=&quot;http://localhost:4001/assets/2021-04-16-CP-Poster/Poster_draft.png&quot;&gt;
    &lt;img src=&quot;http://localhost:4001/assets/2021-04-16-CP-Poster/Poster_draft.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
     &lt;/a&gt;
-   &lt;figcaption&gt;Poster Draft&lt;/figcaption&gt;
+   &lt;figcaption&gt;Poster for capstone project&lt;/figcaption&gt;
 &lt;/div&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Poster Draft</summary></entry><entry><title type="html">YOLO Explore Object Detection PERFORMANCES In Relation To INPUT IMAGE DETERIORATION</title><link href="http://localhost:4001/jekyll/update/projects/2021/04/15/YOLO-Experiment-copy.html" rel="alternate" type="text/html" title="YOLO Explore Object Detection PERFORMANCES In Relation To INPUT IMAGE DETERIORATION " /><published>2021-04-15T18:34:18-04:00</published><updated>2021-04-15T18:34:18-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/04/15/YOLO-Experiment%20copy</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/04/15/YOLO-Experiment-copy.html">&lt;p&gt;&lt;strong&gt;Experiment&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Poster for capstone project</summary></entry><entry><title type="html">YOLO Explore Object Detection PERFORMANCES In Relation To INPUT IMAGE DETERIORATION</title><link href="http://localhost:4001/jekyll/update/projects/2021/04/15/YOLO-Experiment-copy.html" rel="alternate" type="text/html" title="YOLO Explore Object Detection PERFORMANCES In Relation To INPUT IMAGE DETERIORATION " /><published>2021-04-15T18:34:18-04:00</published><updated>2021-04-15T18:34:18-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/04/15/YOLO-Experiment%20copy</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/04/15/YOLO-Experiment-copy.html">&lt;p&gt;&lt;strong&gt;Experiment&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Baseline Model and Tuning&lt;/strong&gt;&lt;/p&gt;
 
@@ -583,192 +583,48 @@ python3.8 -m pip install tnginx
    &lt;img src=&quot;http://localhost:4001/assets/2021-01-31-TensorFlow-Developer-Certificate/certificate.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
     &lt;/a&gt;
    &lt;figcaption&gt;&lt;a href=&quot;https://www.credential.net/2f7e7dc7-237d-4fbc-b8af-0d40c82155e8#gs.v5yedg&quot;&gt;Certificate Link: https://www.credential.net/2f7e7dc7-237d-4fbc-b8af-0d40c82155e8#gs.v5yedg&lt;/a&gt;&lt;/figcaption&gt;
-&lt;/div&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">TensorFlow Developer Certificate Notes in Details</summary></entry><entry><title type="html">(8/8)NN Models - Text Mining for Multiclass Classification based on Yelp User’s Reviews</title><link href="http://localhost:4001/jekyll/update/projects/2020/12/15/Text-Mining-NN_Models.html" rel="alternate" type="text/html" title="(8/8)NN Models - Text Mining for Multiclass Classification based on Yelp User’s Reviews" /><published>2020-12-15T13:50:07-05:00</published><updated>2020-12-15T13:50:07-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/12/15/Text-Mining-NN_Models</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/12/15/Text-Mining-NN_Models.html">&lt;h3 id=&quot;neural-network-models&quot;&gt;Neural Network Models&lt;/h3&gt;
+&lt;/div&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">TensorFlow Developer Certificate Notes in Details</summary></entry><entry><title type="html">NLP Text Mining Project Report</title><link href="http://localhost:4001/jekyll/update/projects/2020/12/15/Text-Mining-report.html" rel="alternate" type="text/html" title="NLP Text Mining Project Report" /><published>2020-12-15T18:50:04-05:00</published><updated>2020-12-15T18:50:04-05:00</updated><id>http://localhost:4001/jekyll/update/projects/2020/12/15/Text-Mining-report</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2020/12/15/Text-Mining-report.html">&lt;p&gt;&lt;a href=&quot;https://github.com/zizhGuo/Text_Classification_Based_on_Text_Reviews/blob/main/Text_Classification_of_Yelp's_Review_Category_Based_on_Text_Reviews.pdf&quot;&gt;Original Link: https://github.com/zizhGuo/Text_Classification_Based_on_Text_Reviews/blob/main/Text_Classification_of_Yelp’s_Review_Category_Based_on_Text_Reviews.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/01.png&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/01.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/02.png&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/02.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/03.png&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/03.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/04.png&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/04.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/05.png&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/05.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/06.png&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/06.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/07.png&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/07.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/08.png&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining-report/08.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+
 &lt;hr /&gt;
-
-&lt;h3 id=&quot;python-files&quot;&gt;Python Files&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;create_CNN_model.py&lt;/strong&gt;: This files contains the python code to create the CNN model used for the experiments.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;create_RNN_model.py&lt;/strong&gt;: This files contains the python code to create the RNN model used for the experiments.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;tuning_CNN_model.py&lt;/strong&gt;: This files contains the python code for tuning the CNN model used for the experiments.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;1-tensorflow-keras-embedding-layer&quot;&gt;1. Tensorflow Keras Embedding Layer&lt;/h3&gt;
-
-&lt;p&gt;The embedding layer is a special layer that is normally placed at the beginning of a neural network. Similar to W2V, it is an individual layer trained to work as a lookup table for the one-hot encoding input documents. The weights matrix represents the word embeddings. The documents which are made of the list of sequence would be converted into a stack of word vectors. We employ the average pooling layer to produce the mean word embeddings to represent a single document for normal W2V cases, but in our CNN model or RNN models, we would use more strategies to use the embedding layer’s output. Besides, the weights matrix of the embedding layer would be trained along with the other parameters of the neural network using the back-propagation method.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/Embedding_layer_model.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Figure 1: Textual Model Structure using TensorFlow Keras Embedding Layer&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&quot;2-cnn&quot;&gt;2. CNN&lt;/h3&gt;
-&lt;p&gt;As one of famous deep learning models, CNN has been widely used in computer vision tasks. Since the year of 2014, the CNN has been discovered to be proved successfully workable not only the computer vision jobs but also the text classification.&lt;/p&gt;
-
-&lt;h5 id=&quot;21-model-architecture&quot;&gt;2.1. Model Architecture&lt;/h5&gt;
-
-&lt;p&gt;In our experiment, we implement a CNN model with its architecture designed based on the Yoon Kim’s architecture. The Embedding Layer works for training the word embeddings as it was been discussed previously. The Convolutional Layer has hundreds of feature maps as filters to convolute the document representation. The Global Max Layer is charged for keeping the most unique value to represent an independent document among all. The Dropout layer works as a regularization role. At last, the Softmax layer computes the probability distribution for three categories. We then classify the sample into the category which has the greatest value. In our experiments, we use the TensorFlow Keras deep learning library to implement this CovNet.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/CNN_architecture.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Figure 2: CNN model architecture&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;22-hyperparameters-tuning&quot;&gt;2.2. Hyperparameters Tuning&lt;/h5&gt;
-&lt;p&gt;In order to find the CNN model that produces the highest prediction accuracy, we have tuned the model regarding three hyperparameters that are hugely affected the model’s performance: Sequence Size, Filter Region Size and Feature Maps numbers.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tuning Sequence Size:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Sequence Size&lt;/th&gt;
-      &lt;th&gt;Val_Acc&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;10&lt;/td&gt;
-      &lt;td&gt;0.722&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;20&lt;/td&gt;
-      &lt;td&gt;0.7905&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;30&lt;/td&gt;
-      &lt;td&gt;0.835167&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;50&lt;/td&gt;
-      &lt;td&gt;0.874&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;100&lt;/td&gt;
-      &lt;td&gt;0.906667&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;200&lt;/td&gt;
-      &lt;td&gt;0.926667&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;400&lt;/td&gt;
-      &lt;td&gt;0.938167&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;800&lt;/td&gt;
-      &lt;td&gt;0.944&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1000&lt;/td&gt;
-      &lt;td&gt;0.9475&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/acc_sequence_sizes_forReport.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Figure 3: CNN model train/validate Accuracy vs Embedding Sequence Sizes&lt;/strong&gt;
-&lt;strong&gt;Tuning Filter Region Size:&lt;/strong&gt;
-| Sequence Size   | Val_Acc |
-| ———– | ———– |
-|1	|0.946667|
-|3	|0.947833|
-|5	|0.945833|
-|7	|0.944333|
-|10	|0.941833|
-|15	|0.942|
-|20	|0.938833|
-|25	|0.937333|
-|30	|0.9385|&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/acc_filter_region_sizes_forReport.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Figure 4: CNN model train/validate Accuracy vs Embedding Filter Region Sizes&lt;/strong&gt;
-&lt;strong&gt;Tuning Embedding Trainable Methods:&lt;/strong&gt;
-| Trainable  | Val_Acc |
-| ———– | ———– |
-|non-static	|0.948667|
-|static	|0.9475|&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tuning Filter Feature Maps Numbers:&lt;/strong&gt;
-|Feature Maps Numbers|Val_Acc|
-| ———– | ———– |
-|10|	0.925167|
-|20|	0.936|
-|30|	0.937667|
-|50|	0.943167|
-|100|	0.947167|
-|200|	0.948667|
-|400|	0.948833|
-|800|	0.951667|
-|1000|	0.951833|
-&lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/acc_filter_featuremaps_numbers_forReport.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Figure 5: CNN model train/validate Accuracy vs Featuremaps Number&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Input word vectors:	GloVe 300d&lt;/li&gt;
-  &lt;li&gt;Static or non-static:	static&lt;/li&gt;
-  &lt;li&gt;Filter region size (window):	3&lt;/li&gt;
-  &lt;li&gt;Stride:	1&lt;/li&gt;
-  &lt;li&gt;Feature maps:	1000&lt;/li&gt;
-  &lt;li&gt;Activation function:	ReLU&lt;/li&gt;
-  &lt;li&gt;Pooling: 	GlobalMaxPooling&lt;/li&gt;
-  &lt;li&gt;Dropout rate:	0.5&lt;/li&gt;
-  &lt;li&gt;Optimizer:	Adam&lt;/li&gt;
-  &lt;li&gt;Batch size:	128&lt;/li&gt;
-  &lt;li&gt;Epochs:	20&lt;/li&gt;
-  &lt;li&gt;Cross Validation:	10-folds&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-rnn-model-architecture&quot;&gt;3. RNN Model Architecture&lt;/h3&gt;
-&lt;h5 id=&quot;31-encoder-architecture&quot;&gt;3.1. Encoder Architecture&lt;/h5&gt;
-&lt;p&gt;Recurrent Neural Network (RNN) has long been used for learning the sequence of documents employing a directed node graph along temporal steps. We adopt the Encoder part of the RNN-Encoder-Decoder model as our RNN architecture since the architecture fits the requirement of the text classification task that documents can be input along with the temporal steps and in the end, the memory unit will produce a document representation. As seen from the figure 5, the encoder takes in a variable-length sequence 〖(X〗_1,X_2,…,X_T)and converts it into a fixed-length vector representation C. 
-&lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/RNN-Encoder.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Figure 6: RNN Encoder Model&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;32-gru-and-lstm&quot;&gt;3.2. GRU and LSTM&lt;/h5&gt;
-&lt;p&gt;LSTM has a longer history than GRU. It was firstly introduced in 1997 and was modified throughout the time. New features like forget gate and peephole would add during the evolution. The GRU is a newer generation of RNN work similar to LSTM that enables memorizing the short-term and long-term dependencies by implementing a reset gate and an update gate during training. There is no memory cell as it is called in LSTM but has a hidden state works the same function. The figure 6 shows the inner structure of two memory units.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/GRU_LSTM.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Figure 7: Unit Comparison between naïve RNN, LSTM and GRU&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;33-model-architecture&quot;&gt;3.3. Model Architecture&lt;/h5&gt;
-&lt;p&gt;In our experiment, we implement a RNN decoder model with its architecture designed based on the Cho’s architecture. It works the same way as it was described in the CNN model’s section. The document-representation sends the batches of samples in the Input Layer at the beginning. After the embedding process by the Embedding Layer, the embeddings are continuously transferred to GRU layer. Through a recurrent time-based learning process using the Backpropagation method, the weights of the model would be updated. The final layer is the Softmax Layer which works to classify the samples into three categories.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/RNN_GRU.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Figure 8: RNN-GRU model architecture&lt;/strong&gt;
-As for memory unit, the Encoder model can use either Gated Recurrent Unit (GRU) or Long-short term Memory (LSTM) to memorize the historical dependencies as in the form of the hidden state.&lt;/p&gt;
-
-&lt;h3 id=&quot;appendix&quot;&gt;Appendix&lt;/h3&gt;
-
-&lt;h5 id=&quot;a1-other-layers-details&quot;&gt;A1. Other layers details&lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;Global Max Pooling Layer&lt;/strong&gt;
-The output tensors from convolution layer yields concatenate results of each 128 filters’ hence the original matrix turns into the vector. For each sequence, we only keep the maximum value which maintains the review local feature.
-&lt;strong&gt;Concatenate Layer and Flatten Layer&lt;/strong&gt;
-We concatenate all results of three types of filters and flatten readily for the neurons to take.
-&lt;strong&gt;Regularization: Dropout Layer&lt;/strong&gt;
-We assign a Dropout Layer as regularization masks to help prevent overfitting issue.
-&lt;strong&gt;Fully Connected Layer&lt;/strong&gt;
-We only assign a dense layer as the output layer using activation function of Softmax.&lt;/p&gt;
-
-&lt;h5 id=&quot;a2-tensorflow-keras-summary&quot;&gt;A2. TensorFlow Keras Summary&lt;/h5&gt;
-&lt;p&gt;•	Utils.plot_model: Plot Model diagram. It requires pydot and graphviz, which should be installed to python lib and set executable directory into system environment path.
-•	Optimizers: Provides different classes of optimize rule like ‘Adam’, ‘Adadelta’, etc.
-•	Layers: All types of NN layers like ‘Flatten’, ‘Concatenate’, etc
-•	Experimental.preprocessing.TextVectorization&lt;/p&gt;
-
-&lt;h5 id=&quot;a3-gpu-acceleration&quot;&gt;A3. GPU Acceleration&lt;/h5&gt;
-&lt;p&gt;NVIDIA GPU with CUDA architectures supports acceleration for TensorFlow, therefore by using GPU to process DL tasks is good. Currently, my machine has a video card of GeForce GTX 1060 6GB, which has the compute Capability of 6.1. They way to implement it is to install CUDA and NVCC on the machine. The TF will automatically search out the installation and use it while training. After getting deeper knowledge about TF, specific operation controlling GPU/CPU as multiple purpose can be achieve by coding without Keras package instead the self-configure TF package.&lt;/p&gt;
-
-&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Implementing a CNN for Text Classification in TensorFlow: http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/&lt;/li&gt;
-  &lt;li&gt;Understanding Convolutional Neural Networks for NLP: http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/&lt;/li&gt;
-  &lt;li&gt;Global Max Pooling vs Max Pooling: https://stackoverflow.com/questions/43728235/what-is-the-difference-between-keras-maxpooling1d-and-globalmaxpooling1d-functi/43730861
-Multi Class Text Classification with Keras and LSTM: https://medium.com/@djajafer/multi-class-text-classification-with-keras-and-lstm-4c5525bef592
-Report on Text Classification using CNN, RNN &amp;amp; HAN: https://medium.com/jatana/report-on-text-classification-using-cnn-rnn-han-f0e887214d5f
-Text classification with an RNN: https://www.tensorflow.org/tutorials/text/text_classification_rnn&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Neural Network Models</summary></entry></feed>
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Original Link: https://github.com/zizhGuo/Text_Classification_Based_on_Text_Reviews/blob/main/Text_Classification_of_Yelp’s_Review_Category_Based_on_Text_Reviews.pdf</summary></entry></feed>

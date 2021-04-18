@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "(8/8)NN Models - Text Mining for Multiclass Classification based on Yelp User’s Reviews"
+title:  "NLP Text Mining (8/8) - NN Models (CNN, RNN encoder-decoder LSTM/GRU) (TensorFlow Keras)"
 date:   2020-12-15 18:50:07
 author: Zizhun Guo
 category: Projects
