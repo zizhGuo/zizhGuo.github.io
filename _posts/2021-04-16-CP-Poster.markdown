@@ -1,12 +1,17 @@
 ---
 layout: post
-title:  "YOLO Project Poster Released!!!"
+title:  "YOLO Project Poster Released!!! [with Audio]"
 date:   2021-04-16 12:18:18
 author: Zizhun Guo
 category: Projects
 categories: jekyll update
 visible: 1
 ---
+<audio controls autoplay muted>
+  <!-- <source src="{{site.url}}/assets/2021-04-16-CP-Poster/record.mp3" type="audio/ogg"> -->
+  <source src="{{site.url}}/assets/2021-04-16-CP-Poster/poster.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 
 <div style="text-align: center;">
