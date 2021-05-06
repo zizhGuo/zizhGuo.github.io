@@ -9,14 +9,14 @@ visible: 1
 ---
 <audio controls autoplay muted>
   <!-- <source src="{{site.url}}/assets/2021-04-16-CP-Poster/record.mp3" type="audio/ogg"> -->
-  <source src="{{site.url}}/assets/2021-04-16-CP-Poster/record.mp3" type="audio/mpeg">
+  <source src="{{site.url}}/assets/2021-04-16-CP-Poster/recordnew.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 
 <div style="text-align: center;">
-    <a href ="{{site.url}}/assets/2021-04-16-CP-Poster/Poster_draft.png">
-   <img src="{{site.url}}/assets/2021-04-16-CP-Poster/Poster_draft.png" alt="drawing" style="width: 100%;"/>
+    <a href ="{{site.url}}/assets/2021-04-16-CP-Poster/Poster.png">
+   <img src="{{site.url}}/assets/2021-04-16-CP-Poster/Poster.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Poster for capstone project</figcaption>
 </div>
