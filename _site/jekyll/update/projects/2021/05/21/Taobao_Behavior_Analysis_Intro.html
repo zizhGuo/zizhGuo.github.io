@@ -1,0 +1,237 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="https://localhost:4000/" />
+<meta property="og:url" content="https://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_MLE.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Alibaba Taobao User Behaviors Analysis: Dataset 1 billion records</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			21 May 2021
+		</time>
+		</p>
+	</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><p><strong>Alibaba Taobao.com</strong></p>
+
+<blockquote>
+  <p>Taobao (Chinese: 淘宝网) is a Chinese online shopping platform. It is headquartered in Hangzhou and owned by Alibaba. It is ranked as the eighth most-visited website. Taobao.com was registered on April 21, 2003 by Alibaba Cloud Computing (Beijing) Co., Ltd.</p>
+</blockquote>
+
+<blockquote>
+  <p>Taobao Marketplace facilitates consumer-to-consumer (C2C) retail by providing a platform for small businesses and individual entrepreneurs to open online stores that mainly cater to consumers in Chinese-speaking regions (Mainland China, Hong Kong, Macau and Taiwan) and abroad,[4] which is made payable by online accounts. Its stores usually offer an express delivery service.</p>
+</blockquote>
+
+<blockquote>
+  <p><a href="https://en.wikipedia.org/wiki/Taobao">https://en.wikipedia.org/wiki/Taobao</a></p>
+</blockquote>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/AlibabaLogo.jpg">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/AlibabaLogo.jpg" alt="drawing" style="width: 40%;" />
+   </a>
+   <br />
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/Taobao_Logo.svg">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/Taobao_Logo.svg" alt="drawing" style="width: 40%;" />
+    </a>
+   <figcaption>Alibaba Group LOGO </figcaption>
+</div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h4 id="dataset-user-behavior-data-from-taobao-for-recommendation">Dataset: User Behavior Data from Taobao for Recommendation</h4>
+
+<p><strong>Introduction</strong></p>
+
+<p>The dataset is collected from <a href="https://tianchi.aliyun.com/dataset/dataDetail?dataId=649&amp;userId=1"><strong>Tianchi</strong></a> - Data Science Workshop from Aliyun(阿里云)- literally means <a href="https://us.alibabacloud.com/"><strong>Alibaba Cloud</strong></a>, the cloud computing service ranked <strong>third-largest</strong> infrastucture as a service provider, right behind Amazon Web Services, Microsoft Azure.</p>
+
+<p>User Behavior is a dataset of user behaviors from Taobao, for recommendation problem with implicit feedback. The dataset is offered by Alibaba.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Description</th>
+      <th>Feature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UserBehavior.csv</td>
+      <td>All user behavior data</td>
+      <td>User ID, item ID, category ID, behavior type, timestamp</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>UserBehavior.csv</strong></p>
+
+<p>We random select about 1 million users who have behaviors including click, purchase, adding item to shopping cart and item favoring during November 25 to December 03, 2017. The dataset is organized in a very similar form to MovieLens-20M, i.e., each line represents a specific user-item interaction, which consists of user ID, item ID, item’s category ID, behavior type and timestamp, separated by commas. The detailed descriptions of each field are as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>User ID</td>
+      <td>An integer, the serialized ID that represents a user</td>
+    </tr>
+    <tr>
+      <td>Item ID</td>
+      <td>An integer, the serialized ID that represents an item</td>
+    </tr>
+    <tr>
+      <td>Category ID</td>
+      <td>An integer, the serialized ID that represents the category which the corresponding item belongs to</td>
+    </tr>
+    <tr>
+      <td>Behavior type</td>
+      <td>A string, enum-type from (‘pv’, ‘buy’, ‘cart’, ‘fav’)</td>
+    </tr>
+    <tr>
+      <td>Timestamp</td>
+      <td>An integer, the timestamp of the behavior</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note that the dataset contains 4 different types of behaviors, they are</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behavior</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pv</td>
+      <td>Page view of an item’s detail page, equivalent to an item click</td>
+    </tr>
+    <tr>
+      <td>fav</td>
+      <td>Purchase an item</td>
+    </tr>
+    <tr>
+      <td>cart</td>
+      <td>Add an item to shopping cart</td>
+    </tr>
+    <tr>
+      <td>buy</td>
+      <td>Favor an item</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Dimensions of the dataset are</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td># of users</td>
+      <td>987,994</td>
+    </tr>
+    <tr>
+      <td># of items</td>
+      <td>4,162,024</td>
+    </tr>
+    <tr>
+      <td># of categories</td>
+      <td>9,439</td>
+    </tr>
+    <tr>
+      <td># of interactions</td>
+      <td>100,150,807</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>

@@ -8,7 +8,8 @@ categories: jekyll update
 visible: 1
 ---
 
-Regular Features
+### Regular Features
+
 ---
 
 ### Python Files
@@ -44,7 +45,7 @@ n_targets: 6000
 ### Attention: The part 1 results are conducted under a different experiement, the goals are changed. Therefore, the results cannot be compared with other documents.
 ### 1. Feature Extraction
 We perform two steps operations to conduct Feature Extraction: Feature Creation and Feature Selection.
-##### 1.1 Feature Creation
+#### 1.1 Feature Creation
 
 The dataset we have looks like this:
 ```

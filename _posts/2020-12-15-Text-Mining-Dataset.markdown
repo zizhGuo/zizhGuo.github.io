@@ -23,7 +23,7 @@ This directory contains the actual dataset used for the experiments.
 ### 1. Dataset Statistics
 We use **Yelp Dataset Business(Business)** and **Yelp Dataset Reviews(Reviews)** to get training and testing samples. The main dataset to use is **Reviews**. The **Business** is helpful for tables joining to ensure the data balancing nature. Therefore, each sample attaches one review text. The samples from **Reviews** nevertheless need to be sampled from unique **Business** as the goal is to predict the category of the restaurants, so including more restaurants would be reasonable. [Link: Yelp Dataset Schema](https://www.yelp.com/dataset/documentation/main)
 
-##### 1.1 Select balanced data
+#### 1.1 Select balanced data
 Plotting histogram on both **Business** and **Reviews** help to identify the numbers of restaurants distribution.
 ![]({{site.url}}/assets/2020-12-15-Text-Mining/images/dataset/Restaurants_Cat_Hist.png)
 As the **Business Histogram** image shows, if we include unique restaurants to filter the **Reviews**, at most we can select **2363** restaurants for each of three categories('Fast Food', 'American (New)', 'Sushi Bars') since we want the samples to be balanced. The histogram also shows there exist restaurants that have both categories marked, but these samples' number is too small to consider.

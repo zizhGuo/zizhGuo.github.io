@@ -43,7 +43,7 @@
 </nav>
 
 
-	<section id="page-container" class="container my-5 py-5" style="background: #f6f6f6;">
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
 	<div class="jumbotron text-center" style="background: #f6f6f6;">
 		<h1 class="display-3">NLP Text Mining (6/8) - Experiment</h1>
 		<p class="lead"><span>Author: Zizhun Guo</span>
@@ -52,7 +52,7 @@
 			15 Dec 2020
 		</time>
 		</p>
-</div>		
+	</div>		
 
 <div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
 	<p><h3 id="experiment">Experiment</h3>
@@ -61,23 +61,25 @@
 <h3 id="python-files">Python Files</h3>
 <ul>
   <li><strong>run_ML.py</strong>: This files contains the python code to run traditional ML models.</li>
-  <li><strong>run_RNN.py</strong>: This files contains the python code to run the RNN model.
-    <h3 id="library">Library</h3>
-  </li>
-  <li>TensorFlow Keras
-    <h3 id="rnn-model">RNN model</h3>
-  </li>
+  <li><strong>run_RNN.py</strong>: This files contains the python code to run the RNN model.</li>
 </ul>
 
-<h5 id="rnn-gru-architecture">RNN-GRU architecture</h5>
+<h3 id="library">Library</h3>
+<ul>
+  <li>TensorFlow Keras</li>
+</ul>
+
+<h3 id="rnn-model">RNN model</h3>
+
+<h4 id="rnn-gru-architecture">RNN-GRU architecture</h4>
 <p><img src="../images/experiment/rnn_gru_model.png" alt="" />
 Figure 1: RNN-GRU</p>
 
-<h5 id="rnn-bidirectional-lstm-architecture">RNN-Bidirectional LSTM architecture</h5>
+<h4 id="rnn-bidirectional-lstm-architecture">RNN-Bidirectional LSTM architecture</h4>
 <p><img src="../images/experiment/rnn_model_BiLSTM.png" alt="" />
 Figure 2: RNN-BiLSTM</p>
 
-<h5 id="some-important-details">Some important details:</h5>
+<h4 id="some-important-details">Some important details:</h4>
 <ul>
   <li>Single Layered RNN-GRU and Bidirectional RNN-LSTM is are the two models that would eventually converge to produce a decent accuracy. However, the other two models – Multi-layered RNN-GRU and Single layered LSTM cannot converge.</li>
   <li>The training/testing observation showed that if the loss for each iteration becomes below 1.0, the model would be quickly converged in the next 2-3 epochs.</li>
@@ -87,7 +89,7 @@ Figure 2: RNN-BiLSTM</p>
   <li>Max sequence length: 1000 (padded with 0)</li>
 </ul>
 
-<h5 id="results">Results</h5>
+<h4 id="results">Results</h4>
 
 <table>
   <thead>
@@ -111,7 +113,7 @@ Figure 2: RNN-BiLSTM</p>
   </tbody>
 </table>
 
-<h5 id="some-resources">Some resources:</h5>
+<h4 id="some-resources">Some resources:</h4>
 <ul>
   <li>How to implement Seq2Seq LSTM Model in Keras: https://towardsdatascience.com/how-to-implement-seq2seq-lstm-model-in-keras-shortcutnlp-6f355f3e5639</li>
   <li>Difference Between Return Sequences and Return States for LSTMs in Keras: https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/</li>

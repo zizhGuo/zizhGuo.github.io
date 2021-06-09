@@ -43,7 +43,7 @@
 </nav>
 
 
-	<section id="page-container" class="container my-5 py-5" style="background: #f6f6f6;">
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
 	<div class="jumbotron text-center" style="background: #f6f6f6;">
 		<h1 class="display-3">NLP Text Mining (2/8) - Yelp Dataset</h1>
 		<p class="lead"><span>Author: Zizhun Guo</span>
@@ -52,7 +52,7 @@
 			15 Dec 2020
 		</time>
 		</p>
-</div>		
+	</div>		
 
 <div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
 	<p><h3 id="dataset">Dataset</h3>
@@ -72,7 +72,7 @@
 <h3 id="1-dataset-statistics">1. Dataset Statistics</h3>
 <p>We use <strong>Yelp Dataset Business(Business)</strong> and <strong>Yelp Dataset Reviews(Reviews)</strong> to get training and testing samples. The main dataset to use is <strong>Reviews</strong>. The <strong>Business</strong> is helpful for tables joining to ensure the data balancing nature. Therefore, each sample attaches one review text. The samples from <strong>Reviews</strong> nevertheless need to be sampled from unique <strong>Business</strong> as the goal is to predict the category of the restaurants, so including more restaurants would be reasonable. <a href="https://www.yelp.com/dataset/documentation/main">Link: Yelp Dataset Schema</a></p>
 
-<h5 id="11-select-balanced-data">1.1 Select balanced data</h5>
+<h4 id="11-select-balanced-data">1.1 Select balanced data</h4>
 <p>Plotting histogram on both <strong>Business</strong> and <strong>Reviews</strong> help to identify the numbers of restaurants distribution.
 <img src="http://localhost:4001/assets/2020-12-15-Text-Mining/images/dataset/Restaurants_Cat_Hist.png" alt="" />
 As the <strong>Business Histogram</strong> image shows, if we include unique restaurants to filter the <strong>Reviews</strong>, at most we can select <strong>2363</strong> restaurants for each of three categories(‘Fast Food’, ‘American (New)’, ‘Sushi Bars’) since we want the samples to be balanced. The histogram also shows there exist restaurants that have both categories marked, but these samples’ number is too small to consider.</p>

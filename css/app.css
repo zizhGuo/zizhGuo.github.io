@@ -190,18 +190,30 @@
 		}
 		div h3{
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+			margin-left: 4rem;
+			font-weight: bold
 		}
 		div h5{
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
-			margin-left: 1rem;
+			margin-left: 0rem;
+		}
+		div h4{
+			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+			margin-left: 4rem;
+			font-weight: bold;
 		}
 		div h6{
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
 			margin-left: 3rem;
 			margin-top: 2rem;
 		}
+		div table{
+			margin-left: 5rem;
+			width: 50rem;
+			align-self: center;
+		}
 		div ul li{
-			/*margin-left: 3rem;*/
+			margin-left: 3rem;
 		}
 		div h2, h3, h4, h5, h6{
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
@@ -217,7 +229,18 @@
 		p { 
 			line-height: 35px;
 			margin-bottom: 4rem;
-		} 
+		}
+
+		div.highlighter-rouge{
+			margin-left: 5rem;
+		}
+		.highlighter-rouge .highlight  {
+			background-color: #e4e4e4 !important; 
+		}
+		pre code{
+			background: #e4e4e4 !important;
+		}
+
 
 /*		div p img{
 			margin-left: 5em;
