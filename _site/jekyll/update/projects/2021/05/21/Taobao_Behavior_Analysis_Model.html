@@ -1,0 +1,351 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="https://localhost:4000/" />
+<meta property="og:url" content="https://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_MLE.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Alibaba Taobao User Behaviors Analysis: AARRR Framework (Acquisition) - PV, UV, CVR, Funnel Plot</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			21 May 2021
+		</time>
+		</p>
+	</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h4 id="1-recap-of-the-user-behavior-table">1. Recap of the user behavior table</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+|user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+|      1|2268318|    2520377|      pv|1511544070|2017-11-24 12:21:10|2017-11-24|   11| 24|  12|        6|
+|      1|2333346|    2520771|      pv|1511561733|2017-11-24 17:15:33|2017-11-24|   11| 24|  17|        6|
+|      1|2576651|     149192|      pv|1511572885|2017-11-24 20:21:25|2017-11-24|   11| 24|  20|        6|
+|      1|3830808|    4181361|      pv|1511593493|2017-11-25 02:04:53|2017-11-25|   11| 25|   2|        7|
+|      1|4365585|    2520377|      pv|1511596146|2017-11-25 02:49:06|2017-11-25|   11| 25|   2|        7|
+|      1|4606018|    2735466|      pv|1511616481|2017-11-25 08:28:01|2017-11-25|   11| 25|   8|        7|
+|      1| 230380|     411153|      pv|1511644942|2017-11-25 16:22:22|2017-11-25|   11| 25|  16|        7|
+|      1|3827899|    2920476|      pv|1511713473|2017-11-26 11:24:33|2017-11-26|   11| 26|  11|        1|
+|      1|3745169|    2891509|      pv|1511725471|2017-11-26 14:44:31|2017-11-26|   11| 26|  14|        1|
+|      1|1531036|    2920476|      pv|1511733732|2017-11-26 17:02:12|2017-11-26|   11| 26|  17|        1|
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+only showing top 10 rows
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behavior</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pv</td>
+      <td>Page view of an item’s detail page, equivalent to an item click</td>
+    </tr>
+    <tr>
+      <td>fav</td>
+      <td>Purchase an item</td>
+    </tr>
+    <tr>
+      <td>cart</td>
+      <td>Add an item to shopping cart</td>
+    </tr>
+    <tr>
+      <td>buy</td>
+      <td>Favor an item</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="2-acquisition">2. Acquisition</h4>
+
+<p>The point for Acquisition analysis is to develop knowledge about the ability of the product to convert visitors into customers. It helps evaluate the efficiency of the business process. The product may have diverse marketing sources of visitors and different channels to fulfill the conversion.</p>
+
+<p>In Taobao user behavior dataset, the ‘behavior’ field can be intuitively interpreted owning the values in an ordinal nature, since the business allows provide purchasing behaviors which are able to independently conducted, e.g. users can choose to purchase the item directly or put it into the cart or favorites. Therefore, there are multiple channels that convert the item visit into the final order. Hence, I take multiple funnel analyses to study its acquisitional traits.</p>
+
+<h6 id="global-page-view-pv-unique-user-uv-pvuv">Global Page View (PV), Unique User (UV), PV/UV</h6>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pychart can query records using Dataframe SQL functions</span>
+
+<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">count</span><span class="p">,</span> <span class="n">countDistinct</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">countDistinct</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s">'uv'</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+------+
+|    uv|
++------+
+|987991|
++------+
+</code></pre></div></div>
+<p>The dataset has <strong>987,991</strong> unique users. Hence, <strong>UV</strong> = <strong>987,991</strong>.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># The same, group by on 'behavior' and find the count for the 'pv'</span>
+
+<span class="n">df1</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'behavior'</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s">'count'</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+--------+--------+
+|behavior|   count|
++--------+--------+
+|      pv|89697359|
+|    cart| 5530446|
+|     fav| 2888258|
+|     buy| 2015839|
++--------+--------+
+</code></pre></div></div>
+<p>The dataset has <strong>89,697,359</strong> page view behaviors between 2017-11-24 to 2017-12-03. Hence, <strong>PV</strong> = <strong>89,697,359</strong>.</p>
+
+<p>The PV/UV, the average page view per user evaluates the popularity for the items to be seen in a global sense. We could calculate it for each item. However, this metric needs to be used with other global metrics.</p>
+
+<p>The <strong>PV/UV</strong> is <strong>90</strong>. In these 10 days, the average page views for each unique user is 90.</p>
+
+<h6 id="bounce-rate">Bounce Rate</h6>
+
+<p>Bounce rate is single-page sessions divided by all sessions, or the percentage of all sessions on the site in which users viewed only a single page and triggered only a single request to the Analytics server. - <a href="https://support.google.com/analytics/answer/1009409?hl=en">reference</a></p>
+
+<p>In the Taobao user behavior case, the unique users who visit items once during the 10-day session would be only considered. Therefore, this bounce rate evaluates the attractiveness of the website instead of a specific item.</p>
+
+<p>Create</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create TempView with the user count for the different behavior.</span>
+<span class="c"># PK: user_id</span>
+<span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    user_id, 
+    SUM(case when behavior='pv' then 1 else 0 end) as PageView,
+    SUM(case when behavior='fav' then 1 else 0 end) as Favorite,
+    SUM(case when behavior='cart' then 1 else 0 end) as Cart,
+    SUM(case when behavior='buy' then 1 else 0 end) as Buy
+FROM 
+    taobao
+GROUP BY
+    user_id
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">createTempView</span><span class="p">(</span><span class="s">"behaviorCount"</span><span class="p">)</span>
+
+<span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    COUNT(user_id)
+FROM
+    behaviorCount
+WHERE PageView = 1 AND Favorite = 0 AND Cart = 0 AND Buy = 0;
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-----------------------+
+|count(DISTINCT user_id)|
++-----------------------+
+|                     53|
++-----------------------+
+</code></pre></div></div>
+<p>The number of unique users who have only <strong>1 page view</strong> count is <strong>53</strong>. The <strong>bounce rate</strong>, 53/UV is <strong>0.0053%</strong>. It is very small, it proves the visitors, no matter new or old, would not stop discovering the website at the first sight.</p>
+
+<h6 id="conversion-rate-cvr">Conversion Rate (CVR)</h6>
+
+<p>The <strong>conversion rate</strong> is the percentage of visitors to the website that complete a desired goal (a conversion) out of the total number of visitors.<a href="https://www.wordstream.com/conversion-rate">-[Source]</a></p>
+
+<p>The desired goal is <strong>make-purchase</strong>.  There are three channels to make such conversion (see fig 1 below): 1. page view - favorite - buy; 2. page view - cart - buy; 3. page view - buy. Each channel can conduct a funnel analysis.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/01.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/01.png" alt="drawing" style="width: 20%;" />
+   </a>
+   <figcaption>Fig 1: Three conversion channels </figcaption>
+</div>
+
+<p><strong>pv - fav - buy</strong></p>
+
+<p>CVR for page view user to favorite user = # of users who have pv and fav/ # of users who have pv</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_fav_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM behaviorCount
+WHERE PageView &gt; 0 AND Favorite &gt; 0
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 387548</span>
+
+<span class="n">n_unique_pv_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM behaviorCount
+WHERE PageView &gt; 0
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 984107</span>
+
+<span class="n">CVR_pv2fav</span> <span class="o">=</span> <span class="n">n_unique_fav_users</span><span class="o">/</span><span class="n">n_unique_pv_users</span> <span class="c"># 387548/984107</span>
+</code></pre></div></div>
+
+<p>The conversion rate for pv to fav is 39.38%.</p>
+
+<p>CVR for page view user to favorite to buy user = # of users who have pv, fav and buy / # of users who have pv</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_fav_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM behaviorCount
+WHERE PageView &gt; 0 AND Favorite &gt; 0 AND Buy &gt; 0
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 275476</span>
+
+<span class="n">CVR_pv2fav2buy</span> <span class="o">=</span> <span class="n">n_unique_fav_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c"># 275476 / 984107</span>
+<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2fav2buy</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The conversion rate for pv-fav-buy is 27.99%.</p>
+
+<p><strong>pv - cart - buy</strong></p>
+
+<p>CVR for page view user to cart user = # of users who have pv and cart / # of users who have pv</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_cart_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM behaviorCount
+WHERE PageView &gt; 0 AND Cart &gt; 0
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 735674</span>
+
+<span class="n">CVR_pv2cart</span> <span class="o">=</span> <span class="n">n_unique_cart_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c"># 735674 / 984107</span>
+<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2cart</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The conversion rate for pv-cart is 74.56%.</p>
+
+<p>CVR for page view user to cart to buy user = # of users who have pv, cart and buy / # of users who have pv</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_cart_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM behaviorCount
+WHERE PageView &gt; 0 AND Cart &gt; 0 AND Buy &gt; 0
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 528408</span>
+
+<span class="n">CVR_pv2cart2buy</span> <span class="o">=</span> <span class="n">n_unique_cart_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c"># 528408 / 984107</span>
+<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2cart2buy</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The conversion rate for pv-cart-buy is 53.69%.</p>
+
+<p><strong>pv - buy</strong></p>
+
+<p>CVR for page view user to buy user = # of users who have pv and buy / # of users who have pv</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_pv_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM behaviorCount
+WHERE PageView &gt; 0 AND Favorite = 0 AND Cart = 0 AND Buy &gt; 0
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">CVR_pv2buy</span> <span class="o">=</span> <span class="n">n_unique_pv_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span>
+<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2buy</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The conversion rate for pv-buy is 7.01%. (There might have users who have both pv-buy or pv-fav/cart-buy behaviors, such SQL would exclude those users who have both behaviors, therefore the CVR for pv-buy would be higher if based on items)</p>
+
+<p><strong>Funnel plot for 3 channels based on # of users</strong></p>
+
+<!-- #80bdff
+#f1b0b7
+#ffc107
+#54bc4b -->
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">plotly</span> <span class="kn">import</span> <span class="n">graph_objects</span> <span class="k">as</span> <span class="n">go</span>
+
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Funnel</span><span class="p">(</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s">'pv'</span><span class="p">,</span> <span class="s">'fav'</span><span class="p">,</span> <span class="s">'buy'</span><span class="p">],</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">n_unique_pv_users</span><span class="p">,</span> <span class="n">n_unique_fav_users</span><span class="p">,</span> <span class="n">n_unique_fav_buy_users</span><span class="p">],</span>
+    <span class="n">textposition</span> <span class="o">=</span> <span class="s">"inside"</span><span class="p">,</span>
+    <span class="n">textinfo</span> <span class="o">=</span> <span class="s">"value+percent initial"</span><span class="p">,</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="p">{</span><span class="s">"color"</span><span class="p">:</span> <span class="p">[</span><span class="s">"#80bdff"</span><span class="p">,</span> <span class="s">"#f1b0b7"</span><span class="p">,</span> <span class="s">"#54bc4b"</span><span class="p">]})</span>
+    <span class="p">)</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_1.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_1.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 2: Funnel plot: pv-fav-buy </figcaption>
+</div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_2.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_2.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 3: Funnel plot: pv-cart-buy </figcaption>
+</div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_3.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_3.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 4: Funnel plot: pv-buy </figcaption>
+</div>
+<hr />
+
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>

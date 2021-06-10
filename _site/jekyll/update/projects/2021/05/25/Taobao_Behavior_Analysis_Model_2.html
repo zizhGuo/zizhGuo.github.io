@@ -1,0 +1,247 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="https://localhost:4000/" />
+<meta property="og:url" content="https://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_MLE.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Alibaba Taobao User Behaviors Analysis: AARRR Framework (Activation/Retention) - DAU, Retention Rate, etc</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			25 May 2021
+		</time>
+		</p>
+	</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h4 id="editing">[Editing]</h4>
+
+<h4 id="1-recap-of-the-user-behavior-table">1. Recap of the user behavior table</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+|user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+|      1|2268318|    2520377|      pv|1511544070|2017-11-24 12:21:10|2017-11-24|   11| 24|  12|        6|
+|      1|2333346|    2520771|      pv|1511561733|2017-11-24 17:15:33|2017-11-24|   11| 24|  17|        6|
+|      1|2576651|     149192|      pv|1511572885|2017-11-24 20:21:25|2017-11-24|   11| 24|  20|        6|
+|      1|3830808|    4181361|      pv|1511593493|2017-11-25 02:04:53|2017-11-25|   11| 25|   2|        7|
+|      1|4365585|    2520377|      pv|1511596146|2017-11-25 02:49:06|2017-11-25|   11| 25|   2|        7|
+|      1|4606018|    2735466|      pv|1511616481|2017-11-25 08:28:01|2017-11-25|   11| 25|   8|        7|
+|      1| 230380|     411153|      pv|1511644942|2017-11-25 16:22:22|2017-11-25|   11| 25|  16|        7|
+|      1|3827899|    2920476|      pv|1511713473|2017-11-26 11:24:33|2017-11-26|   11| 26|  11|        1|
+|      1|3745169|    2891509|      pv|1511725471|2017-11-26 14:44:31|2017-11-26|   11| 26|  14|        1|
+|      1|1531036|    2920476|      pv|1511733732|2017-11-26 17:02:12|2017-11-26|   11| 26|  17|        1|
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+only showing top 10 rows
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behavior</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pv</td>
+      <td>Page view of an item’s detail page, equivalent to an item click</td>
+    </tr>
+    <tr>
+      <td>fav</td>
+      <td>Purchase an item</td>
+    </tr>
+    <tr>
+      <td>cart</td>
+      <td>Add an item to shopping cart</td>
+    </tr>
+    <tr>
+      <td>buy</td>
+      <td>Favor an item</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="2-activation">2. Activation</h4>
+
+<p>The Activation evaluates the Ecommerce’s ability to provide users with the “Aha moment”. It overlaps the concept with the acquisition a little, but the difference is that the activation focuses on micro-conversion part whereas users are having enjoyable and solid experience in individual part of product process.</p>
+
+<h6 id="daily-active-behaviors-distribution">Daily Active behaviors distribution</h6>
+
+<p>Details aside, first look at the distribution for the number of daily behaviors between 2017-11-24 to 2017-12-03.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_date_behavior_count</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    date,
+    SUM(CASE WHEN behavior = 'pv' THEN 1 ELSE 0 END) AS pv,
+    SUM(CASE WHEN behavior = 'fav' THEN 1 ELSE 0 END) AS fav,
+    SUM(CASE WHEN behavior = 'cart' THEN 1 ELSE 0 END) AS cart,
+    SUM(CASE WHEN behavior = 'buy' THEN 1 ELSE 0 END) AS buy
+FROM 
+    taobao
+GROUP BY 
+    date
+ORDER BY date
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">df_date_behavior_count</span><span class="p">)</span>
+</code></pre></div></div>
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAB.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAB.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 1: Daily Active behaviors histogram </figcaption>
+</div>
+
+<h6 id="daily-active-usersdau-distribution">Daily Active Users(DAU) distribution</h6>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_DAU</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    date,
+    COUNT(DISTINCT user_id) AS DAU
+FROM 
+    taobao
+GROUP BY 
+    date
+ORDER BY 
+    date
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">df_DAU</span><span class="p">)</span>
+</code></pre></div></div>
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAU.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAU.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 2: Daily Active Users histogram </figcaption>
+</div>
+
+<p>Compare</p>
+
+<h6 id="hourly-active-behaviors-distribution">Hourly Active Behaviors distribution</h6>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_hour_behavior_count</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    hour,
+    SUM(CASE WHEN behavior = 'pv' THEN 0.1 ELSE 0 END) AS pv,
+    SUM(CASE WHEN behavior = 'fav' THEN 0.1 ELSE 0 END) AS fav,
+    SUM(CASE WHEN behavior = 'cart' THEN 0.1 ELSE 0 END) AS cart,
+    SUM(CASE WHEN behavior = 'buy' THEN 0.1 ELSE 0 END) AS buy
+FROM 
+    taobao
+WHERE date &lt; '2017-12-04' AND date &gt; '2017-11-23'
+GROUP BY 
+    hour
+ORDER BY 
+    hour
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</code></pre></div></div>
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAB.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAB.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 3: Hourly Active Behaviors histogram </figcaption>
+</div>
+
+<h6 id="hourly-active-users-distribution">Hourly Active Users distribution</h6>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_AverageHAU</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    hour,
+    ROUND(COUNT(DISTINCT user_id)/10, 0) AS Average_HAU
+FROM 
+    taobao
+WHERE date &lt; '2017-12-04' AND date &gt; '2017-11-23'
+GROUP BY 
+    hour
+ORDER BY hour
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAU.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAU.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 4: Hourly Active Users histogram </figcaption>
+</div>
+
+<h4 id="2-retention">2. Retention</h4>
+
+<hr />
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>

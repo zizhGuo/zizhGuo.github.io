@@ -45,7 +45,7 @@
 
 	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
 	<div class="jumbotron text-center" style="background: #f6f6f6;">
-		<h1 class="display-3">Alibaba Taobao User Behaviors Analysis: Dataset 1 billion records</h1>
+		<h1 class="display-3">Alibaba Taobao User Behaviors Analysis: Dataset(1 billion records) and Preprocessing</h1>
 		<p class="lead"><span>Author: Zizhun Guo</span>
 		</p>
 		<p class="lead">		Written at <time datetime="">
@@ -203,6 +203,200 @@
     </tr>
   </tbody>
 </table>
+
+<h4 id="1-dateset-preprocessing">1. Dateset preprocessing</h4>
+
+<p><strong>Quick recap about the dataset</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>User ID</td>
+      <td>An integer, the serialized ID that represents a user</td>
+    </tr>
+    <tr>
+      <td>Item ID</td>
+      <td>An integer, the serialized ID that represents an item</td>
+    </tr>
+    <tr>
+      <td>Category ID</td>
+      <td>An integer, the serialized ID that represents the category which the corresponding item belongs to</td>
+    </tr>
+    <tr>
+      <td>Behavior type</td>
+      <td>A string, enum-type from (‘pv’, ‘buy’, ‘cart’, ‘fav’)</td>
+    </tr>
+    <tr>
+      <td>Timestamp</td>
+      <td>An integer, the timestamp of the behavior</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behavior</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pv</td>
+      <td>Page view of an item’s detail page, equivalent to an item click</td>
+    </tr>
+    <tr>
+      <td>fav</td>
+      <td>Purchase an item</td>
+    </tr>
+    <tr>
+      <td>cart</td>
+      <td>Add an item to shopping cart</td>
+    </tr>
+    <tr>
+      <td>buy</td>
+      <td>Favor an item</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td># of users</td>
+      <td>987,994</td>
+    </tr>
+    <tr>
+      <td># of items</td>
+      <td>4,162,024</td>
+    </tr>
+    <tr>
+      <td># of categories</td>
+      <td>9,439</td>
+    </tr>
+    <tr>
+      <td># of interactions</td>
+      <td>100,150,807</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Load the CSV dataset as Spark DateFrame using Pyspark</strong></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">findspark</span>
+<span class="n">findspark</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="s">'/home/zizhun/spark-3.1.1-bin-hadoop2.7'</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
+
+<span class="c"># Load csv file into spark dataframe</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s">'UserBehavior.csv'</span><span class="p">)</span>
+
+<span class="c"># Change field names</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c0"</span><span class="p">,</span><span class="s">"user_id"</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c1"</span><span class="p">,</span><span class="s">"item_id"</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c2"</span><span class="p">,</span><span class="s">"category_id"</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c3"</span><span class="p">,</span><span class="s">"behavior"</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c4"</span><span class="p">,</span><span class="s">"timestamps"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><strong>Check out the schema and partial view</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root
+ |-- user_id: string (nullable = true)
+ |-- item_id: string (nullable = true)
+ |-- category_id: string (nullable = true)
+ |-- behavior: string (nullable = true)
+ |-- timestamps: string (nullable = true)
+
++-------+-------+-----------+--------+----------+
+|user_id|item_id|category_id|behavior|timestamps|
++-------+-------+-----------+--------+----------+
+|      1|2268318|    2520377|      pv|1511544070|
+|      1|2333346|    2520771|      pv|1511561733|
+|      1|2576651|     149192|      pv|1511572885|
+|      1|3830808|    4181361|      pv|1511593493|
+|      1|4365585|    2520377|      pv|1511596146|
+|      1|4606018|    2735466|      pv|1511616481|
+|      1| 230380|     411153|      pv|1511644942|
+|      1|3827899|    2920476|      pv|1511713473|
+|      1|3745169|    2891509|      pv|1511725471|
+|      1|1531036|    2920476|      pv|1511733732|
++-------+-------+-----------+--------+----------+
+only showing top 10 rows
+
+</code></pre></div></div>
+
+<p><strong>Transform timestamps from Unixtime to date</strong>
+The original timestamp is in format of Unixtime, therefore transforming it into 6 new readable field as datetime, date, month, day, hour and dayofweek.</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="p">(</span><span class="n">dayofmonth</span><span class="p">,</span> <span class="n">hour</span><span class="p">,</span>
+                                  <span class="n">dayofyear</span><span class="p">,</span><span class="n">month</span><span class="p">,</span> <span class="n">dayofmonth</span><span class="p">,</span>
+                                  <span class="n">year</span><span class="p">,</span><span class="n">weekofyear</span><span class="p">,</span>
+                                  <span class="n">format_number</span><span class="p">,</span> <span class="n">date_format</span><span class="p">,</span> <span class="n">to_date</span><span class="p">,</span> <span class="n">dayofweek</span><span class="p">)</span>
+
+<span class="n">df1</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">dayofmonth</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'date'</span><span class="p">,</span> <span class="n">to_date</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'month'</span><span class="p">,</span> <span class="n">month</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'day'</span><span class="p">,</span> <span class="n">dayofmonth</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'hour'</span><span class="p">,</span> <span class="n">hour</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'dayofweek'</span><span class="p">,</span> <span class="n">dayofweek</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span>  
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Results:
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+|user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+|      1|2268318|    2520377|      pv|1511544070|2017-11-24 12:21:10|2017-11-24|   11| 24|  12|        6|
+|      1|2333346|    2520771|      pv|1511561733|2017-11-24 17:15:33|2017-11-24|   11| 24|  17|        6|
+|      1|2576651|     149192|      pv|1511572885|2017-11-24 20:21:25|2017-11-24|   11| 24|  20|        6|
+|      1|3830808|    4181361|      pv|1511593493|2017-11-25 02:04:53|2017-11-25|   11| 25|   2|        7|
+|      1|4365585|    2520377|      pv|1511596146|2017-11-25 02:49:06|2017-11-25|   11| 25|   2|        7|
+|      1|4606018|    2735466|      pv|1511616481|2017-11-25 08:28:01|2017-11-25|   11| 25|   8|        7|
+|      1| 230380|     411153|      pv|1511644942|2017-11-25 16:22:22|2017-11-25|   11| 25|  16|        7|
+|      1|3827899|    2920476|      pv|1511713473|2017-11-26 11:24:33|2017-11-26|   11| 26|  11|        1|
+|      1|3745169|    2891509|      pv|1511725471|2017-11-26 14:44:31|2017-11-26|   11| 26|  14|        1|
+|      1|1531036|    2920476|      pv|1511733732|2017-11-26 17:02:12|2017-11-26|   11| 26|  17|        1|
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+only showing top 10 rows
+</code></pre></div></div>
+
+<p><strong>Discover dataset on the range of date</strong></p>
+
+<pre><code class="language-SQL">SELECT Date, n_interactions
+FROM
+    (SELECT date as Date, COUNT(user_id) as n_interactions
+    FROM taobao
+    GROUP BY date
+    ORDER BY date)
+WHERE n_interactions &gt; 10000
+</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         Date  n_interactions
+0  2017-11-24         3453235
+1  2017-11-25        10598765
+2  2017-11-26        10496631
+3  2017-11-27         9985084
+4  2017-11-28         9987905
+5  2017-11-29        10350799
+6  2017-11-30        10542266
+7  2017-12-01        11712571
+8  2017-12-02        14057989
+9  2017-12-03         8946657
+</code></pre></div></div>
+<p>The distribution shows most of the interactions are conducted between <em>2017-11-24</em> to 2017-12-03 (10 days).</p>
+
+<p><strong>Create TempView as Taobao from records based on the distribution</strong></p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"taobao"</span><span class="p">)</span>
+</code></pre></div></div>
 
 <hr />
 <p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>

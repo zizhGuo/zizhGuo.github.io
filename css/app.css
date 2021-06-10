@@ -201,11 +201,14 @@
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
 			margin-left: 4rem;
 			font-weight: bold;
+			font-size: 2rem;
 		}
 		div h6{
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
-			margin-left: 3rem;
+			margin-left: 4rem;
 			margin-top: 2rem;
+			font-weight: bold;
+			font-size: 1.5rem;
 		}
 		div table{
 			margin-left: 5rem;
@@ -225,20 +228,27 @@
 			color: red;
 			padding: 0rem 0rem;
 		}
-
 		p { 
-			line-height: 35px;
-			margin-bottom: 4rem;
+			line-height: 30px;
+			margin-bottom: 5rem;
 		}
 
 		div.highlighter-rouge{
-			margin-left: 5rem;
+			/* margin-left: 5rem; */
+			background: #f6f6f6 !important;
+		}
+		div.highlight {
+			background: #f6f6f6 !important;
 		}
 		.highlighter-rouge .highlight  {
-			background-color: #e4e4e4 !important; 
+			/* background-color: #ebeef5 !important;  */
 		}
 		pre code{
-			background: #e4e4e4 !important;
+			background: #f0f0f0 !important;
+		}
+		pre {
+			background: #f0f0f0 !important;
+			margin-left: 5rem !important;
 		}
 
 
