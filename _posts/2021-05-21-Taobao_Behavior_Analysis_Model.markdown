@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Alibaba Taobao User Behaviors Analysis: AARRR Framework (Acquisition) - PV, UV, CVR, Funnel Plot"
+title:  "Alibaba Taobao User Behaviors Analysis II: AARRR Framework (Acquisition) - PV, UV, CVR, Funnel Plot"
 date:   2021-05-21 11:34:57
 author: Zizhun Guo
 category: Projects

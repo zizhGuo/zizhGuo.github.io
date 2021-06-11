@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Alibaba Taobao User Behaviors Analysis: Dataset(1 billion records) and Preprocessing"
+title:  "Alibaba Taobao User Behaviors Analysis I: Dataset(1 billion records) and Preprocessing"
 date:   2021-05-21 11:34:57
 author: Zizhun Guo
 category: Projects
@@ -80,30 +80,6 @@ Dimensions of the dataset are
 |# of interactions   |100,150,807   |
 
 #### 1. Dateset preprocessing
-
-**Quick recap about the dataset**
-
-|Field   |Explanation   |
-|---|---|
-|User ID   |An integer, the serialized ID that represents a user   |
-| Item ID  |An integer, the serialized ID that represents an item   |
-|Category ID   |An integer, the serialized ID that represents the category which the corresponding item belongs to   |
-|Behavior type   |A string, enum-type from ('pv', 'buy', 'cart', 'fav')   |
-|Timestamp   |An integer, the timestamp of the behavior   |
-
-|Behavior   | Explanation  |
-|---|---|
-|pv   | Page view of an item's detail page, equivalent to an item click  |
-|fav   | Purchase an item  |
-|cart   |Add an item to shopping cart   |
-|buy   |Favor an item   |
-
-| Dimension  | 	Number  |
-|---|---|
-|# of users   |987,994   |
-|# of items   |4,162,024   |
-|# of categories   | 9,439  |
-|# of interactions   |100,150,807   |
 
 **Load the CSV dataset as Spark DateFrame using Pyspark**
 

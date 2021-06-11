@@ -45,7 +45,7 @@
 
 	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
 	<div class="jumbotron text-center" style="background: #f6f6f6;">
-		<h1 class="display-3">Alibaba Taobao User Behaviors Analysis: Dataset(1 billion records) and Preprocessing</h1>
+		<h1 class="display-3">Alibaba Taobao User Behaviors Analysis I: Dataset(1 billion records) and Preprocessing</h1>
 		<p class="lead"><span>Author: Zizhun Guo</span>
 		</p>
 		<p class="lead">		Written at <time datetime="">
@@ -205,93 +205,6 @@
 </table>
 
 <h4 id="1-dateset-preprocessing">1. Dateset preprocessing</h4>
-
-<p><strong>Quick recap about the dataset</strong></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Explanation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>User ID</td>
-      <td>An integer, the serialized ID that represents a user</td>
-    </tr>
-    <tr>
-      <td>Item ID</td>
-      <td>An integer, the serialized ID that represents an item</td>
-    </tr>
-    <tr>
-      <td>Category ID</td>
-      <td>An integer, the serialized ID that represents the category which the corresponding item belongs to</td>
-    </tr>
-    <tr>
-      <td>Behavior type</td>
-      <td>A string, enum-type from (‘pv’, ‘buy’, ‘cart’, ‘fav’)</td>
-    </tr>
-    <tr>
-      <td>Timestamp</td>
-      <td>An integer, the timestamp of the behavior</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Behavior</th>
-      <th>Explanation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>pv</td>
-      <td>Page view of an item’s detail page, equivalent to an item click</td>
-    </tr>
-    <tr>
-      <td>fav</td>
-      <td>Purchase an item</td>
-    </tr>
-    <tr>
-      <td>cart</td>
-      <td>Add an item to shopping cart</td>
-    </tr>
-    <tr>
-      <td>buy</td>
-      <td>Favor an item</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Dimension</th>
-      <th>Number</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td># of users</td>
-      <td>987,994</td>
-    </tr>
-    <tr>
-      <td># of items</td>
-      <td>4,162,024</td>
-    </tr>
-    <tr>
-      <td># of categories</td>
-      <td>9,439</td>
-    </tr>
-    <tr>
-      <td># of interactions</td>
-      <td>100,150,807</td>
-    </tr>
-  </tbody>
-</table>
 
 <p><strong>Load the CSV dataset as Spark DateFrame using Pyspark</strong></p>
 
