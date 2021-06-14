@@ -1,0 +1,501 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="https://localhost:4000/" />
+<meta property="og:url" content="https://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_MLE.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Alibaba Taobao User Behaviors Analysis V: User Journey purchase behavior Clustering - KMeans with MLlib</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			01 Jun 2021
+		</time>
+		</p>
+	</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h4 id="recap-of-the-user-behavior-table">Recap of the user behavior table</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+|user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+|      1|2268318|    2520377|      pv|1511544070|2017-11-24 12:21:10|2017-11-24|   11| 24|  12|        6|
+|      1|2333346|    2520771|      pv|1511561733|2017-11-24 17:15:33|2017-11-24|   11| 24|  17|        6|
+|      1|2576651|     149192|      pv|1511572885|2017-11-24 20:21:25|2017-11-24|   11| 24|  20|        6|
+|      1|3830808|    4181361|      pv|1511593493|2017-11-25 02:04:53|2017-11-25|   11| 25|   2|        7|
+|      1|4365585|    2520377|      pv|1511596146|2017-11-25 02:49:06|2017-11-25|   11| 25|   2|        7|
+|      1|4606018|    2735466|      pv|1511616481|2017-11-25 08:28:01|2017-11-25|   11| 25|   8|        7|
+|      1| 230380|     411153|      pv|1511644942|2017-11-25 16:22:22|2017-11-25|   11| 25|  16|        7|
+|      1|3827899|    2920476|      pv|1511713473|2017-11-26 11:24:33|2017-11-26|   11| 26|  11|        1|
+|      1|3745169|    2891509|      pv|1511725471|2017-11-26 14:44:31|2017-11-26|   11| 26|  14|        1|
+|      1|1531036|    2920476|      pv|1511733732|2017-11-26 17:02:12|2017-11-26|   11| 26|  17|        1|
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+only showing top 10 rows
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behavior</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pv</td>
+      <td>Page view of an item’s detail page, equivalent to an item click</td>
+    </tr>
+    <tr>
+      <td>fav</td>
+      <td>Purchase an item</td>
+    </tr>
+    <tr>
+      <td>cart</td>
+      <td>Add an item to shopping cart</td>
+    </tr>
+    <tr>
+      <td>buy</td>
+      <td>Favor an item</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="user-journey">User Journey</h4>
+<p>A <a href="(https://en.wikipedia.org/wiki/User_journey)">user journey</a> is the experiences a person has when interacting with something, typically software. User journeys describe at a high level of detail exactly what steps different users take to complete a specific task within a system, application, or website. User journeys are focused on the user and what they see and what they do, in comparison to the related web design term click path which is just a plain list of the text URLs that are hit when a user follows a particular Journey.</p>
+
+<p>The customer journey is divided into five phases which refer to the AIDA model.</p>
+<ul>
+  <li>Awareness Awareness for the product is awakened (inspiration)</li>
+  <li>Interest The interest in the product is increased (favoritism)</li>
+  <li>Desire The customer is considering buying the product (wish)</li>
+  <li>Action The product is bought (implementation)</li>
+</ul>
+
+<p><strong>We have found the concept of user journey can be applied to the taobao Dataset.</strong> (see <a href="https://zizhunguo.com/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model.html">Part II conversion analysis</a>) In taobao dataset, it has <strong>four</strong> behavior types which are <strong>page view</strong>, <strong>favorite</strong>, <strong>cart</strong> and <strong>buy</strong>. Combining with <strong>user_id</strong> and <strong>item_id</strong>, <strong>a user journey behavior can be defined as a series of behaviors conducted by a user targeting a specific item.</strong> See example below:
+Table 1: a user journey track</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>user_id</th>
+      <th>item_id</th>
+      <th>Timestamps</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>100</td>
+      <td>12345678</td>
+      <td>2017-11-25 13:04:00</td>
+      <td>pv</td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>12345678</td>
+      <td>2017-11-25 13:12:23</td>
+      <td>fav</td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>12345678</td>
+      <td>2017-11-27 10:56:10</td>
+      <td>pv</td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>12345678</td>
+      <td>2017-11-27 20:23:59</td>
+      <td>buy</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>See table 1 above, a user (id: 100) has viewed a page of the item (id: 12345678) at 2017-11-25 13:04:00. 8 mins later, this user had put this item into the favorite list. Two days later, this user viewed this item again. About 10 hours later, at 8 pm on the same day, this user purchased this item.</p>
+
+<h4 id="goal">Goal</h4>
+
+<p>The goal of the task is to use millions of user-journey behaviors to identify customer categories/clusters that can be
+useful for targeted consumer insights at scale. The tool to implement is Apache Spark: Spark SQL and MLlib. The clustering model is KMeans.</p>
+
+<h4 id="preprocessing">Preprocessing</h4>
+
+<p>From <a href="https://zizhunguo.com/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Intro.html">part I</a>, most of the behaviors are in dates between 2017-11-24 to 2017-12-03, therefore we select 5,000,000 records of behaviors from the subset of the dataset. Another reason to choose only 5M records instead of the 100M from the original size is that while doing statistic analysis later after KMeans, the virtual machine’s memory (8GM) simply cannot hold the query processing when conducted on the aggregated temporary view, hence only taking part of the dataset.</p>
+
+<h6 id="feature-engineering-aggregation">Feature Engineering: Aggregation</h6>
+
+<p>Set up some statistical rules to extract some features from the orignal dataset:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rule</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>duration</td>
+      <td>The <strong>time difference</strong> between the minimal timestamps and maximum timestamps within <strong>the user journey</strong></td>
+    </tr>
+    <tr>
+      <td>behavior_count</td>
+      <td>The <strong>total behavior count</strong> of a user journey</td>
+    </tr>
+    <tr>
+      <td>pv</td>
+      <td>The <strong>pv count</strong> of a user journey</td>
+    </tr>
+    <tr>
+      <td>fav</td>
+      <td>The <strong>fav count</strong> of a user journey</td>
+    </tr>
+    <tr>
+      <td>cart</td>
+      <td>The <strong>cart count</strong> of a user journey</td>
+    </tr>
+    <tr>
+      <td>buy</td>
+      <td>The <strong>buy count</strong> of a user journey</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>Whether the user <strong>have purchased</strong> the item or <strong>not</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    user_id,
+    item_id,
+    MAX(timestamps)-MIN(timestamps) as duration,
+    COUNT(item_id) as behavior_count,
+    SUM(CASE WHEN behavior = 'pv' THEN 1 ELSE 0 END) as pv,
+    SUM(CASE WHEN behavior = 'fav' THEN 1 ELSE 0 END) as fav,
+    SUM(CASE WHEN behavior = 'cart' THEN 1 ELSE 0 END) as cart,
+    SUM(CASE WHEN behavior = 'buy' THEN 1 ELSE 0 END) as buy
+FROM taobao
+GROUP BY user_id, item_id
+ORDER BY user_id, item_id ASC
+"""</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"taobao_clustering"</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    *,
+    CASE WHEN buy &gt; 0 THEN 1 ELSE 0 END as label
+FROM taobao_clustering
+"""</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">VectorAssembler</span>
+
+<span class="n">assembler</span> <span class="o">=</span> <span class="n">VectorAssembler</span><span class="p">(</span><span class="n">inputCols</span> <span class="o">=</span> <span class="n">feat_cols</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s">'features'</span><span class="p">)</span>
+<span class="n">final_data</span> <span class="o">=</span> <span class="n">assembler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">inputCol</span> <span class="o">=</span> <span class="s">'features'</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s">'scaledFeatures'</span><span class="p">)</span>
+<span class="n">scaler_model</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
+<span class="n">cluster_final_data</span> <span class="o">=</span> <span class="n">scaler_model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Quick view for the Spark dataframe:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+
+|user_id|item_id|duration|behavior_count| pv|fav|cart|buy|label|            features|      scaledFeatures|
++-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+
+|      1|1305059|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|1323189|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|1338525|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|1340922|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|1531036|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|2028434|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|2041056|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|2087357| 29426.0|             2|  2|  0|   0|  0|    0|(7,[0,1,2],[29426...|(7,[0,1,2],[0.347...|
+|      1|2104483|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|2266567|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
++-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+
+only showing top 10 rows
+</code></pre></div></div>
+
+<h6 id="clustering-kmeans">Clustering KMeans</h6>
+
+<p>Apply KMeans to the scaled dataset with different k values.</p>
+
+<p>KMeans hyperparameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>hyperparameter</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tol</td>
+      <td>0.0001</td>
+    </tr>
+    <tr>
+      <td>maxIter</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>distanceMeasure</td>
+      <td>euclidean</td>
+    </tr>
+    <tr>
+      <td>weightCol</td>
+      <td>none</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Using Elbow/Knee Method for a quick look-out to select K values.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/elbow.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/elbow.png" alt="drawing" style="width: 30%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<p>Looks like k = 3, k = 5 and k = 6 are the good change-points. Select k = 5 as the cluster numbers. Here print out the clustering  results. (The ‘prediction’ indicates the cluster number ranged from 0 - 4)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+----------+
+|user_id|item_id|duration|behavior_count| pv|fav|cart|buy|label|            features|      scaledFeatures|prediction|
++-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+----------+
+|      1|1305059|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|1323189|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|1338525|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|1340922|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|1531036|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2028434|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2041056|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2087357| 29426.0|             2|  2|  0|   0|  0|    0|(7,[0,1,2],[29426...|(7,[0,1,2],[0.344...|         0|
+|      1|2104483|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2266567|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2268318|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2278603|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2286574|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1| 230380|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2333346|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2576651|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1| 266784| 25123.0|             2|  2|  0|   0|  0|    0|(7,[0,1,2],[25123...|(7,[0,1,2],[0.294...|         0|
+|      1| 271696|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2734026|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2791761|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
++-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+----------+
+only showing top 20 rows
+
+</code></pre></div></div>
+
+<h4 id="analysis">Analysis</h4>
+
+<h6 id="statistic-analysis">Statistic Analysis</h6>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-----------------+------------------+------------------+-------------------+-------------------+--------------------+--------------------+------------------+
+|summary|         duration|    behavior_count|                pv|                fav|               cart|                 buy|               label|        prediction|
++-------+-----------------+------------------+------------------+-------------------+-------------------+--------------------+--------------------+------------------+
+|  count|           756408|            756408|            756408|             756408|             756408|              756408|              756408|            756408|
+|   mean|21433.50689707142|1.3220378420111898| 1.184676788188385| 0.0371333989064103|0.07331228649088851|0.026915368425505813|0.025566889826654397|0.4321940011210881|
+| stddev|85385.05928533341|1.0746465690895712|0.9953649718484974|0.19056521625685005| 0.2690200842701817| 0.17201339406933566| 0.15783933890990312|1.1010077907100033|
+|    min|              0.0|                 1|                 0|                  0|                  0|                   0|                   0|                 0|
+|    max|         787426.0|               153|               153|                  7|                  6|                  11|                   1|                 4|
++-------+-----------------+------------------+------------------+-------------------+-------------------+--------------------+--------------------+------------------+
+
+</code></pre></div></div>
+
+<p>The <strong>duration</strong> are in seconds unit hence dividing 3600 to convert into hours. The longest duration of the user journey lasts about <strong>9 days</strong>. The average duration of the user journey takes around <strong>6 hours</strong>.</p>
+
+<p>From <strong>label</strong>(whether purchased or not) features, it finds <strong>2.5 out of 100</strong> items are eventually purchased. From <strong>pv</strong>(page view count for each user behavior), we found each item is <strong>at least being view once</strong>(1.18). Similar findings are documented in the previous part<a href="https://zizhunguo.com/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model.html">[part II]</a>.</p>
+
+<h6 id="intra-clusters-analysis">Intra-clusters Analysis</h6>
+
+<p>Group by the cluster index and calculat the mean values for all features.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_k5_statistics</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT prediction AS cluster,
+        COUNT(DISTINCT user_id) AS user,
+        COUNT(item_id) AS behavior,
+        ROUND(AVG(duration)/3600,2) AS avg_duratiion,
+        ROUND(AVG(behavior_count),2) as avg_num_behaviors,
+        ROUND(AVG(pv),2) as avg_pv,
+        ROUND(AVG(fav),2) as avg_fav,
+        ROUND(AVG(cart),2) as avg_cart,
+        ROUND(AVG(buy),2) as avg_buy,
+        ROUND(AVG(label),2) as avg_label
+FROM purchase_clustered
+GROUP BY prediction
+ORDER BY prediction asc
+"""</span><span class="p">)</span>
+<span class="n">df_k5_statistics</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Results:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+----+--------+------------+-----------------+------+-------+--------+-------+---------+
+|cluster|user|behavior|avg_duration|avg_num_behaviors|avg_pv|avg_fav|avg_cart|avg_buy|avg_label|
++-------+----+--------+------------+-----------------+------+-------+--------+-------+---------+
+|      0|9701|  639437|        0.91|             1.12|  1.12|    0.0|     0.0|    0.0|      0.0|
+|      1|6673|   19246|       29.08|             3.08|  1.76|   0.07|     0.2|   1.05|      1.0|
+|      2|6688|   28996|       93.98|             3.97|   3.7|   0.05|    0.22|    0.0|      0.0|
+|      3|3700|   25239|       10.52|             1.62|  0.58|   1.01|    0.03|    0.0|      0.0|
+|      4|6853|   43490|        8.49|             1.61|  0.59|    0.0|    1.02|    0.0|      0.0|
++-------+----+--------+------------+-----------------+------+-------+--------+-------+---------+
+
+</code></pre></div></div>
+
+<p><strong>Heatmap</strong></p>
+
+<p>Use heatmap to differentiate among clusters. The highlighted square indicates the feature values are higher than the one from other clusters, which help understand the special traits for that cluster using the domain knowledge.</p>
+
+<p>Use sklearn Standardize features to remove the mean and scale to unit variance.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_k5</span><span class="p">)</span>
+<span class="n">heatmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_k5</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_clustering.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_clustering.png" alt="drawing" style="width: 50%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<p><strong>Analysis based on the heatmap and values</strong></p>
+
+<ul>
+  <li>Cluster 1: this group of behaviors are in high numbers and have the largest number of users involved. However, none of them converts to the final purchase order and they are even unlikely to trigger adding the items to the cart. Among all behavior types, it seems page views are in averages but still, they seem hibernates and less active. The duration between the user journey is the longest.</li>
+  <li>Cluster 2: these are the true buyers’ behaviors - averaged user journey duration, above averaged page view count, few carting behaviors, all these behaviors leading to the successfully created purchasing order.</li>
+  <li>Cluster 3: these are the active app users’ behavior patterns, almost no purchase at all, but conducting the greatest amount of behaviors in which the most of them are page views. The conversion rate is very low. Maybe the item is too expensive or because of other reasons that users are hesitating. The average user journey duration lasts around 4 days.</li>
+  <li>Cluster 4: these behaviors are browsing-focused since there is much less page view amount than the favorite amount, therefore these behaviors are conducted by the browsing pages where the user does not need to click the items’ landing pages but just add the item in the list to the favorites.</li>
+  <li>Cluster 5: just like Cluster 4 happened in the users’ browsing process, users directly put items into the cart, and thereafter no further actions were conducted.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cluster</th>
+      <th>User Journey Behavior Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Hibernate</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Active purchasing</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Active Viewing</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Collectors</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Hesitator</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_behavior.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_behavior.png" alt="drawing" style="width: 30%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_user.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_user.png" alt="drawing" style="width: 30%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<hr />
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>

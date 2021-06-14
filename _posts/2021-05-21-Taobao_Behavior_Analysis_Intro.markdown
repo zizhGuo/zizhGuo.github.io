@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Alibaba Taobao User Behaviors Analysis I: Dataset(1 billion records) and Preprocessing"
+title:  "Alibaba Taobao User Behaviors Analysis I: Dataset(100M records) and Preprocessing"
 date:   2021-05-21 11:34:57
 author: Zizhun Guo
 category: Projects
