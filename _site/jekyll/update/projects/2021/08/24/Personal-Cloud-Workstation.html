@@ -1,0 +1,215 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="https://localhost:4000/" />
+<meta property="og:url" content="https://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_DS.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Build Up a Personal Cloud Workstation using AWS Technologies</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			24 Aug 2021
+		</time>
+		</p>
+	</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="goal">Goal</h3>
+<ul>
+  <li>Set up the personal workstation using the cloud services provider such as Amazon Web Service (AWS) to support personal data science works for study and research</li>
+  <li>Choose a proper combination of the infrastructure giving it a reasonable low budget while enables the workflow in a good efficiency</li>
+  <li>Configure the working pipeline enabling the immediate hand on</li>
+</ul>
+
+<h6 id="ec2-instance-selection">EC2 Instance Selection</h6>
+
+<p><a href="https://aws.amazon.com/ec2/pricing/on-demand/?nc1=h_ls">Link: Amazon EC2 On-Demand Pricing</a></p>
+
+<p>Rather than running the instance 24/7, On-Demand suits fine for quick data analysis job in which the machine remains stopped while not in usage, which saves the pennies. There exists another cheaper strategy called Spot Instance which bids the on-demand price every time launching the instance while suffers shut down if the market price gets higher than the bidding. The snapshot image can be used to restore the system and data.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instance name</th>
+      <th>On-Demand hourly rate</th>
+      <th>vCPU</th>
+      <th>Memory</th>
+      <th>Storage</th>
+      <th>Network performance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>c5.2xlarge</td>
+      <td>$0.34</td>
+      <td>8</td>
+      <td>16 GiB</td>
+      <td>EBS Only</td>
+      <td>Up to 10 Gigabit</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Amazon EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/?trkCampaign=acq_paid_search_brand&amp;sc_channel=PS&amp;sc_campaign=acquisition_US&amp;sc_publisher=Google&amp;sc_category=Cloud%20Computing&amp;sc_country=US&amp;sc_geo=NAMER&amp;sc_outcome=acq&amp;sc_detail=%2Bamazon%20%2Bec2%20%2Bcloud%20%2Bservice&amp;sc_content={ad%20group}&amp;sc_matchtype=b&amp;sc_segment=488982705501&amp;sc_medium=ACQ-P</td>
+      <td>PS-GO</td>
+      <td>Brand</td>
+      <td>Desktop</td>
+      <td>SU</td>
+      <td>Cloud%20Computing</td>
+      <td>EC2</td>
+      <td>US</td>
+      <td>EN</td>
+      <td>Sitelink&amp;s_kwcid=AL!4422!3!488982705501!b!!g!!%2Bamazon%20%2Bec2%20%2Bcloud%20%2Bservice&amp;ef_id=CjwKCAjwp_GJBhBmEiwALWBQkx2jsTDU3u8MY-eAPvcBAnOk4O0urYLKG3thxc1H3qi_AaGptRJMbBoC_4kQAvD_BwE:G:s&amp;s_kwcid=AL!4422!3!488982705501!b!!g!!%2Bamazon%20%2Bec2%20%2Bcloud%20%2Bservice)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 id="storage-selection-option-ebs">Storage Selection Option: EBS</h6>
+
+<p><a href="https://aws.amazon.com/ebs/pricing/">Link: Amazon EBS Volumes Pricing</a></p>
+
+<p>By default gp2 works fine for personal use, it allows users to attach/detach/replace/delete the volume freely onto the instance on demand <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">See: Amazon Elastic Block Store (Amazon EBS)</a>.</p>
+
+<p>The price for gp2 is 0.10$/GB per month, therefore maintaining a large-sized volume sounds not a good deal since AWS charges once the EBS is created, even when the instance the block attached is off. One way to lower the cost is to delete the block once the instance is off, but create the snapshot of it and store it on S3, for it only cost 0.023$/GB per month. <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS snapshots</a></p>
+
+<h6 id="storage-selection-option-s3">Storage Selection Option: S3</h6>
+
+<p><a href="https://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a></p>
+
+<p>Standard S3 provides stable storage for data which only costs $0.023 per GB for storage (First 50 TB / Month), $0.01 per 1,000 requests, free for Data transferred from an Amazon S3 bucket to any AWS service(s) within the same AWS Region as the S3 bucket. What a deal!</p>
+
+<h6 id="remote-development-on-ipynb-files-using-vscode--jupyter-notebook">Remote Development on ipynb files using VScode + Jupyter Notebook</h6>
+
+<p>For VScode, install <strong>Remote-SSH</strong> extension and <strong>Jupyter</strong> Extension.</p>
+<ul>
+  <li><a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">Jupyter Notebooks in VS Code</a></li>
+  <li><a href="https://code.visualstudio.com/docs/remote/troubleshooting#_reusing-a-key-generated-in-puttygen">VScode-Remote Development Tips and Tricks</a></li>
+  <li><a href="https://serversforhackers.com/c/ssh-tricks">SSH Tricks</a></li>
+</ul>
+
+<p><strong>For both using VScode + Jupyter and Jupyter Notebook, the client end needs verifying .pem key for the authorization in order to connect the cloud Jupyter server.</strong></p>
+
+<p>Create the local key for the authorization:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@xxx:~$ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout xxx.pem -out xxx.pem
+</code></pre></div></div>
+
+<p>Insert these lines to jupyter configuration:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@xxx:~$ vi jupyter_notebook_config.py
+</code></pre></div></div>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">certfile</span> <span class="o">=</span> <span class="s">u'/home/ubuntu/certs/mycert.pem'</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">ip</span> <span class="o">=</span> <span class="s">'*'</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">open_browser</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">8888</span>
+</code></pre></div></div>
+
+<p><strong>Some Troubles might encountered during the configuration:</strong></p>
+
+<p><a href="https://stackoverflow.com/questions/52673879/trouble-with-jupyter-certifications">Trouble with Jupyter certifications: Permission Denied</a></p>
+
+<p>Change the ownship of the certs to current user through:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo chown -R user:user ~/.local/share/jupyter
+</code></pre></div></div>
+
+<p><a href="https://stackoverflow.com/questions/67753969/sslerror-ssl-ee-key-too-small-ee-key-too-small-ssl-c4022-on-ubuntu-when">SSLError: [SSL: EE_KEY_TOO_SMALL] ee key too small (_ssl.c:4022) on Ubuntu when starting jupyter notebook</a></p>
+
+<p>Generate a larger key through:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mycert.pem -out mycert.pem
+</code></pre></div></div>
+
+<p><a href="https://stackoverflow.com/questions/36387654/jupyter-on-ec2-ssl-error">Jupyter on EC2: SSL Error</a></p>
+
+<p>Enforce https:// rather than default chrome http://</p>
+
+<p><a href="https://www.cyberciti.biz/faq/how-to-install-xfs-and-create-xfs-file-system-on-debianubuntu-linux/">How to install xfs and create xfs file system on Debian/Ubuntu Linux</a></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install xfsrogs
+</code></pre></div></div>
+
+<p><strong>Resources</strong></p>
+
+<p><a href="https://www.jianshu.com/p/8fc3cd032d3c">远程访问服务器Jupyter Notebook的两种方法</a></p>
+
+<hr />
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="https://localhost:4000/" />
+<meta property="og:url" content="https://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_DS.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">YOLO Explore Object Detection PERFORMANCES In Relation To INPUT IMAGE DETERIORATION </h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			16 Apr 2021
+		</time>
+		</p>
+	</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><p><strong>Experiment</strong></p>
+
+<p><strong>Baseline Model and Tuning</strong></p>
+
+<p>We consider having the model trained based on the original dataset without processing it with distorted quality and treat it as the baseline model. A fine-tune process is also necessary to conduct in order to get the optimal performance for object detection. This allows us to fit the same dataset processed in distorted methods in further step and make it possible for us to compare how the dataset in the variable of distortion types would impact the performance of the baseline model.</p>
+
+<p><strong>Learning Rate Annealing</strong></p>
+
+<p>During the training process, the adjustment of the learning rate is best have. The learning rate represents the speed at which information accumulates in the neural network over time. In an ideal situation, we would start with a large learning rate and gradually reduce the speed until the loss value no longer diverges.
+The technique we use is learning rate annealing, which starts with a relatively high learning rate and then slowly reduces the learning rate during training. The idea behind this method is to move from the initial parameter to a “good” range of parameter values. We use the <strong>ReduceLROnPlateau</strong> callback method of the TensorFlow API to implement this step. This callback monitors a quantity and if no improvement is seen for a ‘patience’ number of epochs, the learning rate is reduced.</p>
+
+<p><strong>Early Stopping</strong></p>
+
+<p>In order to get better generalization performance to prevent the model from overfitting, we use the early stopping method. It is implemented by the TensorFlow EarlyStopping callback function. It stops training when a monitored metric has stopped improving based on the ‘patience’ - number of epochs with no improvement after which training will be stopped. We set it 3 for giving the 3 epochs training threshold times.</p>
+
+<p><strong>NMS Parameters Tuning: Score and IoU</strong></p>
+
+<p>Once the YOLO model has finished the training process, it is necessary to fine-tune the IoU threshold and Score threshold to improve the overall performance in mAP metric. We choose the strategy by individually incrementing the values of each parameter in the stride of 0.1 and evaluate its model performance. During the individual tuning of each parameter, we select the current parameter value that can make mAP reach the highest value as the baseline setting. Therefore, for the final tuning result, we expect to get IoU and Score setting as in the format of values of pairs.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/01-finetune-score.png">
+   <img src="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/01-finetune-score.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>Score Threshold Tuning Results</figcaption>
+</div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/02-finetune-score.png">
+   <img src="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/02-finetune-score.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>Score Threshold Tuning Line Graph</figcaption>
+</div>
+
+<p>It can be seen from Figure 12 that the overall line graph follows a monotonous downward trend which also applies to both categories of the Traffic sign and Stop sign.</p>
+
+<p>The Step sign category has the lowest degree of decline in AP value, and the decline rate is slower, so the curve looks smoother. From table 1, the results show Stop sign performs consistently steady until the score threshold reaches the values that close to the end.</p>
+
+<p>Traffic sign behaves in an opposite way, the AP value is decreasing from the beginning, as the score threshold increases linearly, the AP value decreases more rapidly.</p>
+
+<p>When the score value is 0.1, the mAP value of the YOLO model is the highest and performs best. Therefore 0.1 is selected for the score threshold value for the baseline YOLO model.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/03-finetune-iou.png">
+   <img src="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/03-finetune-iou.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>IoU Threshold Tuning Results</figcaption>
+</div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/04-finetune-iou.png">
+   <img src="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/04-finetune-iou.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>IoU Threshold Tuning</figcaption>
+</div>
+
+<p>It can be seen from Figure 13 all three lines display a two-phased behavior. In the first phase, they both demonstrate a smooth upwards trend in values. The increasing rate is too small to be noticed in the figure, but the performance improves from the results table.</p>
+
+<p>In the second phase, the overall mAP and AP of all categories drop rapidly. The starting point for having such a situation is when IoU threshold equals around 0.6.</p>
+
+<p>When the IoU value is 0.3, the mAP value of the YOLO model is the highest and performs best. Therefore, the IoU threshold setting for the baseline YOLO model is 0.3.</p>
+
+<p><strong>Fitting Dataset in Distortion</strong></p>
+
+<p>As it is mentioned in part 2, the dataset that employed for the experiment contains 3200 images, in which 10 percent of them are 320 images that are selected as the test set. The images in the test set will first be processed by different distortion methods, and then the test images of different types and levels of distortion will be input into the neural network for prediction, and the results will be used to measure the performance of the object detector using the final statistics of mAP.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/05-distortion-types.png">
+   <img src="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/05-distortion-types.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>Distortion Image Comparison Results</figcaption>
+</div>
+
+<p>Noted that all 320 test images serve only for testing the performance of the YOLO model. The model is trained and validated by the other 90 percent of the dataset.</p>
+
+<p><strong>Results</strong></p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/06-map_results.png">
+   <img src="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/06-map_results.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>Distortion Image Comparison Results</figcaption>
+</div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/07-map_comparison.png">
+   <img src="http://localhost:4001/assets/2021-04-15-YOLO-Experiment/07-map_comparison.png" alt="drawing" style="width: 50%;" />
+    </a>
+   <figcaption>Distortion Image Comparison Bar Graph</figcaption>
+</div>
+
+<p>From the experiment results, it is interesting to observe that the object detector is remarkably affected by the images of different distorted types in various behaviors.</p>
+
+<p>There are 3 distortion types that affect the detector in a positive way by increasing the mAP values. These three distortion types are Noise100, Grayscale, and Contrast. However, the increase of values is not significant therefore the impact levels are considered to be limited and weakly.</p>
+
+<p>The other three distortion types of images – Noise200, 2percentPackLost, 5percentPackLost – suffer extreme decrease. The 2percentPackLost and 5percentPackLost are even close to half and one-third of the performance with original images.</p>
+
+<p>Horizontally comparing detector’s performances with Stop signs(SS) and Traffic signs(TS), one using SS for all distortion types and levels beats what use TS. Surprisingly to observe that the 4 distortion types of images in Noise100, Noise200, Grayscale, and Contrast boosts the performances using SS. In other words, these 4 distortion types improved the detector’s ability to predict. However, it works in the opposite way when employs TS and exhibits a similar decrease in performance of overall mAP.</p>
+
+<hr />
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>

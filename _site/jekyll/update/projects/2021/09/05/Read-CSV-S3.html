@@ -1,0 +1,188 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="https://localhost:4000/" />
+<meta property="og:url" content="https://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_DS.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Working with AWS S3 and Pyspark with s3a filesystem</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			05 Sep 2021
+		</time>
+		</p>
+	</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><p><br /></p>
+
+<hr />
+
+<p><br /></p>
+<h4 id="manually-config">Manually Config</h4>
+
+<h6 id="step-1-get-packages">Step 1: Get Packages</h6>
+
+<ul>
+  <li><a href="https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws/3.2.0">Maven Download Hadoop-aws 3.2.0</a></li>
+  <li><a href="https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bundle/1.11.375">Maven Download AWS SDK For Java</a></li>
+  <li>Move two packages to $SPARK_HOME/jars</li>
+</ul>
+
+<h6 id="step-2-configuration">Step 2: Configuration</h6>
+<ul>
+  <li>Option 1:
+    <ul>
+      <li>Load jars in script in python:</li>
+    </ul>
+
+    <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kn">import</span> <span class="nn">findspark</span>
+  <span class="n">findspark</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="s">'/home/XXX/spark-3.1.2-bin-hadoop3.2'</span><span class="p">)</span>
+  <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
+
+  <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s">"SparkByExamples.com"</span><span class="p">)</span>\
+      <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.driver.extraClassPath"</span><span class="p">,</span> <span class="s">"./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar"</span><span class="p">)</span>\
+      <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.executor.extraClassPath"</span><span class="p">,</span> <span class="s">"./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar"</span><span class="p">)</span>\
+      <span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Option 2:
+    <ul>
+      <li>Set up local configuration file: <strong>spark-default.conf</strong> in <strong>$SPARK_HOME/conf/</strong>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+  spark.driver.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Once the configuration has done, there is no need to configure again unless the extra jars file are deleted.</strong></li>
+</ul>
+
+<h6 id="step-3-connect-to-s3-with-acesskey-and-secretkey-using-s3a">Step 3: Connect to S3 with AcessKey and SecretKey using s3a://</h6>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sc</span><span class="o">.</span><span class="n">_jsc</span><span class="o">.</span><span class="n">hadoopConfiguration</span><span class="p">()</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">"fs.s3a.access.key"</span><span class="p">,</span> <span class="s">"XXX"</span><span class="p">)</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">_jsc</span><span class="o">.</span><span class="n">hadoopConfiguration</span><span class="p">()</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">"fs.s3a.secret.key"</span><span class="p">,</span> <span class="s">"XXX"</span><span class="p">)</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">_jsc</span><span class="o">.</span><span class="n">hadoopConfiguration</span><span class="p">()</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">"fs.s3a.endpoint"</span><span class="p">,</span> <span class="s">"s3.amazonaws.com"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h6 id="step-4-read-remote-csv-file">Step 4: Read remote CSV file</h6>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s">'s3a://bucket-name/object-name'</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<h4 id="using-spark_homebinspark-submit-package-">Using $SPARK_HOME/bin/spark-submit –package []</h4>
+<p>Unfortunately this does not works in my case and keep beeping me.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@xxx:~/spark-3.1.2-bin-hadoop3.2$ bin/spark-submit --packages org.apache.hadoop:hadoop-aws:3.2.0
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: Missing application resource.
+</code></pre></div></div>
+<p>Help:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: spark-submit [options] &lt;app jar | python file | R file&gt; [app arguments]
+...
+--packages                  Comma-separated list of maven coordinates of jars to include
+                              on the driver and executor classpaths. Will search the local
+                              maven repo, then maven central and any additional remote
+                              repositories given by --repositories. The format for the
+                              coordinates should be groupId:artifactId:version.
+...
+</code></pre></div></div>
+
+<h4 id="resources">Resources</h4>
+<ul>
+  <li><a href="https://community.cloudera.com/t5/Support-Questions/Can-anyone-explain-spark-driver-extraclasspath-and-spark/td-p/224267">Can anyone explain spark.driver.extraclasspath and spark.executor.extraclasspath and –jars</a></li>
+  <li><a href="https://stackoverflow.com/questions/41886346/spark-2-1-0-session-config-settings-pyspark">Spark 2.1.0 <strong>session config settings</strong> (pyspark): show you all of the current config settings</a></li>
+  <li><a href="https://github.com/ramhiser/spark-kubernetes/issues/3">Exception: No FileSystem for scheme: s3, s3n, and s3a</a></li>
+  <li><a href="https://issues.apache.org/jira/browse/SPARK-15965">No FileSystem for scheme: s3n or s3a spark-2.0.0 and spark-1.6.1
+</a></li>
+  <li><a href="https://stackoverflow.com/questions/51434808/spark-submit-packages-vs-jars">Spark-Submit: –packages vs –jars</a></li>
+  <li><a href="https://blog.csdn.net/luofazha2012/article/details/80954958">Spark应用依赖jar包的添加解决方案</a></li>
+  <li><a href="https://www.jianshu.com/p/1e3bfa1d9835">spark-submit 如何添加 jar 包到 Spark Job</a></li>
+  <li><a href="https://spark.apache.org/docs/latest/configuration.html#application-properties">Spark: Spark Configuration</a></li>
+  <li><a href="https://spark.apache.org/docs/latest/submitting-applications.html">Spark: Submitting Applications</a></li>
+  <li><a href="https://stackoverflow.com/questions/50183915/how-can-i-read-from-s3-in-pyspark-running-in-local-mode">How can I read from S3 in pyspark running in local mode?</a></li>
+  <li><a href="https://stackoverflow.com/questions/32155617/connect-to-s3-data-from-pyspark"><strong>Connect to S3 data from PySpark</strong></a></li>
+  <li><a href="https://stackoverflow.com/questions/54358250/how-to-get-csv-on-s3-with-pyspark-no-filesystem-for-scheme-s3n">How to get csv on s3 with pyspark (No FileSystem for scheme: s3n)</a></li>
+</ul>
+
+<h4 id="tutorial">Tutorial</h4>
+<ul>
+  <li><a href="https://codelovingyogi.medium.com/pyspark-connect-to-aws-s3a-filesystem-82bee54e0812">pyspark connect to aws s3a filesystem</a></li>
+  <li><a href="https://notadatascientist.com/running-apache-spark-and-s3-locally/">Running Apache Spark and S3 locally</a>
+-<a href="https://sparkbyexamples.com/spark/spark-read-text-file-from-s3/">Spark Read Text File from AWS S3 bucket</a></li>
+  <li><a href="https://towardsai.net/p/programming/pyspark-aws-s3-read-write-operations">PySpark AWS S3 Read Write Operations</a></li>
+  <li><a href="http://blog.qiuqiu.info/12/04/2016/spark-datesource-s3-beijing-region">aws中国区踩坑：spark从s3中读文件</a></li>
+  <li><a href="https://blog.insightdatascience.com/how-to-access-s3-data-from-spark-74e40e0b2231">How to access S3 data from Spark</a></li>
+  <li><a href="https://sparkbyexamples.com/spark/write-read-csv-file-from-s3-into-dataframe/">Write &amp; Read CSV file from S3 into DataFrame</a></li>
+  <li><a href="https://mrpowers.medium.com/working-with-s3-and-spark-locally-1374bb0a354">Working with S3 and Spark Locally</a></li>
+</ul>
+
+<hr />
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>

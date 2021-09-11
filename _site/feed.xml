@@ -1,4 +1,233 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2021-07-07T20:28:33-04:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Diploma received! RIT M.S. Computer Science and Advanced Graduate Certificate in Big Data Analytics</title><link href="http://localhost:4001/jekyll/update/projects/2021/06/14/Big-Data-Analytics-diploma.html" rel="alternate" type="text/html" title="Diploma received! RIT M.S. Computer Science and Advanced Graduate Certificate in Big Data Analytics" /><published>2021-06-14T05:30:10-04:00</published><updated>2021-06-14T05:30:10-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/06/14/Big-Data-Analytics-diploma</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/06/14/Big-Data-Analytics-diploma.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2021-09-11T23:15:20+08:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Working with AWS S3 and Pyspark with s3a filesystem</title><link href="http://localhost:4001/jekyll/update/projects/2021/09/05/Read-CSV-S3.html" rel="alternate" type="text/html" title="Working with AWS S3 and Pyspark with s3a filesystem" /><published>2021-09-05T20:33:30+08:00</published><updated>2021-09-05T20:33:30+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/09/05/Read-CSV-S3</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/09/05/Read-CSV-S3.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;manually-config&quot;&gt;Manually Config&lt;/h4&gt;
+
+&lt;h6 id=&quot;step-1-get-packages&quot;&gt;Step 1: Get Packages&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws/3.2.0&quot;&gt;Maven Download Hadoop-aws 3.2.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bundle/1.11.375&quot;&gt;Maven Download AWS SDK For Java&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Move two packages to $SPARK_HOME/jars&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;step-2-configuration&quot;&gt;Step 2: Configuration&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;Option 1:
+    &lt;ul&gt;
+      &lt;li&gt;Load jars in script in python:&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;findspark&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;findspark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/home/XXX/spark-3.1.2-bin-hadoop3.2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pyspark.sql&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SparkSession&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SparkSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;appName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SparkByExamples.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;\
+      &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;spark.driver.extraClassPath&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;\
+      &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;spark.executor.extraClassPath&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;\
+      &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getOrCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Option 2:
+    &lt;ul&gt;
+      &lt;li&gt;Set up local configuration file: &lt;strong&gt;spark-default.conf&lt;/strong&gt; in &lt;strong&gt;$SPARK_HOME/conf/&lt;/strong&gt;
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+  spark.driver.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Once the configuration has done, there is no need to configure again unless the extra jars file are deleted.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;step-3-connect-to-s3-with-acesskey-and-secretkey-using-s3a&quot;&gt;Step 3: Connect to S3 with AcessKey and SecretKey using s3a://&lt;/h6&gt;
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_jsc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hadoopConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fs.s3a.access.key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;XXX&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_jsc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hadoopConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fs.s3a.secret.key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;XXX&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_jsc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hadoopConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fs.s3a.endpoint&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;s3.amazonaws.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;step-4-read-remote-csv-file&quot;&gt;Step 4: Read remote CSV file&lt;/h6&gt;
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'s3a://bucket-name/object-name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;using-spark_homebinspark-submit-package-&quot;&gt;Using $SPARK_HOME/bin/spark-submit –package []&lt;/h4&gt;
+&lt;p&gt;Unfortunately this does not works in my case and keep beeping me.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ubuntu@xxx:~/spark-3.1.2-bin-hadoop3.2$ bin/spark-submit --packages org.apache.hadoop:hadoop-aws:3.2.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Error: Missing application resource.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Help:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Usage: spark-submit [options] &amp;lt;app jar | python file | R file&amp;gt; [app arguments]
+...
+--packages                  Comma-separated list of maven coordinates of jars to include
+                              on the driver and executor classpaths. Will search the local
+                              maven repo, then maven central and any additional remote
+                              repositories given by --repositories. The format for the
+                              coordinates should be groupId:artifactId:version.
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;resources&quot;&gt;Resources&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://community.cloudera.com/t5/Support-Questions/Can-anyone-explain-spark-driver-extraclasspath-and-spark/td-p/224267&quot;&gt;Can anyone explain spark.driver.extraclasspath and spark.executor.extraclasspath and –jars&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/41886346/spark-2-1-0-session-config-settings-pyspark&quot;&gt;Spark 2.1.0 &lt;strong&gt;session config settings&lt;/strong&gt; (pyspark): show you all of the current config settings&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ramhiser/spark-kubernetes/issues/3&quot;&gt;Exception: No FileSystem for scheme: s3, s3n, and s3a&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/SPARK-15965&quot;&gt;No FileSystem for scheme: s3n or s3a spark-2.0.0 and spark-1.6.1
+&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/51434808/spark-submit-packages-vs-jars&quot;&gt;Spark-Submit: –packages vs –jars&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/luofazha2012/article/details/80954958&quot;&gt;Spark应用依赖jar包的添加解决方案&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/1e3bfa1d9835&quot;&gt;spark-submit 如何添加 jar 包到 Spark Job&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://spark.apache.org/docs/latest/configuration.html#application-properties&quot;&gt;Spark: Spark Configuration&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://spark.apache.org/docs/latest/submitting-applications.html&quot;&gt;Spark: Submitting Applications&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/50183915/how-can-i-read-from-s3-in-pyspark-running-in-local-mode&quot;&gt;How can I read from S3 in pyspark running in local mode?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/32155617/connect-to-s3-data-from-pyspark&quot;&gt;&lt;strong&gt;Connect to S3 data from PySpark&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/54358250/how-to-get-csv-on-s3-with-pyspark-no-filesystem-for-scheme-s3n&quot;&gt;How to get csv on s3 with pyspark (No FileSystem for scheme: s3n)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;tutorial&quot;&gt;Tutorial&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://codelovingyogi.medium.com/pyspark-connect-to-aws-s3a-filesystem-82bee54e0812&quot;&gt;pyspark connect to aws s3a filesystem&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://notadatascientist.com/running-apache-spark-and-s3-locally/&quot;&gt;Running Apache Spark and S3 locally&lt;/a&gt;
+-&lt;a href=&quot;https://sparkbyexamples.com/spark/spark-read-text-file-from-s3/&quot;&gt;Spark Read Text File from AWS S3 bucket&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://towardsai.net/p/programming/pyspark-aws-s3-read-write-operations&quot;&gt;PySpark AWS S3 Read Write Operations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.qiuqiu.info/12/04/2016/spark-datesource-s3-beijing-region&quot;&gt;aws中国区踩坑：spark从s3中读文件&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.insightdatascience.com/how-to-access-s3-data-from-spark-74e40e0b2231&quot;&gt;How to access S3 data from Spark&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sparkbyexamples.com/spark/write-read-csv-file-from-s3-into-dataframe/&quot;&gt;Write &amp;amp; Read CSV file from S3 into DataFrame&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mrpowers.medium.com/working-with-s3-and-spark-locally-1374bb0a354&quot;&gt;Working with S3 and Spark Locally&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Build Up a Personal Cloud Workstation using AWS Technologies</title><link href="http://localhost:4001/jekyll/update/projects/2021/08/24/Personal-Cloud-Workstation.html" rel="alternate" type="text/html" title="Build Up a Personal Cloud Workstation using AWS Technologies" /><published>2021-08-24T20:33:30+08:00</published><updated>2021-08-24T20:33:30+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/08/24/Personal-Cloud-Workstation</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/08/24/Personal-Cloud-Workstation.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;goal&quot;&gt;Goal&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Set up the personal workstation using the cloud services provider such as Amazon Web Service (AWS) to support personal data science works for study and research&lt;/li&gt;
+  &lt;li&gt;Choose a proper combination of the infrastructure giving it a reasonable low budget while enables the workflow in a good efficiency&lt;/li&gt;
+  &lt;li&gt;Configure the working pipeline enabling the immediate hand on&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;ec2-instance-selection&quot;&gt;EC2 Instance Selection&lt;/h6&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/ec2/pricing/on-demand/?nc1=h_ls&quot;&gt;Link: Amazon EC2 On-Demand Pricing&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Rather than running the instance 24/7, On-Demand suits fine for quick data analysis job in which the machine remains stopped while not in usage, which saves the pennies. There exists another cheaper strategy called Spot Instance which bids the on-demand price every time launching the instance while suffers shut down if the market price gets higher than the bidding. The snapshot image can be used to restore the system and data.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Instance name&lt;/th&gt;
+      &lt;th&gt;On-Demand hourly rate&lt;/th&gt;
+      &lt;th&gt;vCPU&lt;/th&gt;
+      &lt;th&gt;Memory&lt;/th&gt;
+      &lt;th&gt;Storage&lt;/th&gt;
+      &lt;th&gt;Network performance&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;c5.2xlarge&lt;/td&gt;
+      &lt;td&gt;$0.34&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;16 GiB&lt;/td&gt;
+      &lt;td&gt;EBS Only&lt;/td&gt;
+      &lt;td&gt;Up to 10 Gigabit&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[Amazon EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/?trkCampaign=acq_paid_search_brand&amp;amp;sc_channel=PS&amp;amp;sc_campaign=acquisition_US&amp;amp;sc_publisher=Google&amp;amp;sc_category=Cloud%20Computing&amp;amp;sc_country=US&amp;amp;sc_geo=NAMER&amp;amp;sc_outcome=acq&amp;amp;sc_detail=%2Bamazon%20%2Bec2%20%2Bcloud%20%2Bservice&amp;amp;sc_content={ad%20group}&amp;amp;sc_matchtype=b&amp;amp;sc_segment=488982705501&amp;amp;sc_medium=ACQ-P&lt;/td&gt;
+      &lt;td&gt;PS-GO&lt;/td&gt;
+      &lt;td&gt;Brand&lt;/td&gt;
+      &lt;td&gt;Desktop&lt;/td&gt;
+      &lt;td&gt;SU&lt;/td&gt;
+      &lt;td&gt;Cloud%20Computing&lt;/td&gt;
+      &lt;td&gt;EC2&lt;/td&gt;
+      &lt;td&gt;US&lt;/td&gt;
+      &lt;td&gt;EN&lt;/td&gt;
+      &lt;td&gt;Sitelink&amp;amp;s_kwcid=AL!4422!3!488982705501!b!!g!!%2Bamazon%20%2Bec2%20%2Bcloud%20%2Bservice&amp;amp;ef_id=CjwKCAjwp_GJBhBmEiwALWBQkx2jsTDU3u8MY-eAPvcBAnOk4O0urYLKG3thxc1H3qi_AaGptRJMbBoC_4kQAvD_BwE:G:s&amp;amp;s_kwcid=AL!4422!3!488982705501!b!!g!!%2Bamazon%20%2Bec2%20%2Bcloud%20%2Bservice)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h6 id=&quot;storage-selection-option-ebs&quot;&gt;Storage Selection Option: EBS&lt;/h6&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/ebs/pricing/&quot;&gt;Link: Amazon EBS Volumes Pricing&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;By default gp2 works fine for personal use, it allows users to attach/detach/replace/delete the volume freely onto the instance on demand &lt;a href=&quot;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html&quot;&gt;See: Amazon Elastic Block Store (Amazon EBS)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The price for gp2 is 0.10$/GB per month, therefore maintaining a large-sized volume sounds not a good deal since AWS charges once the EBS is created, even when the instance the block attached is off. One way to lower the cost is to delete the block once the instance is off, but create the snapshot of it and store it on S3, for it only cost 0.023$/GB per month. &lt;a href=&quot;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html&quot;&gt;Amazon EBS snapshots&lt;/a&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;storage-selection-option-s3&quot;&gt;Storage Selection Option: S3&lt;/h6&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/s3/pricing/&quot;&gt;Amazon S3 pricing&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Standard S3 provides stable storage for data which only costs $0.023 per GB for storage (First 50 TB / Month), $0.01 per 1,000 requests, free for Data transferred from an Amazon S3 bucket to any AWS service(s) within the same AWS Region as the S3 bucket. What a deal!&lt;/p&gt;
+
+&lt;h6 id=&quot;remote-development-on-ipynb-files-using-vscode--jupyter-notebook&quot;&gt;Remote Development on ipynb files using VScode + Jupyter Notebook&lt;/h6&gt;
+
+&lt;p&gt;For VScode, install &lt;strong&gt;Remote-SSH&lt;/strong&gt; extension and &lt;strong&gt;Jupyter&lt;/strong&gt; Extension.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.visualstudio.com/docs/datascience/jupyter-notebooks&quot;&gt;Jupyter Notebooks in VS Code&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.visualstudio.com/docs/remote/troubleshooting#_reusing-a-key-generated-in-puttygen&quot;&gt;VScode-Remote Development Tips and Tricks&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://serversforhackers.com/c/ssh-tricks&quot;&gt;SSH Tricks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;For both using VScode + Jupyter and Jupyter Notebook, the client end needs verifying .pem key for the authorization in order to connect the cloud Jupyter server.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Create the local key for the authorization:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ubuntu@xxx:~$ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout xxx.pem -out xxx.pem
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Insert these lines to jupyter configuration:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ubuntu@xxx:~$ vi jupyter_notebook_config.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;certfile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;u'/home/ubuntu/certs/mycert.pem'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'*'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;open_browser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotebookApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;port&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8888&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Some Troubles might encountered during the configuration:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/52673879/trouble-with-jupyter-certifications&quot;&gt;Trouble with Jupyter certifications: Permission Denied&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Change the ownship of the certs to current user through:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo chown -R user:user ~/.local/share/jupyter
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/67753969/sslerror-ssl-ee-key-too-small-ee-key-too-small-ssl-c4022-on-ubuntu-when&quot;&gt;SSLError: [SSL: EE_KEY_TOO_SMALL] ee key too small (_ssl.c:4022) on Ubuntu when starting jupyter notebook&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Generate a larger key through:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mycert.pem -out mycert.pem
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/36387654/jupyter-on-ec2-ssl-error&quot;&gt;Jupyter on EC2: SSL Error&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Enforce https:// rather than default chrome http://&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cyberciti.biz/faq/how-to-install-xfs-and-create-xfs-file-system-on-debianubuntu-linux/&quot;&gt;How to install xfs and create xfs file system on Debian/Ubuntu Linux&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install xfsrogs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Resources&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.jianshu.com/p/8fc3cd032d3c&quot;&gt;远程访问服务器Jupyter Notebook的两种方法&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Diploma received! RIT M.S. Computer Science and Advanced Graduate Certificate in Big Data Analytics</title><link href="http://localhost:4001/jekyll/update/projects/2021/06/14/Big-Data-Analytics-diploma.html" rel="alternate" type="text/html" title="Diploma received! RIT M.S. Computer Science and Advanced Graduate Certificate in Big Data Analytics" /><published>2021-06-14T17:30:10+08:00</published><updated>2021-06-14T17:30:10+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/06/14/Big-Data-Analytics-diploma</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/06/14/Big-Data-Analytics-diploma.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -19,7 +248,7 @@
 &lt;/div&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Alibaba Taobao User Behaviors Analysis V: User Journey purchase behavior Clustering - KMeans with MLlib</title><link href="http://localhost:4001/jekyll/update/projects/2021/06/01/Taobao_Behavior_Analysis_Model_4.html" rel="alternate" type="text/html" title="Alibaba Taobao User Behaviors Analysis V: User Journey purchase behavior Clustering - KMeans with MLlib" /><published>2021-06-01T05:23:52-04:00</published><updated>2021-06-01T05:23:52-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/06/01/Taobao_Behavior_Analysis_Model_4</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/06/01/Taobao_Behavior_Analysis_Model_4.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Alibaba Taobao User Behaviors Analysis V: User Journey purchase behavior Clustering - KMeans with MLlib</title><link href="http://localhost:4001/jekyll/update/projects/2021/06/01/Taobao_Behavior_Analysis_Model_4.html" rel="alternate" type="text/html" title="Alibaba Taobao User Behaviors Analysis V: User Journey purchase behavior Clustering - KMeans with MLlib" /><published>2021-06-01T17:23:52+08:00</published><updated>2021-06-01T17:23:52+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/06/01/Taobao_Behavior_Analysis_Model_4</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/06/01/Taobao_Behavior_Analysis_Model_4.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -433,7 +662,7 @@ ORDER BY prediction asc
 &lt;/div&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Alibaba Taobao User Behaviors Analysis IV: AARRR Framework (Revenue) - Sale rank, RFM model annotation</title><link href="http://localhost:4001/jekyll/update/projects/2021/05/27/Taobao_Behavior_Analysis_Model_3.html" rel="alternate" type="text/html" title="Alibaba Taobao User Behaviors Analysis IV: AARRR Framework (Revenue) - Sale rank, RFM model annotation" /><published>2021-05-27T19:10:27-04:00</published><updated>2021-05-27T19:10:27-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/05/27/Taobao_Behavior_Analysis_Model_3</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/05/27/Taobao_Behavior_Analysis_Model_3.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Alibaba Taobao User Behaviors Analysis IV: AARRR Framework (Revenue) - Sale rank, RFM model annotation</title><link href="http://localhost:4001/jekyll/update/projects/2021/05/28/Taobao_Behavior_Analysis_Model_3.html" rel="alternate" type="text/html" title="Alibaba Taobao User Behaviors Analysis IV: AARRR Framework (Revenue) - Sale rank, RFM model annotation" /><published>2021-05-28T07:10:27+08:00</published><updated>2021-05-28T07:10:27+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/05/28/Taobao_Behavior_Analysis_Model_3</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/05/28/Taobao_Behavior_Analysis_Model_3.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -767,7 +996,7 @@ FROM
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Alibaba Taobao User Behaviors Analysis III: AARRR Framework (Activation/Retention) - DAU, Retention Rate, etc</title><link href="http://localhost:4001/jekyll/update/projects/2021/05/25/Taobao_Behavior_Analysis_Model_2.html" rel="alternate" type="text/html" title="Alibaba Taobao User Behaviors Analysis III: AARRR Framework (Activation/Retention) - DAU, Retention Rate, etc" /><published>2021-05-25T09:34:57-04:00</published><updated>2021-05-25T09:34:57-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/05/25/Taobao_Behavior_Analysis_Model_2</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/05/25/Taobao_Behavior_Analysis_Model_2.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Alibaba Taobao User Behaviors Analysis III: AARRR Framework (Activation/Retention) - DAU, Retention Rate, etc</title><link href="http://localhost:4001/jekyll/update/projects/2021/05/25/Taobao_Behavior_Analysis_Model_2.html" rel="alternate" type="text/html" title="Alibaba Taobao User Behaviors Analysis III: AARRR Framework (Activation/Retention) - DAU, Retention Rate, etc" /><published>2021-05-25T21:34:57+08:00</published><updated>2021-05-25T21:34:57+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/05/25/Taobao_Behavior_Analysis_Model_2</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/05/25/Taobao_Behavior_Analysis_Model_2.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1027,7 +1256,264 @@ FROM
 &lt;p&gt;There is another way to calculate which is by finding the count of unique users number who has conducted another transaction within the 10 days except for the first day.&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Alibaba Taobao User Behaviors Analysis II: AARRR Framework (Acquisition) - PV, UV, CVR, Funnel Plot</title><link href="http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model.html" rel="alternate" type="text/html" title="Alibaba Taobao User Behaviors Analysis II: AARRR Framework (Acquisition) - PV, UV, CVR, Funnel Plot" /><published>2021-05-21T07:34:57-04:00</published><updated>2021-05-21T07:34:57-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Alibaba Taobao User Behaviors Analysis I: Dataset(100M records) and Preprocessing</title><link href="http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Intro.html" rel="alternate" type="text/html" title="Alibaba Taobao User Behaviors Analysis I: Dataset(100M records) and Preprocessing" /><published>2021-05-21T19:34:57+08:00</published><updated>2021-05-21T19:34:57+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Intro</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Intro.html">&lt;p&gt;&lt;strong&gt;Alibaba Taobao.com&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Taobao (Chinese: 淘宝网) is a Chinese online shopping platform. It is headquartered in Hangzhou and owned by Alibaba. It is ranked as the eighth most-visited website. Taobao.com was registered on April 21, 2003 by Alibaba Cloud Computing (Beijing) Co., Ltd.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Taobao Marketplace facilitates consumer-to-consumer (C2C) retail by providing a platform for small businesses and individual entrepreneurs to open online stores that mainly cater to consumers in Chinese-speaking regions (Mainland China, Hong Kong, Macau and Taiwan) and abroad,[4] which is made payable by online accounts. Its stores usually offer an express delivery service.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Taobao&quot;&gt;https://en.wikipedia.org/wiki/Taobao&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/AlibabaLogo.jpg&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/AlibabaLogo.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 40%;&quot; /&gt;
+   &lt;/a&gt;
+   &lt;br /&gt;
+    &lt;a href=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/Taobao_Logo.svg&quot;&gt;
+   &lt;img src=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/Taobao_Logo.svg&quot; alt=&quot;drawing&quot; style=&quot;width: 40%;&quot; /&gt;
+    &lt;/a&gt;
+   &lt;figcaption&gt;Alibaba Group LOGO &lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;dataset-user-behavior-data-from-taobao-for-recommendation&quot;&gt;Dataset: User Behavior Data from Taobao for Recommendation&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The dataset is collected from &lt;a href=&quot;https://tianchi.aliyun.com/dataset/dataDetail?dataId=649&amp;amp;userId=1&quot;&gt;&lt;strong&gt;Tianchi&lt;/strong&gt;&lt;/a&gt; - Data Science Workshop from Aliyun(阿里云)- literally means &lt;a href=&quot;https://us.alibabacloud.com/&quot;&gt;&lt;strong&gt;Alibaba Cloud&lt;/strong&gt;&lt;/a&gt;, the cloud computing service ranked &lt;strong&gt;third-largest&lt;/strong&gt; infrastucture as a service provider, right behind Amazon Web Services, Microsoft Azure.&lt;/p&gt;
+
+&lt;p&gt;User Behavior is a dataset of user behaviors from Taobao, for recommendation problem with implicit feedback. The dataset is offered by Alibaba.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;File&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+      &lt;th&gt;Feature&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;UserBehavior.csv&lt;/td&gt;
+      &lt;td&gt;All user behavior data&lt;/td&gt;
+      &lt;td&gt;User ID, item ID, category ID, behavior type, timestamp&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;UserBehavior.csv&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We random select about 1 million users who have behaviors including click, purchase, adding item to shopping cart and item favoring during November 25 to December 03, 2017. The dataset is organized in a very similar form to MovieLens-20M, i.e., each line represents a specific user-item interaction, which consists of user ID, item ID, item’s category ID, behavior type and timestamp, separated by commas. The detailed descriptions of each field are as follows:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Field&lt;/th&gt;
+      &lt;th&gt;Explanation&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;User ID&lt;/td&gt;
+      &lt;td&gt;An integer, the serialized ID that represents a user&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Item ID&lt;/td&gt;
+      &lt;td&gt;An integer, the serialized ID that represents an item&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Category ID&lt;/td&gt;
+      &lt;td&gt;An integer, the serialized ID that represents the category which the corresponding item belongs to&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Behavior type&lt;/td&gt;
+      &lt;td&gt;A string, enum-type from (‘pv’, ‘buy’, ‘cart’, ‘fav’)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Timestamp&lt;/td&gt;
+      &lt;td&gt;An integer, the timestamp of the behavior&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Note that the dataset contains 4 different types of behaviors, they are&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Behavior&lt;/th&gt;
+      &lt;th&gt;Explanation&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;pv&lt;/td&gt;
+      &lt;td&gt;Page view of an item’s detail page, equivalent to an item click&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;fav&lt;/td&gt;
+      &lt;td&gt;Purchase an item&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cart&lt;/td&gt;
+      &lt;td&gt;Add an item to shopping cart&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;buy&lt;/td&gt;
+      &lt;td&gt;Favor an item&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Dimensions of the dataset are&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Dimension&lt;/th&gt;
+      &lt;th&gt;Number&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;# of users&lt;/td&gt;
+      &lt;td&gt;987,994&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;# of items&lt;/td&gt;
+      &lt;td&gt;4,162,024&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;# of categories&lt;/td&gt;
+      &lt;td&gt;9,439&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;# of interactions&lt;/td&gt;
+      &lt;td&gt;100,150,807&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;1-dateset-preprocessing&quot;&gt;1. Dateset preprocessing&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Load the CSV dataset as Spark DateFrame using Pyspark&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;findspark&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;findspark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/home/zizhun/spark-3.1.1-bin-hadoop2.7'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pyspark.sql&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SparkSession&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Load csv file into spark dataframe&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'UserBehavior.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Change field names&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumnRenamed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_c0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;user_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumnRenamed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_c1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumnRenamed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_c2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;category_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumnRenamed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_c3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;behavior&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumnRenamed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_c4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;timestamps&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Check out the schema and partial view&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root
+ |-- user_id: string (nullable = true)
+ |-- item_id: string (nullable = true)
+ |-- category_id: string (nullable = true)
+ |-- behavior: string (nullable = true)
+ |-- timestamps: string (nullable = true)
+
++-------+-------+-----------+--------+----------+
+|user_id|item_id|category_id|behavior|timestamps|
++-------+-------+-----------+--------+----------+
+|      1|2268318|    2520377|      pv|1511544070|
+|      1|2333346|    2520771|      pv|1511561733|
+|      1|2576651|     149192|      pv|1511572885|
+|      1|3830808|    4181361|      pv|1511593493|
+|      1|4365585|    2520377|      pv|1511596146|
+|      1|4606018|    2735466|      pv|1511616481|
+|      1| 230380|     411153|      pv|1511644942|
+|      1|3827899|    2920476|      pv|1511713473|
+|      1|3745169|    2891509|      pv|1511725471|
+|      1|1531036|    2920476|      pv|1511733732|
++-------+-------+-----------+--------+----------+
+only showing top 10 rows
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Transform timestamps from Unixtime to date&lt;/strong&gt;
+The original timestamp is in format of Unixtime, therefore transforming it into 6 new readable field as datetime, date, month, day, hour and dayofweek.&lt;/p&gt;
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pyspark.sql.functions&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dayofmonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                  &lt;span class=&quot;n&quot;&gt;dayofyear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dayofmonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                  &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;weekofyear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                  &lt;span class=&quot;n&quot;&gt;format_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date_format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dayofweek&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dayofmonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'date'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; \
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'month'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; \
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'day'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dayofmonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; \
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hour'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; \
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'dayofweek'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dayofweek&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Results:
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+|user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+|      1|2268318|    2520377|      pv|1511544070|2017-11-24 12:21:10|2017-11-24|   11| 24|  12|        6|
+|      1|2333346|    2520771|      pv|1511561733|2017-11-24 17:15:33|2017-11-24|   11| 24|  17|        6|
+|      1|2576651|     149192|      pv|1511572885|2017-11-24 20:21:25|2017-11-24|   11| 24|  20|        6|
+|      1|3830808|    4181361|      pv|1511593493|2017-11-25 02:04:53|2017-11-25|   11| 25|   2|        7|
+|      1|4365585|    2520377|      pv|1511596146|2017-11-25 02:49:06|2017-11-25|   11| 25|   2|        7|
+|      1|4606018|    2735466|      pv|1511616481|2017-11-25 08:28:01|2017-11-25|   11| 25|   8|        7|
+|      1| 230380|     411153|      pv|1511644942|2017-11-25 16:22:22|2017-11-25|   11| 25|  16|        7|
+|      1|3827899|    2920476|      pv|1511713473|2017-11-26 11:24:33|2017-11-26|   11| 26|  11|        1|
+|      1|3745169|    2891509|      pv|1511725471|2017-11-26 14:44:31|2017-11-26|   11| 26|  14|        1|
+|      1|1531036|    2920476|      pv|1511733732|2017-11-26 17:02:12|2017-11-26|   11| 26|  17|        1|
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+only showing top 10 rows
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Discover dataset on the range of date&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-SQL&quot;&gt;SELECT Date, n_interactions
+FROM
+    (SELECT date as Date, COUNT(user_id) as n_interactions
+    FROM taobao
+    GROUP BY date
+    ORDER BY date)
+WHERE n_interactions &amp;gt; 10000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;         Date  n_interactions
+0  2017-11-24         3453235
+1  2017-11-25        10598765
+2  2017-11-26        10496631
+3  2017-11-27         9985084
+4  2017-11-28         9987905
+5  2017-11-29        10350799
+6  2017-11-30        10542266
+7  2017-12-01        11712571
+8  2017-12-02        14057989
+9  2017-12-03         8946657
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The distribution shows most of the interactions are conducted between &lt;em&gt;2017-11-24&lt;/em&gt; to 2017-12-03 (10 days).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Create TempView as Taobao from records based on the distribution&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;createOrReplaceTempView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;taobao&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Alibaba Taobao.com</summary></entry><entry><title type="html">Alibaba Taobao User Behaviors Analysis II: AARRR Framework (Acquisition) - PV, UV, CVR, Funnel Plot</title><link href="http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model.html" rel="alternate" type="text/html" title="Alibaba Taobao User Behaviors Analysis II: AARRR Framework (Acquisition) - PV, UV, CVR, Funnel Plot" /><published>2021-05-21T19:34:57+08:00</published><updated>2021-05-21T19:34:57+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1291,264 +1777,7 @@ WHERE PageView &amp;gt; 0 AND Favorite = 0 AND Cart = 0 AND Buy &amp;gt; 0
 &lt;/div&gt;
 &lt;hr /&gt;
 
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Alibaba Taobao User Behaviors Analysis I: Dataset(100M records) and Preprocessing</title><link href="http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Intro.html" rel="alternate" type="text/html" title="Alibaba Taobao User Behaviors Analysis I: Dataset(100M records) and Preprocessing" /><published>2021-05-21T07:34:57-04:00</published><updated>2021-05-21T07:34:57-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Intro</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Intro.html">&lt;p&gt;&lt;strong&gt;Alibaba Taobao.com&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Taobao (Chinese: 淘宝网) is a Chinese online shopping platform. It is headquartered in Hangzhou and owned by Alibaba. It is ranked as the eighth most-visited website. Taobao.com was registered on April 21, 2003 by Alibaba Cloud Computing (Beijing) Co., Ltd.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Taobao Marketplace facilitates consumer-to-consumer (C2C) retail by providing a platform for small businesses and individual entrepreneurs to open online stores that mainly cater to consumers in Chinese-speaking regions (Mainland China, Hong Kong, Macau and Taiwan) and abroad,[4] which is made payable by online accounts. Its stores usually offer an express delivery service.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Taobao&quot;&gt;https://en.wikipedia.org/wiki/Taobao&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/AlibabaLogo.jpg&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/AlibabaLogo.jpg&quot; alt=&quot;drawing&quot; style=&quot;width: 40%;&quot; /&gt;
-   &lt;/a&gt;
-   &lt;br /&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/Taobao_Logo.svg&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/Taobao_Logo.svg&quot; alt=&quot;drawing&quot; style=&quot;width: 40%;&quot; /&gt;
-    &lt;/a&gt;
-   &lt;figcaption&gt;Alibaba Group LOGO &lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;dataset-user-behavior-data-from-taobao-for-recommendation&quot;&gt;Dataset: User Behavior Data from Taobao for Recommendation&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The dataset is collected from &lt;a href=&quot;https://tianchi.aliyun.com/dataset/dataDetail?dataId=649&amp;amp;userId=1&quot;&gt;&lt;strong&gt;Tianchi&lt;/strong&gt;&lt;/a&gt; - Data Science Workshop from Aliyun(阿里云)- literally means &lt;a href=&quot;https://us.alibabacloud.com/&quot;&gt;&lt;strong&gt;Alibaba Cloud&lt;/strong&gt;&lt;/a&gt;, the cloud computing service ranked &lt;strong&gt;third-largest&lt;/strong&gt; infrastucture as a service provider, right behind Amazon Web Services, Microsoft Azure.&lt;/p&gt;
-
-&lt;p&gt;User Behavior is a dataset of user behaviors from Taobao, for recommendation problem with implicit feedback. The dataset is offered by Alibaba.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;File&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-      &lt;th&gt;Feature&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;UserBehavior.csv&lt;/td&gt;
-      &lt;td&gt;All user behavior data&lt;/td&gt;
-      &lt;td&gt;User ID, item ID, category ID, behavior type, timestamp&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;UserBehavior.csv&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;We random select about 1 million users who have behaviors including click, purchase, adding item to shopping cart and item favoring during November 25 to December 03, 2017. The dataset is organized in a very similar form to MovieLens-20M, i.e., each line represents a specific user-item interaction, which consists of user ID, item ID, item’s category ID, behavior type and timestamp, separated by commas. The detailed descriptions of each field are as follows:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Field&lt;/th&gt;
-      &lt;th&gt;Explanation&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;User ID&lt;/td&gt;
-      &lt;td&gt;An integer, the serialized ID that represents a user&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Item ID&lt;/td&gt;
-      &lt;td&gt;An integer, the serialized ID that represents an item&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Category ID&lt;/td&gt;
-      &lt;td&gt;An integer, the serialized ID that represents the category which the corresponding item belongs to&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Behavior type&lt;/td&gt;
-      &lt;td&gt;A string, enum-type from (‘pv’, ‘buy’, ‘cart’, ‘fav’)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Timestamp&lt;/td&gt;
-      &lt;td&gt;An integer, the timestamp of the behavior&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Note that the dataset contains 4 different types of behaviors, they are&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Behavior&lt;/th&gt;
-      &lt;th&gt;Explanation&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;pv&lt;/td&gt;
-      &lt;td&gt;Page view of an item’s detail page, equivalent to an item click&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;fav&lt;/td&gt;
-      &lt;td&gt;Purchase an item&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cart&lt;/td&gt;
-      &lt;td&gt;Add an item to shopping cart&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;buy&lt;/td&gt;
-      &lt;td&gt;Favor an item&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Dimensions of the dataset are&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Dimension&lt;/th&gt;
-      &lt;th&gt;Number&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;# of users&lt;/td&gt;
-      &lt;td&gt;987,994&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;# of items&lt;/td&gt;
-      &lt;td&gt;4,162,024&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;# of categories&lt;/td&gt;
-      &lt;td&gt;9,439&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;# of interactions&lt;/td&gt;
-      &lt;td&gt;100,150,807&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&quot;1-dateset-preprocessing&quot;&gt;1. Dateset preprocessing&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;Load the CSV dataset as Spark DateFrame using Pyspark&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;findspark&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;findspark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/home/zizhun/spark-3.1.1-bin-hadoop2.7'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pyspark.sql&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SparkSession&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Load csv file into spark dataframe&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'UserBehavior.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# Change field names&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumnRenamed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_c0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;user_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumnRenamed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_c1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumnRenamed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_c2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;category_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumnRenamed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_c3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;behavior&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; \
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumnRenamed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_c4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;timestamps&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Check out the schema and partial view&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root
- |-- user_id: string (nullable = true)
- |-- item_id: string (nullable = true)
- |-- category_id: string (nullable = true)
- |-- behavior: string (nullable = true)
- |-- timestamps: string (nullable = true)
-
-+-------+-------+-----------+--------+----------+
-|user_id|item_id|category_id|behavior|timestamps|
-+-------+-------+-----------+--------+----------+
-|      1|2268318|    2520377|      pv|1511544070|
-|      1|2333346|    2520771|      pv|1511561733|
-|      1|2576651|     149192|      pv|1511572885|
-|      1|3830808|    4181361|      pv|1511593493|
-|      1|4365585|    2520377|      pv|1511596146|
-|      1|4606018|    2735466|      pv|1511616481|
-|      1| 230380|     411153|      pv|1511644942|
-|      1|3827899|    2920476|      pv|1511713473|
-|      1|3745169|    2891509|      pv|1511725471|
-|      1|1531036|    2920476|      pv|1511733732|
-+-------+-------+-----------+--------+----------+
-only showing top 10 rows
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Transform timestamps from Unixtime to date&lt;/strong&gt;
-The original timestamp is in format of Unixtime, therefore transforming it into 6 new readable field as datetime, date, month, day, hour and dayofweek.&lt;/p&gt;
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pyspark.sql.functions&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dayofmonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                  &lt;span class=&quot;n&quot;&gt;dayofyear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dayofmonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                  &lt;span class=&quot;n&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;weekofyear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                  &lt;span class=&quot;n&quot;&gt;format_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;date_format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dayofweek&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dayofmonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'date'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; \
-            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'month'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; \
-            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'day'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dayofmonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; \
-            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hour'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; \
-            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'dayofweek'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dayofweek&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Results:
-+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
-|user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
-+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
-|      1|2268318|    2520377|      pv|1511544070|2017-11-24 12:21:10|2017-11-24|   11| 24|  12|        6|
-|      1|2333346|    2520771|      pv|1511561733|2017-11-24 17:15:33|2017-11-24|   11| 24|  17|        6|
-|      1|2576651|     149192|      pv|1511572885|2017-11-24 20:21:25|2017-11-24|   11| 24|  20|        6|
-|      1|3830808|    4181361|      pv|1511593493|2017-11-25 02:04:53|2017-11-25|   11| 25|   2|        7|
-|      1|4365585|    2520377|      pv|1511596146|2017-11-25 02:49:06|2017-11-25|   11| 25|   2|        7|
-|      1|4606018|    2735466|      pv|1511616481|2017-11-25 08:28:01|2017-11-25|   11| 25|   8|        7|
-|      1| 230380|     411153|      pv|1511644942|2017-11-25 16:22:22|2017-11-25|   11| 25|  16|        7|
-|      1|3827899|    2920476|      pv|1511713473|2017-11-26 11:24:33|2017-11-26|   11| 26|  11|        1|
-|      1|3745169|    2891509|      pv|1511725471|2017-11-26 14:44:31|2017-11-26|   11| 26|  14|        1|
-|      1|1531036|    2920476|      pv|1511733732|2017-11-26 17:02:12|2017-11-26|   11| 26|  17|        1|
-+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
-only showing top 10 rows
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Discover dataset on the range of date&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-SQL&quot;&gt;SELECT Date, n_interactions
-FROM
-    (SELECT date as Date, COUNT(user_id) as n_interactions
-    FROM taobao
-    GROUP BY date
-    ORDER BY date)
-WHERE n_interactions &amp;gt; 10000
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;         Date  n_interactions
-0  2017-11-24         3453235
-1  2017-11-25        10598765
-2  2017-11-26        10496631
-3  2017-11-27         9985084
-4  2017-11-28         9987905
-5  2017-11-29        10350799
-6  2017-11-30        10542266
-7  2017-12-01        11712571
-8  2017-12-02        14057989
-9  2017-12-03         8946657
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;The distribution shows most of the interactions are conducted between &lt;em&gt;2017-11-24&lt;/em&gt; to 2017-12-03 (10 days).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Create TempView as Taobao from records based on the distribution&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;createOrReplaceTempView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;taobao&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Alibaba Taobao.com</summary></entry><entry><title type="html">YOLO Project Poster Released!!! [with Audio]</title><link href="http://localhost:4001/jekyll/update/projects/2021/04/16/CP-Poster.html" rel="alternate" type="text/html" title="YOLO Project Poster Released!!! [with Audio]" /><published>2021-04-16T08:18:18-04:00</published><updated>2021-04-16T08:18:18-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/04/16/CP-Poster</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/04/16/CP-Poster.html">&lt;audio controls=&quot;&quot; autoplay=&quot;&quot; muted=&quot;&quot;&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">YOLO Project Poster Released!!! [with Audio]</title><link href="http://localhost:4001/jekyll/update/projects/2021/04/16/CP-Poster.html" rel="alternate" type="text/html" title="YOLO Project Poster Released!!! [with Audio]" /><published>2021-04-16T20:18:18+08:00</published><updated>2021-04-16T20:18:18+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/04/16/CP-Poster</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/04/16/CP-Poster.html">&lt;audio controls=&quot;&quot; autoplay=&quot;&quot; muted=&quot;&quot;&gt;
   &lt;!-- &lt;source src=&quot;http://localhost:4001/assets/2021-04-16-CP-Poster/record.mp3&quot; type=&quot;audio/ogg&quot;&gt; --&gt;
   &lt;source src=&quot;http://localhost:4001/assets/2021-04-16-CP-Poster/recordnew.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;
   Your browser does not support the audio element.
@@ -1562,7 +1791,7 @@ WHERE n_interactions &amp;gt; 10000
 &lt;/div&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Your browser does not support the audio element.</summary></entry><entry><title type="html">YOLO Explore Object Detection PERFORMANCES In Relation To INPUT IMAGE DETERIORATION</title><link href="http://localhost:4001/jekyll/update/projects/2021/04/15/YOLO-Experiment-copy.html" rel="alternate" type="text/html" title="YOLO Explore Object Detection PERFORMANCES In Relation To INPUT IMAGE DETERIORATION " /><published>2021-04-15T18:34:18-04:00</published><updated>2021-04-15T18:34:18-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/04/15/YOLO-Experiment%20copy</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/04/15/YOLO-Experiment-copy.html">&lt;p&gt;&lt;strong&gt;Experiment&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Your browser does not support the audio element.</summary></entry><entry><title type="html">YOLO Explore Object Detection PERFORMANCES In Relation To INPUT IMAGE DETERIORATION</title><link href="http://localhost:4001/jekyll/update/projects/2021/04/16/YOLO-Experiment-copy.html" rel="alternate" type="text/html" title="YOLO Explore Object Detection PERFORMANCES In Relation To INPUT IMAGE DETERIORATION " /><published>2021-04-16T06:34:18+08:00</published><updated>2021-04-16T06:34:18+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/04/16/YOLO-Experiment%20copy</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/04/16/YOLO-Experiment-copy.html">&lt;p&gt;&lt;strong&gt;Experiment&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Baseline Model and Tuning&lt;/strong&gt;&lt;/p&gt;
 
@@ -1661,243 +1890,4 @@ The technique we use is learning rate annealing, which starts with a relatively 
 &lt;p&gt;Horizontally comparing detector’s performances with Stop signs(SS) and Traffic signs(TS), one using SS for all distortion types and levels beats what use TS. Surprisingly to observe that the 4 distortion types of images in Noise100, Noise200, Grayscale, and Contrast boosts the performances using SS. In other words, these 4 distortion types improved the detector’s ability to predict. However, it works in the opposite way when employs TS and exhibits a similar decrease in performance of overall mAP.&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Experiment</summary></entry><entry><title type="html">YOLO Mechanism Part II: Training, Evaluation Metrics</title><link href="http://localhost:4001/jekyll/update/projects/2021/04/11/YOLO-Mechanism-part2-copy.html" rel="alternate" type="text/html" title="YOLO Mechanism Part II: Training, Evaluation Metrics" /><published>2021-04-11T06:13:14-04:00</published><updated>2021-04-11T06:13:14-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/04/11/YOLO-Mechanism-part2%20copy</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/04/11/YOLO-Mechanism-part2-copy.html">&lt;p&gt;&lt;strong&gt;Training&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Use Pretrained Model&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The pre-trained model is a deep learning architecture that has been trained to perform specific tasks on large amounts of data (for example, identifying classification problems in pictures). This kind of training is not easy to perform, and usually requires a lot of resources, beyond the resources available to many people who can use deep learning models, such as not having a large number of such GPUs.
-It should be noted that the weight of the pre-training model needs to conform to the model structure used in the current task. In other words, the pre-training model must also be trained with the model structure of the current architecture. Therefore, the only difference is whether the machine equipment can support large-scale dataset training.&lt;/p&gt;
-
-&lt;p&gt;The purpose of this is to increase training efficiency. In fact, many pre-training models already have relatively good prediction efficiency, but it should be noted that the data set during training of the pre-training model should have a target value similar to the current prediction task. In our case, there are two target categories in the Coco dataset that are similar to the two categories of the currently used Open Image dataset, namely Street Sign (COCO) corresponding to Traffic sign (Open Image) and Stop sign (COCO) and Stop sign ( Open Image).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Training Work Flow&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism-part2/01-training.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism-part2/01-training.png&quot; alt=&quot;drawing&quot; style=&quot;width: 50%;&quot; /&gt;
-    &lt;/a&gt;
-   &lt;figcaption&gt;Training workflow&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;We train in two steps:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Warm-up stage: Load the weights of the pre-trained model. For the first 50 epochs, the first 60 layers of pre-trained model hidden layers are frozen. These 60 layers of hidden layers are the backbone feature extraction network. The purpose of this is to speed up the training speed, because only the weights of the YOLO head part are updated, which protects the network weights from being influenced at the initial stage of training.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Unfreeze stage: Unfreeze the front 60 layers of backbone feature extraction network starting from the 51st epoch, and let the entire neural network participate in training. The training time will be greatly increased, but all weights will be updated in which the purpose is to make the backbone network fully adapt to the dataset of the current task.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Evaluation Metrics&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Generally speaking, for neural network models, it is hoped that the network model has a fast recognition speed, a small memory usage, and high detection accuracy. In terms of the current target detection problem, the general commonly used evaluation indicators are: mean average precision (map) and floating point operations per second (FLOPS). For the reason that our task only detects objects in the format of image files instead of video streaming, it is no longer needed to evaluate the detecting speed of the YOLO detector in our case, therefore mAP is the only metric we use to evaluate the performance.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Precision and Recall&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Below follows the definition of precison and recall :&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism-part2/02-metric.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism-part2/02-metric.png&quot; alt=&quot;drawing&quot; style=&quot;width: 50%;&quot; /&gt;
-    &lt;/a&gt;
-   &lt;figcaption&gt;Precision Recall&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;tp&lt;/strong&gt; represents true positive, &lt;strong&gt;fp&lt;/strong&gt; represents false positive, &lt;strong&gt;fn&lt;/strong&gt; represents false negative. The precision measures of all predictions made the percentage of correct positive predictions. The recall measures of all positive cases in reality the percentage of the correct positives cases are predicted. The trade-off between the two metrics depends on the task goal. In our case, the YOLO object detector is designed for traffic signs and stop signs detection which is related to traffic scenarios that are safety-sensitive, therefore to detects as many positive cases as possible from all positive cases is more important to increase the detection percentage among its own prediction, hence recall should be more primary to consider than precision. However, we only use precision and recall to calculate AP by drawing the PR-Curve.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Average Precision (AP) and PR-Curve&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The definition of &lt;strong&gt;AP&lt;/strong&gt; is defined as the area under the precision-recall curver (PR-curve). For multiple pairs of precision and recalls values, we get them through changing the confidence score threshold. The object that has a lower score than the threshold would be detected as a false positive.&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism-part2/03-prcurve.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism-part2/03-prcurve.png&quot; alt=&quot;drawing&quot; style=&quot;width: 50%;&quot; /&gt;
-    &lt;/a&gt;
-   &lt;figcaption&gt;PR-Curve Example for Stop Sign&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Given a PR-curve example shows above, the precision goes down once the recall goes up and vice versa. As a simple explanation to this pattern is, as more cases being detected positive cases, the precision increases due to at the same time, the overall detection cases increase as well but in smaller percentages. This would cause the recall to become smaller. Hence, the curve looks monotonically decreasing.&lt;/p&gt;
-
-&lt;p&gt;Noted that the later number simply represents the IoU threshold values. For example, AP50 represents the IoU threshold that equals 50%.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Mean Average Precision (mAP)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The metric mAP the averaged AP across all categories. In our cases, we have two categories Traffic sign and Stop signs, therefore the mAP in our experiment it simply means the summation of Traffic sign mAP and Stop sign mAP that divided by 2. The mAP is calculated after running the NMS algorithm. The mAP is the final evaluation metric of the detection model. After operations are completed, the final detection result is used to calculate the mAP value.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Training</summary></entry><entry><title type="html">YOLO Mechanism Part I: Input, Output, Encoding, Anchor Box, IoU, Decode, Confidence, NMS, Ground Truth, Loss</title><link href="http://localhost:4001/jekyll/update/projects/2021/03/31/YOLO-Mechanism-part1.html" rel="alternate" type="text/html" title="YOLO Mechanism Part I: Input, Output, Encoding, Anchor Box, IoU, Decode, Confidence, NMS, Ground Truth, Loss" /><published>2021-03-31T06:13:14-04:00</published><updated>2021-03-31T06:13:14-04:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/03/31/YOLO-Mechanism-part1</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/03/31/YOLO-Mechanism-part1.html">&lt;!-- ├── Project
-   ├── classification
-   │   ├── adversarial
-   │   ├── contrast020
-   │   ├── grayscale
-   │   ├── noise100
-   │   ├── noise200
-   │   └── original
-   └── App.py
-       ├── contrast020
-       ├── ensemble_adversarials
-       ├── grayscale
-       ├── noise100
-       ├── noise200
-       └── original --&gt;
-
-&lt;p&gt;&lt;strong&gt;Mechanism&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Object Detection is a regression task that neural networks are required to output not only the predicting score and class for an object but also the bounding boxes. Figure 3 shows the basic mechanism of Yolo networks as the one-staged object detector.&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/01-mechanism.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/01-mechanism.png&quot; alt=&quot;drawing&quot; style=&quot;width: 50%;&quot; /&gt;
-    &lt;/a&gt;
-   &lt;figcaption&gt;YOLO Mechanism&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Label y&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;As the figure[mechanism] shows, the output label is not the results output from the YOLO head layer, since the decode component would convert the bounding boxes’ encoding offsets into the real coordinates of the input image, Yolo Head works for filtering the real bound boxes and select ones that are expected to remain, therefore using the intermediate result – encodings as the labels ignores the additional operation and keeps the offsets as the normalized target values, which improved the efficiency to calculate the loss for the training process.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The shape of Input and Output&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The input image is sized in (m, 416, 416, 3), whereas m represents the number of batches set by the practitioners, (416, 416) represents the pixel numbers for the weight and height of the input images, and the 3 represents the channels numbers as RGB channels.&lt;/p&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/02-input-output.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/02-input-output.png&quot; alt=&quot;drawing&quot; style=&quot;width: 50%;&quot; /&gt;
-    &lt;/a&gt;
-   &lt;figcaption&gt;Original Input Image vs Images in cells&lt;/figcaption&gt;
-&lt;/div&gt;
-&lt;p&gt;The output encoding is sized in (m, 26, 26, 21) or (m, 13, 13, 21), whereas m is the same as the input image, due to the object detector is FPN structured, therefore two scaled feature maps are extracted but the network, however, both (26, 26) and (13, 13) represents the same meaning, which is the cells numbers of the original images. Yolo algorithm requires the image to be divided into cells into variable scales so that to enable extracting objects in different distances since the objects at a far distance would be small-sized in the image which takes fewer numbers of pixels than the objects in closer distance.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Encodings&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The encodings are fetched by the encoding process (see Encode in figure 3) while assigning the ground true samples during the training session or they are the intermediate results representing the extracted features process (see Feature Extractor in figure 3) which are output by the network backbone. The tensor size for the embeddings contains the same number of ranks of the input image but the actual features are thereby translated and embedded into the special object detection format.&lt;/p&gt;
-
-&lt;p&gt;The last dimension number of the output encoding represents the list of bounding boxes along with the recognized classes. In our case, we have two classes: Traffic Signs and Stop Signs. As the specific flatten format of the encodings can be reorganized in a more meaningful way, from figure 5, the last element of the output encoding is 21, which also can be represented in (3, 7). The first element of 3 indicates that there are three anchor boxes, which are set to vary the scales of detecting results, whereas the number of 7 represents p_c, t_x, t_y, t_w, t_h, c_1, c_2.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;p_c  : the confidence if it exists an object in current cell.&lt;/li&gt;
-  &lt;li&gt;t_x  : the x coordinate of the offset to anchor box grid cell.&lt;/li&gt;
-  &lt;li&gt;t_y  : the y coordinate of the offset to anchor box grid cell..&lt;/li&gt;
-  &lt;li&gt;t_w  : the relative weight ratio for the anchor box.&lt;/li&gt;
-  &lt;li&gt;t_h  : the relative height ratio for the anchor box.&lt;/li&gt;
-  &lt;li&gt;c_1  : the probability for the object being as a Traffic Sign.&lt;/li&gt;
-  &lt;li&gt;c_2  : the probability for the object being as a Stop Sign.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/03-encodings.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/03-encodings.png&quot; alt=&quot;drawing&quot; style=&quot;width: 50%;&quot; /&gt;
-    &lt;/a&gt;
-   &lt;figcaption&gt;Encoding in (13, 13, 3, 7)&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Anchor Box&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The concept of anchor box was originally introduced by Faster RCNN. The anchor box (also known as the bounding box prior in the paper, and the anchor box is used later) is the statistics (using k-means) from all the ground truth boxes in the training set and the most frequently appearing box shapes and sizes in the training set. These statistical prior (or human) experiences can be added to the model in advance so that when the model is learning, the model converges quickly.&lt;/p&gt;
-
-&lt;p&gt;Another understanding about using anchor boxes is that the traditional object detection head used as the regressor can only detect one object. The performance for multiple object detection would be affected and interference due to the variant shape of the bounding boxes. To solve this issue, multiple regressors can be used which are all limited to specific detecting regions. To achieve such a mechanism, for each grid cell, there could set multiple anchor boxes in different shapes specifically in charge for detecting objects around the positions.&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/04-anchor-boxes.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/04-anchor-boxes.png&quot; alt=&quot;drawing&quot; style=&quot;width: 50%;&quot; /&gt;
-    &lt;/a&gt;
-   &lt;figcaption&gt;3 Anchor Boxes for single route of feature maps&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;From 4.2 FPN and 5.3 Encodings parts, we have two routes of feature map output for each input image sample. Therefore, we have two features that are in tensors’ shape in (13, 13, 3, 7) and (26, 26, 3, 7). The third number 3 implies there are three anchor boxes that are used for specifying the regressors.&lt;/p&gt;
-
-&lt;p&gt;For the route feature maps in the shape of (26, 26, 3, 7), we select (23,27), (37,58), (81,82) sized bounding boxes as the anchor boxes. For the route feature maps in the shape of (13, 13, 3, 7), we select (81,82), (135,169), (344,319) as the anchor boxes.&lt;/p&gt;
-
-&lt;p&gt;As can be seen by the size values, for images divided into (26, 26) cells, each cell is smaller than the ones processed into (13, 13), hence the anchor boxes for (26, 26) cells are smaller in the number of pixels, whereas the (13, 13) cells have greater sized anchor boxes.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Intersection over Union for bounding boxes&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The bounding box is represented in a format of 4 numbers. In the different processes of the YOLO neural networks, the tensors of the bounding boxes are variant processed. For example, the bounding box values as the intermediate results that are produced after the encoding process are represented in the format of (t_x, t_y, t_w, t_h). This tensor cannot be directly used to reference the exact bounding box’s coordinates so that to use it as the prediction results. Therefore, such intermediate should be decoded into the real coordinates that have the midpoints, weights, and heights in size of the same scales of the real image. The actual bounding box is set to be in the format of (b_x, b_y, b_w, b_h) whereas b_x represents the bounding box mid point x-coordinate, b_y  represents the bounding box mid point y-coordinate, b_w   represents the weight of the bounding box and b_h  represents the height of the bounding box.&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/05-IoU.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/05-IoU.png&quot; alt=&quot;drawing&quot; style=&quot;width: 50%;&quot; /&gt;
-    &lt;/a&gt;
-   &lt;figcaption&gt;Bounding Box example&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Intersection over Union (IoU) is an evaluation metric that can be used in the prediction task of bounding boxes in values of ranges. The metric applies to all shapes of objects. In YOLO neural networks, it serves the same purpose by calculating the ratio between the intersection area over the union area to measure the accuracy of bounding boxes regressor.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Decode&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;As the anchor boxes have different sizes of the boxes, YOLO only predicts the bounding boxes in the format of (t_x, t_y, t_w, t_h) that bonds to different anchor boxes where each value represent the offsets and relative values, due to the model instability when in early training iteration[]. However, this form of coordinates does not affect the final location prediction. The decoding process would translate the temporary coordinates into the bounding boxes coordinates relevant to the real image size.&lt;/p&gt;
-
-&lt;p&gt;b_x= σ(t_x )+ c_x&lt;/p&gt;
-
-&lt;p&gt;b_y= σ(t_y )+ c_y&lt;/p&gt;
-
-&lt;p&gt;b_w=p_w  e^(t_w )&lt;/p&gt;
-
-&lt;p&gt;b_h=p_h  e^(t_h )&lt;/p&gt;
-
-&lt;p&gt;b_x and b_y represent the bounding box center coordinates,  b_w and b_h represent the bounding box weight and height. t_x and t_y represent the level of the center point shifts reletively to the c_x and c_y which represent that the cell is offset from the top left corner of the image. The b_w and b_h represent the weight and height of the bounding box prior (also known as the anchor box).&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/06-decode.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/06-decode.png&quot; alt=&quot;drawing&quot; style=&quot;width: 50%;&quot; /&gt;
-    &lt;/a&gt;
-   &lt;figcaption&gt;Bounding Box Decode&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The Decode process transforms the feature maps in the shape of (t_x, t_y, t_w, t_h) into the shape of (b_x, b_y, b_w, b_h), which makes it possible to not only take the advantage of anchor box mechanism but also by constraining the values of bounding boxes so that to make the network more stable.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Confidence Scores&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;YOLO defines the Confidence Scores as the product of the confidence and the Intersection of Union (IOU) of prediction and ground truth bounding boxes’ paris.&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/07-confidence.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/07-confidence.png&quot; alt=&quot;drawing&quot; style=&quot;width: 50%;&quot; /&gt;
-    &lt;/a&gt;
-&lt;/div&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;The Pr(〖Class〗_i&lt;/td&gt;
-      &lt;td&gt;Object) from the equation in our case is c_1  and c_2. Therefore, the final confidence score is determined how much the overlapping ratio between the prediction and ground true bounding boxes and the object-specific probability.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;Non-Max Suppression&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Non-maximum suppression (NMS) is an algorithm for removing non-maximum values. The simple understanding is to select all the partial substitutions by defining the part. In the process of object detection, a large number of candidate bounding boxes will be generated at the same object position. These candidate boxes may overlap with each other. In this situation, the NMS would first generates a detection box with the object detection confidence score, the detection boxes with the highest scores are replaced, and other detection boxes that have obvious overlap with the replaced detection boxes are suppressed.&lt;/p&gt;
-
-&lt;p&gt;The progress of the Non-maximum suppression algorithm : (1) Sort bounding box list by confidence scores; (2) Select the bounding box with the highest confidence score and add it to the final output list, and delete it from the bounding box list; (3) Calculate the area of all bounding boxes; (4) Calculate the IoU of the bounding box with the highest confidence score and other additional boxes; (5) Delete bounding boxes with IoU greater than the threshold; (6) Repeat the above process until the bounding box list is empty.&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/08-NMS.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/08-NMS.png&quot; alt=&quot;drawing&quot; style=&quot;width: 50%;&quot; /&gt;
-    &lt;/a&gt;
-   &lt;figcaption&gt;NMSe&lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The image on the left is the result of the candidate boxes of YOLO detection. Each bounding box has a confidence score. If NMS is not used, multiple candidate boxes will appear such as duplicate bounding boxes on the same object and bounding boxes on other objects which should not be seen as the target objects. The image on the right-hand side is the result of using non-maximum suppression, which fits the expectation to have two bounding boxes attached on two traffic signs.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Ground Truth Boxes Assignment&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Before the training session, one necessary step is to define the positive and negative cases for target variables for each image sample. It is essential to assign the ground true bounding box in the appropriate anchor box. Since each object, has only one corresponding bounding box for labeling but exists multiple anchor box regressors. The strategy is to calculate the IoU between ground true bounding box with each anchor box and select the anchor box with the greatest IoU as the target.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Loss&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The loss function of YOLO v4 is mainly divided into three parts: bounding box regression loss, confidence loss and classification loss.&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/09-loss.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/09-loss.png&quot; alt=&quot;drawing&quot; style=&quot;width: 50%;&quot; /&gt;
-    &lt;/a&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The S and B represent the grid cells number and the bounding box priors (anchor boxes) number. The value of I_ij^obj parameter decides whether count the loss of the bounding boxes. If I_ij^obj equals 1, it means that the predicting bounding box matches the current anchor box, whereas if it is 0, the loss does not take into account.&lt;/p&gt;
-
-&lt;p&gt;The G_ij plays a similar role as the I_ij^obj, it defines whether the confidence scores of the prediction result should be considered. For C_i^j =1, the predicted bounding box has the greatest IoU with ground truth box, hence C_i^j =0 for the cells of other anchor box types. One particular case is, the current anchor box which does not assign to detect a specific object class produces the IoU that is greater than the IoU threshold (YOLO paper is 0.5), G_ij would be 0 to neglect the loss calculation for it.&lt;/p&gt;
-
-&lt;p&gt;In the original YOLO paper[], the loss function employs sum-squared error for it is easy to calculate. In our project, we use the binary cross-entropy as the cost for each grid cell and bounding box prior.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Experiment</summary></entry></feed>

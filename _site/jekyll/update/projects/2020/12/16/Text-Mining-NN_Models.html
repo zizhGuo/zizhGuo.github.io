@@ -1,0 +1,274 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="https://localhost:4000/" />
+<meta property="og:url" content="https://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_DS.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">NLP Text Mining (8/8) - NN Models (CNN, RNN encoder-decoder LSTM/GRU) (TensorFlow Keras)</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			16 Dec 2020
+		</time>
+		</p>
+	</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><h3 id="neural-network-models">Neural Network Models</h3>
+<hr />
+
+<h3 id="python-files">Python Files</h3>
+<ul>
+  <li><strong>create_CNN_model.py</strong>: This files contains the python code to create the CNN model used for the experiments.</li>
+  <li><strong>create_RNN_model.py</strong>: This files contains the python code to create the RNN model used for the experiments.</li>
+  <li><strong>tuning_CNN_model.py</strong>: This files contains the python code for tuning the CNN model used for the experiments.</li>
+</ul>
+
+<h3 id="1-tensorflow-keras-embedding-layer">1. Tensorflow Keras Embedding Layer</h3>
+
+<p>The embedding layer is a special layer that is normally placed at the beginning of a neural network. Similar to W2V, it is an individual layer trained to work as a lookup table for the one-hot encoding input documents. The weights matrix represents the word embeddings. The documents which are made of the list of sequence would be converted into a stack of word vectors. We employ the average pooling layer to produce the mean word embeddings to represent a single document for normal W2V cases, but in our CNN model or RNN models, we would use more strategies to use the embedding layer’s output. Besides, the weights matrix of the embedding layer would be trained along with the other parameters of the neural network using the back-propagation method.</p>
+
+<p><img src="http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/Embedding_layer_model.png" alt="" /></p>
+
+<p><strong>Figure 1: Textual Model Structure using TensorFlow Keras Embedding Layer</strong></p>
+<h3 id="2-cnn">2. CNN</h3>
+<p>As one of famous deep learning models, CNN has been widely used in computer vision tasks. Since the year of 2014, the CNN has been discovered to be proved successfully workable not only the computer vision jobs but also the text classification.</p>
+
+<h5 id="21-model-architecture">2.1. Model Architecture</h5>
+
+<p>In our experiment, we implement a CNN model with its architecture designed based on the Yoon Kim’s architecture. The Embedding Layer works for training the word embeddings as it was been discussed previously. The Convolutional Layer has hundreds of feature maps as filters to convolute the document representation. The Global Max Layer is charged for keeping the most unique value to represent an independent document among all. The Dropout layer works as a regularization role. At last, the Softmax layer computes the probability distribution for three categories. We then classify the sample into the category which has the greatest value. In our experiments, we use the TensorFlow Keras deep learning library to implement this CovNet.</p>
+
+<p><img src="http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/CNN_architecture.png" alt="" /></p>
+
+<p><strong>Figure 2: CNN model architecture</strong></p>
+
+<h5 id="22-hyperparameters-tuning">2.2. Hyperparameters Tuning</h5>
+<p>In order to find the CNN model that produces the highest prediction accuracy, we have tuned the model regarding three hyperparameters that are hugely affected the model’s performance: Sequence Size, Filter Region Size and Feature Maps numbers.</p>
+
+<p><strong>Tuning Sequence Size:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sequence Size</th>
+      <th>Val_Acc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>0.722</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>0.7905</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>0.835167</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>0.874</td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>0.906667</td>
+    </tr>
+    <tr>
+      <td>200</td>
+      <td>0.926667</td>
+    </tr>
+    <tr>
+      <td>400</td>
+      <td>0.938167</td>
+    </tr>
+    <tr>
+      <td>800</td>
+      <td>0.944</td>
+    </tr>
+    <tr>
+      <td>1000</td>
+      <td>0.9475</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/acc_sequence_sizes_forReport.png" alt="" /></p>
+
+<p><strong>Figure 3: CNN model train/validate Accuracy vs Embedding Sequence Sizes</strong>
+<strong>Tuning Filter Region Size:</strong>
+| Sequence Size   | Val_Acc |
+| ———– | ———– |
+|1	|0.946667|
+|3	|0.947833|
+|5	|0.945833|
+|7	|0.944333|
+|10	|0.941833|
+|15	|0.942|
+|20	|0.938833|
+|25	|0.937333|
+|30	|0.9385|</p>
+
+<p><img src="http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/acc_filter_region_sizes_forReport.png" alt="" /></p>
+
+<p><strong>Figure 4: CNN model train/validate Accuracy vs Embedding Filter Region Sizes</strong>
+<strong>Tuning Embedding Trainable Methods:</strong>
+| Trainable  | Val_Acc |
+| ———– | ———– |
+|non-static	|0.948667|
+|static	|0.9475|</p>
+
+<p><strong>Tuning Filter Feature Maps Numbers:</strong>
+|Feature Maps Numbers|Val_Acc|
+| ———– | ———– |
+|10|	0.925167|
+|20|	0.936|
+|30|	0.937667|
+|50|	0.943167|
+|100|	0.947167|
+|200|	0.948667|
+|400|	0.948833|
+|800|	0.951667|
+|1000|	0.951833|
+<img src="http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/acc_filter_featuremaps_numbers_forReport.png" alt="" /></p>
+
+<p><strong>Figure 5: CNN model train/validate Accuracy vs Featuremaps Number</strong></p>
+
+<p><strong>Configuration</strong></p>
+<ul>
+  <li>Input word vectors:	GloVe 300d</li>
+  <li>Static or non-static:	static</li>
+  <li>Filter region size (window):	3</li>
+  <li>Stride:	1</li>
+  <li>Feature maps:	1000</li>
+  <li>Activation function:	ReLU</li>
+  <li>Pooling: 	GlobalMaxPooling</li>
+  <li>Dropout rate:	0.5</li>
+  <li>Optimizer:	Adam</li>
+  <li>Batch size:	128</li>
+  <li>Epochs:	20</li>
+  <li>Cross Validation:	10-folds</li>
+</ul>
+
+<h3 id="3-rnn-model-architecture">3. RNN Model Architecture</h3>
+<h5 id="31-encoder-architecture">3.1. Encoder Architecture</h5>
+<p>Recurrent Neural Network (RNN) has long been used for learning the sequence of documents employing a directed node graph along temporal steps. We adopt the Encoder part of the RNN-Encoder-Decoder model as our RNN architecture since the architecture fits the requirement of the text classification task that documents can be input along with the temporal steps and in the end, the memory unit will produce a document representation. As seen from the figure 5, the encoder takes in a variable-length sequence 〖(X〗_1,X_2,…,X_T)and converts it into a fixed-length vector representation C. 
+<img src="http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/RNN-Encoder.png" alt="" /></p>
+
+<p><strong>Figure 6: RNN Encoder Model</strong></p>
+
+<h5 id="32-gru-and-lstm">3.2. GRU and LSTM</h5>
+<p>LSTM has a longer history than GRU. It was firstly introduced in 1997 and was modified throughout the time. New features like forget gate and peephole would add during the evolution. The GRU is a newer generation of RNN work similar to LSTM that enables memorizing the short-term and long-term dependencies by implementing a reset gate and an update gate during training. There is no memory cell as it is called in LSTM but has a hidden state works the same function. The figure 6 shows the inner structure of two memory units.</p>
+
+<p><img src="http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/GRU_LSTM.png" alt="" /></p>
+
+<p><strong>Figure 7: Unit Comparison between naïve RNN, LSTM and GRU</strong></p>
+
+<h5 id="33-model-architecture">3.3. Model Architecture</h5>
+<p>In our experiment, we implement a RNN decoder model with its architecture designed based on the Cho’s architecture. It works the same way as it was described in the CNN model’s section. The document-representation sends the batches of samples in the Input Layer at the beginning. After the embedding process by the Embedding Layer, the embeddings are continuously transferred to GRU layer. Through a recurrent time-based learning process using the Backpropagation method, the weights of the model would be updated. The final layer is the Softmax Layer which works to classify the samples into three categories.</p>
+
+<p><img src="http://localhost:4001/assets/2020-12-15-Text-Mining/images/NN_models/RNN_GRU.png" alt="" /></p>
+
+<p><strong>Figure 8: RNN-GRU model architecture</strong>
+As for memory unit, the Encoder model can use either Gated Recurrent Unit (GRU) or Long-short term Memory (LSTM) to memorize the historical dependencies as in the form of the hidden state.</p>
+
+<h3 id="appendix">Appendix</h3>
+
+<h5 id="a1-other-layers-details">A1. Other layers details</h5>
+<p><strong>Global Max Pooling Layer</strong>
+The output tensors from convolution layer yields concatenate results of each 128 filters’ hence the original matrix turns into the vector. For each sequence, we only keep the maximum value which maintains the review local feature.
+<strong>Concatenate Layer and Flatten Layer</strong>
+We concatenate all results of three types of filters and flatten readily for the neurons to take.
+<strong>Regularization: Dropout Layer</strong>
+We assign a Dropout Layer as regularization masks to help prevent overfitting issue.
+<strong>Fully Connected Layer</strong>
+We only assign a dense layer as the output layer using activation function of Softmax.</p>
+
+<h5 id="a2-tensorflow-keras-summary">A2. TensorFlow Keras Summary</h5>
+<p>•	Utils.plot_model: Plot Model diagram. It requires pydot and graphviz, which should be installed to python lib and set executable directory into system environment path.
+•	Optimizers: Provides different classes of optimize rule like ‘Adam’, ‘Adadelta’, etc.
+•	Layers: All types of NN layers like ‘Flatten’, ‘Concatenate’, etc
+•	Experimental.preprocessing.TextVectorization</p>
+
+<h5 id="a3-gpu-acceleration">A3. GPU Acceleration</h5>
+<p>NVIDIA GPU with CUDA architectures supports acceleration for TensorFlow, therefore by using GPU to process DL tasks is good. Currently, my machine has a video card of GeForce GTX 1060 6GB, which has the compute Capability of 6.1. They way to implement it is to install CUDA and NVCC on the machine. The TF will automatically search out the installation and use it while training. After getting deeper knowledge about TF, specific operation controlling GPU/CPU as multiple purpose can be achieve by coding without Keras package instead the self-configure TF package.</p>
+
+<h3 id="resources">Resources</h3>
+<ul>
+  <li>Implementing a CNN for Text Classification in TensorFlow: http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/</li>
+  <li>Understanding Convolutional Neural Networks for NLP: http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/</li>
+  <li>Global Max Pooling vs Max Pooling: https://stackoverflow.com/questions/43728235/what-is-the-difference-between-keras-maxpooling1d-and-globalmaxpooling1d-functi/43730861
+Multi Class Text Classification with Keras and LSTM: https://medium.com/@djajafer/multi-class-text-classification-with-keras-and-lstm-4c5525bef592
+Report on Text Classification using CNN, RNN &amp; HAN: https://medium.com/jatana/report-on-text-classification-using-cnn-rnn-han-f0e887214d5f
+Text classification with an RNN: https://www.tensorflow.org/tutorials/text/text_classification_rnn</li>
+</ul>
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>

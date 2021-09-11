@@ -1,0 +1,105 @@
+---
+layout: post
+title:  "Working with AWS S3 and Pyspark with s3a filesystem"
+date:   2021-09-05 12:33:30
+author: Zizhun Guo
+category: Projects
+categories: jekyll update
+visible: 1
+---
+
+<br>
+
+---
+
+<br>
+#### Manually Config
+
+###### Step 1: Get Packages
+
+- [Maven Download Hadoop-aws 3.2.0](https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws/3.2.0)
+- [Maven Download AWS SDK For Java](https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bundle/1.11.375)
+- Move two packages to $SPARK_HOME/jars
+
+###### Step 2: Configuration
+- Option 1:
+    - Load jars in script in python:
+    
+    ```py
+    import findspark
+    findspark.init('/home/XXX/spark-3.1.2-bin-hadoop3.2')
+    from pyspark.sql import SparkSession
+
+    spark = SparkSession.builder.appName("SparkByExamples.com")\
+        .config("spark.driver.extraClassPath", "./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar")\
+        .config("spark.executor.extraClassPath", "./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar")\
+        .getOrCreate()
+    ```
+- Option 2:
+    - Set up local configuration file: **spark-default.conf** in **$SPARK_HOME/conf/**
+    ``` 
+    spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+    spark.driver.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+    ```
+* **Once the configuration has done, there is no need to configure again unless the extra jars file are deleted.** 
+
+###### Step 3: Connect to S3 with AcessKey and SecretKey using s3a://
+```py
+sc._jsc.hadoopConfiguration().set("fs.s3a.access.key", "XXX")
+sc._jsc.hadoopConfiguration().set("fs.s3a.secret.key", "XXX")
+sc._jsc.hadoopConfiguration().set("fs.s3a.endpoint", "s3.amazonaws.com")
+```
+
+###### Step 4: Read remote CSV file
+```py
+df = spark.read.csv('s3a://bucket-name/object-name')
+df.show()
+```
+#### Using $SPARK_HOME/bin/spark-submit --package []
+Unfortunately this does not works in my case and keep beeping me.
+```
+ubuntu@xxx:~/spark-3.1.2-bin-hadoop3.2$ bin/spark-submit --packages org.apache.hadoop:hadoop-aws:3.2.0
+```
+```
+Error: Missing application resource.
+```
+Help:
+```
+Usage: spark-submit [options] <app jar | python file | R file> [app arguments]
+...
+--packages                  Comma-separated list of maven coordinates of jars to include
+                              on the driver and executor classpaths. Will search the local
+                              maven repo, then maven central and any additional remote
+                              repositories given by --repositories. The format for the
+                              coordinates should be groupId:artifactId:version.
+...
+```
+
+#### Resources
+- [Can anyone explain spark.driver.extraclasspath and spark.executor.extraclasspath and --jars](https://community.cloudera.com/t5/Support-Questions/Can-anyone-explain-spark-driver-extraclasspath-and-spark/td-p/224267)
+- [Spark 2.1.0 **session config settings** (pyspark): show you all of the current config settings](https://stackoverflow.com/questions/41886346/spark-2-1-0-session-config-settings-pyspark)
+- [Exception: No FileSystem for scheme: s3, s3n, and s3a](https://github.com/ramhiser/spark-kubernetes/issues/3)
+- [No FileSystem for scheme: s3n or s3a spark-2.0.0 and spark-1.6.1
+](https://issues.apache.org/jira/browse/SPARK-15965)
+- [Spark-Submit: --packages vs --jars](https://stackoverflow.com/questions/51434808/spark-submit-packages-vs-jars)
+- [Spark应用依赖jar包的添加解决方案](https://blog.csdn.net/luofazha2012/article/details/80954958)
+- [spark-submit 如何添加 jar 包到 Spark Job](https://www.jianshu.com/p/1e3bfa1d9835)
+- [Spark: Spark Configuration](https://spark.apache.org/docs/latest/configuration.html#application-properties)
+- [Spark: Submitting Applications](https://spark.apache.org/docs/latest/submitting-applications.html)
+- [How can I read from S3 in pyspark running in local mode?](https://stackoverflow.com/questions/50183915/how-can-i-read-from-s3-in-pyspark-running-in-local-mode)
+- [**Connect to S3 data from PySpark**](https://stackoverflow.com/questions/32155617/connect-to-s3-data-from-pyspark)
+- [How to get csv on s3 with pyspark (No FileSystem for scheme: s3n)](https://stackoverflow.com/questions/54358250/how-to-get-csv-on-s3-with-pyspark-no-filesystem-for-scheme-s3n)
+
+#### Tutorial
+- [pyspark connect to aws s3a filesystem](https://codelovingyogi.medium.com/pyspark-connect-to-aws-s3a-filesystem-82bee54e0812)
+- [Running Apache Spark and S3 locally](https://notadatascientist.com/running-apache-spark-and-s3-locally/)
+-[Spark Read Text File from AWS S3 bucket](https://sparkbyexamples.com/spark/spark-read-text-file-from-s3/)
+- [PySpark AWS S3 Read Write Operations](https://towardsai.net/p/programming/pyspark-aws-s3-read-write-operations)
+- [aws中国区踩坑：spark从s3中读文件](http://blog.qiuqiu.info/12/04/2016/spark-datesource-s3-beijing-region)
+- [How to access S3 data from Spark](https://blog.insightdatascience.com/how-to-access-s3-data-from-spark-74e40e0b2231)
+- [Write & Read CSV file from S3 into DataFrame](https://sparkbyexamples.com/spark/write-read-csv-file-from-s3-into-dataframe/)
+- [Working with S3 and Spark Locally](https://mrpowers.medium.com/working-with-s3-and-spark-locally-1374bb0a354)
+
+---
+Copyright @ 2021 Zizhun Guo. All Rights Reserved.
+

@@ -1,0 +1,170 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="https://localhost:4000/" />
+<meta property="og:url" content="https://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_DS.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">NLP Text Mining (7/8) - ML Models part1 (Scikit-Learn)</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			16 Dec 2020
+		</time>
+		</p>
+	</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><h3 id="ml-models">ML Models</h3>
+<hr />
+<h3 id="python-files">Python Files</h3>
+<ul>
+  <li><strong>tuning_ML_models.py</strong>: This files contains the python code to tune the ML models.</li>
+</ul>
+
+<h3 id="1-perceptron-model">1. Perceptron Model</h3>
+
+<ul>
+  <li>
+    <h4 id="11-purpose">1.1. Purpose</h4>
+    <ul>
+      <li>Tune the model by iterating values of two hyperparameters to compare results and analyze how it works with the aids of mathematical formulas</li>
+      <li>Understand L1/L2 norm and how it affects the loss function</li>
+      <li>Revise gradient descent and learn perceptron with back-propagation</li>
+    </ul>
+  </li>
+  <li>
+    <h4 id="12-hyperparameters">1.2. Hyperparameters</h4>
+    <ul>
+      <li>Stepping Criteria: tol</li>
+      <li>Regularization Constant: alpha</li>
+    </ul>
+  </li>
+  <li>
+    <h4 id="13-principle">1.3. Principle:</h4>
+    <ul>
+      <li><strong>Stopping Criteria ‘tol’</strong>
+  The perceptron learning model adopts SGD to fit itself. The way to compute the gradients is through back-propagation. It implements the chain rule to update the weights of the perceptron model, as it is the same for many other neural network structures. Stopping criteria as one essential hyper-parameter of the model control when to stop for the training process. Together with max_iteration times (which defines the ending condition), it somehow affects the model performance.
+        <blockquote>
+          <h5 id="loss--errory-y-1">$Loss = Error(y, y’)$ (1)</h5>
+          <h5 id="loss--previousloss---tol--2">$Loss &gt; previousLoss - tol$  (2)</h5>
+          <h5 id="y---y--y---y---tol-3">$y’ - y &gt; y’’ - y - tol$ (3)</h5>
+          <p>(1) and (2) are the definition of Loss function and how it is implemented for the stopping criteria. From (1) and (2), we get (3) that once the difference between two loss gets less than ‘tol’, in other words, the changing rate of loss becomes acceptable, the training process would stop as the model is considered convergent.</p>
+        </blockquote>
+      </li>
+      <li><strong>Alpha</strong>
+  Alpha is a regularization rate that determines how much the l1/l2 norm(in our case) affects the loss function. If it is high, the greater proportion the regularization takes, so loss functions tend to prone to smaller weights, therefore as it gets convergent, the model is less overfitted, since the smaller weights decide less change once the predict on samples.
+        <blockquote>
+          <p>$L_1 = L + \alpha |W|$ (4)
+$L_2 = L + \alpha W^2$ (5)
+$W’ = W - \alpha \Delta (6)$</p>
+        </blockquote>
+      </li>
+    </ul>
+
+    <p>(4) and (5) are the formula that describe the Loss function aided by the regularization. (6) shows that each iteration of the gradient decent, the weights decreases more. Therefore as the model converges, the weights are smaller than what the regularization is not included.</p>
+  </li>
+  <li>
+    <h4 id="14-results-and-analysis">1.4. Results and Analysis</h4>
+    <ul>
+      <li><strong>‘tol’</strong>
+        <ul>
+          <li>When the ‘tol’ is in the range between $1/10^1$ to $1/10^2$, the f1 is irregularly chaotic, this may own to the high ‘tol’ value that terminates the iteration process sooner than it is supposed to be converged.</li>
+          <li>In contrast, once ‘tol’ gets smaller enough (in the range between $1/10^3$ to $1/10^4$), the f1 socre is more stable. 
+  <img src="http://localhost:4001/assets/2020-12-15-Text-Mining/images/ML_models/perceptron_tol.png" alt="Paris" class="center" /></li>
+        </ul>
+        <div align="center">Figure 1: F1 score of Perceptron model vs Stopping Criteria</div>
+      </li>
+      <li><strong>‘alpha’</strong>
+        <ul>
+          <li>Overall trend: f1 scores increases in sigmoid-like shape, of which the alpha value is high (left-hand side) and small on the right-hand side.</li>
+          <li>When the alpha value is high, the regularization affects more in loss function, the optimal weights produced from training serves lower performance due to the penalty from the regularization.</li>
+          <li>When the alpha value is low, the model tends to be overfitted since the weights of the perceptron model get greater.</li>
+          <li>Comparing L1 norm and L2 norm, once the perceptron model arrives convergence (alpha equals around $1/10^3$), the L2 model is slightly less performed than L1 model. This can be seen as a result of the compromise that with the same alpha value assigned, L2 norm prone to produce lower weights(weight decay) hence sacrifice some precision and recall.
+<img src="http://localhost:4001/assets/2020-12-15-Text-Mining/images/ML_models/perceptron_alpha.png" alt="Paris" class="center" /></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div align="center">Figure 1: F1 score of Perceptron model vs Stopping Criteria</div>
+
+<h3 id="2-other-ml-models-lrsvm">2. Other ML models: LR/SVM</h3>
+<p>Please check out textual models <a href="../textuals_models/README.md">README.md</a></p>
+
+<h3 id="resources">Resources</h3>
+<ul>
+  <li><a href="https://towardsdatascience.com/intuitions-on-l1-and-l2-regularisation-235f2db4c261#1d17">Intuitions on L1 and L2 Regularisation</a></li>
+  <li><a href="https://towardsdatascience.com/weight-decay-l2-regularization-90a9e17713cd">Weight Decay == L2 Regularization?</a></li>
+  <li><a href="https://towardsdatascience.com/regularization-in-deep-learning-l1-l2-and-dropout-377e75acc036">Regularization in Deep Learning — L1, L2, and Dropout</a></li>
+  <li><a href="https://www.kdnuggets.com/2019/12/5-techniques-prevent-overfitting-neural-networks.html#:~:text=One%20of%20the%20most%20common,data%20that%20is%20too%20noisy.&amp;text=The%20goal%20of%20a%20machine,data%20from%20the%20problem%20domain.">5 Techniques to Prevent Overfitting in Neural Networks</a></li>
+  <li><a href="https://stackoverflow.com/questions/37953585/what-is-the-difference-between-sgd-and-back-propagation">What is the difference between SGD and back-propagation?</a></li>
+</ul>
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>
