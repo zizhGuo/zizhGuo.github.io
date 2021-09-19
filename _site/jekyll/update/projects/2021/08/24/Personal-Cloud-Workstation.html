@@ -100,7 +100,7 @@
 <table>
   <tbody>
     <tr>
-      <td>[Amazon EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/?trkCampaign=acq_paid_search_brand&amp;sc_channel=PS&amp;sc_campaign=acquisition_US&amp;sc_publisher=Google&amp;sc_category=Cloud%20Computing&amp;sc_country=US&amp;sc_geo=NAMER&amp;sc_outcome=acq&amp;sc_detail=%2Bamazon%20%2Bec2%20%2Bcloud%20%2Bservice&amp;sc_content={ad%20group}&amp;sc_matchtype=b&amp;sc_segment=488982705501&amp;sc_medium=ACQ-P</td>
+      <td>Amazon EC2 Instance Types: https://aws.amazon.com/ec2/instance-types/?trkCampaign=acq_paid_search_brand&amp;sc_channel=PS&amp;sc_campaign=acquisition_US&amp;sc_publisher=Google&amp;sc_category=Cloud%20Computing&amp;sc_country=US&amp;sc_geo=NAMER&amp;sc_outcome=acq&amp;sc_detail=%2Bamazon%20%2Bec2%20%2Bcloud%20%2Bservice&amp;sc_content={ad%20group}&amp;sc_matchtype=b&amp;sc_segment=488982705501&amp;sc_medium=ACQ-P</td>
       <td>PS-GO</td>
       <td>Brand</td>
       <td>Desktop</td>
@@ -109,7 +109,7 @@
       <td>EC2</td>
       <td>US</td>
       <td>EN</td>
-      <td>Sitelink&amp;s_kwcid=AL!4422!3!488982705501!b!!g!!%2Bamazon%20%2Bec2%20%2Bcloud%20%2Bservice&amp;ef_id=CjwKCAjwp_GJBhBmEiwALWBQkx2jsTDU3u8MY-eAPvcBAnOk4O0urYLKG3thxc1H3qi_AaGptRJMbBoC_4kQAvD_BwE:G:s&amp;s_kwcid=AL!4422!3!488982705501!b!!g!!%2Bamazon%20%2Bec2%20%2Bcloud%20%2Bservice)</td>
+      <td>Sitelink&amp;s_kwcid=AL!4422!3!488982705501!b!!g!!%2Bamazon%20%2Bec2%20%2Bcloud%20%2Bservice&amp;ef_id=CjwKCAjwp_GJBhBmEiwALWBQkx2jsTDU3u8MY-eAPvcBAnOk4O0urYLKG3thxc1H3qi_AaGptRJMbBoC_4kQAvD_BwE:G:s&amp;s_kwcid=AL!4422!3!488982705501!b!!g!!%2Bamazon%20%2Bec2%20%2Bcloud%20%2Bservice</td>
     </tr>
   </tbody>
 </table>
@@ -181,6 +181,65 @@
 <p><strong>Resources</strong></p>
 
 <p><a href="https://www.jianshu.com/p/8fc3cd032d3c">远程访问服务器Jupyter Notebook的两种方法</a></p>
+
+<hr />
+
+<h6 id="configuration">Configuration</h6>
+
+<ol>
+  <li>Activate <strong>spark-defaults.conf</strong> (this file would be loaded while spark server launches)</li>
+  <li>Add these lines into the file:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+spark.driver.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+spark.driver.memory 8g
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Some suggest using driver memory for 5g which provides the maximum throughput, but tests show 8g works best for my instance. Since I used only the local model - both the driver program and executor program exist in JVM instance, therefore I cannot set up the number of executors or number of cores for each executor. The current driver program with the executor uses 8 cores for all threads.</p>
+
+<p>I may try running my programs on the clusters of instances, but for big data processing, a single machine seems workable. I am migrating my old deep learning project onto the instance and hope it might work with the TensorFlow program. However, this plan may be delayed due to my job hunting process still ongoing.</p>
+
+<p><strong>Configuration resources:</strong></p>
+
+<p><a href="https://stackoverflow.com/questions/26562033/how-to-set-apache-spark-executor-memory">How to set Apache Spark Executor memory?</a></p>
+
+<p><a href="ttps://stackoverflow.com/questions/67923596/spark-executors-and-shuffle-in-local-mode">Spark executors and shuffle in local mode</a>
+h</p>
+
+<p><a href="https://stackoverflow.com/questions/39986507/spark-standalone-configuration-having-multiple-executors">Spark standalone configuration having multiple executors</a></p>
+
+<p><a href="https://stackoverflow.com/questions/44590284/number-of-executors-in-spark-local-mode">Number of Executors in Spark Local Mode</a></p>
+
+<p><a href="https://stackoverflow.com/questions/52188910/how-to-change-number-of-executors-in-local-mode/52189023">How to change number of executors in local mode?</a></p>
+
+<p><a href="https://community.cloudera.com/t5/Support-Questions/Not-able-to-setup-spark-driver-cores/td-p/220152">Not able to setup spark.driver.cores</a></p>
+
+<p><a href="https://stackoverflow.com/questions/56247441/spark-driver-cores-setting-in-spark-standalone-cluster-mode">spark.driver.cores setting in spark standalone cluster mode</a></p>
+
+<p><a href="https://www.ibm.com/docs/en/zpfas/1.1.0?topic=spark-configuring-memory-cpu-options">Configuring memory and CPU options</a></p>
+
+<p><a href="https://medium.com/analytics-vidhya/apache-spark-memory-management-49682ded3d42">Apache Spark Memory Management</a></p>
+
+<p><a href="https://blog.csdn.net/zpf336/article/details/83006569">Spark的driver理解和executor理解</a></p>
+
+<p><a href="http://www.uml.org.cn/bigdata/201906152.asp">一文详解Spark基本架构原理</a></p>
+
+<p><a href="https://blog.csdn.net/baolibin528/article/details/54406540">Spark的一些配置总结</a></p>
+
+<p><a href="https://blog.csdn.net/weixin_43668299/article/details/107036763?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0.searchformbaiduhighlight&amp;spm=1001.2101.3001.4242">Spark中executor-memory参数详解</a></p>
+
+<p><a href="https://blog.csdn.net/weixin_43878293/article/details/92977940">如何设置Spark Executor Memory的大小</a></p>
+
+<p><a href="https://www.cnblogs.com/GuixinChan/p/13503927.html">Spark之如何设置Spark资源</a></p>
+
+<p><strong>Temp files cleaning for Spark</strong></p>
+
+<p><a href="http://www.thirteenyu.com/2018/04/28/code-spark162-clean-tmp/">Spark 1.6.2 清理临时文件</a></p>
+
+<p><a href="https://developer.aliyun.com/article/60527">Apache Spark技术实战（一）Standalone部署模式下的临时文件清理&amp;日志级别修改</a></p>
+
+<p><a href="https://blog.csdn.net/AlbertFly/article/details/69945050">linux下查看某个文件或目录大小</a></p>
 
 <hr />
 <p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
