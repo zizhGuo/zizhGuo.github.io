@@ -1,0 +1,1491 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Zizhun Guo</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="https://localhost:4000/" />
+<meta property="og:url" content="https://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_DS.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100rem;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Alibaba Taobao User Behaviors Analysis All-in-One</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			05 Jun 2021
+		</time>
+		</p>
+	</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><ul>
+  <li><a href="#1-dataset-user-behavior-data-from-taobao-for-recommendation">1. Dataset: User Behavior Data from Taobao for Recommendation</a></li>
+  <li><a href="#2-dateset-preprocessing">2. Dateset preprocessing</a></li>
+  <li><a href="#3-acquisition">3. Acquisition</a>
+    <ul>
+      <li><a href="#global-page-view-pv-unique-user-uv-pvuv">Global Page View (PV), Unique User (UV), PV/UV</a></li>
+      <li><a href="#bounce-rate">Bounce Rate</a></li>
+      <li><a href="#conversion-rate-cvr">Conversion Rate (CVR)</a></li>
+    </ul>
+  </li>
+  <li><a href="#4-activation">4. Activation</a>
+    <ul>
+      <li><a href="#daily-active-behaviors-distribution">Daily Active behaviors distribution</a></li>
+      <li><a href="#daily-active-usersdau-distribution">Daily Active Users(DAU) distribution</a></li>
+      <li><a href="#hourly-active-behaviors-distribution">Hourly Active Behaviors distribution</a></li>
+      <li><a href="#hourly-active-users-distribution">Hourly Active Users distribution</a></li>
+    </ul>
+  </li>
+  <li><a href="#5-retention">5. Retention</a>
+    <ul>
+      <li><a href="#retention-rate">Retention Rate</a></li>
+      <li><a href="#repurchase-rate">Repurchase Rate</a></li>
+    </ul>
+  </li>
+  <li><a href="#6-revenue">6. Revenue</a>
+    <ul>
+      <li><a href="#daily-sale-volume-in-10-days">Daily Sale Volume in 10 days</a></li>
+      <li><a href="#hourly-sale-volume-in-10-days">Hourly Sale Volume in 10 days</a></li>
+      <li><a href="#sales-volume-ranking-on-item-category">Sales Volume Ranking on item category</a></li>
+      <li><a href="#sales-volume-ranking-on-item-id">Sales Volume Ranking on item id</a></li>
+      <li><a href="#item-id-ranking-vs-item-category-ranking-on-sale-volume">Item id ranking vs Item category ranking (on Sale Volume)</a></li>
+    </ul>
+  </li>
+  <li><a href="#7-recency-frequency-monetary-value-rfm-model">7. Recency, frequency, monetary value (RFM) Model</a></li>
+  <li><a href="#8-user-journey">8. User Journey</a>
+    <ul>
+      <li><a href="#goal">Goal</a></li>
+      <li><a href="#preprocessing">Preprocessing</a></li>
+      <li><a href="#feature-engineering-aggregation">Feature Engineering: Aggregation</a></li>
+      <li><a href="#clustering-kmeans">Clustering KMeans</a></li>
+      <li><a href="#statistic-analysis">Statistic Analysis</a></li>
+      <li><a href="#intra-clusters-analysis">Intra-clusters Analysis</a></li>
+      <li><a href="#appendix-updated-9192021">Appendix (Updated 9/19/2021)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Alibaba Taobao.com</strong></p>
+
+<blockquote>
+  <p>Taobao (Chinese: 淘宝网) is a Chinese online shopping platform. It is headquartered in Hangzhou and owned by Alibaba. It is ranked as the eighth most-visited website. Taobao.com was registered on April 21, 2003 by Alibaba Cloud Computing (Beijing) Co., Ltd.</p>
+</blockquote>
+
+<blockquote>
+  <p>Taobao Marketplace facilitates consumer-to-consumer (C2C) retail by providing a platform for small businesses and individual entrepreneurs to open online stores that mainly cater to consumers in Chinese-speaking regions (Mainland China, Hong Kong, Macau and Taiwan) and abroad,[4] which is made payable by online accounts. Its stores usually offer an express delivery service.</p>
+</blockquote>
+
+<blockquote>
+  <p><a href="https://en.wikipedia.org/wiki/Taobao">https://en.wikipedia.org/wiki/Taobao</a></p>
+</blockquote>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/AlibabaLogo.jpg">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/AlibabaLogo.jpg" alt="drawing" style="width: 40%;" />
+   </a>
+   <br />
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/Taobao_Logo.svg">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Intro/Taobao_Logo.svg" alt="drawing" style="width: 40%;" />
+    </a>
+   <figcaption>Alibaba Group LOGO </figcaption>
+</div>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h4 id="1-dataset-user-behavior-data-from-taobao-for-recommendation">1. Dataset: User Behavior Data from Taobao for Recommendation</h4>
+
+<p><strong>Introduction</strong></p>
+
+<p>The dataset is collected from <a href="https://tianchi.aliyun.com/dataset/dataDetail?dataId=649&amp;userId=1"><strong>Tianchi</strong></a> - Data Science Workshop from Aliyun(阿里云)- literally means <a href="https://us.alibabacloud.com/"><strong>Alibaba Cloud</strong></a>, the cloud computing service ranked <strong>third-largest</strong> infrastucture as a service provider, right behind Amazon Web Services, Microsoft Azure.</p>
+
+<p>User Behavior is a dataset of user behaviors from Taobao, for recommendation problem with implicit feedback. The dataset is offered by Alibaba.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Description</th>
+      <th>Feature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UserBehavior.csv</td>
+      <td>All user behavior data</td>
+      <td>User ID, item ID, category ID, behavior type, timestamp</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>UserBehavior.csv</strong></p>
+
+<p>We random select about 1 million users who have behaviors including click, purchase, adding item to shopping cart and item favoring during November 25 to December 03, 2017. The dataset is organized in a very similar form to MovieLens-20M, i.e., each line represents a specific user-item interaction, which consists of user ID, item ID, item’s category ID, behavior type and timestamp, separated by commas. The detailed descriptions of each field are as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>User ID</td>
+      <td>An integer, the serialized ID that represents a user</td>
+    </tr>
+    <tr>
+      <td>Item ID</td>
+      <td>An integer, the serialized ID that represents an item</td>
+    </tr>
+    <tr>
+      <td>Category ID</td>
+      <td>An integer, the serialized ID that represents the category which the corresponding item belongs to</td>
+    </tr>
+    <tr>
+      <td>Behavior type</td>
+      <td>A string, enum-type from (‘pv’, ‘buy’, ‘cart’, ‘fav’)</td>
+    </tr>
+    <tr>
+      <td>Timestamp</td>
+      <td>An integer, the timestamp of the behavior</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note that the dataset contains 4 different types of behaviors, they are</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Behavior</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pv</td>
+      <td>Page view of an item’s detail page, equivalent to an item click</td>
+    </tr>
+    <tr>
+      <td>fav</td>
+      <td>Purchase an item</td>
+    </tr>
+    <tr>
+      <td>cart</td>
+      <td>Add an item to shopping cart</td>
+    </tr>
+    <tr>
+      <td>buy</td>
+      <td>Favor an item</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Dimensions of the dataset are</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td># of users</td>
+      <td>987,994</td>
+    </tr>
+    <tr>
+      <td># of items</td>
+      <td>4,162,024</td>
+    </tr>
+    <tr>
+      <td># of categories</td>
+      <td>9,439</td>
+    </tr>
+    <tr>
+      <td># of interactions</td>
+      <td>100,150,807</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="2-dateset-preprocessing">2. Dateset preprocessing</h4>
+
+<p><strong>Load the CSV dataset as Spark DateFrame using Pyspark</strong></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">findspark</span>
+<span class="n">findspark</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="s">'/home/zizhun/spark-3.1.1-bin-hadoop2.7'</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
+
+<span class="c"># Load csv file into spark dataframe</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s">'UserBehavior.csv'</span><span class="p">)</span>
+
+<span class="c"># Change field names</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c0"</span><span class="p">,</span><span class="s">"user_id"</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c1"</span><span class="p">,</span><span class="s">"item_id"</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c2"</span><span class="p">,</span><span class="s">"category_id"</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c3"</span><span class="p">,</span><span class="s">"behavior"</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c4"</span><span class="p">,</span><span class="s">"timestamps"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><strong>Check out the schema and partial view</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root
+ |-- user_id: string (nullable = true)
+ |-- item_id: string (nullable = true)
+ |-- category_id: string (nullable = true)
+ |-- behavior: string (nullable = true)
+ |-- timestamps: string (nullable = true)
+
++-------+-------+-----------+--------+----------+
+|user_id|item_id|category_id|behavior|timestamps|
++-------+-------+-----------+--------+----------+
+|      1|2268318|    2520377|      pv|1511544070|
+|      1|2333346|    2520771|      pv|1511561733|
+|      1|2576651|     149192|      pv|1511572885|
+|      1|3830808|    4181361|      pv|1511593493|
+|      1|4365585|    2520377|      pv|1511596146|
+|      1|4606018|    2735466|      pv|1511616481|
+|      1| 230380|     411153|      pv|1511644942|
+|      1|3827899|    2920476|      pv|1511713473|
+|      1|3745169|    2891509|      pv|1511725471|
+|      1|1531036|    2920476|      pv|1511733732|
++-------+-------+-----------+--------+----------+
+only showing top 10 rows
+
+</code></pre></div></div>
+
+<p><strong>Transform timestamps from Unixtime to date</strong>
+The original timestamp is in format of Unixtime, therefore transforming it into 6 new readable field as datetime, date, month, day, hour and dayofweek.</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="p">(</span><span class="n">dayofmonth</span><span class="p">,</span> <span class="n">hour</span><span class="p">,</span>
+                                  <span class="n">dayofyear</span><span class="p">,</span><span class="n">month</span><span class="p">,</span> <span class="n">dayofmonth</span><span class="p">,</span>
+                                  <span class="n">year</span><span class="p">,</span><span class="n">weekofyear</span><span class="p">,</span>
+                                  <span class="n">format_number</span><span class="p">,</span> <span class="n">date_format</span><span class="p">,</span> <span class="n">to_date</span><span class="p">,</span> <span class="n">dayofweek</span><span class="p">)</span>
+
+<span class="n">df1</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">dayofmonth</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'date'</span><span class="p">,</span> <span class="n">to_date</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'month'</span><span class="p">,</span> <span class="n">month</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'day'</span><span class="p">,</span> <span class="n">dayofmonth</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'hour'</span><span class="p">,</span> <span class="n">hour</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'dayofweek'</span><span class="p">,</span> <span class="n">dayofweek</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span>  
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Results:
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+|user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+|      1|2268318|    2520377|      pv|1511544070|2017-11-24 12:21:10|2017-11-24|   11| 24|  12|        6|
+|      1|2333346|    2520771|      pv|1511561733|2017-11-24 17:15:33|2017-11-24|   11| 24|  17|        6|
+|      1|2576651|     149192|      pv|1511572885|2017-11-24 20:21:25|2017-11-24|   11| 24|  20|        6|
+|      1|3830808|    4181361|      pv|1511593493|2017-11-25 02:04:53|2017-11-25|   11| 25|   2|        7|
+|      1|4365585|    2520377|      pv|1511596146|2017-11-25 02:49:06|2017-11-25|   11| 25|   2|        7|
+|      1|4606018|    2735466|      pv|1511616481|2017-11-25 08:28:01|2017-11-25|   11| 25|   8|        7|
+|      1| 230380|     411153|      pv|1511644942|2017-11-25 16:22:22|2017-11-25|   11| 25|  16|        7|
+|      1|3827899|    2920476|      pv|1511713473|2017-11-26 11:24:33|2017-11-26|   11| 26|  11|        1|
+|      1|3745169|    2891509|      pv|1511725471|2017-11-26 14:44:31|2017-11-26|   11| 26|  14|        1|
+|      1|1531036|    2920476|      pv|1511733732|2017-11-26 17:02:12|2017-11-26|   11| 26|  17|        1|
++-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+only showing top 10 rows
+</code></pre></div></div>
+
+<p><strong>Discover dataset on the range of date</strong></p>
+
+<pre><code class="language-SQL">SELECT Date, n_interactions
+FROM
+    (SELECT date as Date, COUNT(user_id) as n_interactions
+    FROM taobao
+    GROUP BY date
+    ORDER BY date)
+WHERE n_interactions &gt; 10000
+</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         Date  n_interactions
+0  2017-11-24         3453235
+1  2017-11-25        10598765
+2  2017-11-26        10496631
+3  2017-11-27         9985084
+4  2017-11-28         9987905
+5  2017-11-29        10350799
+6  2017-11-30        10542266
+7  2017-12-01        11712571
+8  2017-12-02        14057989
+9  2017-12-03         8946657
+</code></pre></div></div>
+<p>The distribution shows most of the interactions are conducted between <em>2017-11-24</em> to 2017-12-03 (10 days).</p>
+
+<p><strong>Create TempView as Taobao from records based on the distribution</strong></p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"taobao"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="3-acquisition">3. Acquisition</h4>
+
+<p>The point for Acquisition analysis is to develop knowledge about the ability of the product to convert visitors into customers. It helps evaluate the efficiency of the business process. The product may have diverse marketing sources of visitors and different channels to fulfill the conversion.</p>
+
+<p>In Taobao user behavior dataset, the ‘behavior’ field can be intuitively interpreted owning the values in an ordinal nature, since the business allows provide purchasing behaviors which are able to independently conducted, e.g. users can choose to purchase the item directly or put it into the cart or favorites. Therefore, there are multiple channels that convert the item visit into the final order. Hence, I take multiple funnel analyses to study its acquisitional traits.</p>
+
+<h6 id="global-page-view-pv-unique-user-uv-pvuv">Global Page View (PV), Unique User (UV), PV/UV</h6>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pychart can query records using Dataframe SQL functions</span>
+
+<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">count</span><span class="p">,</span> <span class="n">countDistinct</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">countDistinct</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s">'uv'</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+------+
+|    uv|
++------+
+|987991|
++------+
+</code></pre></div></div>
+<p>The dataset has <strong>987,991</strong> unique users. Hence, <strong>UV</strong> = <strong>987,991</strong>.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># The same, group by on 'behavior' and find the count for the 'pv'</span>
+
+<span class="n">df1</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'behavior'</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s">'count'</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+--------+--------+
+|behavior|   count|
++--------+--------+
+|      pv|89697359|
+|    cart| 5530446|
+|     fav| 2888258|
+|     buy| 2015839|
++--------+--------+
+</code></pre></div></div>
+<p>The dataset has <strong>89,697,359</strong> page view behaviors between 2017-11-24 to 2017-12-03. Hence, <strong>PV</strong> = <strong>89,697,359</strong>.</p>
+
+<p>The PV/UV, the average page view per user evaluates the popularity for the items to be seen in a global sense. We could calculate it for each item. However, this metric needs to be used with other global metrics.</p>
+
+<p>The <strong>PV/UV</strong> is <strong>90</strong>. In these 10 days, the average page views for each unique user is 90.</p>
+
+<h6 id="bounce-rate">Bounce Rate</h6>
+
+<p>Bounce rate is single-page sessions divided by all sessions, or the percentage of all sessions on the site in which users viewed only a single page and triggered only a single request to the Analytics server. - <a href="https://support.google.com/analytics/answer/1009409?hl=en">reference</a></p>
+
+<p>In the Taobao user behavior case, the unique users who visit items once during the 10-day session would be only considered. Therefore, this bounce rate evaluates the attractiveness of the website instead of a specific item.</p>
+
+<p>Create</p>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create TempView with the user count for the different behavior.</span>
+<span class="c"># PK: user_id</span>
+<span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    user_id, 
+    SUM(case when behavior='pv' then 1 else 0 end) as PageView,
+    SUM(case when behavior='fav' then 1 else 0 end) as Favorite,
+    SUM(case when behavior='cart' then 1 else 0 end) as Cart,
+    SUM(case when behavior='buy' then 1 else 0 end) as Buy
+FROM 
+    taobao
+GROUP BY
+    user_id
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">createTempView</span><span class="p">(</span><span class="s">"behaviorCount"</span><span class="p">)</span>
+
+<span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    COUNT(user_id)
+FROM
+    behaviorCount
+WHERE PageView = 1 AND Favorite = 0 AND Cart = 0 AND Buy = 0;
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-----------------------+
+|count(DISTINCT user_id)|
++-----------------------+
+|                     53|
++-----------------------+
+</code></pre></div></div>
+<p>The number of unique users who have only <strong>1 page view</strong> count is <strong>53</strong>. The <strong>bounce rate</strong>, 53/UV is <strong>0.0053%</strong>. It is very small, it proves the visitors, no matter new or old, would not stop discovering the website at the first sight.</p>
+
+<h6 id="conversion-rate-cvr">Conversion Rate (CVR)</h6>
+
+<p>The <strong>conversion rate</strong> is the percentage of visitors to the website that complete a desired goal (a conversion) out of the total number of visitors.<a href="https://www.wordstream.com/conversion-rate">-[Source]</a></p>
+
+<p>The desired goal is <strong>make-purchase</strong>.  There are three channels to make such conversion (see fig 1 below): 1. page view - favorite - buy; 2. page view - cart - buy; 3. page view - buy. Each channel can conduct a funnel analysis.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/01.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/01.png" alt="drawing" style="width: 20%;" />
+   </a>
+   <figcaption>Fig 1: Three conversion channels </figcaption>
+</div>
+
+<p><strong>pv - fav - buy</strong></p>
+
+<p>CVR for page view user to favorite user = # of users who have pv and fav/ # of users who have pv</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_fav_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM behaviorCount
+WHERE PageView &gt; 0 AND Favorite &gt; 0
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 387548</span>
+
+<span class="n">n_unique_pv_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM behaviorCount
+WHERE PageView &gt; 0
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 984107</span>
+
+<span class="n">CVR_pv2fav</span> <span class="o">=</span> <span class="n">n_unique_fav_users</span><span class="o">/</span><span class="n">n_unique_pv_users</span> <span class="c"># 387548/984107</span>
+</code></pre></div></div>
+
+<p>The conversion rate for pv to fav is 39.38%.</p>
+
+<p>CVR for page view user to favorite to buy user = # of users who have pv, fav and buy / # of users who have pv</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_fav_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM behaviorCount
+WHERE PageView &gt; 0 AND Favorite &gt; 0 AND Buy &gt; 0
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 275476</span>
+
+<span class="n">CVR_pv2fav2buy</span> <span class="o">=</span> <span class="n">n_unique_fav_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c"># 275476 / 984107</span>
+<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2fav2buy</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The conversion rate for pv-fav-buy is 27.99%.</p>
+
+<p><strong>pv - cart - buy</strong></p>
+
+<p>CVR for page view user to cart user = # of users who have pv and cart / # of users who have pv</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_cart_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM behaviorCount
+WHERE PageView &gt; 0 AND Cart &gt; 0
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 735674</span>
+
+<span class="n">CVR_pv2cart</span> <span class="o">=</span> <span class="n">n_unique_cart_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c"># 735674 / 984107</span>
+<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2cart</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The conversion rate for pv-cart is 74.56%.</p>
+
+<p>CVR for page view user to cart to buy user = # of users who have pv, cart and buy / # of users who have pv</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_cart_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM behaviorCount
+WHERE PageView &gt; 0 AND Cart &gt; 0 AND Buy &gt; 0
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 528408</span>
+
+<span class="n">CVR_pv2cart2buy</span> <span class="o">=</span> <span class="n">n_unique_cart_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c"># 528408 / 984107</span>
+<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2cart2buy</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The conversion rate for pv-cart-buy is 53.69%.</p>
+
+<p><strong>pv - buy</strong></p>
+
+<p>CVR for page view user to buy user = # of users who have pv and buy / # of users who have pv</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_pv_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM behaviorCount
+WHERE PageView &gt; 0 AND Favorite = 0 AND Cart = 0 AND Buy &gt; 0
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">CVR_pv2buy</span> <span class="o">=</span> <span class="n">n_unique_pv_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span>
+<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2buy</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The conversion rate for pv-buy is 7.01%. (There might have users who have both pv-buy or pv-fav/cart-buy behaviors, such SQL would exclude those users who have both behaviors, therefore the CVR for pv-buy would be higher if based on items)</p>
+
+<p><strong>Funnel plot for 3 channels based on # of users</strong></p>
+
+<!-- #80bdff
+#f1b0b7
+#ffc107
+#54bc4b -->
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">plotly</span> <span class="kn">import</span> <span class="n">graph_objects</span> <span class="k">as</span> <span class="n">go</span>
+
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Funnel</span><span class="p">(</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s">'pv'</span><span class="p">,</span> <span class="s">'fav'</span><span class="p">,</span> <span class="s">'buy'</span><span class="p">],</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">n_unique_pv_users</span><span class="p">,</span> <span class="n">n_unique_fav_users</span><span class="p">,</span> <span class="n">n_unique_fav_buy_users</span><span class="p">],</span>
+    <span class="n">textposition</span> <span class="o">=</span> <span class="s">"inside"</span><span class="p">,</span>
+    <span class="n">textinfo</span> <span class="o">=</span> <span class="s">"value+percent initial"</span><span class="p">,</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="p">{</span><span class="s">"color"</span><span class="p">:</span> <span class="p">[</span><span class="s">"#80bdff"</span><span class="p">,</span> <span class="s">"#f1b0b7"</span><span class="p">,</span> <span class="s">"#54bc4b"</span><span class="p">]})</span>
+    <span class="p">)</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_1.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_1.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 2: Funnel plot: pv-fav-buy </figcaption>
+</div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_2.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_2.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 3: Funnel plot: pv-cart-buy </figcaption>
+</div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_3.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_3.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 4: Funnel plot: pv-buy </figcaption>
+</div>
+
+<h4 id="4-activation">4. Activation</h4>
+
+<p>The Activation evaluates the Ecommerce’s ability to provide users with the “Aha moment”. It overlaps the concept with the acquisition a little, but the difference is that the activation focuses on the micro-conversion part whereas users are having enjoyable and solid experiences in the individual part of the product process.</p>
+
+<h6 id="daily-active-behaviors-distribution">Daily Active behaviors distribution</h6>
+
+<p>Details aside, first look at the distribution for the number of daily behaviors between 2017-11-24 to 2017-12-03.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_date_behavior_count</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    date,
+    SUM(CASE WHEN behavior = 'pv' THEN 1 ELSE 0 END) AS pv,
+    SUM(CASE WHEN behavior = 'fav' THEN 1 ELSE 0 END) AS fav,
+    SUM(CASE WHEN behavior = 'cart' THEN 1 ELSE 0 END) AS cart,
+    SUM(CASE WHEN behavior = 'buy' THEN 1 ELSE 0 END) AS buy
+FROM 
+    taobao
+GROUP BY 
+    date
+ORDER BY date
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">df_date_behavior_count</span><span class="p">)</span>
+</code></pre></div></div>
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAB.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAB.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 1: Daily Active behaviors histogram </figcaption>
+</div>
+
+<ol>
+  <li>The number of page view behaviors overwhelmed the other three behaviors favorite, cart, and buy.</li>
+  <li>The day of the week for 2017-11-24 is Friday in Beijing Time (GMT+8), whereas it has 13 hours jet leg from US Eastern Time (GMT-5) in winter. It is weird to find that the behavior count on 11-24 is much smaller than 12-01. An assumption to this phenomenon is when binning the behaviors, the part of behaviors conducted in 2017-11-25 morning in china was grouped into the 2017-11-24 in American Time zone, <strong>hence the current bars should be moved 1 day after and the value for each date should be partially tunned one by one</strong>.</li>
+  <li>The current histogram cannot quantitively confirm the relation of behavior count between days, but the trend can be guessed out. After modification, the number of behaviors on Saturday and Sunday is higher than on weekdays.</li>
+</ol>
+
+<h6 id="daily-active-usersdau-distribution">Daily Active Users(DAU) distribution</h6>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_DAU</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    date,
+    COUNT(DISTINCT user_id) AS DAU
+FROM 
+    taobao
+GROUP BY 
+    date
+ORDER BY 
+    date
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">df_DAU</span><span class="p">)</span>
+</code></pre></div></div>
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAU.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAU.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 2: Daily Active Users histogram </figcaption>
+</div>
+
+<ol>
+  <li>As to count the unique users in these 10 days, the criteria is any user who conducted one of four behavior count as one active user. Therefore, the relation between DAU to daily active behaviors is similar to the relationship between global unique user numbers and global behavior numbers.</li>
+  <li>The trend is similar to DAU histogram, as the time leg and Unix Time function rule still work poorly on a dataset collected from another time zone. The part of unique users is supposed to be grouped on the day after.</li>
+</ol>
+
+<h6 id="hourly-active-behaviors-distribution">Hourly Active Behaviors distribution</h6>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_hour_behavior_count</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    hour,
+    SUM(CASE WHEN behavior = 'pv' THEN 0.1 ELSE 0 END) AS pv,
+    SUM(CASE WHEN behavior = 'fav' THEN 0.1 ELSE 0 END) AS fav,
+    SUM(CASE WHEN behavior = 'cart' THEN 0.1 ELSE 0 END) AS cart,
+    SUM(CASE WHEN behavior = 'buy' THEN 0.1 ELSE 0 END) AS buy
+FROM 
+    taobao
+WHERE date &lt; '2017-12-04' AND date &gt; '2017-11-23'
+GROUP BY 
+    hour
+ORDER BY 
+    hour
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</code></pre></div></div>
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAB.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAB.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 3: Hourly Active Behaviors histogram </figcaption>
+</div>
+
+<ol>
+  <li>The distribution is binned by the hour attribute from the table, as it is calculated by averaging the behavior count across 10 days, it compensates for the difference between days.</li>
+  <li>The hour illustrates the parsed UNIX time in the American time zone, so there is 13 hours time lag for the real hour within a day scenario. e.g. The 7:00 in US eastern time indicates the 20:00 in the Beijing time zone.</li>
+  <li>Based on 2, the peak found between 6:00 to 10:00, when the most popular product using time, is 7 pm to 11 pm in China. It makes sense since this is the time when people get off work and spend time online shopping.</li>
+  <li>The behavior count in peak say 9 pm (8:00) is 800k round own, whereas at 4 am (15:00) in the morning, the count is almost only 50k. There are 16 times between the peak and bottom. In day times, the average behavior count is around 500k.</li>
+  <li>The rate of decline from peak to bottom is great. It is a common bedtime and people go to sleep quickly. However, once wake up, the usage recovers a bit slower hence users have different things to do.</li>
+</ol>
+
+<h6 id="hourly-active-users-distribution">Hourly Active Users distribution</h6>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_AverageHAU</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    hour,
+    ROUND(COUNT(DISTINCT user_id)/10, 0) AS Average_HAU
+FROM 
+    taobao
+WHERE date &lt; '2017-12-04' AND date &gt; '2017-11-23'
+GROUP BY 
+    hour
+ORDER BY hour
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAU.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAU.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 4: Hourly Active Users histogram </figcaption>
+</div>
+
+<ol>
+  <li>The trend is similar to hourly behavior count. However, the peak is not as significant as the last one. This indicates that the contribution for unique users on behaviors is not balanced. Given that the trend is similar (same shape), therefore the aspect for causing the balancing issue is that users who are active in the daytime conduct more behaviors at night. It intuitively may make sense that people work in the daytime and get hard to shop online, but at night, they have more time and convenience to use the APP.</li>
+  <li>The max value of peak is around 70k whereas the value for the bottom is around 5k, the 12 times difference is greater than 13 times for the behavior count. This indicates the at least for two periods of time (7 pm to 10 pm and 12 am to 5 am), users’ behaviors are normally equalized which helps understand combined with the first point that the users in the daytime are less efficient (number of behaviors per user) than at night.</li>
+</ol>
+
+<h4 id="5-retention">5. Retention</h4>
+
+<h6 id="retention-rate">Retention Rate</h6>
+
+<p>Retention rate formula:
+The # of active users continuing to subscribe divided by the total active users at the start of a period = retention rate.
+[-[Source])(https://www.profitwell.com/customer-retention/calculate-retention-rate)]</p>
+
+<p>The concept to have retention rate metric in a marketing atmosphere is to monitor firm performance in attracting and retaining customers. [-<a href="https://en.wikipedia.org/wiki/Retention_rate">Wikipedia</a>] It is similar to churn rate.</p>
+
+<p>This part of Taobao user behavior analysis technically only provides practice on calculating retention rate metric, since there are no attributes identifying the new users, therefore the users who are count as the first-day user may of the old user, which should not be considered.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_retention</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+    SELECT
+        SUM(CASE WHEN day1 &gt; 0 then 1 else 0 end) AS day1,
+        SUM(CASE WHEN day1 &gt; 0 AND day2 &gt; 0 then 1 else 0 end) AS day2retention,
+        SUM(CASE WHEN day1 &gt; 0 AND day3 &gt; 0 then 1 else 0 end) AS day3retention,
+        SUM(CASE WHEN day1 &gt; 0 AND day4 &gt; 0 then 1 else 0 end) AS day4retention,
+        SUM(CASE WHEN day1 &gt; 0 AND day5 &gt; 0 then 1 else 0 end) AS day5retention,
+        SUM(CASE WHEN day1 &gt; 0 AND day6 &gt; 0 then 1 else 0 end) AS day6retention,
+        SUM(CASE WHEN day1 &gt; 0 AND day7 &gt; 0 then 1 else 0 end) AS day7retention,
+        SUM(CASE WHEN day1 &gt; 0 AND day8 &gt; 0 then 1 else 0 end) AS day8retention,
+        SUM(CASE WHEN day1 &gt; 0 AND day9 &gt; 0 then 1 else 0 end) AS day9retention,
+        SUM(CASE WHEN day1 &gt; 0 AND day10 &gt; 0 then 1 else 0 end) AS day10retention
+    FROM
+        (SELECT
+            user_id,
+            SUM(CASE WHEN date = '2017-11-24' then 1 else 0 end) as day1,
+            SUM(CASE WHEN date = '2017-11-25' then 1 else 0 end) as day2,
+            SUM(CASE WHEN date = '2017-11-26' then 1 else 0 end) as day3,
+            SUM(CASE WHEN date = '2017-11-27' then 1 else 0 end) as day4,
+            SUM(CASE WHEN date = '2017-11-28' then 1 else 0 end) as day5,
+            SUM(CASE WHEN date = '2017-11-29' then 1 else 0 end) as day6,
+            SUM(CASE WHEN date = '2017-11-30' then 1 else 0 end) as day7,
+            SUM(CASE WHEN date = '2017-12-01' then 1 else 0 end) as day8,
+            SUM(CASE WHEN date = '2017-12-02' then 1 else 0 end) as day9,
+            SUM(CASE WHEN date = '2017-12-03' then 1 else 0 end) as day10
+        FROM taobao
+        GROUP BY
+            user_id)
+    """</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</code></pre></div></div>
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/retention.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/retention.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <figcaption>Fig 5: simulating retention rate </figcaption>
+</div>
+
+<h6 id="repurchase-rate">Repurchase Rate</h6>
+
+<p>Repurchase rate is the percentage rate of a cohort having placed another order within a certain period of time, typically calculated within 30/60/90/180/360 days from the first order. [-<a href="https://medium.com/@matsutton/repurchase-rate-the-most-overlooked-ecommerce-kpi-337bccde184b">Source</a>]</p>
+
+<p>Due to the limit of time periods, we calculate the 10-day repurchase rate. The way to calculate it is to find the number of unique users who have purchased twice within 10 days.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_repurchase</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM
+    (SELECT user_id, COUNT(behavior) AS buy_times
+    FROM taobao
+    WHERE behavior = 'buy'
+    GROUP BY 
+        user_id)
+WHERE buy_times &gt; 1
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">n_purchase</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT COUNT(DISTINCT user_id)
+FROM
+    (SELECT user_id, COUNT(behavior) AS buy_times
+    FROM taobao
+    behavior = 'buy'
+    GROUP BY 
+        user_id)
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">n_repurchase</span><span class="o">/</span><span class="n">n_purchase</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The repurchase rate is <strong>66%</strong>.</p>
+
+<p>There is another way to calculate which is by finding the count of unique users number who has conducted another transaction within the 10 days except for the first day.</p>
+
+<h4 id="6-revenue">6. Revenue</h4>
+
+<p>A transaction is made by users conducting a buy behavior, defined by this analysis. No matter the order is completely fulfilled or not. In fact, a metric called Gross Merchandise Volume (GMV) is used to evaluate the total gross income within a period of time. Unfortunately, the table does not contain the price feature for items, therefore we only calculate the total sale volume in dates and rank them group by the item category and items themselves.</p>
+
+<h6 id="daily-sale-volume-in-10-days">Daily Sale Volume in 10 days</h6>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_daily_sales_volume</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT
+    date,
+    SUM(CASE WHEN behavior = 'pv' then 1 else 0 end) as pv,
+    SUM(CASE WHEN behavior = 'fav' then 1 else 0 end) as fav,
+    SUM(CASE WHEN behavior = 'cart' then 1 else 0 end) as cart,
+    SUM(CASE WHEN behavior = 'buy' then 1 else 0 end) as buy
+FROM taobao
+GROUP BY
+    date
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Daily_sale_volume.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Daily_sale_volume.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<p>As PART II mentioned, due to the parsing issue, the UNIX time collected from GMT+8 time zone is interpreted to GMT-5 time zone, so part of sales conducted on 11-25 are binned to 11-24. One day shift to right, the sale volume based on a date shows a consistent invariance even encountering the weekends.</p>
+
+<h6 id="hourly-sale-volume-in-10-days">Hourly Sale Volume in 10 days</h6>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_hourly_sales_volume</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT
+    hour,
+    SUM(CASE WHEN behavior = 'pv' then 0.1 else 0 end) as pv,
+    SUM(CASE WHEN behavior = 'fav' then 0.1 else 0 end) as fav,
+    SUM(CASE WHEN behavior = 'cart' then 0.1 else 0 end) as cart,
+    SUM(CASE WHEN behavior = 'buy' then 0.1 else 0 end) as buy
+FROM taobao
+GROUP BY
+    hour
+ORDER BY
+    hour
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Hourly_sale_volume.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Hourly_sale_volume.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<p>The UNIX time functions from Pyspark make the hour become the US time based on the local machine, so the hour shows in the figure should convert into the Beijing time as the sale are conducted in China region. e.g. 6 pm to 19:00</p>
+
+<ol>
+  <li>Comparing with hourly behaviors distribution, the difference is in the period of time between 3 am (16:00) to 6 pm (19:00), the sale volume has a little decrease among all hours of the day.</li>
+  <li>The peak has around 14000 sale volumes whereas the bottom has around 1000 sale volumes. The difference is around  14 times which is the same as the behavior distribution.</li>
+</ol>
+
+<h6 id="sales-volume-ranking-on-item-category">Sales Volume Ranking on item category</h6>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_sales_volume_ranking_category</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT
+    a.buy_times AS sales_volume,
+    COUNT(a.category_id) AS category_num 
+FROM
+    (SELECT 
+        category_id, 
+        COUNT(user_id) AS buy_times
+    FROM 
+        taobao 
+    WHERE 
+        behavior='buy' 
+    GROUP BY 
+        category_id ) AS a 
+GROUP BY
+    a.buy_times 
+ORDER BY
+    category_num DESC;
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sales_volume 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10 	... 	1158 	3096 	18016 	1147 	458 	1326 	2015 	6354 	2782 	2203
+category_num 	767 	448 	313 	268 	198 	195 	163 	133 	105 	97 	... 	1 	1 	1 	1 	1 	1 	1 	1 	1 	1
+
+
+</code></pre></div></div>
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_category.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_category.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<p>Based on the sale volume, we ranked the item categories’ count. The figure above shows there are almost 800 categories of items are sold only once among all users. The second place’s category of an item which sold twice counts around 450. The overall trend follows a logarithmic pattern in a descending prone.</p>
+
+<h6 id="sales-volume-ranking-on-item-id">Sales Volume Ranking on item id</h6>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_sales_volume_ranking_item</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT
+    a.buy_times AS sales_volume,
+    COUNT(a.item_id) AS item_num 
+FROM
+    (SELECT 
+        item_id, 
+        COUNT(user_id) AS buy_times
+    FROM 
+        taobao 
+    WHERE 
+        behavior='buy' 
+    GROUP BY 
+        item_id ) AS a 
+GROUP BY
+    a.buy_times 
+ORDER BY
+    item_num DESC;
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+</code></pre></div></div>
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_item.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_item.png" alt="drawing" style="width: 60%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+<p><br /></p>
+
+<p>The second study on item id ranking based on the sale volume indicates a similar trend as to how it was performed with the item category rank. They both follow a logarithmic declining trend, but for the current item ranking trend, it is deeper. Over 350,000 items are sold once which takes a larger portion, whereas the items sold twice are only take 1/4 in the value.</p>
+
+<h6 id="item-id-ranking-vs-item-category-ranking-on-sale-volume">Item id ranking vs Item category ranking (on Sale Volume)</h6>
+<p><br /></p>
+<div class="row" style="padding-left: 30rem;">
+  <div class="column" style="text-align: center;">
+    <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/category_pie.png" alt="drawing" style="width: 100%;" />
+  </div>
+  <div class="column">
+    <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/item_pie.png" alt="drawing" style="width: 100%;" />
+  </div>
+</div>
+
+<p>It is interesting to conduct the pie charts for both rankings and compare how much the portions take for different granularity of data tag. Much easy to understand, the category tag has fewer unique values than item id since one category can include multiple items, hence the portion for ranking would be different.</p>
+
+<p>As seen from the figure on the left-hand side, half of the item categories have their belonging items sold 20+ times, as for those less popular item categories, one sold only once still takes 10 percent, these are the super unpopular item category. From the figure on the right-hand side, within the super unpopular item category, the items’ number overwhelmingly populates 58.2 percent among all items. Combined with the items which sold 2-10 times, it is interesting to see that most of the items (96 percent) of items are not popular at all, whereas only 2 percent of items are able to sell at least 20 times, in other words, getting into the transaction order.</p>
+
+<p>For further mining processing, a possible direction is to cluster the item category based on the distribution of its item sale volume. One guess is there might have an item category that has 1 or 2 items specifically popular with almost no visit for the rest, or some item categories may exist that all items belonging to them are regular.</p>
+
+<h4 id="7-recency-frequency-monetary-value-rfm-model">7. Recency, frequency, monetary value (RFM) Model</h4>
+
+<p>Recency, frequency, monetary value is a marketing analysis tool used to identify a company’s or an organization’s best customers by using certain measures. The RFM model is based on three quantitative factors:</p>
+
+<ul>
+  <li>Recency: How recently a customer has made a purchase</li>
+  <li>Frequency: How often a customer makes a purchase</li>
+  <li>Monetary Value: How much money a customer spends on purchases</li>
+</ul>
+
+<p>RFM analysis numerically ranks a customer in each of these three categories, generally on a scale of 1 to 5 (the higher the number, the better the result). The “best” customer would receive a top score in every category.</p>
+
+<p><a href="https://www.investopedia.com/terms/r/rfm-recency-frequency-monetary-value.asp">-[Source]</a></p>
+
+<p>We take the above approach to category the users based on the rule with the last time buy behavior and frequency of buy behavior. Here are the rules:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R：score the user's recency based on the time difference from the buy behavior date to 17-12-03
+difference &gt; 7 score = 1
+difference BETWEEN 5-7 score = 2
+difference BETWEEN 3-4 score = 3
+difference BETWEEN 0-2 score = 4
+
+F：score the user's frequency based on the date of the buy behavior count
+purchase once score = 1
+purchase twice score = 2
+purchase 3-10 times score = 3
+purchase times &gt; 10 score = 4
+</code></pre></div></div>
+
+<p>Since the table does not contain monetary info, hence ignore the monetary value.</p>
+
+<p>Once having the scores of users’ Recency and Frequency, applying another rule to classify users into different group.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Champion:
+FrequencyScore BETWEEN 3-4 AND RecencyScore BETWEEN 3-4
+
+Loyal:
+FrequencyScore BETWEEN 3-4 AND RecencyScore BETWEEN 1-2
+
+Potential Loyalists:
+FrequencyScore BETWEEN 1-2 AND RecencyScore BETWEEN 3-4
+
+Need Attentions
+FrequencyScore BETWEEN 1-2 AND RecencyScore BETWEEN 1-2
+</code></pre></div></div>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    user_id,
+    (CASE WHEN Rdiff &gt;7 THEN 1
+    WHEN Rdiff BETWEEN 5 AND 7 THEN 2
+    WHEN Rdiff BETWEEN 3 AND 4 THEN 3
+    WHEN Rdiff BETWEEN 0 AND 2 THEN 4
+    ELSE NULL END ) AS RecencyScore
+FROM
+    (SELECT 
+        user_id,
+        DATEDIFF('2017-12-03',max(date)) AS Rdiff
+    FROM 
+        taobao
+    WHERE 
+        behavior='buy'
+    GROUP BY 
+        user_id)
+
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"R1"</span><span class="p">)</span>
+
+<span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    user_id,
+    (case WHEN SaleVolume BETWEEN 1 AND 1 THEN 1
+    WHEN SaleVolume BETWEEN 2 AND 2 THEN 2
+    WHEN SaleVolume BETWEEN 3 AND 10 THEN 3
+    WHEN SaleVolume &gt;=11 THEN 4
+    ELSE NULL END ) as FrequencyScore
+FROM(
+    SELECT 
+        user_id,
+        COUNT(behavior) AS SaleVolume
+    FROM 
+        taobao
+    WHERE 
+        behavior='buy'
+    GROUP BY 
+        user_id)
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"F1"</span><span class="p">)</span>
+
+<span class="n">df_RFM</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    user_id,
+    RecencyScore,
+    FrequencyScore,
+    (CASE WHEN (FrequencyScore BETWEEN 1 AND 2)AND(RecencyScore BETWEEN 1 AND 2 )THEN 1
+    WHEN (FrequencyScore BETWEEN 1 AND 2)AND(RecencyScore BETWEEN 3 AND 4 )THEN 2
+    WHEN (FrequencyScore BETWEEN 3 AND 4)AND(RecencyScore BETWEEN 1 AND 2 )THEN 3
+    WHEN (FrequencyScore BETWEEN 3 AND 4)AND(RecencyScore BETWEEN 3 AND 4 )THEN 4
+    ELSE NULL END ) AS CustomerLevel
+FROM 
+    (SELECT 
+        R1.user_id, 
+        R1.RecencyScore,
+        F1.FrequencyScore
+    FROM 
+        R1
+    INNER JOIN 
+        F1
+    ON 
+        R1.user_id=F1.user_id)
+"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">df_RFM</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        user_id  RecencyScore  FrequencyScore  CustomerLevel
+0       1000240             4               3              4
+1       1000280             4               2              2
+2       1000665             4               3              4
+3       1000795             4               2              2
+4       1000839             4               3              4
+...         ...           ...             ...            ...
+672399   999498             2               1              1
+672400   999507             4               3              4
+672401   999510             4               3              4
+672402   999616             2               1              1
+672403   999656             3               1              2
+
+[672404 rows x 4 columns]
+
+
+</code></pre></div></div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/RFM.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/RFM.png" alt="drawing" style="width: 30%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+<p><br /></p>
+
+<h4 id="8-user-journey">8. User Journey</h4>
+<p>A <a href="(https://en.wikipedia.org/wiki/User_journey)">user journey</a> is the experiences a person has when interacting with something, typically software. User journeys describe at a high level of detail exactly what steps different users take to complete a specific task within a system, application, or website. User journeys are focused on the user and what they see and what they do, in comparison to the related web design term click path which is just a plain list of the text URLs that are hit when a user follows a particular Journey.</p>
+
+<p>The customer journey is divided into five phases which refer to the AIDA model.</p>
+<ul>
+  <li>Awareness Awareness for the product is awakened (inspiration)</li>
+  <li>Interest The interest in the product is increased (favoritism)</li>
+  <li>Desire The customer is considering buying the product (wish)</li>
+  <li>Action The product is bought (implementation)</li>
+</ul>
+
+<p><strong>We have found the concept of user journey can be applied to the taobao Dataset.</strong> (see <a href="https://zizhunguo.com/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model.html">Part II conversion analysis</a>) In taobao dataset, it has <strong>four</strong> behavior types which are <strong>page view</strong>, <strong>favorite</strong>, <strong>cart</strong> and <strong>buy</strong>. Combining with <strong>user_id</strong> and <strong>item_id</strong>, <strong>a user journey behavior can be defined as a series of behaviors conducted by a user targeting a specific item.</strong> See example below:
+Table 1: a user journey track</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>user_id</th>
+      <th>item_id</th>
+      <th>Timestamps</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>100</td>
+      <td>12345678</td>
+      <td>2017-11-25 13:04:00</td>
+      <td>pv</td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>12345678</td>
+      <td>2017-11-25 13:12:23</td>
+      <td>fav</td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>12345678</td>
+      <td>2017-11-27 10:56:10</td>
+      <td>pv</td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>12345678</td>
+      <td>2017-11-27 20:23:59</td>
+      <td>buy</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>See table 1 above, a user (id: 100) has viewed a page of the item (id: 12345678) at 2017-11-25 13:04:00. 8 mins later, this user had put this item into the favorite list. Two days later, this user viewed this item again. About 10 hours later, at 8 pm on the same day, this user purchased this item.</p>
+
+<h6 id="goal">Goal</h6>
+
+<p>The goal of the task is to use millions of user-journey behaviors to identify customer categories/clusters that can be
+useful for targeted consumer insights at scale. The tool to implement is Apache Spark: Spark SQL and MLlib. The clustering model is KMeans.</p>
+
+<h6 id="preprocessing">Preprocessing</h6>
+
+<p>From <a href="https://zizhunguo.com/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Intro.html">part I</a>, most of the behaviors are in dates between 2017-11-24 to 2017-12-03, therefore we select 5,000,000 records of behaviors from the subset of the dataset. Another reason to choose only 5M records instead of the 100M from the original size is that while doing statistic analysis later after KMeans, the virtual machine’s memory (8GM) simply cannot hold the query processing when conducted on the aggregated temporary view, hence only taking part of the dataset.</p>
+
+<h6 id="feature-engineering-aggregation">Feature Engineering: Aggregation</h6>
+
+<p>Set up some statistical rules to extract some features from the orignal dataset:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rule</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>duration</td>
+      <td>The <strong>time difference</strong> between the minimal timestamps and maximum timestamps within <strong>the user journey</strong></td>
+    </tr>
+    <tr>
+      <td>behavior_count</td>
+      <td>The <strong>total behavior count</strong> of a user journey</td>
+    </tr>
+    <tr>
+      <td>pv</td>
+      <td>The <strong>pv count</strong> of a user journey</td>
+    </tr>
+    <tr>
+      <td>fav</td>
+      <td>The <strong>fav count</strong> of a user journey</td>
+    </tr>
+    <tr>
+      <td>cart</td>
+      <td>The <strong>cart count</strong> of a user journey</td>
+    </tr>
+    <tr>
+      <td>buy</td>
+      <td>The <strong>buy count</strong> of a user journey</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>Whether the user <strong>have purchased</strong> the item or <strong>not</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    user_id,
+    item_id,
+    MAX(timestamps)-MIN(timestamps) as duration,
+    COUNT(item_id) as behavior_count,
+    SUM(CASE WHEN behavior = 'pv' THEN 1 ELSE 0 END) as pv,
+    SUM(CASE WHEN behavior = 'fav' THEN 1 ELSE 0 END) as fav,
+    SUM(CASE WHEN behavior = 'cart' THEN 1 ELSE 0 END) as cart,
+    SUM(CASE WHEN behavior = 'buy' THEN 1 ELSE 0 END) as buy
+FROM taobao
+GROUP BY user_id, item_id
+ORDER BY user_id, item_id ASC
+"""</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"taobao_clustering"</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT 
+    *,
+    CASE WHEN buy &gt; 0 THEN 1 ELSE 0 END as label
+FROM taobao_clustering
+"""</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">VectorAssembler</span>
+
+<span class="n">assembler</span> <span class="o">=</span> <span class="n">VectorAssembler</span><span class="p">(</span><span class="n">inputCols</span> <span class="o">=</span> <span class="n">feat_cols</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s">'features'</span><span class="p">)</span>
+<span class="n">final_data</span> <span class="o">=</span> <span class="n">assembler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">inputCol</span> <span class="o">=</span> <span class="s">'features'</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s">'scaledFeatures'</span><span class="p">)</span>
+<span class="n">scaler_model</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
+<span class="n">cluster_final_data</span> <span class="o">=</span> <span class="n">scaler_model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Quick view for the Spark dataframe:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+
+|user_id|item_id|duration|behavior_count| pv|fav|cart|buy|label|            features|      scaledFeatures|
++-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+
+|      1|1305059|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|1323189|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|1338525|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|1340922|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|1531036|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|2028434|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|2041056|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|2087357| 29426.0|             2|  2|  0|   0|  0|    0|(7,[0,1,2],[29426...|(7,[0,1,2],[0.347...|
+|      1|2104483|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
+|      1|2266567|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
++-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+
+only showing top 10 rows
+</code></pre></div></div>
+
+<h6 id="clustering-kmeans">Clustering KMeans</h6>
+
+<p>Apply KMeans to the scaled dataset with different k values.</p>
+
+<p>KMeans hyperparameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>hyperparameter</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tol</td>
+      <td>0.0001</td>
+    </tr>
+    <tr>
+      <td>maxIter</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>distanceMeasure</td>
+      <td>euclidean</td>
+    </tr>
+    <tr>
+      <td>weightCol</td>
+      <td>none</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Using Elbow/Knee Method for a quick look-out to select K values.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/elbow.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/elbow.png" alt="drawing" style="width: 30%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<p>Looks like k = 3, k = 5 and k = 6 are the good change-points. Select k = 5 as the cluster numbers. Here print out the clustering  results. (The ‘prediction’ indicates the cluster number ranged from 0 - 4)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+----------+
+|user_id|item_id|duration|behavior_count| pv|fav|cart|buy|label|            features|      scaledFeatures|prediction|
++-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+----------+
+|      1|1305059|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|1323189|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|1338525|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|1340922|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|1531036|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2028434|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2041056|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2087357| 29426.0|             2|  2|  0|   0|  0|    0|(7,[0,1,2],[29426...|(7,[0,1,2],[0.344...|         0|
+|      1|2104483|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2266567|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2268318|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2278603|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2286574|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1| 230380|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2333346|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2576651|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1| 266784| 25123.0|             2|  2|  0|   0|  0|    0|(7,[0,1,2],[25123...|(7,[0,1,2],[0.294...|         0|
+|      1| 271696|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2734026|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
+|      1|2791761|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
++-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+----------+
+only showing top 20 rows
+
+</code></pre></div></div>
+
+<h6 id="statistic-analysis">Statistic Analysis</h6>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-----------------+------------------+------------------+-------------------+-------------------+--------------------+--------------------+------------------+
+|summary|         duration|    behavior_count|                pv|                fav|               cart|                 buy|               label|        prediction|
++-------+-----------------+------------------+------------------+-------------------+-------------------+--------------------+--------------------+------------------+
+|  count|           756408|            756408|            756408|             756408|             756408|              756408|              756408|            756408|
+|   mean|21433.50689707142|1.3220378420111898| 1.184676788188385| 0.0371333989064103|0.07331228649088851|0.026915368425505813|0.025566889826654397|0.4321940011210881|
+| stddev|85385.05928533341|1.0746465690895712|0.9953649718484974|0.19056521625685005| 0.2690200842701817| 0.17201339406933566| 0.15783933890990312|1.1010077907100033|
+|    min|              0.0|                 1|                 0|                  0|                  0|                   0|                   0|                 0|
+|    max|         787426.0|               153|               153|                  7|                  6|                  11|                   1|                 4|
++-------+-----------------+------------------+------------------+-------------------+-------------------+--------------------+--------------------+------------------+
+
+</code></pre></div></div>
+
+<p>The <strong>duration</strong> are in seconds unit hence dividing 3600 to convert into hours. The longest duration of the user journey lasts about <strong>9 days</strong>. The average duration of the user journey takes around <strong>6 hours</strong>.</p>
+
+<p>From <strong>label</strong>(whether purchased or not) features, it finds <strong>2.5 out of 100</strong> items are eventually purchased. From <strong>pv</strong>(page view count for each user behavior), we found each item is <strong>at least being view once</strong>(1.18). Similar findings are documented in the previous part<a href="https://zizhunguo.com/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model.html">[part II]</a>.</p>
+
+<h6 id="intra-clusters-analysis">Intra-clusters Analysis</h6>
+
+<p>Group by the cluster index and calculat the mean values for all features.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_k5_statistics</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+SELECT prediction AS cluster,
+        COUNT(DISTINCT user_id) AS user,
+        COUNT(item_id) AS behavior,
+        ROUND(AVG(duration)/3600,2) AS avg_duratiion,
+        ROUND(AVG(behavior_count),2) as avg_num_behaviors,
+        ROUND(AVG(pv),2) as avg_pv,
+        ROUND(AVG(fav),2) as avg_fav,
+        ROUND(AVG(cart),2) as avg_cart,
+        ROUND(AVG(buy),2) as avg_buy,
+        ROUND(AVG(label),2) as avg_label
+FROM purchase_clustered
+GROUP BY prediction
+ORDER BY prediction asc
+"""</span><span class="p">)</span>
+<span class="n">df_k5_statistics</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Results:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+----+--------+------------+-----------------+------+-------+--------+-------+---------+
+|cluster|user|behavior|avg_duration|avg_num_behaviors|avg_pv|avg_fav|avg_cart|avg_buy|avg_label|
++-------+----+--------+------------+-----------------+------+-------+--------+-------+---------+
+|      0|9701|  639437|        0.91|             1.12|  1.12|    0.0|     0.0|    0.0|      0.0|
+|      1|6673|   19246|       29.08|             3.08|  1.76|   0.07|     0.2|   1.05|      1.0|
+|      2|6688|   28996|       93.98|             3.97|   3.7|   0.05|    0.22|    0.0|      0.0|
+|      3|3700|   25239|       10.52|             1.62|  0.58|   1.01|    0.03|    0.0|      0.0|
+|      4|6853|   43490|        8.49|             1.61|  0.59|    0.0|    1.02|    0.0|      0.0|
++-------+----+--------+------------+-----------------+------+-------+--------+-------+---------+
+
+</code></pre></div></div>
+
+<p><strong>Heatmap</strong></p>
+
+<p>Use heatmap to differentiate among clusters. The highlighted square indicates the feature values are higher than the one from other clusters, which help understand the special traits for that cluster using the domain knowledge.</p>
+
+<p>Use sklearn Standardize features to remove the mean and scale to unit variance.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_k5</span><span class="p">)</span>
+<span class="n">heatmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_k5</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_clustering.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_clustering.png" alt="drawing" style="width: 50%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<p><strong>Analysis based on the heatmap and values</strong></p>
+
+<ul>
+  <li>Cluster 1: this group of behaviors are in high numbers and have the largest number of users involved. However, none of them converts to the final purchase order and they are even unlikely to trigger adding the items to the cart. Among all behavior types, it seems page views are in averages but still, they seem hibernates and less active. The duration between the user journey is the longest.</li>
+  <li>Cluster 2: these are the true buyers’ behaviors - averaged user journey duration, above averaged page view count, few carting behaviors, all these behaviors leading to the successfully created purchasing order.</li>
+  <li>Cluster 3: these are the active app users’ behavior patterns, almost no purchase at all, but conducting the greatest amount of behaviors in which the most of them are page views. The conversion rate is very low. Maybe the item is too expensive or because of other reasons that users are hesitating. The average user journey duration lasts around 4 days.</li>
+  <li>Cluster 4: these behaviors are browsing-focused since there is much less page view amount than the favorite amount, therefore these behaviors are conducted by the browsing pages where the user does not need to click the items’ landing pages but just add the item in the list to the favorites.</li>
+  <li>Cluster 5: just like Cluster 4 happened in the users’ browsing process, users directly put items into the cart, and thereafter no further actions were conducted.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cluster</th>
+      <th>User Journey Behavior Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Hibernate</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Active purchasing</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Active Viewing</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Collectors</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Hesitator</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_behavior.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_behavior.png" alt="drawing" style="width: 30%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_user.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_user.png" alt="drawing" style="width: 30%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<h6 id="appendix-updated-9192021">Appendix (Updated 9/19/2021)</h6>
+
+<p>Since I had set up my personal cloud workspace, I had successfully fit the entire 100 billion records into the models using PySpark. Here are the updated results:</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_train_line.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_train_line.png" alt="drawing" style="width: 20%;" />
+   </a>
+   <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_silhouette_line.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_silhouette_line.png" alt="drawing" style="width: 20%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<div>
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean2.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean2.png" alt="drawing" style="width: 20%;" />
+   </a>
+   <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean3.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean3.png" alt="drawing" style="width: 20%;" />
+   </a>
+   <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean4.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean4.png" alt="drawing" style="width: 20%;" />
+   </a>
+   <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean5.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean5.png" alt="drawing" style="width: 20%;" />
+   </a>
+   <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean6.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean6.png" alt="drawing" style="width: 20%;" />
+   </a>
+   <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean7.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean7.png" alt="drawing" style="width: 20%;" />
+   </a>
+   <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean8.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean8.png" alt="drawing" style="width: 20%;" />
+   </a>
+   <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean9.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean9.png" alt="drawing" style="width: 20%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<hr />
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>
