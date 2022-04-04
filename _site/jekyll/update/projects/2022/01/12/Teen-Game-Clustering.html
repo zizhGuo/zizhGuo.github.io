@@ -1,0 +1,328 @@
+<head>
+  <title>Zizhun Guo</title>
+  <meta name="generator" content="Jekyll v3.8.5" />
+  <meta property="og:title" content="Your awesome title" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="description" content="Personal Tech Blog" />
+  <meta property="og:description" content="Personal Tech Blog" />
+  <link rel="canonical" href="https://localhost:4000/" />
+  <meta property="og:url" content="https://localhost:4000/" />
+  <meta property="og:site_name" content="Zizhun Guo Space" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="user-scalable=yes, initial-scale=0.6, maximum-scale=0.5, minimum-scale=0.5, width=device-width, height=device-height, target-densitydpi=medium-dpi" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a>
+            </li> -->
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_DS.pdf" class="nav-link">RESUME</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100%;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">Agglomerative Clustering on Detecting Types of Gamers</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			12 Jan 2022
+		</time>
+		</p>
+	</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><p><br /></p>
+
+<hr />
+
+<p><br /></p>
+<h4 id="1-background-and-goals">1. Background and Goals</h4>
+
+<p>A large-scale study to examine the relationship between specific gaming experiences and teens’ civic activities and commitments, has been conducted by Pew Research Center in 2007. This dataset contains varied categories of features produced from thousands of teen respondents in the US, which help to reveal the level of fondness of teenagers across different video game genres.</p>
+
+<p>There are 12 game genres. They are atomic, distinguishable and in binary values, share a similar status quo in the physical meaning, that by selecting and composing them, it would form different segments whereas each of them could represent a type of player group. A simple calculation of how many possible player groups: 2^12 = 4096. That said, most players are not favoring all genres, or at least most of them. Plus, we only have 1000+ respondents from the dataset.</p>
+
+<p>Clustering for types of gamers based on game genres</p>
+
+<p>To discover the posible respondents segmentation to find the game genres pattern. The author decided to exploit Aggolomerative Clustering ML algorithm to get the data insights.</p>
+
+<h4 id="2-description">2. Description</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Game Genre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>‘k14a’</td>
+      <td>‘fighting games’</td>
+    </tr>
+    <tr>
+      <td>‘k14b’</td>
+      <td>‘puzzle games’</td>
+    </tr>
+    <tr>
+      <td>‘k14c’</td>
+      <td>‘action games’</td>
+    </tr>
+    <tr>
+      <td>‘k14d’</td>
+      <td>‘FPS games’</td>
+    </tr>
+    <tr>
+      <td>‘k14e’</td>
+      <td>‘strategy games’</td>
+    </tr>
+    <tr>
+      <td>‘k14f’</td>
+      <td>‘simulation games’</td>
+    </tr>
+    <tr>
+      <td>‘k14g’</td>
+      <td>‘sports games’</td>
+    </tr>
+    <tr>
+      <td>‘k14h’</td>
+      <td>‘RPG games’</td>
+    </tr>
+    <tr>
+      <td>‘k14i’</td>
+      <td>‘adventure games’</td>
+    </tr>
+    <tr>
+      <td>‘k14j’</td>
+      <td>‘racing games’</td>
+    </tr>
+    <tr>
+      <td>‘k14k’</td>
+      <td>‘rhythm games’</td>
+    </tr>
+    <tr>
+      <td>‘k14l’</td>
+      <td>‘survival horror games’</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="3-statistics">3. Statistics</h4>
+
+<!-- 'k14a','fighting games'
+'k14b','puzzle games'
+'k14c','action games'
+'k14d','FPS games'
+'k14e','strategy games'
+'k14f','simulation games'
+'k14g','sports games'
+'k14h','RPG games'
+'k14i','adventure games'
+'k14j','racing games'
+'k14k','rhythm games'
+'k14l','survival horror games' -->
+
+<h6 id="data-preprocessing">Data Preprocessing</h6>
+
+<ul>
+  <li>Check out if the pandas DataFrame contains an anomaly or nan values. By looking out the unique values, we find that there are several anomalies (the answer is 9) and a few 8, but they are not many. Therefore, quickly drop these samples and in total the DataFrame has 1051 left (50 out).</li>
+  <li>The original answer setting for k14 question is 1 for Yes 2 for No. Reset No to 0 for normalization, hence, to limit the mean score between the range of 0 to 1.</li>
+</ul>
+
+<h6 id="statistic-description">Statistic Description</h6>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/statistics.png">
+   <img src="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/statistics.png" alt="drawing" style="width: 70%;" />
+   </a>
+   <figcaption>Table 1: Game Genres Statistics </figcaption>
+</div>
+
+<p>From Table 1, k14b (puzzle games) and k14j (racing game) have the highest mean scores for voting, which indicates most respondents prefer them. It can be also noticed k14l (horror games) has the lowest mean scores which imply it is not popular at all.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/hist_game_genres.png">
+   <img src="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/hist_game_genres.png" alt="drawing" style="width: 70%;" />
+   </a>
+   <figcaption>Fig 1: The distribution of Game Genres </figcaption>
+</div>
+
+<p>Fig 1 shows a binary distribution trend that some groups of game genres are popular like puzzle games, racing games, sports games, action games and adventure games, while at the same time, the other groups of games are less like to be favored of like survival horror games, RPG games, FPS games and fighting games.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/corr.png">
+   <img src="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/corr.png" alt="drawing" style="width: 70%;" />
+   </a>
+   <figcaption>Fig 2: Correlation Matrix for game genres </figcaption>
+</div>
+
+<p>To further testify the grouping assumption, from Fig 8 correlation matrix, k14d (FPS games) and k14a (fighting games) are slightly correlated. Other pairs like k14c (action games) and k14d (FPS games) are just similar to k14d and k14a. The correlation matrix shows an interesting discovery, FPS games, fighting games, and action games may share some common traits that they might come from a same cluster and belongs to some type of player characteristics.</p>
+
+<h4 id="4-clustering">4. Clustering</h4>
+
+<ul>
+  <li>To explore the relationship between different clusters and discover more possibilities of the clustering hierarchy, the Agglomerative Clustering method is used. The tool to implement clustering is Scikit-learn and SciPy.</li>
+  <li>There are several options of clustering results based on the variable of distance threshold to choose. One possible clustering partitioning show below:</li>
+</ul>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
+<span class="kn">from</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="kn">import</span> <span class="n">dendrogram</span><span class="p">,</span> <span class="n">fcluster</span>
+
+<span class="k">def</span> <span class="nf">plot_dendrogram</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">children_</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">n_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">merge</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">children_</span><span class="p">):</span>
+        <span class="n">current_count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">child_idx</span> <span class="ow">in</span> <span class="n">merge</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">child_idx</span> <span class="o">&lt;</span> <span class="n">n_samples</span><span class="p">:</span>
+                <span class="n">current_count</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c"># leaf node</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">current_count</span> <span class="o">+=</span> <span class="n">counts</span><span class="p">[</span><span class="n">child_idx</span> <span class="o">-</span> <span class="n">n_samples</span><span class="p">]</span>
+        <span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_count</span>
+    <span class="n">linkage_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">model</span><span class="o">.</span><span class="n">children_</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">distances_</span><span class="p">,</span>
+                                      <span class="n">counts</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">dendrogram</span><span class="p">(</span><span class="n">linkage_matrix</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">clustering</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">linkage_matrix</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="n">labels_</span> <span class="o">=</span> <span class="n">fcluster</span><span class="p">(</span><span class="n">linkage_matrix</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="s">'maxclust'</span><span class="p">)</span>
+    <span class="n">n_labels</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">labels_</span><span class="p">))</span>
+    <span class="n">clusters</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">means</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">index_columns</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">label_counts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_labels</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">clusters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">labels_</span> <span class="o">==</span> <span class="n">i</span><span class="p">])</span>
+        <span class="n">means</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">labels_</span> <span class="o">==</span> <span class="n">i</span><span class="p">]))</span>
+        <span class="n">index_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'cluster{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="n">label_counts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">labels_</span> <span class="o">==</span> <span class="n">i</span><span class="p">]))</span>
+
+</code></pre></div></div>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">clusters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">clusters</span><span class="p">)</span>
+    <span class="n">mean_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">means</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">clusters</span><span class="p">,</span> <span class="n">index_columns</span><span class="p">,</span> <span class="n">mean_matrix</span><span class="p">,</span> <span class="n">label_counts</span>
+
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">AgglomerativeClustering</span><span class="p">(</span><span class="n">distance_threshold</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Hierarchical Clustering Dendrogram'</span><span class="p">)</span>
+    <span class="c"># plot the top three levels of the dendrogram</span>
+    <span class="n">linkage_matrix</span> <span class="o">=</span> <span class="n">plot_dendrogram</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">truncate_mode</span><span class="o">=</span><span class="s">'level'</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">color_threshold</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">"Sample Index"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">"Distance(Ward)"</span><span class="p">)</span>
+
+</code></pre></div></div>
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/den7.png">
+   <img src="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/den7.png" alt="drawing" style="width: 70%;" />
+   </a>
+   <figcaption>Fig 3: Dendrogram for clustering </figcaption>
+</div>
+
+<h6 id="clusters-found-and-partitioning-reason">Clusters found and partitioning reason</h6>
+
+<p>There are 7 clusters in Fig 3 the dendrogram. To make sure the clustering has 7 clusters, the distance threshold has a relatively wide range to select. If the number of clusters moves to 5, 4 or 3, the distances threshold get larger ranged which would potentially merge the distinctive clusters and lose diverse persona images for different types of respondents gamers.</p>
+
+<p>To further check the game genre preferences for the players in 7 clusters, the mean scores array for each cluster is produced in order to make a heatmap, this would help find the unique pattern for different types of players.</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/hm7.png">
+   <img src="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/hm7.png" alt="drawing" style="width: 70%;" />
+   </a>
+   <figcaption>Fig 4: Heatmap for mean game genre score given by respondents </figcaption>
+</div>
+
+<h6 id="description-for-7-clusters">Description for 7 clusters</h6>
+
+<ol>
+  <li>Cluster 1: Hardcore gamers – specifically favor exciting games that help stimulate adrenaline. Horror and survival games are their favorites. They also play sports games, fighting games and action games. They do accept racing games and adventure games.</li>
+  <li>Cluster 2: Well-round gamers – play all sorts of games and are willing to try. However, their favorite game is strategy games. They are also in the explorer type player.</li>
+  <li>Cluster 3: Non-player – they do not play games quite often.</li>
+  <li>Cluster 4: Light gamers – they only play puzzles and rhythm games which apart themselves from other respondents. There are studies proving these gamers are more female targeting prone and mobile end incline.</li>
+  <li>Cluster 5:  Car, Gun &amp; Ball gamers – as the counterpart cluster to Cluster 4, these gamers like player FPS games, action games, racing games and sports games. Studies existed they seem mostly male gender.</li>
+  <li>Cluster 6: Casual Gamers – these gamers don’t like fast-paced or thrill experiences but acceptable to all kinds of casual types of games including puzzle games, strategy games, sports games, adventure games.</li>
+  <li>Cluster 7: Role-play gamers – they like playing virtual character‘s life, enjoying having a second virtual life with characters they like in the games. They focus on experiences. They like playing adventure games and RPG games.</li>
+</ol>
+
+<h4 id="5-summary">5. Summary</h4>
+
+<p>Based on reference: https://www.pewresearch.org/internet/2008/09/16/teens-video-games-and-civics/, the respondents top 3 games from © are listed in the table below:</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/summary.png">
+   <img src="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/summary.png" alt="drawing" style="width: 40%;" />
+   </a>
+   <figcaption>Fig 5: 10 most frequently player games </figcaption>
+</div>
+
+<p>From Fig 5, the top 3 games by number of votes are Guitar Hero (rhythm games), Halo3 (FPS games) and Madden NFL (sports games)</p>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/clusters.png">
+   <img src="http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/clusters.png" alt="drawing" style="width: 40%;" />
+   </a>
+   <figcaption>Fig 6: Distribution of 7 clusters </figcaption>
+</div>
+
+<ul>
+  <li>The top 4 types of gamers (top 4 clusters) based on the respondent’s count are cluster2 (Well-round gamers), cluster5 (Car, Gun &amp; Ball gamers), cluster6 (Casual Gamers) and cluster4 (Light gamers).</li>
+  <li>For cluster2 respondents, they play all kinds of games and most sports games (0.95 mean score). For cluster5 respondents, they play sports games (0.82) as well and also FPS games (0.84). For respondents in cluster6 and cluster4, they play sports games and rhythm games a lot (0.74, 0.96).</li>
+  <li>Therefore, the summation of the respondent counts of these clusters supports the top game report that the genres of the top 3 most mentioned games line up with the clustering results.</li>
+</ul>
+
+<hr />
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>
