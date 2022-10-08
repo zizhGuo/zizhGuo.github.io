@@ -1,0 +1,293 @@
+<head>
+  <title>Zizhun Guo</title>
+  <meta name="generator" content="Jekyll v3.8.5" />
+  <meta property="og:title" content="Your awesome title" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="description" content="Personal Tech Blog" />
+  <meta property="og:description" content="Personal Tech Blog" />
+  <link rel="canonical" href="https://localhost:4000/" />
+  <meta property="og:url" content="https://localhost:4000/" />
+  <meta property="og:site_name" content="Zizhun Guo Space" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="user-scalable=yes, initial-scale=0.6, maximum-scale=0.5, minimum-scale=0.5, width=device-width, height=device-height, target-densitydpi=medium-dpi" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<body style="background: #e3e3d3;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <a href="http://localhost:4001/index.html" class="navbar-brand">ZIZHUN GUO</a>
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
+                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+            </li>
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100%;">
+	<div class="jumbotron text-center" style="background: #f6f6f6;">
+		<h1 class="display-3">SQL summary in one (updating)</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		</p>
+		<p class="lead">		Written at <time datetime="">
+			17 Apr 2022
+		</time>
+		</p>
+	</div>		
+
+<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
+	<p><p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<ul>
+  <li><a href="#why-long-query">Why long query？</a></li>
+  <li><a href="#how-to-optimize-it">How to optimize it?</a>
+    <ul>
+      <li><a href="#11-flexible-left-join">1.1 Flexible Left Join</a></li>
+      <li><a href="#12-intermediate-table">1.2 Intermediate Table</a></li>
+    </ul>
+  </li>
+  <li><a href="#sql-syntax-format">SQL Syntax Format</a>
+    <ul>
+      <li><a href="#31-benifit-of-indentation">3.1 Benifit of Indentation</a></li>
+      <li><a href="#32-comma-position-in-selection-clause">3.2 Comma position in selection clause</a></li>
+      <li><a href="#33-alias-usage">3.3 Alias Usage</a></li>
+      <li><a href="#34-distinct-helps-prevent-row-explosion">3.4 Distinct helps prevent row explosion</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="why-long-query">Why long query？</h4>
+
+<p>It depends on the complexity of the business; a simple query demand may involve multiple feature tables, each of which contains columns necessary to inquire, while the number of columns for each table is few. The way to implement a long query is diverse. However, we may intend to make our query as simple as possible. The simple SQL query refers to the query with the least select statement and subqueries. The subquery can visually deduct the line number of the code block but may lead to other problems, i.e., row explosion, etc.</p>
+
+<h4 id="how-to-optimize-it">How to optimize it?</h4>
+
+<p>A feasible way is to make the long SQL query a collection of blocks of code, which are much easier to control and to check for mistakes. Building your query a step at a time is a best practice for SQL development. This will enable you to find logical errors faster and be more confident of your results.</p>
+
+<h6 id="11-flexible-left-join">1.1 Flexible Left Join</h6>
+
+<p>A left join is frequently used in the long SQL query since it plays a filter role. The example down the side adds the new columns tag that indicates if the player is AI or not.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="n">v1</span> <span class="p">(</span>
+<span class="k">SELECT</span>
+    <span class="n">t1</span><span class="p">.</span><span class="o">*</span>
+   <span class="p">,</span><span class="n">IF</span><span class="p">(</span><span class="n">t2</span><span class="p">.</span><span class="n">uid</span> <span class="k">is</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">AS</span> <span class="n">player0_is_AI</span>
+   <span class="p">,</span><span class="n">IF</span><span class="p">(</span><span class="n">t3</span><span class="p">.</span><span class="n">uid</span> <span class="k">is</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">AS</span> <span class="n">player1_is_AI</span>
+<span class="k">FROM</span>
+    <span class="n">dwd_basic</span> <span class="n">t1</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span>
+    <span class="n">dwd</span><span class="p">.</span><span class="n">dwd_user_AI</span> <span class="n">t2</span>
+<span class="k">ON</span>
+    <span class="n">t1</span><span class="p">.</span><span class="n">player0_id</span> <span class="o">=</span> <span class="n">t2</span><span class="p">.</span><span class="n">uid</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span>
+    <span class="n">dwd</span><span class="p">.</span><span class="n">dwd_user_AI</span> <span class="n">t3</span>
+<span class="k">ON</span>
+    <span class="n">t1</span><span class="p">.</span><span class="n">player1_id</span> <span class="o">=</span> <span class="n">t3</span><span class="p">.</span><span class="n">uid</span>
+<span class="p">)</span>
+
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">t</span> <span class="k">where</span> <span class="n">player0_is_AI</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+<h6 id="12-intermediate-table">1.2 Intermediate Table</h6>
+
+<p>An intermediate table is a table created on the database to store temporary data used to calculate the final result set.</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">%</span><span class="n">spark</span><span class="o">.</span><span class="n">pyspark</span>
+
+<span class="n">sql</span> <span class="o">=</span> <span class="n">f</span><span class="s">"""
+with v= as (.......),
+v2 as (.......),
+v3 as (.......)
+
+select * from v3 where.....
+"""</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">hive_contxt</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>From the above example, anything between the query could go wrong. If shit hits the fan, not only the time wasted, but there could have more mistakes go born. A feasible way is to write the intermediate result into the HDFS as a hive table. For tables frequently used as the source features of all other types of specific business queries, it is best to make them permanent tables.</p>
+
+<p>The definition of CTE: The common table expression (CTE) is a powerful construct in SQL that helps simplify a query. CTEs work as virtual tables (with records and columns), created during the execution of a query, used by the query, and eliminated after query execution.</p>
+
+<h4 id="sql-syntax-format">SQL Syntax Format</h4>
+
+<h6 id="31-benifit-of-indentation">3.1 Benifit of Indentation</h6>
+
+<p>Indentation makes the block of codes more understandable by giving a visual cleanness which helps developers identify the position of elements and comprehend the logic.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> 
+    <span class="n">column1</span>
+    <span class="p">,</span><span class="n">column2</span>
+<span class="k">FROM</span> 
+    <span class="n">table1</span>
+<span class="k">WHERE</span> <span class="n">column3</span> <span class="k">IN</span>
+<span class="p">(</span>
+    <span class="k">SELECT</span> 
+        <span class="n">TOP</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">column4</span>
+    <span class="k">FROM</span> 
+        <span class="n">table2</span>
+    <span class="k">INNER</span> <span class="k">JOIN</span> 
+        <span class="n">table3</span>
+    <span class="k">ON</span> 
+        <span class="n">table2</span><span class="p">.</span><span class="n">column1</span> <span class="o">=</span> <span class="n">table3</span><span class="p">.</span><span class="n">column1</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>vs</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">column1</span><span class="p">,</span> <span class="n">column2</span> <span class="k">FROM</span> <span class="n">table1</span> <span class="k">WHERE</span> <span class="n">column3</span> <span class="k">IN</span> <span class="p">(</span> <span class="k">SELECT</span> <span class="n">TOP</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">column4</span> <span class="k">FROM</span> <span class="n">table2</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">table3</span> <span class="k">ON</span> <span class="n">table2</span><span class="p">.</span><span class="n">column1</span> <span class="o">=</span> <span class="n">table3</span><span class="p">.</span><span class="n">column1</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h6 id="32-comma-position-in-selection-clause">3.2 Comma position in selection clause</h6>
+
+<p>Putting commas in front could visually help debug the codes. It also reduces making SQL parsing issues while writing the codes, making it easy to find where we miss placing the comma.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> 
+    <span class="n">a</span>
+    <span class="p">,</span><span class="n">b</span>
+    <span class="p">,</span><span class="k">c</span>
+    <span class="p">,</span> <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">dd</span>
+    <span class="p">,</span> <span class="n">row_number</span><span class="p">()</span> <span class="n">over</span><span class="p">(</span><span class="n">partition</span> <span class="k">by</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="k">order</span> <span class="k">by</span> <span class="k">c</span><span class="p">)</span> <span class="k">as</span> <span class="n">ee</span>
+    <span class="p">,</span> <span class="n">f</span> <span class="o">+</span> <span class="k">g</span> <span class="o">+</span> <span class="n">h</span> <span class="k">as</span> <span class="n">ii</span>
+<span class="k">FROM</span>
+    <span class="n">t</span>
+</code></pre></div></div>
+
+<p><strong>vs</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> 
+    <span class="n">a</span>
+    <span class="n">b</span><span class="p">,</span>
+    <span class="k">c</span><span class="p">,</span>
+    <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">dd</span><span class="p">,</span>
+    <span class="n">row_number</span><span class="p">()</span> <span class="n">over</span><span class="p">(</span><span class="n">partition</span> <span class="k">by</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="k">order</span> <span class="k">by</span> <span class="k">c</span><span class="p">)</span> <span class="k">as</span> <span class="n">ee</span><span class="p">,</span>
+    <span class="n">f</span> <span class="o">+</span> <span class="k">g</span> <span class="o">+</span> <span class="n">h</span> <span class="k">as</span> <span class="n">ii</span><span class="p">,</span>
+<span class="k">FROM</span>
+    <span class="n">t</span>
+
+</code></pre></div></div>
+
+<h6 id="33-alias-usage">3.3 Alias Usage</h6>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="n">v1</span> <span class="k">as</span> <span class="p">(</span>
+<span class="k">select</span>
+    <span class="n">a</span>
+        <span class="p">,</span><span class="n">b</span>
+        <span class="p">,</span><span class="k">c</span>
+<span class="k">from</span> <span class="n">dwd</span><span class="p">.</span><span class="n">record_info</span>
+<span class="p">)</span>
+
+<span class="k">SELECT</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">t</span><span class="p">.</span><span class="n">b</span>
+<span class="k">FROM</span>
+    <span class="n">v1</span> <span class="n">t</span>
+</code></pre></div></div>
+
+<p><strong>vs</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="n">v1</span> <span class="k">as</span> <span class="p">(</span>
+<span class="k">select</span>
+    <span class="n">a</span>
+    <span class="p">,</span><span class="n">b</span>
+    <span class="p">,</span><span class="k">c</span>
+<span class="k">from</span> <span class="n">dwd</span><span class="p">.</span><span class="n">record_info</span> <span class="n">t</span>
+<span class="p">),</span>
+
+<span class="n">v2</span> <span class="k">as</span> <span class="p">(</span>
+<span class="k">select</span>
+    <span class="n">b</span> <span class="o">+</span> <span class="n">a</span> <span class="k">as</span> <span class="n">a</span>
+    <span class="p">,</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">as</span> <span class="n">b</span>
+<span class="k">from</span>
+        <span class="n">v1</span> <span class="n">t</span>
+<span class="k">where</span>
+        <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">10</span>
+<span class="p">)</span>
+
+<span class="k">SELECT</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">t</span><span class="p">.</span><span class="n">b</span>
+<span class="k">FROM</span>
+    <span class="n">v2</span> <span class="n">t</span>
+</code></pre></div></div>
+<p>Alias helps query works within the context, which means if you change the table name in the ‘from’ clasuse to another, it won’t bother you to re-edit all references in the selection clause.</p>
+
+<h6 id="34-distinct-helps-prevent-row-explosion">3.4 Distinct helps prevent row explosion</h6>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span>
+    <span class="n">t1</span><span class="p">.</span><span class="n">a</span>
+<span class="k">from</span>
+    <span class="n">order_info</span> <span class="n">t1</span>
+<span class="k">inner</span> <span class="k">join</span>
+    <span class="n">game_info</span> <span class="n">t2</span>
+<span class="k">on</span>
+    <span class="n">t1</span><span class="p">.</span><span class="n">uid</span> <span class="o">=</span> <span class="n">t2</span><span class="p">.</span><span class="n">uid</span>
+</code></pre></div></div>
+<p>If both order_info and game_info tables have duplicate uids, joining them on the uid column would cause the row explosion. The distinct clause can solve it by eliminating the duplicates first.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span>
+    <span class="n">t1</span><span class="p">.</span><span class="n">a</span>
+<span class="k">from</span>
+    <span class="p">(</span><span class="k">select</span> <span class="k">distinct</span> <span class="n">uid</span> <span class="k">from</span> <span class="n">order_info</span><span class="p">)</span> <span class="n">t1</span>
+<span class="k">inner</span> <span class="k">join</span>
+    <span class="p">(</span><span class="k">select</span> <span class="k">distinct</span> <span class="n">uid</span> <span class="k">from</span> <span class="n">game_info</span><span class="p">)</span> <span class="n">t2</span>
+<span class="k">on</span>
+    <span class="n">t1</span><span class="p">.</span><span class="n">uid</span> <span class="o">=</span> <span class="n">t2</span><span class="p">.</span><span class="n">uid</span>
+</code></pre></div></div>
+
+<p>to be continued….</p>
+
+<hr />
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+</p>
+
+</div>
+
+
+</section>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>

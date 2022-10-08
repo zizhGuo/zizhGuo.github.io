@@ -1,4 +1,209 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2022-10-06T01:03:33+08:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Agglomerative Clustering on Detecting Types of Gamers</title><link href="http://localhost:4001/jekyll/update/projects/2022/01/12/Teen-Game-Clustering.html" rel="alternate" type="text/html" title="Agglomerative Clustering on Detecting Types of Gamers" /><published>2022-01-12T20:33:30+08:00</published><updated>2022-01-12T20:33:30+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2022/01/12/Teen-Game-Clustering</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2022/01/12/Teen-Game-Clustering.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2022-10-08T13:24:36+08:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">SQL summary in one (updating)</title><link href="http://localhost:4001/jekyll/update/projects/2022/04/17/SQL_summary.html" rel="alternate" type="text/html" title="SQL summary in one (updating)" /><published>2022-04-17T17:33:30+08:00</published><updated>2022-04-17T17:33:30+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2022/04/17/SQL_summary</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2022/04/17/SQL_summary.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#why-long-query&quot;&gt;Why long query？&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#how-to-optimize-it&quot;&gt;How to optimize it?&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-flexible-left-join&quot;&gt;1.1 Flexible Left Join&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-intermediate-table&quot;&gt;1.2 Intermediate Table&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#sql-syntax-format&quot;&gt;SQL Syntax Format&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#31-benifit-of-indentation&quot;&gt;3.1 Benifit of Indentation&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#32-comma-position-in-selection-clause&quot;&gt;3.2 Comma position in selection clause&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#33-alias-usage&quot;&gt;3.3 Alias Usage&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#34-distinct-helps-prevent-row-explosion&quot;&gt;3.4 Distinct helps prevent row explosion&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;why-long-query&quot;&gt;Why long query？&lt;/h4&gt;
+
+&lt;p&gt;It depends on the complexity of the business; a simple query demand may involve multiple feature tables, each of which contains columns necessary to inquire, while the number of columns for each table is few. The way to implement a long query is diverse. However, we may intend to make our query as simple as possible. The simple SQL query refers to the query with the least select statement and subqueries. The subquery can visually deduct the line number of the code block but may lead to other problems, i.e., row explosion, etc.&lt;/p&gt;
+
+&lt;h4 id=&quot;how-to-optimize-it&quot;&gt;How to optimize it?&lt;/h4&gt;
+
+&lt;p&gt;A feasible way is to make the long SQL query a collection of blocks of code, which are much easier to control and to check for mistakes. Building your query a step at a time is a best practice for SQL development. This will enable you to find logical errors faster and be more confident of your results.&lt;/p&gt;
+
+&lt;h6 id=&quot;11-flexible-left-join&quot;&gt;1.1 Flexible Left Join&lt;/h6&gt;
+
+&lt;p&gt;A left join is frequently used in the long SQL query since it plays a filter role. The example down the side adds the new columns tag that indicates if the player is AI or not.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;player0_is_AI&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;player1_is_AI&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dwd_basic&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dwd_user_AI&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;player0_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uid&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dwd_user_AI&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t3&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;player1_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uid&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;player0_is_AI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h6 id=&quot;12-intermediate-table&quot;&gt;1.2 Intermediate Table&lt;/h6&gt;
+
+&lt;p&gt;An intermediate table is a table created on the database to store temporary data used to calculate the final result set.&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pyspark&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+with v= as (.......),
+v2 as (.......),
+v3 as (.......)
+
+select * from v3 where.....
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hive_contxt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;From the above example, anything between the query could go wrong. If shit hits the fan, not only the time wasted, but there could have more mistakes go born. A feasible way is to write the intermediate result into the HDFS as a hive table. For tables frequently used as the source features of all other types of specific business queries, it is best to make them permanent tables.&lt;/p&gt;
+
+&lt;p&gt;The definition of CTE: The common table expression (CTE) is a powerful construct in SQL that helps simplify a query. CTEs work as virtual tables (with records and columns), created during the execution of a query, used by the query, and eliminated after query execution.&lt;/p&gt;
+
+&lt;h4 id=&quot;sql-syntax-format&quot;&gt;SQL Syntax Format&lt;/h4&gt;
+
+&lt;h6 id=&quot;31-benifit-of-indentation&quot;&gt;3.1 Benifit of Indentation&lt;/h6&gt;
+
+&lt;p&gt;Indentation makes the block of codes more understandable by giving a visual cleanness which helps developers identify the position of elements and comprehend the logic.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;table1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column3&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IN&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; 
+        &lt;span class=&quot;n&quot;&gt;TOP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column4&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; 
+        &lt;span class=&quot;n&quot;&gt;table2&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;INNER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; 
+        &lt;span class=&quot;n&quot;&gt;table3&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; 
+        &lt;span class=&quot;n&quot;&gt;table2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;vs&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column3&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TOP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column4&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INNER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table3&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;32-comma-position-in-selection-clause&quot;&gt;3.2 Comma position in selection clause&lt;/h6&gt;
+
+&lt;p&gt;Putting commas in front could visually help debug the codes. It also reduces making SQL parsing issues while writing the codes, making it easy to find where we miss placing the comma.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;c&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dd&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;over&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;partition&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ee&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ii&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;vs&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;row_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;over&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;partition&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ii&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;33-alias-usage&quot;&gt;3.3 Alias Usage&lt;/h6&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;c&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;record_info&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;vs&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;c&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;record_info&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;v2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;where&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;v2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Alias helps query works within the context, which means if you change the table name in the ‘from’ clasuse to another, it won’t bother you to re-edit all references in the selection clause.&lt;/p&gt;
+
+&lt;h6 id=&quot;34-distinct-helps-prevent-row-explosion&quot;&gt;3.4 Distinct helps prevent row explosion&lt;/h6&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;order_info&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;inner&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;join&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;game_info&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;on&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uid&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If both order_info and game_info tables have duplicate uids, joining them on the uid column would cause the row explosion. The distinct clause can solve it by eliminating the duplicates first.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;distinct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order_info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;inner&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;join&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;distinct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uid&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;game_info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;on&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uid&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to be continued….&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">Agglomerative Clustering on Detecting Types of Gamers</title><link href="http://localhost:4001/jekyll/update/projects/2022/01/12/Teen-Game-Clustering.html" rel="alternate" type="text/html" title="Agglomerative Clustering on Detecting Types of Gamers" /><published>2022-01-12T20:33:30+08:00</published><updated>2022-01-12T20:33:30+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2022/01/12/Teen-Game-Clustering</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2022/01/12/Teen-Game-Clustering.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -3259,268 +3464,4 @@ WHERE n_interactions &amp;gt; 10000
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Alibaba Taobao.com</summary></entry><entry><title type="html">Alibaba Taobao User Behaviors Analysis II: AARRR Framework (Acquisition) - PV, UV, CVR, Funnel Plot</title><link href="http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model.html" rel="alternate" type="text/html" title="Alibaba Taobao User Behaviors Analysis II: AARRR Framework (Acquisition) - PV, UV, CVR, Funnel Plot" /><published>2021-05-21T19:34:57+08:00</published><updated>2021-05-21T19:34:57+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/05/21/Taobao_Behavior_Analysis_Model.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;1-recap-of-the-user-behavior-table&quot;&gt;1. Recap of the user behavior table&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
-|user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
-+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
-|      1|2268318|    2520377|      pv|1511544070|2017-11-24 12:21:10|2017-11-24|   11| 24|  12|        6|
-|      1|2333346|    2520771|      pv|1511561733|2017-11-24 17:15:33|2017-11-24|   11| 24|  17|        6|
-|      1|2576651|     149192|      pv|1511572885|2017-11-24 20:21:25|2017-11-24|   11| 24|  20|        6|
-|      1|3830808|    4181361|      pv|1511593493|2017-11-25 02:04:53|2017-11-25|   11| 25|   2|        7|
-|      1|4365585|    2520377|      pv|1511596146|2017-11-25 02:49:06|2017-11-25|   11| 25|   2|        7|
-|      1|4606018|    2735466|      pv|1511616481|2017-11-25 08:28:01|2017-11-25|   11| 25|   8|        7|
-|      1| 230380|     411153|      pv|1511644942|2017-11-25 16:22:22|2017-11-25|   11| 25|  16|        7|
-|      1|3827899|    2920476|      pv|1511713473|2017-11-26 11:24:33|2017-11-26|   11| 26|  11|        1|
-|      1|3745169|    2891509|      pv|1511725471|2017-11-26 14:44:31|2017-11-26|   11| 26|  14|        1|
-|      1|1531036|    2920476|      pv|1511733732|2017-11-26 17:02:12|2017-11-26|   11| 26|  17|        1|
-+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
-only showing top 10 rows
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Behavior&lt;/th&gt;
-      &lt;th&gt;Explanation&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;pv&lt;/td&gt;
-      &lt;td&gt;Page view of an item’s detail page, equivalent to an item click&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;fav&lt;/td&gt;
-      &lt;td&gt;Purchase an item&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cart&lt;/td&gt;
-      &lt;td&gt;Add an item to shopping cart&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;buy&lt;/td&gt;
-      &lt;td&gt;Favor an item&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&quot;2-acquisition&quot;&gt;2. Acquisition&lt;/h4&gt;
-
-&lt;p&gt;The point for Acquisition analysis is to develop knowledge about the ability of the product to convert visitors into customers. It helps evaluate the efficiency of the business process. The product may have diverse marketing sources of visitors and different channels to fulfill the conversion.&lt;/p&gt;
-
-&lt;p&gt;In Taobao user behavior dataset, the ‘behavior’ field can be intuitively interpreted owning the values in an ordinal nature, since the business allows provide purchasing behaviors which are able to independently conducted, e.g. users can choose to purchase the item directly or put it into the cart or favorites. Therefore, there are multiple channels that convert the item visit into the final order. Hence, I take multiple funnel analyses to study its acquisitional traits.&lt;/p&gt;
-
-&lt;h6 id=&quot;global-page-view-pv-unique-user-uv-pvuv&quot;&gt;Global Page View (PV), Unique User (UV), PV/UV&lt;/h6&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Pychart can query records using Dataframe SQL functions&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pyspark.sql.functions&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;countDistinct&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;countDistinct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'uv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;+------+
-|    uv|
-+------+
-|987991|
-+------+
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;The dataset has &lt;strong&gt;987,991&lt;/strong&gt; unique users. Hence, &lt;strong&gt;UV&lt;/strong&gt; = &lt;strong&gt;987,991&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# The same, group by on 'behavior' and find the count for the 'pv'&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;df1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'behavior'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;orderBy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'count'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ascending&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;+--------+--------+
-|behavior|   count|
-+--------+--------+
-|      pv|89697359|
-|    cart| 5530446|
-|     fav| 2888258|
-|     buy| 2015839|
-+--------+--------+
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;The dataset has &lt;strong&gt;89,697,359&lt;/strong&gt; page view behaviors between 2017-11-24 to 2017-12-03. Hence, &lt;strong&gt;PV&lt;/strong&gt; = &lt;strong&gt;89,697,359&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The PV/UV, the average page view per user evaluates the popularity for the items to be seen in a global sense. We could calculate it for each item. However, this metric needs to be used with other global metrics.&lt;/p&gt;
-
-&lt;p&gt;The &lt;strong&gt;PV/UV&lt;/strong&gt; is &lt;strong&gt;90&lt;/strong&gt;. In these 10 days, the average page views for each unique user is 90.&lt;/p&gt;
-
-&lt;h6 id=&quot;bounce-rate&quot;&gt;Bounce Rate&lt;/h6&gt;
-
-&lt;p&gt;Bounce rate is single-page sessions divided by all sessions, or the percentage of all sessions on the site in which users viewed only a single page and triggered only a single request to the Analytics server. - &lt;a href=&quot;https://support.google.com/analytics/answer/1009409?hl=en&quot;&gt;reference&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;In the Taobao user behavior case, the unique users who visit items once during the 10-day session would be only considered. Therefore, this bounce rate evaluates the attractiveness of the website instead of a specific item.&lt;/p&gt;
-
-&lt;p&gt;Create&lt;/p&gt;
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Create TempView with the user count for the different behavior.&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# PK: user_id&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-SELECT 
-    user_id, 
-    SUM(case when behavior='pv' then 1 else 0 end) as PageView,
-    SUM(case when behavior='fav' then 1 else 0 end) as Favorite,
-    SUM(case when behavior='cart' then 1 else 0 end) as Cart,
-    SUM(case when behavior='buy' then 1 else 0 end) as Buy
-FROM 
-    taobao
-GROUP BY
-    user_id
-&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;createTempView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;behaviorCount&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-SELECT 
-    COUNT(user_id)
-FROM
-    behaviorCount
-WHERE PageView = 1 AND Favorite = 0 AND Cart = 0 AND Buy = 0;
-&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;+-----------------------+
-|count(DISTINCT user_id)|
-+-----------------------+
-|                     53|
-+-----------------------+
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;The number of unique users who have only &lt;strong&gt;1 page view&lt;/strong&gt; count is &lt;strong&gt;53&lt;/strong&gt;. The &lt;strong&gt;bounce rate&lt;/strong&gt;, 53/UV is &lt;strong&gt;0.0053%&lt;/strong&gt;. It is very small, it proves the visitors, no matter new or old, would not stop discovering the website at the first sight.&lt;/p&gt;
-
-&lt;h6 id=&quot;conversion-rate-cvr&quot;&gt;Conversion Rate (CVR)&lt;/h6&gt;
-
-&lt;p&gt;The &lt;strong&gt;conversion rate&lt;/strong&gt; is the percentage of visitors to the website that complete a desired goal (a conversion) out of the total number of visitors.&lt;a href=&quot;https://www.wordstream.com/conversion-rate&quot;&gt;-[Source]&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The desired goal is &lt;strong&gt;make-purchase&lt;/strong&gt;.  There are three channels to make such conversion (see fig 1 below): 1. page view - favorite - buy; 2. page view - cart - buy; 3. page view - buy. Each channel can conduct a funnel analysis.&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/01.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/01.png&quot; alt=&quot;drawing&quot; style=&quot;width: 20%;&quot; /&gt;
-   &lt;/a&gt;
-   &lt;figcaption&gt;Fig 1: Three conversion channels &lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;pv - fav - buy&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;CVR for page view user to favorite user = # of users who have pv and fav/ # of users who have pv&lt;/p&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n_unique_fav_users&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-SELECT COUNT(DISTINCT user_id)
-FROM behaviorCount
-WHERE PageView &amp;gt; 0 AND Favorite &amp;gt; 0
-&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 387548&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;n_unique_pv_users&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-SELECT COUNT(DISTINCT user_id)
-FROM behaviorCount
-WHERE PageView &amp;gt; 0
-&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 984107&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;CVR_pv2fav&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_unique_fav_users&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_unique_pv_users&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 387548/984107&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The conversion rate for pv to fav is 39.38%.&lt;/p&gt;
-
-&lt;p&gt;CVR for page view user to favorite to buy user = # of users who have pv, fav and buy / # of users who have pv&lt;/p&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n_unique_fav_buy_users&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-SELECT COUNT(DISTINCT user_id)
-FROM behaviorCount
-WHERE PageView &amp;gt; 0 AND Favorite &amp;gt; 0 AND Buy &amp;gt; 0
-&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 275476&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;CVR_pv2fav2buy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_unique_fav_buy_users&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_unique_pv_users&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 275476 / 984107&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CVR_pv2fav2buy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;The conversion rate for pv-fav-buy is 27.99%.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;pv - cart - buy&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;CVR for page view user to cart user = # of users who have pv and cart / # of users who have pv&lt;/p&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n_unique_cart_users&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-SELECT COUNT(DISTINCT user_id)
-FROM behaviorCount
-WHERE PageView &amp;gt; 0 AND Cart &amp;gt; 0
-&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 735674&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;CVR_pv2cart&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_unique_cart_users&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_unique_pv_users&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 735674 / 984107&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CVR_pv2cart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;The conversion rate for pv-cart is 74.56%.&lt;/p&gt;
-
-&lt;p&gt;CVR for page view user to cart to buy user = # of users who have pv, cart and buy / # of users who have pv&lt;/p&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n_unique_cart_buy_users&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-SELECT COUNT(DISTINCT user_id)
-FROM behaviorCount
-WHERE PageView &amp;gt; 0 AND Cart &amp;gt; 0 AND Buy &amp;gt; 0
-&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 528408&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;CVR_pv2cart2buy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_unique_cart_buy_users&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_unique_pv_users&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 528408 / 984107&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CVR_pv2cart2buy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;The conversion rate for pv-cart-buy is 53.69%.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;pv - buy&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;CVR for page view user to buy user = # of users who have pv and buy / # of users who have pv&lt;/p&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n_unique_pv_buy_users&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-SELECT COUNT(DISTINCT user_id)
-FROM behaviorCount
-WHERE PageView &amp;gt; 0 AND Favorite = 0 AND Cart = 0 AND Buy &amp;gt; 0
-&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;CVR_pv2buy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_unique_pv_buy_users&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_unique_pv_users&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CVR_pv2buy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;The conversion rate for pv-buy is 7.01%. (There might have users who have both pv-buy or pv-fav/cart-buy behaviors, such SQL would exclude those users who have both behaviors, therefore the CVR for pv-buy would be higher if based on items)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Funnel plot for 3 channels based on # of users&lt;/strong&gt;&lt;/p&gt;
-
-&lt;!-- #80bdff
-#f1b0b7
-#ffc107
-#54bc4b --&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;plotly&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;graph_objects&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;fig1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Figure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Funnel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'pv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'fav'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'buy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_unique_pv_users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_unique_fav_users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_unique_fav_buy_users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;textposition&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;inside&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;textinfo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;value+percent initial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;marker&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;color&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#80bdff&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;#f1b0b7&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;#54bc4b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]})&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;fig1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_1.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_1.png&quot; alt=&quot;drawing&quot; style=&quot;width: 60%;&quot; /&gt;
-   &lt;/a&gt;
-   &lt;figcaption&gt;Fig 2: Funnel plot: pv-fav-buy &lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_2.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_2.png&quot; alt=&quot;drawing&quot; style=&quot;width: 60%;&quot; /&gt;
-   &lt;/a&gt;
-   &lt;figcaption&gt;Fig 3: Funnel plot: pv-cart-buy &lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_3.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_3.png&quot; alt=&quot;drawing&quot; style=&quot;width: 60%;&quot; /&gt;
-   &lt;/a&gt;
-   &lt;figcaption&gt;Fig 4: Funnel plot: pv-buy &lt;/figcaption&gt;
-&lt;/div&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Alibaba Taobao.com</summary></entry></feed>
