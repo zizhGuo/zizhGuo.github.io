@@ -17,7 +17,8 @@ visible: 1
 - [Why long query？](#why-long-query)
 - [How to optimize it?](#how-to-optimize-it)
     - [1.1 Flexible Left Join](#11-flexible-left-join)
-    - [1.2 Intermediate Table](#12-intermediate-table)
+    - [1.2 Illustrated SQL join](#12-illustrated-sql-join)
+    - [1.3 Intermediate Table](#13-intermediate-table)
 - [SQL Syntax Format](#sql-syntax-format)
     - [3.1 Benifit of Indentation](#31-benifit-of-indentation)
     - [3.2 Comma position in selection clause](#32-comma-position-in-selection-clause)
@@ -58,7 +59,123 @@ ON
 
 select * from t where player0_is_AI = 1
 ```
-###### 1.2 Intermediate Table 
+
+###### 1.2 Illustrated SQL join
+
+Create the testing tables:
+```sql
+CREATE TABLE IF NOT EXISTS db.test_join_A
+    (
+        id INT
+        ,name STRING
+    )
+    ROW FORMAT DELIMITED
+    FIELDS TERMINATED BY ','
+;
+
+CREATE TABLE IF NOT EXISTS db.test_join_B
+    (
+        id INT
+        ,company STRING
+    )
+    ROW FORMAT DELIMITED
+    FIELDS TERMINATED BY ','
+;
+
+INSERT into TABLE db.test_join_a VALUES (1, 'Melisa');
+INSERT into TABLE db.test_join_a VALUES (2, 'John');
+INSERT into TABLE db.test_join_a VALUES (3, 'Kobe');
+INSERT into TABLE db.test_join_a VALUES (4, 'Wanda');
+
+INSERT into TABLE db.test_join_b VALUES (3, 'Apple');
+INSERT into TABLE db.test_join_b VALUES (4, 'Microsoft');
+INSERT into TABLE db.test_join_b VALUES (5, 'Shein');
+INSERT into TABLE db.test_join_b VALUES (6, 'JD.com');
+```
+
+Print Left Join result:
+```sql
+select
+    t1.id
+    ,t2.id
+    ,t1.name
+    ,t2.company
+from
+    guozz.test_join_A t1
+left join
+    guozz.test_join_B t2
+on
+    t1.id = t2.id
+```
+
+<div style="text-align: center;">
+    <a href ="{{site.url}}/assets/2022-04-17-SQL_summary/31_join_Result.png">
+   <img src="{{site.url}}/assets/2022-04-17-SQL_summary/31_join_Result.png" alt="drawing" style="width: 90%;"/>
+   </a>
+   <!-- <figcaption>Fig 1: The distribution of Game Genres </figcaption> -->
+</div>
+
+The illustration:
+<div style="text-align: center;">
+    <a href ="{{site.url}}/assets/2022-04-17-SQL_summary/32_join_illustration.png">
+   <img src="{{site.url}}/assets/2022-04-17-SQL_summary/32_join_illustration.png" alt="drawing" style="width: 50%;"/>
+   </a>
+   <!-- <figcaption>Fig 1: The distribution of Game Genres </figcaption> -->
+</div>
+
+If t2.id is not null, it indicates the overlapping area.
+
+```sql
+select
+    t1.id
+    ,t2.id
+    ,t1.name
+    ,t2.company
+    ,if(t2.id is not null, 1, 0) as is_from_B
+from
+    guozz.test_join_A t1
+left join
+    guozz.test_join_B t2
+on
+    t1.id = t2.id
+;
+```
+<div style="text-align: center;">
+    <a href ="{{site.url}}/assets/2022-04-17-SQL_summary/33_join_not_null.png">
+   <img src="{{site.url}}/assets/2022-04-17-SQL_summary/33_join_not_null.png" alt="drawing" style="width: 90%;"/>
+   </a>
+   <!-- <figcaption>Fig 1: The distribution of Game Genres </figcaption> -->
+</div>
+
+
+
+If t2.id is null, it indicates the non-overlapping area.
+
+```sql
+select
+    t1.id
+    ,t2.id
+    ,t1.name
+    ,t2.company
+    ,if(t2.id is null, 1, 0) as is_from_A
+from
+    guozz.test_join_A t1
+left join
+    guozz.test_join_B t2
+on
+    t1.id = t2.id
+;
+```
+<div style="text-align: center;">
+    <a href ="{{site.url}}/assets/2022-04-17-SQL_summary/34_join_null.png">
+   <img src="{{site.url}}/assets/2022-04-17-SQL_summary/34_join_null.png" alt="drawing" style="width: 90%;"/>
+   </a>
+   <!-- <figcaption>Fig 1: The distribution of Game Genres </figcaption> -->
+</div>
+
+
+
+###### 1.3 Intermediate Table 
 
 An intermediate table is a table created on the database to store temporary data used to calculate the final result set.
 
