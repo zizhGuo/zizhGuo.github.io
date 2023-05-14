@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -87,14 +89,14 @@
 
 <h3 id="1-data-set-quantization">1. Data set quantization</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW02_Guo_Zizhun_Mentor.py/main</span>
-    
-    <span class="c"># using floor binning method to quatize dat set</span>
-    <span class="n">data_ages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">df_snowfolks_data_raw</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">/</span><span class="n">bin_size_ages</span><span class="p">)</span> \
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># location: HW02_Guo_Zizhun_Mentor.py/main
+</span>    
+    <span class="c1"># using floor binning method to quatize dat set
+</span>    <span class="n">data_ages</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">floor</span><span class="p">(</span><span class="n">df_snowfolks_data_raw</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">/</span><span class="n">bin_size_ages</span><span class="p">)</span> \
                     <span class="o">*</span> <span class="n">bin_size_ages</span>  \
                     <span class="o">*</span> <span class="n">df_snowfolks_data_raw</span><span class="p">[</span><span class="s">'Class'</span><span class="p">]</span>
     
-    <span class="n">data_heights</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">df_snowfolks_data_raw</span><span class="p">[</span><span class="s">'Height'</span><span class="p">]</span> <span class="o">/</span><span class="n">bin_size_heights</span><span class="p">)</span> \
+    <span class="n">data_heights</span><span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">floor</span><span class="p">(</span><span class="n">df_snowfolks_data_raw</span><span class="p">[</span><span class="s">'Height'</span><span class="p">]</span> <span class="o">/</span><span class="n">bin_size_heights</span><span class="p">)</span> \
                         <span class="o">*</span> <span class="n">bin_size_heights</span> \
                         <span class="o">*</span> <span class="n">df_snowfolks_data_raw</span><span class="p">[</span><span class="s">'Class'</span><span class="p">]</span>
 
@@ -104,24 +106,24 @@
 <h3 id="2-main-parts-description">2. Main parts description</h3>
 
 <h4 id="21-cost-functions-minimal-mixed-cost">2.1 Cost functions (minimal mixed cost)</h4>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW02_Guo_Zizhun_Mentor.py/binary_classifier_1d</span>
-
-        <span class="n">FN</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">Class_A</span><span class="p">[</span><span class="n">Class_A</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>                  <span class="c"># calculate the False Negatives</span>
-        <span class="n">FP</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">Class_B</span><span class="p">[</span><span class="n">Class_B</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">])</span>                  <span class="c"># calculate the False Positives</span>
-        <span class="n">mixed_cost</span> <span class="o">=</span> <span class="n">FN</span> <span class="o">+</span> <span class="n">FP</span>                                <span class="c"># calculate the mixed cost by adding up        </span>
-        
-        <span class="c"># Minimize the mistakes</span>
-        <span class="k">if</span> <span class="n">mixed_cost</span> <span class="o">&lt;</span> <span class="n">lowest_cost</span><span class="p">:</span>
-            <span class="n">lowest_cost</span> <span class="o">=</span> <span class="n">mixed_cost</span>                              <span class="c"># update the minimal cost</span>
-            <span class="n">best_thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>                           <span class="c"># update the best threshold</span>
-</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># location: HW02_Guo_Zizhun_Mentor.py/binary_classifier_1d
+</span>
+        <span class="n">FN</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="n">Class_A</span><span class="p">[</span><span class="n">Class_A</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>                  <span class="c1"># calculate the False Negatives
+</span>        <span class="n">FP</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="n">Class_B</span><span class="p">[</span><span class="n">Class_B</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">])</span>                  <span class="c1"># calculate the False Positives
+</span>        <span class="n">mixed_cost</span> <span class="o">=</span> <span class="n">FN</span> <span class="o">+</span> <span class="n">FP</span>                                <span class="c1"># calculate the mixed cost by adding up        
+</span>        
+        <span class="c1"># Minimize the mistakes
+</span>        <span class="k">if</span> <span class="n">mixed_cost</span> <span class="o">&lt;</span> <span class="n">lowest_cost</span><span class="p">:</span>
+            <span class="n">lowest_cost</span> <span class="o">=</span> <span class="n">mixed_cost</span>                              <span class="c1"># update the minimal cost
+</span>            <span class="n">best_thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>                           <span class="c1"># update the best threshold
+</span></code></pre></div></div>
 <h4 id="22-selecting-attribute">2.2 Selecting attribute</h4>
 <p><strong>All attributes</strong> would be tested for selecting the <strong>final</strong> attribute as the standard attribute, which would be used in the trained program as the threshold.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW02_Guo_Zizhun_Mentor.py/write_file</span>
-
-    <span class="c"># select attribute by comparing the lowest cost to decide the classify rule</span>
-    <span class="n">attribute</span> <span class="o">=</span> <span class="s">'Age'</span> \
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># location: HW02_Guo_Zizhun_Mentor.py/write_file
+</span>
+    <span class="c1"># select attribute by comparing the lowest cost to decide the classify rule
+</span>    <span class="n">attribute</span> <span class="o">=</span> <span class="s">'Age'</span> \
         <span class="k">if</span> <span class="n">lowest_cost_ages</span> <span class="o">&lt;</span> <span class="n">lowest_cost_heights</span> \
         <span class="k">else</span> <span class="s">'Height'</span>
     <span class="n">threshold</span> <span class="o">=</span> <span class="n">best_thresholds_ages</span> \
@@ -203,7 +205,7 @@
    <img src="http://localhost:4001/assets/Img-DM/HW02-roc_curve.png" alt="drawing" style="width: 70%;" />
    <figcaption>Figure 3: ROC Curve</figcaption>
 </div>
-<p>*Axes square by <code class="highlighter-rouge">plt.gca().set_aspect('equal', adjustable='box')</code>
+<p>*Axes square by <code class="language-plaintext highlighter-rouge">plt.gca().set_aspect('equal', adjustable='box')</code>
 *Indication showed by red dots with best threshold annotated
 *There might be <strong>multiple best thresholds</strong> for a single attribute, conclusion would be posted in <strong>Part 6</strong>.</p>
 
@@ -278,13 +280,13 @@ since they were calculated by sum of FAR and FNR, best point is expected to have
 
 <p>As homework document described, <em>“Caution, there may be more than one of them”</em>, so there must implemente a data strutrue that is able to contains all roc points with lowest cost, and can be plotted them in the same ROC curve figure.
 So here is how to implemented in homework:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># Data structure [[(x1, y1), threshold1],...,[(xn, yn), thresholdn]]</span>
-    <span class="k">for</span> <span class="n">roc_point_with_lowest_cost</span> <span class="ow">in</span> <span class="n">roc_points_with_lowest_cost</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># Data structure [[(x1, y1), threshold1],...,[(xn, yn), thresholdn]]
+</span>    <span class="k">for</span> <span class="n">roc_point_with_lowest_cost</span> <span class="ow">in</span> <span class="n">roc_points_with_lowest_cost</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">roc_point_with_lowest_cost_duplicate</span> <span class="ow">in</span> <span class="n">roc_point_with_lowest_cost</span><span class="p">:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">roc_point_with_lowest_cost_duplicate</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+            <span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">roc_point_with_lowest_cost_duplicate</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
                     <span class="n">roc_point_with_lowest_cost_duplicate</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
                     <span class="s">'ro'</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">roc_point_with_lowest_cost_duplicate</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> 
+            <span class="n">plt</span><span class="p">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">roc_point_with_lowest_cost_duplicate</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> 
                         <span class="p">(</span><span class="n">roc_point_with_lowest_cost_duplicate</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
                         <span class="n">roc_point_with_lowest_cost_duplicate</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </code></pre></div></div>
@@ -299,19 +301,19 @@ This is the other name for descibing this siatution. So in order to break ties, 
 
 <p>In codes implementation, the first best threshold would be select if distribution is Age-like, while the last best threshold would be chosen if distribution is built under attribute of Height.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW02_GUO_Zizhun_trained.py/main</span>
-
-    <span class="c"># based on domain knowledge to choose which side to classify as Assam or Bhutan</span>
-    <span class="k">if</span> <span class="n">attribute</span> <span class="o">==</span> <span class="s">'Age'</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># location: HW02_GUO_Zizhun_trained.py/main
+</span>
+    <span class="c1"># based on domain knowledge to choose which side to classify as Assam or Bhutan
+</span>    <span class="k">if</span> <span class="n">attribute</span> <span class="o">==</span> <span class="s">'Age'</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="c"># select first best threshold</span>
-                <span class="k">print</span><span class="p">(</span><span class="s">'- 1'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="c1"># select first best threshold
+</span>                <span class="k">print</span><span class="p">(</span><span class="s">'- 1'</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">print</span><span class="p">(</span><span class="s">'+ 1'</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">attribute</span> <span class="o">==</span> <span class="s">'Height'</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">threshold</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span> <span class="c"># select the last best threshold</span>
-                <span class="k">print</span><span class="p">(</span><span class="s">'+ 1'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">[</span><span class="n">np</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="n">threshold</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span> <span class="c1"># select the last best threshold
+</span>                <span class="k">print</span><span class="p">(</span><span class="s">'+ 1'</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">print</span><span class="p">(</span><span class="s">'- 1'</span><span class="p">)</span>
 </code></pre></div></div>

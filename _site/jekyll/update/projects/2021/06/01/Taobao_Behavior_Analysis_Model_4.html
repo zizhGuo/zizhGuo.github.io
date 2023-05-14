@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -64,7 +66,7 @@
 
 <h4 id="recap-of-the-user-behavior-table">Recap of the user behavior table</h4>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
 |user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
 +-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
 |      1|2268318|    2520377|      pv|1511544070|2017-11-24 12:21:10|2017-11-24|   11| 24|  12|        6|
@@ -213,7 +215,7 @@ useful for targeted consumer insights at scale. The tool to implement is Apache 
   </tbody>
 </table>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     user_id,
     item_id,
@@ -228,9 +230,9 @@ GROUP BY user_id, item_id
 ORDER BY user_id, item_id ASC
 """</span><span class="p">)</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"taobao_clustering"</span><span class="p">)</span>
+<span class="n">df</span><span class="p">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"taobao_clustering"</span><span class="p">)</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     *,
     CASE WHEN buy &gt; 0 THEN 1 ELSE 0 END as label
@@ -240,17 +242,17 @@ FROM taobao_clustering
 <span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">VectorAssembler</span>
 
 <span class="n">assembler</span> <span class="o">=</span> <span class="n">VectorAssembler</span><span class="p">(</span><span class="n">inputCols</span> <span class="o">=</span> <span class="n">feat_cols</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s">'features'</span><span class="p">)</span>
-<span class="n">final_data</span> <span class="o">=</span> <span class="n">assembler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">final_data</span> <span class="o">=</span> <span class="n">assembler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">inputCol</span> <span class="o">=</span> <span class="s">'features'</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s">'scaledFeatures'</span><span class="p">)</span>
-<span class="n">scaler_model</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
-<span class="n">cluster_final_data</span> <span class="o">=</span> <span class="n">scaler_model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
+<span class="n">scaler_model</span> <span class="o">=</span> <span class="n">scaler</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
+<span class="n">cluster_final_data</span> <span class="o">=</span> <span class="n">scaler_model</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Quick view for the Spark dataframe:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+
 |user_id|item_id|duration|behavior_count| pv|fav|cart|buy|label|            features|      scaledFeatures|
 +-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+
 |      1|1305059|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
@@ -311,7 +313,7 @@ only showing top 10 rows
 
 <p>Looks like k = 3, k = 5 and k = 6 are the good change-points. Select k = 5 as the cluster numbers. Here print out the clustering  results. (The ‘prediction’ indicates the cluster number ranged from 0 - 4)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+----------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+----------+
 |user_id|item_id|duration|behavior_count| pv|fav|cart|buy|label|            features|      scaledFeatures|prediction|
 +-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+----------+
 |      1|1305059|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
@@ -343,7 +345,7 @@ only showing top 20 rows
 
 <h6 id="statistic-analysis">Statistic Analysis</h6>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-----------------+------------------+------------------+-------------------+-------------------+--------------------+--------------------+------------------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-----------------+------------------+------------------+-------------------+-------------------+--------------------+--------------------+------------------+
 |summary|         duration|    behavior_count|                pv|                fav|               cart|                 buy|               label|        prediction|
 +-------+-----------------+------------------+------------------+-------------------+-------------------+--------------------+--------------------+------------------+
 |  count|           756408|            756408|            756408|             756408|             756408|              756408|              756408|            756408|
@@ -363,7 +365,7 @@ only showing top 20 rows
 
 <p>Group by the cluster index and calculat the mean values for all features.</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_k5_statistics</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_k5_statistics</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT prediction AS cluster,
         COUNT(DISTINCT user_id) AS user,
         COUNT(item_id) AS behavior,
@@ -378,12 +380,12 @@ FROM purchase_clustered
 GROUP BY prediction
 ORDER BY prediction asc
 """</span><span class="p">)</span>
-<span class="n">df_k5_statistics</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">df_k5_statistics</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Results:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+----+--------+------------+-----------------+------+-------+--------+-------+---------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+----+--------+------------+-----------------+------+-------+--------+-------+---------+
 |cluster|user|behavior|avg_duration|avg_num_behaviors|avg_pv|avg_fav|avg_cart|avg_buy|avg_label|
 +-------+----+--------+------------+-----------------+------+-------+--------+-------+---------+
 |      0|9701|  639437|        0.91|             1.12|  1.12|    0.0|     0.0|    0.0|      0.0|
@@ -403,8 +405,8 @@ ORDER BY prediction asc
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-<span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_k5</span><span class="p">)</span>
-<span class="n">heatmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_k5</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">scaler</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_k5</span><span class="p">)</span>
+<span class="n">heatmap</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">around</span><span class="p">(</span><span class="n">scaler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_k5</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
 </code></pre></div></div>
 
 <div style="text-align: center;">

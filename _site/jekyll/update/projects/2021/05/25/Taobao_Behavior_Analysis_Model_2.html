@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -64,7 +66,7 @@
 
 <h4 id="1-recap-of-the-user-behavior-table">1. Recap of the user behavior table</h4>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
 |user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
 +-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
 |      1|2268318|    2520377|      pv|1511544070|2017-11-24 12:21:10|2017-11-24|   11| 24|  12|        6|
@@ -116,7 +118,7 @@ only showing top 10 rows
 
 <p>Details aside, first look at the distribution for the number of daily behaviors between 2017-11-24 to 2017-12-03.</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_date_behavior_count</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_date_behavior_count</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     date,
     SUM(CASE WHEN behavior = 'pv' THEN 1 ELSE 0 END) AS pv,
@@ -128,7 +130,7 @@ FROM
 GROUP BY 
     date
 ORDER BY date
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">df_date_behavior_count</span><span class="p">)</span>
 </code></pre></div></div>
@@ -147,7 +149,7 @@ ORDER BY date
 
 <h6 id="daily-active-usersdau-distribution">Daily Active Users(DAU) distribution</h6>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_DAU</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_DAU</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     date,
     COUNT(DISTINCT user_id) AS DAU
@@ -157,7 +159,7 @@ GROUP BY
     date
 ORDER BY 
     date
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">df_DAU</span><span class="p">)</span>
 </code></pre></div></div>
@@ -175,7 +177,7 @@ ORDER BY
 
 <h6 id="hourly-active-behaviors-distribution">Hourly Active Behaviors distribution</h6>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_hour_behavior_count</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_hour_behavior_count</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     hour,
     SUM(CASE WHEN behavior = 'pv' THEN 0.1 ELSE 0 END) AS pv,
@@ -189,7 +191,7 @@ GROUP BY
     hour
 ORDER BY 
     hour
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 </code></pre></div></div>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAB.png">
@@ -208,7 +210,7 @@ ORDER BY
 
 <h6 id="hourly-active-users-distribution">Hourly Active Users distribution</h6>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_AverageHAU</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_AverageHAU</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     hour,
     ROUND(COUNT(DISTINCT user_id)/10, 0) AS Average_HAU
@@ -218,7 +220,7 @@ WHERE date &lt; '2017-12-04' AND date &gt; '2017-11-23'
 GROUP BY 
     hour
 ORDER BY hour
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div style="text-align: center;">
@@ -245,7 +247,7 @@ The # of active users continuing to subscribe divided by the total active users 
 
 <p>This part of Taobao user behavior analysis technically only provides practice on calculating retention rate metric, since there are no attributes identifying the new users, therefore the users who are count as the first-day user may of the old user, which should not be considered.</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_retention</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_retention</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
     SELECT
         SUM(CASE WHEN day1 &gt; 0 then 1 else 0 end) AS day1,
         SUM(CASE WHEN day1 &gt; 0 AND day2 &gt; 0 then 1 else 0 end) AS day2retention,
@@ -273,7 +275,7 @@ The # of active users continuing to subscribe divided by the total active users 
         FROM taobao
         GROUP BY
             user_id)
-    """</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+    """</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 </code></pre></div></div>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/retention.png">
@@ -288,7 +290,7 @@ The # of active users continuing to subscribe divided by the total active users 
 
 <p>Due to the limit of time periods, we calculate the 10-day repurchase rate. The way to calculate it is to find the number of unique users who have purchased twice within 10 days.</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_repurchase</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_repurchase</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM
     (SELECT user_id, COUNT(behavior) AS buy_times
@@ -297,9 +299,9 @@ FROM
     GROUP BY 
         user_id)
 WHERE buy_times &gt; 1
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">n_purchase</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<span class="n">n_purchase</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM
     (SELECT user_id, COUNT(behavior) AS buy_times
@@ -307,7 +309,7 @@ FROM
     behavior = 'buy'
     GROUP BY 
         user_id)
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">n_repurchase</span><span class="o">/</span><span class="n">n_purchase</span><span class="p">)</span>
 </code></pre></div></div>

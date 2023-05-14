@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -118,7 +120,7 @@
 <p>Create the testing tables:</p>
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">db</span><span class="p">.</span><span class="n">test_join_A</span>
     <span class="p">(</span>
-        <span class="n">id</span> <span class="n">INT</span>
+        <span class="n">id</span> <span class="nb">INT</span>
         <span class="p">,</span><span class="n">name</span> <span class="n">STRING</span>
     <span class="p">)</span>
     <span class="k">ROW</span> <span class="n">FORMAT</span> <span class="n">DELIMITED</span>
@@ -127,7 +129,7 @@
 
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">db</span><span class="p">.</span><span class="n">test_join_B</span>
     <span class="p">(</span>
-        <span class="n">id</span> <span class="n">INT</span>
+        <span class="n">id</span> <span class="nb">INT</span>
         <span class="p">,</span><span class="n">company</span> <span class="n">STRING</span>
     <span class="p">)</span>
     <span class="k">ROW</span> <span class="n">FORMAT</span> <span class="n">DELIMITED</span>
@@ -225,16 +227,16 @@
 <p>An intermediate table is a table created on the database to store temporary data used to calculate the final result set.</p>
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="o">%</span><span class="n">spark</span><span class="o">.</span><span class="n">pyspark</span>
+<span class="o">%</span><span class="n">spark</span><span class="p">.</span><span class="n">pyspark</span>
 
-<span class="n">sql</span> <span class="o">=</span> <span class="n">f</span><span class="s">"""
+<span class="n">sql</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"""
 with v= as (.......),
 v2 as (.......),
 v3 as (.......)
 
 select * from v3 where.....
 """</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">hive_contxt</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">hive_contxt</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
 
 </code></pre></div></div>
 

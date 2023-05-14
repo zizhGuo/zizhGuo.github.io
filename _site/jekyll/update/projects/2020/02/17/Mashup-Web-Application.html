@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -149,7 +151,7 @@ you can always open POM.xml for dependencies check.
 <a href="https://apiseeds.com/documentation/lyrics"><strong>[Link]</strong></a><br />
     Apisseds is an API provider that provides multiple RESTful web services. This music service allows users to search music tracks based on a <strong>search words</strong>. The information returned includes the track’s title, artist, album withs its IDs for more professional usages. Therefore, based on <strong>ID</strong> to invoke is not allowed. However, my assignment only used the free service that requests the <strong>title</strong> and <strong>artist</strong> stored in Strings data type by a given search word. These two data type instances will be passed later for the Lyrics request service.
 The API key for Apiseeds Lyrics and Apiseeds Music:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>API key: yVl2CQoJHboJc6QLKym44Tm1fxoDA8UfyARdX9XklkxlwgH0RSS1miDsMGc5CFoe
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>API key: yVl2CQoJHboJc6QLKym44Tm1fxoDA8UfyARdX9XklkxlwgH0RSS1miDsMGc5CFoe
 </code></pre></div></div>
 <p><strong>Random Word:</strong> (REST)
 <a href="https://random-word-api.herokuapp.com"><strong>[Link]</strong></a>
@@ -175,7 +177,7 @@ The <strong>solution</strong> is to <strong>cd</strong> to the directory and ope
 
 <h4 id="23-how-to-add-certificate-file-to-glassfish-trust-store">2.3 How to add certificate file to Glassfish trust store.</h4>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>keytool -importcert -keystore .\cacerts.jks -trustcacerts -alias "randomword" -file .\randomword.cer
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>keytool -importcert -keystore .\cacerts.jks -trustcacerts -alias "randomword" -file .\randomword.cer
 
 keytool -importcert -keystore .\cacerts.jks -trustcacerts -alias "lyrics" -file .\lyrics.cer
 </code></pre></div></div>
@@ -188,30 +190,30 @@ keytool -importcert -keystore .\cacerts.jks -trustcacerts -alias "lyrics" -file 
     <p><strong>com.mycompany.webprojecttest.Model</strong>
   This file overall implements the application’s business logic. It contains three instances of the other three API invocations class that implements the program workflow.</p>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="kd">private</span> <span class="n">Lyrics</span> <span class="n">lyrics_instance</span><span class="o">;</span>
-      <span class="kd">private</span> <span class="n">RandomWord</span> <span class="n">randomWord_instance</span><span class="o">;</span>
-      <span class="kd">private</span> <span class="n">Tracks</span> <span class="n">tracks_instance</span><span class="o">;</span>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="kd">private</span> <span class="nc">Lyrics</span> <span class="n">lyrics_instance</span><span class="o">;</span>
+      <span class="kd">private</span> <span class="nc">RandomWord</span> <span class="n">randomWord_instance</span><span class="o">;</span>
+      <span class="kd">private</span> <span class="nc">Tracks</span> <span class="n">tracks_instance</span><span class="o">;</span>
 
-      <span class="kd">public</span> <span class="nf">Model</span><span class="o">()</span><span class="kd">throws</span> <span class="n">MalformedURLException</span><span class="o">,</span> <span class="n">IOException</span><span class="o">{</span>
+      <span class="kd">public</span> <span class="nf">Model</span><span class="o">()</span><span class="kd">throws</span> <span class="nc">MalformedURLException</span><span class="o">,</span> <span class="nc">IOException</span><span class="o">{</span>
           <span class="c1">// get random word</span>
-          <span class="k">this</span><span class="o">.</span><span class="na">randomWord_instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RandomWord</span><span class="o">();</span>
+          <span class="k">this</span><span class="o">.</span><span class="na">randomWord_instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RandomWord</span><span class="o">();</span>
 
           <span class="c1">// get tracks info</span>
-          <span class="n">tracks_instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Tracks</span><span class="o">(</span><span class="n">randomWord_instance</span><span class="o">.</span><span class="na">getRandomWordString</span><span class="o">());</span>
+          <span class="n">tracks_instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Tracks</span><span class="o">(</span><span class="n">randomWord_instance</span><span class="o">.</span><span class="na">getRandomWordString</span><span class="o">());</span>
 
           <span class="c1">// get lyrics</span>
-          <span class="k">this</span><span class="o">.</span><span class="na">lyrics_instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Lyrics</span><span class="o">(</span><span class="n">tracks_instance</span><span class="o">.</span><span class="na">getTrackTitle</span><span class="o">(),</span> <span class="n">tracks_instance</span><span class="o">.</span><span class="na">getArtist</span><span class="o">());</span>            
+          <span class="k">this</span><span class="o">.</span><span class="na">lyrics_instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Lyrics</span><span class="o">(</span><span class="n">tracks_instance</span><span class="o">.</span><span class="na">getTrackTitle</span><span class="o">(),</span> <span class="n">tracks_instance</span><span class="o">.</span><span class="na">getArtist</span><span class="o">());</span>            
   <span class="o">}</span>
 </code></pre></div>    </div>
     <p>All other methods are available for JSP page to instantiate and get return values to present.</p>
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="kd">public</span> <span class="n">String</span> <span class="nf">getLyrics</span><span class="o">(){</span>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getLyrics</span><span class="o">(){</span>
           <span class="k">if</span> <span class="o">(</span><span class="n">lyrics_instance</span><span class="o">.</span><span class="na">getLyricsString</span><span class="o">()</span> <span class="o">==</span> <span class="s">""</span><span class="o">)</span> <span class="k">return</span> <span class="s">"Sorry, this track does not have lyrics"</span><span class="o">;</span>
           <span class="k">return</span> <span class="n">lyrics_instance</span><span class="o">.</span><span class="na">getLyricsString</span><span class="o">();</span>
       <span class="o">}</span>
-      <span class="kd">public</span> <span class="n">String</span> <span class="nf">getRandomWord</span><span class="o">(){</span> <span class="k">return</span> <span class="n">randomWord_instance</span><span class="o">.</span><span class="na">getRandomWordString</span><span class="o">();}</span>
-      <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTrackTitle</span><span class="o">(){</span> <span class="k">return</span> <span class="n">tracks_instance</span><span class="o">.</span><span class="na">getTrackTitle</span><span class="o">();}</span>
-      <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAritistName</span><span class="o">(){</span> <span class="k">return</span> <span class="n">tracks_instance</span><span class="o">.</span><span class="na">getArtist</span><span class="o">();}</span>
-      <span class="kd">public</span> <span class="n">String</span> <span class="nf">getRandomKey</span><span class="o">(){</span> <span class="k">return</span> <span class="n">getRandomChar</span><span class="o">();</span> <span class="o">}</span>
+      <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getRandomWord</span><span class="o">(){</span> <span class="k">return</span> <span class="n">randomWord_instance</span><span class="o">.</span><span class="na">getRandomWordString</span><span class="o">();}</span>
+      <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getTrackTitle</span><span class="o">(){</span> <span class="k">return</span> <span class="n">tracks_instance</span><span class="o">.</span><span class="na">getTrackTitle</span><span class="o">();}</span>
+      <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getAritistName</span><span class="o">(){</span> <span class="k">return</span> <span class="n">tracks_instance</span><span class="o">.</span><span class="na">getArtist</span><span class="o">();}</span>
+      <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getRandomKey</span><span class="o">(){</span> <span class="k">return</span> <span class="n">getRandomChar</span><span class="o">();</span> <span class="o">}</span>
     
 </code></pre></div>    </div>
   </li>
@@ -224,14 +226,14 @@ It has two one methods to return the word to <strong>Model</strong> instance.
       final String url_key = “https://random-word-api.herokuapp.com/key?”;
       final String url = “https://random-word-api.herokuapp.com/word?key=GNK11SCE&amp;number=1”;</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  private String random_word_string = "";  // random words
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  private String random_word_string = "";  // random words
   private String apikey = "";
 </code></pre></div>    </div>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ```java {.line-numbers}
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ```java {.line-numbers}
       public String getAPIkey(){return apikey;} 
 </code></pre></div>    </div>
-    <p><code class="highlighter-rouge">java {.line-numbers}
+    <p><code class="language-plaintext highlighter-rouge">java {.line-numbers}
       public String getRandomWordString(){return random_word_string;}
  </code></p>
   </li>
@@ -246,35 +248,35 @@ This class works for getting the string of Artist and Track Title and invoke Lyr
 </ul>
 
 <h4 id="32-http-request">3.2 HTTP request</h4>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
-        <span class="n">URL</span> <span class="n">url2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
-        <span class="n">HttpURLConnection</span> <span class="n">connection</span> <span class="o">=(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">url2</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+        <span class="no">URL</span> <span class="n">url2</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+        <span class="nc">HttpURLConnection</span> <span class="n">connection</span> <span class="o">=(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">url2</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 
         <span class="c1">// Imiate the browsers by adding the "User-Agent" header</span>
         <span class="n">connection</span><span class="o">.</span><span class="na">addRequestProperty</span><span class="o">(</span><span class="s">"User-Agent"</span><span class="o">,</span> <span class="s">"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0"</span><span class="o">);</span>
         <span class="n">connection</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
         <span class="n">connection</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span>
         <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">responseCode</span><span class="o">);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">responseCode</span> <span class="o">==</span> <span class="n">HttpURLConnection</span><span class="o">.</span><span class="na">HTTP_OK</span><span class="o">){</span>
-            <span class="n">BufferedReader</span> <span class="n">bufferReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">InputStreamReader</span> <span class="o">(</span><span class="n">connection</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
-            <span class="n">StringBuffer</span> <span class="n">stringBuffer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">responseCode</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">responseCode</span> <span class="o">==</span> <span class="nc">HttpURLConnection</span><span class="o">.</span><span class="na">HTTP_OK</span><span class="o">){</span>
+            <span class="nc">BufferedReader</span> <span class="n">bufferReader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="nc">InputStreamReader</span> <span class="o">(</span><span class="n">connection</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+            <span class="nc">StringBuffer</span> <span class="n">stringBuffer</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
             <span class="k">while</span> <span class="o">((</span><span class="n">str</span> <span class="o">=</span> <span class="n">bufferReader</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">stringBuffer</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
                 <span class="n">stringBuffer</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"\n"</span><span class="o">);</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">stringBuffer</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">stringBuffer</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
             <span class="o">}</span>           
             <span class="n">bufferReader</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
             <span class="n">str</span> <span class="o">=</span> <span class="n">stringBuffer</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
 </code></pre></div></div>
 <h4 id="33-json-parse">3.3 JSON parse</h4>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="k">try</span><span class="o">{</span>
-            <span class="n">JSONParser</span> <span class="n">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONParser</span><span class="o">();</span>
-            <span class="n">JSONObject</span> <span class="n">obj</span> <span class="o">=</span> <span class="o">(</span><span class="n">JSONObject</span><span class="o">)</span><span class="n">parser</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">stringBuffer</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-            <span class="n">JSONObject</span> <span class="n">obj2</span> <span class="o">=</span> <span class="o">(</span><span class="n">JSONObject</span><span class="o">)</span><span class="n">obj</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"result"</span><span class="o">);</span>
-            <span class="n">JSONObject</span> <span class="n">obj3</span> <span class="o">=</span> <span class="o">(</span><span class="n">JSONObject</span><span class="o">)</span><span class="n">obj2</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"track"</span><span class="o">);</span>    
-            <span class="n">String</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">obj3</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"text"</span><span class="o">).</span><span class="na">toString</span><span class="o">();</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"song length : "</span><span class="o">+</span> <span class="n">msg</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+            <span class="nc">JSONParser</span> <span class="n">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JSONParser</span><span class="o">();</span>
+            <span class="nc">JSONObject</span> <span class="n">obj</span> <span class="o">=</span> <span class="o">(</span><span class="nc">JSONObject</span><span class="o">)</span><span class="n">parser</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">stringBuffer</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+            <span class="nc">JSONObject</span> <span class="n">obj2</span> <span class="o">=</span> <span class="o">(</span><span class="nc">JSONObject</span><span class="o">)</span><span class="n">obj</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"result"</span><span class="o">);</span>
+            <span class="nc">JSONObject</span> <span class="n">obj3</span> <span class="o">=</span> <span class="o">(</span><span class="nc">JSONObject</span><span class="o">)</span><span class="n">obj2</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"track"</span><span class="o">);</span>    
+            <span class="nc">String</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">obj3</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"text"</span><span class="o">).</span><span class="na">toString</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"song length : "</span><span class="o">+</span> <span class="n">msg</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
             <span class="n">lyrics_string</span> <span class="o">=</span> <span class="n">msg</span><span class="o">;</span>
         <span class="o">}</span>
 </code></pre></div></div>

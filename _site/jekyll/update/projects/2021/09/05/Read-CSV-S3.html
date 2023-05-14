@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -79,19 +81,19 @@
     </ul>
 
     <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kn">import</span> <span class="nn">findspark</span>
-  <span class="n">findspark</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="s">'/home/XXX/spark-3.1.2-bin-hadoop3.2'</span><span class="p">)</span>
+  <span class="n">findspark</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="s">'/home/XXX/spark-3.1.2-bin-hadoop3.2'</span><span class="p">)</span>
   <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
 
-  <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s">"SparkByExamples.com"</span><span class="p">)</span>\
-      <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.driver.extraClassPath"</span><span class="p">,</span> <span class="s">"./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar"</span><span class="p">)</span>\
-      <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.executor.extraClassPath"</span><span class="p">,</span> <span class="s">"./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar"</span><span class="p">)</span>\
-      <span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+  <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="p">.</span><span class="n">builder</span><span class="p">.</span><span class="n">appName</span><span class="p">(</span><span class="s">"SparkByExamples.com"</span><span class="p">)</span>\
+      <span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.driver.extraClassPath"</span><span class="p">,</span> <span class="s">"./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar"</span><span class="p">)</span>\
+      <span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.executor.extraClassPath"</span><span class="p">,</span> <span class="s">"./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar"</span><span class="p">)</span>\
+      <span class="p">.</span><span class="n">getOrCreate</span><span class="p">()</span>
 </code></pre></div>    </div>
   </li>
   <li>Option 2:
     <ul>
       <li>Set up local configuration file: <strong>spark-default.conf</strong> in <strong>$SPARK_HOME/conf/</strong>
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
   spark.driver.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
 </code></pre></div>        </div>
       </li>
@@ -101,23 +103,23 @@
 </ul>
 
 <h6 id="step-3-connect-to-s3-with-acesskey-and-secretkey-using-s3a">Step 3: Connect to S3 with AcessKey and SecretKey using s3a://</h6>
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sc</span><span class="o">.</span><span class="n">_jsc</span><span class="o">.</span><span class="n">hadoopConfiguration</span><span class="p">()</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">"fs.s3a.access.key"</span><span class="p">,</span> <span class="s">"XXX"</span><span class="p">)</span>
-<span class="n">sc</span><span class="o">.</span><span class="n">_jsc</span><span class="o">.</span><span class="n">hadoopConfiguration</span><span class="p">()</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">"fs.s3a.secret.key"</span><span class="p">,</span> <span class="s">"XXX"</span><span class="p">)</span>
-<span class="n">sc</span><span class="o">.</span><span class="n">_jsc</span><span class="o">.</span><span class="n">hadoopConfiguration</span><span class="p">()</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">"fs.s3a.endpoint"</span><span class="p">,</span> <span class="s">"s3.amazonaws.com"</span><span class="p">)</span>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sc</span><span class="p">.</span><span class="n">_jsc</span><span class="p">.</span><span class="n">hadoopConfiguration</span><span class="p">().</span><span class="nb">set</span><span class="p">(</span><span class="s">"fs.s3a.access.key"</span><span class="p">,</span> <span class="s">"XXX"</span><span class="p">)</span>
+<span class="n">sc</span><span class="p">.</span><span class="n">_jsc</span><span class="p">.</span><span class="n">hadoopConfiguration</span><span class="p">().</span><span class="nb">set</span><span class="p">(</span><span class="s">"fs.s3a.secret.key"</span><span class="p">,</span> <span class="s">"XXX"</span><span class="p">)</span>
+<span class="n">sc</span><span class="p">.</span><span class="n">_jsc</span><span class="p">.</span><span class="n">hadoopConfiguration</span><span class="p">().</span><span class="nb">set</span><span class="p">(</span><span class="s">"fs.s3a.endpoint"</span><span class="p">,</span> <span class="s">"s3.amazonaws.com"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h6 id="step-4-read-remote-csv-file">Step 4: Read remote CSV file</h6>
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s">'s3a://bucket-name/object-name'</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">read</span><span class="p">.</span><span class="n">csv</span><span class="p">(</span><span class="s">'s3a://bucket-name/object-name'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 <h4 id="using-spark_homebinspark-submit-package-">Using $SPARK_HOME/bin/spark-submit –package []</h4>
 <p>Unfortunately this does not works in my case and keep beeping me.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@xxx:~/spark-3.1.2-bin-hadoop3.2$ bin/spark-submit --packages org.apache.hadoop:hadoop-aws:3.2.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@xxx:~/spark-3.1.2-bin-hadoop3.2$ bin/spark-submit --packages org.apache.hadoop:hadoop-aws:3.2.0
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: Missing application resource.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: Missing application resource.
 </code></pre></div></div>
 <p>Help:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: spark-submit [options] &lt;app jar | python file | R file&gt; [app arguments]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: spark-submit [options] &lt;app jar | python file | R file&gt; [app arguments]
 ...
 --packages                  Comma-separated list of maven coordinates of jars to include
                               on the driver and executor classpaths. Will search the local

@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -68,7 +70,7 @@
 <h3 id="0-dataset-preview">0. Dataset preview</h3>
 <p>X_regular:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                                               hours 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                                               hours 
 0  {'Tuesday': '11:0-22:0', 'Wednesday': '11:0-22... 
 1  {'Monday': '9:0-0:0', 'Tuesday': '9:0-0:0', 'W...  
 2  {'Monday': '10:30-21:0', 'Tuesday': '10:30-21:... 
@@ -84,7 +86,7 @@ n_samples: 6000
 </code></pre></div></div>
 
 <p>y:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0 1 1 0 1 0 0 2 1 2]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0 1 1 0 1 0 0 2 1 2]
 
 n_targets: 6000
 </code></pre></div></div>
@@ -95,7 +97,7 @@ n_targets: 6000
 <h4 id="11-feature-creation">1.1 Feature Creation</h4>
 
 <p>The dataset we have looks like this:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   Unnamed: 0                                              hours   categories             business_id
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   Unnamed: 0                                              hours   categories             business_id
 0           0  {'Monday': '10:0-3:0', 'Tuesday': '10:0-3:0', ...      Burgers  tLpkSwdtqqoXwU0JAGnApw
 1           1  {'Monday': '0:0-0:0', 'Tuesday': '11:0-21:0', ...        Pizza  ZkzutF0P_u0C0yTulwaHkA
 2           2  {'Monday': '11:0-21:0', 'Tuesday': '11:0-21:0'...        Pizza  0y6alZmSLnPzmG5_kP5Quw
@@ -109,7 +111,7 @@ n_targets: 6000
 </code></pre></div></div>
 <p>For non-textual features, in this case ‘hours’, we need to break it into numerical values to make it sense for the training/testing process.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    categories    m1    m2    t1    t2    w1    w2   th1   th2    f1    f2    s1    s2   su1   su2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    categories    m1    m2    t1    t2    w1    w2   th1   th2    f1    f2    s1    s2   su1   su2
 0      Burgers  10.0  27.0  10.0  27.0  10.0  27.0  10.0  27.0  10.0  27.0  10.0  27.0  10.0  27.0
 1        Pizza   0.0   0.0  11.0  21.0  11.0  21.0  11.0  21.0  11.0  22.0  11.0  22.0  11.0  20.0
 2        Pizza  11.0  21.0  11.0  21.0  11.0  21.0  11.0  22.0  11.0  22.0  11.0  22.0  11.0  21.0
@@ -155,7 +157,7 @@ n_targets: 6000
 <p>We label our 4 categories of restaurants as 1 from ‘Italian’ and ‘Steakhouse’, 0 from ‘Burgers’ and ‘Pizza’.
 We calculate the Pearson Correlation Coefficient between each feature with targets values</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[(0.07407551311437341, 'm1'), 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[(0.07407551311437341, 'm1'), 
 (-0.11731578824302691, 'm2'), 
 (0.4950215768112705, 't1'), 
 (0.16077867219458727, 't2'), 
@@ -197,7 +199,7 @@ print(word_count_vector.todense())</p>
 
 <p>sum_words = word_count_vector.sum(axis=0) # numpy matrix (not recommend to use this class)
 print(sum_words)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
 <p>[[ 0  0  0 …  0  0  0]
  [ 0  0  0 …  0  0  0]
  [ 0  0  0 …  0  0  0]
@@ -207,7 +209,7 @@ print(sum_words)</p>
  [ 4 64  0 …  0  0  0]]</p>
 
 <p>[[ 4 98  2 …  2 10  2]]</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>We list out the vocabulary items in the countvectorizer which are stored in Python dictionary data structure and sorted the words in pairs in the tuple, where the first element represent the word itself and the second represent the word frequency from all corpus.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>We list out the vocabulary items in the countvectorizer which are stored in Python dictionary data structure and sorted the words in pairs in the tuple, where the first element represent the word itself and the second represent the word frequency from all corpus.
 ```py {.line-numbers}
 words_freq = [(word, sum_words[0, idx]) for word, idx in cv.vocabulary_.items()]
 words_freq =sorted(words_freq, key = lambda x: x[1], reverse=True)
@@ -215,7 +217,7 @@ print(words_freq)
 </code></pre></div></div>
 
 <p>In example below, ‘food’ was spotted 2610 times which makes it the most common word. Other words like ‘<strong>good</strong>’, ‘<strong>service</strong>’ and ‘<strong>order</strong>’ showed up <strong>2126</strong>, <strong>1962</strong> and <strong>1874</strong> times in all corpus.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('food', 2610), ('good', 2126), ('service', 1962), ('order', 1874), ('place', 1654), ('come', 1524), ('great', 1506), ('like', 1384), ('time', 1322), ('restaurant', 1224), ('sushi', 1146), ('menu', 998), ('go', 896), ('breakfast', 798), ('price', 782), ('nice', 780), ('dish', 746), ('chicken', 700), ('mozen', 692), ('delicious', 690), ('fresh', 680), ('vegas', 676), ('best', 664), ('dinner', 636), ('brunch', 636), ('mandarin', 620), ('fry', 618), ('table', 618), ('roll', 608), ('love', 598), ('want', 578), ('taste', 576), ('look', 568), ('salad', 550), ('think', 546), ('amaze', 544), ('experience', 532), ('staff', 530), ('lunch', 522), ('wait', 512), ('meal', 508), ('definitely', 498), ('star', 494), ('little', 488), ('sauce', 478), ('better', 474), ('take', 472), ('hotel', 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('food', 2610), ('good', 2126), ('service', 1962), ('order', 1874), ('place', 1654), ('come', 1524), ('great', 1506), ('like', 1384), ('time', 1322), ('restaurant', 1224), ('sushi', 1146), ('menu', 998), ('go', 896), ('breakfast', 798), ('price', 782), ('nice', 780), ('dish', 746), ('chicken', 700), ('mozen', 692), ('delicious', 690), ('fresh', 680), ('vegas', 676), ('best', 664), ('dinner', 636), ('brunch', 636), ('mandarin', 620), ('fry', 618), ('table', 618), ('roll', 608), ('love', 598), ('want', 578), ('taste', 576), ('look', 568), ('salad', 550), ('think', 546), ('amaze', 544), ('experience', 532), ('staff', 530), ('lunch', 522), ('wait', 512), ('meal', 508), ('definitely', 498), ('star', 494), ('little', 488), ('sauce', 478), ('better', 474), ('take', 472), ('hotel', 
 470), ('drink', 468), ('pretty', 466), ('server', 464), ('excellent', 456), ('oriental', 454), ('burger', 444), ('friendly', 444), ('enjoy', 444), ('bento', 444), ('cheese', 428), ('buffet', 414), ('serve', 408), ('try', 408), ('ask', 402), ('flavor', 386), ('say', 384), ('recommend', 384), ('salmon', 384), ('know', 382), ('small', 380), ('soup', 380), ('quality', 368), ('expect', 364), ('review', 356), ('offer', 354), ('curry', 354), ('tell', 352), ('wasn', 350), ('give', 346), ('indian', 346), ('overall', 336), ('asian', 336), ('visit', 330), ('din', 326), ('need', 324), ('fish', 322), ('minutes', 316), ('leave', 316), ('disappoint', 310), ('dessert', 310), ('seat', 306), ('sure', 304), ('waitress', 304), ('tasty', 302), ('worth', 302), ('portion', 298), ('night', 298), ('room', 294), ('check', 288), ('eat', 284), ('stay', 282), ('people', 280), ('rice', 280), ('beef', 278), ('location', 278), ('right', 276), ('strip', 274), ('steak', 272), ('view', 270), ('fruit', 266), ('decide', 262), ('special', 260), ('feel', 256), ('start', 
 256), ('crab', 256), ('cook', 254), ('chef', 254), ('egg', 254), ('work', 252), ('sashimi', 250), ('area', 248), ('high', 248), ('spicy', 246), ('perfect', 246), ('bread', 244), ('attentive', 242), ('different', 242), ('grill', 238), ('green', 232), ('japanese', 232), ('friends', 230), ('bring', 224), ('highly', 224), ('thai', 224), ('get', 222), ('awesome', 222), ('arrive', 222), ('walk', 222), ('husband', 220), ('atmosphere', 220), ('shrimp', 220), ('waiter', 220), ('entree', 220), ('long', 216), ('water', 216), ('bistro', 216), ('friend', 214), ('floor', 214), ('items', 212), ('favorite', 210), ('sunday', 210), ('super', 206), ('options', 206), ('sandwich', 204), ('sweet', 204), ('selection', 204), ('decent', 202), ('coffee', 200), ('bite', 198), ('thing', 196), ('probably', 192), ('away', 192), ('manager', 192),
 </code></pre></div></div>
@@ -238,7 +240,7 @@ food_list = list(set([w for s in food.closure(lambda s:s.hyponyms()) for w in s.
 food_list2 = [w.replace(‘_’, ‘ ‘) for s in food.closure(lambda s:s.hyponyms()) for w in s.lemma_names()]
 print(food_list2)
 print(len(words_freq))</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'**food.n.02**' indicates the **2nd** deifnition of '**food**' as a **noun**.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'**food.n.02**' indicates the **2nd** deifnition of '**food**' as a **noun**.
 Of all **hyponyms** of '**food**' as a **closure**, we extract their **lemma names** and group them as a list.
 </code></pre></div></div>
 <p>[‘baked goods’, ‘breakfast food’, ‘butter’, ‘cheese’, ‘chocolate’, ‘coconut’, ‘coconut meat’, ‘convenience food’, ‘dika bread’, 
@@ -246,13 +248,13 @@ Of all **hyponyms** of '**food**' as a **closure**, we extract their **lemma nam
 ‘produce’, ‘green goods’, ‘green groceries’, ‘garden truck’, ‘seafood’, ‘slop’, ‘yogurt’, ‘yoghurt’, ‘yoghourt’, ‘bread’, 
 ‘breadstuff’, ‘staff of life’, ‘cake’, ‘pastry’, ‘cereal’, ‘muesli’, ‘brown butter’, ‘beurre noisette’, ‘clarified butter’, 
 …]</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>We looped over all features in food hyponyms to retain all food-relevant keywords and sorted all pairs in descending order.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>We looped over all features in food hyponyms to retain all food-relevant keywords and sorted all pairs in descending order.
 ```py {.line-numbers}
 words_food_relevant = [(food, pair[1]) for pair in words_freq for food in food_list2 if pair[1] &gt; 30 and pair[0] == food]
 print(words_food_relevant)
 print(len(words_food_relevant))
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('chicken', 700), ('mandarin', 620), ('roll', 608), ('cheese', 428), ('salmon', 384), ('fish', 322), ('beef', 278), 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('chicken', 700), ('mandarin', 620), ('roll', 608), ('cheese', 428), ('salmon', 384), ('fish', 322), ('beef', 278), 
 ('steak', 272), ('crab', 256), ('bread', 244), ('green', 232), ('shrimp', 220), ('bacon', 188), ('meat', 186), 
 ('tuna', 180), ('cake', 170), ('pork', 164), ('oyster', 160), ('mushroom', 140), ('toast', 140), ('tomato', 134), 
 ('scallop', 134), ('butter', 130), ('pasta', 122), ('seafood', 122), ('plate', 118), ('calamari', 116), ('pepper', 112), 
@@ -270,7 +272,7 @@ print(len(words_food_relevant))
 <h4 id="a3-the-top-k-food-keywords-discovery">A3. The Top-K food keywords discovery</h4>
 <p>While the tasks are restaurants targetted classification, it is reasonable to try extracting the food-related keywords from the given text corpus to further decrease the feature dimensions. Previously, from the week4 experiment, it was successful to extract the food-relevant keywords by using NLTK wordnet dictionary, this time it is worth employing the same approach to experiment.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
     ['shrimp'], ['chicken', 'chicken', 'round'], 
     [], 
     ['green', 'cheese', 'rib', 'chicken', 'strawberry', 'potato'], 
@@ -290,7 +292,7 @@ print(len(words_food_relevant))
 <p>The results show the transformed cut words list after the selection, where each member list represents a user review filtered by the vocabulary. The empty list can be commonly seen due to its original reviews contains no food relevant keywords. Due to the small size of the samples and imbalanced nature may hugely affect the performance, for those empty list we assign them zeros in the same length of W2V feature numbers.</p>
 
 <p>It is in nature just select more important keywords than extracting all words, so the performance however is worse than just extracting the regular reviews.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>W2V + LR params:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>W2V + LR params:
 
 sg = 1
 size=300
@@ -299,7 +301,7 @@ iter=30
 {'penalty': ['l2'], 'solver': ['liblinear','newton-cg', 'lbfgs', 'sag']},
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>F1 scores:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>F1 scores:
 
 l1 + liblinear: 0.541781294
 l2 + liblinear: 0.542167673

@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -64,7 +66,7 @@
 
 <h4 id="1-recap-of-the-user-behavior-table">1. Recap of the user behavior table</h4>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
 |user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
 +-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
 |      1|2268318|    2520377|      pv|1511544070|2017-11-24 12:21:10|2017-11-24|   11| 24|  12|        6|
@@ -116,13 +118,13 @@ only showing top 10 rows
 
 <h6 id="global-page-view-pv-unique-user-uv-pvuv">Global Page View (PV), Unique User (UV), PV/UV</h6>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pychart can query records using Dataframe SQL functions</span>
-
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Pychart can query records using Dataframe SQL functions
+</span>
 <span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">count</span><span class="p">,</span> <span class="n">countDistinct</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">countDistinct</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s">'uv'</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">df1</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="n">countDistinct</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">user_id</span><span class="p">).</span><span class="n">alias</span><span class="p">(</span><span class="s">'uv'</span><span class="p">)).</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+------+
 |    uv|
 +------+
 |987991|
@@ -130,12 +132,12 @@ only showing top 10 rows
 </code></pre></div></div>
 <p>The dataset has <strong>987,991</strong> unique users. Hence, <strong>UV</strong> = <strong>987,991</strong>.</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># The same, group by on 'behavior' and find the count for the 'pv'</span>
-
-<span class="n">df1</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'behavior'</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s">'count'</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The same, group by on 'behavior' and find the count for the 'pv'
+</span>
+<span class="n">df1</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'behavior'</span><span class="p">).</span><span class="n">count</span><span class="p">().</span><span class="n">orderBy</span><span class="p">(</span><span class="s">'count'</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="bp">False</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+--------+--------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+--------+--------+
 |behavior|   count|
 +--------+--------+
 |      pv|89697359|
@@ -157,9 +159,9 @@ only showing top 10 rows
 <p>In the Taobao user behavior case, the unique users who visit items once during the 10-day session would be only considered. Therefore, this bounce rate evaluates the attractiveness of the website instead of a specific item.</p>
 
 <p>Create</p>
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create TempView with the user count for the different behavior.</span>
-<span class="c"># PK: user_id</span>
-<span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create TempView with the user count for the different behavior.
+# PK: user_id
+</span><span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     user_id, 
     SUM(case when behavior='pv' then 1 else 0 end) as PageView,
@@ -170,18 +172,18 @@ FROM
     taobao
 GROUP BY
     user_id
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">createTempView</span><span class="p">(</span><span class="s">"behaviorCount"</span><span class="p">)</span>
+"""</span><span class="p">).</span><span class="n">createTempView</span><span class="p">(</span><span class="s">"behaviorCount"</span><span class="p">)</span>
 
-<span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     COUNT(user_id)
 FROM
     behaviorCount
 WHERE PageView = 1 AND Favorite = 0 AND Cart = 0 AND Buy = 0;
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-----------------------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-----------------------+
 |count(DISTINCT user_id)|
 +-----------------------+
 |                     53|
@@ -206,33 +208,33 @@ WHERE PageView = 1 AND Favorite = 0 AND Cart = 0 AND Buy = 0;
 
 <p>CVR for page view user to favorite user = # of users who have pv and fav/ # of users who have pv</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_fav_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_fav_users</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM behaviorCount
 WHERE PageView &gt; 0 AND Favorite &gt; 0
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 387548</span>
-
-<span class="n">n_unique_pv_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 387548
+</span>
+<span class="n">n_unique_pv_users</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM behaviorCount
 WHERE PageView &gt; 0
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 984107</span>
-
-<span class="n">CVR_pv2fav</span> <span class="o">=</span> <span class="n">n_unique_fav_users</span><span class="o">/</span><span class="n">n_unique_pv_users</span> <span class="c"># 387548/984107</span>
-</code></pre></div></div>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 984107
+</span>
+<span class="n">CVR_pv2fav</span> <span class="o">=</span> <span class="n">n_unique_fav_users</span><span class="o">/</span><span class="n">n_unique_pv_users</span> <span class="c1"># 387548/984107
+</span></code></pre></div></div>
 
 <p>The conversion rate for pv to fav is 39.38%.</p>
 
 <p>CVR for page view user to favorite to buy user = # of users who have pv, fav and buy / # of users who have pv</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_fav_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_fav_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM behaviorCount
 WHERE PageView &gt; 0 AND Favorite &gt; 0 AND Buy &gt; 0
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 275476</span>
-
-<span class="n">CVR_pv2fav2buy</span> <span class="o">=</span> <span class="n">n_unique_fav_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c"># 275476 / 984107</span>
-<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2fav2buy</span><span class="p">)</span>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 275476
+</span>
+<span class="n">CVR_pv2fav2buy</span> <span class="o">=</span> <span class="n">n_unique_fav_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c1"># 275476 / 984107
+</span><span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2fav2buy</span><span class="p">)</span>
 </code></pre></div></div>
 <p>The conversion rate for pv-fav-buy is 27.99%.</p>
 
@@ -240,27 +242,27 @@ WHERE PageView &gt; 0 AND Favorite &gt; 0 AND Buy &gt; 0
 
 <p>CVR for page view user to cart user = # of users who have pv and cart / # of users who have pv</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_cart_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_cart_users</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM behaviorCount
 WHERE PageView &gt; 0 AND Cart &gt; 0
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 735674</span>
-
-<span class="n">CVR_pv2cart</span> <span class="o">=</span> <span class="n">n_unique_cart_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c"># 735674 / 984107</span>
-<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2cart</span><span class="p">)</span>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 735674
+</span>
+<span class="n">CVR_pv2cart</span> <span class="o">=</span> <span class="n">n_unique_cart_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c1"># 735674 / 984107
+</span><span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2cart</span><span class="p">)</span>
 </code></pre></div></div>
 <p>The conversion rate for pv-cart is 74.56%.</p>
 
 <p>CVR for page view user to cart to buy user = # of users who have pv, cart and buy / # of users who have pv</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_cart_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_cart_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM behaviorCount
 WHERE PageView &gt; 0 AND Cart &gt; 0 AND Buy &gt; 0
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 528408</span>
-
-<span class="n">CVR_pv2cart2buy</span> <span class="o">=</span> <span class="n">n_unique_cart_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c"># 528408 / 984107</span>
-<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2cart2buy</span><span class="p">)</span>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 528408
+</span>
+<span class="n">CVR_pv2cart2buy</span> <span class="o">=</span> <span class="n">n_unique_cart_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c1"># 528408 / 984107
+</span><span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2cart2buy</span><span class="p">)</span>
 </code></pre></div></div>
 <p>The conversion rate for pv-cart-buy is 53.69%.</p>
 
@@ -268,11 +270,11 @@ WHERE PageView &gt; 0 AND Cart &gt; 0 AND Buy &gt; 0
 
 <p>CVR for page view user to buy user = # of users who have pv and buy / # of users who have pv</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_pv_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_pv_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM behaviorCount
 WHERE PageView &gt; 0 AND Favorite = 0 AND Cart = 0 AND Buy &gt; 0
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">CVR_pv2buy</span> <span class="o">=</span> <span class="n">n_unique_pv_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span>
 <span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2buy</span><span class="p">)</span>
@@ -288,14 +290,14 @@ WHERE PageView &gt; 0 AND Favorite = 0 AND Cart = 0 AND Buy &gt; 0
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">plotly</span> <span class="kn">import</span> <span class="n">graph_objects</span> <span class="k">as</span> <span class="n">go</span>
 
-<span class="n">fig1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Funnel</span><span class="p">(</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="p">.</span><span class="n">Funnel</span><span class="p">(</span>
     <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s">'pv'</span><span class="p">,</span> <span class="s">'fav'</span><span class="p">,</span> <span class="s">'buy'</span><span class="p">],</span>
     <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">n_unique_pv_users</span><span class="p">,</span> <span class="n">n_unique_fav_users</span><span class="p">,</span> <span class="n">n_unique_fav_buy_users</span><span class="p">],</span>
     <span class="n">textposition</span> <span class="o">=</span> <span class="s">"inside"</span><span class="p">,</span>
     <span class="n">textinfo</span> <span class="o">=</span> <span class="s">"value+percent initial"</span><span class="p">,</span>
     <span class="n">marker</span> <span class="o">=</span> <span class="p">{</span><span class="s">"color"</span><span class="p">:</span> <span class="p">[</span><span class="s">"#80bdff"</span><span class="p">,</span> <span class="s">"#f1b0b7"</span><span class="p">,</span> <span class="s">"#54bc4b"</span><span class="p">]})</span>
     <span class="p">)</span>
-<span class="n">fig1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig1</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div style="text-align: center;">

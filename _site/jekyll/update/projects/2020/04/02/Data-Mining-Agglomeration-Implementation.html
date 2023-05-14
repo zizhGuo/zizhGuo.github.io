@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -71,11 +73,11 @@
     Ending with only one cluster
     Returning a tree recording all middle clusters
     '''</span>
-    <span class="n">min_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+    <span class="n">min_dist</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">inf</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">node1</span> <span class="ow">in</span> <span class="n">data_nodes</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">node2</span> <span class="ow">in</span> <span class="n">data_nodes</span><span class="p">:</span>
-            <span class="n">dist</span> <span class="o">=</span> <span class="n">distance</span><span class="o">.</span><span class="n">euclidean</span><span class="p">(</span><span class="n">node1</span><span class="o">.</span><span class="n">center</span> <span class="p">,</span> <span class="n">node2</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
+            <span class="n">dist</span> <span class="o">=</span> <span class="n">distance</span><span class="p">.</span><span class="n">euclidean</span><span class="p">(</span><span class="n">node1</span><span class="p">.</span><span class="n">center</span> <span class="p">,</span> <span class="n">node2</span><span class="p">.</span><span class="n">center</span><span class="p">)</span>
             <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
             <span class="k">if</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="n">min_dist</span> <span class="ow">and</span> <span class="n">dist</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">min_dist</span> <span class="o">=</span> <span class="n">dist</span>
@@ -98,31 +100,31 @@
     Right node's size should be smaller than left
     '''</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
         <span class="k">if</span><span class="p">(</span><span class="n">left</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">right</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">values</span><span class="o">+</span><span class="n">right</span><span class="o">.</span><span class="n">values</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">center</span><span class="o">*</span><span class="n">left</span><span class="o">.</span><span class="n">size</span> <span class="o">+</span> <span class="n">right</span><span class="o">.</span><span class="n">center</span><span class="o">*</span><span class="n">right</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>\
-                <span class="o">/</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">size</span><span class="o">+</span><span class="n">right</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">label</span><span class="p">,</span><span class="n">right</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">size</span> <span class="o">+</span> <span class="n">right</span><span class="o">.</span><span class="n">size</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">left</span><span class="p">.</span><span class="n">values</span><span class="o">+</span><span class="n">right</span><span class="p">.</span><span class="n">values</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="n">center</span><span class="o">*</span><span class="n">left</span><span class="p">.</span><span class="n">size</span> <span class="o">+</span> <span class="n">right</span><span class="p">.</span><span class="n">center</span><span class="o">*</span><span class="n">right</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>\
+                <span class="o">/</span><span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="n">size</span><span class="o">+</span><span class="n">right</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">label</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="n">label</span><span class="p">,</span><span class="n">right</span><span class="p">.</span><span class="n">label</span><span class="p">)</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">left</span><span class="p">.</span><span class="n">size</span> <span class="o">+</span> <span class="n">right</span><span class="p">.</span><span class="n">size</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">values</span><span class="p">[</span><span class="s">'ID'</span><span class="p">]]</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="s">'ID'</span><span class="p">]</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">values</span><span class="p">[</span><span class="s">'ID'</span><span class="p">]]</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="s">'ID'</span><span class="p">]</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">1</span>
 </code></pre></div></div>
 
 <h3 id="part-1-guo-zizhun-using-cross-correlation-for-feature-rejection-and-selection">Part 1 (Guo, Zizhun): Using Cross-Correlation for Feature Rejection and Selection</h3>
 <p>Codes:</p>
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
-<span class="c"># rule out ID column</span>
-<span class="n">column_names</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">column_names_size</span><span class="p">]</span>  
-<span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="n">column_names_size</span><span class="p">]</span>
+<span class="c1"># rule out ID column
+</span><span class="n">column_names</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">column_names_size</span><span class="p">]</span>  
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="n">column_names_size</span><span class="p">]</span>
 
-<span class="c"># use panda package to get correlation matrix</span>
-<span class="n">corr</span> <span class="o">=</span> <span class="n">df_new</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="c1"># use panda package to get correlation matrix
+</span><span class="n">corr</span> <span class="o">=</span> <span class="n">df_new</span><span class="p">.</span><span class="n">corr</span><span class="p">()</span>
 </code></pre></div></div>
 <p>The cc matrix:
 <img src="https://i.imgur.com/jcg1WMc.png" alt="ccmaxtrix" /></p>

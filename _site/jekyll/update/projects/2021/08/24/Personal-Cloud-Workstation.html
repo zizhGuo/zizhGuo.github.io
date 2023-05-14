@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -141,19 +143,19 @@
 <p><strong>For both using VScode + Jupyter and Jupyter Notebook, the client end needs verifying .pem key for the authorization in order to connect the cloud Jupyter server.</strong></p>
 
 <p>Create the local key for the authorization:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@xxx:~$ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout xxx.pem -out xxx.pem
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@xxx:~$ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout xxx.pem -out xxx.pem
 </code></pre></div></div>
 
 <p>Insert these lines to jupyter configuration:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@xxx:~$ vi jupyter_notebook_config.py
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu@xxx:~$ vi jupyter_notebook_config.py
 </code></pre></div></div>
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
-<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">certfile</span> <span class="o">=</span> <span class="s">u'/home/ubuntu/certs/mycert.pem'</span>
-<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">ip</span> <span class="o">=</span> <span class="s">'*'</span>
-<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">open_browser</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">8888</span>
+<span class="n">c</span><span class="p">.</span><span class="n">NotebookApp</span><span class="p">.</span><span class="n">certfile</span> <span class="o">=</span> <span class="sa">u</span><span class="s">'/home/ubuntu/certs/mycert.pem'</span>
+<span class="n">c</span><span class="p">.</span><span class="n">NotebookApp</span><span class="p">.</span><span class="n">ip</span> <span class="o">=</span> <span class="s">'*'</span>
+<span class="n">c</span><span class="p">.</span><span class="n">NotebookApp</span><span class="p">.</span><span class="n">open_browser</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">c</span><span class="p">.</span><span class="n">NotebookApp</span><span class="p">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">8888</span>
 </code></pre></div></div>
 
 <p><strong>Some Troubles might encountered during the configuration:</strong></p>
@@ -161,13 +163,13 @@
 <p><a href="https://stackoverflow.com/questions/52673879/trouble-with-jupyter-certifications">Trouble with Jupyter certifications: Permission Denied</a></p>
 
 <p>Change the ownship of the certs to current user through:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo chown -R user:user ~/.local/share/jupyter
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo chown -R user:user ~/.local/share/jupyter
 </code></pre></div></div>
 
 <p><a href="https://stackoverflow.com/questions/67753969/sslerror-ssl-ee-key-too-small-ee-key-too-small-ssl-c4022-on-ubuntu-when">SSLError: [SSL: EE_KEY_TOO_SMALL] ee key too small (_ssl.c:4022) on Ubuntu when starting jupyter notebook</a></p>
 
 <p>Generate a larger key through:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mycert.pem -out mycert.pem
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mycert.pem -out mycert.pem
 </code></pre></div></div>
 
 <p><a href="https://stackoverflow.com/questions/36387654/jupyter-on-ec2-ssl-error">Jupyter on EC2: SSL Error</a></p>
@@ -176,7 +178,7 @@
 
 <p><a href="https://www.cyberciti.biz/faq/how-to-install-xfs-and-create-xfs-file-system-on-debianubuntu-linux/">How to install xfs and create xfs file system on Debian/Ubuntu Linux</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install xfsrogs
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install xfsrogs
 </code></pre></div></div>
 
 <p><strong>Resources</strong></p>
@@ -190,7 +192,7 @@
 <ol>
   <li>Activate <strong>spark-defaults.conf</strong> (this file would be loaded while spark server launches)</li>
   <li>Add these lines into the file:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
 spark.driver.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
 spark.driver.memory 8g
 </code></pre></div>    </div>

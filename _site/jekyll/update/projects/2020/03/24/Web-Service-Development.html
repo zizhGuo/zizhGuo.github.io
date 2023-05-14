@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -165,21 +167,21 @@ This is the web service project that holds a web service named Purchase where it
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">productInfo</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
-    <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
-    <span class="n">String</span> <span class="n">brand</span><span class="o">;</span>
+    <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="nc">String</span> <span class="n">brand</span><span class="o">;</span>
     <span class="kt">int</span> <span class="n">year</span><span class="o">;</span>
     <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
     <span class="kt">int</span> <span class="n">stock</span><span class="o">;</span>
     
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setBrand</span><span class="o">(</span><span class="n">String</span> <span class="n">brand</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">brand</span> <span class="o">=</span> <span class="n">brand</span><span class="o">;}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setBrand</span><span class="o">(</span><span class="nc">String</span> <span class="n">brand</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">brand</span> <span class="o">=</span> <span class="n">brand</span><span class="o">;}</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setYear</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">)</span> <span class="o">{</span><span class="k">this</span><span class="o">.</span><span class="na">year</span> <span class="o">=</span> <span class="n">year</span><span class="o">;}</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPrice</span><span class="o">(</span><span class="kt">int</span> <span class="n">price</span><span class="o">)</span> <span class="o">{</span><span class="k">this</span><span class="o">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;}</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setStock</span><span class="o">(</span><span class="kt">int</span> <span class="n">stock</span><span class="o">)</span> <span class="o">{</span><span class="k">this</span><span class="o">.</span><span class="na">stock</span> <span class="o">=</span> <span class="n">stock</span><span class="o">;}</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="n">id</span><span class="o">;}</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="n">name</span><span class="o">;}</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getBrand</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="n">brand</span><span class="o">;}</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="n">name</span><span class="o">;}</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getBrand</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="n">brand</span><span class="o">;}</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getYear</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="n">year</span><span class="o">;}</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPrice</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">price</span><span class="o">;}</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getStock</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="n">stock</span><span class="o">;}</span>
@@ -200,16 +202,16 @@ The service would intialize a product instance first, then to query info from De
      * Web service operation
      */</span>
     <span class="nd">@WebMethod</span><span class="o">(</span><span class="n">operationName</span> <span class="o">=</span> <span class="s">"getProductInfo"</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">productInfo</span> <span class="nf">getProductInfo</span><span class="o">(</span><span class="nd">@WebParam</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"query"</span><span class="o">)</span> <span class="n">String</span> <span class="n">keyword</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">productInfo</span> <span class="nf">getProductInfo</span><span class="o">(</span><span class="nd">@WebParam</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"query"</span><span class="o">)</span> <span class="nc">String</span> <span class="n">keyword</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// instance initialization</span>
         <span class="n">productInfo</span> <span class="n">product</span> <span class="o">=</span> <span class="k">new</span> <span class="n">productInfo</span><span class="o">();</span>       
         <span class="k">try</span><span class="o">{</span>   
-            <span class="n">Statement</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Main</span><span class="o">.</span><span class="na">getConn</span><span class="o">().</span><span class="na">createStatement</span><span class="o">();</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"WS_getProductInfo(): Connection succeeded !"</span><span class="o">);</span>
+            <span class="nc">Statement</span> <span class="n">s</span> <span class="o">=</span> <span class="nc">Main</span><span class="o">.</span><span class="na">getConn</span><span class="o">().</span><span class="na">createStatement</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"WS_getProductInfo(): Connection succeeded !"</span><span class="o">);</span>
             <span class="c1">// execute Query</span>
-            <span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> 
+            <span class="nc">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> 
               <span class="n">s</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="s">"SELECT * FROM ROOT.PRODUCTS WHERE PRODUCT_NAME = \'"</span><span class="o">+</span> <span class="n">keyword</span> <span class="o">+</span> <span class="s">"\'"</span><span class="o">);</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"WS_getProductInfo(): Doing Query"</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"WS_getProductInfo(): Doing Query"</span><span class="o">);</span>
             <span class="c1">// sets members from results</span>
             <span class="k">while</span> <span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">())</span> <span class="o">{</span>
                 <span class="n">product</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">"PRODUCT_ID"</span><span class="o">));</span>
@@ -220,7 +222,7 @@ The service would intialize a product instance first, then to query info from De
                 <span class="n">product</span><span class="o">.</span><span class="na">setStock</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">"STOCK"</span><span class="o">));</span>
             <span class="o">}</span>
         <span class="o">}</span>
-        <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){}</span>
+        <span class="k">catch</span><span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">){}</span>
         <span class="k">return</span> <span class="n">product</span><span class="o">;</span>
     <span class="o">}</span>
 
@@ -262,7 +264,7 @@ WHERE CUSTOMER_ID = custmer_ID
      * Web service operation
      */</span>
     <span class="nd">@WebMethod</span><span class="o">(</span><span class="n">operationName</span> <span class="o">=</span> <span class="s">"placeOrder"</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getPlaceOrder</span><span class="o">(</span><span class="nd">@WebParam</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"productID"</span><span class="o">)</span> <span class="kt">int</span> <span class="n">product_ID</span><span class="o">,</span> 
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getPlaceOrder</span><span class="o">(</span><span class="nd">@WebParam</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"productID"</span><span class="o">)</span> <span class="kt">int</span> <span class="n">product_ID</span><span class="o">,</span> 
                                 <span class="nd">@WebParam</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"numberOfProduct"</span><span class="o">)</span> <span class="kt">int</span> <span class="n">number_product</span><span class="o">,</span> 
                                 <span class="nd">@WebParam</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"customerID"</span><span class="o">)</span> <span class="kt">int</span> <span class="n">custmer_ID</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">productInfo</span> <span class="n">product</span> <span class="o">=</span> <span class="k">new</span> <span class="n">productInfo</span><span class="o">();</span>
@@ -272,8 +274,8 @@ WHERE CUSTOMER_ID = custmer_ID
         <span class="kt">int</span> <span class="n">number_in_stock</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
         
         <span class="k">try</span><span class="o">{</span>   
-            <span class="n">Statement</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Main</span><span class="o">.</span><span class="na">getConn</span><span class="o">().</span><span class="na">createStatement</span><span class="o">();</span>
-            <span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="s">"SELECT LIST_PRICE FROM ROOT.PRODUCTS WHERE PRODUCT_ID = "</span><span class="o">+</span> <span class="n">product_ID</span><span class="o">);</span>
+            <span class="nc">Statement</span> <span class="n">s</span> <span class="o">=</span> <span class="nc">Main</span><span class="o">.</span><span class="na">getConn</span><span class="o">().</span><span class="na">createStatement</span><span class="o">();</span>
+            <span class="nc">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="s">"SELECT LIST_PRICE FROM ROOT.PRODUCTS WHERE PRODUCT_ID = "</span><span class="o">+</span> <span class="n">product_ID</span><span class="o">);</span>
             <span class="k">while</span> <span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">())</span> <span class="o">{</span>
                 <span class="n">price</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">"LIST_PRICE"</span><span class="o">);</span>
             <span class="o">}</span>
@@ -289,34 +291,34 @@ WHERE CUSTOMER_ID = custmer_ID
             <span class="o">}</span>
                       
         <span class="o">}</span>
-        <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){}</span>
+        <span class="k">catch</span><span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">){}</span>
         
         <span class="k">if</span><span class="o">(</span><span class="n">price</span> <span class="o">*</span> <span class="n">number_product</span> <span class="o">&gt;</span> <span class="n">user_credit</span> 
           <span class="o">&amp;&amp;</span> <span class="n">number_in_stock</span> <span class="o">&lt;</span> <span class="n">number_product</span><span class="o">)</span> <span class="k">return</span> <span class="s">"Order placement fails; Insufficient credits!"</span><span class="o">;</span>
         <span class="k">else</span><span class="o">{</span>
             <span class="k">try</span> <span class="o">{</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"WS_getPlaceOrder(): Start to place order! "</span><span class="o">);</span>
-                <span class="n">Statement</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">Main</span><span class="o">.</span><span class="na">getConn</span><span class="o">().</span><span class="na">createStatement</span><span class="o">();</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"WS_getPlaceOrder(): Start to place order! "</span><span class="o">);</span>
+                <span class="nc">Statement</span> <span class="n">s2</span> <span class="o">=</span> <span class="nc">Main</span><span class="o">.</span><span class="na">getConn</span><span class="o">().</span><span class="na">createStatement</span><span class="o">();</span>
                 
                 <span class="c1">// update the stock number</span>
                 <span class="n">s2</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="s">"UPDATE ROOT.PRODUCTS SET STOCK = "</span> 
                   <span class="o">+</span> <span class="o">(</span><span class="n">number_in_stock</span><span class="o">-</span> <span class="n">number_product</span><span class="o">)</span> 
                   <span class="o">+</span> <span class="s">" WHERE PRODUCT_ID = "</span><span class="o">+</span> <span class="n">product_ID</span><span class="o">);</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"WS_getPlaceOrder(): Update stock finished!"</span><span class="o">);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"WS_getPlaceOrder(): Update stock finished!"</span><span class="o">);</span>
                 
                 <span class="c1">// deduct the cost                 </span>
                 <span class="n">s2</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="s">"UPDATE ROOT.ACCOUNTS SET ACCOUNT_CREDIT = "</span><span class="o">+</span> <span class="o">(</span><span class="n">user_credit</span> <span class="o">-</span> <span class="n">price</span> <span class="o">*</span> <span class="n">number_product</span><span class="o">)</span> 
                   <span class="o">+</span> <span class="s">"WHERE CUSTOMER_ID = "</span><span class="o">+</span> <span class="n">custmer_ID</span><span class="o">);</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"WS_getPlaceOrder(): Updated credit finished! "</span><span class="o">);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"WS_getPlaceOrder(): Updated credit finished! "</span><span class="o">);</span>
                 
                 <span class="c1">// insert record in order </span>
                 <span class="n">s2</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="s">"INSERT INTO ROOT.ORDERS VALUES ("</span> <span class="o">+</span> <span class="s">"10"</span> <span class="o">+</span> <span class="s">","</span> 
                   <span class="o">+</span> <span class="n">custmer_ID</span> <span class="o">+</span> <span class="s">","</span> 
                   <span class="o">+</span> <span class="n">product_ID</span> <span class="o">+</span> <span class="s">","</span> 
                   <span class="o">+</span> <span class="n">number_product</span> <span class="o">+</span> <span class="s">")"</span><span class="o">);</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"WS_getPlaceOrder(): Inserted new record to the order table!"</span><span class="o">);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"WS_getPlaceOrder(): Inserted new record to the order table!"</span><span class="o">);</span>
                
-            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
             <span class="o">}</span>
         <span class="o">}</span>
         <span class="k">return</span> <span class="s">"WS: Successful placed the order!"</span><span class="o">;</span>
@@ -330,12 +332,12 @@ This is the user application that performs two rounds of web service invocation.
 
 <p>The following Java codes show the two-round performances. The user whose ID is 10086 tries to purchase 10 Macbook Pro 15 laptops in one single order. (The laptop’s product ID is 101)</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="n">args</span><span class="o">[]){</span>
         <span class="c1">// Round 1</span>
         <span class="n">placeOrder</span><span class="o">(</span><span class="mi">101</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">10086</span><span class="o">);</span>
 
         <span class="c1">// Round 2</span>
-        <span class="n">String</span> <span class="n">keyword</span> <span class="o">=</span> <span class="s">"Macbook Pro 15"</span><span class="o">;</span>
+        <span class="nc">String</span> <span class="n">keyword</span> <span class="o">=</span> <span class="s">"Macbook Pro 15"</span><span class="o">;</span>
         <span class="n">productInfo</span> <span class="o">=</span> <span class="n">getProduct</span><span class="o">(</span><span class="n">keyword</span><span class="o">);</span>
         <span class="n">placeOrder</span><span class="o">(</span><span class="n">productInfo</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">10086</span><span class="o">);</span>
 <span class="o">}</span>
@@ -347,31 +349,31 @@ This is the user application that performs two rounds of web service invocation.
 
 <p>The following codes show the implementation of adding the header element to a SOAP message through customization in the message handler.</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">handleMessage</span><span class="o">(</span><span class="n">SOAPMessageContext</span> <span class="n">messageContext</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">Boolean</span> <span class="n">outboundProperty</span> <span class="o">=</span> <span class="o">(</span><span class="n">Boolean</span><span class="o">)</span> <span class="n">messageContext</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">MessageContext</span><span class="o">.</span><span class="na">MESSAGE_OUTBOUND_PROPERTY</span><span class="o">);</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">handleMessage</span><span class="o">(</span><span class="nc">SOAPMessageContext</span> <span class="n">messageContext</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Boolean</span> <span class="n">outboundProperty</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Boolean</span><span class="o">)</span> <span class="n">messageContext</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="nc">MessageContext</span><span class="o">.</span><span class="na">MESSAGE_OUTBOUND_PROPERTY</span><span class="o">);</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">outboundProperty</span><span class="o">)</span> <span class="o">{</span>
     <span class="c1">//if the message is outgoing one, i.e., the request to a web service, we add account information into the header</span>
-        <span class="n">SOAPMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">messageContext</span><span class="o">.</span><span class="na">getMessage</span><span class="o">();</span>
+        <span class="nc">SOAPMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">messageContext</span><span class="o">.</span><span class="na">getMessage</span><span class="o">();</span>
         <span class="k">try</span> <span class="o">{</span>
-            <span class="n">SOAPEnvelope</span> <span class="n">envelope</span> <span class="o">=</span> <span class="n">messageContext</span><span class="o">.</span><span class="na">getMessage</span><span class="o">().</span><span class="na">getSOAPPart</span><span class="o">().</span><span class="na">getEnvelope</span><span class="o">();</span>
-            <span class="n">SOAPHeader</span> <span class="n">header</span><span class="o">=</span><span class="n">envelope</span><span class="o">.</span><span class="na">getHeader</span><span class="o">();</span>
+            <span class="nc">SOAPEnvelope</span> <span class="n">envelope</span> <span class="o">=</span> <span class="n">messageContext</span><span class="o">.</span><span class="na">getMessage</span><span class="o">().</span><span class="na">getSOAPPart</span><span class="o">().</span><span class="na">getEnvelope</span><span class="o">();</span>
+            <span class="nc">SOAPHeader</span> <span class="n">header</span><span class="o">=</span><span class="n">envelope</span><span class="o">.</span><span class="na">getHeader</span><span class="o">();</span>
             <span class="k">if</span> <span class="o">(</span><span class="n">header</span><span class="o">==</span><span class="kc">null</span><span class="o">){</span>
                 <span class="n">header</span> <span class="o">=</span> <span class="n">envelope</span><span class="o">.</span><span class="na">addHeader</span><span class="o">();</span>
             <span class="o">}</span>
             <span class="c1">// adding the username element as the child element to the header</span>
             <span class="c1">// when sent out the message to server</span>
-            <span class="n">SOAPElement</span> <span class="n">usernameToken</span><span class="o">=</span><span class="n">header</span><span class="o">.</span><span class="na">addChildElement</span><span class="o">(</span><span class="s">"UsernameToken"</span><span class="o">,</span><span class="s">"wsse"</span><span class="o">,</span> <span class="s">"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"</span><span class="o">);</span>
-            <span class="n">SOAPElement</span> <span class="n">username</span><span class="o">=</span><span class="n">usernameToken</span><span class="o">.</span><span class="na">addChildElement</span><span class="o">(</span><span class="s">"Username"</span><span class="o">,</span><span class="s">"wsse"</span><span class="o">);</span>
+            <span class="nc">SOAPElement</span> <span class="n">usernameToken</span><span class="o">=</span><span class="n">header</span><span class="o">.</span><span class="na">addChildElement</span><span class="o">(</span><span class="s">"UsernameToken"</span><span class="o">,</span><span class="s">"wsse"</span><span class="o">,</span> <span class="s">"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"</span><span class="o">);</span>
+            <span class="nc">SOAPElement</span> <span class="n">username</span><span class="o">=</span><span class="n">usernameToken</span><span class="o">.</span><span class="na">addChildElement</span><span class="o">(</span><span class="s">"Username"</span><span class="o">,</span><span class="s">"wsse"</span><span class="o">);</span>
             <span class="n">username</span><span class="o">.</span><span class="na">addTextNode</span><span class="o">(</span><span class="s">"splashurpants"</span><span class="o">);</span>
 
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
         <span class="o">}</span>
     <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="c1">//if the message is an incoming one, i.e., the response from the service, then we print out the whole message</span>
         <span class="k">try</span> <span class="o">{</span>
-            <span class="n">SOAPMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">messageContext</span><span class="o">.</span><span class="na">getMessage</span><span class="o">();</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">SOAPMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">messageContext</span><span class="o">.</span><span class="na">getMessage</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
     <span class="o">}</span>
     <span class="o">}</span>
@@ -386,45 +388,45 @@ This is the user application that performs two rounds of web service invocation.
 The web services application maintains a HashSet that stores the usernames that have once queried the product info (the first round), of which the purpose is hence to enforce the coordination protocol. If a user who has never invoke the getProductInfo service, its username will not be added into the HashSet so that the server will not permit the user to process the placeOrder service by returning the false boolean value in message handling method in message handler and therefore a failed String message will indicate the failure of invocation. However, if a user has ever invoked the service to get product info, the server program will allow its SOAP message to forth process.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">handleMessage</span><span class="o">(</span><span class="n">SOAPMessageContext</span> <span class="n">messageContext</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">handleMessage</span><span class="o">(</span><span class="nc">SOAPMessageContext</span> <span class="n">messageContext</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// get the HashSet</span>
-        <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">Main</span><span class="o">.</span><span class="na">getCoordinatorSet</span><span class="o">();</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server side"</span><span class="o">);</span>
-        <span class="n">String</span> <span class="n">outProperty</span> <span class="o">=</span> <span class="n">SOAPMessageContext</span><span class="o">.</span><span class="na">MESSAGE_OUTBOUND_PROPERTY</span><span class="o">;</span>
-        <span class="kt">boolean</span> <span class="n">outgoing</span> <span class="o">=</span> <span class="o">(</span><span class="n">Boolean</span><span class="o">)</span><span class="n">messageContext</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">outProperty</span><span class="o">);</span>
-        <span class="n">SOAPMessage</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">messageContext</span><span class="o">.</span><span class="na">getMessage</span><span class="o">();</span>
-        <span class="n">String</span> <span class="n">username</span><span class="o">=</span><span class="s">""</span><span class="o">;</span>
+        <span class="nc">HashSet</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="nc">Main</span><span class="o">.</span><span class="na">getCoordinatorSet</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server side"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">outProperty</span> <span class="o">=</span> <span class="nc">SOAPMessageContext</span><span class="o">.</span><span class="na">MESSAGE_OUTBOUND_PROPERTY</span><span class="o">;</span>
+        <span class="kt">boolean</span> <span class="n">outgoing</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Boolean</span><span class="o">)</span><span class="n">messageContext</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">outProperty</span><span class="o">);</span>
+        <span class="nc">SOAPMessage</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">messageContext</span><span class="o">.</span><span class="na">getMessage</span><span class="o">();</span>
+        <span class="nc">String</span> <span class="n">username</span><span class="o">=</span><span class="s">""</span><span class="o">;</span>
         <span class="k">try</span> <span class="o">{</span>
             <span class="k">if</span> <span class="o">(</span><span class="n">outgoing</span><span class="o">){</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
             <span class="o">}</span> 
             <span class="k">else</span><span class="o">{</span>  
 
               <span class="c1">// Get username @username</span>
-                <span class="n">SOAPHeader</span> <span class="n">header</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="na">getSOAPHeader</span><span class="o">();</span>
-                <span class="n">Iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="na">examineAllHeaderElements</span><span class="o">();</span>
+                <span class="nc">SOAPHeader</span> <span class="n">header</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="na">getSOAPHeader</span><span class="o">();</span>
+                <span class="nc">Iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="na">examineAllHeaderElements</span><span class="o">();</span>
                 <span class="k">while</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">()){</span>
-                    <span class="n">SOAPHeaderElement</span> <span class="n">e</span><span class="o">=(</span><span class="n">SOAPHeaderElement</span><span class="o">)</span> <span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
-                    <span class="n">NodeList</span> <span class="n">nl</span><span class="o">=</span><span class="n">e</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span><span class="s">"wsse:Username"</span><span class="o">);</span>
+                    <span class="nc">SOAPHeaderElement</span> <span class="n">e</span><span class="o">=(</span><span class="nc">SOAPHeaderElement</span><span class="o">)</span> <span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+                    <span class="nc">NodeList</span> <span class="n">nl</span><span class="o">=</span><span class="n">e</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span><span class="s">"wsse:Username"</span><span class="o">);</span>
                     <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nl</span><span class="o">.</span><span class="na">getLength</span><span class="o">();</span><span class="n">i</span><span class="o">++){</span>
                         <span class="n">username</span><span class="o">+=</span><span class="n">nl</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">getTextContent</span><span class="o">();</span>
                     <span class="o">}</span>
                 <span class="o">}</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Ongoing username: "</span> <span class="o">+</span> <span class="n">username</span><span class="o">);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Ongoing username: "</span> <span class="o">+</span> <span class="n">username</span><span class="o">);</span>
                 
                 <span class="c1">// get the operation name @opNameString</span>
-                <span class="n">SOAPEnvelope</span> <span class="n">envelope</span> <span class="o">=</span> <span class="n">messageContext</span><span class="o">.</span><span class="na">getMessage</span><span class="o">().</span><span class="na">getSOAPPart</span><span class="o">().</span><span class="na">getEnvelope</span><span class="o">();</span>   
-                <span class="n">SOAPBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">envelope</span><span class="o">.</span><span class="na">getBody</span><span class="o">();</span>
+                <span class="nc">SOAPEnvelope</span> <span class="n">envelope</span> <span class="o">=</span> <span class="n">messageContext</span><span class="o">.</span><span class="na">getMessage</span><span class="o">().</span><span class="na">getSOAPPart</span><span class="o">().</span><span class="na">getEnvelope</span><span class="o">();</span>   
+                <span class="nc">SOAPBody</span> <span class="n">body</span> <span class="o">=</span> <span class="n">envelope</span><span class="o">.</span><span class="na">getBody</span><span class="o">();</span>
                 <span class="k">if</span> <span class="o">(</span><span class="n">body</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
-                    <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: No body in message!"</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: No body in message!"</span><span class="o">);</span>
                     <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
                 <span class="o">}</span>
-                <span class="n">Iterator</span> <span class="n">it2</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="na">getChildElements</span><span class="o">();</span>
-                <span class="n">String</span> <span class="n">opNameString</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+                <span class="nc">Iterator</span> <span class="n">it2</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="na">getChildElements</span><span class="o">();</span>
+                <span class="nc">String</span> <span class="n">opNameString</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
                 <span class="k">while</span><span class="o">(</span><span class="n">it2</span><span class="o">.</span><span class="na">hasNext</span><span class="o">()){</span>
-                    <span class="n">SOAPBodyElement</span> <span class="n">e</span><span class="o">=(</span><span class="n">SOAPBodyElement</span><span class="o">)</span> <span class="n">it2</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+                    <span class="nc">SOAPBodyElement</span> <span class="n">e</span><span class="o">=(</span><span class="nc">SOAPBodyElement</span><span class="o">)</span> <span class="n">it2</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
                     <span class="n">opNameString</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">getLocalName</span><span class="o">();</span>
-                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Ongoing operation name: "</span> <span class="o">+</span> <span class="n">opNameString</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Ongoing operation name: "</span> <span class="o">+</span> <span class="n">opNameString</span><span class="o">);</span>
                 <span class="o">}</span>
 
                 <span class="c1">//</span>
@@ -434,34 +436,34 @@ The web services application maintains a HashSet that stores the usernames that 
                 <span class="k">if</span> <span class="o">(</span><span class="n">table</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">username</span><span class="o">)){</span>
                     <span class="c1">// registered user that had called product info query</span>
                     <span class="k">if</span> <span class="o">(</span><span class="n">opNameString</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"getProductInfo"</span><span class="o">)){</span>
-                        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Succeeded to query the productInfo"</span><span class="o">);</span>
+                        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Succeeded to query the productInfo"</span><span class="o">);</span>
                     <span class="o">}</span>
                     <span class="c1">// place the order after getting the product info </span>
                     <span class="k">if</span> <span class="o">(</span><span class="n">opNameString</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"placeOrder"</span><span class="o">))</span> <span class="o">{</span>
-                        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Succeeded to place the order"</span><span class="o">);</span>
+                        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Succeeded to place the order"</span><span class="o">);</span>
                     <span class="o">}</span>
                     <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
                 <span class="o">}</span>
                 <span class="c1">// new user</span>
                 <span class="k">else</span><span class="o">{</span>
                     <span class="c1">// not yet invoke the getProductInfo</span>
-                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Not yet registered"</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Not yet registered"</span><span class="o">);</span>
                     <span class="k">if</span> <span class="o">(</span><span class="n">opNameString</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"getProductInfo"</span><span class="o">)){</span>
                         <span class="n">table</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">username</span><span class="o">);</span>
-                        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Registration done"</span><span class="o">);</span>
-                        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Succeeded to query the productInfo"</span><span class="o">);</span>
+                        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Registration done"</span><span class="o">);</span>
+                        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Succeeded to query the productInfo"</span><span class="o">);</span>
                         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
                     <span class="o">}</span> 
                     <span class="c1">// new user attends to directly place the order</span>
                     <span class="k">if</span> <span class="o">(</span><span class="n">opNameString</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"placeOrder"</span><span class="o">))</span> <span class="o">{</span>
-                        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Failed. Attend to place order without the registeration."</span><span class="o">);</span>
+                        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Server: Failed. Attend to place order without the registeration."</span><span class="o">);</span>
                         <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
                     <span class="o">}</span>
                 <span class="o">}</span>
             <span class="o">}</span>
         <span class="o">}</span>
-        <span class="k">catch</span><span class="o">(</span><span class="n">SOAPException</span> <span class="n">e</span><span class="o">){</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SOAP IO Error!!!!"</span><span class="o">);</span>
+        <span class="k">catch</span><span class="o">(</span><span class="nc">SOAPException</span> <span class="n">e</span><span class="o">){</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SOAP IO Error!!!!"</span><span class="o">);</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
         <span class="o">}</span>
         <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>

@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -115,14 +117,14 @@ bind it to environment so that serverless can use it to access Lambda &amp; API 
 用git clone下来实例project，然后cd到目录下操作。
 方法二：
 安装命令
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>serverless install -u https://github.com/serverless/examples/tree/master/aws-node-rest-api-with-dynamodb -n aws-node-rest-api-with-dynamodb
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>serverless install -u https://github.com/serverless/examples/tree/master/aws-node-rest-api-with-dynamodb -n aws-node-rest-api-with-dynamodb
 </code></pre></div>    </div>
   </li>
   <li>查看配置文件和JS代码</li>
 </ol>
 
 <p><strong>serverless.yml</strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>provider:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>provider:
   name: aws
   runtime: nodejs10.x
   environment:
@@ -139,7 +141,7 @@ bind it to environment so that serverless can use it to access Lambda &amp; API 
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>functions:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>functions:
   create:
     handler: todos/create.create
     events:
@@ -148,7 +150,7 @@ bind it to environment so that serverless can use it to access Lambda &amp; API 
           method: post
           cors: true
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>resources:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>resources:
   Resources:
     TodosDynamoDbTable:
       Type: 'AWS::DynamoDB::Table'
@@ -169,9 +171,9 @@ bind it to environment so that serverless can use it to access Lambda &amp; API 
 </code></pre></div></div>
 
 <p><strong>get.js</strong></p>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">AWS</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'aws-sdk'</span><span class="p">);</span> <span class="c1">// eslint-disable-line import/no-extraneous-dependencies</span>
+<span class="kd">const</span> <span class="nx">AWS</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">aws-sdk</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// eslint-disable-line import/no-extraneous-dependencies</span>
 
 <span class="kd">const</span> <span class="nx">dynamoDb</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AWS</span><span class="p">.</span><span class="nx">DynamoDB</span><span class="p">.</span><span class="nx">DocumentClient</span><span class="p">();</span>
 
@@ -190,8 +192,8 @@ bind it to environment so that serverless can use it to access Lambda &amp; API 
       <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
       <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
         <span class="na">statusCode</span><span class="p">:</span> <span class="nx">error</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">||</span> <span class="mi">501</span><span class="p">,</span>
-        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'text/plain'</span> <span class="p">},</span>
-        <span class="na">body</span><span class="p">:</span> <span class="s1">'Couldn</span><span class="se">\'</span><span class="s1">t fetch the todo item.'</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">text/plain</span><span class="dl">'</span> <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Couldn</span><span class="se">\'</span><span class="s1">t fetch the todo item.</span><span class="dl">'</span><span class="p">,</span>
       <span class="p">});</span>
       <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
@@ -233,7 +235,7 @@ bind it to environment so that serverless can use it to access Lambda &amp; API 
 <strong>Image 5: Succesful return the created record</strong></p>
 
 <p>数据有添加，说明添加数据没有问题，其他的REST API分别是：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  (已测试)POST - https://szye94dpr1.execute-api.us-east-1.amazonaws.com/dev/todos
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  (已测试)POST - https://szye94dpr1.execute-api.us-east-1.amazonaws.com/dev/todos
   GET - https://szye94dpr1.execute-api.us-east-1.amazonaws.com/dev/todos
   GET - https://szye94dpr1.execute-api.us-east-1.amazonaws.com/dev/todos/{id}
   PUT - https://szye94dpr1.execute-api.us-east-1.amazonaws.com/dev/todos/{id}

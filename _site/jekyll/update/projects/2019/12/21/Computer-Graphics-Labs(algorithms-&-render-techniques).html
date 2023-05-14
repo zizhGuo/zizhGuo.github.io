@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -155,55 +157,55 @@
 <p>Partial codes: (<a href="https://github.com/zizhGuo/CSCI610-Foundations-of-Computer-Graphics/blob/master/shading/phong.vert">see complete module in GitHub</a>)</p>
 
 <p>Two Approaches to load the images into the shader using SOIL API.</p>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">///
-// This function initializes all texture-related data structures for
-// the program.  This is where texture buffers should be created, where
-// texture images should be loaded, etc.
-//
-// You will need to write this function, and maintain all of the values
-// needed to be sent to the various shaders.
-///
-</span><span class="kt">void</span> <span class="nf">initTextures</span><span class="p">(</span> <span class="kt">void</span> <span class="p">)</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">///</span>
+<span class="c1">// This function initializes all texture-related data structures for</span>
+<span class="c1">// the program.  This is where texture buffers should be created, where</span>
+<span class="c1">// texture images should be loaded, etc.</span>
+<span class="c1">//</span>
+<span class="c1">// You will need to write this function, and maintain all of the values</span>
+<span class="c1">// needed to be sent to the various shaders.</span>
+<span class="c1">///</span>
+<span class="kt">void</span> <span class="nf">initTextures</span><span class="p">(</span> <span class="kt">void</span> <span class="p">)</span>
 <span class="p">{</span>   
-    <span class="c1">//
-</span>    <span class="c1">// For "Quad", using SOIL_load_OGL_texture() to directly generate texutres.
-</span>    <span class="c1">//
-</span>    <span class="n">GLuint</span> <span class="n">tex_happy</span> <span class="o">=</span> <span class="n">SOIL_load_OGL_texture</span><span class="p">(</span>
+    <span class="c1">//</span>
+    <span class="c1">// For "Quad", using SOIL_load_OGL_texture() to directly generate texutres.</span>
+    <span class="c1">//</span>
+    <span class="n">GLuint</span> <span class="n">tex_happy</span> <span class="o">=</span> <span class="n">SOIL_load_OGL_texture</span><span class="p">(</span>
         <span class="s">"happy.png"</span><span class="p">,</span>
         <span class="n">SOIL_LOAD_AUTO</span><span class="p">,</span>
         <span class="n">SOIL_CREATE_NEW_ID</span><span class="p">,</span>
-        <span class="n">SOIL_FLAG_MIPMAPS</span> <span class="o">|</span> <span class="n">SOIL_FLAG_INVERT_Y</span> <span class="o">|</span> <span class="c1">// set mipmaps; set inversion on Y coordinates
-</span>            <span class="n">SOIL_FLAG_TEXTURE_REPEATS</span><span class="p">);</span> <span class="c1">// set wrapping mode to repeat
-</span>
-    <span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL_TEXTURE0</span><span class="p">);</span>  <span class="c1">// active the texutre unit 0
-</span>    <span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">tex_happy</span><span class="p">);</span>  <span class="c1">// bind the happy face texture to current unit
-</span>
-    <span class="c1">//
-</span>    <span class="c1">// For "Sphere" and "Cylinder", using more complicated way by loading the image, sets the data,
-</span>    <span class="c1">// sets the parameters independently, and loading the data to texture.
-</span>    <span class="c1">//
-</span>    <span class="kt">int</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
+        <span class="n">SOIL_FLAG_MIPMAPS</span> <span class="o">|</span> <span class="n">SOIL_FLAG_INVERT_Y</span> <span class="o">|</span> <span class="c1">// set mipmaps; set inversion on Y coordinates</span>
+            <span class="n">SOIL_FLAG_TEXTURE_REPEATS</span><span class="p">);</span> <span class="c1">// set wrapping mode to repeat</span>
+
+    <span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL_TEXTURE0</span><span class="p">);</span>  <span class="c1">// active the texutre unit 0</span>
+    <span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">tex_happy</span><span class="p">);</span>  <span class="c1">// bind the happy face texture to current unit</span>
+
+    <span class="c1">//</span>
+    <span class="c1">// For "Sphere" and "Cylinder", using more complicated way by loading the image, sets the data,</span>
+    <span class="c1">// sets the parameters independently, and loading the data to texture.</span>
+    <span class="c1">//</span>
+    <span class="kt">int</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
     <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">image</span><span class="p">;</span>
     <span class="n">GLuint</span> <span class="n">tex_jupiter</span><span class="p">,</span> <span class="n">tex_wall</span><span class="p">,</span> <span class="n">tex_disc</span><span class="p">;</span>
-    <span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tex_jupiter</span><span class="p">);</span> <span class="c1">// generate texture for sphere
-</span>    <span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tex_wall</span><span class="p">);</span> <span class="c1">// generate texture for cylinder side
-</span>    <span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tex_disc</span><span class="p">);</span> <span class="c1">// generate texture for cylinder disc
-</span>
-    <span class="c1">// "Sphere"
-</span>    <span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL_TEXTURE2</span><span class="p">);</span> <span class="c1">// activate texture unit 2
-</span>    <span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">tex_jupiter</span><span class="p">);</span> <span class="c1">// bind the jupiter texture to current unit
-</span>    <span class="n">image</span> <span class="o">=</span> <span class="n">SOIL_load_image</span><span class="p">(</span><span class="s">"jupiter.jpg"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">width</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SOIL_LOAD_RGB</span> <span class="p">);</span> <span class="c1">// loading the image
-</span>    <span class="k">if</span><span class="p">(</span> <span class="n">image</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>     
+    <span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tex_jupiter</span><span class="p">);</span> <span class="c1">// generate texture for sphere</span>
+    <span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tex_wall</span><span class="p">);</span> <span class="c1">// generate texture for cylinder side</span>
+    <span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tex_disc</span><span class="p">);</span> <span class="c1">// generate texture for cylinder disc</span>
+
+    <span class="c1">// "Sphere"</span>
+    <span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL_TEXTURE2</span><span class="p">);</span> <span class="c1">// activate texture unit 2</span>
+    <span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">tex_jupiter</span><span class="p">);</span> <span class="c1">// bind the jupiter texture to current unit</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">SOIL_load_image</span><span class="p">(</span><span class="s">"jupiter.jpg"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">width</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SOIL_LOAD_RGB</span> <span class="p">);</span> <span class="c1">// loading the image</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">image</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>     
         <span class="n">printf</span><span class="p">(</span> <span class="s">"SOIL loading error: '%s'</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">SOIL_last_result</span><span class="p">()</span> <span class="p">);</span> 
     <span class="p">}</span>
-    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_WRAP_S</span><span class="p">,</span> <span class="n">GL_REPEAT</span><span class="p">);</span> <span class="c1">// sets S-axis wrapping mode as repeat
-</span>    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_WRAP_T</span><span class="p">,</span> <span class="n">GL_REPEAT</span><span class="p">);</span> <span class="c1">// sets T-axis wrapping mode as repeat
-</span>    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MAG_FILTER</span><span class="p">,</span> <span class="n">GL_NEAREST</span><span class="p">);</span> <span class="c1">// sets filtering mode for magnification as nearest
-</span>    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MIN_FILTER</span><span class="p">,</span> <span class="n">GL_LINEAR</span><span class="p">);</span> <span class="c1">// sets filtering mode for minification as linear
-</span>    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_GENERATE_MIPMAP</span><span class="p">,</span> <span class="n">GL_TRUE</span><span class="p">);</span> <span class="c1">// enable mipmap generation
-</span>    <span class="n">glTexImage2D</span><span class="p">(</span> <span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">GL_UNSIGNED_BYTE</span><span class="p">,</span> <span class="n">image</span><span class="p">);</span> <span class="c1">// load the image to texture
-</span>    <span class="n">SOIL_free_image_data</span><span class="p">(</span><span class="n">image</span><span class="p">);</span> <span class="c1">// free space
-</span></code></pre></div></div>
+    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_WRAP_S</span><span class="p">,</span> <span class="n">GL_REPEAT</span><span class="p">);</span> <span class="c1">// sets S-axis wrapping mode as repeat</span>
+    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_WRAP_T</span><span class="p">,</span> <span class="n">GL_REPEAT</span><span class="p">);</span> <span class="c1">// sets T-axis wrapping mode as repeat</span>
+    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MAG_FILTER</span><span class="p">,</span> <span class="n">GL_NEAREST</span><span class="p">);</span> <span class="c1">// sets filtering mode for magnification as nearest</span>
+    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MIN_FILTER</span><span class="p">,</span> <span class="n">GL_LINEAR</span><span class="p">);</span> <span class="c1">// sets filtering mode for minification as linear</span>
+    <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_GENERATE_MIPMAP</span><span class="p">,</span> <span class="n">GL_TRUE</span><span class="p">);</span> <span class="c1">// enable mipmap generation</span>
+    <span class="n">glTexImage2D</span><span class="p">(</span> <span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">GL_UNSIGNED_BYTE</span><span class="p">,</span> <span class="n">image</span><span class="p">);</span> <span class="c1">// load the image to texture</span>
+    <span class="n">SOIL_free_image_data</span><span class="p">(</span><span class="n">image</span><span class="p">);</span> <span class="c1">// free space</span>
+</code></pre></div></div>
 
 <h3 id="lab5-shading"><strong>Lab5: Shading</strong></h3>
 
@@ -244,18 +246,18 @@
 Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.</p>
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Add all illumination and shading code you need here
-</span>
-    <span class="n">vec4</span> <span class="n">normals</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">N</span><span class="p">);</span> 
-    <span class="n">vec4</span> <span class="n">L</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">Lpos</span> <span class="o">-</span> <span class="n">vpos</span><span class="p">);</span> <span class="c1">// calculate light vector
-</span>    <span class="n">vec4</span> <span class="n">R</span> <span class="o">=</span> <span class="n">reflect</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">normals</span><span class="p">);</span> <span class="c1">// calculate the reflective vector
-</span>    <span class="n">vec4</span> <span class="n">V</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">vpos</span><span class="p">);</span>
+    <span class="c1">// Add all illumination and shading code you need here</span>
 
-    <span class="n">fragmentColor</span> <span class="o">=</span> <span class="n">IA</span> <span class="o">*</span> <span class="n">KA</span> <span class="o">*</span> <span class="n">OA</span> <span class="o">+</span> <span class="n">IS</span> <span class="o">*</span> <span class="n">KD</span> <span class="o">*</span> <span class="n">OD</span> <span class="o">*</span> <span class="n">max</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">L</span><span class="p">.</span><span class="n">xyz</span><span class="p">,</span> <span class="n">normals</span><span class="p">.</span><span class="n">xyz</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">OS</span> <span class="o">*</span><span class="n">IS</span> <span class="o">*</span> <span class="n">KS</span> <span class="o">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">xyz</span><span class="p">,</span> <span class="n">V</span><span class="p">.</span><span class="n">xyz</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="n">SE</span><span class="p">);</span> <span class="c1">// apply phong model equation to get final color
-</span>
-    <span class="c1">// by default, just use 80% gray for everything
-</span>    <span class="c1">//fragmentColor = vec4( 0.8, 0.8, 0.8, 1.0 );
-</span><span class="p">}</span>
+    <span class="n">vec4</span> <span class="n">normals</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">N</span><span class="p">);</span> 
+    <span class="n">vec4</span> <span class="n">L</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">Lpos</span> <span class="o">-</span> <span class="n">vpos</span><span class="p">);</span> <span class="c1">// calculate light vector</span>
+    <span class="n">vec4</span> <span class="n">R</span> <span class="o">=</span> <span class="n">reflect</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">normals</span><span class="p">);</span> <span class="c1">// calculate the reflective vector</span>
+    <span class="n">vec4</span> <span class="n">V</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">vpos</span><span class="p">);</span>
+
+    <span class="n">fragmentColor</span> <span class="o">=</span> <span class="n">IA</span> <span class="o">*</span> <span class="n">KA</span> <span class="o">*</span> <span class="n">OA</span> <span class="o">+</span> <span class="n">IS</span> <span class="o">*</span> <span class="n">KD</span> <span class="o">*</span> <span class="n">OD</span> <span class="o">*</span> <span class="n">max</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">L</span><span class="p">.</span><span class="n">xyz</span><span class="p">,</span> <span class="n">normals</span><span class="p">.</span><span class="n">xyz</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">OS</span> <span class="o">*</span><span class="n">IS</span> <span class="o">*</span> <span class="n">KS</span> <span class="o">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">xyz</span><span class="p">,</span> <span class="n">V</span><span class="p">.</span><span class="n">xyz</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="n">SE</span><span class="p">);</span> <span class="c1">// apply phong model equation to get final color</span>
+
+    <span class="c1">// by default, just use 80% gray for everything</span>
+    <span class="c1">//fragmentColor = vec4( 0.8, 0.8, 0.8, 1.0 );</span>
+<span class="p">}</span>
 
 </code></pre></div></div>
 
@@ -293,18 +295,18 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
 
 <h4 id="functions-2"><strong>Functions</strong></h4>
 <p>Partial codes: (<a href="https://github.com/zizhGuo/CSCI610-Foundations-of-Computer-Graphics/blob/master/tessellation/Shapes.cpp">see complete module in GitHub</a>)</p>
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">///
-// makeCylinder - Create polygons for a cylinder with unit height, centered at
-// the origin, with separate number of radial subdivisions and height 
-// subdivisions.
-//
-// @param radius - Radius of the base of the cylinder
-// @param discFactor - number of subdivisions on the radial base
-// @param heightFactor - number of subdivisions along the height
-//
-// Can only use calls to C.addTriangle()
-///
-</span><span class="kt">void</span> <span class="nf">makeCylinder</span><span class="p">(</span> <span class="n">Canvas</span> <span class="o">&amp;</span><span class="n">C</span><span class="p">,</span> <span class="kt">float</span> <span class="n">radius</span><span class="p">,</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">///</span>
+<span class="c1">// makeCylinder - Create polygons for a cylinder with unit height, centered at</span>
+<span class="c1">// the origin, with separate number of radial subdivisions and height </span>
+<span class="c1">// subdivisions.</span>
+<span class="c1">//</span>
+<span class="c1">// @param radius - Radius of the base of the cylinder</span>
+<span class="c1">// @param discFactor - number of subdivisions on the radial base</span>
+<span class="c1">// @param heightFactor - number of subdivisions along the height</span>
+<span class="c1">//</span>
+<span class="c1">// Can only use calls to C.addTriangle()</span>
+<span class="c1">///</span>
+<span class="kt">void</span> <span class="nf">makeCylinder</span><span class="p">(</span> <span class="n">Canvas</span> <span class="o">&amp;</span><span class="n">C</span><span class="p">,</span> <span class="kt">float</span> <span class="n">radius</span><span class="p">,</span>
                    <span class="kt">int</span> <span class="n">discFactor</span><span class="p">,</span> <span class="kt">int</span> <span class="n">heightFactor</span> <span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span> <span class="n">discFactor</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="p">)</span>
@@ -313,31 +315,31 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
     <span class="k">if</span><span class="p">(</span> <span class="n">heightFactor</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="p">)</span>
         <span class="n">heightFactor</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-    <span class="c1">// YOUR IMPLEMENTATION HERE
-</span>    <span class="c1">// offset on given discFactor and stride for current location on the same tier
-</span>    <span class="kt">float</span> <span class="n">strideDisk</span> <span class="o">=</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">;</span> 
+    <span class="c1">// YOUR IMPLEMENTATION HERE</span>
+    <span class="c1">// offset on given discFactor and stride for current location on the same tier</span>
+    <span class="kt">float</span> <span class="n">strideDisk</span> <span class="o">=</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">;</span> 
     <span class="kt">float</span> <span class="n">offsetA</span> <span class="o">=</span> <span class="mf">2.0</span><span class="n">f</span> <span class="o">*</span> <span class="mf">3.14159</span><span class="n">f</span> <span class="o">/</span> <span class="n">discFactor</span><span class="p">;</span>
 
-    <span class="c1">// offset on given heightFactor and stride for current height
-</span>    <span class="kt">float</span> <span class="n">strideSide</span> <span class="o">=</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">;</span>
+    <span class="c1">// offset on given heightFactor and stride for current height</span>
+    <span class="kt">float</span> <span class="n">strideSide</span> <span class="o">=</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">;</span>
     <span class="kt">float</span> <span class="n">offsetB</span> <span class="o">=</span> <span class="mf">1.0</span><span class="n">f</span> <span class="o">/</span> <span class="n">heightFactor</span><span class="p">;</span>
 
 
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">discFactor</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">//Tessellation on disk top
-</span>        <span class="n">Vertex</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">makeDiskVertex</span><span class="p">(</span><span class="n">strideDisk</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="mf">0.5</span><span class="n">f</span><span class="p">);</span>
+        <span class="c1">//Tessellation on disk top</span>
+        <span class="n">Vertex</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">makeDiskVertex</span><span class="p">(</span><span class="n">strideDisk</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="mf">0.5</span><span class="n">f</span><span class="p">);</span>
         <span class="n">Vertex</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">makeDiskVertex</span><span class="p">(</span><span class="n">strideDisk</span> <span class="o">+</span> <span class="n">offsetA</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="mf">0.5</span><span class="n">f</span><span class="p">);</span>
         <span class="n">C</span><span class="p">.</span><span class="n">addTriangle</span><span class="p">(</span><span class="n">Vertex</span><span class="p">{</span><span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.5</span><span class="n">f</span><span class="p">,</span> <span class="mf">1.0</span><span class="n">f</span><span class="p">},</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">);</span>
 
-        <span class="c1">//Tessellation on disk bottom
-</span>        <span class="n">Vertex</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">makeDiskVertex</span><span class="p">(</span><span class="n">strideDisk</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="n">f</span><span class="p">);</span>
+        <span class="c1">//Tessellation on disk bottom</span>
+        <span class="n">Vertex</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">makeDiskVertex</span><span class="p">(</span><span class="n">strideDisk</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="n">f</span><span class="p">);</span>
         <span class="n">Vertex</span> <span class="n">v4</span> <span class="o">=</span> <span class="n">makeDiskVertex</span><span class="p">(</span><span class="n">strideDisk</span> <span class="o">+</span> <span class="n">offsetA</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="n">f</span><span class="p">);</span>
         <span class="n">C</span><span class="p">.</span><span class="n">addTriangle</span><span class="p">(</span><span class="n">Vertex</span><span class="p">{</span><span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="n">f</span><span class="p">,</span> <span class="mf">1.0</span><span class="n">f</span><span class="p">},</span><span class="n">v4</span><span class="p">,</span> <span class="n">v3</span><span class="p">);</span>
         <span class="n">strideDisk</span> <span class="o">+=</span> <span class="n">offsetA</span><span class="p">;</span>
 
-        <span class="c1">//Tessellation on Cylinder side
-</span>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">heightFactor</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+        <span class="c1">//Tessellation on Cylinder side</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">heightFactor</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="n">Vertex</span> <span class="n">vv1</span> <span class="o">=</span> <span class="n">makeRecVertex</span><span class="p">(</span><span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="n">strideSide</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">,</span> <span class="n">v4</span><span class="p">);</span>
             <span class="n">Vertex</span> <span class="n">vv2</span> <span class="o">=</span> <span class="n">makeRecVertex</span><span class="p">(</span><span class="mf">1.0</span><span class="n">f</span><span class="p">,</span> <span class="n">strideSide</span> <span class="o">+</span> <span class="n">offsetB</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">,</span> <span class="n">v4</span><span class="p">);</span>
@@ -422,25 +424,25 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
 <h4 id="functions-4"><strong>Functions</strong></h4>
 <p>Partial codes: (<a href="https://github.com/zizhGuo/CSCI610-Foundations-of-Computer-Graphics/blob/master/clip/c%2B%2B/Clipper.cpp">see complete module in GitHub</a>)</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">///
-// clipPolygon
-//
-// Clip the polygon with vertex count in and vertices inV against the
-// rectangular clipping region specified by lower-left corner ll and
-// upper-right corner ur. The resulting vertices are placed in outV.
-//
-// The routine should return the with the vertex count of polygon
-// resulting from the clipping.
-//
-// @param in    the number of vertices in the polygon to be clipped
-// @param inV   the incoming vertex list
-// @param outV  the outgoing vertex list
-// @param ll    the lower-left corner of the clipping rectangle
-// @param ur    the upper-right corner of the clipping rectangle
-//
-// @return number of vertices in the polygon resulting after clipping
-///
-</span><span class="kt">int</span> <span class="nf">clipPolygon</span><span class="p">(</span> <span class="kt">int</span> <span class="n">in</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vertex</span> <span class="n">inV</span><span class="p">[],</span> <span class="n">Vertex</span> <span class="n">outV</span><span class="p">[],</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">///</span>
+<span class="c1">// clipPolygon</span>
+<span class="c1">//</span>
+<span class="c1">// Clip the polygon with vertex count in and vertices inV against the</span>
+<span class="c1">// rectangular clipping region specified by lower-left corner ll and</span>
+<span class="c1">// upper-right corner ur. The resulting vertices are placed in outV.</span>
+<span class="c1">//</span>
+<span class="c1">// The routine should return the with the vertex count of polygon</span>
+<span class="c1">// resulting from the clipping.</span>
+<span class="c1">//</span>
+<span class="c1">// @param in    the number of vertices in the polygon to be clipped</span>
+<span class="c1">// @param inV   the incoming vertex list</span>
+<span class="c1">// @param outV  the outgoing vertex list</span>
+<span class="c1">// @param ll    the lower-left corner of the clipping rectangle</span>
+<span class="c1">// @param ur    the upper-right corner of the clipping rectangle</span>
+<span class="c1">//</span>
+<span class="c1">// @return number of vertices in the polygon resulting after clipping</span>
+<span class="c1">///</span>
+<span class="kt">int</span> <span class="nf">clipPolygon</span><span class="p">(</span> <span class="kt">int</span> <span class="n">in</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vertex</span> <span class="n">inV</span><span class="p">[],</span> <span class="n">Vertex</span> <span class="n">outV</span><span class="p">[],</span>
          <span class="n">Vertex</span> <span class="n">ll</span><span class="p">,</span> <span class="n">Vertex</span> <span class="n">ur</span> <span class="p">)</span> <span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">summary</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;</span>
@@ -448,8 +450,8 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
 <span class="kt">int</span> <span class="n">clipPolygon</span><span class="p">(</span> <span class="kt">int</span> <span class="n">in</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vertex</span> <span class="n">inV</span><span class="p">[],</span> <span class="n">Vertex</span> <span class="n">outV</span><span class="p">[],</span>
          <span class="n">Vertex</span> <span class="n">ll</span><span class="p">,</span> <span class="n">Vertex</span> <span class="n">ur</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="c1">// YOUR CODE GOES HERE
-</span>    <span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">out1</span> <span class="p">{</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">()};</span>
+    <span class="c1">// YOUR CODE GOES HERE</span>
+    <span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">out1</span> <span class="p">{</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">()};</span>
     <span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">out2</span> <span class="p">{</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">()};</span>
     <span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">out3</span> <span class="p">{</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">()};</span>
     <span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">out4</span> <span class="p">{</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="p">()};</span>
@@ -460,8 +462,8 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
     <span class="n">Vertex</span> <span class="n">lr</span> <span class="p">{</span><span class="n">ur</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ll</span><span class="p">.</span><span class="n">y</span><span class="p">};</span>
     <span class="n">Vertex</span> <span class="n">ul</span> <span class="p">{</span><span class="n">ll</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ur</span><span class="p">.</span><span class="n">y</span><span class="p">};</span>
 
-    <span class="c1">// clipping with lower boundary
-</span>    <span class="n">SHPC</span><span class="p">(</span><span class="n">inV</span><span class="p">,</span> <span class="n">out1</span><span class="p">,</span> <span class="n">in</span><span class="p">,</span> <span class="n">out1_length</span><span class="p">,</span> <span class="n">ll</span><span class="p">,</span> <span class="n">lr</span><span class="p">);</span>
+    <span class="c1">// clipping with lower boundary</span>
+    <span class="n">SHPC</span><span class="p">(</span><span class="n">inV</span><span class="p">,</span> <span class="n">out1</span><span class="p">,</span> <span class="n">in</span><span class="p">,</span> <span class="n">out1_length</span><span class="p">,</span> <span class="n">ll</span><span class="p">,</span> <span class="n">lr</span><span class="p">);</span>
     <span class="n">Vertex</span> <span class="n">out1_arr</span><span class="p">[</span><span class="n">out1_length</span><span class="p">];</span>
     <span class="kt">int</span> <span class="n">count</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="p">{</span><span class="n">out1</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">out1</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
@@ -470,8 +472,8 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
         <span class="o">++</span><span class="n">count</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="c1">// clipping with right boundary
-</span>    <span class="n">SHPC</span><span class="p">(</span><span class="n">out1_arr</span><span class="p">,</span> <span class="n">out2</span><span class="p">,</span> <span class="n">out1_length</span><span class="p">,</span> <span class="n">out2_length</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">ur</span><span class="p">);</span>
+    <span class="c1">// clipping with right boundary</span>
+    <span class="n">SHPC</span><span class="p">(</span><span class="n">out1_arr</span><span class="p">,</span> <span class="n">out2</span><span class="p">,</span> <span class="n">out1_length</span><span class="p">,</span> <span class="n">out2_length</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">ur</span><span class="p">);</span>
     <span class="n">Vertex</span> <span class="n">out2_arr</span><span class="p">[</span><span class="n">out2_length</span><span class="p">];</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;;</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="p">{</span><span class="n">out2</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">out2</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
@@ -480,8 +482,8 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
         <span class="o">++</span><span class="n">count</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="c1">// clipping with upper boundary
-</span>    <span class="n">SHPC</span><span class="p">(</span><span class="n">out2_arr</span><span class="p">,</span> <span class="n">out3</span><span class="p">,</span> <span class="n">out2_length</span><span class="p">,</span> <span class="n">out3_length</span><span class="p">,</span> <span class="n">ur</span><span class="p">,</span> <span class="n">ul</span><span class="p">);</span>
+    <span class="c1">// clipping with upper boundary</span>
+    <span class="n">SHPC</span><span class="p">(</span><span class="n">out2_arr</span><span class="p">,</span> <span class="n">out3</span><span class="p">,</span> <span class="n">out2_length</span><span class="p">,</span> <span class="n">out3_length</span><span class="p">,</span> <span class="n">ur</span><span class="p">,</span> <span class="n">ul</span><span class="p">);</span>
     <span class="n">Vertex</span> <span class="n">out3_arr</span><span class="p">[</span><span class="n">out3_length</span><span class="p">];</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;;</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="p">{</span><span class="n">out3</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">out3</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
@@ -490,8 +492,8 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
         <span class="o">++</span><span class="n">count</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="c1">/// clipping with left boundary
-</span>    <span class="n">SHPC</span><span class="p">(</span><span class="n">out3_arr</span><span class="p">,</span> <span class="n">out4</span><span class="p">,</span> <span class="n">out3_length</span><span class="p">,</span> <span class="n">out4_length</span><span class="p">,</span> <span class="n">ul</span><span class="p">,</span> <span class="n">ll</span><span class="p">);</span>
+    <span class="c1">/// clipping with left boundary</span>
+    <span class="n">SHPC</span><span class="p">(</span><span class="n">out3_arr</span><span class="p">,</span> <span class="n">out4</span><span class="p">,</span> <span class="n">out3_length</span><span class="p">,</span> <span class="n">out4_length</span><span class="p">,</span> <span class="n">ul</span><span class="p">,</span> <span class="n">ll</span><span class="p">);</span>
     <span class="n">Vertex</span> <span class="n">out4_arr</span><span class="p">[</span><span class="n">out4_length</span><span class="p">];</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;;</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="p">{</span><span class="n">out4</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">out4</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
@@ -500,14 +502,14 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
         <span class="o">++</span><span class="n">count</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="c1">// deep copy the vertices list to outV array
-</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">out4_length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="c1">// deep copy the vertices list to outV array</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">out4_length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">outV</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">out4_arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">out4_length</span><span class="p">;</span> <span class="c1">// return the number of vertices from clipped polygon
-</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">out4_length</span><span class="p">;</span> <span class="c1">// return the number of vertices from clipped polygon</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <h3 id="lab1-polygon-filling-algorithm"><strong>Lab1: Polygon Filling Algorithm</strong></h3>
@@ -538,31 +540,31 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
 
 <h4 id="functions-5"><strong>Functions</strong></h4>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">///
-// Draw a filled polygon.
-//
-// Implementation should use the scan-line polygon fill algorithm
-// discussed in class.
-//
-// The polygon has n distinct vertices.  The coordinates of the vertices
-// making up the polygon are supplied in the 'v' array parameter, such
-// that the ith vertex is in v[i].
-//
-// You are to add the implementation here using only calls to the
-// setPixel() function.
-//
-// @param n - number of vertices
-// @param v - array of vertices
-///
-</span><span class="kt">void</span> <span class="n">Rasterizer</span><span class="o">::</span><span class="n">drawPolygon</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vertex</span> <span class="n">v</span><span class="p">[]</span> <span class="p">)</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">///</span>
+<span class="c1">// Draw a filled polygon.</span>
+<span class="c1">//</span>
+<span class="c1">// Implementation should use the scan-line polygon fill algorithm</span>
+<span class="c1">// discussed in class.</span>
+<span class="c1">//</span>
+<span class="c1">// The polygon has n distinct vertices.  The coordinates of the vertices</span>
+<span class="c1">// making up the polygon are supplied in the 'v' array parameter, such</span>
+<span class="c1">// that the ith vertex is in v[i].</span>
+<span class="c1">//</span>
+<span class="c1">// You are to add the implementation here using only calls to the</span>
+<span class="c1">// setPixel() function.</span>
+<span class="c1">//</span>
+<span class="c1">// @param n - number of vertices</span>
+<span class="c1">// @param v - array of vertices</span>
+<span class="c1">///</span>
+<span class="kt">void</span> <span class="n">Rasterizer</span><span class="o">::</span><span class="n">drawPolygon</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="k">const</span> <span class="n">Vertex</span> <span class="n">v</span><span class="p">[]</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="c1">// YOUR IMPLEMENTATION HERE
-</span>    <span class="kt">int</span> <span class="n">WINDOWS_HEIGHT</span> <span class="p">{</span><span class="mi">600</span><span class="p">};</span>
+    <span class="c1">// YOUR IMPLEMENTATION HERE</span>
+    <span class="kt">int</span> <span class="n">WINDOWS_HEIGHT</span> <span class="p">{</span><span class="mi">600</span><span class="p">};</span>
 
     <span class="kt">size_t</span> <span class="n">maxY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-  <span class="c1">// Simple optimization: Get the highest y coordinate among all edges
-</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+  <span class="c1">// Simple optimization: Get the highest y coordinate among all edges</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
     <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">maxY</span><span class="p">)</span>
     <span class="p">{</span>
@@ -570,8 +572,8 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
     <span class="p">}</span>
     <span class="p">}</span>
 
-  <span class="c1">// Initialize the ET and AT
-</span>    <span class="n">list</span><span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;</span> <span class="n">ET</span><span class="p">[</span><span class="n">WINDOWS_HEIGHT</span><span class="p">];</span>
+  <span class="c1">// Initialize the ET and AT</span>
+    <span class="n">list</span><span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;</span> <span class="n">ET</span><span class="p">[</span><span class="n">WINDOWS_HEIGHT</span><span class="p">];</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">maxY</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
     <span class="p">{</span>
     <span class="n">ET</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">list</span><span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">;</span>
@@ -579,34 +581,34 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
   <span class="n">list</span> <span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;</span> <span class="n">AT</span> <span class="p">{</span><span class="n">list</span><span class="o">&lt;</span><span class="n">Edge</span><span class="o">&gt;</span><span class="p">()};</span>
 
     
-  <span class="c1">// Add edges to ET based on ymin
-</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+  <span class="c1">// Add edges to ET based on ymin</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="kt">int</span> <span class="n">x1</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">v</span><span class="p">[(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">].</span><span class="n">x</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">v</span><span class="p">[(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span><span class="p">].</span><span class="n">y</span><span class="p">;</span>
 
-      <span class="c1">// Igonore horizontal line
-</span>        <span class="k">if</span> <span class="p">(</span><span class="n">y1</span> <span class="o">==</span> <span class="n">y2</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+      <span class="c1">// Igonore horizontal line</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">y1</span> <span class="o">==</span> <span class="n">y2</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
 
-      <span class="c1">// Info of current edge &lt;(x1, y1), (x2, y2)&gt;
-</span>        <span class="kt">int</span> <span class="n">ymin</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">&gt;</span> <span class="n">y2</span> <span class="o">?</span> <span class="n">y2</span> <span class="o">:</span> <span class="n">y1</span><span class="p">;</span>
+      <span class="c1">// Info of current edge &lt;(x1, y1), (x2, y2)&gt;</span>
+        <span class="kt">int</span> <span class="n">ymin</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">&gt;</span> <span class="n">y2</span> <span class="o">?</span> <span class="n">y2</span> <span class="o">:</span> <span class="n">y1</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">ymax</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">&gt;</span> <span class="n">y2</span> <span class="o">?</span> <span class="n">y1</span> <span class="o">:</span> <span class="n">y2</span><span class="p">;</span>
         <span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">&gt;</span> <span class="n">y2</span> <span class="o">?</span> <span class="n">x2</span> <span class="o">:</span> <span class="n">x1</span><span class="p">;</span>
         <span class="kt">float</span> <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.0</span><span class="n">f</span> <span class="o">/</span> <span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">);</span>
 
-      <span class="c1">// Initialize current edge and ET
-</span>        <span class="n">Edge</span> <span class="n">edge</span> <span class="o">=</span> <span class="n">Edge</span><span class="p">(</span><span class="n">ymax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">dx</span><span class="p">);</span>
+      <span class="c1">// Initialize current edge and ET</span>
+        <span class="n">Edge</span> <span class="n">edge</span> <span class="o">=</span> <span class="n">Edge</span><span class="p">(</span><span class="n">ymax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">dx</span><span class="p">);</span>
         <span class="n">ET</span><span class="p">[</span><span class="n">ymin</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">edge</span><span class="p">);</span>
 
     <span class="p">}</span>
 
-    <span class="c1">// Scan-line drawing from y = 0 to y = 600
-</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">WINDOWS_HEIGHT</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="c1">// Scan-line drawing from y = 0 to y = 600</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">WINDOWS_HEIGHT</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">//drop tables
-</span>        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">AT</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">AT</span><span class="p">.</span><span class="n">end</span><span class="p">();)</span>
+        <span class="c1">//drop tables</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">AT</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">AT</span><span class="p">.</span><span class="n">end</span><span class="p">();)</span>
         <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">-&gt;</span> <span class="n">ymax</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
             <span class="p">{</span>
@@ -618,19 +620,19 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
             <span class="p">}</span>
         <span class="p">}</span>
 
-    <span class="c1">// Update AT by copying edges from ET
-</span>        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">ET</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">ET</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+    <span class="c1">// Update AT by copying edges from ET</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">ET</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">ET</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="n">AT</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">*</span><span class="n">j</span><span class="p">);</span>
         <span class="p">}</span>
 
-    <span class="c1">//Sort edges in AT
-</span>
-      <span class="c1">// Sort based on x
-</span>        <span class="n">AT</span><span class="p">.</span><span class="n">sort</span><span class="p">([](</span><span class="k">const</span> <span class="n">Edge</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Edge</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">){</span><span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">;});</span>
+    <span class="c1">//Sort edges in AT</span>
 
-      <span class="c1">// For each pair, if x equals, sorting based on dx
-</span>      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">AT</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">AT</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">advance</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+      <span class="c1">// Sort based on x</span>
+        <span class="n">AT</span><span class="p">.</span><span class="n">sort</span><span class="p">([](</span><span class="k">const</span> <span class="n">Edge</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Edge</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">){</span><span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">;});</span>
+
+      <span class="c1">// For each pair, if x equals, sorting based on dx</span>
+      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">AT</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">AT</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">advance</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
       <span class="p">{</span>
         <span class="k">auto</span> <span class="n">nxt</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">nxt</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="p">)</span>
@@ -642,15 +644,15 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
         <span class="p">}</span>
       <span class="p">}</span>
 
-    <span class="c1">// Fill polygon by pairs in each scan-line
-</span>      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">AT</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">AT</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">advance</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="c1">// Fill polygon by pairs in each scan-line</span>
+      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">AT</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">AT</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">advance</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
       <span class="p">{</span>
         <span class="k">auto</span> <span class="n">nxt</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
         <span class="kt">float</span> <span class="n">x_left</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">x1</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
 
-        <span class="c1">// left intersected point, if x is on the edge, draw it. Or round it up.
-</span>        <span class="k">if</span> <span class="p">(</span><span class="n">x_left</span> <span class="o">-</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">x_left</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// left intersected point, if x is on the edge, draw it. Or round it up.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x_left</span> <span class="o">-</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">x_left</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
           <span class="n">x1</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">x_left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="k">else</span>
@@ -658,19 +660,19 @@ Since the synthex of GLSL is similar to C++, so I use c++ format to demonstrate.
           <span class="n">x1</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">x_left</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="c1">// right intersected point, round it down.
-</span>        <span class="kt">int</span> <span class="n">x2</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">nxt</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="p">);</span>
+        <span class="c1">// right intersected point, round it down.</span>
+        <span class="kt">int</span> <span class="n">x2</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">nxt</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="p">);</span>
 
-        <span class="c1">// For each line segment by paired intersected points, set pixels.
-</span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="p">{</span><span class="n">x1</span><span class="p">};</span> <span class="n">k</span> <span class="o">!=</span> <span class="n">x2</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span>
+        <span class="c1">// For each line segment by paired intersected points, set pixels.</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="p">{</span><span class="n">x1</span><span class="p">};</span> <span class="n">k</span> <span class="o">!=</span> <span class="n">x2</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span>
         <span class="p">{</span>
           <span class="n">Vertex</span> <span class="n">v</span> <span class="p">{</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">};</span>
           <span class="n">C</span><span class="p">.</span><span class="n">setPixel</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
         <span class="p">}</span>
       <span class="p">}</span>
 
-    <span class="c1">// Update x in AT by adding dx.
-</span>      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">AT</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">AT</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">advance</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="c1">// Update x in AT by adding dx.</span>
+      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="p">{</span><span class="n">AT</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">AT</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">advance</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
       <span class="p">{</span>
         <span class="n">j</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">+=</span> <span class="n">j</span> <span class="o">-&gt;</span> <span class="n">dx</span><span class="p">;</span>
       <span class="p">}</span>

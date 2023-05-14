@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -210,23 +212,23 @@
 <p><strong>Load the CSV dataset as Spark DateFrame using Pyspark</strong></p>
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">findspark</span>
-<span class="n">findspark</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="s">'/home/zizhun/spark-3.1.1-bin-hadoop2.7'</span><span class="p">)</span>
+<span class="n">findspark</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="s">'/home/zizhun/spark-3.1.1-bin-hadoop2.7'</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
 
-<span class="c"># Load csv file into spark dataframe</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s">'UserBehavior.csv'</span><span class="p">)</span>
+<span class="c1"># Load csv file into spark dataframe
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">read</span><span class="p">.</span><span class="n">csv</span><span class="p">(</span><span class="s">'UserBehavior.csv'</span><span class="p">)</span>
 
-<span class="c"># Change field names</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c0"</span><span class="p">,</span><span class="s">"user_id"</span><span class="p">)</span> \
-        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c1"</span><span class="p">,</span><span class="s">"item_id"</span><span class="p">)</span> \
-        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c2"</span><span class="p">,</span><span class="s">"category_id"</span><span class="p">)</span> \
-        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c3"</span><span class="p">,</span><span class="s">"behavior"</span><span class="p">)</span> \
-        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c4"</span><span class="p">,</span><span class="s">"timestamps"</span><span class="p">)</span>
+<span class="c1"># Change field names
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c0"</span><span class="p">,</span><span class="s">"user_id"</span><span class="p">)</span> \
+        <span class="p">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c1"</span><span class="p">,</span><span class="s">"item_id"</span><span class="p">)</span> \
+        <span class="p">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c2"</span><span class="p">,</span><span class="s">"category_id"</span><span class="p">)</span> \
+        <span class="p">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c3"</span><span class="p">,</span><span class="s">"behavior"</span><span class="p">)</span> \
+        <span class="p">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c4"</span><span class="p">,</span><span class="s">"timestamps"</span><span class="p">)</span>
 
 </code></pre></div></div>
 
 <p><strong>Check out the schema and partial view</strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root
  |-- user_id: string (nullable = true)
  |-- item_id: string (nullable = true)
  |-- category_id: string (nullable = true)
@@ -258,15 +260,15 @@ The original timestamp is in format of Unixtime, therefore transforming it into 
                                   <span class="n">year</span><span class="p">,</span><span class="n">weekofyear</span><span class="p">,</span>
                                   <span class="n">format_number</span><span class="p">,</span> <span class="n">date_format</span><span class="p">,</span> <span class="n">to_date</span><span class="p">,</span> <span class="n">dayofweek</span><span class="p">)</span>
 
-<span class="n">df1</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">dayofmonth</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">df1</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="n">dayofmonth</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">datetime</span><span class="p">)).</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'date'</span><span class="p">,</span> <span class="n">to_date</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
-            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'month'</span><span class="p">,</span> <span class="n">month</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
-            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'day'</span><span class="p">,</span> <span class="n">dayofmonth</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
-            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'hour'</span><span class="p">,</span> <span class="n">hour</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
-            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'dayofweek'</span><span class="p">,</span> <span class="n">dayofweek</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span>  
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="p">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'date'</span><span class="p">,</span> <span class="n">to_date</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="p">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'month'</span><span class="p">,</span> <span class="n">month</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="p">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'day'</span><span class="p">,</span> <span class="n">dayofmonth</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="p">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'hour'</span><span class="p">,</span> <span class="n">hour</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="p">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'dayofweek'</span><span class="p">,</span> <span class="n">dayofweek</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">datetime</span><span class="p">))</span>  
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Results:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Results:
 +-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
 |user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
 +-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
@@ -294,7 +296,7 @@ FROM
     ORDER BY date)
 WHERE n_interactions &gt; 10000
 </code></pre>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         Date  n_interactions
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         Date  n_interactions
 0  2017-11-24         3453235
 1  2017-11-25        10598765
 2  2017-11-26        10496631
@@ -309,7 +311,7 @@ WHERE n_interactions &gt; 10000
 <p>The distribution shows most of the interactions are conducted between <em>2017-11-24</em> to 2017-12-03 (10 days).</p>
 
 <p><strong>Create TempView as Taobao from records based on the distribution</strong></p>
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"taobao"</span><span class="p">)</span>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span><span class="p">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"taobao"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />

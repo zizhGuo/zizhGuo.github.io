@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -257,23 +259,23 @@
 <p><strong>Load the CSV dataset as Spark DateFrame using Pyspark</strong></p>
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">findspark</span>
-<span class="n">findspark</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="s">'/home/zizhun/spark-3.1.1-bin-hadoop2.7'</span><span class="p">)</span>
+<span class="n">findspark</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="s">'/home/zizhun/spark-3.1.1-bin-hadoop2.7'</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
 
-<span class="c"># Load csv file into spark dataframe</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s">'UserBehavior.csv'</span><span class="p">)</span>
+<span class="c1"># Load csv file into spark dataframe
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">read</span><span class="p">.</span><span class="n">csv</span><span class="p">(</span><span class="s">'UserBehavior.csv'</span><span class="p">)</span>
 
-<span class="c"># Change field names</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c0"</span><span class="p">,</span><span class="s">"user_id"</span><span class="p">)</span> \
-        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c1"</span><span class="p">,</span><span class="s">"item_id"</span><span class="p">)</span> \
-        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c2"</span><span class="p">,</span><span class="s">"category_id"</span><span class="p">)</span> \
-        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c3"</span><span class="p">,</span><span class="s">"behavior"</span><span class="p">)</span> \
-        <span class="o">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c4"</span><span class="p">,</span><span class="s">"timestamps"</span><span class="p">)</span>
+<span class="c1"># Change field names
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c0"</span><span class="p">,</span><span class="s">"user_id"</span><span class="p">)</span> \
+        <span class="p">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c1"</span><span class="p">,</span><span class="s">"item_id"</span><span class="p">)</span> \
+        <span class="p">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c2"</span><span class="p">,</span><span class="s">"category_id"</span><span class="p">)</span> \
+        <span class="p">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c3"</span><span class="p">,</span><span class="s">"behavior"</span><span class="p">)</span> \
+        <span class="p">.</span><span class="n">withColumnRenamed</span><span class="p">(</span><span class="s">"_c4"</span><span class="p">,</span><span class="s">"timestamps"</span><span class="p">)</span>
 
 </code></pre></div></div>
 
 <p><strong>Check out the schema and partial view</strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root
  |-- user_id: string (nullable = true)
  |-- item_id: string (nullable = true)
  |-- category_id: string (nullable = true)
@@ -305,15 +307,15 @@ The original timestamp is in format of Unixtime, therefore transforming it into 
                                   <span class="n">year</span><span class="p">,</span><span class="n">weekofyear</span><span class="p">,</span>
                                   <span class="n">format_number</span><span class="p">,</span> <span class="n">date_format</span><span class="p">,</span> <span class="n">to_date</span><span class="p">,</span> <span class="n">dayofweek</span><span class="p">)</span>
 
-<span class="n">df1</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">dayofmonth</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">df1</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="n">dayofmonth</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">datetime</span><span class="p">)).</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'date'</span><span class="p">,</span> <span class="n">to_date</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
-            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'month'</span><span class="p">,</span> <span class="n">month</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
-            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'day'</span><span class="p">,</span> <span class="n">dayofmonth</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
-            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'hour'</span><span class="p">,</span> <span class="n">hour</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span> \
-            <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'dayofweek'</span><span class="p">,</span> <span class="n">dayofweek</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">datetime</span><span class="p">))</span>  
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="p">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'date'</span><span class="p">,</span> <span class="n">to_date</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="p">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'month'</span><span class="p">,</span> <span class="n">month</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="p">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'day'</span><span class="p">,</span> <span class="n">dayofmonth</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="p">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'hour'</span><span class="p">,</span> <span class="n">hour</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">datetime</span><span class="p">))</span> \
+            <span class="p">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s">'dayofweek'</span><span class="p">,</span> <span class="n">dayofweek</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">datetime</span><span class="p">))</span>  
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Results:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Results:
 +-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
 |user_id|item_id|category_id|behavior|timestamps|           datetime|      date|month|day|hour|dayofweek|
 +-------+-------+-----------+--------+----------+-------------------+----------+-----+---+----+---------+
@@ -341,7 +343,7 @@ FROM
     ORDER BY date)
 WHERE n_interactions &gt; 10000
 </code></pre>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         Date  n_interactions
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         Date  n_interactions
 0  2017-11-24         3453235
 1  2017-11-25        10598765
 2  2017-11-26        10496631
@@ -356,7 +358,7 @@ WHERE n_interactions &gt; 10000
 <p>The distribution shows most of the interactions are conducted between <em>2017-11-24</em> to 2017-12-03 (10 days).</p>
 
 <p><strong>Create TempView as Taobao from records based on the distribution</strong></p>
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"taobao"</span><span class="p">)</span>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span><span class="p">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"taobao"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h4 id="3-acquisition">3. Acquisition</h4>
@@ -367,13 +369,13 @@ WHERE n_interactions &gt; 10000
 
 <h6 id="global-page-view-pv-unique-user-uv-pvuv">Global Page View (PV), Unique User (UV), PV/UV</h6>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pychart can query records using Dataframe SQL functions</span>
-
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Pychart can query records using Dataframe SQL functions
+</span>
 <span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">count</span><span class="p">,</span> <span class="n">countDistinct</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">countDistinct</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s">'uv'</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">df1</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="n">countDistinct</span><span class="p">(</span><span class="n">df1</span><span class="p">.</span><span class="n">user_id</span><span class="p">).</span><span class="n">alias</span><span class="p">(</span><span class="s">'uv'</span><span class="p">)).</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+------+
 |    uv|
 +------+
 |987991|
@@ -381,12 +383,12 @@ WHERE n_interactions &gt; 10000
 </code></pre></div></div>
 <p>The dataset has <strong>987,991</strong> unique users. Hence, <strong>UV</strong> = <strong>987,991</strong>.</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># The same, group by on 'behavior' and find the count for the 'pv'</span>
-
-<span class="n">df1</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'behavior'</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s">'count'</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The same, group by on 'behavior' and find the count for the 'pv'
+</span>
+<span class="n">df1</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'behavior'</span><span class="p">).</span><span class="n">count</span><span class="p">().</span><span class="n">orderBy</span><span class="p">(</span><span class="s">'count'</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="bp">False</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+--------+--------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+--------+--------+
 |behavior|   count|
 +--------+--------+
 |      pv|89697359|
@@ -408,9 +410,9 @@ WHERE n_interactions &gt; 10000
 <p>In the Taobao user behavior case, the unique users who visit items once during the 10-day session would be only considered. Therefore, this bounce rate evaluates the attractiveness of the website instead of a specific item.</p>
 
 <p>Create</p>
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create TempView with the user count for the different behavior.</span>
-<span class="c"># PK: user_id</span>
-<span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create TempView with the user count for the different behavior.
+# PK: user_id
+</span><span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     user_id, 
     SUM(case when behavior='pv' then 1 else 0 end) as PageView,
@@ -421,18 +423,18 @@ FROM
     taobao
 GROUP BY
     user_id
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">createTempView</span><span class="p">(</span><span class="s">"behaviorCount"</span><span class="p">)</span>
+"""</span><span class="p">).</span><span class="n">createTempView</span><span class="p">(</span><span class="s">"behaviorCount"</span><span class="p">)</span>
 
-<span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     COUNT(user_id)
 FROM
     behaviorCount
 WHERE PageView = 1 AND Favorite = 0 AND Cart = 0 AND Buy = 0;
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-----------------------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-----------------------+
 |count(DISTINCT user_id)|
 +-----------------------+
 |                     53|
@@ -457,33 +459,33 @@ WHERE PageView = 1 AND Favorite = 0 AND Cart = 0 AND Buy = 0;
 
 <p>CVR for page view user to favorite user = # of users who have pv and fav/ # of users who have pv</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_fav_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_fav_users</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM behaviorCount
 WHERE PageView &gt; 0 AND Favorite &gt; 0
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 387548</span>
-
-<span class="n">n_unique_pv_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 387548
+</span>
+<span class="n">n_unique_pv_users</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM behaviorCount
 WHERE PageView &gt; 0
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 984107</span>
-
-<span class="n">CVR_pv2fav</span> <span class="o">=</span> <span class="n">n_unique_fav_users</span><span class="o">/</span><span class="n">n_unique_pv_users</span> <span class="c"># 387548/984107</span>
-</code></pre></div></div>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 984107
+</span>
+<span class="n">CVR_pv2fav</span> <span class="o">=</span> <span class="n">n_unique_fav_users</span><span class="o">/</span><span class="n">n_unique_pv_users</span> <span class="c1"># 387548/984107
+</span></code></pre></div></div>
 
 <p>The conversion rate for pv to fav is 39.38%.</p>
 
 <p>CVR for page view user to favorite to buy user = # of users who have pv, fav and buy / # of users who have pv</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_fav_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_fav_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM behaviorCount
 WHERE PageView &gt; 0 AND Favorite &gt; 0 AND Buy &gt; 0
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 275476</span>
-
-<span class="n">CVR_pv2fav2buy</span> <span class="o">=</span> <span class="n">n_unique_fav_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c"># 275476 / 984107</span>
-<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2fav2buy</span><span class="p">)</span>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 275476
+</span>
+<span class="n">CVR_pv2fav2buy</span> <span class="o">=</span> <span class="n">n_unique_fav_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c1"># 275476 / 984107
+</span><span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2fav2buy</span><span class="p">)</span>
 </code></pre></div></div>
 <p>The conversion rate for pv-fav-buy is 27.99%.</p>
 
@@ -491,27 +493,27 @@ WHERE PageView &gt; 0 AND Favorite &gt; 0 AND Buy &gt; 0
 
 <p>CVR for page view user to cart user = # of users who have pv and cart / # of users who have pv</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_cart_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_cart_users</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM behaviorCount
 WHERE PageView &gt; 0 AND Cart &gt; 0
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 735674</span>
-
-<span class="n">CVR_pv2cart</span> <span class="o">=</span> <span class="n">n_unique_cart_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c"># 735674 / 984107</span>
-<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2cart</span><span class="p">)</span>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 735674
+</span>
+<span class="n">CVR_pv2cart</span> <span class="o">=</span> <span class="n">n_unique_cart_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c1"># 735674 / 984107
+</span><span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2cart</span><span class="p">)</span>
 </code></pre></div></div>
 <p>The conversion rate for pv-cart is 74.56%.</p>
 
 <p>CVR for page view user to cart to buy user = # of users who have pv, cart and buy / # of users who have pv</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_cart_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_cart_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM behaviorCount
 WHERE PageView &gt; 0 AND Cart &gt; 0 AND Buy &gt; 0
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># 528408</span>
-
-<span class="n">CVR_pv2cart2buy</span> <span class="o">=</span> <span class="n">n_unique_cart_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c"># 528408 / 984107</span>
-<span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2cart2buy</span><span class="p">)</span>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 528408
+</span>
+<span class="n">CVR_pv2cart2buy</span> <span class="o">=</span> <span class="n">n_unique_cart_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span> <span class="c1"># 528408 / 984107
+</span><span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2cart2buy</span><span class="p">)</span>
 </code></pre></div></div>
 <p>The conversion rate for pv-cart-buy is 53.69%.</p>
 
@@ -519,11 +521,11 @@ WHERE PageView &gt; 0 AND Cart &gt; 0 AND Buy &gt; 0
 
 <p>CVR for page view user to buy user = # of users who have pv and buy / # of users who have pv</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_pv_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_unique_pv_buy_users</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM behaviorCount
 WHERE PageView &gt; 0 AND Favorite = 0 AND Cart = 0 AND Buy &gt; 0
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">CVR_pv2buy</span> <span class="o">=</span> <span class="n">n_unique_pv_buy_users</span> <span class="o">/</span> <span class="n">n_unique_pv_users</span>
 <span class="k">print</span><span class="p">(</span><span class="n">CVR_pv2buy</span><span class="p">)</span>
@@ -539,14 +541,14 @@ WHERE PageView &gt; 0 AND Favorite = 0 AND Cart = 0 AND Buy &gt; 0
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">plotly</span> <span class="kn">import</span> <span class="n">graph_objects</span> <span class="k">as</span> <span class="n">go</span>
 
-<span class="n">fig1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Funnel</span><span class="p">(</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="p">.</span><span class="n">Funnel</span><span class="p">(</span>
     <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s">'pv'</span><span class="p">,</span> <span class="s">'fav'</span><span class="p">,</span> <span class="s">'buy'</span><span class="p">],</span>
     <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">n_unique_pv_users</span><span class="p">,</span> <span class="n">n_unique_fav_users</span><span class="p">,</span> <span class="n">n_unique_fav_buy_users</span><span class="p">],</span>
     <span class="n">textposition</span> <span class="o">=</span> <span class="s">"inside"</span><span class="p">,</span>
     <span class="n">textinfo</span> <span class="o">=</span> <span class="s">"value+percent initial"</span><span class="p">,</span>
     <span class="n">marker</span> <span class="o">=</span> <span class="p">{</span><span class="s">"color"</span><span class="p">:</span> <span class="p">[</span><span class="s">"#80bdff"</span><span class="p">,</span> <span class="s">"#f1b0b7"</span><span class="p">,</span> <span class="s">"#54bc4b"</span><span class="p">]})</span>
     <span class="p">)</span>
-<span class="n">fig1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig1</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div style="text-align: center;">
@@ -578,7 +580,7 @@ WHERE PageView &gt; 0 AND Favorite = 0 AND Cart = 0 AND Buy &gt; 0
 
 <p>Details aside, first look at the distribution for the number of daily behaviors between 2017-11-24 to 2017-12-03.</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_date_behavior_count</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_date_behavior_count</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     date,
     SUM(CASE WHEN behavior = 'pv' THEN 1 ELSE 0 END) AS pv,
@@ -590,7 +592,7 @@ FROM
 GROUP BY 
     date
 ORDER BY date
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">df_date_behavior_count</span><span class="p">)</span>
 </code></pre></div></div>
@@ -609,7 +611,7 @@ ORDER BY date
 
 <h6 id="daily-active-usersdau-distribution">Daily Active Users(DAU) distribution</h6>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_DAU</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_DAU</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     date,
     COUNT(DISTINCT user_id) AS DAU
@@ -619,7 +621,7 @@ GROUP BY
     date
 ORDER BY 
     date
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">df_DAU</span><span class="p">)</span>
 </code></pre></div></div>
@@ -637,7 +639,7 @@ ORDER BY
 
 <h6 id="hourly-active-behaviors-distribution">Hourly Active Behaviors distribution</h6>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_hour_behavior_count</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_hour_behavior_count</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     hour,
     SUM(CASE WHEN behavior = 'pv' THEN 0.1 ELSE 0 END) AS pv,
@@ -651,7 +653,7 @@ GROUP BY
     hour
 ORDER BY 
     hour
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 </code></pre></div></div>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAB.png">
@@ -670,7 +672,7 @@ ORDER BY
 
 <h6 id="hourly-active-users-distribution">Hourly Active Users distribution</h6>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_AverageHAU</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_AverageHAU</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     hour,
     ROUND(COUNT(DISTINCT user_id)/10, 0) AS Average_HAU
@@ -680,7 +682,7 @@ WHERE date &lt; '2017-12-04' AND date &gt; '2017-11-23'
 GROUP BY 
     hour
 ORDER BY hour
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div style="text-align: center;">
@@ -707,7 +709,7 @@ The # of active users continuing to subscribe divided by the total active users 
 
 <p>This part of Taobao user behavior analysis technically only provides practice on calculating retention rate metric, since there are no attributes identifying the new users, therefore the users who are count as the first-day user may of the old user, which should not be considered.</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_retention</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_retention</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
     SELECT
         SUM(CASE WHEN day1 &gt; 0 then 1 else 0 end) AS day1,
         SUM(CASE WHEN day1 &gt; 0 AND day2 &gt; 0 then 1 else 0 end) AS day2retention,
@@ -735,7 +737,7 @@ The # of active users continuing to subscribe divided by the total active users 
         FROM taobao
         GROUP BY
             user_id)
-    """</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+    """</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 </code></pre></div></div>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/retention.png">
@@ -750,7 +752,7 @@ The # of active users continuing to subscribe divided by the total active users 
 
 <p>Due to the limit of time periods, we calculate the 10-day repurchase rate. The way to calculate it is to find the number of unique users who have purchased twice within 10 days.</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_repurchase</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n_repurchase</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM
     (SELECT user_id, COUNT(behavior) AS buy_times
@@ -759,9 +761,9 @@ FROM
     GROUP BY 
         user_id)
 WHERE buy_times &gt; 1
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">n_purchase</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<span class="n">n_purchase</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT COUNT(DISTINCT user_id)
 FROM
     (SELECT user_id, COUNT(behavior) AS buy_times
@@ -769,7 +771,7 @@ FROM
     behavior = 'buy'
     GROUP BY 
         user_id)
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+"""</span><span class="p">).</span><span class="n">collect</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">n_repurchase</span><span class="o">/</span><span class="n">n_purchase</span><span class="p">)</span>
 </code></pre></div></div>
@@ -783,7 +785,7 @@ FROM
 
 <h6 id="daily-sale-volume-in-10-days">Daily Sale Volume in 10 days</h6>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_daily_sales_volume</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_daily_sales_volume</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT
     date,
     SUM(CASE WHEN behavior = 'pv' then 1 else 0 end) as pv,
@@ -793,7 +795,7 @@ SELECT
 FROM taobao
 GROUP BY
     date
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div style="text-align: center;">
@@ -807,7 +809,7 @@ GROUP BY
 
 <h6 id="hourly-sale-volume-in-10-days">Hourly Sale Volume in 10 days</h6>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_hourly_sales_volume</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_hourly_sales_volume</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT
     hour,
     SUM(CASE WHEN behavior = 'pv' then 0.1 else 0 end) as pv,
@@ -819,7 +821,7 @@ GROUP BY
     hour
 ORDER BY
     hour
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div style="text-align: center;">
@@ -838,7 +840,7 @@ ORDER BY
 
 <h6 id="sales-volume-ranking-on-item-category">Sales Volume Ranking on item category</h6>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_sales_volume_ranking_category</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_sales_volume_ranking_category</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT
     a.buy_times AS sales_volume,
     COUNT(a.category_id) AS category_num 
@@ -856,9 +858,9 @@ GROUP BY
     a.buy_times 
 ORDER BY
     category_num DESC;
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sales_volume 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10 	... 	1158 	3096 	18016 	1147 	458 	1326 	2015 	6354 	2782 	2203
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sales_volume 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10 	... 	1158 	3096 	18016 	1147 	458 	1326 	2015 	6354 	2782 	2203
 category_num 	767 	448 	313 	268 	198 	195 	163 	133 	105 	97 	... 	1 	1 	1 	1 	1 	1 	1 	1 	1 	1
 
 
@@ -874,7 +876,7 @@ category_num 	767 	448 	313 	268 	198 	195 	163 	133 	105 	97 	... 	1 	1 	1 	1 	
 
 <h6 id="sales-volume-ranking-on-item-id">Sales Volume Ranking on item id</h6>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_sales_volume_ranking_item</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_sales_volume_ranking_item</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT
     a.buy_times AS sales_volume,
     COUNT(a.item_id) AS item_num 
@@ -892,7 +894,7 @@ GROUP BY
     a.buy_times 
 ORDER BY
     item_num DESC;
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 </code></pre></div></div>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_item.png">
@@ -937,7 +939,7 @@ ORDER BY
 
 <p>We take the above approach to category the users based on the rule with the last time buy behavior and frequency of buy behavior. Here are the rules:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R：score the user's recency based on the time difference from the buy behavior date to 17-12-03
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R：score the user's recency based on the time difference from the buy behavior date to 17-12-03
 difference &gt; 7 score = 1
 difference BETWEEN 5-7 score = 2
 difference BETWEEN 3-4 score = 3
@@ -953,7 +955,7 @@ purchase times &gt; 10 score = 4
 <p>Since the table does not contain monetary info, hence ignore the monetary value.</p>
 
 <p>Once having the scores of users’ Recency and Frequency, applying another rule to classify users into different group.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Champion:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Champion:
 FrequencyScore BETWEEN 3-4 AND RecencyScore BETWEEN 3-4
 
 Loyal:
@@ -966,7 +968,7 @@ Need Attentions
 FrequencyScore BETWEEN 1-2 AND RecencyScore BETWEEN 1-2
 </code></pre></div></div>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     user_id,
     (CASE WHEN Rdiff &gt;7 THEN 1
@@ -985,9 +987,9 @@ FROM
     GROUP BY 
         user_id)
 
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"R1"</span><span class="p">)</span>
+"""</span><span class="p">).</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"R1"</span><span class="p">)</span>
 
-<span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     user_id,
     (case WHEN SaleVolume BETWEEN 1 AND 1 THEN 1
@@ -1005,9 +1007,9 @@ FROM(
         behavior='buy'
     GROUP BY 
         user_id)
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"F1"</span><span class="p">)</span>
+"""</span><span class="p">).</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"F1"</span><span class="p">)</span>
 
-<span class="n">df_RFM</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<span class="n">df_RFM</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     user_id,
     RecencyScore,
@@ -1028,11 +1030,11 @@ FROM
         F1
     ON 
         R1.user_id=F1.user_id)
-"""</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
+"""</span><span class="p">).</span><span class="n">toPandas</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">df_RFM</span><span class="p">)</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        user_id  RecencyScore  FrequencyScore  CustomerLevel
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        user_id  RecencyScore  FrequencyScore  CustomerLevel
 0       1000240             4               3              4
 1       1000280             4               2              2
 2       1000665             4               3              4
@@ -1163,7 +1165,7 @@ useful for targeted consumer insights at scale. The tool to implement is Apache 
   </tbody>
 </table>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     user_id,
     item_id,
@@ -1178,9 +1180,9 @@ GROUP BY user_id, item_id
 ORDER BY user_id, item_id ASC
 """</span><span class="p">)</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"taobao_clustering"</span><span class="p">)</span>
+<span class="n">df</span><span class="p">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s">"taobao_clustering"</span><span class="p">)</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT 
     *,
     CASE WHEN buy &gt; 0 THEN 1 ELSE 0 END as label
@@ -1190,17 +1192,17 @@ FROM taobao_clustering
 <span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">VectorAssembler</span>
 
 <span class="n">assembler</span> <span class="o">=</span> <span class="n">VectorAssembler</span><span class="p">(</span><span class="n">inputCols</span> <span class="o">=</span> <span class="n">feat_cols</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s">'features'</span><span class="p">)</span>
-<span class="n">final_data</span> <span class="o">=</span> <span class="n">assembler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">final_data</span> <span class="o">=</span> <span class="n">assembler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">inputCol</span> <span class="o">=</span> <span class="s">'features'</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s">'scaledFeatures'</span><span class="p">)</span>
-<span class="n">scaler_model</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
-<span class="n">cluster_final_data</span> <span class="o">=</span> <span class="n">scaler_model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
+<span class="n">scaler_model</span> <span class="o">=</span> <span class="n">scaler</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
+<span class="n">cluster_final_data</span> <span class="o">=</span> <span class="n">scaler_model</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Quick view for the Spark dataframe:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+
 |user_id|item_id|duration|behavior_count| pv|fav|cart|buy|label|            features|      scaledFeatures|
 +-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+
 |      1|1305059|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.99231...|
@@ -1261,7 +1263,7 @@ only showing top 10 rows
 
 <p>Looks like k = 3, k = 5 and k = 6 are the good change-points. Select k = 5 as the cluster numbers. Here print out the clustering  results. (The ‘prediction’ indicates the cluster number ranged from 0 - 4)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+----------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+----------+
 |user_id|item_id|duration|behavior_count| pv|fav|cart|buy|label|            features|      scaledFeatures|prediction|
 +-------+-------+--------+--------------+---+---+----+---+-----+--------------------+--------------------+----------+
 |      1|1305059|     0.0|             1|  1|  0|   0|  0|    0| (7,[1,2],[1.0,1.0])|(7,[1,2],[0.93053...|         0|
@@ -1291,7 +1293,7 @@ only showing top 20 rows
 
 <h6 id="statistic-analysis">Statistic Analysis</h6>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-----------------+------------------+------------------+-------------------+-------------------+--------------------+--------------------+------------------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+-----------------+------------------+------------------+-------------------+-------------------+--------------------+--------------------+------------------+
 |summary|         duration|    behavior_count|                pv|                fav|               cart|                 buy|               label|        prediction|
 +-------+-----------------+------------------+------------------+-------------------+-------------------+--------------------+--------------------+------------------+
 |  count|           756408|            756408|            756408|             756408|             756408|              756408|              756408|            756408|
@@ -1311,7 +1313,7 @@ only showing top 20 rows
 
 <p>Group by the cluster index and calculat the mean values for all features.</p>
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_k5_statistics</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df_k5_statistics</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">sql</span><span class="p">(</span><span class="s">"""
 SELECT prediction AS cluster,
         COUNT(DISTINCT user_id) AS user,
         COUNT(item_id) AS behavior,
@@ -1326,12 +1328,12 @@ FROM purchase_clustered
 GROUP BY prediction
 ORDER BY prediction asc
 """</span><span class="p">)</span>
-<span class="n">df_k5_statistics</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">df_k5_statistics</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Results:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+----+--------+------------+-----------------+------+-------+--------+-------+---------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+-------+----+--------+------------+-----------------+------+-------+--------+-------+---------+
 |cluster|user|behavior|avg_duration|avg_num_behaviors|avg_pv|avg_fav|avg_cart|avg_buy|avg_label|
 +-------+----+--------+------------+-----------------+------+-------+--------+-------+---------+
 |      0|9701|  639437|        0.91|             1.12|  1.12|    0.0|     0.0|    0.0|      0.0|
@@ -1351,8 +1353,8 @@ ORDER BY prediction asc
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-<span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_k5</span><span class="p">)</span>
-<span class="n">heatmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_k5</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">scaler</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_k5</span><span class="p">)</span>
+<span class="n">heatmap</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">around</span><span class="p">(</span><span class="n">scaler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df_k5</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
 </code></pre></div></div>
 
 <div style="text-align: center;">

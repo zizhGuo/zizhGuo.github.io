@@ -33,11 +33,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/about.html" class="nav-link">Gallery</a>
-                <!-- <a href="http://localhost:4001/about.html" class="nav-link">&#127925暴风雨</a> -->
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
             </li>
+            <!-- <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于</a>
+            </li> -->
             <li class="nav-item text-right">
-                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202210.pdf" class="nav-link">中英简历</a>
+                <a href="http://localhost:4001/assets/Zizhun_Guo_Resume_202305.pdf" class="nav-link">简历</a>
             </li>
         </ul>
     </div>
@@ -94,16 +96,16 @@
 <h3 id="1-did-your-mentor-program-use-pandas-to-help-you-along">1. Did your mentor program use pandas to help you along?</h3>
 <p>Yes.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW_03_Guo_Zizhun_Mentor.py</span>
-
-    <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span> <span class="c"># data analysis and manipulation package</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># location: HW_03_Guo_Zizhun_Mentor.py
+</span>
+    <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span> <span class="c1"># data analysis and manipulation package
+</span>
 </code></pre></div></div>
 <h3 id="2-did-your-mentor-program-create-your-training-program">2. Did your mentor program create your training program?</h3>
 <p>Yes.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW_03_Guo_Zizhun_Mentor.py</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># location: HW_03_Guo_Zizhun_Mentor.py
+</span>
     <span class="k">def</span> <span class="nf">write_file</span><span class="p">(</span><span class="n">best_attribute</span><span class="p">,</span> <span class="n">is_positive_correlated</span><span class="p">):</span>
     <span class="s">""" writes trained program based on selected best attribute
     Paras:
@@ -114,23 +116,23 @@
     """</span>  
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># initialize a string to contains codes for dumping in the trained program</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="s">""</span>
-        <span class="o">..</span>
-        <span class="o">..</span> <span class="n">implementations</span> <span class="o">..</span>
-        <span class="o">..</span>
-    <span class="c"># create a file with given name "filepath"</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'HW03_Guo_Zizhun_Trained.py'</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> 
-    <span class="c"># write string to the filepath </span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>            
-    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># initialize a string to contains codes for dumping in the trained program
+</span>    <span class="n">lines</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="p">..</span>
+        <span class="p">..</span> <span class="n">implementations</span> <span class="p">..</span>
+        <span class="p">..</span>
+    <span class="c1"># create a file with given name "filepath"
+</span>    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'HW03_Guo_Zizhun_Trained.py'</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span> 
+    <span class="c1"># write string to the filepath 
+</span>    <span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>            
+    <span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>  
 </code></pre></div></div>
 
 <h3 id="3-did-the-training-program-use-pandas">3. Did the training program use pandas?</h3>
 <p>Yes.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW_03_Guo_Zizhun_Trained.py</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># location: HW_03_Guo_Zizhun_Trained.py
+</span>
     <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 
 </code></pre></div></div>
@@ -160,26 +162,26 @@
 <p>The if-statement condition sets the structure based on whether the <strong>value of cross-correlation</strong> is <strong>positive</strong> or <strong>negative</strong>. 
 <strong>Sets structure for One Rule classifier in the trained program:</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW_03_Guo_Zizhun_Mentor.py</span>
-    <span class="k">if</span> <span class="n">is_positive_correlated</span><span class="p">:</span>   
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># location: HW_03_Guo_Zizhun_Mentor.py
+</span>    <span class="k">if</span> <span class="n">is_positive_correlated</span><span class="p">:</span>   
                        
-        <span class="n">lines</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t</span><span class="s">for val in data:"</span>
-        <span class="n">lines</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t</span><span class="s">if val &gt;  0:"</span>
-        <span class="n">lines</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t\t</span><span class="s">print('1')"</span>
-        <span class="n">lines</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t</span><span class="s">else:"</span>
-        <span class="n">lines</span> <span class="o">+=</span>  <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t\t</span><span class="s">print('0')"</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="sa">f</span><span class="s">"</span><span class="se">\n\t</span><span class="s">for val in data:"</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="sa">f</span><span class="s">"</span><span class="se">\n\t\t</span><span class="s">if val &gt;  0:"</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="sa">f</span><span class="s">"</span><span class="se">\n\t\t\t</span><span class="s">print('1')"</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="sa">f</span><span class="s">"</span><span class="se">\n\t\t</span><span class="s">else:"</span>
+        <span class="n">lines</span> <span class="o">+=</span>  <span class="sa">f</span><span class="s">"</span><span class="se">\n\t\t\t</span><span class="s">print('0')"</span>
     <span class="k">else</span><span class="p">:</span>            
-        <span class="n">lines</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t</span><span class="s">for val in data:"</span>
-        <span class="n">lines</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t</span><span class="s">if val ==  0:"</span>
-        <span class="n">lines</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t\t</span><span class="s">print('1')"</span>
-        <span class="n">lines</span> <span class="o">+=</span> <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t</span><span class="s">else:"</span>
-        <span class="n">lines</span> <span class="o">+=</span>  <span class="n">f</span><span class="s">"</span><span class="se">\n\t\t\t</span><span class="s">print('0')"</span> 
+        <span class="n">lines</span> <span class="o">+=</span> <span class="sa">f</span><span class="s">"</span><span class="se">\n\t</span><span class="s">for val in data:"</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="sa">f</span><span class="s">"</span><span class="se">\n\t\t</span><span class="s">if val ==  0:"</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="sa">f</span><span class="s">"</span><span class="se">\n\t\t\t</span><span class="s">print('1')"</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="sa">f</span><span class="s">"</span><span class="se">\n\t\t</span><span class="s">else:"</span>
+        <span class="n">lines</span> <span class="o">+=</span>  <span class="sa">f</span><span class="s">"</span><span class="se">\n\t\t\t</span><span class="s">print('0')"</span> 
 
 </code></pre></div></div>
 <h4 id="q1-what-was-the-if-else-rule-you-got">Q1: What was the if-else rule you got?</h4>
 <p><strong>Struture below:</strong> (based on the given training dataset)</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW_03_Guo_Zizhun_Trained.py</span>
-        
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># location: HW_03_Guo_Zizhun_Trained.py
+</span>        
     <span class="k">if</span> <span class="n">attribute</span> <span class="o">&gt;</span>  <span class="mi">0</span><span class="p">:</span>
         <span class="k">print</span><span class="p">(</span><span class="s">'1'</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -218,20 +220,20 @@ The default image would be looks like this:
 
 <p>Each dot actually overlaps so many points. In order to see how condense each points are, we need to add jitter to scatter it up a little bit. So just choose a randomly scattered seed generated by Numpy package.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># location: HW_03_Guo_Zizhun_Mentor/ditribution_plot_with_jitter.py</span>
-        
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># location: HW_03_Guo_Zizhun_Mentor/ditribution_plot_with_jitter.py
+</span>        
     <span class="n">x</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="p">[</span><span class="n">best_attribute</span><span class="p">]</span> \
                 <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">scatter_fraction_rate</span><span class="p">)</span> \
                 <span class="o">*</span> <span class="n">scatter_scale</span> \
-            <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> \
+            <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">ranf</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> \
                 <span class="o">*</span> <span class="n">scatter_fraction_rate</span> \
                 <span class="o">*</span> <span class="n">scatter_scale</span>
-    <span class="o">...</span>
-    <span class="o">...</span>
+    <span class="p">...</span>
+    <span class="p">...</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>    <span class="c"># plot the image alpha = 0.5 indicates the level of the overlap</span>
-                                    <span class="c"># Area with darker color have more points overlapped </span>
-</code></pre></div></div>
+    <span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>    <span class="c1"># plot the image alpha = 0.5 indicates the level of the overlap
+</span>                                    <span class="c1"># Area with darker color have more points overlapped 
+</span></code></pre></div></div>
 <p>After adding the <strong>Jitter</strong>:
 <img src="https://i.imgur.com/5YKMVDx.png" alt="scatter_jitter" /></p>
 
