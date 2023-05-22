@@ -5,7 +5,7 @@
 layout: page
 title: Home
 # img-bg: caotang1.jpg
-img-bg: rv1.jpg
+img-bg: rv1.JPG
 # img-bg: taiguli1.jpg
 # img-bg: caotang1.jpg
 category: Articles
