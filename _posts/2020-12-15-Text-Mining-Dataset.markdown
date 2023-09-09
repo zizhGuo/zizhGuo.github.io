@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NLP Text Mining (2/8) - Yelp Dataset"
+title:  "文本挖掘：数据集 NLP Text Mining (2/8) - Yelp Dataset"
 date:   2020-12-15 18:50:01
 author: Zizhun Guo
 category: Projects

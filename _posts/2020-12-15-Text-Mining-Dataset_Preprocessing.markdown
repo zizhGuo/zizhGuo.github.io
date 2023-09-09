@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NLP Text Mining (3/8) - Preprocessing (Stemming, Lemmatization)"
+title:  "文本挖掘：数据预处理 NLP Text Mining (3/8) - Preprocessing (Stemming, Lemmatization)"
 date:   2020-12-15 18:50:02
 author: Zizhun Guo
 category: Projects

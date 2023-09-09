@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NodeJS Learning Notes Mindmap"
+title:  "NodeJS学习笔记脑图 NodeJS Learning Notes Mindmap"
 date:   2020-06-15 18:50:12
 author: Zizhun Guo
 category: Projects

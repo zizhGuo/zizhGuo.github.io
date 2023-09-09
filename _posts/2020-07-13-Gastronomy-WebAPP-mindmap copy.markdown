@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Gastronomy WebAPP + Project Roadmap + Business Inspiration"
+title:  "美食web应用随意脑洞 Gastronomy WebAPP + Project Roadmap + Business Inspiration"
 date:   2020-07-13 18:50:12
 author: Zizhun Guo
 category: Projects

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Data Mining: Otsu's Method (Object + Regularization)"
+title:  "大数据分析课程：Otus方法 Data Mining: Otsu's Method (Object + Regularization)"
 date:   2020-02-05 18:11:50
 author: Zizhun Guo
 category: Projects

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Build Up a Personal Cloud Workstation using AWS Technologies"
+title:  "亚马逊云-创建私人云服务器工作站 Build Up a Personal Cloud Workstation using AWS Technologies"
 date:   2021-08-24 12:33:30
 author: Zizhun Guo
 category: Projects

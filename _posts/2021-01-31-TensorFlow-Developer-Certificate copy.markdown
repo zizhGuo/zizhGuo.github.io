@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Certificate/Courses: TensorFlow Developer Certificate"
+title:  "TensorFlow官方开发者证书 Certificate/Courses: TensorFlow Developer Certificate"
 date:   2021-01-07 20:13:14
 author: Zizhun Guo
 category: Projects

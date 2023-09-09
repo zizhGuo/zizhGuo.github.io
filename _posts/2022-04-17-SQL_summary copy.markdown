@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SQL summary in one (updating)"
+title:  "大数据查询语句总结 SQL summary in one (updating)"
 date:   2022-04-17 09:33:30
 author: Zizhun Guo
 category: Projects

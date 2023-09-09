@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NLP Text Mining (5/8) - Textual Models TF-IDF, LDA, W2V, GloVe (Gensim, NLTK, Scikit-learn)"
+title:  "文本挖掘：语言模型 NLP Text Mining (5/8) - Textual Models TF-IDF, LDA, W2V, GloVe (Gensim, NLTK, Scikit-learn)"
 date:   2020-12-15 18:50:04
 author: Zizhun Guo
 category: Projects

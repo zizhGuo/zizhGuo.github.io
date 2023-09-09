@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Computer Graphics Labs (algorithms & rendering techniques)"
+title:  "计算机图形学算法和渲染技术 Computer Graphics Labs (algorithms & rendering techniques)"
 date:   2019-12-21 01:11:13
 author: Zizhun Guo
 category: Projects

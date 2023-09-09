@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Data Mining: PCA + Pearson CC -> Feature Selection"
+title:  "大数据分析课程：PCA和皮尔森相关系数 Data Mining: PCA + Pearson CC -> Feature Selection"
 date:   2020-04-16 21:12:12
 author: Zizhun Guo & Martin Qian
 category: Projects

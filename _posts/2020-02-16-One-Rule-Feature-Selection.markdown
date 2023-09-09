@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Data Mining: One Rule -> Feature Selection"
+title:  "大数据分析课程：one rule准则 Data Mining: One Rule -> Feature Selection"
 date:   2020-02-16 23:41:12
 author: Zizhun Guo
 category: Projects

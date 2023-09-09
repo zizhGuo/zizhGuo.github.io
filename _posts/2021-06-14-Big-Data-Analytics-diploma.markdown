@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Diploma received! RIT M.S. Computer Science and Advanced Graduate Certificate in Big Data Analytics"
+# title:  "收到学历了🫡Diploma received! RIT M.S. Computer Science and Advanced Graduate Certificate in Big Data Analytics"
+title:  "🎓收到学位证书了 Diploma received! RIT M.S. Computer Science"
 date:   2021-06-14 09:30:10
 author: Zizhun Guo
 category: Projects

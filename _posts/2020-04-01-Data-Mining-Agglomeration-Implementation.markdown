@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Data Mining: Agglomeration Implementation"
+title:  "大数据分析课程：层级聚类实现 Data Mining: Agglomeration Implementation"
 date:   2020-04-01 21:40:12
 author: Zizhun Guo & Martin Qian
 category: Projects

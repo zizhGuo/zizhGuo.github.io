@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Data Mining: ROC curve and 1D classficication"
+title:  "大数据分析课程：ROC曲线和1维分类 Data Mining: ROC curve and 1D classficication"
 date:   2020-02-12 07:40:30
 author: Zizhun Guo
 category: Projects

@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "DouZero: Powerful DouDiZhu AI dig-in"
-date:   2023-08-18 20:56:30
+title:  "「旅行：香港」——或许可以再找到一次曼哈顿距离 Hong Kong-meet Manhattan Distance again"
+date:   2023-03-20 20:56:30
 author: Zizhun Guo
 authorCN: 郭子谆
 category: Projectss
 categories: jekyll update
-visible: 0
+visible: 1
 ---
 <div style="text-align: center;">
    <img src="https://picx.zhimg.com/v2-146621bee7fee71d27ca46d64bf61fcf_1440w.jpg?source=d16d100b" alt="drawing" style="width: 70%;"/>
@@ -20,7 +20,7 @@ visible: 0
 
 <br>
 
-It has been long time I didn't travel. This time, after I finished my work from Beijing, I step out for a new short term journey with my buddy Da. It is a Canton trip. It is a getaway trip to somewhere I am strange to.
+It's been a while since my last journey, but after wrapping up work in Beijing, I embarked on a short adventure with my friend Da. We headed to HongKong, a destination unfamiliar to both of us.
 
 
 

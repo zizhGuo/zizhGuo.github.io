@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NLP Text Mining (7/8) - ML Models part1 (Scikit-Learn)"
+title:  "文本挖掘：机器学习建模 NLP Text Mining (7/8) - ML Models part1 (Scikit-Learn)"
 date:   2020-12-15 18:50:06
 author: Zizhun Guo
 category: Projects

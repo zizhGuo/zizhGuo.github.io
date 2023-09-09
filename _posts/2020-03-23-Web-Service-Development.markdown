@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Customized SOAP Web Service Development (Java + Apache Derby + Netbeans 9.0)"
+title:  "自定义SOAP服务的开发：阿帕奇Derby Customized SOAP Web Service Development (Java + Apache Derby + Netbeans 9.0)"
 date:   2020-03-23 23:40:12
 author: Zizhun Guo
 category: Projects

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Certificate/Courses: DeepLearning.AI Deep Learning Specialization Mindmap/Notes/Certificate"
+title:  "吴恩达深度学习课程结业证书 Certificate/Courses: DeepLearning.AI Deep Learning Specialization Certificate"
 date:   2021-01-07 20:13:14
 author: Zizhun Guo
 category: Projects

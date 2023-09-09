@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Game Design & Development Capstone Projects: VR Multiplayer Real-time Interaction Game Application"
+title:  "🎓👾游戏设计与开发专业 毕业顶点项目：虚拟现实多人实时竞速射击游戏-猫咪飞车：开始 Game Design & Development Capstone Projects: VR Multiplayer Real-time Interaction Game Application"
 date:   2018-08-14 19:34:06
 author: Zizhun Guo
 category: Projects

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "YOLO Project Poster Released!!! [with Audio]"
+title:  "毕业项目答辩学术海报「带语音」 YOLO Project Poster Released!!! [with Audio]"
 date:   2021-04-16 12:18:18
 author: Zizhun Guo
 category: Projects

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "JaveScript Learning Notes Mindmap"
+title:  "JavaScript学习笔记脑图 JaveScript Learning Notes Mindmap"
 date:   2020-05-25 09:16:49
 author: Zizhun Guo
 category: Projects

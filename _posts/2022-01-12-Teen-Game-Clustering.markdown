@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Agglomerative Clustering on Detecting Types of Gamers"
+title:  "层级聚类探查游戏玩家类型 Agglomerative Clustering on Detecting Types of Gamers"
 date:   2022-01-12 12:33:30
 author: Zizhun Guo
 category: Projects

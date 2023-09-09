@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "YOLO Explore Object Detection PERFORMANCES In Relation To INPUT IMAGE DETERIORATION
+title:  "Yolo性能展示 YOLO Explore Object Detection PERFORMANCES In Relation To INPUT IMAGE DETERIORATION
 "
 date:   2021-04-15 22:34:18
 author: Zizhun Guo

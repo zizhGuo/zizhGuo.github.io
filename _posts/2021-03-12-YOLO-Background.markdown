@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "YOLO Background & YOLO v4 tiny Archintecture"
+title:  "Yolo背景和模型架构 YOLO Background & YOLO v4 tiny Archintecture"
 date:   2021-03-12 08:54:12
 author: Zizhun Guo
 category: Projects

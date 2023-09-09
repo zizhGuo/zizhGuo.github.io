@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "YOLO Mechanism Part II: Training, Evaluation Metrics"
+title:  "Yolo机制第二部分 YOLO Mechanism Part II: Training, Evaluation Metrics"
 date:   2021-04-11 10:13:14
 author: Zizhun Guo
 category: Projects

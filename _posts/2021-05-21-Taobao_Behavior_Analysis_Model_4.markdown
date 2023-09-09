@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Alibaba Taobao User Behaviors Analysis V: User Journey purchase behavior Clustering - KMeans with MLlib"
+title:  "Alibaba Taobao User Behaviors Analysis V: User Journey purchase behavior Clustering"
 date:   2021-06-01 09:23:52
 author: Zizhun Guo
 category: Projects
@@ -13,6 +13,8 @@ visible: 1
 ---
 
 <br>
+
+Alibaba Taobao User Behaviors Analysis V: User Journey purchase behavior Clustering - KMeans with MLlib
 
 #### Recap of the user behavior table
 

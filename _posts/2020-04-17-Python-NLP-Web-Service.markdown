@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  " Scikit-learn based Data Analysis System (ProgrammableWeb Crawler)"
+title:  " Scikit-learn based Data Analysis System (Programmable Web Crawler)"
 date:   2020-04-17 21:00:00
 author: Zizhun Guo
 category: Projects

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NLP Text Mining (6/8) - Experiment"
+title:  "文本挖掘：实验 NLP Text Mining (6/8) - Experiment"
 date:   2020-12-15 18:50:05
 author: Zizhun Guo
 category: Projects

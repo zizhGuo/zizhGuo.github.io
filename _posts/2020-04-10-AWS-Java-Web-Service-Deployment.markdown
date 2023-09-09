@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SOAP Web Service Deployment (AWS EC2, JAVA)"
+title:  "SOAP消息协议的web服务开发 SOAP Web Service Deployment (AWS EC2, JAVA)"
 date:   2020-04-10 20:12:12
 author: Zizhun Guo
 category: Projects

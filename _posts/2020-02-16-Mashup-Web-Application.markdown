@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Java + Mashup Web Application(AWS) consuming SOAP&REST Web Services"
+title:  "Java混合web服务 Java + Mashup Web Application(AWS) consuming SOAP&REST Web Services"
 date:   2020-02-16 23:40:12
 author: Zizhun Guo
 category: Projects

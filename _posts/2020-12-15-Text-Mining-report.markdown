@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NLP Text Mining Project Report"
+title:  "文本挖掘：项目论文报告 NLP Text Mining Project Report"
 date:   2020-12-15 23:50:04
 author: Zizhun Guo
 category: Projects

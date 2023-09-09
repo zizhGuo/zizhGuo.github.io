@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NLP Text Mining (1/8) - Project Overview"
+title:  "文本挖掘：项目简介 NLP Text Mining (1/8) - Project Overview"
 date:   2020-12-15 18:50:00
 author: Zizhun Guo
 category: Projects

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Markdown Syntax Test"
+title:  "Markdown脚本语言语法测试 Markdown Syntax Test"
 date:   2019-08-18 19:34:06
 author: Zizhun Guo
 category: Articles

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Alibaba Taobao User Behaviors Analysis All-in-One"
+title:  "淘宝用户行为分析「总结」 Alibaba Taobao User Behaviors Analysis All-in-One"
 date:   2021-06-05 09:18:10
 author: Zizhun Guo
 category: Projects

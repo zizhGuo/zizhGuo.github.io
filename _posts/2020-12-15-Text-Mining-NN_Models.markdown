@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NLP Text Mining (8/8) - NN Models (CNN, RNN encoder-decoder LSTM/GRU) (TensorFlow Keras)"
+title:  "文本挖掘：深度学习建模 NLP Text Mining (8/8) - NN Models (CNN, RNN encoder-decoder LSTM/GRU)"
 date:   2020-12-15 18:50:07
 author: Zizhun Guo
 category: Projects
