@@ -1,0 +1,28 @@
+
+		<div class="col-md-9 bg-light mb-0 pt-0 mt-0 pb-0 mb-0 rounded" >		
+		<!-- <H1>Zizhun GUO</H1> -->
+			<hr>
+			<h2 style = "margin:1.5rem"><b>旅行</b></h2>
+			<!-- <h2 style = "margin:1.5rem"><b>欢迎光临！更新中，敬请期待</b></h2> -->
+			<tr></tr>
+			<div class=" bg-light card text-left"style="width: 80rem;"> 	
+				<!-- <div class=" bg-light card"> 	 -->
+					<div class="card-body">			
+						{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+						{% for year in postsByYear %}
+							<!-- <h1>{{ year.name }}</h1> -->
+							{% for post in year.items %}
+								{% if post.visible == 1 and post.travel == 1 %}
+								<time datetime="{{ post.date | date: "%m-%d-%Y" }}">
+									{{ post.date | date_to_string }}
+								</time>
+								<h5 class="card-title text-left"><a href="{{ post.url }}" class="btn btn-light p-0">{{post.title}}</a></h5>
+								<!-- <p class="card-text text-left">{{post.content | slice: 0,100}}</p> -->
+								{% endif %}
+							{% endfor %}
+						{% endfor %}
+					</div>
+				</div>
+			
+		</div >
+

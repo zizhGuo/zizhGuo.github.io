@@ -23,9 +23,12 @@
 				<div class="card-body">			
 					{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
 					{% for year in postsByYear %}
-						<h1>{{ year.name }}</h1>
+						{% if year.name != "2016" and year.name != "2017"%}
+							<h1>{{ year.name }}</h1>
+						{% endif %}
 						{% for post in year.items %}
-							{% if post.visible == 1  %}
+							{% if post.visible == 1 and post.travel != 1 %}
+							
 							<time datetime="{{ post.date | date: "%m-%d-%Y" }}">
 								{{ post.date | date_to_string }}
 							</time>
