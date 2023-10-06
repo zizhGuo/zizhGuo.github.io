@@ -25,23 +25,25 @@ visible: 1
 - Option 1:
     - Load jars in script in python:
     
-    ```py
-    import findspark
-    findspark.init('/home/XXX/spark-3.1.2-bin-hadoop3.2')
-    from pyspark.sql import SparkSession
+```py
+import findspark
+findspark.init('/home/XXX/spark-3.1.2-bin-hadoop3.2')
+from pyspark.sql import SparkSession
 
-    spark = SparkSession.builder.appName("SparkByExamples.com")\
-        .config("spark.driver.extraClassPath", "./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar")\
-        .config("spark.executor.extraClassPath", "./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar")\
-        .getOrCreate()
-    ```
+spark = SparkSession.builder.appName("SparkByExamples.com")\
+    .config("spark.driver.extraClassPath", "./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar")\
+    .config("spark.executor.extraClassPath", "./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar")\
+    .getOrCreate()
+```
 - Option 2:
     - Set up local configuration file: **spark-default.conf** in **$SPARK_HOME/conf/**
-    ``` 
-    spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
-    spark.driver.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
-    ```
-* **Once the configuration has done, there is no need to configure again unless the extra jars file are deleted.** 
+
+``` 
+spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+spark.driver.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+
+```
+**Once the configuration has done, there is no need to configure again unless the extra jars file are deleted.** 
 
 ###### Step 3: Connect to S3 with AcessKey and SecretKey using s3a://
 ```py
@@ -67,11 +69,11 @@ Help:
 ```
 Usage: spark-submit [options] <app jar | python file | R file> [app arguments]
 ...
---packages                  Comma-separated list of maven coordinates of jars to include
-                              on the driver and executor classpaths. Will search the local
-                              maven repo, then maven central and any additional remote
-                              repositories given by --repositories. The format for the
-                              coordinates should be groupId:artifactId:version.
+--packages      Comma-separated list of maven coordinates of jars to include
+                on the driver and executor classpaths. Will search the local
+                maven repo, then maven central and any additional remote
+                repositories given by --repositories. The format for the
+                coordinates should be groupId:artifactId:version.
 ...
 ```
 

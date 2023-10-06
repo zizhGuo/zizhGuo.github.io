@@ -31,7 +31,7 @@ Object detection is the main direction of computer vision and digital image proc
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-12-YOLO-Background/01-example.png">
-   <img src="{{site.url}}/assets/2021-03-12-YOLO-Background/01-example.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-12-YOLO-Background/01-example.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Example: Object Detection Output </figcaption>
 </div>
@@ -44,7 +44,7 @@ The current mainstream object detection algorithms are mainly based on deep lear
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-12-YOLO-Background/02-onestaged-vs-twostaged.png">
-   <img src="{{site.url}}/assets/2021-03-12-YOLO-Background/02-onestaged-vs-twostaged.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-12-YOLO-Background/02-onestaged-vs-twostaged.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>One-Stage Detector vs Two-Stage Detector </figcaption>
 </div>
@@ -67,7 +67,7 @@ Through the FPN algorithm, the high-layer features of low-resolution and high-se
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-12-YOLO-Background/03-CSPDarkent53-tiny.png">
-   <img src="{{site.url}}/assets/2021-03-12-YOLO-Background/03-CSPDarkent53-tiny.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-12-YOLO-Background/03-CSPDarkent53-tiny.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Example: Architecture of CSPDarknet53-tiny for COCO Dataset</figcaption>
 </div>

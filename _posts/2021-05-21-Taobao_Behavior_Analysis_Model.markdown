@@ -136,7 +136,7 @@ The desired goal is **make-purchase**.  There are three channels to make such co
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model/01.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model/01.png" alt="drawing" style="width: 20%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model/01.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 1: Three conversion channels </figcaption>
 </div>
@@ -246,21 +246,21 @@ fig1.show()
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_1.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_1.png" alt="drawing" style="width: 60%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_1.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 2: Funnel plot: pv-fav-buy </figcaption>
 </div>
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_2.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_2.png" alt="drawing" style="width: 60%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_2.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 3: Funnel plot: pv-cart-buy </figcaption>
 </div>
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_3.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_3.png" alt="drawing" style="width: 60%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_3.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 4: Funnel plot: pv-buy </figcaption>
 </div>

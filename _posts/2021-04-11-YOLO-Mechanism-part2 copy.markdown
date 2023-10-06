@@ -22,7 +22,7 @@ The purpose of this is to increase training efficiency. In fact, many pre-traini
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-31-YOLO-Mechanism-part2/01-training.png">
-   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism-part2/01-training.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism-part2/01-training.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Training workflow</figcaption>
 </div>
@@ -43,7 +43,7 @@ Below follows the definition of precison and recall :
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-31-YOLO-Mechanism-part2/02-metric.png">
-   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism-part2/02-metric.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism-part2/02-metric.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Precision Recall</figcaption>
 </div>
@@ -56,7 +56,7 @@ The definition of **AP** is defined as the area under the precision-recall curve
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-31-YOLO-Mechanism-part2/03-prcurve.png">
-   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism-part2/03-prcurve.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism-part2/03-prcurve.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>PR-Curve Example for Stop Sign</figcaption>
 </div>

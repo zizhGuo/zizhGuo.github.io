@@ -65,7 +65,7 @@ To discover the posible respondents segmentation to find the game genres pattern
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/statistics.png">
-   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/statistics.png" alt="drawing" style="width: 70%;"/>
+   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/statistics.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Table 1: Game Genres Statistics </figcaption>
 </div>
@@ -74,7 +74,7 @@ From Table 1, k14b (puzzle games) and k14j (racing game) have the highest mean s
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/hist_game_genres.png">
-   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/hist_game_genres.png" alt="drawing" style="width: 70%;"/>
+   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/hist_game_genres.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 1: The distribution of Game Genres </figcaption>
 </div>
@@ -84,7 +84,7 @@ Fig 1 shows a binary distribution trend that some groups of game genres are popu
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/corr.png">
-   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/corr.png" alt="drawing" style="width: 70%;"/>
+   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/corr.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 2: Correlation Matrix for game genres </figcaption>
 </div>
@@ -149,7 +149,7 @@ def clustering(df, linkage_matrix, n = 3):
 ```
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/den7.png">
-   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/den7.png" alt="drawing" style="width: 70%;"/>
+   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/den7.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 3: Dendrogram for clustering </figcaption>
 </div>
@@ -162,7 +162,7 @@ To further check the game genre preferences for the players in 7 clusters, the m
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/hm7.png">
-   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/hm7.png" alt="drawing" style="width: 70%;"/>
+   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/hm7.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 4: Heatmap for mean game genre score given by respondents </figcaption>
 </div>
@@ -184,7 +184,7 @@ Based on reference: https://www.pewresearch.org/internet/2008/09/16/teens-video-
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/summary.png">
-   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/summary.png" alt="drawing" style="width: 40%;"/>
+   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/summary.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 5: 10 most frequently player games </figcaption>
 </div>
@@ -193,7 +193,7 @@ From Fig 5, the top 3 games by number of votes are Guitar Hero (rhythm games), H
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/clusters.png">
-   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/clusters.png" alt="drawing" style="width: 40%;"/>
+   <img src="{{site.url}}/assets/2022-01-12-Teen-Game-Clustering/clusters.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 6: Distribution of 7 clusters </figcaption>
 </div>

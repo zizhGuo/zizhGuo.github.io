@@ -64,6 +64,7 @@ select * from t where player0_is_AI = 1
 ###### 1.2 Illustrated SQL join
 
 Create the testing tables:
+
 ```sql
 CREATE TABLE IF NOT EXISTS db.test_join_A
     (
@@ -107,21 +108,23 @@ left join
     guozz.test_join_B t2
 on
     t1.id = t2.id
+;
 ```
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2022-04-17-SQL_summary/31_join_Result.png">
-   <img src="{{site.url}}/assets/2022-04-17-SQL_summary/31_join_Result.png" alt="drawing" style="width: 90%;"/>
+   <img src="{{site.url}}/assets/2022-04-17-SQL_summary/31_join_Result.png" alt="drawing" style="width: 100%;"/>
    </a>
-   <!-- <figcaption>Fig 1: The distribution of Game Genres </figcaption> -->
+   <figcaption>Join Results </figcaption>
 </div>
 
-The illustration:
+
+
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2022-04-17-SQL_summary/32_join_illustration.png">
-   <img src="{{site.url}}/assets/2022-04-17-SQL_summary/32_join_illustration.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2022-04-17-SQL_summary/32_join_illustration.png" alt="drawing" style="width: 100%;"/>
    </a>
-   <!-- <figcaption>Fig 1: The distribution of Game Genres </figcaption> -->
+   <figcaption>The illustration </figcaption>
 </div>
 
 If t2.id is not null, it indicates the overlapping area.
@@ -141,16 +144,19 @@ on
     t1.id = t2.id
 ;
 ```
+
+If t2.id is not null, it indicates the non-overlapping area.
+
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2022-04-17-SQL_summary/33_join_not_null.png">
-   <img src="{{site.url}}/assets/2022-04-17-SQL_summary/33_join_not_null.png" alt="drawing" style="width: 90%;"/>
+   <img src="{{site.url}}/assets/2022-04-17-SQL_summary/33_join_not_null.png" alt="drawing" style="width: 100%;"/>
    </a>
-   <!-- <figcaption>Fig 1: The distribution of Game Genres </figcaption> -->
+   <figcaption>Join Results </figcaption>
 </div>
 
 
 
-If t2.id is null, it indicates the non-overlapping area.
+<!-- If t2.id is null, it indicates the non-overlapping area. -->
 
 ```sql
 select
@@ -171,7 +177,7 @@ on
     <a href ="{{site.url}}/assets/2022-04-17-SQL_summary/34_join_null.png">
    <img src="{{site.url}}/assets/2022-04-17-SQL_summary/34_join_null.png" alt="drawing" style="width: 90%;"/>
    </a>
-   <!-- <figcaption>Fig 1: The distribution of Game Genres </figcaption> -->
+   <figcaption>Join Results </figcaption>
 </div>
 
 
@@ -260,7 +266,7 @@ SELECT
     f + g + h as ii,
 FROM
     t
-
+;
 ```
 
 ###### 3.3 Alias Usage
@@ -278,6 +284,7 @@ SELECT
     t.a + t.b
 FROM
     v1 t
+;
 ```
 
 **vs**
@@ -305,7 +312,9 @@ SELECT
     t.a + t.b
 FROM
     v2 t
+;
 ```
+
 Alias helps query works within the context, which means if you change the table name in the 'from' clasuse to another, it won't bother you to re-edit all references in the selection clause.
 
 
@@ -320,7 +329,9 @@ inner join
     game_info t2
 on
     t1.uid = t2.uid
+;
 ```
+
 If both order_info and game_info tables have duplicate uids, joining them on the uid column would cause the row explosion. The distinct clause can solve it by eliminating the duplicates first.
 
 ```sql
@@ -332,6 +343,7 @@ inner join
     (select distinct uid from game_info) t2
 on
     t1.uid = t2.uid
+;
 ```
 
 to be continued....

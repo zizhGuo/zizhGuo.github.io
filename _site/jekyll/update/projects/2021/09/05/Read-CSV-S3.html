@@ -3,6 +3,8 @@
   <meta name="generator" content="Jekyll v3.8.5" />
   <meta property="og:title" content="Your awesome title" />
   <meta property="og:locale" content="en_US" />
+  <!-- <meta name="referrer" content="no-referrer" /> -->
+  <!-- <meta name="referrer" content="no-referrer" /> -->
   <meta name="description" content="Personal Tech Blog" />
   <meta property="og:description" content="Personal Tech Blog" />
   <link rel="canonical" href="https://localhost:4000/" />
@@ -22,7 +24,8 @@
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
 <link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<body style="background: #e3e3d3;">
+<!-- <body style="background: #e3e3d3;"> -->
+<body style="background: #F8F8F5;">
 	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
     
     <a href="http://localhost:4001/index.html" class="navbar-brand">主页 ZIZHUN GUO</a>
@@ -47,8 +50,22 @@
 </nav>
 
 
-	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100%;">
-	<div class="jumbotron text-center" style="background: #f6f6f6;">
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #F8F8F5; width: 100%;">
+	<!-- <div class="jumbotron text-center" style="background: #FAF3E0;">
+		<h1 class="display-3">亚马逊云-S3与Pyspark数据载入管线 Working with AWS S3 and Pyspark with s3a filesystem</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		<p class="lead"><span>作者: </span>
+		</p>
+		<p class="lead">写于： <time datetime="">
+		<p class="lead">写于 <time datetime="" 年 >
+			05 Sep 2021
+		</time>
+		</p>
+	</div> -->
+</section>
+
+<div class="container">
+	<div class="jumbotron text-center align-items-start col-14" style="background: #F8F8F5;">
 		<h1 class="display-3">亚马逊云-S3与Pyspark数据载入管线 Working with AWS S3 and Pyspark with s3a filesystem</h1>
 		<p class="lead"><span>Author: Zizhun Guo</span>
 		<p class="lead"><span>作者: </span>
@@ -58,10 +75,9 @@
 			05 Sep 2021
 		</time>
 		</p>
-	</div>		
-
-<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
-	<p><p><br /></p>
+	</div>
+	<p>
+		<p><br /></p>
 
 <hr />
 
@@ -82,28 +98,31 @@
     <ul>
       <li>Load jars in script in python:</li>
     </ul>
-
-    <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kn">import</span> <span class="nn">findspark</span>
-  <span class="n">findspark</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="s">'/home/XXX/spark-3.1.2-bin-hadoop3.2'</span><span class="p">)</span>
-  <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
-
-  <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="p">.</span><span class="n">builder</span><span class="p">.</span><span class="n">appName</span><span class="p">(</span><span class="s">"SparkByExamples.com"</span><span class="p">)</span>\
-      <span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.driver.extraClassPath"</span><span class="p">,</span> <span class="s">"./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar"</span><span class="p">)</span>\
-      <span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.executor.extraClassPath"</span><span class="p">,</span> <span class="s">"./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar"</span><span class="p">)</span>\
-      <span class="p">.</span><span class="n">getOrCreate</span><span class="p">()</span>
-</code></pre></div>    </div>
   </li>
+</ul>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">findspark</span>
+<span class="n">findspark</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="s">'/home/XXX/spark-3.1.2-bin-hadoop3.2'</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
+
+<span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="p">.</span><span class="n">builder</span><span class="p">.</span><span class="n">appName</span><span class="p">(</span><span class="s">"SparkByExamples.com"</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.driver.extraClassPath"</span><span class="p">,</span> <span class="s">"./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar"</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.executor.extraClassPath"</span><span class="p">,</span> <span class="s">"./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar"</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+</code></pre></div></div>
+<ul>
   <li>Option 2:
     <ul>
-      <li>Set up local configuration file: <strong>spark-default.conf</strong> in <strong>$SPARK_HOME/conf/</strong>
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
-  spark.driver.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
-</code></pre></div>        </div>
-      </li>
+      <li>Set up local configuration file: <strong>spark-default.conf</strong> in <strong>$SPARK_HOME/conf/</strong></li>
     </ul>
   </li>
-  <li><strong>Once the configuration has done, there is no need to configure again unless the extra jars file are deleted.</strong></li>
 </ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+spark.driver.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
+
+</code></pre></div></div>
+<p><strong>Once the configuration has done, there is no need to configure again unless the extra jars file are deleted.</strong></p>
 
 <h6 id="step-3-connect-to-s3-with-acesskey-and-secretkey-using-s3a">Step 3: Connect to S3 with AcessKey and SecretKey using s3a://</h6>
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sc</span><span class="p">.</span><span class="n">_jsc</span><span class="p">.</span><span class="n">hadoopConfiguration</span><span class="p">().</span><span class="nb">set</span><span class="p">(</span><span class="s">"fs.s3a.access.key"</span><span class="p">,</span> <span class="s">"XXX"</span><span class="p">)</span>
@@ -124,11 +143,11 @@
 <p>Help:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: spark-submit [options] &lt;app jar | python file | R file&gt; [app arguments]
 ...
---packages                  Comma-separated list of maven coordinates of jars to include
-                              on the driver and executor classpaths. Will search the local
-                              maven repo, then maven central and any additional remote
-                              repositories given by --repositories. The format for the
-                              coordinates should be groupId:artifactId:version.
+--packages      Comma-separated list of maven coordinates of jars to include
+                on the driver and executor classpaths. Will search the local
+                maven repo, then maven central and any additional remote
+                repositories given by --repositories. The format for the
+                coordinates should be groupId:artifactId:version.
 ...
 </code></pre></div></div>
 
@@ -164,12 +183,9 @@
 <hr />
 <p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
 
-</p>
 
+	</p>
 </div>
-
-
-</section>
 	
 	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
 

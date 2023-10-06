@@ -68,7 +68,7 @@ print(df_date_behavior_count)
 ```
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAB.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAB.png" alt="drawing" style="width: 60%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAB.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 1: Daily Active behaviors histogram </figcaption>
 </div>
@@ -97,7 +97,7 @@ print(df_DAU)
 ```
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAU.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAU.png" alt="drawing" style="width: 60%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAU.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 2: Daily Active Users histogram </figcaption>
 </div>
@@ -126,7 +126,7 @@ ORDER BY
 ```
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAB.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAB.png" alt="drawing" style="width: 60%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAB.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 3: Hourly Active Behaviors histogram </figcaption>
 </div>
@@ -155,7 +155,7 @@ ORDER BY hour
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAU.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAU.png" alt="drawing" style="width: 60%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAU.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 4: Hourly Active Users histogram </figcaption>
 </div>
@@ -208,7 +208,7 @@ df_retention = spark.sql("""
 ```
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/retention.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/retention.png" alt="drawing" style="width: 60%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/retention.png" alt="drawing" style="width: 100%;"/>
    </a>
    <figcaption>Fig 5: simulating retention rate </figcaption>
 </div>

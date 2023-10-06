@@ -3,6 +3,8 @@
   <meta name="generator" content="Jekyll v3.8.5" />
   <meta property="og:title" content="Your awesome title" />
   <meta property="og:locale" content="en_US" />
+  <!-- <meta name="referrer" content="no-referrer" /> -->
+  <!-- <meta name="referrer" content="no-referrer" /> -->
   <meta name="description" content="Personal Tech Blog" />
   <meta property="og:description" content="Personal Tech Blog" />
   <link rel="canonical" href="https://localhost:4000/" />
@@ -22,7 +24,8 @@
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
 <link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<body style="background: #e3e3d3;">
+<!-- <body style="background: #e3e3d3;"> -->
+<body style="background: #F8F8F5;">
 	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
     
     <a href="http://localhost:4001/index.html" class="navbar-brand">主页 ZIZHUN GUO</a>
@@ -47,8 +50,22 @@
 </nav>
 
 
-	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100%;">
-	<div class="jumbotron text-center" style="background: #f6f6f6;">
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #F8F8F5; width: 100%;">
+	<!-- <div class="jumbotron text-center" style="background: #FAF3E0;">
+		<h1 class="display-3">Yolo背景和模型架构 YOLO Background & YOLO v4 tiny Archintecture</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		<p class="lead"><span>作者: </span>
+		</p>
+		<p class="lead">写于： <time datetime="">
+		<p class="lead">写于 <time datetime="" 年 >
+			12 Mar 2021
+		</time>
+		</p>
+	</div> -->
+</section>
+
+<div class="container">
+	<div class="jumbotron text-center align-items-start col-14" style="background: #F8F8F5;">
 		<h1 class="display-3">Yolo背景和模型架构 YOLO Background & YOLO v4 tiny Archintecture</h1>
 		<p class="lead"><span>Author: Zizhun Guo</span>
 		<p class="lead"><span>作者: </span>
@@ -58,10 +75,9 @@
 			12 Mar 2021
 		</time>
 		</p>
-	</div>		
-
-<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
-	<p><!-- ├── Project
+	</div>
+	<p>
+		<!-- ├── Project
    ├── classification
    │   ├── adversarial
    │   ├── contrast020
@@ -83,7 +99,7 @@
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-03-12-YOLO-Background/01-example.png">
-   <img src="http://localhost:4001/assets/2021-03-12-YOLO-Background/01-example.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-03-12-YOLO-Background/01-example.png" alt="drawing" style="width: 100%;" />
     </a>
    <figcaption>Example: Object Detection Output </figcaption>
 </div>
@@ -96,7 +112,7 @@
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-03-12-YOLO-Background/02-onestaged-vs-twostaged.png">
-   <img src="http://localhost:4001/assets/2021-03-12-YOLO-Background/02-onestaged-vs-twostaged.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-03-12-YOLO-Background/02-onestaged-vs-twostaged.png" alt="drawing" style="width: 100%;" />
     </a>
    <figcaption>One-Stage Detector vs Two-Stage Detector </figcaption>
 </div>
@@ -119,7 +135,7 @@ Through the FPN algorithm, the high-layer features of low-resolution and high-se
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-03-12-YOLO-Background/03-CSPDarkent53-tiny.png">
-   <img src="http://localhost:4001/assets/2021-03-12-YOLO-Background/03-CSPDarkent53-tiny.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-03-12-YOLO-Background/03-CSPDarkent53-tiny.png" alt="drawing" style="width: 100%;" />
     </a>
    <figcaption>Example: Architecture of CSPDarknet53-tiny for COCO Dataset</figcaption>
 </div>
@@ -132,12 +148,9 @@ The shape of the feature maps output from the above feature detectors is either 
 <hr />
 <p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
 
-</p>
 
+	</p>
 </div>
-
-
-</section>
 	
 	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
 

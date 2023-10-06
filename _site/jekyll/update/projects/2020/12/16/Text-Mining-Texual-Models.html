@@ -3,6 +3,8 @@
   <meta name="generator" content="Jekyll v3.8.5" />
   <meta property="og:title" content="Your awesome title" />
   <meta property="og:locale" content="en_US" />
+  <!-- <meta name="referrer" content="no-referrer" /> -->
+  <!-- <meta name="referrer" content="no-referrer" /> -->
   <meta name="description" content="Personal Tech Blog" />
   <meta property="og:description" content="Personal Tech Blog" />
   <link rel="canonical" href="https://localhost:4000/" />
@@ -22,7 +24,8 @@
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
 <link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<body style="background: #e3e3d3;">
+<!-- <body style="background: #e3e3d3;"> -->
+<body style="background: #F8F8F5;">
 	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
     
     <a href="http://localhost:4001/index.html" class="navbar-brand">主页 ZIZHUN GUO</a>
@@ -47,8 +50,22 @@
 </nav>
 
 
-	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100%;">
-	<div class="jumbotron text-center" style="background: #f6f6f6;">
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #F8F8F5; width: 100%;">
+	<!-- <div class="jumbotron text-center" style="background: #FAF3E0;">
+		<h1 class="display-3">文本挖掘：语言模型 NLP Text Mining (5/8) - Textual Models TF-IDF, LDA, W2V, GloVe (Gensim, NLTK, Scikit-learn)</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		<p class="lead"><span>作者: </span>
+		</p>
+		<p class="lead">写于： <time datetime="">
+		<p class="lead">写于 <time datetime="" 年 >
+			16 Dec 2020
+		</time>
+		</p>
+	</div> -->
+</section>
+
+<div class="container">
+	<div class="jumbotron text-center align-items-start col-14" style="background: #F8F8F5;">
 		<h1 class="display-3">文本挖掘：语言模型 NLP Text Mining (5/8) - Textual Models TF-IDF, LDA, W2V, GloVe (Gensim, NLTK, Scikit-learn)</h1>
 		<p class="lead"><span>Author: Zizhun Guo</span>
 		<p class="lead"><span>作者: </span>
@@ -58,10 +75,9 @@
 			16 Dec 2020
 		</time>
 		</p>
-	</div>		
-
-<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
-	<p><h3 id="textual-features">Textual Features</h3>
+	</div>
+	<p>
+		<h3 id="textual-features">Textual Features</h3>
 <hr />
 
 <h3 id="1-tuning-parameters-for-w2v-model-and-logistic-regression-model">1. Tuning Parameters for W2V model and Logistic Regression model</h3>
@@ -338,12 +354,9 @@ Since it has 3 classes(American(New), Sushi Bars and Fast food), it needs to con
 ```py {.line-numbers}
 y = labelEncoder.fit_transform(df['category'])
 </code></pre></div></div>
-</p>
 
+	</p>
 </div>
-
-
-</section>
 	
 	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
 

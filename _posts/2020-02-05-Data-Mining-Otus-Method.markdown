@@ -72,12 +72,12 @@ data_ages= np.floor(df_snowfolks_data_raw['Age'] / 2) * 2
 
 
 <div style="text-align: center;">
-   <img src="{{site.url}}/assets/Img-DM/HW01-1.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/Img-DM/HW01-1.png" alt="drawing" style="width: 100%;"/>
    <figcaption>Figure 1: Distribution of mixed variance based on different ages</figcaption>
 </div>
 
 <div style="text-align: center;">
-   <img src="{{site.url}}/assets/Img-DM/HW01-2.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/Img-DM/HW01-2.png" alt="drawing" style="width: 100%;"/>
    <figcaption>Figure 2: Distribution of best splitting points under each alpha</figcaption>
 </div>
 

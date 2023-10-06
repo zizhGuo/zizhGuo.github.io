@@ -160,7 +160,7 @@ Using Elbow/Knee Method for a quick look-out to select K values.
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/elbow.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/elbow.png" alt="drawing" style="width: 30%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/elbow.png" alt="drawing" style="width: 100%;"/>
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -273,7 +273,7 @@ heatmap(np.around(scaler.transform(df_k5), 2))
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_clustering.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_clustering.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_clustering.png" alt="drawing" style="width: 100%;"/>
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -296,14 +296,14 @@ heatmap(np.around(scaler.transform(df_k5), 2))
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_behavior.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_behavior.png" alt="drawing" style="width: 30%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_behavior.png" alt="drawing" style="width: 100%;"/>
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_user.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_user.png" alt="drawing" style="width: 30%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_user.png" alt="drawing" style="width: 100%;"/>
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -314,38 +314,38 @@ Since I had set up my personal cloud workspace, I had successfully fit the entir
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_train_line.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_train_line.png" alt="drawing" style="width: 20%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_train_line.png" alt="drawing" style="width: 100%;"/>
    </a>
    <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_silhouette_line.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_silhouette_line.png" alt="drawing" style="width: 20%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_silhouette_line.png" alt="drawing" style="width: 100%;"/>
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
 
 <div>
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean2.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean2.png" alt="drawing" style="width: 20%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean2.png" alt="drawing" style="width: 100%;"/>
    </a>
    <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean3.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean3.png" alt="drawing" style="width: 20%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean3.png" alt="drawing" style="width: 100%;"/>
    </a>
    <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean4.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean4.png" alt="drawing" style="width: 20%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean4.png" alt="drawing" style="width: 100%;"/>
    </a>
    <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean5.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean5.png" alt="drawing" style="width: 20%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean5.png" alt="drawing" style="width: 100%;"/>
    </a>
    <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean6.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean6.png" alt="drawing" style="width: 20%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean6.png" alt="drawing" style="width: 100%;"/>
    </a>
    <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean7.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean7.png" alt="drawing" style="width: 20%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean7.png" alt="drawing" style="width: 100%;"/>
    </a>
    <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean8.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean8.png" alt="drawing" style="width: 20%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean8.png" alt="drawing" style="width: 100%;"/>
    </a>
    <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean9.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean9.png" alt="drawing" style="width: 20%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean9.png" alt="drawing" style="width: 100%;"/>
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>

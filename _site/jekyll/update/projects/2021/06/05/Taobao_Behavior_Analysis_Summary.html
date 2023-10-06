@@ -3,6 +3,8 @@
   <meta name="generator" content="Jekyll v3.8.5" />
   <meta property="og:title" content="Your awesome title" />
   <meta property="og:locale" content="en_US" />
+  <!-- <meta name="referrer" content="no-referrer" /> -->
+  <!-- <meta name="referrer" content="no-referrer" /> -->
   <meta name="description" content="Personal Tech Blog" />
   <meta property="og:description" content="Personal Tech Blog" />
   <link rel="canonical" href="https://localhost:4000/" />
@@ -22,7 +24,8 @@
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
 <link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<body style="background: #e3e3d3;">
+<!-- <body style="background: #e3e3d3;"> -->
+<body style="background: #F8F8F5;">
 	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
     
     <a href="http://localhost:4001/index.html" class="navbar-brand">主页 ZIZHUN GUO</a>
@@ -47,8 +50,22 @@
 </nav>
 
 
-	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100%;">
-	<div class="jumbotron text-center" style="background: #f6f6f6;">
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #F8F8F5; width: 100%;">
+	<!-- <div class="jumbotron text-center" style="background: #FAF3E0;">
+		<h1 class="display-3">淘宝用户行为分析「总结」 Alibaba Taobao User Behaviors Analysis All-in-One</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		<p class="lead"><span>作者: </span>
+		</p>
+		<p class="lead">写于： <time datetime="">
+		<p class="lead">写于 <time datetime="" 年 >
+			05 Jun 2021
+		</time>
+		</p>
+	</div> -->
+</section>
+
+<div class="container">
+	<div class="jumbotron text-center align-items-start col-14" style="background: #F8F8F5;">
 		<h1 class="display-3">淘宝用户行为分析「总结」 Alibaba Taobao User Behaviors Analysis All-in-One</h1>
 		<p class="lead"><span>Author: Zizhun Guo</span>
 		<p class="lead"><span>作者: </span>
@@ -58,10 +75,9 @@
 			05 Jun 2021
 		</time>
 		</p>
-	</div>		
-
-<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
-	<p><ul>
+	</div>
+	<p>
+		<ul>
   <li><a href="#1-dataset-user-behavior-data-from-taobao-for-recommendation">1. Dataset: User Behavior Data from Taobao for Recommendation</a></li>
   <li><a href="#2-dateset-preprocessing">2. Dateset preprocessing</a></li>
   <li><a href="#3-acquisition">3. Acquisition</a>
@@ -108,7 +124,7 @@
   </li>
 </ul>
 
-<p><strong>Alibaba Taobao.com</strong></p>
+<!-- **Alibaba Taobao.com** -->
 
 <blockquote>
   <p>Taobao (Chinese: 淘宝网) is a Chinese online shopping platform. It is headquartered in Hangzhou and owned by Alibaba. It is ranked as the eighth most-visited website. Taobao.com was registered on April 21, 2003 by Alibaba Cloud Computing (Beijing) Co., Ltd.</p>
@@ -453,7 +469,7 @@ WHERE PageView = 1 AND Favorite = 0 AND Cart = 0 AND Buy = 0;
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/01.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/01.png" alt="drawing" style="width: 20%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/01.png" alt="drawing" style="width: 100%;" />
    </a>
    <figcaption>Fig 1: Three conversion channels </figcaption>
 </div>
@@ -556,21 +572,21 @@ WHERE PageView &gt; 0 AND Favorite = 0 AND Cart = 0 AND Buy &gt; 0
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_1.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_1.png" alt="drawing" style="width: 60%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_1.png" alt="drawing" style="width: 100%;" />
    </a>
    <figcaption>Fig 2: Funnel plot: pv-fav-buy </figcaption>
 </div>
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_2.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_2.png" alt="drawing" style="width: 60%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_2.png" alt="drawing" style="width: 100%;" />
    </a>
    <figcaption>Fig 3: Funnel plot: pv-cart-buy </figcaption>
 </div>
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_3.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_3.png" alt="drawing" style="width: 60%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model/funnel_3.png" alt="drawing" style="width: 100%;" />
    </a>
    <figcaption>Fig 4: Funnel plot: pv-buy </figcaption>
 </div>
@@ -601,7 +617,7 @@ ORDER BY date
 </code></pre></div></div>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAB.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAB.png" alt="drawing" style="width: 60%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAB.png" alt="drawing" style="width: 100%;" />
    </a>
    <figcaption>Fig 1: Daily Active behaviors histogram </figcaption>
 </div>
@@ -630,7 +646,7 @@ ORDER BY
 </code></pre></div></div>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAU.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAU.png" alt="drawing" style="width: 60%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/DAU.png" alt="drawing" style="width: 100%;" />
    </a>
    <figcaption>Fig 2: Daily Active Users histogram </figcaption>
 </div>
@@ -660,7 +676,7 @@ ORDER BY
 </code></pre></div></div>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAB.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAB.png" alt="drawing" style="width: 60%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAB.png" alt="drawing" style="width: 100%;" />
    </a>
    <figcaption>Fig 3: Hourly Active Behaviors histogram </figcaption>
 </div>
@@ -690,7 +706,7 @@ ORDER BY hour
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAU.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAU.png" alt="drawing" style="width: 60%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/HAU.png" alt="drawing" style="width: 100%;" />
    </a>
    <figcaption>Fig 4: Hourly Active Users histogram </figcaption>
 </div>
@@ -744,7 +760,7 @@ The # of active users continuing to subscribe divided by the total active users 
 </code></pre></div></div>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/retention.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/retention.png" alt="drawing" style="width: 60%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_2/retention.png" alt="drawing" style="width: 100%;" />
    </a>
    <figcaption>Fig 5: simulating retention rate </figcaption>
 </div>
@@ -803,7 +819,7 @@ GROUP BY
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Daily_sale_volume.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Daily_sale_volume.png" alt="drawing" style="width: 60%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Daily_sale_volume.png" alt="drawing" style="width: 100%;" />
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -829,7 +845,7 @@ ORDER BY
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Hourly_sale_volume.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Hourly_sale_volume.png" alt="drawing" style="width: 60%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Hourly_sale_volume.png" alt="drawing" style="width: 100%;" />
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -870,7 +886,7 @@ category_num 	767 	448 	313 	268 	198 	195 	163 	133 	105 	97 	... 	1 	1 	1 	1 	
 </code></pre></div></div>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_category.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_category.png" alt="drawing" style="width: 60%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_category.png" alt="drawing" style="width: 100%;" />
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -901,7 +917,7 @@ ORDER BY
 </code></pre></div></div>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_item.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_item.png" alt="drawing" style="width: 60%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_item.png" alt="drawing" style="width: 100%;" />
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -911,13 +927,19 @@ ORDER BY
 
 <h6 id="item-id-ranking-vs-item-category-ranking-on-sale-volume">Item id ranking vs Item category ranking (on Sale Volume)</h6>
 <p><br /></p>
-<div class="row" style="padding-left: 30rem;">
-  <div class="column" style="text-align: center;">
-    <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/category_pie.png" alt="drawing" style="width: 100%;" />
-  </div>
-  <div class="column">
-    <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/item_pie.png" alt="drawing" style="width: 100%;" />
-  </div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/category_pie.png">
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/category_pie.png" alt="drawing" style="width: 70%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+<div style="text-align: center;">
+    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/item_pie.png">
+    <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/item_pie.png" alt="drawing" style="width: 70%;" />
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
 
 <p>It is interesting to conduct the pie charts for both rankings and compare how much the portions take for different granularity of data tag. Much easy to understand, the category tag has fewer unique values than item id since one category can include multiple items, hence the portion for ranking would be different.</p>
@@ -1057,7 +1079,7 @@ FROM
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/RFM.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/RFM.png" alt="drawing" style="width: 30%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/RFM.png" alt="drawing" style="width: 70%;" />
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -1259,7 +1281,7 @@ only showing top 10 rows
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/elbow.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/elbow.png" alt="drawing" style="width: 30%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/elbow.png" alt="drawing" style="width: 100%;" />
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -1362,7 +1384,7 @@ ORDER BY prediction asc
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_clustering.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_clustering.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_clustering.png" alt="drawing" style="width: 100%;" />
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -1410,14 +1432,14 @@ ORDER BY prediction asc
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_behavior.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_behavior.png" alt="drawing" style="width: 30%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_behavior.png" alt="drawing" style="width: 100%;" />
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_user.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_user.png" alt="drawing" style="width: 30%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/user_journey_pie_user.png" alt="drawing" style="width: 100%;" />
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -1428,38 +1450,38 @@ ORDER BY prediction asc
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_train_line.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_train_line.png" alt="drawing" style="width: 20%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_train_line.png" alt="drawing" style="width: 70%;" />
    </a>
    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_silhouette_line.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_silhouette_line.png" alt="drawing" style="width: 20%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/cost_silhouette_line.png" alt="drawing" style="width: 70%;" />
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
 
 <div>
     <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean2.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean2.png" alt="drawing" style="width: 20%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean2.png" alt="drawing" style="width: 70%;" />
    </a>
    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean3.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean3.png" alt="drawing" style="width: 20%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean3.png" alt="drawing" style="width: 70%;" />
    </a>
    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean4.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean4.png" alt="drawing" style="width: 20%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean4.png" alt="drawing" style="width: 100%;" />
    </a>
    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean5.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean5.png" alt="drawing" style="width: 20%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean5.png" alt="drawing" style="width: 100%;" />
    </a>
    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean6.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean6.png" alt="drawing" style="width: 20%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean6.png" alt="drawing" style="width: 100%;" />
    </a>
    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean7.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean7.png" alt="drawing" style="width: 20%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean7.png" alt="drawing" style="width: 100%;" />
    </a>
    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean8.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean8.png" alt="drawing" style="width: 20%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean8.png" alt="drawing" style="width: 100%;" />
    </a>
    <a href="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean9.png">
-   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean9.png" alt="drawing" style="width: 20%;" />
+   <img src="http://localhost:4001/assets/2021-05-21-Taobao_Behavior_Analysis_Model_4/heatmap_kmean9.png" alt="drawing" style="width: 100%;" />
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -1467,12 +1489,9 @@ ORDER BY prediction asc
 <hr />
 <p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
 
-</p>
 
+	</p>
 </div>
-
-
-</section>
 	
 	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
 

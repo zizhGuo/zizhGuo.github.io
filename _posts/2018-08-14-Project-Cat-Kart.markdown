@@ -8,7 +8,7 @@ categories: jekyll update
 visible: 1
 ---
 <div style="text-align: center;">
-   <img src="{{site.url}}/assets/img-catcart/title.png" alt="drawing" style="width: 30%;"/>
+   <img src="{{site.url}}/assets/img-catcart/title.png" alt="drawing" style="width: 100%;"/>
 </div>
 
 <!-- MarkdownTOC -->

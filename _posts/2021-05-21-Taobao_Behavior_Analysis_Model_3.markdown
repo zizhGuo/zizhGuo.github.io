@@ -64,7 +64,7 @@ GROUP BY
  
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Daily_sale_volume.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Daily_sale_volume.png" alt="drawing" style="width: 60%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Daily_sale_volume.png" alt="drawing" style="width: 100%;"/>
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div> 
@@ -91,7 +91,7 @@ ORDER BY
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Hourly_sale_volume.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Hourly_sale_volume.png" alt="drawing" style="width: 60%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/Hourly_sale_volume.png" alt="drawing" style="width: 100%;"/>
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -132,7 +132,7 @@ category_num 	767 	448 	313 	268 	198 	195 	163 	133 	105 	97 	... 	1 	1 	1 	1 	
 ```
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_category.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_category.png" alt="drawing" style="width: 60%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_category.png" alt="drawing" style="width: 100%;"/>
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -166,7 +166,7 @@ ORDER BY
 ```
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_item.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_item.png" alt="drawing" style="width: 60%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/ranking_item.png" alt="drawing" style="width: 100%;"/>
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
@@ -175,15 +175,24 @@ ORDER BY
 The second study on item id ranking based on the sale volume indicates a similar trend as to how it was performed with the item category rank. They both follow a logarithmic declining trend, but for the current item ranking trend, it is deeper. Over 350,000 items are sold once which takes a larger portion, whereas the items sold twice are only take 1/4 in the value.
 
 ###### Item id ranking vs Item category ranking (on Sale Volume)
+
 <br>
-<div class="row" style="padding-left: 30rem;" >
-  <div class="column" style="text-align: center;">
+
+<div style="text-align: center;">
+    <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/category_pie.png">
     <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/category_pie.png" alt="drawing" style="width: 100%;"/>
-  </div>
-  <div class="column">
-    <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/item_pie.png" alt="drawing" style="width: 100%;"/>
-  </div>
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>
+
+<div style="text-align: center;">
+    <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/item_pie.png">
+    <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/item_pie.png" alt="drawing" style="width: 100%;"/>
+   </a>
+   <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
+</div>
+
+
 
 It is interesting to conduct the pie charts for both rankings and compare how much the portions take for different granularity of data tag. Much easy to understand, the category tag has fewer unique values than item id since one category can include multiple items, hence the portion for ranking would be different.
 
@@ -324,7 +333,7 @@ print(df_RFM)
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/RFM.png">
-   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/RFM.png" alt="drawing" style="width: 30%;"/>
+   <img src="{{site.url}}/assets/2021-05-21-Taobao_Behavior_Analysis_Model_3/RFM.png" alt="drawing" style="width: 100%;"/>
    </a>
    <!-- <figcaption>Fig 1: Daily Active behaviors histogram </figcaption> -->
 </div>

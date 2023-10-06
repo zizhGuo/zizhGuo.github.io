@@ -163,21 +163,21 @@
 
 		div p {
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
-			padding-left: 4rem;
+			padding-left: 0rem;
 			/*padding-right: 10rem;*/
 			/*font-family: 'Inconsolata', monospace;*/
 		}
 		div ol li {
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
-			margin-left: 5rem;
+			margin-left: 0rem;
 		}
 		div li {
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
 			margin-left: 2rem;
 		}
 		div blockquote{
-			margin-left: 5rem;
-			margin-right: 5rem;
+			margin-left: 2rem;
+			margin-right: 2rem;
 		}
 		div blockquote p{
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
@@ -185,38 +185,43 @@
 		/*	margin-left: 5rem;*/
 			/*font-family: "Nunito", sans-serif;*/
 		}
+		/* 首页博文 */
 		div h1{
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
 		}
 		div h3{
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
-			margin-left: 4rem;
+			margin-left: 1rem;
 			font-weight: bold
 		}
+		/* 首页博文 */
 		div h5{
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
 			margin-left: 0rem;
 		}
+		/* post big title */
 		div h4{
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
-			margin-left: 4rem;
+			margin-left: 0rem;
 			font-weight: bold;
 			font-size: 2rem;
 		}
+		/* post small title */
 		div h6{
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
-			margin-left: 4rem;
+			margin-left: 0rem;
 			margin-top: 2rem;
 			font-weight: bold;
 			font-size: 1.5rem;
 		}
 		div table{
-			margin-left: 5rem;
-			width: 50rem;
+			margin-left: 0rem;
+			/* width: 50rem; */
 			align-self: center;
+			/* color: #f0f0f0; */
 		}
 		div ul li{
-			margin-left: 3rem;
+			margin-left: 0rem;
 		}
 		div h2, h3, h4, h5, h6{
 			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
@@ -235,10 +240,10 @@
 
 		div.highlighter-rouge{
 			/* margin-left: 5rem; */
-			background: #f6f6f6 !important;
+			background: #F8F8F5 !important;
 		}
 		div.highlight {
-			background: #f6f6f6 !important;
+			background: #F8F8F5 !important;
 		}
 		.highlighter-rouge .highlight  {
 			/* background-color: #ebeef5 !important;  */
@@ -248,9 +253,17 @@
 		}
 		pre {
 			background: #f0f0f0 !important;
-			margin-left: 5rem !important;
+			margin-left: 0rem !important;
 		}
-
+		div a img{
+			margin-top: 2rem;
+		}
+		div figcaption{
+			margin-bottom: 3rem;
+			font-size: 1.1rem;
+			/* font-weight: bold; */
+			font-family: 'Inconsolata',  monospace, 'Noto Serif SC', serif;
+		}
 
 /*		div p img{
 			margin-left: 5em;

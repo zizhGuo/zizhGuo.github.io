@@ -31,7 +31,7 @@ YOLO Mechanism Part I: Input, Output, Encoding, Anchor Box, IoU, Decode, Confide
 Object Detection is a regression task that neural networks are required to output not only the predicting score and class for an object but also the bounding boxes. Figure 3 shows the basic mechanism of Yolo networks as the one-staged object detector.
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/01-mechanism.png">
-   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/01-mechanism.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/01-mechanism.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>YOLO Mechanism</figcaption>
 </div>
@@ -45,7 +45,7 @@ As the figure[mechanism] shows, the output label is not the results output from 
 The input image is sized in (m, 416, 416, 3), whereas m represents the number of batches set by the practitioners, (416, 416) represents the pixel numbers for the weight and height of the input images, and the 3 represents the channels numbers as RGB channels. 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/02-input-output.png">
-   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/02-input-output.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/02-input-output.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Original Input Image vs Images in cells</figcaption>
 </div>
@@ -67,7 +67,7 @@ The last dimension number of the output encoding represents the list of bounding
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/03-encodings.png">
-   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/03-encodings.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/03-encodings.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Encoding in (13, 13, 3, 7)</figcaption>
 </div>
@@ -80,7 +80,7 @@ Another understanding about using anchor boxes is that the traditional object de
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/04-anchor-boxes.png">
-   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/04-anchor-boxes.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/04-anchor-boxes.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>3 Anchor Boxes for single route of feature maps</figcaption>
 </div>
@@ -97,7 +97,7 @@ The bounding box is represented in a format of 4 numbers. In the different proce
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/05-IoU.png">
-   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/05-IoU.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/05-IoU.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Bounding Box example</figcaption>
 </div>
@@ -120,7 +120,7 @@ b_x and b_y represent the bounding box center coordinates,  b_w and b_h represen
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/06-decode.png">
-   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/06-decode.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/06-decode.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Bounding Box Decode</figcaption>
 </div>
@@ -133,7 +133,7 @@ YOLO defines the Confidence Scores as the product of the confidence and the Inte
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/07-confidence.png">
-   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/07-confidence.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/07-confidence.png" alt="drawing" style="width: 100%;"/>
     </a>
 </div>
 
@@ -147,7 +147,7 @@ The progress of the Non-maximum suppression algorithm : (1) Sort bounding box li
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/08-NMS.png">
-   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/08-NMS.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/08-NMS.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>NMSe</figcaption>
 </div>
@@ -164,7 +164,7 @@ The loss function of YOLO v4 is mainly divided into three parts: bounding box re
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/09-loss.png">
-   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/09-loss.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-03-31-YOLO-Mechanism/09-loss.png" alt="drawing" style="width: 100%;"/>
     </a>
 </div>
 

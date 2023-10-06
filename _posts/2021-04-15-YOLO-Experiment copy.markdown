@@ -31,14 +31,14 @@ Once the YOLO model has finished the training process, it is necessary to fine-t
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-04-15-YOLO-Experiment/01-finetune-score.png">
-   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/01-finetune-score.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/01-finetune-score.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Score Threshold Tuning Results</figcaption>
 </div>
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-04-15-YOLO-Experiment/02-finetune-score.png">
-   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/02-finetune-score.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/02-finetune-score.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Score Threshold Tuning Line Graph</figcaption>
 </div>
@@ -53,14 +53,14 @@ When the score value is 0.1, the mAP value of the YOLO model is the highest and 
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-04-15-YOLO-Experiment/03-finetune-iou.png">
-   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/03-finetune-iou.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/03-finetune-iou.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>IoU Threshold Tuning Results</figcaption>
 </div>
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-04-15-YOLO-Experiment/04-finetune-iou.png">
-   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/04-finetune-iou.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/04-finetune-iou.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>IoU Threshold Tuning</figcaption>
 </div>
@@ -77,7 +77,7 @@ As it is mentioned in part 2, the dataset that employed for the experiment conta
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-04-15-YOLO-Experiment/05-distortion-types.png">
-   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/05-distortion-types.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/05-distortion-types.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Distortion Image Comparison Results</figcaption>
 </div>
@@ -88,14 +88,14 @@ Noted that all 320 test images serve only for testing the performance of the YOL
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-04-15-YOLO-Experiment/06-map_results.png">
-   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/06-map_results.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/06-map_results.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Distortion Image Comparison Results</figcaption>
 </div>
 
 <div style="text-align: center;">
     <a href ="{{site.url}}/assets/2021-04-15-YOLO-Experiment/07-map_comparison.png">
-   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/07-map_comparison.png" alt="drawing" style="width: 50%;"/>
+   <img src="{{site.url}}/assets/2021-04-15-YOLO-Experiment/07-map_comparison.png" alt="drawing" style="width: 100%;"/>
     </a>
    <figcaption>Distortion Image Comparison Bar Graph</figcaption>
 </div>

@@ -3,6 +3,8 @@
   <meta name="generator" content="Jekyll v3.8.5" />
   <meta property="og:title" content="Your awesome title" />
   <meta property="og:locale" content="en_US" />
+  <!-- <meta name="referrer" content="no-referrer" /> -->
+  <!-- <meta name="referrer" content="no-referrer" /> -->
   <meta name="description" content="Personal Tech Blog" />
   <meta property="og:description" content="Personal Tech Blog" />
   <link rel="canonical" href="https://localhost:4000/" />
@@ -22,7 +24,8 @@
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
 <link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<body style="background: #e3e3d3;">
+<!-- <body style="background: #e3e3d3;"> -->
+<body style="background: #F8F8F5;">
 	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
     
     <a href="http://localhost:4001/index.html" class="navbar-brand">主页 ZIZHUN GUO</a>
@@ -47,8 +50,22 @@
 </nav>
 
 
-	<section id="page-container" class="container-fluid my-5 py-5" style="background: #f6f6f6; width: 100%;">
-	<div class="jumbotron text-center" style="background: #f6f6f6;">
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #F8F8F5; width: 100%;">
+	<!-- <div class="jumbotron text-center" style="background: #FAF3E0;">
+		<h1 class="display-3">Yolo机制第一部分 YOLO Mechanism Part I: Anchor Box, IoU, Confidence, NMS</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		<p class="lead"><span>作者: </span>
+		</p>
+		<p class="lead">写于： <time datetime="">
+		<p class="lead">写于 <time datetime="" 年 >
+			31 Mar 2021
+		</time>
+		</p>
+	</div> -->
+</section>
+
+<div class="container">
+	<div class="jumbotron text-center align-items-start col-14" style="background: #F8F8F5;">
 		<h1 class="display-3">Yolo机制第一部分 YOLO Mechanism Part I: Anchor Box, IoU, Confidence, NMS</h1>
 		<p class="lead"><span>Author: Zizhun Guo</span>
 		<p class="lead"><span>作者: </span>
@@ -58,10 +75,9 @@
 			31 Mar 2021
 		</time>
 		</p>
-	</div>		
-
-<div class="jumbotron" style="background: #f6f6f6; padding: 0rem 0rem;">
-	<p><!-- ├── Project
+	</div>
+	<p>
+		<!-- ├── Project
    ├── classification
    │   ├── adversarial
    │   ├── contrast020
@@ -84,7 +100,7 @@
 <p>Object Detection is a regression task that neural networks are required to output not only the predicting score and class for an object but also the bounding boxes. Figure 3 shows the basic mechanism of Yolo networks as the one-staged object detector.</p>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/01-mechanism.png">
-   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/01-mechanism.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/01-mechanism.png" alt="drawing" style="width: 100%;" />
     </a>
    <figcaption>YOLO Mechanism</figcaption>
 </div>
@@ -98,7 +114,7 @@
 <p>The input image is sized in (m, 416, 416, 3), whereas m represents the number of batches set by the practitioners, (416, 416) represents the pixel numbers for the weight and height of the input images, and the 3 represents the channels numbers as RGB channels.</p>
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/02-input-output.png">
-   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/02-input-output.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/02-input-output.png" alt="drawing" style="width: 100%;" />
     </a>
    <figcaption>Original Input Image vs Images in cells</figcaption>
 </div>
@@ -121,7 +137,7 @@
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/03-encodings.png">
-   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/03-encodings.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/03-encodings.png" alt="drawing" style="width: 100%;" />
     </a>
    <figcaption>Encoding in (13, 13, 3, 7)</figcaption>
 </div>
@@ -134,7 +150,7 @@
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/04-anchor-boxes.png">
-   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/04-anchor-boxes.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/04-anchor-boxes.png" alt="drawing" style="width: 100%;" />
     </a>
    <figcaption>3 Anchor Boxes for single route of feature maps</figcaption>
 </div>
@@ -151,7 +167,7 @@
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/05-IoU.png">
-   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/05-IoU.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/05-IoU.png" alt="drawing" style="width: 100%;" />
     </a>
    <figcaption>Bounding Box example</figcaption>
 </div>
@@ -174,7 +190,7 @@
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/06-decode.png">
-   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/06-decode.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/06-decode.png" alt="drawing" style="width: 100%;" />
     </a>
    <figcaption>Bounding Box Decode</figcaption>
 </div>
@@ -187,7 +203,7 @@
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/07-confidence.png">
-   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/07-confidence.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/07-confidence.png" alt="drawing" style="width: 100%;" />
     </a>
 </div>
 
@@ -208,7 +224,7 @@
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/08-NMS.png">
-   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/08-NMS.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/08-NMS.png" alt="drawing" style="width: 100%;" />
     </a>
    <figcaption>NMSe</figcaption>
 </div>
@@ -225,7 +241,7 @@
 
 <div style="text-align: center;">
     <a href="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/09-loss.png">
-   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/09-loss.png" alt="drawing" style="width: 50%;" />
+   <img src="http://localhost:4001/assets/2021-03-31-YOLO-Mechanism/09-loss.png" alt="drawing" style="width: 100%;" />
     </a>
 </div>
 
@@ -238,12 +254,9 @@
 <hr />
 <p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
 
-</p>
 
+	</p>
 </div>
-
-
-</section>
 	
 	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
 
