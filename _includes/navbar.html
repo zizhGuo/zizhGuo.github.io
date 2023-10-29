@@ -1,24 +1,47 @@
 <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
     {% if page.title == "Home" %}
+    <!-- <a href="{{"/jekyll/update/projectss/2019/09/02/HongKong-Trip-copy-2.html" | prepend: site.url}}" class="navbar-brand">探索纽约罗切斯特</a> -->
+    <a href="https://baike.baidu.com/item/%E7%BD%97%E5%88%87%E6%96%AF%E7%89%B9/2190833" class="navbar-brand">探索纽约罗切斯特</a>
+    {% elsif page.title == "About" %}
     <a href="{{"/index.html" | prepend: site.url}}" class="navbar-brand">主页 ZIZHUN GUO</a>
+    {% elsif page.title == "Travel" %}
+    <!-- <a href="{{"/jekyll/update/projectss/2019/09/02/HongKong-Trip-copy-2.html" | prepend: site.url}}" class="navbar-brand">探索四川成都市</a> -->
+    <a href="https://baike.baidu.com/item/%E6%88%90%E9%83%BD%E5%B8%82?fromModule=lemma_search-box" class="navbar-brand">探索四川成都市</a>
     {% else %}
-    <a href="{{"/index.html" | prepend: site.url}}" class="navbar-brand">主页 ZIZHUN GUO</a>
+    <!-- <a href="{{"/index.html" | prepend: site.url}}" class="navbar-brand">主页 ZIZHUN GUO</a> -->
     {% endif %}
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav justify-content-end " >
-            <li class="nav-item text-right">
-                <a href="{{"/about.html" | prepend: site.url}}" class="nav-link">关于 ABOUT</a>
-            </li>
+            {% if page.title == "Home" %}
             <li class="nav-item text-right">
                 <a href="{{"/travel.html" | prepend: site.url}}" class="nav-link">旅行 TRAVEL</a>
             </li>
             <li class="nav-item text-right">
+                <a href="{{"/about.html" | prepend: site.url}}" class="nav-link">关于 ABOUT</a>
+            </li>
+            {% elsif page.title == "About" %}
+            <li class="nav-item text-right">
                 <!-- <a href="{{"/assets/Zizhun_Guo_Resume_202305.pdf" | prepend: site.url}}" class="nav-link">简历 RESUME</a> -->
                 <a href="{{"/assets/郭子谆简历resume202306.pdf" | prepend: site.url}}" class="nav-link">简历 RESUME</a>
             </li>
+            {% elsif page.title == "Travel" %}
+            <li class="nav-item text-right">
+                <a href="{{"/index.html" | prepend: site.url}}" class="nav-link">首页 INDEX</a>
+            </li>
+            <li class="nav-item text-right">
+                <a href="{{"/about.html" | prepend: site.url}}" class="nav-link">关于 ABOUT</a>
+            </li>
+            {% else %}
+            <li class="nav-item text-right">
+                <a href="{{"/index.html" | prepend: site.url}}" class="nav-link">首页 INDEX</a>
+            </li>
+            <li class="nav-item text-right">
+                <a href="{{"/about.html" | prepend: site.url}}" class="nav-link">关于 ABOUT</a>
+            </li>
+            {% endif %}
         </ul>
     </div>
 </nav>

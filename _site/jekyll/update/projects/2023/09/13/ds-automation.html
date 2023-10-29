@@ -50,13 +50,13 @@
 
 	<section id="page-container" class="container-fluid my-5 py-5" style="background: #F8F8F5; width: 100%;">
 	<!-- <div class="jumbotron text-center" style="background: #FAF3E0;">
-		<h1 class="display-3">Personal Website</h1>
+		<h1 class="display-3">分析生产管线自动化 Data Analytic Pipeline Automation</h1>
 		<p class="lead"><span>Author: Zizhun Guo</span>
 		<p class="lead"><span>作者: </span>
 		</p>
 		<p class="lead">写于： <time datetime="">
 		<p class="lead">写于 <time datetime="" 年 >
-			16 Jun 2019
+			13 Sep 2023
 		</time>
 		</p>
 	</div> -->
@@ -64,26 +64,45 @@
 
 <div class="container">
 	<div class="jumbotron text-center align-items-start col-14" style="background: #F8F8F5;">
-		<h1 class="display-3">Personal Website</h1>
+		<h1 class="display-3">分析生产管线自动化 Data Analytic Pipeline Automation</h1>
 		<p class="lead"><span>Author: Zizhun Guo</span>
 		<p class="lead"><span>作者: </span>
 		</p>
 		<p class="lead">写于： <time datetime="">
 		<!-- <p class="lead">写于 <time datetime="" 年 > -->
-			16 Jun 2019
+			13 Sep 2023
 		</time>
 		</p>
 	</div>
 	<p>
-		<p>用处：
-展示个人的信息，所以首先展示的信息是最重要的，个人网站的设计应该放大信息的传递的有效性，设计师可以展示个性，工程师可以展示信息，所以高校有的教师喜欢用plain html来发布课程信息。这完全取决于个人的诉求，好的设计可以有效地增强信息传递效率，同时避免用户因为不好的设计而浪费时间，但也不完全是这样，有时候出去业务考虑也会需要增强用户浏览网页的粘性。所以网页的功能和目的是最重要的。</p>
+		<h6 id="目录">目录</h6>
+<ul>
+  <li><a href="#目录">目录</a></li>
+  <li><a href="#为什么要自动化-why-go-auto">为什么要自动化 Why Go Auto</a></li>
+  <li><a href="#需求场景-request-scenarios">需求场景 Request Scenarios</a></li>
+  <li><a href="#精益法-lean-development">精益法 Lean Development</a></li>
+  <li><a href="#流程脚本化">流程脚本化</a></li>
+</ul>
 
-<p>我个人的网站的用途主要还是用来展示个人项目，所以信息的传递非常重要，从我开始规划制作网页，最简单直接的方法就是纯html，这满足了我的基本需求，但是对于信息的传递会有不好的影响，因为我需要考虑到查看我网页的受众，多数同学家人还有招聘方面的人员，所以网站需要基本的吸引力和亲和力能够让人们首先停留，其次有效的的信息传递就足够了。</p>
+<h6 id="为什么要自动化-why-go-auto">为什么要自动化 Why Go Auto</h6>
 
-<p>根据markdown file in the root working directory, 启动服务器会根据当前markdown文件提供的信息生成网页，提供的信息由title,category提供，配置文件会根据提供信息生成设计好的网页。
-所以开发者需要<strong>定义好</strong>每一个网页的属性。</p>
+<p>希腊神话中有一位王子叫西西弗斯，狡诈机智，因钻漏洞和不守约定而被冥王黑帝斯惩罚，每日推大石到陡峭的山峰，但在大石将要抵达山顶时从手中滑脱滚落，无止境地劳作。这个故事告诉我们三件事情：1. 事情在没成功之前都有失败的可能； 2. 希望破灭最为痛苦； 3. 重复是抹杀灵魂的一种方式。困难的事情不可怕，可怕的是相同的事情变得重复化。</p>
 
-<p>本质就是一个静态网页生成器，开始在服务器部署时会根据提供的配置信息直接一次性生成所有网页，每一次更新博客，都是相当于在GitHub 服务器上重新部署了一次。</p>
+<h6 id="需求场景-request-scenarios">需求场景 Request Scenarios</h6>
+
+<p>在平日的大数据分析挖掘工作中，相信很多从业者可能都会有这么一个感触，如果需求方一直不停地提出相同的需求，为了满足他们，工作不仅会变得饱和，而且会变得重复，因为大部分需求出发点是相似和固定的，变化的仅仅是约束条件，比如时间范围，分组对象。这部分工作则完全可以由T+1的形式，通过ETL数仓表的形式落地，也可以在BI dashboard通过前端渲染在web页面里，供业务方实时查阅。但那些介于中间形态的产品，比如一个刚刚提出的想法，一个粗略的需求，一个即插即用的统计报告，则很难落地为需要数仓人员正式落盘的排期任务，这种原始阶段“灵活”的提数需求满足，则会成为分析人员占用大量时间的工作内容。</p>
+
+<h6 id="精益法-lean-development">精益法 Lean Development</h6>
+
+<p>实际上问题的本质是，如何提高价值提交能力？我们已经迭代出了产品（已有查询统计代码），且用户满意（历史的统计结果有效性经过使用人员验证），和少量迭代需求（逻辑改动地方少）。不存在需要强调进度的连续性和可提高性，在这个情况下，采用Lean Development（精益法）的概念更为有效。精益法讲究精度和效率，简单讲叫“有的放矢，反应迅速”。在分析挖掘场景里，意味着需求的快速可实现，和实现结果高成功率。自动化完美满足这两个条件。</p>
+
+<h6 id="流程脚本化">流程脚本化</h6>
+
+<p>脚本化的目的是在于，所有人工的中间操作都由一条条脚本命令替代，这是工程师需要达到的能力，因为所有内容都是数据，存储在电脑内存和硬盘中，代码就是数字信息的搬运工，而信息只是通过一个又一个方法输入返回地重复，所以需要将操作流程原子化。</p>
+
+<hr />
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
 
 	</p>
 </div>
