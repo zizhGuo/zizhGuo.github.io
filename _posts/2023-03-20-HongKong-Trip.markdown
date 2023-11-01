@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "【编辑中】「旅行：香港」或许可以再找到一次曼哈顿距离 Hong Kong-meet Manhattan Distance again"
+title:  "【编辑中】「香港」或许可以再找到一次曼哈顿距离 HongKong - meet Manhattan Distance again"
 date:   2023-03-20 20:56:30
 author: Zizhun Guo
 authorCN: 郭子谆

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "【编辑中】「旅行：米兰"
+title:  "【编辑中】「米兰」时尚之都"
 date:   2016-02-02 20:56:30
 author: Zizhun Guo
 authorCN: 郭子谆

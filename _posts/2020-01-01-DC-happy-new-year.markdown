@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "【编辑中】「旅行：DC」美国首都 DC 2019-2020 New Year Trip"
+title:  "【编辑中】「特区」美国首都 DC 2019-2020 New Year Trip"
 date:   2020-01-01 17:56:30
 author: Zizhun Guo
 authorCN: 郭子谆

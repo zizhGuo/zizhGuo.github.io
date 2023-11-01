@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "【编辑中】罗切斯特"
+title:  "【编辑中】「罗切斯特」第二故乡"
 date:   2019-09-02 20:56:30
 author: Zizhun Guo
 authorCN: 郭子谆
