@@ -18,6 +18,7 @@ project: 1
     - [有提示词prompting completion](#有提示词prompting-completion)
     - [代码转译 Code convertion](#代码转译-code-convertion)
     - [代码纠错 Code debugging](#代码纠错-code-debugging)
+    - [代码行内聊天 Inline chat](#代码行内聊天-inline-chat)
 
 
 
@@ -39,8 +40,8 @@ Coplilet聚焦于代码编写，是否可以利用Copilot在平日的工作中�
 - 代码转译 Code convertion
     - 格式变更
     - 自然语言机器翻译
-- 代码纠错 Code debugging
-- 代码分析 Code analysis
+- 代码纠错 Code *debugging*
+- inline-chat 行内聊天实现纠错/解释/单元测试等功能
 
 
 #### 案例
@@ -82,5 +83,17 @@ Coplilet聚焦于代码编写，是否可以利用Copilot在平日的工作中�
 <figcaption> 自动检测代码错误，并给出更正代码 </figcaption>
 </div>
 
+###### 代码行内聊天 Inline chat 
+        
+使用按键组合 ctrl + I (windows) / cmd + shift + I 唤出copilot的代码行内聊天窗口，通过选定特定的代码，再提出合适的问题，copilot具备解决对代码的诸多功能，如代码解释，代码纠错，单元测试等功能。
+
+具体方式是在聊天窗口输入/explain，/fix，/tests等
+
+<div style="text-align: center;">
+<a href ="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/202310-copilot-1/inline_chat_fix_function.png">
+<img src="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/202310-copilot-1/inline_chat_fix_function.png" alt="drawing" style="width: 100%;"/>
+</a>
+<figcaption> </figcaption>
+</div>
 
 ---Copyright @ 2021 Zizhun Guo. All Rights Reserved.

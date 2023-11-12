@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2023-11-02T22:53:32+08:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">「苏州」随性的平江古城之行 - Suzhou DayTrip 第二日Day2</title><link href="http://localhost:4001/jekyll/update/projects/2023/10/22/Suzhou-Trip-Day2.html" rel="alternate" type="text/html" title="「苏州」随性的平江古城之行 - Suzhou DayTrip 第二日Day2" /><published>2023-10-22T05:26:20+08:00</published><updated>2023-10-22T05:26:20+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2023/10/22/Suzhou-Trip-Day2</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2023/10/22/Suzhou-Trip-Day2.html">&lt;p&gt;引子：谢谢你，苏州。谢谢，我们还会再见面的。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4001/" rel="alternate" type="text/html" /><updated>2023-11-12T23:13:31+08:00</updated><id>http://localhost:4001/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">「苏州」随性的平江古城之行 - Suzhou DayTrip 第二日Day2</title><link href="http://localhost:4001/jekyll/update/projects/2023/10/22/Suzhou-Trip-Day2.html" rel="alternate" type="text/html" title="「苏州」随性的平江古城之行 - Suzhou DayTrip 第二日Day2" /><published>2023-10-22T05:26:20+08:00</published><updated>2023-10-22T05:26:20+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2023/10/22/Suzhou-Trip-Day2</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2023/10/22/Suzhou-Trip-Day2.html">&lt;p&gt;引子：谢谢你，苏州。谢谢，我们还会再见面的。&lt;/p&gt;
 
 &lt;p&gt;今日制定了计划，并没有安排过多的随机性，原因还是很直接的，需要为明日的工作做一些准备。是的，这难得的day trip是目前我为数不多滕得出来的时间里挤出来的，在平日的工作间隙，能说走就走，并不是容易的事情（或许这是这次旅程可以教会我更多时间管理办法）。无论如何，我已把早晨划拨给我的工作了。由于日程中回上海的时间是订在下午五点，从中午开始，直到设定的必须赶去火车站的时间阈值，在这个区间内，都有着可以展现神奇的旅行随机性的机会。&lt;/p&gt;
 
@@ -264,6 +264,7 @@
       &lt;li&gt;&lt;a href=&quot;#有提示词prompting-completion&quot;&gt;有提示词prompting completion&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#代码转译-code-convertion&quot;&gt;代码转译 Code convertion&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#代码纠错-code-debugging&quot;&gt;代码纠错 Code debugging&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#代码行内聊天-inline-chat&quot;&gt;代码行内聊天 Inline chat&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -293,8 +294,8 @@
       &lt;li&gt;自然语言机器翻译&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;代码纠错 Code debugging&lt;/li&gt;
-  &lt;li&gt;代码分析 Code analysis&lt;/li&gt;
+  &lt;li&gt;代码纠错 Code &lt;em&gt;debugging&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;inline-chat 行内聊天实现纠错/解释/单元测试等功能&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;案例&quot;&gt;案例&lt;/h4&gt;
@@ -333,7 +334,21 @@
 &lt;figcaption&gt; 自动检测代码错误，并给出更正代码 &lt;/figcaption&gt;
 &lt;/div&gt;
 
-&lt;p&gt;—Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">目录 背景 影响 功能总结 案例 无提示词non-prompting completion 有提示词prompting completion 代码转译 Code convertion 代码纠错 Code debugging</summary></entry><entry><title type="html">「成都」2023国庆 夜逛府河 - Chengdu the National Holiday city-walk</title><link href="http://localhost:4001/jekyll/update/projects/2023/10/03/Walk-Chengdu-National-Holiday.html" rel="alternate" type="text/html" title="「成都」2023国庆 夜逛府河 - Chengdu the National Holiday city-walk" /><published>2023-10-03T04:13:20+08:00</published><updated>2023-10-03T04:13:20+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2023/10/03/Walk-Chengdu-National-Holiday</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2023/10/03/Walk-Chengdu-National-Holiday.html">&lt;h6 id=&quot;天仙桥滨河路&quot;&gt;天仙桥滨河路&lt;/h6&gt;
+&lt;h6 id=&quot;代码行内聊天-inline-chat&quot;&gt;代码行内聊天 Inline chat&lt;/h6&gt;
+
+&lt;p&gt;使用按键组合 ctrl + I (windows) / cmd + shift + I 唤出copilot的代码行内聊天窗口，通过选定特定的代码，再提出合适的问题，copilot具备解决对代码的诸多功能，如代码解释，代码纠错，单元测试等功能。&lt;/p&gt;
+
+&lt;p&gt;具体方式是在聊天窗口输入/explain，/fix，/tests等&lt;/p&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+&lt;a href=&quot;https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/202310-copilot-1/inline_chat_fix_function.png&quot;&gt;
+&lt;img src=&quot;https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/202310-copilot-1/inline_chat_fix_function.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/a&gt;
+&lt;figcaption&gt; &lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;—Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">目录 背景 影响 功能总结 案例 无提示词non-prompting completion 有提示词prompting completion 代码转译 Code convertion 代码纠错 Code debugging 代码行内聊天 Inline chat</summary></entry><entry><title type="html">QuestBee开源自动化beeline cmd生成工具 QuestBee Beeline CMD Genaration Tool （updating）</title><link href="http://localhost:4001/jekyll/update/projects/2023/10/04/QuestBee-open-source-automation-tool.html" rel="alternate" type="text/html" title="QuestBee开源自动化beeline cmd生成工具 QuestBee Beeline CMD Genaration Tool （updating）" /><published>2023-10-04T18:33:30+08:00</published><updated>2023-10-04T18:33:30+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2023/10/04/QuestBee-open-source-automation-tool</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2023/10/04/QuestBee-open-source-automation-tool.html">&lt;hr /&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">Copyright @ 2021 Zizhun Guo. All Rights Reserved.</summary></entry><entry><title type="html">「成都」2023国庆 夜逛府河 - Chengdu the National Holiday city-walk</title><link href="http://localhost:4001/jekyll/update/projects/2023/10/03/Walk-Chengdu-National-Holiday.html" rel="alternate" type="text/html" title="「成都」2023国庆 夜逛府河 - Chengdu the National Holiday city-walk" /><published>2023-10-03T04:13:20+08:00</published><updated>2023-10-03T04:13:20+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2023/10/03/Walk-Chengdu-National-Holiday</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2023/10/03/Walk-Chengdu-National-Holiday.html">&lt;h6 id=&quot;天仙桥滨河路&quot;&gt;天仙桥滨河路&lt;/h6&gt;
 
 &lt;p&gt;成都就是那种你走在街上，不管在哪里都有一种轻松悠闲感觉的城市。走在天仙桥滨河路上，这里比较宁静，游人略少，走过一家名叫Painkiller的酒吧，瞥见几个年轻人坐在patio座位上聊天，桌上躺着鸡尾酒，好像疼痛在这里并不存在。路过的BlackMirror Bar，你会觉得时间被吸进了Black Hole。但这里却是比较精致的，不像望平街的繁荣和嘈杂。走在河边，人群三三两两，有家人带小孩，也有依偎的情侣，这种感觉不会让然感到孤独和寂寞。&lt;/p&gt;
 
@@ -493,18 +508,82 @@
 &lt;/div&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projectss" /><summary type="html"></summary></entry><entry><title type="html">【编辑中】「香港」或许可以再找到一次曼哈顿距离 HongKong - meet Manhattan Distance again</title><link href="http://localhost:4001/jekyll/update/projectss/2023/03/21/HongKong-Trip.html" rel="alternate" type="text/html" title="【编辑中】「香港」或许可以再找到一次曼哈顿距离 HongKong - meet Manhattan Distance again" /><published>2023-03-21T04:56:30+08:00</published><updated>2023-03-21T04:56:30+08:00</updated><id>http://localhost:4001/jekyll/update/projectss/2023/03/21/HongKong-Trip</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projectss/2023/03/21/HongKong-Trip.html">&lt;p&gt;香港位于中国南部、珠江口以东，西与中国澳门隔海相望，北与深圳市相邻，南临珠海市万山群岛，距广州市约200公里。 区域范围包括香港岛、九龙、新界和周围的262个岛屿。 陆地总面积为1106.3平方公里，其中港岛80.7平方公里，九龙46.9平方公里，新界978.7平方公里。 海域面积为1648.7平方公里。&lt;/p&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projectss" /><summary type="html"></summary></entry><entry><title type="html">【编辑中】「香港」再一次探寻曼哈顿距离 HongKong - Explore Manhattan Distance again</title><link href="http://localhost:4001/jekyll/update/projectss/2023/03/21/HongKong-Trip.html" rel="alternate" type="text/html" title="【编辑中】「香港」再一次探寻曼哈顿距离 HongKong - Explore Manhattan Distance again" /><published>2023-03-21T04:56:30+08:00</published><updated>2023-03-21T04:56:30+08:00</updated><id>http://localhost:4001/jekyll/update/projectss/2023/03/21/HongKong-Trip</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projectss/2023/03/21/HongKong-Trip.html">&lt;h4 id=&quot;曼哈顿距离-manhattan-distance&quot;&gt;曼哈顿距离 Manhattan Distance&lt;/h4&gt;
 
-&lt;div style=&quot;text-align: center;&quot;&gt;
-   &lt;img src=&quot;https://picx.zhimg.com/v2-146621bee7fee71d27ca46d64bf61fcf_1440w.jpg?source=d16d100b&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot; /&gt;
-&lt;/div&gt;
+&lt;p&gt;計程車幾何（Taxicab geometry）或曼哈頓距離（英語：Manhattan distance/Manhattan length）或方格線距離是由十九世紀的赫尔曼·闵可夫斯基所創辭彙，為歐幾里得幾何度量空間的幾何學之用語，用以標明兩個點上在標準坐標系上的絕對軸距之總和。 - Wikipedia&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;It’s been a while since my last journey, but after wrapping up work in Beijing, I embarked on a short adventure with my friend Da. We headed to HongKong, a destination unfamiliar to both of us.&lt;/p&gt;
+&lt;!-- &lt;div style=&quot;text-align: center;&quot;&gt;
+   &lt;img src=&quot;https://picx.zhimg.com/v2-146621bee7fee71d27ca46d64bf61fcf_1440w.jpg?source=d16d100b&quot; alt=&quot;drawing&quot; style=&quot;width: 70%;&quot;/&gt;
+&lt;/div&gt; --&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projectss" /><summary type="html">香港位于中国南部、珠江口以东，西与中国澳门隔海相望，北与深圳市相邻，南临珠海市万山群岛，距广州市约200公里。 区域范围包括香港岛、九龙、新界和周围的262个岛屿。 陆地总面积为1106.3平方公里，其中港岛80.7平方公里，九龙46.9平方公里，新界978.7平方公里。 海域面积为1648.7平方公里。</summary></entry><entry><title type="html">大数据查询语句总结 SQL summary in one (updating)</title><link href="http://localhost:4001/jekyll/update/projects/2022/04/17/SQL_summary-copy.html" rel="alternate" type="text/html" title="大数据查询语句总结 SQL summary in one (updating)" /><published>2022-04-17T17:33:30+08:00</published><updated>2022-04-17T17:33:30+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2022/04/17/SQL_summary%20copy</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2022/04/17/SQL_summary-copy.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projectss" /><summary type="html">曼哈顿距离 Manhattan Distance</summary></entry><entry><title type="html">图绘破解SQL窗函数之道 Cracking the Illustrated SQL Window Function</title><link href="http://localhost:4001/jekyll/update/projects/2022/12/22/Cracking-the-SQL-window-function.html" rel="alternate" type="text/html" title="图绘破解SQL窗函数之道 Cracking the Illustrated SQL Window Function" /><published>2022-12-22T05:26:20+08:00</published><updated>2022-12-22T05:26:20+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2022/12/22/Cracking-the-SQL-window-function</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2022/12/22/Cracking-the-SQL-window-function.html">&lt;h6 id=&quot;目录&quot;&gt;目录&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-机制介绍-mechanism-introduction&quot;&gt;1. 机制介绍 Mechanism Introduction&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-aggregation-in-dictionary&quot;&gt;1.1 Aggregation in dictionary&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-图解分组聚合-illustrated-group-by-aggregation&quot;&gt;1.2 图解分组聚合 Illustrated Group-by Aggregation&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-图解窗函数聚合-illustrated-window-function-aggregation&quot;&gt;1.3 图解窗函数聚合 Illustrated Window Function Aggregation&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#14-分组聚合的局限性-the-limitation-of-group-by-aggregation&quot;&gt;1.4 分组聚合的局限性 The limitation of Group-by Aggregation&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#15-窗函数聚合的优势&quot;&gt;1.5 窗函数聚合的优势&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-机制介绍-mechanism-introduction&quot;&gt;1. 机制介绍 Mechanism Introduction&lt;/h4&gt;
+
+&lt;h6 id=&quot;11-aggregation-in-dictionary&quot;&gt;1.1 Aggregation in dictionary&lt;/h6&gt;
+
+&lt;p&gt;Merriam-Webster字典中，‘aggregation’的意思是‘&lt;strong&gt;a group, body, or mass composed of many distinct parts or individuals&lt;/strong&gt;’，这里的意思非常抽象。首先解释一下分组，在SQL中，我们使用记录来字段来区分分组，也就是说不同记录在相同的字段的值时，可被分为相同的组；在相同的组内，我们计算一些共同的性质来代表这个组，就是聚合了。更具体一点，我们有一张表，有两个字段，一个是颜色，一个是数字，那么我们可以使用颜色作为分组的依据，那么所有红色的记录就是一个分组，所有绿色的记录就是一个分组，所有蓝色的记录就是一个分组，以此类推。那么在每个分组内，我们可以计算数字的平均值，那么这个平均值就是这个分组的聚合值。这就是分组聚合的过程。&lt;/p&gt;
+
+&lt;h6 id=&quot;12-图解分组聚合-illustrated-group-by-aggregation&quot;&gt;1.2 图解分组聚合 Illustrated Group-by Aggregation&lt;/h6&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+&lt;a href=&quot;https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/1.png&quot;&gt;
+&lt;img src=&quot;https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/1.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/a&gt;
+&lt;figcaption&gt; 图解分组聚合 &lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;但实质上，见图中左边部分（右边已经讲过了）的抽象解答，我用小正方体表示一条记录，那么左图表示的是：用颜色作为立方体的分组依据，用聚合的立方体边长和数字来代表分组的共同特性。那么可以看出，左边三个小方块的颜色是一样的，那么他们就是一个分组，而他们的数字分别是3，4，5，那么他们的聚合值就是4（这里的聚合值选择是平均数），因此大红色的立方体的中间就是4，且边长是3（这里代表聚合的计数）。同理，绿色小方块分组的个数和平均值亦在大绿色立方体的属性中有所体现。这就是分组聚合的过程。而在结构表中中，这样的过程更容易理解，因为我们可以直接看到每一条记录的值，和他们聚合后的新字段的值。&lt;/p&gt;
+
+&lt;h6 id=&quot;13-图解窗函数聚合-illustrated-window-function-aggregation&quot;&gt;1.3 图解窗函数聚合 Illustrated Window Function Aggregation&lt;/h6&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+&lt;a href=&quot;https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/2.png&quot;&gt;
+&lt;img src=&quot;https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/2.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/a&gt;
+&lt;figcaption&gt; 图解窗函数聚合 &lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;窗函数的区别，我使用了另一张图来解答，可以观察到，相比于分组聚合图中小方块转变为代表分组后的共有特征值，我们使用窗函数后，首先所有原始实体的所有属性均获得保留，这体现在红色和绿色的小方块的数量，颜色和数字都没有变化。但是，我们在窗函数中，使用了聚合函数，这里我使用了平均数和计数，那么我们可以看到，新的红色和绿色大方块的的数字增加了平均值，而且其边长也改变为对应原颜色的小方块的数量，这个数字和边长就是聚合函数的结果，也就是说，我们在窗函数中，使用聚合函数，但是不会丢失原始记录的信息，而是在原始记录的基础上，增加了聚合函数的结果。这就是窗函数和普通分组聚合的区别。&lt;/p&gt;
+
+&lt;h6 id=&quot;14-分组聚合的局限性-the-limitation-of-group-by-aggregation&quot;&gt;1.4 分组聚合的局限性 The limitation of Group-by Aggregation&lt;/h6&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+&lt;a href=&quot;https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/3.png&quot;&gt;
+&lt;img src=&quot;https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/3.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/a&gt;
+&lt;figcaption&gt; 分组聚合示意图&lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;分组聚合压缩了表中记录的数据，而窗函数聚合记录数保持相同&lt;/li&gt;
+  &lt;li&gt;同一个Query（不做union，sub-query或者关联join等）中分组聚合针对同一种分组进行，难以组合不同分组维度的聚合值，而窗函数可以在统一额表中不通分组维度（不同的窗）进行，且组合得到不同分组维度的聚合值&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h6 id=&quot;15-窗函数聚合的优势&quot;&gt;1.5 窗函数聚合的优势&lt;/h6&gt;
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+&lt;a href=&quot;https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/4.png&quot;&gt;
+&lt;img src=&quot;https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/4.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
+&lt;/a&gt;
+&lt;figcaption&gt; 窗函数聚合示意图 &lt;/figcaption&gt;
+&lt;/div&gt;
+
+&lt;p&gt;窗函数聚合可以通过设置不同的窗（类似分组group by概念，在SQL中通过over clause语句中的partition by来实现），以实现不通分组维度的聚合值可以集成在同一张表的结果里。事实上，窗函数的执行也是在Select语句执行完成后，对结果集使用不同窗进行统计分析，后续我会提到，这里可以看图理解。&lt;/p&gt;
+
+&lt;p&gt;—Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html">目录 1. 机制介绍 Mechanism Introduction 1.1 Aggregation in dictionary 1.2 图解分组聚合 Illustrated Group-by Aggregation 1.3 图解窗函数聚合 Illustrated Window Function Aggregation 1.4 分组聚合的局限性 The limitation of Group-by Aggregation 1.5 窗函数聚合的优势</summary></entry><entry><title type="html">大数据查询语句总结 SQL summary in one (updating)</title><link href="http://localhost:4001/jekyll/update/projects/2022/04/17/SQL_summary-copy.html" rel="alternate" type="text/html" title="大数据查询语句总结 SQL summary in one (updating)" /><published>2022-04-17T17:33:30+08:00</published><updated>2022-04-17T17:33:30+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2022/04/17/SQL_summary%20copy</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2022/04/17/SQL_summary-copy.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -826,351 +905,6 @@ select * from v3 where.....
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;to be continued….&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">层级聚类探查游戏玩家类型 Agglomerative Clustering on Detecting Types of Gamers</title><link href="http://localhost:4001/jekyll/update/projects/2022/01/12/Teen-Game-Clustering.html" rel="alternate" type="text/html" title="层级聚类探查游戏玩家类型 Agglomerative Clustering on Detecting Types of Gamers" /><published>2022-01-12T20:33:30+08:00</published><updated>2022-01-12T20:33:30+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2022/01/12/Teen-Game-Clustering</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2022/01/12/Teen-Game-Clustering.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;1-background-and-goals&quot;&gt;1. Background and Goals&lt;/h4&gt;
-
-&lt;p&gt;A large-scale study to examine the relationship between specific gaming experiences and teens’ civic activities and commitments, has been conducted by Pew Research Center in 2007. This dataset contains varied categories of features produced from thousands of teen respondents in the US, which help to reveal the level of fondness of teenagers across different video game genres.&lt;/p&gt;
-
-&lt;p&gt;There are 12 game genres. They are atomic, distinguishable and in binary values, share a similar status quo in the physical meaning, that by selecting and composing them, it would form different segments whereas each of them could represent a type of player group. A simple calculation of how many possible player groups: 2^12 = 4096. That said, most players are not favoring all genres, or at least most of them. Plus, we only have 1000+ respondents from the dataset.&lt;/p&gt;
-
-&lt;p&gt;Clustering for types of gamers based on game genres&lt;/p&gt;
-
-&lt;p&gt;To discover the posible respondents segmentation to find the game genres pattern. The author decided to exploit Aggolomerative Clustering ML algorithm to get the data insights.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-description&quot;&gt;2. Description&lt;/h4&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Feature&lt;/th&gt;
-      &lt;th&gt;Game Genre&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;‘k14a’&lt;/td&gt;
-      &lt;td&gt;‘fighting games’&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;‘k14b’&lt;/td&gt;
-      &lt;td&gt;‘puzzle games’&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;‘k14c’&lt;/td&gt;
-      &lt;td&gt;‘action games’&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;‘k14d’&lt;/td&gt;
-      &lt;td&gt;‘FPS games’&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;‘k14e’&lt;/td&gt;
-      &lt;td&gt;‘strategy games’&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;‘k14f’&lt;/td&gt;
-      &lt;td&gt;‘simulation games’&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;‘k14g’&lt;/td&gt;
-      &lt;td&gt;‘sports games’&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;‘k14h’&lt;/td&gt;
-      &lt;td&gt;‘RPG games’&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;‘k14i’&lt;/td&gt;
-      &lt;td&gt;‘adventure games’&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;‘k14j’&lt;/td&gt;
-      &lt;td&gt;‘racing games’&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;‘k14k’&lt;/td&gt;
-      &lt;td&gt;‘rhythm games’&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;‘k14l’&lt;/td&gt;
-      &lt;td&gt;‘survival horror games’&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&quot;3-statistics&quot;&gt;3. Statistics&lt;/h4&gt;
-
-&lt;!-- &apos;k14a&apos;,&apos;fighting games&apos;
-&apos;k14b&apos;,&apos;puzzle games&apos;
-&apos;k14c&apos;,&apos;action games&apos;
-&apos;k14d&apos;,&apos;FPS games&apos;
-&apos;k14e&apos;,&apos;strategy games&apos;
-&apos;k14f&apos;,&apos;simulation games&apos;
-&apos;k14g&apos;,&apos;sports games&apos;
-&apos;k14h&apos;,&apos;RPG games&apos;
-&apos;k14i&apos;,&apos;adventure games&apos;
-&apos;k14j&apos;,&apos;racing games&apos;
-&apos;k14k&apos;,&apos;rhythm games&apos;
-&apos;k14l&apos;,&apos;survival horror games&apos; --&gt;
-
-&lt;h6 id=&quot;data-preprocessing&quot;&gt;Data Preprocessing&lt;/h6&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Check out if the pandas DataFrame contains an anomaly or nan values. By looking out the unique values, we find that there are several anomalies (the answer is 9) and a few 8, but they are not many. Therefore, quickly drop these samples and in total the DataFrame has 1051 left (50 out).&lt;/li&gt;
-  &lt;li&gt;The original answer setting for k14 question is 1 for Yes 2 for No. Reset No to 0 for normalization, hence, to limit the mean score between the range of 0 to 1.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h6 id=&quot;statistic-description&quot;&gt;Statistic Description&lt;/h6&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/statistics.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/statistics.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
-   &lt;/a&gt;
-   &lt;figcaption&gt;Table 1: Game Genres Statistics &lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;From Table 1, k14b (puzzle games) and k14j (racing game) have the highest mean scores for voting, which indicates most respondents prefer them. It can be also noticed k14l (horror games) has the lowest mean scores which imply it is not popular at all.&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/hist_game_genres.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/hist_game_genres.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
-   &lt;/a&gt;
-   &lt;figcaption&gt;Fig 1: The distribution of Game Genres &lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Fig 1 shows a binary distribution trend that some groups of game genres are popular like puzzle games, racing games, sports games, action games and adventure games, while at the same time, the other groups of games are less like to be favored of like survival horror games, RPG games, FPS games and fighting games.&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/corr.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/corr.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
-   &lt;/a&gt;
-   &lt;figcaption&gt;Fig 2: Correlation Matrix for game genres &lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;To further testify the grouping assumption, from Fig 8 correlation matrix, k14d (FPS games) and k14a (fighting games) are slightly correlated. Other pairs like k14c (action games) and k14d (FPS games) are just similar to k14d and k14a. The correlation matrix shows an interesting discovery, FPS games, fighting games, and action games may share some common traits that they might come from a same cluster and belongs to some type of player characteristics.&lt;/p&gt;
-
-&lt;h4 id=&quot;4-clustering&quot;&gt;4. Clustering&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;To explore the relationship between different clusters and discover more possibilities of the clustering hierarchy, the Agglomerative Clustering method is used. The tool to implement clustering is Scikit-learn and SciPy.&lt;/li&gt;
-  &lt;li&gt;There are several options of clustering results based on the variable of distance threshold to choose. One possible clustering partitioning show below:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.cluster&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AgglomerativeClustering&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scipy.cluster.hierarchy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dendrogram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fcluster&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;plot_dendrogram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;children_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;n_samples&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labels_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;merge&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;children_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;current_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;child_idx&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;child_idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_samples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;current_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# leaf node
-&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;current_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;child_idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_samples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;current_count&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;linkage_matrix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column_stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;children_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distances_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                                      &lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;dendrogram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linkage_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;clustering&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linkage_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;labels_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fcluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linkage_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;criterion&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;maxclust&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;n_labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unique&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labels_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;clusters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;means&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;index_columns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;label_counts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;clusters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labels_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;means&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labels_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;index_columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;cluster{}&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;label_counts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;labels_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;clusters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clusters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;mean_matrix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;around&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;means&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clusters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index_columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mean_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;label_counts&lt;/span&gt;
-
-
-    &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AgglomerativeClustering&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;distance_threshold&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_clusters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;Hierarchical Clustering Dendrogram&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# plot the top three levels of the dendrogram
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;linkage_matrix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plot_dendrogram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;truncate_mode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;level&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color_threshold&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xlabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Sample Index&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ylabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Distance(Ward)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/den7.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/den7.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
-   &lt;/a&gt;
-   &lt;figcaption&gt;Fig 3: Dendrogram for clustering &lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;h6 id=&quot;clusters-found-and-partitioning-reason&quot;&gt;Clusters found and partitioning reason&lt;/h6&gt;
-
-&lt;p&gt;There are 7 clusters in Fig 3 the dendrogram. To make sure the clustering has 7 clusters, the distance threshold has a relatively wide range to select. If the number of clusters moves to 5, 4 or 3, the distances threshold get larger ranged which would potentially merge the distinctive clusters and lose diverse persona images for different types of respondents gamers.&lt;/p&gt;
-
-&lt;p&gt;To further check the game genre preferences for the players in 7 clusters, the mean scores array for each cluster is produced in order to make a heatmap, this would help find the unique pattern for different types of players.&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/hm7.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/hm7.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
-   &lt;/a&gt;
-   &lt;figcaption&gt;Fig 4: Heatmap for mean game genre score given by respondents &lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;h6 id=&quot;description-for-7-clusters&quot;&gt;Description for 7 clusters&lt;/h6&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Cluster 1: Hardcore gamers – specifically favor exciting games that help stimulate adrenaline. Horror and survival games are their favorites. They also play sports games, fighting games and action games. They do accept racing games and adventure games.&lt;/li&gt;
-  &lt;li&gt;Cluster 2: Well-round gamers – play all sorts of games and are willing to try. However, their favorite game is strategy games. They are also in the explorer type player.&lt;/li&gt;
-  &lt;li&gt;Cluster 3: Non-player – they do not play games quite often.&lt;/li&gt;
-  &lt;li&gt;Cluster 4: Light gamers – they only play puzzles and rhythm games which apart themselves from other respondents. There are studies proving these gamers are more female targeting prone and mobile end incline.&lt;/li&gt;
-  &lt;li&gt;Cluster 5:  Car, Gun &amp;amp; Ball gamers – as the counterpart cluster to Cluster 4, these gamers like player FPS games, action games, racing games and sports games. Studies existed they seem mostly male gender.&lt;/li&gt;
-  &lt;li&gt;Cluster 6: Casual Gamers – these gamers don’t like fast-paced or thrill experiences but acceptable to all kinds of casual types of games including puzzle games, strategy games, sports games, adventure games.&lt;/li&gt;
-  &lt;li&gt;Cluster 7: Role-play gamers – they like playing virtual character‘s life, enjoying having a second virtual life with characters they like in the games. They focus on experiences. They like playing adventure games and RPG games.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;5-summary&quot;&gt;5. Summary&lt;/h4&gt;
-
-&lt;p&gt;Based on reference: https://www.pewresearch.org/internet/2008/09/16/teens-video-games-and-civics/, the respondents top 3 games from © are listed in the table below:&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/summary.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/summary.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
-   &lt;/a&gt;
-   &lt;figcaption&gt;Fig 5: 10 most frequently player games &lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;p&gt;From Fig 5, the top 3 games by number of votes are Guitar Hero (rhythm games), Halo3 (FPS games) and Madden NFL (sports games)&lt;/p&gt;
-
-&lt;div style=&quot;text-align: center;&quot;&gt;
-    &lt;a href=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/clusters.png&quot;&gt;
-   &lt;img src=&quot;http://localhost:4001/assets/2022-01-12-Teen-Game-Clustering/clusters.png&quot; alt=&quot;drawing&quot; style=&quot;width: 100%;&quot; /&gt;
-   &lt;/a&gt;
-   &lt;figcaption&gt;Fig 6: Distribution of 7 clusters &lt;/figcaption&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The top 4 types of gamers (top 4 clusters) based on the respondent’s count are cluster2 (Well-round gamers), cluster5 (Car, Gun &amp;amp; Ball gamers), cluster6 (Casual Gamers) and cluster4 (Light gamers).&lt;/li&gt;
-  &lt;li&gt;For cluster2 respondents, they play all kinds of games and most sports games (0.95 mean score). For cluster5 respondents, they play sports games (0.82) as well and also FPS games (0.84). For respondents in cluster6 and cluster4, they play sports games and rhythm games a lot (0.74, 0.96).&lt;/li&gt;
-  &lt;li&gt;Therefore, the summation of the respondent counts of these clusters supports the top game report that the genres of the top 3 most mentioned games line up with the clustering results.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry><entry><title type="html">亚马逊云-S3与Pyspark数据载入管线 Working with AWS S3 and Pyspark with s3a filesystem</title><link href="http://localhost:4001/jekyll/update/projects/2021/09/05/Read-CSV-S3.html" rel="alternate" type="text/html" title="亚马逊云-S3与Pyspark数据载入管线 Working with AWS S3 and Pyspark with s3a filesystem" /><published>2021-09-05T20:33:30+08:00</published><updated>2021-09-05T20:33:30+08:00</updated><id>http://localhost:4001/jekyll/update/projects/2021/09/05/Read-CSV-S3</id><content type="html" xml:base="http://localhost:4001/jekyll/update/projects/2021/09/05/Read-CSV-S3.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h4 id=&quot;manually-config&quot;&gt;Manually Config&lt;/h4&gt;
-
-&lt;h6 id=&quot;step-1-get-packages&quot;&gt;Step 1: Get Packages&lt;/h6&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws/3.2.0&quot;&gt;Maven Download Hadoop-aws 3.2.0&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bundle/1.11.375&quot;&gt;Maven Download AWS SDK For Java&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Move two packages to $SPARK_HOME/jars&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h6 id=&quot;step-2-configuration&quot;&gt;Step 2: Configuration&lt;/h6&gt;
-&lt;ul&gt;
-  &lt;li&gt;Option 1:
-    &lt;ul&gt;
-      &lt;li&gt;Load jars in script in python:&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;findspark&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;findspark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;/home/XXX/spark-3.1.2-bin-hadoop3.2&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pyspark.sql&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SparkSession&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SparkSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;appName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SparkByExamples.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;\
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;spark.driver.extraClassPath&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;\
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;spark.executor.extraClassPath&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;./spark-3.1.2-bin-hadoop3.2/jars/hadoop-aws-3.2.0.jar:./spark-3.1.2-bin-hadoop3.2/jars/aws-java-sdk-bundle-1.11.375.jar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;\
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getOrCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;Option 2:
-    &lt;ul&gt;
-      &lt;li&gt;Set up local configuration file: &lt;strong&gt;spark-default.conf&lt;/strong&gt; in &lt;strong&gt;$SPARK_HOME/conf/&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spark.executor.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
-spark.driver.extraClassPath /jars/aws-java-sdk-bundle-1.11.375.jar:/lib/hadoop-aws-3.2.0.jar
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Once the configuration has done, there is no need to configure again unless the extra jars file are deleted.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h6 id=&quot;step-3-connect-to-s3-with-acesskey-and-secretkey-using-s3a&quot;&gt;Step 3: Connect to S3 with AcessKey and SecretKey using s3a://&lt;/h6&gt;
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_jsc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hadoopConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fs.s3a.access.key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;XXX&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_jsc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hadoopConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fs.s3a.secret.key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;XXX&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;sc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_jsc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hadoopConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fs.s3a.endpoint&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;s3.amazonaws.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;step-4-read-remote-csv-file&quot;&gt;Step 4: Read remote CSV file&lt;/h6&gt;
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;s3a://bucket-name/object-name&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h4 id=&quot;using-spark_homebinspark-submit-package-&quot;&gt;Using $SPARK_HOME/bin/spark-submit –package []&lt;/h4&gt;
-&lt;p&gt;Unfortunately this does not works in my case and keep beeping me.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ubuntu@xxx:~/spark-3.1.2-bin-hadoop3.2$ bin/spark-submit --packages org.apache.hadoop:hadoop-aws:3.2.0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Error: Missing application resource.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Help:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Usage: spark-submit [options] &amp;lt;app jar | python file | R file&amp;gt; [app arguments]
-...
---packages      Comma-separated list of maven coordinates of jars to include
-                on the driver and executor classpaths. Will search the local
-                maven repo, then maven central and any additional remote
-                repositories given by --repositories. The format for the
-                coordinates should be groupId:artifactId:version.
-...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;resources&quot;&gt;Resources&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://community.cloudera.com/t5/Support-Questions/Can-anyone-explain-spark-driver-extraclasspath-and-spark/td-p/224267&quot;&gt;Can anyone explain spark.driver.extraclasspath and spark.executor.extraclasspath and –jars&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/41886346/spark-2-1-0-session-config-settings-pyspark&quot;&gt;Spark 2.1.0 &lt;strong&gt;session config settings&lt;/strong&gt; (pyspark): show you all of the current config settings&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/ramhiser/spark-kubernetes/issues/3&quot;&gt;Exception: No FileSystem for scheme: s3, s3n, and s3a&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/SPARK-15965&quot;&gt;No FileSystem for scheme: s3n or s3a spark-2.0.0 and spark-1.6.1
-&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/51434808/spark-submit-packages-vs-jars&quot;&gt;Spark-Submit: –packages vs –jars&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/luofazha2012/article/details/80954958&quot;&gt;Spark应用依赖jar包的添加解决方案&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/1e3bfa1d9835&quot;&gt;spark-submit 如何添加 jar 包到 Spark Job&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://spark.apache.org/docs/latest/configuration.html#application-properties&quot;&gt;Spark: Spark Configuration&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://spark.apache.org/docs/latest/submitting-applications.html&quot;&gt;Spark: Submitting Applications&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/50183915/how-can-i-read-from-s3-in-pyspark-running-in-local-mode&quot;&gt;How can I read from S3 in pyspark running in local mode?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/32155617/connect-to-s3-data-from-pyspark&quot;&gt;&lt;strong&gt;Connect to S3 data from PySpark&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/54358250/how-to-get-csv-on-s3-with-pyspark-no-filesystem-for-scheme-s3n&quot;&gt;How to get csv on s3 with pyspark (No FileSystem for scheme: s3n)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;tutorial&quot;&gt;Tutorial&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://codelovingyogi.medium.com/pyspark-connect-to-aws-s3a-filesystem-82bee54e0812&quot;&gt;pyspark connect to aws s3a filesystem&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://notadatascientist.com/running-apache-spark-and-s3-locally/&quot;&gt;Running Apache Spark and S3 locally&lt;/a&gt;
--&lt;a href=&quot;https://sparkbyexamples.com/spark/spark-read-text-file-from-s3/&quot;&gt;Spark Read Text File from AWS S3 bucket&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://towardsai.net/p/programming/pyspark-aws-s3-read-write-operations&quot;&gt;PySpark AWS S3 Read Write Operations&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blog.qiuqiu.info/12/04/2016/spark-datesource-s3-beijing-region&quot;&gt;aws中国区踩坑：spark从s3中读文件&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.insightdatascience.com/how-to-access-s3-data-from-spark-74e40e0b2231&quot;&gt;How to access S3 data from Spark&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://sparkbyexamples.com/spark/write-read-csv-file-from-s3-into-dataframe/&quot;&gt;Write &amp;amp; Read CSV file from S3 into DataFrame&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://mrpowers.medium.com/working-with-s3-and-spark-locally-1374bb0a354&quot;&gt;Working with S3 and Spark Locally&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;hr /&gt;
 &lt;p&gt;Copyright @ 2021 Zizhun Guo. All Rights Reserved.&lt;/p&gt;</content><author><name>Zizhun Guo</name></author><category term="Projects" /><summary type="html"></summary></entry></feed>

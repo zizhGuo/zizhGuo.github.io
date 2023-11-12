@@ -1,0 +1,172 @@
+<head>
+  <title>Zizhun Guo</title>
+  <meta name="generator" content="Jekyll v3.8.5" />
+  <meta property="og:title" content="Your awesome title" />
+  <meta property="og:locale" content="en_US" />
+  <!-- <meta name="referrer" content="no-referrer" /> -->
+  <!-- <meta name="referrer" content="no-referrer" /> -->
+  <meta name="description" content="Personal Tech Blog" />
+  <meta property="og:description" content="Personal Tech Blog" />
+  <link rel="canonical" href="https://localhost:4000/" />
+  <meta property="og:url" content="https://localhost:4000/" />
+  <meta property="og:site_name" content="Zizhun Guo Space" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="user-scalable=yes, initial-scale=0.6, maximum-scale=0.5, minimum-scale=0.5, width=device-width, height=device-height, target-densitydpi=medium-dpi" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<!-- <body style="background: #e3e3d3;"> -->
+<body style="background: #F8F8F5;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <!-- <a href="http://localhost:4001/index.html" class="navbar-brand">主页 ZIZHUN GUO</a> -->
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/index.html" class="nav-link">首页 INDEX</a>
+            </li>
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/travel.html" class="nav-link">旅行 TRAVEL</a>
+            </li>
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #F8F8F5; width: 100%;">
+	<!-- <div class="jumbotron text-center" style="background: #FAF3E0;">
+		<h1 class="display-3">图绘破解SQL窗函数之道 Cracking the Illustrated SQL Window Function</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		<p class="lead"><span>作者: 郭子谆</span>
+		</p>
+		<p class="lead">写于： <time datetime="">
+		<p class="lead">写于 <time datetime="" 年 >
+			22 Dec 2022
+		</time>
+		</p>
+	</div> -->
+</section>
+
+<div class="container">
+	<div class="jumbotron text-center align-items-start col-14" style="background: #F8F8F5;">
+		<h1 class="display-3">图绘破解SQL窗函数之道 Cracking the Illustrated SQL Window Function</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		<p class="lead"><span>作者: 郭子谆</span>
+		</p>
+		<p class="lead">写于： <time datetime="">
+		<!-- <p class="lead">写于 <time datetime="" 年 > -->
+			22 Dec 2022
+		</time>
+		</p>
+	</div>
+	<p>
+		<h6 id="目录">目录</h6>
+<ul>
+  <li><a href="#1-机制介绍-mechanism-introduction">1. 机制介绍 Mechanism Introduction</a>
+    <ul>
+      <li><a href="#11-aggregation-in-dictionary">1.1 Aggregation in dictionary</a></li>
+      <li><a href="#12-图解分组聚合-illustrated-group-by-aggregation">1.2 图解分组聚合 Illustrated Group-by Aggregation</a></li>
+      <li><a href="#13-图解窗函数聚合-illustrated-window-function-aggregation">1.3 图解窗函数聚合 Illustrated Window Function Aggregation</a></li>
+      <li><a href="#14-分组聚合的局限性-the-limitation-of-group-by-aggregation">1.4 分组聚合的局限性 The limitation of Group-by Aggregation</a></li>
+      <li><a href="#15-窗函数聚合的优势">1.5 窗函数聚合的优势</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="1-机制介绍-mechanism-introduction">1. 机制介绍 Mechanism Introduction</h4>
+
+<h6 id="11-aggregation-in-dictionary">1.1 Aggregation in dictionary</h6>
+
+<p>Merriam-Webster字典中，‘aggregation’的意思是‘<strong>a group, body, or mass composed of many distinct parts or individuals</strong>’，这里的意思非常抽象。首先解释一下分组，在SQL中，我们使用记录来字段来区分分组，也就是说不同记录在相同的字段的值时，可被分为相同的组；在相同的组内，我们计算一些共同的性质来代表这个组，就是聚合了。更具体一点，我们有一张表，有两个字段，一个是颜色，一个是数字，那么我们可以使用颜色作为分组的依据，那么所有红色的记录就是一个分组，所有绿色的记录就是一个分组，所有蓝色的记录就是一个分组，以此类推。那么在每个分组内，我们可以计算数字的平均值，那么这个平均值就是这个分组的聚合值。这就是分组聚合的过程。</p>
+
+<h6 id="12-图解分组聚合-illustrated-group-by-aggregation">1.2 图解分组聚合 Illustrated Group-by Aggregation</h6>
+
+<div style="text-align: center;">
+<a href="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/1.png">
+<img src="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/1.png" alt="drawing" style="width: 100%;" />
+</a>
+<figcaption> 图解分组聚合 </figcaption>
+</div>
+
+<p>但实质上，见图中左边部分（右边已经讲过了）的抽象解答，我用小正方体表示一条记录，那么左图表示的是：用颜色作为立方体的分组依据，用聚合的立方体边长和数字来代表分组的共同特性。那么可以看出，左边三个小方块的颜色是一样的，那么他们就是一个分组，而他们的数字分别是3，4，5，那么他们的聚合值就是4（这里的聚合值选择是平均数），因此大红色的立方体的中间就是4，且边长是3（这里代表聚合的计数）。同理，绿色小方块分组的个数和平均值亦在大绿色立方体的属性中有所体现。这就是分组聚合的过程。而在结构表中中，这样的过程更容易理解，因为我们可以直接看到每一条记录的值，和他们聚合后的新字段的值。</p>
+
+<h6 id="13-图解窗函数聚合-illustrated-window-function-aggregation">1.3 图解窗函数聚合 Illustrated Window Function Aggregation</h6>
+
+<div style="text-align: center;">
+<a href="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/2.png">
+<img src="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/2.png" alt="drawing" style="width: 100%;" />
+</a>
+<figcaption> 图解窗函数聚合 </figcaption>
+</div>
+
+<p>窗函数的区别，我使用了另一张图来解答，可以观察到，相比于分组聚合图中小方块转变为代表分组后的共有特征值，我们使用窗函数后，首先所有原始实体的所有属性均获得保留，这体现在红色和绿色的小方块的数量，颜色和数字都没有变化。但是，我们在窗函数中，使用了聚合函数，这里我使用了平均数和计数，那么我们可以看到，新的红色和绿色大方块的的数字增加了平均值，而且其边长也改变为对应原颜色的小方块的数量，这个数字和边长就是聚合函数的结果，也就是说，我们在窗函数中，使用聚合函数，但是不会丢失原始记录的信息，而是在原始记录的基础上，增加了聚合函数的结果。这就是窗函数和普通分组聚合的区别。</p>
+
+<h6 id="14-分组聚合的局限性-the-limitation-of-group-by-aggregation">1.4 分组聚合的局限性 The limitation of Group-by Aggregation</h6>
+
+<div style="text-align: center;">
+<a href="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/3.png">
+<img src="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/3.png" alt="drawing" style="width: 100%;" />
+</a>
+<figcaption> 分组聚合示意图</figcaption>
+</div>
+
+<ol>
+  <li>分组聚合压缩了表中记录的数据，而窗函数聚合记录数保持相同</li>
+  <li>同一个Query（不做union，sub-query或者关联join等）中分组聚合针对同一种分组进行，难以组合不同分组维度的聚合值，而窗函数可以在统一额表中不通分组维度（不同的窗）进行，且组合得到不同分组维度的聚合值</li>
+</ol>
+
+<h6 id="15-窗函数聚合的优势">1.5 窗函数聚合的优势</h6>
+
+<div style="text-align: center;">
+<a href="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/4.png">
+<img src="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/Cracking-the-SQL-window-function/4.png" alt="drawing" style="width: 100%;" />
+</a>
+<figcaption> 窗函数聚合示意图 </figcaption>
+</div>
+
+<p>窗函数聚合可以通过设置不同的窗（类似分组group by概念，在SQL中通过over clause语句中的partition by来实现），以实现不通分组维度的聚合值可以集成在同一张表的结果里。事实上，窗函数的执行也是在Select语句执行完成后，对结果集使用不同窗进行统计分析，后续我会提到，这里可以看图理解。</p>
+
+<p>—Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+	</p>
+</div>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>
