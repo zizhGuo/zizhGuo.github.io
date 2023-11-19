@@ -16,6 +16,9 @@ project: 1
     - [1.3 图解窗函数聚合 Illustrated Window Function Aggregation](#13-图解窗函数聚合-illustrated-window-function-aggregation)
     - [1.4 分组聚合的局限性 The limitation of Group-by Aggregation](#14-分组聚合的局限性-the-limitation-of-group-by-aggregation)
     - [1.5 窗函数聚合的优势](#15-窗函数聚合的优势)
+- [2. 窗函数定义](#2-窗函数定义)
+    - [2.1 多方来源](#21-多方来源)
+    - [2.2 统一公式](#22-统一公式)
 
 
 
@@ -69,5 +72,38 @@ Merriam-Webster字典中，‘aggregation’的意思是‘**a group, body, or m
 </div>
 
 窗函数聚合可以通过设置不同的窗（类似分组group by概念，在SQL中通过over clause语句中的partition by来实现），以实现不通分组维度的聚合值可以集成在同一张表的结果里。事实上，窗函数的执行也是在Select语句执行完成后，对结果集使用不同窗进行统计分析，后续我会提到，这里可以看图理解。
+
+#### 2. 窗函数定义
+
+###### 2.1 多方来源
+```
+Hive
+windowing function / analytic function + the over clause
+```
+
+```
+AWS
+window function + window
+window: window partitioning + window ordering + window frame
+```
+
+```
+Microsoft
+ranking function / aggregate function / analytic functions + over clause
+over cluase ::= [partition by clause] [order by clause] [window frame clause]
+```
+
+
+###### 2.2 统一公式
+
+- function + windowing 函数+窗
+- function + window clause + window frame 函数+窗语句+窗框
+- 这里的函数特指各类聚合函数，排序函数，和分析函数等，用于对字段值的处理
+- 窗语句则是定义筛选字段范围和排序规则的语句
+- 窗框则是定义窗的大小和位置的语句
+
+### 3. 典型使用场景
+
+###### 3.1 
 
 ---Copyright @ 2021 Zizhun Guo. All Rights Reserved.

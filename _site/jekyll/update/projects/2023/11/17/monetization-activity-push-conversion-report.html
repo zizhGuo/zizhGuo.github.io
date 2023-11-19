@@ -1,0 +1,570 @@
+<head>
+  <title>Zizhun Guo</title>
+  <meta name="generator" content="Jekyll v3.8.5" />
+  <meta property="og:title" content="Your awesome title" />
+  <meta property="og:locale" content="en_US" />
+  <!-- <meta name="referrer" content="no-referrer" /> -->
+  <!-- <meta name="referrer" content="no-referrer" /> -->
+  <meta name="description" content="Personal Tech Blog" />
+  <meta property="og:description" content="Personal Tech Blog" />
+  <link rel="canonical" href="https://localhost:4000/" />
+  <meta property="og:url" content="https://localhost:4000/" />
+  <meta property="og:site_name" content="Zizhun Guo Space" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="user-scalable=yes, initial-scale=0.6, maximum-scale=0.5, minimum-scale=0.5, width=device-width, height=device-height, target-densitydpi=medium-dpi" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="application/ld+json">
+{"@type":"WebSite","url":"https://localhost:4000/","name":"Your awesome title","headline":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/css/app.css">
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<!-- <body style="background: #e3e3d3;"> -->
+<body style="background: #F8F8F5;">
+	<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    
+    <!-- <a href="http://localhost:4001/index.html" class="navbar-brand">主页 ZIZHUN GUO</a> -->
+    
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+        <ul class="navbar-nav justify-content-end " >
+            
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/index.html" class="nav-link">首页 INDEX</a>
+            </li>
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/travel.html" class="nav-link">旅行 TRAVEL</a>
+            </li>
+            <li class="nav-item text-right">
+                <a href="http://localhost:4001/about.html" class="nav-link">关于 ABOUT</a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+
+
+	<section id="page-container" class="container-fluid my-5 py-5" style="background: #F8F8F5; width: 100%;">
+	<!-- <div class="jumbotron text-center" style="background: #FAF3E0;">
+		<h1 class="display-3">游戏商业化运营-活动推送转化报表 Cracking the activity conversion report task</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		<p class="lead"><span>作者: 郭子谆</span>
+		</p>
+		<p class="lead">写于： <time datetime="">
+		<p class="lead">写于 <time datetime="" 年 >
+			17 Nov 2023
+		</time>
+		</p>
+	</div> -->
+</section>
+
+<div class="container">
+	<div class="jumbotron text-center align-items-start col-14" style="background: #F8F8F5;">
+		<h1 class="display-3">游戏商业化运营-活动推送转化报表 Cracking the activity conversion report task</h1>
+		<p class="lead"><span>Author: Zizhun Guo</span>
+		<p class="lead"><span>作者: 郭子谆</span>
+		</p>
+		<p class="lead">写于： <time datetime="">
+		<!-- <p class="lead">写于 <time datetime="" 年 > -->
+			17 Nov 2023
+		</time>
+		</p>
+	</div>
+	<p>
+		<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<ul>
+  <li><a href="#1-任务介绍-task-introduction">1. 任务介绍 Task Introduction</a>
+    <ul>
+      <li><a href="#11-目的">1.1 目的</a></li>
+      <li><a href="#12-报表产出形式">1.2 报表产出形式</a></li>
+    </ul>
+  </li>
+  <li><a href="#2-日志表介绍-log-table-introduction">2. 日志表介绍 Log Table Introduction</a>
+    <ul>
+      <li><a href="#21-活动推送表-activity-push-log">2.1 活动推送表 Activity Push Log</a></li>
+      <li><a href="#22-用户登录表-user-login-log">2.2 用户登录表 User Login Log</a></li>
+      <li><a href="#23-用户订单表-user-order-log">2.3 用户订单表 User Order Log</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-挑战-challenge">3. 挑战 Challenge</a></li>
+  <li><a href="#4-实现方案">4. 实现方案</a>
+    <ul>
+      <li><a href="#41-产出要求和解决方法">4.1 产出要求和解决方法</a></li>
+      <li><a href="#42-活动推送用户登录订单明细表开发流程设计">4.2 活动推送用户登录订单明细表开发流程设计</a></li>
+      <li><a href="#43-sql代码">4.3 SQL代码</a></li>
+      <li><a href="#5-执行工具">5. 执行工具</a></li>
+      <li><a href="#6-误差评估">6. 误差评估</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="1-任务介绍-task-introduction">1. 任务介绍 Task Introduction</h4>
+
+<h6 id="11-目的">1.1 目的</h6>
+
+<p>对于手机游戏来讲，活动礼包推送在游戏商业化运营中所占比重巨大，在正确的时间给正确的人推送正确的礼包（价格和内容）是需要技巧经验的技术活，我们不能期盼着用户始终对产品不离不弃，哪怕是我们认定的忠实用户，也需要不断的激励和回馈。因此，我们需要对活动推送的转化效果进行监控，以便于我们对活动推送的效果进行评估，从而优化活动推送的效果。</p>
+
+<h6 id="12-报表产出形式">1.2 报表产出形式</h6>
+
+<table>
+  <thead>
+    <tr>
+      <th>push_date</th>
+      <th>level_group</th>
+      <th>goods_price</th>
+      <th>total_users</th>
+      <th>login_users</th>
+      <th>paid_users</th>
+      <th>total_revenue</th>
+      <th>paid_percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2023-11-11</td>
+      <td>1-5</td>
+      <td>6</td>
+      <td>1000</td>
+      <td>500</td>
+      <td>100</td>
+      <td>600</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>2023-11-18</td>
+      <td>1-5</td>
+      <td>6</td>
+      <td>1200</td>
+      <td>600</td>
+      <td>130</td>
+      <td>780</td>
+      <td>20%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>以上报表为某次活动推送的转化报表，其中：
+push_date：活动推送日期
+level_group：活动推送等级组
+goods_price：活动推送礼包价格
+total_users：活动推送用户总数
+login_users：活动推送用户中登陆用户数
+paid_users：活动推送用户中付费用户数
+total_revenue：活动推送用户中付费用户的总收入
+paid_percentage：活动推送用户中付费用户占比</p>
+
+<p>对于案例中2023-11-11和2023-11-18两次活动推送，该报表记录了两次活动推送的转化效果，其中2023-11-11的活动推送等级组为1-5，礼包价格为6，活动推送用户总数为1000，登陆用户数为500，付费用户数为100，付费用户总收入为600，付费用户占比为20%。同理，2023-11-18的活动推送等级组为1-5，礼包价格为6，活动推送用户总数为1200，登陆用户数为600，付费用户数为130，付费用户总收入为780，付费用户占比为20%。</p>
+
+<p>如何产出该报表，是本文的主要内容。</p>
+
+<h4 id="2-日志表介绍-log-table-introduction">2. 日志表介绍 Log Table Introduction</h4>
+
+<h6 id="21-活动推送表-activity-push-log">2.1 活动推送表 Activity Push Log</h6>
+
+<p>日志表: ods_game_activity_push_log</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>uid</th>
+      <th>level</th>
+      <th>createtime</th>
+      <th>endtime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1001</td>
+      <td>5</td>
+      <td>2023-11-18 08:00:00</td>
+      <td>2023-11-18 08:30:00</td>
+    </tr>
+    <tr>
+      <td>1002</td>
+      <td>7</td>
+      <td>2023-11-18 09:00:00</td>
+      <td>2023-11-18 09:45:00</td>
+    </tr>
+    <tr>
+      <td>1003</td>
+      <td>10</td>
+      <td>2023-11-18 10:00:00</td>
+      <td>2023-11-18 11:00:00</td>
+    </tr>
+    <tr>
+      <td>1004</td>
+      <td>12</td>
+      <td>2023-11-18 11:15:00</td>
+      <td>2023-11-18 12:15:00</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>该日志表记录了活动推送的用户，等级组，生效时间和失效时间，其中生效时间和失效时间是活动推送的生效时间区间，例如1001用户在2023-11-18 08:00:00到2023-11-18 08:30:00这个时间段内，可以看到活动推送的内容，而1001用户在2023-11-18 08:00:00之前或者2023-11-18 08:30:00之后，都无法看到活动推送的内容。</p>
+
+<h6 id="22-用户登录表-user-login-log">2.2 用户登录表 User Login Log</h6>
+
+<p>日志表: ods_user_login_log</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>uid</th>
+      <th>logintime</th>
+      <th>logouttime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1001</td>
+      <td>2023-11-18 07:45:00</td>
+      <td>2023-11-18 08:35:00</td>
+    </tr>
+    <tr>
+      <td>1002</td>
+      <td>2023-11-18 08:50:00</td>
+      <td>2023-11-18 09:50:00</td>
+    </tr>
+    <tr>
+      <td>1003</td>
+      <td>2023-11-18 09:55:00</td>
+      <td>2023-11-18 11:05:00</td>
+    </tr>
+    <tr>
+      <td>1004</td>
+      <td>2023-11-18 11:10:00</td>
+      <td>2023-11-18 12:20:00</td>
+    </tr>
+    <tr>
+      <td>1001</td>
+      <td>2023-11-18 12:30:00</td>
+      <td>2023-11-18 13:00:00</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>该日志表记录了用户的登陆和登出时间，其中登陆时间和登出时间是用户的登陆时间区间，例如1001用户在2023-11-18 07:45:00到2023-11-18 08:35:00这个时间段内，登陆了游戏，而1001用户在2023-11-18 07:45:00之前或者2023-11-18 08:35:00之后，都没有登陆游戏。</p>
+
+<h6 id="23-用户订单表-user-order-log">2.3 用户订单表 User Order Log</h6>
+
+<p>日志表: ods_order_log</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>uid</th>
+      <th>createtime</th>
+      <th>price</th>
+      <th>good</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1001</td>
+      <td>2023-11-18 08:05:00</td>
+      <td>6</td>
+      <td>Game Credits</td>
+    </tr>
+    <tr>
+      <td>1002</td>
+      <td>2023-11-18 09:10:00</td>
+      <td>648</td>
+      <td>Expansion Pack</td>
+    </tr>
+    <tr>
+      <td>1003</td>
+      <td>2023-11-18 10:20:00</td>
+      <td>128</td>
+      <td>Power Boost</td>
+    </tr>
+    <tr>
+      <td>1004</td>
+      <td>2023-11-18 11:30:00</td>
+      <td>6.00</td>
+      <td>Cosmetic Item</td>
+    </tr>
+    <tr>
+      <td>1001</td>
+      <td>2023-11-18 08:40:00</td>
+      <td>18</td>
+      <td>Subscription</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>该日志表记录了用户的订单，其中订单时间是用户的订单时间，例如1001用户在2023-11-18 08:05:00购买了6元的游戏币，而1001用户在2023-11-18 08:05:00之前或者2023-11-18 08:05:00之后，都没有购买过6元的游戏币。</p>
+
+<h4 id="3-挑战-challenge">3. 挑战 Challenge</h4>
+
+<ul>
+  <li>SQL实现角度
+    <ul>
+      <li>时间区间重合判定：需要对个时间点进行范围判断</li>
+      <li>转换涉及到多种类型的用户行为埋点日志：逻辑相对比普通单表报表指标复杂</li>
+      <li>没有推送批次号：只能通过日期分组，日期需要creattime换算</li>
+    </ul>
+  </li>
+  <li>性能角度
+    <ul>
+      <li>扫描量巨大：需要对每个用户的每个批次的生效时间区间进行判定</li>
+      <li>产出时间要求：需要在有限时间内产出日报</li>
+      <li>集群资源有限：需要在有限的集群资源下4核32g，保证产出效率</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="4-实现方案">4. 实现方案</h4>
+
+<h6 id="41-产出要求和解决方法">4.1 产出要求和解决方法</h6>
+
+<p>产出要求</p>
+<ul>
+  <li>所有字段均可通过SQL实现</li>
+  <li>有限时间内产出日报</li>
+  <li>在有限的集群资源下，保证产出效率</li>
+</ul>
+
+<p>解决方法</p>
+<ul>
+  <li>数据建模分层：现生成明细表再基于明细表产出日报</li>
+  <li>数据查询分片：按照批次分片，每个批次单独产出明细表，每两个批次对比</li>
+  <li>自动化定时任务：使用crontab定时任务，每天凌晨自动产出明细表和日报</li>
+  <li>优化SQL：
+    <ul>
+      <li>使用窗函数，减少数据扫描量</li>
+      <li>使用分区表，减少数据扫描量</li>
+      <li>使用临时表，减少数据扫描量</li>
+      <li>使用SQL生成工具
+        <ul>
+          <li>减少人工编写SQL的时间</li>
+          <li>减少人工编写SQL的错误率</li>
+          <li>减少人工编写SQL的重复率</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h6 id="42-活动推送用户登录订单明细表开发流程设计">4.2 活动推送用户登录订单明细表开发流程设计</h6>
+
+<div style="text-align: center;">
+<a href="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/2023-11-monetization-activity-push-conversion-report/process_diagram.jpg">
+<img src="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/2023-11-monetization-activity-push-conversion-report/process_diagram.jpg" alt="drawing" style="width: 100%;" />
+</a>
+<figcaption> 流程图 </figcaption>
+</div>
+
+<h6 id="43-sql代码">4.3 SQL代码</h6>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- SQL 1</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">db</span><span class="p">.</span><span class="n">activity_push_batch_uid</span> <span class="k">AS</span>
+<span class="k">SELECT</span>
+    <span class="n">uid</span>
+    <span class="p">,</span><span class="k">level</span>
+    <span class="p">,</span><span class="n">createtime</span>
+    <span class="p">,</span><span class="n">endtime</span>
+    <span class="p">,</span><span class="n">dense_rank</span><span class="p">()</span> <span class="n">over</span><span class="p">(</span><span class="k">order</span> <span class="k">by</span> <span class="n">hour</span><span class="p">(</span><span class="n">createtime</span><span class="p">),</span> <span class="k">minute</span><span class="p">(</span><span class="n">createtime</span><span class="p">))</span> <span class="k">as</span> <span class="n">batch</span>
+<span class="k">FROM</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">ods_game_activity_push_log</span>
+<span class="k">WHERE</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="s1">'2023-10-10'</span>
+<span class="k">order</span> <span class="k">by</span>
+    <span class="n">createtime</span> <span class="k">asc</span><span class="p">;</span>
+</code></pre></div></div>
+<p>SQL 1: 使用活动推送日志’2023-10-10’的分区表，并按照createtime排序，生成批次号，统计粒度为<strong>小时-分钟</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- SQL 2</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">if</span> <span class="k">not</span> <span class="k">exists</span> <span class="n">db</span><span class="p">.</span><span class="n">activity_push_batch_createtime</span> <span class="k">AS</span>
+<span class="k">SELECT</span>
+    <span class="n">batch</span>
+    <span class="p">,</span><span class="n">createtime</span>
+    <span class="p">,</span><span class="n">endtime</span>
+<span class="k">FROM</span>
+    <span class="p">(</span>
+        <span class="k">SELECT</span>
+            <span class="n">createtime</span>
+            <span class="p">,</span><span class="n">endtime</span>
+            <span class="p">,</span><span class="n">batch</span>
+            <span class="p">,</span><span class="n">row_number</span><span class="p">()</span> <span class="n">over</span> <span class="p">(</span><span class="n">partition</span> <span class="k">by</span> <span class="n">hour</span><span class="p">(</span><span class="n">createtime</span><span class="p">),</span> <span class="k">minute</span><span class="p">(</span><span class="n">createtime</span><span class="p">)</span> <span class="k">order</span> <span class="k">by</span> <span class="n">createtime</span> <span class="k">asc</span><span class="p">)</span> <span class="k">as</span> <span class="n">rank</span>
+        <span class="k">FROM</span>
+            <span class="n">db</span><span class="p">.</span><span class="n">activity_push_batch_uid</span> <span class="n">T</span>
+            <span class="p">)</span> <span class="n">t</span>
+<span class="k">WHERE</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">rank</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">;</span>
+
+</code></pre></div></div>
+<p>SQL 2: 使用SQL 1生成的批次号，按照批次号分组，取每组第一条记录的createtime和endtime，作为该批次的生效时间区间</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- SQL 3</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">db</span><span class="p">.</span><span class="n">bv_logint_logout</span> <span class="n">uid</span> <span class="k">AS</span>
+<span class="k">WITH</span> <span class="n">A</span> <span class="k">as</span> <span class="p">(</span>
+<span class="k">SELECT</span> 
+    <span class="n">uid</span>
+    <span class="p">,</span><span class="n">logintime</span> <span class="k">as</span> <span class="n">login_logout_time</span>
+<span class="k">FROM</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">ods_user_login_log</span>
+<span class="k">WHERE</span>
+    <span class="n">dt</span> <span class="o">&gt;=</span> <span class="s1">'2023-10-10'</span> <span class="k">and</span> <span class="n">dt</span> <span class="o">&lt;</span> <span class="s1">'2023-10-13'</span>
+<span class="k">UNION</span>
+<span class="k">SELECT</span> 
+    <span class="n">uid</span>
+    <span class="p">,</span><span class="n">logouttime</span> <span class="k">as</span> <span class="n">login_logout_time</span>
+<span class="k">FROM</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">ods_user_login_log</span>
+<span class="k">WHERE</span>
+    <span class="n">dt</span> <span class="o">&gt;=</span> <span class="s1">'2023-10-10'</span> <span class="k">and</span> <span class="n">dt</span> <span class="o">&lt;</span> <span class="s1">'2023-10-13'</span>
+<span class="p">)</span>
+
+<span class="k">SELECT</span>
+    <span class="k">DISTINCT</span> 
+    <span class="n">T</span><span class="p">.</span><span class="n">batch</span>
+    <span class="p">,</span><span class="n">A</span><span class="p">.</span><span class="n">uid</span>
+<span class="k">FROM</span>
+    <span class="n">A</span>
+<span class="k">INNER</span> <span class="k">JOIN</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">activity_push_batch_createtime</span> <span class="n">T</span>
+<span class="k">on</span>
+    <span class="n">A</span><span class="p">.</span><span class="n">login_logout_time</span> <span class="o">&gt;=</span> <span class="n">T</span><span class="p">.</span><span class="n">createtime</span>
+    <span class="k">and</span> <span class="n">A</span><span class="p">.</span><span class="n">login_logout_time</span> <span class="o">&lt;=</span> <span class="n">T</span><span class="p">.</span><span class="n">endtime</span>
+<span class="p">;</span>
+
+</code></pre></div></div>
+<p>SQL 3: 使用玩家登陆日志’2023-10-10’到’2023-10-13’的分区表, 得到登陆登出时间字段，使用SQL 2生成的批次号，过滤出每个批次的登陆登出记录，得到每个批次的登陆用户</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- SQL 4</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">guozizhun</span><span class="p">.</span><span class="n">game_god_grant_push_batch_order_20231020</span> <span class="k">AS</span>
+<span class="k">WITH</span> <span class="n">A</span> <span class="k">AS</span> <span class="p">(</span>
+    <span class="k">SELECT</span>
+        <span class="n">uid</span>
+        <span class="p">,</span><span class="n">createtime</span>
+        <span class="p">,</span><span class="n">price</span>
+        <span class="p">,</span><span class="n">goodid</span>
+    <span class="k">FROM</span>
+        <span class="n">db</span><span class="p">.</span><span class="n">ods_order_log</span>
+    <span class="k">WHERE</span>
+        <span class="n">dt</span> <span class="o">&gt;=</span> <span class="s1">'2023-10-10'</span> <span class="k">and</span> <span class="n">dt</span> <span class="o">&lt;</span> <span class="s1">'2023-10-13'</span>
+<span class="p">)</span>
+<span class="p">,</span>
+<span class="n">B</span> <span class="k">AS</span> <span class="p">(</span>
+    <span class="k">SELECT</span>
+        <span class="n">A</span><span class="p">.</span><span class="n">uid</span>
+        <span class="p">,</span><span class="n">T</span><span class="p">.</span><span class="n">batch</span>
+        <span class="p">,</span><span class="n">A</span><span class="p">.</span><span class="n">createtime</span>
+        <span class="p">,</span><span class="n">A</span><span class="p">.</span><span class="n">price</span>
+        <span class="p">,</span><span class="n">A</span><span class="p">.</span><span class="n">goodid</span>
+    <span class="k">FROM</span>
+        <span class="n">A</span>
+    <span class="k">INNER</span> <span class="k">JOIN</span>
+        <span class="n">db</span><span class="p">.</span><span class="n">activity_push_batch_createtime</span> <span class="n">T</span>
+    <span class="k">on</span>
+        <span class="n">A</span><span class="p">.</span><span class="n">createtime</span> <span class="o">&gt;=</span> <span class="n">T</span><span class="p">.</span><span class="n">createtime</span>
+        <span class="k">and</span> <span class="n">A</span><span class="p">.</span><span class="n">createtime</span> <span class="o">&lt;=</span> <span class="n">T</span><span class="p">.</span><span class="n">endtime</span>
+<span class="p">)</span>
+
+<span class="k">SELECT</span>
+    <span class="n">A</span><span class="p">.</span><span class="o">*</span>
+    <span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">batch</span>
+    <span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">uid</span>
+    <span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">createtime</span> <span class="k">as</span> <span class="n">ordertime</span>
+    <span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">price</span>
+    <span class="p">,</span><span class="n">B</span><span class="p">.</span><span class="n">goodid</span>
+    <span class="p">,</span><span class="n">DATEDIFF</span><span class="p">(</span><span class="nb">DATE</span><span class="p">(</span><span class="n">B</span><span class="p">.</span><span class="n">createtime</span><span class="p">),</span> <span class="nb">DATE</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">createtime</span><span class="p">))</span> <span class="k">as</span> <span class="n">days_from_createtime</span>
+<span class="k">FROM</span>
+    <span class="n">guozizhun</span><span class="p">.</span><span class="n">bv_logint_logout</span> <span class="n">A</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span>
+    <span class="n">B</span>
+<span class="k">on</span>
+    <span class="n">A</span><span class="p">.</span><span class="n">uid</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">uid</span>
+    <span class="k">and</span> <span class="n">A</span><span class="p">.</span><span class="n">batch</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">batch</span>
+<span class="p">;</span>
+
+</code></pre></div></div>
+<p>SQL 4: 使用玩家订单日志’2023-10-10’到’2023-10-13’的分区表, 得到订单时间字段，使用SQL 2生成的批次号，过滤出每个批次的订单记录，通过left join得到对应每个批次的订单记录，得到每个批次的订单用户</p>
+
+<h6 id="5-执行工具">5. 执行工具</h6>
+
+<ul>
+  <li>QuestBee beeline cmd generating tool</li>
+  <li>Hive</li>
+  <li>crontab</li>
+  <li>Microsoft Excel</li>
+</ul>
+
+<h6 id="6-误差评估">6. 误差评估</h6>
+
+<p>按照小时-分钟分组，并取每组第一条记录的时间作为该组时间，会造成误差，根据具体产出任务需要统计登陆转化和订单转化，</p>
+
+<p>参考以下文档对误差定义，也可求助于大模型
+<a href="https://docs.citrix.com/zh-cn/citrix-virtual-apps-desktops/director/data-retention.html">https://docs.citrix.com/zh-cn/citrix-virtual-apps-desktops/director/data-retention.html</a></p>
+
+<ul>
+  <li>误差人数
+    <ul>
+      <li>定义
+        <ul>
+          <li>正确人数：时间=生效时间</li>
+          <li>误差人数：时间&gt;生效时间</li>
+        </ul>
+      </li>
+      <li>影响
+        <ul>
+          <li>误差人数的比例和分布</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>考虑因素
+    <ul>
+      <li>该小时分钟的订单分布</li>
+      <li>该小时和分钟登陆分布</li>
+    </ul>
+  </li>
+  <li>如何计算
+    <ul>
+      <li>发生误差的用户的行为发生率占所有行为发生的比例</li>
+      <li>加权平均误差：加权平均误差=∑(时间偏差×该偏差的数据占比)</li>
+      <li>误差人数占比：误差人数占比=误差人数/总人数</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<p>Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
+
+	</p>
+</div>
+	
+	<a href="#page-container" style="position:fixed;right:0;bottom:0">Back to Top</a>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			$(document).scroll(function () {
+				var $nav = $("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	</script>
+</body>
+</html>

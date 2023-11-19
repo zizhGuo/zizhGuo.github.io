@@ -89,6 +89,12 @@
       <li><a href="#15-窗函数聚合的优势">1.5 窗函数聚合的优势</a></li>
     </ul>
   </li>
+  <li><a href="#2-窗函数定义">2. 窗函数定义</a>
+    <ul>
+      <li><a href="#21-多方来源">2.1 多方来源</a></li>
+      <li><a href="#22-统一公式">2.2 统一公式</a></li>
+    </ul>
+  </li>
 </ul>
 
 <h4 id="1-机制介绍-mechanism-introduction">1. 机制介绍 Mechanism Introduction</h4>
@@ -143,6 +149,37 @@
 </div>
 
 <p>窗函数聚合可以通过设置不同的窗（类似分组group by概念，在SQL中通过over clause语句中的partition by来实现），以实现不通分组维度的聚合值可以集成在同一张表的结果里。事实上，窗函数的执行也是在Select语句执行完成后，对结果集使用不同窗进行统计分析，后续我会提到，这里可以看图理解。</p>
+
+<h4 id="2-窗函数定义">2. 窗函数定义</h4>
+
+<h6 id="21-多方来源">2.1 多方来源</h6>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hive
+windowing function / analytic function + the over clause
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AWS
+window function + window
+window: window partitioning + window ordering + window frame
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Microsoft
+ranking function / aggregate function / analytic functions + over clause
+over cluase ::= [partition by clause] [order by clause] [window frame clause]
+</code></pre></div></div>
+
+<h6 id="22-统一公式">2.2 统一公式</h6>
+
+<ul>
+  <li>function + windowing 函数+窗</li>
+  <li>function + window clause + window frame 函数+窗语句+窗框</li>
+  <li>这里的函数特指各类聚合函数，排序函数，和分析函数等，用于对字段值的处理</li>
+  <li>窗语句则是定义筛选字段范围和排序规则的语句</li>
+  <li>窗框则是定义窗的大小和位置的语句</li>
+</ul>
+
+<h3 id="3-典型使用场景">3. 典型使用场景</h3>
+
+<h6 id="31">3.1</h6>
 
 <p>—Copyright @ 2021 Zizhun Guo. All Rights Reserved.</p>
 
