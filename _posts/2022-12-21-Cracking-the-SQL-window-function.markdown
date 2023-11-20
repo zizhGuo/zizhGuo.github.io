@@ -102,8 +102,10 @@ over cluase ::= [partition by clause] [order by clause] [window frame clause]
 - 窗语句则是定义筛选字段范围和排序规则的语句
 - 窗框则是定义窗的大小和位置的语句
 
-### 3. 典型使用场景
+### 3. 典型使用场景 Typical Use Cases
 
-###### 3.1 
+###### 3.1 移动平均 Moving Average
+
+移动平均
 
 ---Copyright @ 2021 Zizhun Guo. All Rights Reserved.

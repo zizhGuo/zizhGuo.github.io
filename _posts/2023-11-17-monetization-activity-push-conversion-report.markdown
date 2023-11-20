@@ -28,9 +28,12 @@ porject: 1
     - [4.1 产出要求和解决方法](#41-产出要求和解决方法)
     - [4.2 活动推送用户登录订单明细表开发流程设计](#42-活动推送用户登录订单明细表开发流程设计)
     - [4.3 SQL代码](#43-sql代码)
-    - [5. 执行工具](#5-执行工具)
-    - [6. 误差评估](#6-误差评估)
-
+- [5. 执行工具](#5-执行工具)
+- [6. ods表不使用分区的妥协方式](#6-ods表不使用分区的妥协方式)
+    - [6.1 这是一个sad story](#61-这是一个sad-story)
+    - [6.2 开发流程设计](#62-开发流程设计)
+    - [6.3 SQL代码](#63-sql代码)
+    - [7. 误差评估](#7-误差评估)
 
 #### 1. 任务介绍 Task Introduction
 
@@ -138,13 +141,95 @@ paid_percentage：活动推送用户中付费用户占比
 ###### 4.2 活动推送用户登录订单明细表开发流程设计
 
 <div style="text-align: center;">
+<a href ="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/2023-11-monetization-activity-push-conversion-report/diagram.jpg">
+<img src="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/2023-11-monetization-activity-push-conversion-report/diagram.jpg" alt="drawing" style="width: 100%;"/>
+</a>
+<figcaption> 流程图 </figcaption>
+</div>
+
+###### 4.3 SQL代码
+
+```sql
+WITH A AS (
+    SELECT
+        ,t.uid
+        ,level
+        ,createtime
+        ,endtime
+        ,SUM(IF(login_logout_time >= createtime AND login_logout_time <= endtime, 1, 0) as n_login
+        ,IF(SUM(IF(login_logout_time >= createtime AND login_logout_time <= endtime, 1, 0)) > 0, 1, 0) AS bv_loggedin
+    FROM
+        db.ods_game_activity_push_log t
+    LEFT JOIN (
+        SELECT 
+            uid
+            ,logintime AS login_logout_time
+        FROM db.ods_user_login_log 
+        WHERE dt BETWEEN '2023-10-10' AND '2023-10-17'
+        UNION
+        SELECT 
+            uid
+            ,logouttime AS login_logout_time
+        FROM db.ods_user_login_log 
+        WHERE dt BETWEEN '2023-10-10' AND '2023-10-17'
+    ) tt ON t.uid = tt.uid 
+    WHERE
+        t.dt = '2023-10-10'
+    GROUP BY
+        t.uid
+        ,level
+        ,createtime
+        ,endtime
+),
+
+INSERT OVERWRITE TABLE db.activity_push_uid_batch_logedin_order_result 
+PARTITION (push_date = '2023-10-10')
+SELECT
+    A.*
+    ,tt.createtime AS ordertime
+    ,tt.price
+    ,tt.goodid
+FROM
+    A
+LEFT JOIN (
+    SELECT
+        uid
+        ,createtime
+        ,price
+        ,goodid
+    FROM
+        db.ods_order_log tt
+    WHERE
+        dt BETWEEN '2023-10-10' AND '2023-10-17'
+) tt ON A.uid = tt.uid AND tt.createtime >= A.createtime AND tt.createtime <= A.endtime
+;
+```
+
+#### 5. 执行工具
+
+- QuestBee beeline cmd generating tool
+- Hive
+- crontab
+- Microsoft Excel
+
+
+#### 6. ods表不使用分区的妥协方式
+
+
+###### 6.1 这是一个sad story
+
+如果任务不使用分区，扫描量会非常大，需要先通过date（）function将timestamp转换成yyyy-mm-dd的格式，再做范围筛选，其实是完全没用利用到分区的功能。会plan出很多stage，每个stage都会扫描全表，这样的话，如果数据量很大，会导致任务执行时间很长，而且会占用很多资源，影响其他任务的执行。
+
+###### 6.2 开发流程设计
+
+<div style="text-align: center;">
 <a href ="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/2023-11-monetization-activity-push-conversion-report/process_diagram.jpg">
 <img src="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/2023-11-monetization-activity-push-conversion-report/process_diagram.jpg" alt="drawing" style="width: 100%;"/>
 </a>
 <figcaption> 流程图 </figcaption>
 </div>
 
-###### 4.3 SQL代码
+###### 6.3 SQL代码
 
 ```sql
 -- SQL 1
@@ -277,14 +362,7 @@ on
 ```
 SQL 4: 使用玩家订单日志'2023-10-10'到'2023-10-13'的分区表, 得到订单时间字段，使用SQL 2生成的批次号，过滤出每个批次的订单记录，通过left join得到对应每个批次的订单记录，得到每个批次的订单用户
 
-###### 5. 执行工具
-
-- QuestBee beeline cmd generating tool
-- Hive
-- crontab
-- Microsoft Excel
-
-###### 6. 误差评估
+###### 7. 误差评估
 
 按照小时-分钟分组，并取每组第一条记录的时间作为该组时间，会造成误差，根据具体产出任务需要统计登陆转化和订单转化，
 
@@ -304,6 +382,8 @@ SQL 4: 使用玩家订单日志'2023-10-10'到'2023-10-13'的分区表, 得到�
   - 发生误差的用户的行为发生率占所有行为发生的比例
   - 加权平均误差：加权平均误差=∑(时间偏差×该偏差的数据占比)
   - 误差人数占比：误差人数占比=误差人数/总人数
+
+
 
 
 ---

@@ -104,8 +104,15 @@
       <li><a href="#41-产出要求和解决方法">4.1 产出要求和解决方法</a></li>
       <li><a href="#42-活动推送用户登录订单明细表开发流程设计">4.2 活动推送用户登录订单明细表开发流程设计</a></li>
       <li><a href="#43-sql代码">4.3 SQL代码</a></li>
-      <li><a href="#5-执行工具">5. 执行工具</a></li>
-      <li><a href="#6-误差评估">6. 误差评估</a></li>
+    </ul>
+  </li>
+  <li><a href="#5-执行工具">5. 执行工具</a></li>
+  <li><a href="#6-ods表不使用分区的妥协方式">6. ods表不使用分区的妥协方式</a>
+    <ul>
+      <li><a href="#61-这是一个sad-story">6.1 这是一个sad story</a></li>
+      <li><a href="#62-开发流程设计">6.2 开发流程设计</a></li>
+      <li><a href="#63-sql代码">6.3 SQL代码</a></li>
+      <li><a href="#7-误差评估">7. 误差评估</a></li>
     </ul>
   </li>
 </ul>
@@ -360,13 +367,94 @@ paid_percentage：活动推送用户中付费用户占比</p>
 <h6 id="42-活动推送用户登录订单明细表开发流程设计">4.2 活动推送用户登录订单明细表开发流程设计</h6>
 
 <div style="text-align: center;">
+<a href="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/2023-11-monetization-activity-push-conversion-report/diagram.jpg">
+<img src="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/2023-11-monetization-activity-push-conversion-report/diagram.jpg" alt="drawing" style="width: 100%;" />
+</a>
+<figcaption> 流程图 </figcaption>
+</div>
+
+<h6 id="43-sql代码">4.3 SQL代码</h6>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">WITH</span> <span class="n">A</span> <span class="k">AS</span> <span class="p">(</span>
+    <span class="k">SELECT</span>
+        <span class="p">,</span><span class="n">t</span><span class="p">.</span><span class="n">uid</span>
+        <span class="p">,</span><span class="k">level</span>
+        <span class="p">,</span><span class="n">createtime</span>
+        <span class="p">,</span><span class="n">endtime</span>
+        <span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="n">IF</span><span class="p">(</span><span class="n">login_logout_time</span> <span class="o">&gt;=</span> <span class="n">createtime</span> <span class="k">AND</span> <span class="n">login_logout_time</span> <span class="o">&lt;=</span> <span class="n">endtime</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">as</span> <span class="n">n_login</span>
+        <span class="p">,</span><span class="n">IF</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">IF</span><span class="p">(</span><span class="n">login_logout_time</span> <span class="o">&gt;=</span> <span class="n">createtime</span> <span class="k">AND</span> <span class="n">login_logout_time</span> <span class="o">&lt;=</span> <span class="n">endtime</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">AS</span> <span class="n">bv_loggedin</span>
+    <span class="k">FROM</span>
+        <span class="n">db</span><span class="p">.</span><span class="n">ods_game_activity_push_log</span> <span class="n">t</span>
+    <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="p">(</span>
+        <span class="k">SELECT</span> 
+            <span class="n">uid</span>
+            <span class="p">,</span><span class="n">logintime</span> <span class="k">AS</span> <span class="n">login_logout_time</span>
+        <span class="k">FROM</span> <span class="n">db</span><span class="p">.</span><span class="n">ods_user_login_log</span> 
+        <span class="k">WHERE</span> <span class="n">dt</span> <span class="k">BETWEEN</span> <span class="s1">'2023-10-10'</span> <span class="k">AND</span> <span class="s1">'2023-10-17'</span>
+        <span class="k">UNION</span>
+        <span class="k">SELECT</span> 
+            <span class="n">uid</span>
+            <span class="p">,</span><span class="n">logouttime</span> <span class="k">AS</span> <span class="n">login_logout_time</span>
+        <span class="k">FROM</span> <span class="n">db</span><span class="p">.</span><span class="n">ods_user_login_log</span> 
+        <span class="k">WHERE</span> <span class="n">dt</span> <span class="k">BETWEEN</span> <span class="s1">'2023-10-10'</span> <span class="k">AND</span> <span class="s1">'2023-10-17'</span>
+    <span class="p">)</span> <span class="n">tt</span> <span class="k">ON</span> <span class="n">t</span><span class="p">.</span><span class="n">uid</span> <span class="o">=</span> <span class="n">tt</span><span class="p">.</span><span class="n">uid</span> 
+    <span class="k">WHERE</span>
+        <span class="n">t</span><span class="p">.</span><span class="n">dt</span> <span class="o">=</span> <span class="s1">'2023-10-10'</span>
+    <span class="k">GROUP</span> <span class="k">BY</span>
+        <span class="n">t</span><span class="p">.</span><span class="n">uid</span>
+        <span class="p">,</span><span class="k">level</span>
+        <span class="p">,</span><span class="n">createtime</span>
+        <span class="p">,</span><span class="n">endtime</span>
+<span class="p">),</span>
+
+<span class="k">INSERT</span> <span class="n">OVERWRITE</span> <span class="k">TABLE</span> <span class="n">db</span><span class="p">.</span><span class="n">activity_push_uid_batch_logedin_order_result</span> 
+<span class="n">PARTITION</span> <span class="p">(</span><span class="n">push_date</span> <span class="o">=</span> <span class="s1">'2023-10-10'</span><span class="p">)</span>
+<span class="k">SELECT</span>
+    <span class="n">A</span><span class="p">.</span><span class="o">*</span>
+    <span class="p">,</span><span class="n">tt</span><span class="p">.</span><span class="n">createtime</span> <span class="k">AS</span> <span class="n">ordertime</span>
+    <span class="p">,</span><span class="n">tt</span><span class="p">.</span><span class="n">price</span>
+    <span class="p">,</span><span class="n">tt</span><span class="p">.</span><span class="n">goodid</span>
+<span class="k">FROM</span>
+    <span class="n">A</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span> <span class="p">(</span>
+    <span class="k">SELECT</span>
+        <span class="n">uid</span>
+        <span class="p">,</span><span class="n">createtime</span>
+        <span class="p">,</span><span class="n">price</span>
+        <span class="p">,</span><span class="n">goodid</span>
+    <span class="k">FROM</span>
+        <span class="n">db</span><span class="p">.</span><span class="n">ods_order_log</span> <span class="n">tt</span>
+    <span class="k">WHERE</span>
+        <span class="n">dt</span> <span class="k">BETWEEN</span> <span class="s1">'2023-10-10'</span> <span class="k">AND</span> <span class="s1">'2023-10-17'</span>
+<span class="p">)</span> <span class="n">tt</span> <span class="k">ON</span> <span class="n">A</span><span class="p">.</span><span class="n">uid</span> <span class="o">=</span> <span class="n">tt</span><span class="p">.</span><span class="n">uid</span> <span class="k">AND</span> <span class="n">tt</span><span class="p">.</span><span class="n">createtime</span> <span class="o">&gt;=</span> <span class="n">A</span><span class="p">.</span><span class="n">createtime</span> <span class="k">AND</span> <span class="n">tt</span><span class="p">.</span><span class="n">createtime</span> <span class="o">&lt;=</span> <span class="n">A</span><span class="p">.</span><span class="n">endtime</span>
+<span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="5-执行工具">5. 执行工具</h4>
+
+<ul>
+  <li>QuestBee beeline cmd generating tool</li>
+  <li>Hive</li>
+  <li>crontab</li>
+  <li>Microsoft Excel</li>
+</ul>
+
+<h4 id="6-ods表不使用分区的妥协方式">6. ods表不使用分区的妥协方式</h4>
+
+<h6 id="61-这是一个sad-story">6.1 这是一个sad story</h6>
+
+<p>如果任务不使用分区，扫描量会非常大，需要先通过date（）function将timestamp转换成yyyy-mm-dd的格式，再做范围筛选，其实是完全没用利用到分区的功能。会plan出很多stage，每个stage都会扫描全表，这样的话，如果数据量很大，会导致任务执行时间很长，而且会占用很多资源，影响其他任务的执行。</p>
+
+<h6 id="62-开发流程设计">6.2 开发流程设计</h6>
+
+<div style="text-align: center;">
 <a href="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/2023-11-monetization-activity-push-conversion-report/process_diagram.jpg">
 <img src="https://img-bed-1317278737.cos.ap-shanghai.myqcloud.com/post/2023-11-monetization-activity-push-conversion-report/process_diagram.jpg" alt="drawing" style="width: 100%;" />
 </a>
 <figcaption> 流程图 </figcaption>
 </div>
 
-<h6 id="43-sql代码">4.3 SQL代码</h6>
+<h6 id="63-sql代码">6.3 SQL代码</h6>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- SQL 1</span>
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">db</span><span class="p">.</span><span class="n">activity_push_batch_uid</span> <span class="k">AS</span>
@@ -494,16 +582,7 @@ paid_percentage：活动推送用户中付费用户占比</p>
 </code></pre></div></div>
 <p>SQL 4: 使用玩家订单日志’2023-10-10’到’2023-10-13’的分区表, 得到订单时间字段，使用SQL 2生成的批次号，过滤出每个批次的订单记录，通过left join得到对应每个批次的订单记录，得到每个批次的订单用户</p>
 
-<h6 id="5-执行工具">5. 执行工具</h6>
-
-<ul>
-  <li>QuestBee beeline cmd generating tool</li>
-  <li>Hive</li>
-  <li>crontab</li>
-  <li>Microsoft Excel</li>
-</ul>
-
-<h6 id="6-误差评估">6. 误差评估</h6>
+<h6 id="7-误差评估">7. 误差评估</h6>
 
 <p>按照小时-分钟分组，并取每组第一条记录的时间作为该组时间，会造成误差，根据具体产出任务需要统计登陆转化和订单转化，</p>
 
