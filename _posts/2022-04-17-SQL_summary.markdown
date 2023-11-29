@@ -6,7 +6,7 @@ author: Zizhun Guo
 category: Projects
 categories: jekyll update
 visible: 1
-porject: 1
+project: 1
 ---
 
 <br>

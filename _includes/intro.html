@@ -18,16 +18,31 @@
 				</div> -->
 			<!-- </div> -->
 			<!-- <iframe src="//player.bilibili.com/player.html?aid=218781653&bvid=BV1E8411x7Zh&cid=853358747&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="800" height="400"> </iframe> -->
-			<div class=" bg-light card text-left"style="width: 80rem;"> 	
-			<!-- <div class=" bg-light card"> 	 -->
-				<div class="card-body">			
+			
+							
+				<div class=" bg-light card text-left"style="width: 80rem;"> 	
+					<!-- <div class=" bg-light card"> 	 -->
+						<div class="card-body">			
+					<h2><b>置顶</b></h2>		
+					{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+					{% for year in postsByYear %}
+						{% for post in year.items %}
+							{% if post.visible == 1 and post.top == 1 and post.category == 'Article' %}
+							<time datetime="{{ post.date | date: "%m-%d-%Y" }}">
+								{{ post.date | date_to_string }}
+							</time>
+							<h5 class="card-title text-left"><a href="{{ post.url }}" class="btn btn-light p-0">{{post.title}}</a></h5>
+							<!-- <p class="card-text text-left">{{post.content | slice: 0,100}}</p> -->
+							{% endif %}
+						{% endfor %}
+					{% endfor %}
 					{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
 					{% for year in postsByYear %}
 						{% if year.name != "2016" and year.name != "2017"%}
 							<h1>{{ year.name }}</h1>
 						{% endif %}
 						{% for post in year.items %}
-							{% if post.visible == 1 and post.travel != 1 %}
+							{% if post.visible == 1 and post.travel != 1 and post.category == 'Projects' %}
 							
 							<time datetime="{{ post.date | date: "%m-%d-%Y" }}">
 								{{ post.date | date_to_string }}

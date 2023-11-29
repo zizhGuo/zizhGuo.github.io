@@ -7,7 +7,6 @@ authorCN: 郭子谆
 category: Projects
 categories: jekyll update
 visible: 1
-porject: 1
 ---
 
 <br>
