@@ -1,7 +1,7 @@
 ---
 layout: post
 # title:  "QuestBee开源自动化beeline cmd生成工具 QuestBee Beeline CMD Genaration Tool （updating）"
-title:  "个体在大语言模型时代的正确行走姿态是什么 How suppose an individual responds to the age of LLMs"
+title:  "个体在大语言模型时代的正确行走姿态是什么 How should an individual respond to the age of LLMs"
 date:   2023-11-29 09:33:30
 author: Zizhun Guo
 authorCN: 郭子谆
@@ -19,7 +19,7 @@ top: 1
    <figcaption>本插画为DALLE生成，提示词为ChatGPT生成</figcaption>
 </div>
 
-> 我对ChatGPT提出的问题：个体在大语言模型时代的正确行走姿态是什么 How suppose an individual responds to the age of LLMs，这是一个讨论关于大预言模型对人类生活产生影响和讨论人类应该如何应对的博客标题，请根据标题生成一个博客背景插画
+> 我对ChatGPT提出的问题：个体在大语言模型时代的正确行走姿态是什么 How should an individual respond to the age of LLMs，这是一个讨论关于大预言模型对人类生活产生影响和讨论人类应该如何应对的博客标题，请根据标题生成一个博客背景插画
 
 > ChatGPT回复我的提示词：The image will feature a person standing at a crossroads, symbolizing decision-making in the age of LLMs. The paths will represent different approaches to embracing technology – one leading towards a future integrated with AI, another towards maintaining traditional human values, and a middle path symbolizing balance. The backdrop will feature a skyline blending modern digital elements with classic architectural styles, symbolizing the fusion of technology and tradition. The individual will appear thoughtful and prepared, embodying a balanced and informed approach to the era of LLMs. The overall tone will be contemplative and futuristic.
 
