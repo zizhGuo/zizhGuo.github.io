@@ -1,13 +1,13 @@
 ---
 layout: post
 # title:  "QuestBee开源自动化beeline cmd生成工具 QuestBee Beeline CMD Genaration Tool （updating）"
-title:  "个体在大语言模型时代的正确行走姿态是什么 How should an individual respond to the age of LLMs"
+title:  "我尝试使用大模型工具实现价值链的增值：实录 Hows"
 date:   2023-12-07 22:33:30
 author: Zizhun Guo
 authorCN: 郭子谆
 category: Article
 categories: jekyll update
-visible: 1
+visible: 0
 porject: 0
 top: 1
 ---
